@@ -247,10 +247,10 @@ getItem.getById("kljQ1Oodqp")
 ```js
 var getObject = new Scorocode.Object("content");
 getObject.getById("fHGCvxVuuv")
-		.then((finded) => {
-   		console.log(getObject.getFileLink("fileField"));
-    	})
-     .catch((error) => {console.log("Что-то пошло не так: \n", error)});
+    .then((finded) => {
+        console.log(getObject.getFileLink("fileField"));
+    })
+    .catch((error) => {console.log("Что-то пошло не так: \n", error)});
 ```
 <a name="Scorocode.Object+uploadFile"></a>
 
