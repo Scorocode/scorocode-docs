@@ -3,17 +3,17 @@
 ### Scorocode.Object
 Scorocode.Object
 
-**Тип**: Класс <code>[Scorocode](#Scorocode)</code>  
+**Тип**: Класс <code>[Scorocode](Scorocode.md#Scorocode)</code>  
 **Содержание**
 * [.Object](#Scorocode.Object)
     * [new Object(collName)](#new_Scorocode.Object_new)
-    * [.getById(_id, options)](#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Object&gt;](#Scorocode.Object)</code>
-    * [.get(key)](#Scorocode.Object+get) ⇒ <code>promise.&lt;value&gt;</code>
+    * [.getById(_id, options)](#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
+    * [.get(key)](#Scorocode.Object+get) ⇒ <code>promise.&lt;Значение поля&gt;</code>
     * [.getFileLink(field)](#Scorocode.Object+getFileLink) ⇒ <code>String</code>
     * [.uploadFile(field, filename, file, options)](#Scorocode.Object+uploadFile) ⇒ <code>promise.&lt;Object&gt;</code>
-    * [.save(options)](#Scorocode.Object+save) ⇒ <code>[Object](#Scorocode.Object)</code>
-    * [.remove(options)](#Scorocode.Object+remove) ⇒ <code>dragons</code>
-    * [.extend(collName, childObject)](#Scorocode.Object+extend) ⇒ <code>Object</code>
+    * [.save(options)](#Scorocode.Object+save) ⇒ <code>[Scorocode.Object](#Scorocode.Object)</code>
+    * [.remove(options)](#Scorocode.Object+remove) ⇒ <code>{count: Number, docs: Array}</code>
+    * [.extend(collName, childObject)](#Scorocode.Object+extend) ⇒ <code>dragons</code>
     * [.set(data)](#Scorocode.Object+set)
     * [.push(key, value)](#Scorocode.Object+push) ⇒ <code>Object</code>
     * [.pull(key, value)](#Scorocode.Object+pull) ⇒ <code>Object</code>
@@ -44,7 +44,7 @@ Scorocode.Object представляет объект данных прилож
 ```js
 // Создадим новый объект коллекции items.
 var questItem = new Scorocode.Object("items"); 
-// Используем метод set() для передачи объекту данных name и 
+// Используем метод set() для передачи объекту данных "name" и "quest".
 questItem.set("name", "Водяной чип").set("quest", "Sd4OyACUy2"); 
 // Используем метод save() для записи объекта в базу данных приложения
 questItem.save();
@@ -117,18 +117,28 @@ getItem.getById("kljQ1Oodqp")
 **Возвращает**: <code>String</code> - Возвращает ссылку на запрошенный файл  
 **Исключения**:
 
-- <code>String</code> 'You must first create a document and upload file' - Должен быть создан объект коллекции и сохранен [Scorocode.Object.save()](Scorocode.Object.save())
+- <code>String</code> 'You must first create a document and upload file' - Объект коллекции, к которому обращается метод, должен быть создан и сохранен.
 - <code>String</code> 'Unknown field' - Поле не существует
 - <code>String</code> 'Field is empty' - Поле пустое
-
-**Todo**
-
-- [ ] Пример, исключения
-
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | field | <code>String</code> | Название поля коллекции |
+
+**Пример**
+```js
+// Создадим новый объект коллекции "content".
+var getObjects = new Scorocode.Object("content");
+// Запросим интересующий нас объект по его _id
+getObjects.getById("fHGCvxVuuv")
+// Обработчик успешного выполнения запроса
+.then((getted) => {
+    // Получим ссылку на файл, хранящийся в поле "fileField" объекта
+    console.log("Вот ссылка на файл:", getObjects.getFileLink("fileField"));
+})
+// Обработчик ошибки
+.catch((error) => {console.log("Что-то пошло не так: \n", error)});
+```
 
 <a name="Scorocode.Object+uploadFile"></a>
 
