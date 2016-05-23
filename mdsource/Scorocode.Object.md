@@ -43,11 +43,11 @@ var questItem = new Scorocode.Object("items");
 questItem.set("name", "Водяной чип").set("relatedquests", ["huNr3L7QDh"]); 
 // Используем метод save() для записи данных объекта в базу данных приложения
 questItem.save()
-// Обработчик успешного выполнения запроса
+    // Обработчик успешного выполнения запроса
     .then((saved) => {
          console.log("Вот что мы сохранили: \n", saved);
      })
-// Обработчик ошибки
+    // Обработчик ошибки
     .catch((error) => {
          console.log("Что-то пошло не так: \n", error)
     });
@@ -213,7 +213,7 @@ attachToItem.getById("xL0uOFtiJx")
 #### object.getFileLink(field) ⇒ <code>String</code>
 Метод для получения ссылки на файл.
 
-**Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -221,19 +221,24 @@ attachToItem.getById("xL0uOFtiJx")
 
 **Пример**
 ```js
-// Создадим новый объект коллекции "content".
-var getObjects = new Scorocode.Object("content");
+// Создадим новый экземпляр объекта коллекции items.
+var attachToItem = new Scorocode.Object("items");
 // Запросим интересующий нас объект по его _id
-getObjects.getById("fHGCvxVuuv")
-// Обработчик успешного выполнения запроса
-.then((getted) => {
-    // Получим ссылку на файл, хранящийся в поле "fileField" объекта
-    console.log("Вот ссылка на файл:", getObjects.getFileLink("fileField"));
-})
-// Обработчик ошибки
-.catch((error) => {console.log("Что-то пошло не так: \n", error)});
+attachToItem.getById("xL0uOFtiJx")
+    // Обработчик успешного выполнения запроса
+    .then((success)=>{
+        // Получим ссылку на файл, хранящийся в поле "attachment" объекта
+        console.log("Вот ссылка на файл:", getObjects.getFileLink("attachment"));
+    })
+        // Обработчик ошибки
+    .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+    });
 ```
-**Возвращает**: <code>String</code> - Возвращает ссылку на запрошенный файл  
+**Возвращает**: <code>String</code> - Возвращает ссылку на запрошенный файл
+```
+Вот ссылка на файл: https://api.scorocode.ru/api/v1/getfile/e1afa40259773b4f9af4306b545d4165/items/attachment/NseSaqqd5v/waterchip.txt
+```
 **Исключения**:
 
 - <code>String</code> 'You must first create a document and upload file' - Объект коллекции, к которому обращается метод, должен быть создан и сохранен.
@@ -245,8 +250,7 @@ getObjects.getById("fHGCvxVuuv")
 #### object.save(options) ⇒ <code>[Object](#Scorocode.Object)</code>
 Метод сохраняет объект в хранилище данных приложения или обновляет уже имеющийся там объект
 
-**Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
-**Возвращает**: <code>[Object](#Scorocode.Object)</code> - Возвращает сохраненный объект  
+**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -254,20 +258,40 @@ getObjects.getById("fHGCvxVuuv")
 
 **Пример**  
 ```js
-* // Создадим новый объект коллекции items.
+// Создадим новый экземпляр объекта коллекции items.
 var questItem = new Scorocode.Object("items"); 
-// Используем метод set() для передачи объекту данных name и 
-questItem.set("name", "Водяной чип").set("quest", "Sd4OyACUy2"); 
-// Используем метод save() для записи объекта в базу данных приложения
-questItem.save();
+// Используем метод set() для передачи объекту данных в поля "name" и "relatedquests".
+questItem.set("name", "Водяной чип").set("relatedquests", ["huNr3L7QDh"]); 
+// Используем метод save() для записи данных объекта в базу данных приложения
+questItem.save()
+    // Обработчик успешного выполнения запроса
+    .then((saved) => {
+         console.log("Вот что мы сохранили: \n", saved);
+     })
+    // Обработчик ошибки
+    .catch((error) => {
+         console.log("Что-то пошло не так: \n", error)
+    });
 ```
+**Возвращает**: <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code> - Возвращает promise, который возвращает сохраненный объект 
+```
+Вот ваш объект:
+ { _id: 'NseSaqqd5v',
+  name: 'Водяной чип',
+  relatedquests: [ 'huNr3L7QDh' ],
+  createdAt: Mon May 23 2016 19:37:04 GMT+0300 (RTZ 2 (зима)),
+  updatedAt: Mon May 23 2016 19:37:04 GMT+0300 (RTZ 2 (зима)),
+  readACL: [],
+  updateACL: [],
+  removeACL: [] }
+```
+
 <a name="Scorocode.Object+remove"></a>
 
 #### object.remove(options) ⇒ <code>dragons</code>
 Метод для удаления указанного объекта
 
-**Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
-**Возвращает**: <code>dragons</code> - Here be dragons  
+**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -275,19 +299,45 @@ questItem.save();
 
 **Пример**  
 ```js
-// Dragons  
+// Создадим новый экземпляр объекта коллекции items.
+var getItem = new Scorocode.Object("items");
+// Запросим интересующий нас объект по его _id
+getItem.getById("hejJU4BEGP")
+    // Обработчик успешного выполнения запроса
+    .then((success)=>{
+        // Удалим полученный файл
+        getItem.remove(success)
+        // Обработчик успешного выполнения запроса
+        .then((removed)=>{
+            // Выведем в консоль результат запроса
+            console.log(removed);
+        })
+        // Обработчик ошибки
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
+    })
+    // Обработчик ошибки
+    .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+    });
 ```
+**Возвращает**: <code>Promise.&lt;Object&gt;</code> - Возвращает promise, который возвращает объект:
+- "count" - <code>Number</code>  - количество удаленных объектов
+- "doc" - <code>Array</code>  - массив ID удаленных объектов
+```
+{ count: 1, docs: [ 'hejJU4BEGP' ] }
+``` 
 <a name="Scorocode.Object+extend"></a>
 
-#### object.extend(collName, childObject) ⇒ <code>Object</code>
-Extend
+#### object.extend(collName, childObject) ⇒ <code>Dragons</code>
 
-**Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
-**Возвращает**: <code>Object</code> - Результат  
+Метод Extend
+
 **Todo**
-
 - [ ] Дописать
 
+**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -299,7 +349,7 @@ Extend
 #### object.set(data)
 Метод для передачи данных объекту
 
-**Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -307,25 +357,32 @@ Extend
 
 **Пример**  
 ```js
-// Создадим новый объект коллекции items.
+// Создадим новый экземпляр объекта коллекции items.
 var questItem = new Scorocode.Object("items"); 
-// Используем метод set() для передачи объекту данных name и 
-questItem.set("name", "Водяной чип").set("quest", "Sd4OyACUy2"); 
-// Используем метод save() для записи объекта в базу данных приложения
-questItem.save();
+// Используем метод set() для передачи объекту данных в поля "name" и "relatedquests".
+questItem.set("name", "Водяной чип").set("relatedquests", ["huNr3L7QDh"]); 
+// Используем метод save() для записи данных объекта в базу данных приложения
+questItem.save()
+    // Обработчик успешного выполнения запроса
+    .then((saved) => {
+         console.log("Вот что мы сохранили: \n", saved);
+     })
+    // Обработчик ошибки
+    .catch((error) => {
+         console.log("Что-то пошло не так: \n", error)
+    });
 ```
 <a name="Scorocode.Object+push"></a>
 
 #### object.push(key, value) ⇒ <code>Object</code>
 Метод для добавления элемента в массив.
 
-**Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
-**Возвращает**: <code>Object</code> - { Описание_of_the_return_value }  
+**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| key | <code>String</code> | The key |
-| value | <code>String</code> | The value |
+| key | <code>String</code> | Имя поля, значение которого нужно изменить |
+| value | <code>String</code> | Изменение, которое нужно внести |
 
 <a name="Scorocode.Object+pull"></a>
 
@@ -333,50 +390,46 @@ questItem.save();
 Метод для удаления всех элементов массива, подходящих под условия запроса
 
 **Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
-**Возвращает**: <code>Object</code> - { Описание_of_the_return_value }  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| key | <code>String</code> | The key |
-| value | <code>String</code> | The value |
+| key | <code>String</code> | Имя поля, значение которого нужно изменить |
+| value | <code>String</code> | Изменение, которое нужно внести |
 
 <a name="Scorocode.Object+pullAll"></a>
 
 #### object.pullAll(key, value) ⇒ <code>Object</code>
-{ function_Описание }
 
-**Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
-**Возвращает**: <code>Object</code> - { Описание_of_the_return_value }  
+**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| key | <code>String</code> | The key |
-| value | <code>Array</code> | The value |
+| key | <code>String</code> | Имя поля, значение которого нужно изменить |
+| value | <code>Array</code> | Изменение, которое нужно внести |
 
 <a name="Scorocode.Object+addToSet"></a>
 
 #### object.addToSet(key, value) ⇒ <code>Object</code>
 Метод для добавления элемента в массив, если он откутствует в выборке
 
-**Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
-**Возвращает**: <code>Object</code> - { Описание_of_the_return_value }  
+**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| key | <code>String</code> | The key |
-| value | <code>Array</code> | The value |
+| key | <code>String</code> | Имя поля, значение которого нужно изменить |
+| value | <code>Array</code> | Изменение, которое нужно внести |
 
 <a name="Scorocode.Object+pop"></a>
 
 #### object.pop(key, pos) ⇒ <code>Object</code>
-{ function_Описание }
+Метод для 
 
-**Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
-**Возвращает**: <code>Object</code> - { Описание_of_the_return_value }  
+**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
+**Возвращает**: <code>Object</code> -   
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| key | <code>String</code> | The key |
+| key | <code>String</code> | Имя поля, значение которого нужно изменить |
 | pos | <code>number</code> | The pos |
 
 <a name="Scorocode.Object+inc"></a>
@@ -384,7 +437,7 @@ questItem.save();
 #### object.inc(key, amount)
 Метод увеличивает значение числового поля на заданное число
 
-**Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -400,13 +453,13 @@ questItem.save();
 #### object.currentDate()
 Устанавливает текущее время в качестве значения поля
 
-**Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 <a name="Scorocode.Object+mul"></a>
 
 #### object.mul(key, number)
 Метод умножает значение числового поля на заданное число
 
-**Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -422,7 +475,7 @@ questItem.save();
 #### object.min()
 Метод обновляет значение поля только в случае, если указанное значение меньше текущего значения поля
 
-**Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 **Пример**  
 ```js
 // Dragons
@@ -432,7 +485,7 @@ questItem.save();
 #### object.max()
 Метод обновляет значение поля только в случае, если указанное значение больше текущего значения поля
 
-**Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 **Пример**  
 ```js
 // Dragons
