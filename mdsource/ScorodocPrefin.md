@@ -250,7 +250,9 @@ getObject.getById("fHGCvxVuuv")
     .then((finded) => {
         console.log(getObject.getFileLink("fileField"));
     })
-    .catch((error) => {console.log("Что-то пошло не так: \n", error)});
+    .catch((error) => {
+        console.log("Что-то пошло не так: \n", error);
+    });
 ```
 <a name="Scorocode.Object+uploadFile"></a>
 
