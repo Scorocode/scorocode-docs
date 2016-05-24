@@ -153,10 +153,11 @@ getItem.getById("NseSaqqd5v")
     .catch((error) => {
          console.log("Что-то пошло не так: \n", error)
     });
+```
 См.
 * [new Object(collName)](#new_Scorocode.Object_new)    
 * [.getById(_id, options)](#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
-```
+
 **Возвращает**: <code>promise.&lt;value&gt;</code> - Возвращает promise вернуть значение поля  
 ```
 Вот значение интересующего вас поля:
@@ -355,9 +356,6 @@ getItem.getById("hejJU4BEGP")
 
 Метод Extend
 
-**Todo**
-- [ ] Дописать
-
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 
 | Параметр | Тип | Описание |
@@ -365,6 +363,27 @@ getItem.getById("hejJU4BEGP")
 | collName | <code>String</code> | Название коллекции |
 | childObject | <code>Object</code> | Дочерний объект |
 
+**Пример**
+```js
+ function getData() {
+        var content = '';
+        var data = new Scorocode.Query('requests');
+        data.find().then(function(result){
+            console.log(result);
+            
+            var objects = result.result.map(function(item){
+                return Scorocode.Object.extend('requests', item);
+            });
+            
+            // objects это не массив сырых данных, а массив Scorocode.Object 
+            
+            result.result.forEach(function(item){
+                content += '<td>' + item.name + '</td><td>' + item.description + '</td><td>' + item.date.toLocaleString() + '</td>';
+            });
+            $('#requests').append(content);
+            console.log(content);
+        });
+```
 <a name="Scorocode.Object+set"></a>
 
 #### object.set(data)
@@ -408,6 +427,34 @@ questItem.save()
 | --- | --- | --- |
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
 | value | <code>String</code> | Изменение, которое нужно внести |
+
+**Пример**
+```js
+// Создадим новый экземпляр объекта коллекции items.
+var getItem = new Scorocode.Object("items"); 
+// Запросим интересующий нас объект по его _id
+getItem.getById("NseSaqqd5v")
+    // Обработчик успешного выполнения запроса
+    .then((success)=>{
+        console.log(success);
+        // Добавим новый элемент в массив поля "appearsin"
+        getItem.push("appearsin", "Fallout 3");
+        getItem.save()
+        // Обработчик успешного выполнения запроса
+        .then((saved)=>{
+            // Выведем в консоль результат запроса
+            console.log(saved);
+        })
+        // Обработчик ошибки
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error);
+        })
+    })
+    // Обработчик ошибки
+    .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+    });
+```
 
 <a name="Scorocode.Object+pull"></a>
 
@@ -543,7 +590,7 @@ getItem.getById("NseSaqqd5v")
 
 **Пример**  
 ```js
-// Dragons
+//TODO
 ```
 <a name="Scorocode.Object+min"></a>
 
@@ -553,7 +600,7 @@ getItem.getById("NseSaqqd5v")
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 **Пример**  
 ```js
-// Dragons
+//TODO
 ```
 <a name="Scorocode.Object+max"></a>
 
@@ -563,5 +610,5 @@ getItem.getById("NseSaqqd5v")
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
 **Пример**  
 ```js
-// Dragons
+// TODO
 ```
