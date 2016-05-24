@@ -5,26 +5,26 @@ Scorocode.Object
 
 **Тип**: Класс <code>[Scorocode](Scorocode.md#Scorocode)</code>  
 **Содержание**
-* [.Object](#Scorocode.Object)
-    * [new Object(collName)](#new_Scorocode.Object_new)
-    * [.getById(_id, options)](#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
-    * [.get(key)](#Scorocode.Object+get) ⇒ <code>promise.&lt;Значение поля&gt;</code>
-    * [.getFileLink(field)](#Scorocode.Object+getFileLink) ⇒ <code>String</code>
-    * [.uploadFile(field, filename, file, options)](#Scorocode.Object+uploadFile) ⇒ <code>promise.&lt;Object&gt;</code>
-    * [.save(options)](#Scorocode.Object+save) ⇒ <code>[Scorocode.Object](#Scorocode.Object)</code>
-    * [.remove(options)](#Scorocode.Object+remove) ⇒ <code>{count: Number, docs: Array}</code>
-    * [.extend(collName, childObject)](#Scorocode.Object+extend) ⇒ <code>dragons</code>
-    * [.set(data)](#Scorocode.Object+set)
-    * [.push(key, value)](#Scorocode.Object+push) ⇒ <code>Object</code>
-    * [.pull(key, value)](#Scorocode.Object+pull) ⇒ <code>Object</code>
-    * [.pullAll(key, value)](#Scorocode.Object+pullAll) ⇒ <code>Object</code>
-    * [.addToSet(key, value)](#Scorocode.Object+addToSet) ⇒ <code>Object</code>
-    * [.pop(key, pos)](#Scorocode.Object+pop) ⇒ <code>Object</code>
-    * [.inc(key, amount)](#Scorocode.Object+inc)
-    * [.currentDate()](#Scorocode.Object+currentDate)
-    * [.mul(key, number)](#Scorocode.Object+mul)
-    * [.min()](#Scorocode.Object+min)
-    * [.max()](#Scorocode.Object+max)
+* [.Object](Scorocode.Object.md#Scorocode.Object)
+    * [new Object(collName)](Scorocode.Object.md#new_Scorocode.Object_new)
+    * [.getById(_id, options)](Scorocode.Object.md#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
+    * [.get(key)](Scorocode.Object.md#Scorocode.Object+get) ⇒ <code>promise.&lt;Значение поля&gt;</code>
+    * [.getFileLink(field)](Scorocode.Object.md#Scorocode.Object+getFileLink) ⇒ <code>String</code>
+    * [.uploadFile(field, filename, file, options)](Scorocode.Object.md#Scorocode.Object+uploadFile) ⇒ <code>promise.&lt;String&gt;</code>
+    * [.save(options)](Scorocode.Object.md#Scorocode.Object+save) ⇒ <code>[Scorocode.Object](#Scorocode.Object)</code>
+    * [.remove(options)](Scorocode.Object.md#Scorocode.Object+remove) ⇒ <code>{count: Number, docs: Array}</code>
+    * [.extend(collName, childObject)](Scorocode.Object.md#Scorocode.Object+extend) ⇒ <code>dragons</code>
+    * [.set(data)](Scorocode.Object.md#Scorocode.Object+set)
+    * [.push(key, value)](Scorocode.Object.md#Scorocode.Object+push) ⇒ <code>Object</code>
+    * [.pull(key, value)](Scorocode.Object.md#Scorocode.Object+pull) ⇒ <code>Object</code>
+    * [.pullAll(key, value)](Scorocode.Object.md#Scorocode.Object+pullAll) ⇒ <code>Object</code>
+    * [.addToSet(key, value)](Scorocode.Object.md#Scorocode.Object+addToSet) ⇒ <code>Object</code>
+    * [.pop(key, pos)](Scorocode.Object.md#Scorocode.Object+pop) ⇒ <code>Object</code>
+    * [.inc(key, amount)](Scorocode.Object.md#Scorocode.Object+inc)
+    * [.currentDate()](Scorocode.Object.md#Scorocode.Object+currentDate)
+    * [.mul(key, number)](Scorocode.Object.md#Scorocode.Object+mul)
+    * [.min()](Scorocode.Object.md#Scorocode.Object+min)
+    * [.max()](Scorocode.Object.md#Scorocode.Object+max)
 
 <a name="new_Scorocode.Object_new"></a>
 
@@ -45,7 +45,7 @@ questItem.set("name", "Водяной чип").set("relatedquests", ["huNr3L7QDh
 questItem.save()
     // Обработчик успешного выполнения запроса
     .then((saved) => {
-         console.log("Вот что мы сохранили: \n", saved);
+         console.log("Запрос успешно выполнен: \n", saved);
      })
     // Обработчик ошибки
     .catch((error) => {
@@ -58,7 +58,7 @@ questItem.save()
 
 **Исключения**:
 
-- <code>String</code> "Invalid collection name" - некорректно указано имя коллекции
+- <code>Error</code> "Invalid collection name" - некорректно указано имя коллекции
 <a name="Scorocode.Object+getById"></a>
 ```
 Что-то пошло не так:
@@ -68,6 +68,8 @@ questItem.save()
     error: true 
 }
 ```
+
+<a name="Scorocode.Object+getById"></a>
 
 #### object.getById(_id, options) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
 Метод для для получения объекта коллекции из БД по его _id. 
@@ -89,7 +91,7 @@ var getItem = new Scorocode.Object("items");
 getItem.getById("NseSaqqd5v")
     // Обработчик успешного выполнения запроса
     .then((success) => {
-         console.log("Вот ваш объект: \n", success);
+         console.log("Запрос успешно выполнен: \n", success);
      })
     // Обработчик ошибки
     .catch((error) => {
@@ -103,7 +105,6 @@ getItem.getById("NseSaqqd5v")
 **Возвращает**: <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code> - Возвращает promise, который возвращает запрошенный объект.
 
 ```
-Вот ваш объект:
 {
     _id: 'NseSaqqd5v',
     name: 'Водяной чип',
@@ -120,9 +121,8 @@ getItem.getById("NseSaqqd5v")
 
 
 **Исключения**:
-- <code>String</code> "Document not found" - Объект не найден
+- <code>Error</code> "Document not found" - Объект не найден
 ```
-Что-то пошло не так:
  [Error: Document not found]
 ```
 
@@ -153,6 +153,9 @@ getItem.getById("NseSaqqd5v")
     .catch((error) => {
          console.log("Что-то пошло не так: \n", error)
     });
+См.
+* [new Object(collName)](#new_Scorocode.Object_new)    
+* [.getById(_id, options)](#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
 ```
 **Возвращает**: <code>promise.&lt;value&gt;</code> - Возвращает promise вернуть значение поля  
 ```
@@ -199,6 +202,9 @@ attachToItem.getById("xL0uOFtiJx")
     });
     
 ```
+* [new Object(collName)](#new_Scorocode.Object_new)
+* [.getById(_id, options)](#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
+
 **Возвращает**: <code>promise.&lt;String&gt;</code> - Возвращает название загруженного файла
 ```
 Этот файл был успешно загружен: waterchip.txt
@@ -207,8 +213,8 @@ attachToItem.getById("xL0uOFtiJx")
 **Исключения**:
 
 - <code>String</code> 'You must first create a document' -Dragons
-<a name="Scorocode.Object+getFileLink"></a>
 
+<a name="Scorocode.Object+getFileLink"></a>
 
 #### object.getFileLink(field) ⇒ <code>String</code>
 Метод для получения ссылки на файл.
@@ -235,15 +241,19 @@ attachToItem.getById("xL0uOFtiJx")
             console.log("Что-то пошло не так: \n", error)
     });
 ```
+см.
+* [new Object(collName)](#new_Scorocode.Object_new)
+* [.getById(_id, options)](#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
+
 **Возвращает**: <code>String</code> - Возвращает ссылку на запрошенный файл
 ```
 Вот ссылка на файл: https://api.scorocode.ru/api/v1/getfile/e1afa40259773b4f9af4306b545d4165/items/attachment/NseSaqqd5v/waterchip.txt
 ```
 **Исключения**:
 
-- <code>String</code> 'You must first create a document and upload file' - Объект коллекции, к которому обращается метод, должен быть создан и сохранен.
-- <code>String</code> 'Unknown field' - Поле не существует
-- <code>String</code> 'Field is empty' - Поле пустое
+- <code>Error</code> 'You must first create a document and upload file' - Объект коллекции, к которому обращается метод, должен быть создан и сохранен.
+- <code>Error</code> 'Unknown field' - Поле не существует
+- <code>Error</code> 'Field is empty' - Поле пустое
 
 <a name="Scorocode.Object+save"></a>
 
@@ -273,6 +283,10 @@ questItem.save()
          console.log("Что-то пошло не так: \n", error)
     });
 ```
+см.
+* [new Object(collName)](#new_Scorocode.Object_new)
+* [.set(data)](#Scorocode.Object+set)
+
 **Возвращает**: <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code> - Возвращает promise, который возвращает сохраненный объект 
 ```
 Вот ваш объект:
@@ -322,11 +336,18 @@ getItem.getById("hejJU4BEGP")
             console.log("Что-то пошло не так: \n", error)
     });
 ```
+см.
+* [new Object(collName)](#new_Scorocode.Object_new)
+* [.getById(_id, options)](#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
+
 **Возвращает**: <code>Promise.&lt;Object&gt;</code> - Возвращает promise, который возвращает объект:
 - "count" - <code>Number</code>  - количество удаленных объектов
 - "doc" - <code>Array</code>  - массив ID удаленных объектов
 ```
-{ count: 1, docs: [ 'hejJU4BEGP' ] }
+{ 
+    count: 1, 
+    docs: [ 'hejJU4BEGP' ] 
+}
 ``` 
 <a name="Scorocode.Object+extend"></a>
 
@@ -359,19 +380,23 @@ getItem.getById("hejJU4BEGP")
 ```js
 // Создадим новый экземпляр объекта коллекции items.
 var questItem = new Scorocode.Object("items"); 
-// Используем метод set() для передачи объекту данных в поля "name" и "relatedquests".
-questItem.set("name", "Водяной чип").set("relatedquests", ["huNr3L7QDh"]); 
+// Используем метод set() для передачи объекту обновленных данных поля "name".
+questItem.set("_id", "NseSaqqd5v").set("name", "Water chip"); 
 // Используем метод save() для записи данных объекта в базу данных приложения
 questItem.save()
     // Обработчик успешного выполнения запроса
-    .then((saved) => {
-         console.log("Вот что мы сохранили: \n", saved);
+    .then((success) => {
+         console.log(success);
      })
     // Обработчик ошибки
     .catch((error) => {
-         console.log("Что-то пошло не так: \n", error)
+         console.log(error)
     });
 ```
+см.
+* [new Object(collName)](#new_Scorocode.Object_new)
+* [.save(options)](#Scorocode.Object+save) ⇒ <code>[Scorocode.Object](#Scorocode.Object)</code>
+
 <a name="Scorocode.Object+push"></a>
 
 #### object.push(key, value) ⇒ <code>Object</code>
@@ -422,15 +447,43 @@ questItem.save()
 <a name="Scorocode.Object+pop"></a>
 
 #### object.pop(key, pos) ⇒ <code>Object</code>
-Метод для 
+Метод для удаления первого или последнего элемента массива
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
-**Возвращает**: <code>Object</code> -   
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
-| pos | <code>number</code> | The pos |
+| pos | <code>number</code> | Позиция удаляемого элемента в массиве: -1 для первого элемента и 1 для последнего |
+
+```js
+// Создадим новый экземпляр объекта коллекции items.
+var getItem = new Scorocode.Object("items"); 
+// Запросим интересующий нас объект по его _id
+getItem.getById("NseSaqqd5v")
+    // Обработчик успешного выполнения запроса
+    .then((success)=>{
+        console.log(success);
+        // Удалим последний элемент из массива в поле "appearsin"
+        getItem.pop("appearsin", 1);
+        // Используем метод save() для записи данных объекта в базу данных приложения
+        getItem.save()
+        // Обработчик успешного выполнения запроса
+        .then((saved)=>{
+            // Выведем в консоль результат запроса
+            console.log(saved);
+        })
+        // Обработчик ошибки
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error);
+        })
+    })
+    // Обработчик ошибки
+    .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+    });
+```
+**Возвращает**: <code>Object</code> -   
 
 <a name="Scorocode.Object+inc"></a>
 
@@ -445,8 +498,30 @@ questItem.save()
 | amount | <code>Number</code> | Шаг увеличения |
 
 **Пример**  
-```js
-// Dragons
+// Создадим новый экземпляр объекта коллекции items.
+var getItem = new Scorocode.Object("items"); 
+// Запросим интересующий нас объект по его _id
+getItem.getById("NseSaqqd5v")
+    // Обработчик успешного выполнения запроса
+    .then((success)=>{
+        console.log(success);
+        // Удалим последний элемент из массива в поле "appearsin"
+        getItem.inc("position", 1);
+        getItem.save()
+        // Обработчик успешного выполнения запроса
+        .then((incremented)=>{
+            // Выведем в консоль результат запроса
+            console.log(incremented);
+        })
+        // Обработчик ошибки
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error);
+        })
+    })
+    // Обработчик ошибки
+    .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+    });// Dragons
 ```
 <a name="Scorocode.Object+currentDate"></a>
 

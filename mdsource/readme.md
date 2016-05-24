@@ -6,13 +6,13 @@
     * 
         * [.Object](Scorocode.Object.md#Scorocode.Object)
             * [new Object(collName)](Scorocode.Object.md#new_Scorocode.Object_new)
-            * [.getById(_id, options)](Scorocode.Object.md#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;ScorocodeObject&gt;](#Scorocode.Object)</code>
-            * [.get(key)](Scorocode.Object.md#Scorocode.Object+get) ⇒ <code>promise.&lt;value&gt;</code>
+            * [.getById(_id, options)](Scorocode.Object.md#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
+            * [.get(key)](Scorocode.Object.md#Scorocode.Object+get) ⇒ <code>promise.&lt;Значение поля&gt;</code>
             * [.getFileLink(field)](Scorocode.Object.md#Scorocode.Object+getFileLink) ⇒ <code>String</code>
-            * [.uploadFile(field, filename, file, options)](Scorocode.Object.md#Scorocode.Object+uploadFile) ⇒ <code>promise.&lt;Object&gt;</code>
-            * [.save(options)](Scorocode.Object.md#Scorocode.Object+save) ⇒ <code>[Object](#Scorocode.Object)</code>
-            * [.remove(options)](Scorocode.Object.md#Scorocode.Object+remove) ⇒ <code>Object</code>
-            * [.extend(collName, childObject)](Scorocode.Object.md#Scorocode.Object+extend) ⇒ <code>Object</code>
+            * [.uploadFile(field, filename, file, options)](Scorocode.Object.md#Scorocode.Object+uploadFile) ⇒ <code>promise.&lt;String&gt;</code>
+            * [.save(options)](Scorocode.Object.md#Scorocode.Object+save) ⇒ <code>[Scorocode.Object](#Scorocode.Object)</code>
+            * [.remove(options)](Scorocode.Object.md#Scorocode.Object+remove) ⇒ <code>{count: Number, docs: Array}</code>
+            * [.extend(collName, childObject)](Scorocode.Object.md#Scorocode.Object+extend) ⇒ <code>dragons</code>
             * [.set(data)](Scorocode.Object.md#Scorocode.Object+set)
             * [.push(key, value)](Scorocode.Object.md#Scorocode.Object+push) ⇒ <code>Object</code>
             * [.pull(key, value)](Scorocode.Object.md#Scorocode.Object+pull) ⇒ <code>Object</code>
