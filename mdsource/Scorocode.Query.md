@@ -41,88 +41,261 @@ Scorocode.Query
 #### new Query(collName)
 Запрос данных приложения
 
-**Возвращает**: <code>[Query](#Scorocode.Query)</code> - Возвращает Scorocode.Query  
-**Исключение**:
-
-- <code>String</code> 'Collection name must be a Тип of string'
-
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | collName | <code>string</code> | Название коллекции |
 
+**Пример**
+```js
+// Создадим новый экземпляр запроса к коллекции items.
+var data = new Scorocode.Query("items");
+// Запросим все объекты коллекции
+data.find()
+    // Обработка успешного выполнения запроса
+    .then((finded) =>{
+        //Выведем полученные данные в консоль
+        console.log(finded);
+    })
+    // Обработка ошибки 
+    .catch((err)=>{
+        console.log(err)
+    });    
+
+```
+**Возвращает**: <code>[Query](#Scorocode.Query)</code> - Возвращает экземпляр Scorocode.Query  
+**Исключение**:
+- <code>String</code> 'Collection name must be a Тип of string'
+
+
 <a name="Scorocode.Query+find"></a>
 
-#### query.find(options) ⇒ <code>Object</code>
-Here be Dragons
+#### query.find(options) ⇒ <code>Promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code>
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
+Метод для запроса документов из коллекции. Возвращает данные объектов, которые соответствуют условиям выборки. Если условия не заданы, по-умолчанию возвращает первые 100 объектов коллекции.
+
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| options | <code>Object</code> | Действия, которые будут выполнены при обратном вызове в случае успешного или ошибочного выполнения |
+| options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
-**Пример**  
+**Пример**
 ```js
-var getObjects = new Scorocode.Query("items");
-getObjects.find()
+// Создадим новый экземпляр запроса к коллекции items.
+var data = new Scorocode.Query("items");
+// Запросим все объекты коллекции
+data.find()
+    // Обработка успешного выполнения запроса
+    .then((finded) =>{
+        var util = require('util');
+        //Выведем полученные данные в консоль
+        console.log(util.inspect(finded, {showHidden: false, depth: null}))
+    })
+    // Обработка ошибки 
+    .catch((err)=>{
+        console.log(err)
+    });    
 ```
+
+**Возвращает**: <code>Promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса. 
+- "error" - <code>Boolean</code> - Флаг ошибки
+- "limit" - <code>Number</code>  - лимит размера выборки
+- "skip" - <code>Number</code>  - количество документов, которое было пропущено при выборке
+- "result" - <code>Array</code>  - массив полученных данных
+
+```
+{ 
+    error: false,
+    limit: 100,
+    skip: 0,
+    result:
+    [ 
+       { _id: 'CrT49joIxn',
+           createdAt: Wed May 25 2016 17:24:17 GMT+0300 (RTZ 2 (зима)),
+           updatedAt: Wed May 25 2016 22:15:03 GMT+0300 (RTZ 2 (зима)),
+           readACL: [],
+           updateACL: [],
+           removeACL: [],
+           arrayField: [ false,"",42.42,[1,2,3],["Массив",{"123": 4}],{ "Объект": true }],
+           price: 41.999 
+       },
+       // ...
+       { _id: 'NseSaqqd5v',
+           createdAt: Wed May 25 2016 17:24:17 GMT+0300 (RTZ 2 (зима)),
+           updatedAt: Wed May 25 2016 22:15:03 GMT+0300 (RTZ 2 (зима)),
+           readACL: [],
+           updateACL: [],
+           removeACL: []
+       } 
+    ]
+}
+```
+
 <a name="Scorocode.Query+count"></a>
 
-#### query.count(options) ⇒ <code>Object</code>
-Метод для подсчета количества объектов, которые удовлетворяют запросу.
+#### query.count(options) ⇒ <code>Promise.{error: Boolean, result: Number}</code>
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
+Метод для подсчета количества объектов, которые удовлетворяют условиям запроса.
+
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| options | <code>Object</code> | Действия, которые будут выполнены при обратном вызове в случае успешного или ошибочного выполнения |
+| options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
 **Пример**  
 ```js
-var countObjects = new Scorocode.Query("users");
-countObjects.count()
+// Создадим новый экземпляр запроса к коллекции items.
+var countItems = new Scorocode.Query("items");
+// Подсчитаем количество объектов с существующим значением поля "price".
+countItems.exists("price")
+    .count()
+        // Обработчик успешного выполнения запроса
+        .then((counted) => {
+            // Выведем результат в консоль.
+            console.log(counted) // { error: false, result: 5 }
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
 ```
+**Возвращает**: <code>Promise.{error: Boolean, result: Number}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
+- "error" - <code>Boolean</code> - Флаг ошибки
+- "result" - <code>Number</code>  - Количество объектов, подходящих под условие выборки.
+
 <a name="Scorocode.Query+update"></a>
 
-#### query.update(Object, options) ⇒ <code>Object</code>
-Here be Dragons
+#### query.update(Object, options) ⇒ <code>Promise.{error: Boolean, result: {count: Number, docs: Array}}</code>
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
+Метод для обновления запрошенных объектов.
+
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| Object | <code>Object</code> | Here be Dragons |
-| options | <code>Object</code> | Действия, которые будут выполнены при обратном вызове в случае успешного или ошибочного выполнения |
+| Object | <code>Scorocode.UpdateOps</code> | Объект Scorocode.UpdateOps в который переданы обновляемые данные. |
+| options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
+
+
+**Пример**
+```JS
+// Создадим новый экземпляр запроса к коллекции items и объект обновления.
+var Items = new Scorocode.Query("items");
+var updateItems = new Scorocode.UpdateOps("items");
+
+// Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.
+Items.notEqualTo("price", 42)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Установим новое значение поля "price"
+            updateItems.set("price", 42);
+            // Обновим запрошенные объекты
+            return Items.update(updateItems)
+        })
+        // Обработчик успешного выполнения запроса
+        .then((updated) => {
+            // Выведем результат  в консоль.
+            console.log(updated);
+        }) 
+        // Обработчик ошибки
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
+
+```
+
+**Возвращает**: <code>Promise.{error: Boolean, result: {count: Number, docs: Array}}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
+
+- "error" - <code>Boolean</code> - Флаг ошибки
+- "result" - <code>Object</code>  - Результат выполнения запроса
+    - "count" - <code>Number</code>  - Количество измененных объектов
+    - "docs" - <code>Array</code>  - Массив _id измененных объектов.
+
+```
+{ error: false,
+  result:
+   { count: 8,
+     docs:[ 
+        'CrT49joIxn',
+        '8Qcfll2GwE',
+        'dMSYsK8jld',
+        '6TFVG5UqV6',
+        'gNxzwAfvDj',
+        'eoVWeg9oeY',
+        'vRf58kEDpo',
+        'abOkjQAnYE' 
+        ] 
+    } 
+}
+```
 
 <a name="Scorocode.Query+remove"></a>
 
-#### query.remove(options) ⇒ <code>Object</code>
-Here be Dragons
+#### query.remove(options) ⇒ <code>Promise.{ecount: Number, docs: Array}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
+Метод для удаления запрошенных объектов.
+
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| options | <code>Object</code> | Действия, которые будут выполнены при обратном вызове в случае успешного или ошибочного выполнения |
+| options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
+
+**Пример**
+```js
+Items.exists("arrayField")
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((finded) => {
+            // Удалим запрошенные объекты
+            Items.remove(finded)
+                // Обработчик успешного выполнения запроса
+                .then((result) => {
+                    // Выведем результат в консоль.
+                    console.log(result);
+                })  
+                // Обработчик ошибки
+                .catch((error) => {
+                    console.log("Что-то пошло не так: \n", error)
+                });
+        })
+        .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+        });
+```
+
+**Возвращает**: <code>Promise.{ecount: Number, docs: Array}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
+- "count" - <code>Number</code>  - Количество измененных объектов
+- "docs" - <code>Array</code>  - Массив _id измененных объектов.
+```
+{ 
+    count: 4, 
+    docs:[ 
+        'CrT49joIxn', 
+        'eoVWeg9oeY', 
+        'vRf58kEDpo', 
+        'abOkjQAnYE'
+        ] 
+}
+```
 
 <a name="Scorocode.Query+reset"></a>
 
 #### query.reset() ⇒ <code>Object</code>
 Сброс условий выборки
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 <a name="Scorocode.Query+equalTo"></a>
 
 #### query.equalTo(field, value) ⇒ <code>Object</code>
 Метод для получения всех объектов, со значением поля, соответствующим запрошенному.
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 
 | Параметр | Тип | Описание |
@@ -139,28 +312,38 @@ getObjects.find()
 <a name="Scorocode.Query+notEqualTo"></a>
 
 #### query.notEqualTo(field, value) ⇒ <code>Object</code>
-Метод для получения всех объектов, значение поля которых не соответствует заданному в запросе.
+Метод для установления условия выборки: найти все объекты, кроме объектов значение поля которых равно указанному в условии.
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| field | <code>string</code> | Идентификатор поля |
-| value | <code>string</code> | Значение |
+| field | <code>string</code> | Имя поля, которому задается условие |
+| value | <code>string</code> | Значение поля |
 
 **Пример**  
 ```js
+// Создадим новый экземпляр запроса к коллекции items.
 var getObjects = new Scorocode.Query("items");
-getObjects.notEqualTo("name", "Гидроэлектрический регулятор магнитосферы");
-getObjects.find()
+// Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.
+getObjects.notEqualTo("price", 42)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) // { error: false, result: 5 }
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
 ```
 <a name="Scorocode.Query+containedIn"></a>
 
 #### query.containedIn(field, value) ⇒ <code>Object</code>
 Метод для получения всех объектов, значение поля которых содержит указанные в запросе элементы массива.
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 **Исключение**:
 
@@ -177,7 +360,7 @@ getObjects.find()
 #### query.containsAll(field, value) ⇒ <code>Object</code>
 Метод для получения всех объектов, значение поля которых состоит из указанных в запросе элементов массива.
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные
 var getAnotherUsers = new Scorocode.Query("users");
 getAnotherUsers.ContainedIn("username",["mitishtchi", "usar", "user4"]);  
@@ -196,7 +379,7 @@ getAnotherUsers.ContainedIn("username",["mitishtchi", "usar", "user4"]);
 #### query.notContainedIn(field, value) ⇒ <code>Object</code>
 Метод для получения всех объектов, значение поля которых не содержит указанные в запросе элементы массива.
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 **Исключение**:
 
@@ -218,7 +401,7 @@ getAnotherUsers.notContainedIn("email",["user@mailinator.com", "user3@mailinator
 #### query.greaterThan(field, value) ⇒ <code>Object</code>
 Метод для получения всех объектов, значение поля которых больше, чем указанное в запросе число.
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 **Исключение**:
 
@@ -241,7 +424,7 @@ getObjects.find();
 #### query.greaterThanOrEqualTo(field, value) ⇒ <code>Object</code>
 Метод для получения всех объектов, значение поля которых не меньше, чем указанное в запросе число.
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 **Исключение**:
 
@@ -264,7 +447,7 @@ getObjects.find();
 #### query.lessThan(field, value) ⇒ <code>Object</code>
 Метод для получения всех объектов, значение поля которых меньше, чем указанное в запросе число.
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные
 var getObjects = new Scorocode.Query("content");
 getObjects.lessThan("numField", 10);
@@ -284,7 +467,7 @@ getObjects.find();
 #### query.lessThanOrEqualTo(field, value) ⇒ <code>Object</code>
 Метод для получения всех объектов, значение поля которых не больше, чем указанное в запросе число.
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 **Исключение**:
 
@@ -307,7 +490,7 @@ getObjects.find();
 #### query.exists(field) ⇒ <code>Object</code>
 Метод для получения всех объектов с существующим значением заданного поля
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 
 | Параметр | Тип | Описание |
@@ -325,7 +508,7 @@ getObjects.find();
 #### query.doesNotExist(field) ⇒ <code>Object</code>
 Метод для получения всех объектов с существующим значением заданного поля
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные
 var getObjects = new Scorocode.Query("content");
 getObjects.doesNotExist("numField");
@@ -340,7 +523,7 @@ getObjects.find();
 #### query.contains(field, value) ⇒ <code>Object</code>
 Метод для получения всех объектов со значением заданного поля, соответствующим заданному регулярному выражению.
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 **Исключение**:
 
@@ -361,7 +544,7 @@ TODO
 #### query.startsWith(field, value) ⇒ <code>Object</code>
 Here be Dragons
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 **Исключение**:
 
@@ -384,7 +567,7 @@ getContent.find();
 #### query.endsWith(field, value) ⇒ <code>Object</code>
 Here be Dragons
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 **Исключение**:
 
@@ -404,7 +587,7 @@ getContent.find();
 #### query.limit(Limit) ⇒ <code>Object</code>
 Метод для определения размера выборки
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 **Исключение**:
 
@@ -426,7 +609,7 @@ getUsers.find();
 #### query.skip(skip) ⇒ <code>Object</code>
 Метод для пропуска части объектов
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 **Исключение**:
 
@@ -448,7 +631,7 @@ getUsers.find();
 #### query.page(page) ⇒ <code>Object</code>
 Метод для постраничного вывода результатов (то же самое, что и skip, но не нужно рассчитывать итерации)
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 **Исключение**:
 
@@ -469,7 +652,7 @@ getDataPaginated.limit(15).page(1).find();
 #### query.ascending(field) ⇒ <code>Object</code>
 Here be Dragons
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 
 | Параметр | Тип | Описание |
@@ -487,7 +670,7 @@ getObjects.find();
 #### query.descending(field) ⇒ <code>Object</code>
 Here be Dragons
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 
 | Параметр | Тип | Описание |
@@ -505,7 +688,7 @@ getObjects.find();
 #### query.or(query) ⇒ <code>Object</code>
 Here be Dragons
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 **Исключение**:
 
@@ -525,7 +708,7 @@ TODO
 #### query.and(query) ⇒ <code>Object</code>
 Here be Dragons
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 
 | Параметр | Тип | Описание |
@@ -541,7 +724,7 @@ TODO
 #### query.select() ⇒ <code>Object</code>
 Метод для указания списка возвращаемых полей
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 **Пример**  
 ```js
@@ -553,7 +736,7 @@ getObjects.select("fileField").find()
 #### query.raw(filter) ⇒ <code>Object</code>
 Прямой запрос к БД приложения
 
-**Тип**: instance method of <code>[Query](#Scorocode.Query)</code>  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
 
 | Параметр | Тип | Описание |
