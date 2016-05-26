@@ -360,19 +360,16 @@ getItems.notEqualTo("price", 42)
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 
-- <code>String</code> 'Value must be of Тип: Array'
-
-
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| field | <code>String</code> | Идентификатор поля |
+| field | <code>String</code> | Имя поля, которому задается условие |
 | value | <code>Array</code> | Массив значений |
 
 **Пример**
 ```js
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
-// Установим условие выборки - запросить все объекты со значением 42, 41.999 или 42 в полe "price"
+// Установим условие выборки - запросить все объекты со значением -42, 41.999 или 42 в полe "price"
 getItems.containedIn("price",[-42, 41.999, 42])
     // Выполним запрос к данным коллекции
     .find()
@@ -386,114 +383,171 @@ getItems.containedIn("price",[-42, 41.999, 42])
         });
 ```
 
+**Исключения**
+
+- <code>String</code> 'Value must be of Тип: Array'
+
+
 <a name="Scorocode.Query+containsAll"></a>
 
-#### query.containsAll(field, value) ⇒ <code>Object</code>
-Метод для получения всех объектов, значение поля которых состоит из указанных в запросе элементов массива.
-
-
+#### query.containsAll(field, value)
+Метод для получения всех объектов, значение поля которых содержит все указанные в запросе элементы массива.
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные
-var getAnotherUsers = new Scorocode.Query("users");
-getAnotherUsers.ContainedIn("username",["mitishtchi", "usar", "user4"]);  
+
+| Параметр | Тип | Описание |
+| --- | --- | --- |
+| field | <code>String</code> | Имя поля, которому задается условие |
+| value | <code>Array</code> | Массив значений |
+
+```js
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим условие выборки - запросить все объекты, содержащие числа 4, 8, 15, 16, 23, 42 в полe "arrayField"
+getItems.containsAll("arrayField",[4, 8, 15, 16, 23, 42])
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
+```
+
 **Исключение**:
 
 - <code>String</code> 'Value must be of Тип: Array'
 
 
-| Параметр | Тип | Описание |
-| --- | --- | --- |
-| field | <code>string</code> | Идентификатор поля |
-| value | <code>array</code> | Значение |
 
 <a name="Scorocode.Query+notContainedIn"></a>
 
-#### query.notContainedIn(field, value) ⇒ <code>Object</code>
+#### query.notContainedIn(field, value)
 Метод для получения всех объектов, значение поля которых не содержит указанные в запросе элементы массива.
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
-**Исключение**:
-
-- <code>String</code> 'Value must be of Тип: Array'
 
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| field | <code>string</code> | Идентификатор поля |
-| value | <code>array</code> | Значение |
+| field | <code>string</code> | Имя поля, которому задается условие |
+| value | <code>array</code> | Массив значений |
 
 **Пример**  
 ```js
-var getAnotherUsers = new Scorocode.Query("users");
-getAnotherUsers.notContainedIn("email",["user@mailinator.com", "user3@mailinator.com", "user4@mailinator.com"]);
-```
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим условие выборки - запросить все объекты, значения поля которых не указано в массиве [41.999 или 42]
+getItems.notContainedIn("price",[41.999, 42])
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });```
+
+**Исключения**:
+
+- <code>String</code> 'Value must be of Тип: Array'
+
+
+
 <a name="Scorocode.Query+greaterThan"></a>
 
-#### query.greaterThan(field, value) ⇒ <code>Object</code>
+#### query.greaterThan(field, value)
 Метод для получения всех объектов, значение поля которых больше, чем указанное в запросе число.
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные  
-**Исключение**:
-
-- <code>String</code> "Value must be a number"
-
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| field | <code>string</code> | Идентификатор поля |
-| value | <code>number</code> | Значение |
+| field | <code>String</code> | Имя поля, которому задается условие |
+| value | <code>Number | Date</code> | Значение условия |
 
 **Пример**  
 ```js
-var getObjects = new Scorocode.Query("content");
-getObjects.greaterThan("numField", 10);
-getObjects.find();
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим условие выборки - запросить все объекты, созданные позже 2016-05-19T15:35:16.000Z
+getItems.greaterThan("createdAt", "2016-05-19T15:35:16.000Z")
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
 ```
+
 <a name="Scorocode.Query+greaterThanOrEqualTo"></a>
 
-#### query.greaterThanOrEqualTo(field, value) ⇒ <code>Object</code>
+#### query.greaterThanOrEqualTo(field, value)
 Метод для получения всех объектов, значение поля которых не меньше, чем указанное в запросе число.
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
-**Исключение**:
-
-- <code>String</code> "Value must be a number"
-
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| field | <code>string</code> | Идентификатор поля |
-| value | <code>number</code> | Значение |
+| field | <code>String</code> | Имя поля, которому задается условие |
+| value | <code>Number | Date</code> | Значение условия |
 
 **Пример**  
 ```js
-var getObjects = new Scorocode.Query("content");
-getObjects.greaterThanOrEqualTo("numField", 10);
-getObjects.find();
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим условие выборки - запросить все объекты со значением больше, либо равным 41.999 
+getItems.greaterThanOrEqualTo("price", 41.999)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
 ```
 <a name="Scorocode.Query+lessThan"></a>
 
-#### query.lessThan(field, value) ⇒ <code>Object</code>
+#### query.lessThan(field, value)
 Метод для получения всех объектов, значение поля которых меньше, чем указанное в запросе число.
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные
-var getObjects = new Scorocode.Query("content");
-getObjects.lessThan("numField", 10);
-getObjects.find();  
-**Исключение**:
-
-- <code>String</code> "Value must be a number"
-
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| field | <code>string</code> | Идентификатор поля |
-| value | <code>number</code> | Значение |
+| field | <code>String</code> | Имя поля, которому задается условие |
+| value | <code>Number | Date</code> | Значение условия |
+
+**Пример**  
+```js
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим условие выборки - запросить все объекты со значением поля price меньшe 41
+getItems.lessThan("price", 41)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
+```
 
 <a name="Scorocode.Query+lessThanOrEqualTo"></a>
 
@@ -501,30 +555,36 @@ getObjects.find();
 Метод для получения всех объектов, значение поля которых не больше, чем указанное в запросе число.
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
-**Исключение**:
-
-- <code>String</code> "Value must be a number"
-
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| field | <code>string</code> | Идентификатор поля |
-| value | <code>number</code> | Значение |
+| field | <code>String</code> | Имя поля, которому задается условие |
+| value | <code>Number | Date</code> | Значение условия |
 
 **Пример**  
 ```js
-var getObjects = new Scorocode.Query("content");
-getObjects.lessThanOrEqualTo("numField", 10);
-getObjects.find();
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим условие выборки - запросить все объекты, обновленные не позже 2016-05-19T15:35:16.000Z
+getItems.lessThanOrEqualTo("updatedAt", "2016-05-19T15:35:16.000Z")
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
 ```
+
 <a name="Scorocode.Query+exists"></a>
 
 #### query.exists(field) ⇒ <code>Object</code>
 Метод для получения всех объектов с существующим значением заданного поля
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -536,6 +596,8 @@ var getObjects = new Scorocode.Query("content");
 getObjects.exists("numField");
 getObjects.find();
 ```
+
+
 <a name="Scorocode.Query+doesNotExist"></a>
 
 #### query.doesNotExist(field) ⇒ <code>Object</code>
