@@ -581,174 +581,275 @@ getItems.lessThanOrEqualTo("updatedAt", "2016-05-19T15:35:16.000Z")
 
 <a name="Scorocode.Query+exists"></a>
 
-#### query.exists(field) ⇒ <code>Object</code>
+#### query.exists(field
 Метод для получения всех объектов с существующим значением заданного поля
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| field | <code>string</code> | Идентификатор поля |
+| field | <code>String</code> | Имя поля, которому задается условие |
 
 **Пример**  
 ```js
-var getObjects = new Scorocode.Query("content");
-getObjects.exists("numField");
-getObjects.find();
+// Создадим новый экземпляр запроса к коллекции items.
+var Items = new Scorocode.Query("items");
+// Подсчитаем количество объектов с существующим значением поля "price".
+Items.exists("price")
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result)
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
 ```
 
 
 <a name="Scorocode.Query+doesNotExist"></a>
 
-#### query.doesNotExist(field) ⇒ <code>Object</code>
-Метод для получения всех объектов с существующим значением заданного поля
-
-**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные
-var getObjects = new Scorocode.Query("content");
-getObjects.doesNotExist("numField");
-getObjects.find();  
+#### query.doesNotExist(field)
+Метод для получения всех объектов с отсутствующим значением в заданном поле
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| field | <code>string</code> | Идентификатор поля |
+| field | <code>String</code> | Имя поля, которому задается условие |
+
+
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
+```js
+// Создадим новый экземпляр запроса к коллекции items.
+var Items = new Scorocode.Query("items");
+// Подсчитаем количество объектов с отсутствующим значением поля "price".
+Items.doesNotExist("price")
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result)
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
+```  
+
 
 <a name="Scorocode.Query+contains"></a>
 
-#### query.contains(field, value) ⇒ <code>Object</code>
+#### query.contains(field, value)
 Метод для получения всех объектов со значением заданного поля, соответствующим заданному регулярному выражению.
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
-**Исключение**:
-
-- <code>String</code> 'Value must be of Тип: Array'
 
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| field | <code>string</code> | Идентификатор поля |
-| value | <code>array</code> | Значение |
+| field | <code>String</code> | Имя поля, которому задается условие |
+| value | <code>String</code> | Регулярное выражение |
 
 **Пример**  
 ```js
-TODO
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры.
+getItems.contains("someString","[0-9]")
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
 ```
+
+**Исключение**:
+
+- <code>String</code> '"Value must be a string"'
+
+
 <a name="Scorocode.Query+startsWith"></a>
 
-#### query.startsWith(field, value) ⇒ <code>Object</code>
-Here be Dragons
+#### query.startsWith(field, value) 
+Метод для получения всех объектов со значением заданного поля, начинающимся с указанной строки.
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
+
+| Параметр | Тип | Описание |
+| --- | --- | --- |
+| field | <code>String</code> | Имя поля, которому задается условие |
+| value | <code>String</code> | Значение условия |
+
+**Пример**  
+```js
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим условие выборки - запросить все объекты, значение поля "name" которых начинается с "Предм"
+getItems.startsWith("name", "Предм");
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
+```
+
 **Исключение**:
 
 - <code>String</code> "Value must be a string"
 
-
-| Параметр | Тип | Описание |
-| --- | --- | --- |
-| field | <code>string</code> | Идентификатор поля |
-| value | <code>string</code> | Значение |
-
-**Пример**  
-```js
-var getContent = new Scorocode.Query("content");
-getContent.startsWith("stringField", "Стр");
-getContent.find();
-```
 <a name="Scorocode.Query+endsWith"></a>
 
 #### query.endsWith(field, value) ⇒ <code>Object</code>
-Here be Dragons
+Метод для получения всех объектов со значением заданного поля, заканчивающимся на указанную строку.
 
-**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code> 
+
+| Параметр | Тип | Описание |
+| --- | --- | --- |
+| field | <code>String</code> | Идентификатор поля |
+| value | <code>String</code> | Значение условия |
+
+```js
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим условие выборки - запросить все объекты, значение поля "name" которых заканчивается на "чип"
+getItems.endsWith("name", "чип");
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
+```
+
 **Исключение**:
 
 - <code>String</code> "Value must be a string"
-var getContent = new Scorocode.Query("content");
-getContent.endssWith("stringField", "ока");
-getContent.find();
 
-
-| Параметр | Тип | Описание |
-| --- | --- | --- |
-| field | <code>string</code> | Идентификатор поля |
-| value | <code>string</code> | Значение |
 
 <a name="Scorocode.Query+limit"></a>
 
-#### query.limit(Limit) ⇒ <code>Object</code>
-Метод для определения размера выборки
+#### query.limit(Limit) 
+Метод для указания лимита выборки
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
-**Исключение**:
 
+| Параметр | Тип | Описание |
+| --- | --- | --- |
+| Limit | <code>Number</code> | Лимит выборки |
+
+**Пример**  
+```js
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим лимит выборки - не более 1000 объектов.
+// Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
+getItems.limit(1000).contains("someString","[a-zA-Z-0-9]")
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
+```
+
+**Исключение**:
 - <code>String</code> "Limit must be a positive number"
+
+<a name="Scorocode.Query+skip"></a>
+
+#### query.skip(skip)
+Метод для пропуска части объектов
+
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| Limit | <code>number</code> | Ограничение |
+| skip | <code>number</code> | Количество пропускаемых объектов |
 
 **Пример**  
 ```js
-var getUsers = new Scorocode.Query("users");
-getUsers.limit(15).startsWith("email", "pirate");
-getUsers.find();
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим лимит выборки - не более 1000 объектов.
+// Пропустим первые 1000 объектов и получим вторую тысячу.
+// Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
+getItems.limit(1000).skip(1000).contains("someString","[a-zA-Z-0-9]")
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
 ```
-<a name="Scorocode.Query+skip"></a>
 
-#### query.skip(skip) ⇒ <code>Object</code>
-Метод для пропуска части объектов
-
-**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
-**Исключение**:
+**Исключение**
 
 - <code>String</code> "Skip must be a positive number"
 
 
+<a name="Scorocode.Query+page"></a>
+
+#### query.page(page)
+Метод для постраничного вывода результатов
+
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
+
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| skip | <code>number</code> | The skip |
+| page | <code>Number</code> | Номер страницы |
 
 **Пример**  
 ```js
-var getUsers = new Scorocode.Query("users");
-getUsers.skip(100).startsWith("email", "pirate");
-getUsers.find();
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим лимит выборки - не более 30 объектов.
+// Запросим вторую страницу выборки
+// Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
+getItems.limit(30).page(2).contains("someString","[a-zA-Z-0-9]")
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
 ```
-<a name="Scorocode.Query+page"></a>
 
-#### query.page(page) ⇒ <code>Object</code>
-Метод для постраничного вывода результатов (то же самое, что и skip, но не нужно рассчитывать итерации)
-
-**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
 **Исключение**:
 
 - <code>String</code> "Page must be a positive number"
 
 
-| Параметр | Тип | Описание |
-| --- | --- | --- |
-| page | <code>Number</code> | The page |
-
-**Пример**  
-```js
-var getDataPaginated = new Scorocode.Query("items");
-getDataPaginated.limit(15).page(1).find();
-```
 <a name="Scorocode.Query+ascending"></a>
 
-#### query.ascending(field) ⇒ <code>Object</code>
-Here be Dragons
+#### query.ascending(field)
+
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -756,10 +857,25 @@ Here be Dragons
 
 **Пример**  
 ```js
-var getObjects = new Scorocode.Query("users");
-getObjects.ascending("username");
-getObjects.find();
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим лимит выборки - не более 30 объектов.
+// Отсортируем объекты в порядке возрастания даты изменения
+// Запросим первую страницу выборки
+// Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
+getItems.limit(30).ascending("updatedAt").page(1).contains("someString","[a-zA-Z-0-9]")
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
 ```
+
 <a name="Scorocode.Query+descending"></a>
 
 #### query.descending(field) ⇒ <code>Object</code>
@@ -774,9 +890,23 @@ Here be Dragons
 
 **Пример**  
 ```js
-var getObjects = new Scorocode.Query("users");
-getObjects.descending("username");
-getObjects.find();
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим лимит выборки - не более 30 объектов.
+// Отсортируем объекты в порядке убывания значения поля "price"
+// Запросим первую страницу выборки
+// Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
+getItems.limit(30).descending("price").page(1).contains("someString","[a-zA-Z-0-9]")
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
 ```
 <a name="Scorocode.Query+or"></a>
 
