@@ -476,7 +476,7 @@ getItem.getById("NseSaqqd5v")
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
-| value | <code>String | Number | Boolean| Array | Object | Date |</code> | Удаляемое значение  |
+| value | <code>String | Number | Boolean | Date | Array | Object </code> | Удаляемое значение  |
 
 **Пример**
 ```js
@@ -655,7 +655,8 @@ getItem.getById("NseSaqqd5v")
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
 | amount | <code>Number</code> | Шаг изменения |
 
-**Пример**  
+**Пример** 
+```Js 
 // Создадим новый экземпляр объекта коллекции items.
 var Item = new Scorocode.Object("items"); 
 // Запросим интересующий нас объект по его _id

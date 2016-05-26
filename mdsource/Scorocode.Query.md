@@ -39,12 +39,12 @@ Scorocode.Query
 <a name="new_Scorocode.Query_new"></a>
 
 #### new Query(collName)
-Запрос данных приложения
+Экземпляр запроса к данным коллекции
 
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| collName | <code>string</code> | Название коллекции |
+| collName | <code>String</code> | Название коллекции |
 
 **Пример**
 ```js
@@ -289,44 +289,57 @@ Items.exists("arrayField")
 Сброс условий выборки
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
+**Возвращает**: <code>Object</code> - Запрошенные данные 
+
 <a name="Scorocode.Query+equalTo"></a>
 
-#### query.equalTo(field, value) ⇒ <code>Object</code>
-Метод для получения всех объектов, со значением поля, соответствующим запрошенному.
+#### query.equalTo(field, value)
 
-**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
-
-| Параметр | Тип | Описание |
-| --- | --- | --- |
-| field | <code>string</code> | Идентификатор поля |
-| value | <code>string</code> | Значение |
-
-**Пример**  
-```js
-var getObjects = new Scorocode.Query("items");
-getObjects.equalTo("name", "Водяной чип");
-getObjects.find()
-```
-<a name="Scorocode.Query+notEqualTo"></a>
-
-#### query.notEqualTo(field, value) ⇒ <code>Object</code>
-Метод для установления условия выборки: найти все объекты, кроме объектов значение поля которых равно указанному в условии.
+Метод для получения всех объектов c указанным в условии значением поля.
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| field | <code>string</code> | Имя поля, которому задается условие |
-| value | <code>string</code> | Значение поля |
+| field | <code>String</code> | Имя поля, которому задается условие |
+| value | <code>String | Number | Boolean | Date | Array | Object</code> | Значение поля |
 
 **Пример**  
 ```js
 // Создадим новый экземпляр запроса к коллекции items.
-var getObjects = new Scorocode.Query("items");
+var getItems = new Scorocode.Query("items");
+// Установим условие выборки - запросить все объекты со значением 42 в полe "price"
+getItems.equalTo("price", 42)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
+```
+
+<a name="Scorocode.Query+notEqualTo"></a>
+
+#### query.notEqualTo(field, value)
+Метод для получения всех объектов, за исключением объектов с указанным в условии значением поля.
+
+**Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
+
+| Параметр | Тип | Описание |
+| --- | --- | --- |
+| field | <code>String</code> | Имя поля, которому задается условие |
+| value | <code>String | Number | Boolean | Date | Array | Object </code> | Значение поля |
+
+**Пример**  
+```js
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
 // Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.
-getObjects.notEqualTo("price", 42)
+getItems.notEqualTo("price", 42)
     // Выполним запрос к данным коллекции
     .find()
         // Обработчик успешного выполнения запроса
@@ -338,27 +351,47 @@ getObjects.notEqualTo("price", 42)
             console.log("Что-то пошло не так: \n", error)
         });
 ```
+
+
 <a name="Scorocode.Query+containedIn"></a>
 
-#### query.containedIn(field, value) ⇒ <code>Object</code>
+#### query.containedIn(field, value)
 Метод для получения всех объектов, значение поля которых содержит указанные в запросе элементы массива.
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
-**Исключение**:
 
 - <code>String</code> 'Value must be of Тип: Array'
 
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| field | <code>string</code> | Идентификатор поля |
-| value | <code>array</code> | Значение |
+| field | <code>String</code> | Идентификатор поля |
+| value | <code>Array</code> | Массив значений |
+
+**Пример**
+```js
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим условие выборки - запросить все объекты со значением 42, 41.999 или 42 в полe "price"
+getItems.containedIn("price",[-42, 41.999, 42])
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
+```
 
 <a name="Scorocode.Query+containsAll"></a>
 
 #### query.containsAll(field, value) ⇒ <code>Object</code>
 Метод для получения всех объектов, значение поля которых состоит из указанных в запросе элементов массива.
+
+
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
 **Возвращает**: <code>Object</code> - Запрошенные данные
