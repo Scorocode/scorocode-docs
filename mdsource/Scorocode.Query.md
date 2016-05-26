@@ -61,7 +61,6 @@ data.find()
     .catch((err)=>{
         console.log(err)
     });    
-
 ```
 **Возвращает**: <code>[Query](#Scorocode.Query)</code> - Возвращает экземпляр Scorocode.Query  
 **Исключение**:
@@ -234,7 +233,7 @@ Items.notEqualTo("price", 42)
 
 <a name="Scorocode.Query+remove"></a>
 
-#### query.remove(options) ⇒ <code>Promise.{ecount: Number, docs: Array}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
+#### query.remove(options) ⇒ <code>Promise.{count: Number, docs: Array}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
 
 Метод для удаления запрошенных объектов.
 
@@ -551,7 +550,7 @@ getItems.lessThan("price", 41)
 
 <a name="Scorocode.Query+lessThanOrEqualTo"></a>
 
-#### query.lessThanOrEqualTo(field, value) ⇒ <code>Object</code>
+#### query.lessThanOrEqualTo(field, value) 
 Метод для получения всех объектов, значение поля которых не больше, чем указанное в запросе число.
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
@@ -910,60 +909,116 @@ getItems.limit(30).descending("price").page(1).contains("someString","[a-zA-Z-0-
 ```
 <a name="Scorocode.Query+or"></a>
 
-#### query.or(query) ⇒ <code>Object</code>
-Here be Dragons
+#### query.or(query)
+
+Метод для логического сложения условий нескольких выборок
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
+
+
+| Параметр | Тип | Описание |
+| --- | --- | --- |
+| query | <code>Scorocode.Query</code> | Запрос, который включается в дизъюнкцию |
+
+**Пример**  
+```js
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+var range1 = new Scorocode.Query("items");
+var range2 = new Scorocode.Query("items");
+
+var getItems = new Scorocode.Query("items");
+// Установим условие выборки - запросить все объекты, созданные не позже 2016-05-18T10:00:00.000Z
+range1.lessThanOrEqualTo("createdAt", "2016-05-19T10:00:00.000Z");
+// Установим условие выборки - запросить все объекты, созданные не раньше 2016-05-20T10:00:00.000Z
+range2.greaterThanOrEqualTo("createdAt", "2016-05-21T15:00:00.000Z");
+// Логически сложим запросы 
+getItems.or(range1).or(range2)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
+```
+
 **Исключение**:
 
 - <code>String</code> "Invalid Тип of Query"
 
-
-| Параметр | Тип | Описание |
-| --- | --- | --- |
-| query | <code>query</code> | The query |
-
-**Пример**  
-```js
-TODO
-```
 <a name="Scorocode.Query+and"></a>
 
-#### query.and(query) ⇒ <code>Object</code>
-Here be Dragons
+#### query.and(query) 
+Метод для логического умножения условий нескольких выборок
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| query | <code>query</code> | The query |
+| query | <code>Scorocode.Query</code> | Запрос, который включается в конъюнкцию |
 
 **Пример**  
 ```js
-TODO
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+var range = new Scorocode.Query("items");
+var price = new Scorocode.Query("items");
+
+var getItems = new Scorocode.Query("items");
+// Установим условие выборки - запросить все объекты, созданные не раньше 2016-05-18T10:00:00.000Z
+range.greaterThanOrEqualTo("createdAt", "2016-05-19T10:00:00.000Z");
+// Установим условие выборки - запросить все объекты, значение поля "price" которых отсутствует
+price.doesNotExists("price");
+// Логически умножим запросы 
+getItems.and(range).and(price)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) => {
+            console.log("Что-то пошло не так: \n", error)
+        });
 ```
+
 <a name="Scorocode.Query+select"></a>
 
-#### query.select() ⇒ <code>Object</code>
-Метод для указания списка возвращаемых полей
+#### query.select() 
+Метод для указания списка возвращаемых полей. 
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
+
 **Пример**  
 ```js
-var getObjects = new Scorocode.Query("content");
-getObjects.select("fileField").find()
+// Создадим новый экземпляр запроса к коллекции items.
+var data = new Scorocode.Query("items");
+// Запросим все объекты коллекции и получим значение их поля "price".
+data.select("price").find()
+    // Обработка успешного выполнения запроса
+    .then((finded) =>{
+        //Выведем полученные данные в консоль. 
+        console.log(finded);
+    })
+    // Обработка ошибки 
+    .catch((err)=>{
+        console.log(err)
+    });    
+
 ```
+
 <a name="Scorocode.Query+raw"></a>
 
-#### query.raw(filter) ⇒ <code>Object</code>
+#### query.raw(filter) 
 Прямой запрос к БД приложения
 
 **Тип**: Метод <code>[Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| filter | <code>Object</code> | The filter |
+| filter | <code>Object</code> | Применяемый фильтр |
