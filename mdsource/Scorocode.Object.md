@@ -6,25 +6,27 @@ Scorocode.Object
 **Тип**: Класс <code>[Scorocode](Scorocode.md#Scorocode)</code>  
 **Содержание**
 * [.Object](Scorocode.Object.md#Scorocode.Object)
-    * [new Object(collName)](Scorocode.Object.md#new_Scorocode.Object_new)
+    * [new Object(collName)](Scorocode.Object.md#new_Scorocode.Object_new) ⇒ <code>Scorocode.Object</code>
     * [.getById(_id, options)](Scorocode.Object.md#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
-    * [.get(key)](Scorocode.Object.md#Scorocode.Object+get) ⇒ <code>value</code>
+    * [.get(key)](Scorocode.Object.md#Scorocode.Object+get)
     * [.getFileLink(field)](Scorocode.Object.md#Scorocode.Object+getFileLink) ⇒ <code>String</code>
     * [.uploadFile(field, filename, file, options)](Scorocode.Object.md#Scorocode.Object+uploadFile) ⇒ <code>promise.&lt;String&gt;</code>
     * [.save(options)](Scorocode.Object.md#Scorocode.Object+save) ⇒ <code>[Scorocode.Object](#Scorocode.Object)</code>
     * [.remove(options)](Scorocode.Object.md#Scorocode.Object+remove) ⇒ <code>{count: Number, docs: Array}</code>
-    * [.extend(collName, childObject)](Scorocode.Object.md#Scorocode.Object+extend) ⇒ <code>dragons</code>
+    * [.extend(collName, childObject)](Scorocode.Object.md#Scorocode.Object+extend) ⇒ <code>[\[Scorocode.Object\]](#Scorocode.Object)</code>
     * [.set(data)](Scorocode.Object.md#Scorocode.Object+set)
-    * [.push(key, value)](Scorocode.Object.md#Scorocode.Object+push) ⇒ <code>Object</code>
-    * [.pull(key, value)](Scorocode.Object.md#Scorocode.Object+pull) ⇒ <code>Object</code>
-    * [.pullAll(key, value)](Scorocode.Object.md#Scorocode.Object+pullAll) ⇒ <code>Object</code>
-    * [.addToSet(key, value)](Scorocode.Object.md#Scorocode.Object+addToSet) ⇒ <code>Object</code>
-    * [.pop(key, pos)](Scorocode.Object.md#Scorocode.Object+pop) ⇒ <code>Object</code>
+    * [.push(key, value)](Scorocode.Object.md#Scorocode.Object+push) 
+    * [.pull(key, value)](Scorocode.Object.md#Scorocode.Object+pull) 
+    * [.pullAll(key, value)](Scorocode.Object.md#Scorocode.Object+pullAll) 
+    * [.addToSet(key, value)](Scorocode.Object.md#Scorocode.Object+addToSet) 
+    * [.pop(key, pos)](Scorocode.Object.md#Scorocode.Object+pop) 
     * [.inc(key, amount)](Scorocode.Object.md#Scorocode.Object+inc)
     * [.currentDate()](Scorocode.Object.md#Scorocode.Object+currentDate)
     * [.mul(key, number)](Scorocode.Object.md#Scorocode.Object+mul)
     * [.min()](Scorocode.Object.md#Scorocode.Object+min)
     * [.max()](Scorocode.Object.md#Scorocode.Object+max)
+
+----------------------------------------------------------------------------------------------
 
 <a name="new_Scorocode.Object_new"></a>
 
@@ -69,9 +71,11 @@ questItem.save()
 }
 ```
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+getById"></a>
 
-#### object.getById(_id, options) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
+#### Object.getById(_id, options) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
 Метод для для получения объекта коллекции из БД по его _id. 
 
 **Тип**: метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -126,10 +130,11 @@ getItem.getById("NseSaqqd5v")
  [Error: Document not found]
 ```
 
+----------------------------------------------------------------------------------------------
 
 <a name="Scorocode.Object+get"></a>
 
-#### object.get(key) ⇒ <code>promise.&lt;value&gt;</code>
+#### Object.get(key) ⇒ <code>promise.&lt;value&gt;</code>
 Метод для получения данных указанного поля объекта.
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -164,9 +169,11 @@ getItem.getById("NseSaqqd5v")
  Водяной чип
 ```
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+uploadFile"></a>
 
-#### object.uploadFile(field, filename, file, options) ⇒ <code>promise.&lt;String&gt;</code>
+#### Object.uploadFile(field, filename, file, options) ⇒ <code>promise.&lt;String&gt;</code>
 Метод для загрузки файлов
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -215,9 +222,11 @@ attachToItem.getById("xL0uOFtiJx")
 
 - <code>String</code> 'You must first create a document' -Dragons
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+getFileLink"></a>
 
-#### object.getFileLink(field) ⇒ <code>String</code>
+#### Object.getFileLink(field) ⇒ <code>String</code>
 Метод для получения ссылки на файл.
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -256,9 +265,11 @@ attachToItem.getById("xL0uOFtiJx")
 - <code>Error</code> 'Unknown field' - Поле не существует
 - <code>Error</code> 'Field is empty' - Поле пустое
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+save"></a>
 
-#### object.save(options) ⇒ <code>[Object](#Scorocode.Object)</code>
+#### Object.save(options) ⇒ <code>[Object](#Scorocode.Object)</code>
 Метод сохраняет объект в хранилище данных приложения или обновляет уже имеющийся там объект
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -301,9 +312,11 @@ questItem.save()
   removeACL: [] }
 ```
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+remove"></a>
 
-#### object.remove(options) ⇒ <code>dragons</code>
+#### Object.remove(options) ⇒ <code>dragons</code>
 Метод для удаления указанного объекта
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -349,10 +362,13 @@ getItem.getById("hejJU4BEGP")
     count: 1, 
     docs: [ 'hejJU4BEGP' ] 
 }
-``` 
+```
+
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+extend"></a>
 
-#### object.extend(collName, childObject) ⇒ <code>Scorocode.Object</code>
+#### Object.extend(collName, childObject) ⇒ <code>Scorocode.Object</code>
 
 Метод для преобразования данных выборки Scorocode.Query в отдельные экземпляры Scorocode.Object
 
@@ -389,13 +405,15 @@ data.find()
 ```
 см.
 * [new Object(collName)](#new_Scorocode.Object_new)
-* [.find(options)](Scorocode.Query.md#Scorocode.Query+find) ⇒ <code>Object</code>
+ * [.find(options)](Scorocode.Query.md#Scorocode.Query+find) ⇒ <code>Promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code>
 
 **Возвращает**: <code>Scorocode.Object</code> - Возвращает Scorocode.Object
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+set"></a>
 
-#### object.set(data)
+#### Object.set(data)
 Метод для передачи данных объекту
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -426,9 +444,11 @@ questItem.save()
 * [new Object(collName)](#new_Scorocode.Object_new)
 * [.save(options)](#Scorocode.Object+save) ⇒ <code>[Scorocode.Object](#Scorocode.Object)</code>
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+push"></a>
 
-#### object.push(key, value) ⇒ <code>Object</code>
+#### Object.push(key, value)
 Метод для добавления элемента в массив.
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -436,20 +456,20 @@ questItem.save()
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
-| value | <code>String</code> | Изменение, которое нужно внести |
+| value | <code>String | Number | Boolean | Date | Array | Object </code> | Значение нового элемента массива |
 
 **Пример**
 ```js
 // Создадим новый экземпляр объекта коллекции items.
-var getItem = new Scorocode.Object("items"); 
+var Item = new Scorocode.Object("items"); 
 // Запросим интересующий нас объект по его _id
-getItem.getById("NseSaqqd5v")
+Item.getById("NseSaqqd5v")
     // Обработчик успешного выполнения запроса
     .then((success)=>{
         console.log(success);
-        // Добавим новый элемент в массив поля "appearsin"
-        getItem.push("appearsin", "Fallout 3");
-        getItem.save()
+        // Добавим новый элемент в массив поля "arrayField"
+        Item.push("arrayField", "Новый элемент массива");
+        Item.save()
         // Обработчик успешного выполнения запроса
         .then((saved)=>{
             // Выведем в консоль результат запроса
@@ -466,9 +486,11 @@ getItem.getById("NseSaqqd5v")
     });
 ```
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+pull"></a>
 
-#### object.pull(key, value)
+#### Object.pull(key, value)
 Метод для удаления всех элементов массива, значение которых равно указанному.
 
 **Тип**: Метод <code>[Object](#Scorocode.Object)</code>  
@@ -510,9 +532,11 @@ Item.getById("MgYs9BEQUM")
 - <code>Error</code> "For a new document use the method Set"
 - <code>Error</code> 'Field must by a type of array'
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+pullAll"></a>
 
-#### object.pullAll(key, value)
+#### Object.pullAll(key, value)
 
 Метод для удаления всех элементов массива, значения которых равны одному из указанных значений.
 
@@ -531,7 +555,7 @@ var Item = new Scorocode.Object("items");
 Item.getById("CrT49joIxn")
 // Обработчик успешного выполнения запроса
     .then((getted) => {
-        // Из хранящегося в поле "arrayField" массива удалим все элементы со значением, равным {"Удалить": true}.
+        // Из хранящегося в поле "arrayField" массива удалим все элементы со значениями, равными "Удалить", 42 или {"Не удалять": false}.
         Item.pullAll("arrayField", ["Удалить", 42, {"Не удалять": false}]);
         // Сохраним внесенные изменения
         Item.save()
@@ -555,9 +579,11 @@ Item.getById("CrT49joIxn")
 - <code>Error</code> 'Field must by a type of array'
 - <code>Error</code> 'Value must by a type of array'
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+addToSet"></a>
 
-#### object.addToSet(key, value)
+#### Object.addToSet(key, value)
 Метод для добавления элемента в массив только в том случае, если в массиве отсутствуют элементы с таким значением.
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -575,8 +601,8 @@ var Item = new Scorocode.Object("items");
 Item.getById("CrT49joIxn")
 // Обработчик успешного выполнения запроса
     .then((getted) => {
-        // Из хранящегося в поле "arrayField" массива удалим все элементы со значением, равным {"Удалить": true}.
-        Item.addToSet("arrayField", ["Удалить", 42, {"Не удалять": false}]);
+        // Добавим в массив, хранящийся в поле "arrayField", новый элемент ["Первый элемент нового элемента", {"Второй?": true}], если такого элемента ещё нет в значении "arrayField".
+        Item.addToSet("arrayField", ["Первый элемент нового элемента", {"Второй?": true}]);
         // Сохраним внесенные изменения
         Item.save()
         // Обработчик успешного выполнения запроса
@@ -599,9 +625,11 @@ Item.getById("CrT49joIxn")
 - <code>Error</code> 'For a new document use the method Set'
 - <code>Error</code> 'Field must by a type of array'
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+pop"></a>
 
-#### object.pop(key, pos) ⇒ <code>Object</code>
+#### Object.pop(key, pos) ⇒ <code>Object</code>
 Метод для удаления первого или последнего элемента массива
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -609,7 +637,7 @@ Item.getById("CrT49joIxn")
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
-| pos | <code>number</code> | Позиция удаляемого элемента в массиве: -1 для первого элемента и 1 для последнего |
+| pos | <code>Number</code> | Позиция удаляемого элемента в массиве: -1 для первого элемента и 1 для последнего |
 
 ```js
 // Создадим новый экземпляр объекта коллекции items.
@@ -643,9 +671,11 @@ getItem.getById("NseSaqqd5v")
 - <code>Error</code> 'For a new document use the method Set'
 - <code>Error</code> 'Field must by a type of array'
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+inc"></a>
 
-#### object.inc(key, amount)
+#### Object.inc(key, amount)
 Метод увеличивает значение числового поля на заданное число
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -660,13 +690,14 @@ getItem.getById("NseSaqqd5v")
 // Создадим новый экземпляр объекта коллекции items.
 var Item = new Scorocode.Object("items"); 
 // Запросим интересующий нас объект по его _id
-Item.getById("8Qcfll2GwE")
+Item.getById("gNxzwAfvDj")
     // Обработчик успешного выполнения запроса
     .then((success)=>{
         // Выведем в консоль значение поля price
         console.log(Item.get("price")); //44.42
         // Уменьшим значение поля "price" на 2.42
         Item.inc("price", -2.42);
+        // Используем метод save() для записи данных объекта в базу данных приложения
         Item.save()
         // Обработчик успешного выполнения запроса
         .then((incremented)=>{
@@ -687,9 +718,11 @@ Item.getById("8Qcfll2GwE")
 - <code>Error</code> 'For a new document use the method Set'
 - <code>Error</code> 'Field must by a type of number'
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+currentDate"></a>
 
-#### object.currentDate()
+#### Object.currentDate()
 Устанавливает текущее время в качестве значения поля
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -697,21 +730,36 @@ Item.getById("8Qcfll2GwE")
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
-| type | <code>Date</code> | Тип даты |
+| type | <code>String | Boolean</code> | Тип даты. Принимает значения: true, 'date' или 'timestamp' |
 
 **Пример**:
 ```js
-// TODO
+// Создадим новый экземпляр объекта коллекции items
+var Item = new Scorocode.Object("items");
+// Запишем текущую дату в поле "someDate" в созданный ранее объект "gNxzwAfvDj"
+Item.set("_id", "gNxzwAfvDj").currentDate("someDate", true);
+// Используем метод save() для записи данных объекта в базу данных приложения
+Item.save()
+    // Обработчик успешного выполнения запроса
+    .then((success)=>{
+        // Выведем в консоль значение поля somedate
+        console.log(Item.get("someDate")); // 2016-05-27T14:10:00.013+03:00
+    })
+    // Обработчик ошибки
+    .catch((error) => {
+        console.log("Что-то пошло не так: \n", error)
+    });
 ```
-
 
 **Исключения**:
 - <code>Error</code> 'For a new document use the method Set'
 - <code>Error</code> 'Invalid type'
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+mul"></a>
 
-#### object.mul(key, number)
+#### Object.mul(key, number)
 Метод умножает значение числового поля на заданное число
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -731,8 +779,9 @@ Item.getById("8Qcfll2GwE")
     .then((success)=>{
         // Выведем в консоль значение поля price
         console.log(Item.get("price")); // 42
-        // Уменьшим значение поля "price" на 2.42
+        // Умножим значение на -1
         Item.mul("price", -1);
+        // Используем метод save() для записи данных объекта в базу данных приложения
         Item.save()
         // Обработчик успешного выполнения запроса
         .then((incremented)=>{
@@ -755,9 +804,11 @@ Item.getById("8Qcfll2GwE")
 - <code>Error</code> 'Field must by a type of number'
 - <code>Error</code> 'Value must by a type of number'
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Object+min"></a>
 
-#### object.min()
+#### Object.min()
 Метод обновляет значение числового поля только в случае, если новое значение меньше текущего значения поля
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -796,9 +847,13 @@ Item.getById("CrT49joIxn")
             console.log("Что-то пошло не так: \n", error)
     });
 ```
+
+----------------------------------------------------------------------------------------------
+
+
 <a name="Scorocode.Object+max"></a>
 
-#### object.max()
+#### Object.max()
 Метод обновляет значение числового поля только в случае, если новое значение больше текущего значения поля
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
