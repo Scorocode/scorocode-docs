@@ -629,7 +629,7 @@ Item.getById("CrT49joIxn")
 
 <a name="Scorocode.Object+pop"></a>
 
-#### Object.pop(key, pos) ⇒ <code>Object</code>
+#### Object.pop(key, pos)
 Метод для удаления первого или последнего элемента массива
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  

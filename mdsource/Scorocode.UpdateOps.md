@@ -45,7 +45,7 @@ Items.notEqualTo("price", 42)
 #### UpdateOps.set(data)
 Метод для передачи данных объекту
 
-**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.UpdateOps](#Scorocode.UpdateOps)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -82,7 +82,7 @@ Items.notEqualTo("price", 42)
 
 см.
 * [new Object(collName)](#new_Scorocode.Object_new)
-* [.save(options)](#Scorocode.UpdateOps+save) ⇒ <code>[Scorocode.Object](#Scorocode.Object)</code>
+* [.save(options)](#Scorocode.UpdateOps+save) ⇒ <code>[Scorocode.UpdateOps](#Scorocode.UpdateOps)</code>
 
 ----------------------------------------------------------------------------------------------
 
@@ -91,7 +91,7 @@ Items.notEqualTo("price", 42)
 #### UpdateOps.push(key, value) ⇒ <code>Object</code>
 Метод для добавления элемента в массив.
 
-**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.UpdateOps](#Scorocode.UpdateOps)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -181,7 +181,7 @@ Items.exists("arrayField")
 
 Метод для удаления всех элементов массива, значения которых равны одному из указанных значений.
 
-**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.UpdateOps](#Scorocode.UpdateOps)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -228,7 +228,7 @@ Items.exists("arrayField")
 #### UpdateOps.addToSet(key, value)
 Метод для добавления элемента в массив только в том случае, если в массиве отсутствуют элементы с таким значением.
 
-**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.UpdateOps](#Scorocode.UpdateOps)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -271,10 +271,10 @@ Items.exists("arrayField")
 
 <a name="Scorocode.UpdateOps+pop"></a>
 
-#### UpdateOps.pop(key, pos) ⇒ <code>Object</code>
+#### UpdateOps.pop(key, pos)
 Метод для удаления первого или последнего элемента массива
 
-**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.UpdateOps](#Scorocode.UpdateOps)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -319,7 +319,7 @@ Items.exists("arrayField")
 #### UpdateOps.inc(key, amount)
 Метод увеличивает значение числового поля на заданное число
 
-**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.UpdateOps](#Scorocode.UpdateOps)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -364,7 +364,7 @@ Items.exists("price")
 #### UpdateOps.currentDate()
 Устанавливает текущее время в качестве значения поля
 
-**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.UpdateOps](#Scorocode.UpdateOps)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -408,7 +408,7 @@ Items.find()
 #### UpdateOps.mul(key, number)
 Метод умножает значение числового поля на заданное число
 
-**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.UpdateOps](#Scorocode.UpdateOps)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -455,7 +455,7 @@ Items.exists("price")
 #### UpdateOps.min()
 Метод обновляет значение числового поля только в случае, если новое значение меньше текущего значения поля
 
-**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.UpdateOps](#Scorocode.UpdateOps)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
@@ -500,7 +500,7 @@ Items.exists("price")
 #### UpdateOps.max()
 Метод обновляет значение числового поля только в случае, если новое значение больше текущего значения поля
 
-**Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
+**Тип**: Метод <code>[Scorocode.UpdateOps](#Scorocode.UpdateOps)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
