@@ -61,7 +61,7 @@
             * [.raw(filter)](Scorocode.Query.md#Scorocode.Query+raw) 
         * [.CloudCode](Scorocode.CloudCode.md#Scorocode.CloudCode)
             * [new CloudCode(id)](Scorocode.CloudCode.md#new_Scorocode.CloudCode_new) ⇒ [Scorocode.CloudCode](Scorocode.CloudCode.md#Scorocode.CloudCode)
-            * [.run(pool, callbacks)](Scorocode.CloudCode.md#Scorocode.CloudCode+run) ⇒ <code>promise</code>
+            * [.run(pool, callbacks)](Scorocode.CloudCode.md#Scorocode.CloudCode+run) ⇒ <code>promise.{error: Boolean}</code>
         * [.Messenger](Scorocode.Messenger.md#Scorocode.Messenger)
             * [new Messenger()](Scorocode.Messenger.md#new_Scorocode.Messenger_new)
             * [.sendEmail(options, callbacks)](Scorocode.Messenger.md#Scorocode.Messenger+sendEmail) ⇒ <code>HereBeDragons</code>
