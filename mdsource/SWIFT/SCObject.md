@@ -1,12 +1,11 @@
-<a name="Scorocode.Object"></a>
+<a name="SCObject"></a>
 
-### Scorocode.Object
-Scorocode.Object
-
-**Тип**: Класс <code>[Scorocode](Scorocode.md#Scorocode)</code>  
+### SCObject
+SCObject
+**Тип**: Класс <code>[SC](SC.md#Scorocode)</code>  
 **Содержание**
-* [.Object](Scorocode.Object.md#Scorocode.Object)
-    * [init Object(collection, id)](Scorocode.Object.md#new_Scorocode.Object_new) ⇒ <code>Scorocode.Object</code>
+* [SCObject](SCObject.md#SCObject)
+    * [init Object(collection, id)](SCObject.md#SCObject+init) ⇒ <code>Scorocode.Object</code>
     * [.getById(_id, options)](Scorocode.Object.md#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
     * [.get(key)](Scorocode.Object.md#Scorocode.Object+get)
     * [.getFileLink(field)](Scorocode.Object.md#Scorocode.Object+getFileLink) ⇒ <code>String</code>
@@ -28,7 +27,7 @@ Scorocode.Object
 
 ----------------------------------------------------------------------------------------------
 
-<a name="new_Scorocode.Object_new"></a>
+<a name="SCObject+init"></a>
 
 #### init Object(collection, id)
 Scorocode.Object представляет объект данных приложения и включает методы для работы с этими данными. Конструктор формирует минимальную базовую "обёртку" для пользовательских данных.
@@ -43,19 +42,6 @@ Scorocode.Object представляет объект данных прилож
 // Создадим новый экземпляр объекта коллекции items.
 let obj1 = Scorocode.Object(collection: "items", id: "huNr3L7QDh")
 let obj2 = Scorocode.Object(collection: "items")
-```
-
-**Исключения**:
-
-- <code>Error</code> "Invalid collection name" - некорректно указано имя коллекции
-<a name="Scorocode.Object+getById"></a>
-```
-Что-то пошло не так:
-{ 
-    errCode: 404,
-    errMsg: 'Invalid collection: \'items\'',
-    error: true 
-}
 ```
 
 ----------------------------------------------------------------------------------------------
