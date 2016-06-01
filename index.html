@@ -1,69 +1,74 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Scorocode docs by Scorocode</title>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body class="">
+<div class="wrapper">
+    <header class="header">
+        <div class="logo">
+            <div class="col-md-12">
+                <a href="/"><img src="./img/sc_logo@2x.png" alt=""></a>
+            </div>
+        </div>
+    </header>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Scorocode docs</h1>
-        <p>Документация облачного сервиса scorocode.ru</p>
+    <section class="main">
+        <aside class="sidebar">
+            <div class="fixed">
+                <ul class="navigation">
+                    <li class="menu-main">
+                        <a href="#menu1">Общие сведения</a>
+                        <ul>
+                            <li><a href="#start">Начало работы</a></li>
+                            <li><a href="#lk">Личный кабинет</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-main">
+                        <a href="#app">Работа с приложением</a>
+                        <ul>
+                            <li><a href="#app1">Аналитика приложения</a></li>
+                            <li><a href="#app2">Данные приложения</a></li>
+                            <li><a href="#app3">Индексы</a></li>
+                            <li><a href="#app4">Триггеры</a></li>
+                            <li><a href="#app5">Серверный код</a></li>
+                            <li><a href="#app6">Настройки приложения</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-main">
+                        <a href="#dev">Работа с API</a>
+                        <ul>
+                            <li><a href="#restapi">HTTP API</a></li>
+                            <li><a href="#sdkjs">JavaScript SDK</a></li>
+                            <li><a href="#sdkswift">Swift SDK</a></li>
+                            <li><a href="#sdkjava">Java SDK</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
 
-        <p class="view"><a href="https://github.com/Scorocode/scorocode-docs">View the Project on GitHub <small>Scorocode/scorocode-docs</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/Scorocode/scorocode-docs/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/Scorocode/scorocode-docs/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/Scorocode/scorocode-docs">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a id="Добро-пожаловать-на-страницу-документации-облачного-сервиса-httpsscorocoderu" class="anchor" href="#%D0%94%D0%BE%D0%B1%D1%80%D0%BE-%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%BD%D0%B0-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%83-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8-%D0%BE%D0%B1%D0%BB%D0%B0%D1%87%D0%BD%D0%BE%D0%B3%D0%BE-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B0-httpsscorocoderu" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Добро пожаловать на страницу документации облачного сервиса <a href="https://scorocode.ru">https://scorocode.ru</a>.</h3>
-
-<p>На данной странице вы найдете документацию пользователя личного кабинета сервиса и документацию на SDK.</p>
-
-<h3>
-<a id="Управление-данными-приложения" class="anchor" href="#%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Управление данными приложения</h3>
-
-<p>Моделируйте и управляйте данными приложения в интуитивно понятном интерфейсе: создавайте коллекции данных, добавляйте документы и управляйте доступом к ним.</p>
-
-<h3>
-<a id="push-e-mail-и-sms-уведомления" class="anchor" href="#push-e-mail-%D0%B8-sms-%D1%83%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Push, e-mail и sms-уведомления</h3>
-
-<p>Настраивайте в пару кликов и моментально отправляйте PUSH-уведомления. Используйте email для отправки писем или интегрируйтесь с SMS-шлюзом для отправки SMS-сообщений.</p>
-
-<h3>
-<a id="Серверный-код-на-javascript" class="anchor" href="#%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BE%D0%B4-%D0%BD%D0%B0-javascript" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Серверный код на JavaScript</h3>
-
-<p>Разрабатывайте и выполняйте JavaScript-код для реализации уникальной функциональности приложения: cоздавайте и редактируйте код функций и триггеров, планируйте и запускайте выполнение кода по расписанию.</p>
-
-<h3>
-<a id="Управление-пользователями" class="anchor" href="#%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F%D0%BC%D0%B8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Управление пользователями</h3>
-
-<p>Управление анонимным доступом, регистрацией пользователей с подтверждением регистрационных данных через email, аутентификации и управления сессиями, сброса и восстановления паролей, а также разграничения доступа по ролевой модели.</p>
-
-<h3>
-<a id="Аналитические-инструменты" class="anchor" href="#%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Аналитические инструменты</h3>
-
-<p>Анализируйте работу приложения в реальном времени: количество запросов сервера к API, активность по платформам и типам операций, объём облачного хранилища, активность пользователей приложения и рассылку уведомлений.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/Scorocode">Scorocode</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+        <section class="content-wrapper">
+            <div class="body">
+                <section class="page">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12" id="content"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <footer>
+                <div class="col-md-12"><strong>Copyright © 2016 <a href="/">Scorocode</a>.</strong></div>
+            </footer>
+        </section>
+    </section>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+<script src="./js/main.js"></script>
+</body>
 </html>

@@ -1,0 +1,134 @@
+html, body {
+    height: 100%;
+
+}
+body {
+    margin: 0;
+//overflow-x: hidden;
+    min-width: 1200px;
+}
+
+.header {
+    width: 100%;
+    background: #536471;
+    -webkit-flex: 0 0 50px;
+    -ms-flex: 0 0 50px;
+    flex: 0 0 50px;
+    position: fixed;
+    z-index:100;
+}
+.logo {
+    float: left;
+    width: 230px;
+    height: 50px;
+    line-height: 45px;
+}
+
+.logo a img {
+    height: 50px;
+}
+
+.nav-header {
+    position: relative;
+    display: block;
+    margin-left: 230px;
+    height: 50px;
+}
+.nav-header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    background:#dae4ed;
+    margin-top: 50px;
+}
+.sidebar{
+    overflow: hidden;
+    flex: 0 0 230px;
+    transition: flex 0.3s ease;
+    position: relative;
+}
+
+.content-wrapper {
+    flex: 1;
+    background: #fff;
+    flex-direction: column;
+    display: flex;
+}
+
+.body {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+}
+.page {
+    position: relative;
+    flex: 1;
+    min-width: 320px;
+    background: #fff;
+}
+
+.right-panel {
+    flex: 0 0 300px;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    right: 0;
+    position:relative;
+    transition: right 0.3s ease;
+}
+
+.navigation {
+    list-style: none;
+    padding: 0;
+}
+
+.navigation ul {
+    display: none;
+    padding: 0;
+}
+
+.navigation .active ul {
+    display: block;
+}
+.navigation .active > a{
+    font-weight: bold;
+}
+.navigation ul li a{
+    padding-left: 25px;
+    color: #536471;
+}
+
+.navigation a {
+    width: 100%;
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #536471;
+}
+
+.navigation a:hover {
+    background: #f0f1f5;
+    text-decoration: none;
+    color: #536471;
+}
+
+footer {
+    flex: 0 0 50px;
+    border-top: 1px solid #ccc;
+    line-height: 48px;
+}
+
+.bg-danger {
+    padding: 15px;
+}
