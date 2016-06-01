@@ -3,28 +3,28 @@
  */
 
 $(document).ready(function() {
-
     function getTemplate(name, cb) {
-        var url = './templates/' + name + '.html';
+        var url = name.replace('#','');
+
+        var ext = name.split(".").pop();
         $.ajax({
             url: url,
             method: 'GET',
             success: function(data) {
-                cb(data);
+                if (ext === 'md') {
+                    data = marked(data);
+                }
+                $('#content').html(data);
             },
             error : function() {
-                cb();
+                alert('Страница не найдена');
             }
         });
     }
 
-    getTemplate('index', function (data){
-        if (!data) {
-            alert('Страница не найдена');
-        } else {
-            $('#content').html(data);
-        }
-    });
+    window.getTemplate = getTemplate;
+
+    getTemplate('./templates/javascript.html');
 
     $('.navigation a').on('click', function() {
         if (!$(this).parent().hasClass('menu-main')) {
@@ -40,14 +40,7 @@ $(document).ready(function() {
             return;
         }
 
-        var name = hash.replace('#','');
-        getTemplate(name, function (data){
-            if (!data) {
-                alert('Страница не найдена');
-            } else {
-                $('#content').html(data);
-            }
-        });
+        getTemplate(hash);
 
     });
 

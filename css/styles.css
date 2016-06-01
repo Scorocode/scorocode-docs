@@ -132,3 +132,7 @@ footer {
 .bg-danger {
     padding: 15px;
 }
+
+.screenshot {
+    width: 50%;
+}
