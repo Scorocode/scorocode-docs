@@ -3,7 +3,10 @@
  */
 
 $(document).ready(function() {
-    function getTemplate(name, cb) {
+    function getTemplate(name) {
+
+        window.scrollTo(0,0)
+
         var url = name.replace('#','');
 
         var ext = name.split(".").pop();
@@ -24,7 +27,7 @@ $(document).ready(function() {
 
     window.getTemplate = getTemplate;
 
-    getTemplate('./templates/javascript.html');
+    getTemplate('./templates/index.html');
 
     $('.navigation a').on('click', function() {
         if (!$(this).parent().hasClass('menu-main')) {
