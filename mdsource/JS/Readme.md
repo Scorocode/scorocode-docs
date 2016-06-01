@@ -6,13 +6,13 @@
     * 
         * [.Object](Scorocode.Object.md#Scorocode.Object)
             * [new Object(collName)](Scorocode.Object.md#new_Scorocode.Object_new) ⇒ <code>Scorocode.Object</code>
-            * [.getById(_id, options)](Scorocode.Object.md#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
+            * [.getById(_id, options)](Scorocode.Object.md#Scorocode.Object+getById) ⇒ <code>[promise.&lt;Scorocode.Object&gt;](Scorocode.Object.md#Scorocode.Object)</code>
             * [.get(key)](Scorocode.Object.md#Scorocode.Object+get)
             * [.getFileLink(field)](Scorocode.Object.md#Scorocode.Object+getFileLink) ⇒ <code>String</code>
             * [.uploadFile(field, filename, file, options)](Scorocode.Object.md#Scorocode.Object+uploadFile) ⇒ <code>promise.&lt;String&gt;</code>
-            * [.save(options)](Scorocode.Object.md#Scorocode.Object+save) ⇒ <code>[Scorocode.Object](#Scorocode.Object)</code>
+            * [.save(options)](Scorocode.Object.md#Scorocode.Object+save) ⇒ <code>[Scorocode.Object](Scorocode.Object.md#Scorocode.Object)</code>
             * [.remove(options)](Scorocode.Object.md#Scorocode.Object+remove) ⇒ <code>{count: Number, docs: Array}</code>
-            * [.extend(collName, childObject)](Scorocode.Object.md#Scorocode.Object+extend) ⇒ <code>[\[Scorocode.Object\]](#Scorocode.Object)</code>
+            * [.extend(collName, childObject)](Scorocode.Object.md#Scorocode.Object+extend) ⇒ <code>[\[Scorocode.Object\]](Scorocode.Object.md#Scorocode.Object)</code>
             * [.set(data)](Scorocode.Object.md#Scorocode.Object+set)
             * [.push(key, value)](Scorocode.Object.md#Scorocode.Object+push) 
             * [.pull(key, value)](Scorocode.Object.md#Scorocode.Object+pull) 
@@ -26,15 +26,15 @@
             * [.max()](Scorocode.Object.md#Scorocode.Object+max)
         * [.User](Scorocode.User.md#Scorocode.User)
             * [new User()](Scorocode.User.md#new_Scorocode.User_new)
-            * [.signup(options)](Scorocode.User.md#Scorocode.User+signup) ⇒ <code>HereBeDragons</code>
+            * [.signup(options)](Scorocode.User.md#Scorocode.User+signup) ⇒ <code>[promise.&lt;Scorocode.User&gt;](Scorocode.User.md#Scorocode.User)</code>
             * [.logout(options)](Scorocode.User.md#Scorocode.User+logout) ⇒ <code>HereBeDragons</code>
             * [.login(email, password, options)](Scorocode.User.md#Scorocode.User+login) ⇒ <code>HereBeDragons</code>
         * [.Query](Scorocode.Query.md#Scorocode.Query)
             * [new Query(collName)](Scorocode.Query.md#new_Scorocode.Query_new) ⇒ <code>Scorocode.Query</code>
-            * [.find(options)](Scorocode.Query.md#Scorocode.Query+find) ⇒ <code>Promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code>
-            * [.count(options)](Scorocode.Query.md#Scorocode.Query+count) ⇒ <code>Promise.{error: Boolean, result: Number}</code>
-            * [.update(Object, options)](Scorocode.Query.md#Scorocode.Query+update) ⇒ <code>Promise.{error: Boolean, result: {count: Number, docs: Array}}</code>
-            * [.remove(options)](Scorocode.Query.md#Scorocode.Query+remove) ⇒ <code>Promise.{count: Number, docs: Array}</code>
+            * [.find(options)](Scorocode.Query.md#Scorocode.Query+find) ⇒ <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code>
+            * [.count(options)](Scorocode.Query.md#Scorocode.Query+count) ⇒ <code>promise.{error: Boolean, result: Number}</code>
+            * [.update(Object, options)](Scorocode.Query.md#Scorocode.Query+update) ⇒ <code>promise.{error: Boolean, result: {count: Number, docs: Array}}</code>
+            * [.remove(options)](Scorocode.Query.md#Scorocode.Query+remove) ⇒ <code>promise.{count: Number, docs: Array}</code>
             * [.reset()](Scorocode.Query.md#Scorocode.Query+reset) 
             * [.equalTo(field, value)](Scorocode.Query.md#Scorocode.Query+equalTo) 
             * [.notEqualTo(field, value)](Scorocode.Query.md#Scorocode.Query+notEqualTo) 

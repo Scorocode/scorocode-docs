@@ -21,6 +21,8 @@ Scorocode.Messenger
 var Broadcast = new Scorocode.Messenger();
 ``
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.Messenger+sendEmail"></a>
 
 #### messenger.sendEmail(options, callbacks)
@@ -35,19 +37,28 @@ var Broadcast = new Scorocode.Messenger();
 
 **Пример**  
 ```js
-var myself = new Scorocode.Query("users");
-myself.equalTo("username","SergeyYurievich");
-myself.find();
-var mailMeBaby = new Scorocode.Messenger();
-mailMeBaby.sendEmail({
-    where: myself,
-        data: {
-                subject:"Тема письма",
-                        text:"Текст письма"
+var findUsers = new Scorocode.Query("users");
+findUsers.equalTo("username","SergeyYurievich");
+findUsers.find();
+var Broadcast = new Scorocode.Messenger();
+Broadcast.sendEmail({
+    where: findUsers,
+    data: {
+        subject:"Тема письма",
+        text:"Текст письма"
 		}
 	})
+    .then((success)=>{
+        console.log(success);
+    })
+    .catch((error)=>{
+        console.log(error)
+    });
 ```
-**Возвращает**: <code>Object</code> - Возвращает promise  
+**Возвращает**: <code>{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
+- "error" - <code>Boolean</code> - Флаг ошибки
+- "count" - <code>Number</code>  - Количество отправленных, собщений.
+
 **Исключение**:
 
 - <code>String</code> 'Invalid options Тип'
@@ -55,6 +66,7 @@ mailMeBaby.sendEmail({
 - <code>String</code> 'Invalid data Тип'
 - <code>String</code> 'Missing subject or text message'
 
+----------------------------------------------------------------------------------------------
 
 <a name="Scorocode.Messenger+sendPush"></a>
 
@@ -62,7 +74,43 @@ mailMeBaby.sendEmail({
 Метод для отправки Push
 
 **Тип**: Метод <code>[Messenger](#Scorocode.Messenger)</code>
-**Возвращает**: <code>Object</code> - Возвращает promise
+
+| Параметр | Тип | Описание |
+| --- | --- | --- |
+| options | <code>Object</code> | Параметры сообщения |
+| callbacks | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
+
+**Пример**  
+```js
+var Devices = new Scorocode.Query("devices");
+Devices.find()
+.then((finded)=> {
+    var Broadcast = new Scorocode.Messenger();
+    Broadcast.sendPush({
+        where: Devices,
+        data: {
+            "data": {
+                "message": "PUSH-уведомление!",
+                }           
+            }
+        })
+        .then((success)=>{
+            console.log(success);
+        })
+        .catch((error)=>{
+            console.log(error)
+        });
+    })
+.catch((error)=>{
+    console.log(error)
+});
+
+```
+
+**Возвращает**: <code>{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
+- "error" - <code>Boolean</code> - Флаг ошибки
+- "count" - <code>Number</code>  - Количество отправленных, собщений.
+
 **Исключение**:
 
 - <code>String</code> 'Invalid options Тип'
@@ -71,10 +119,8 @@ mailMeBaby.sendEmail({
 - <code>String</code> 'Missing subject or text message'
 
 
-| Параметр | Тип | Описание |
-| --- | --- | --- |
-| options | <code>Object</code> | Параметры сообщения |
-| callbacks | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
+
+----------------------------------------------------------------------------------------------
 
 <a name="Scorocode.Messenger+sendSms"></a>
 
@@ -82,9 +128,36 @@ mailMeBaby.sendEmail({
 Метод для отправки СМС
 
 **Тип**: Метод <code>[Messenger](#Scorocode.Messenger)</code>  
-**Возвращает**: <code>Object</code> - Возвращает promise  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | options | <code>Object</code> | Параметры сообщения |
 | callbacks | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
+
+**Пример**  
+```js
+var findUsers = new Scorocode.Query("users");
+findUsers.find()
+.then((finded)=> {
+    var Broadcast = new Scorocode.Messenger();
+    Broadcast.sendPush({
+        where: findUsers,
+        data: {
+            "data": {
+                "message": "PUSH-уведомление!",
+                }           
+            }
+        })
+        .then((success)=>{
+            console.log(success);
+        })
+        .catch((error)=>{
+            console.log(error)
+        });
+    })
+.catch((error)=>{
+    console.log(error)
+});
+**Возвращает**: <code>{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
+- "error" - <code>Boolean</code> - Флаг ошибки
+- "count" - <code>Number</code>  - Количество отправленных, собщений.
