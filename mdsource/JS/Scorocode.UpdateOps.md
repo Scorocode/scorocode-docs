@@ -1,7 +1,21 @@
 <a name="Scorocode.UpdateOps"></a>
 
 ### Scorocode.UpdateOps
-**Тип**: Класс <code>[Scorocode](Scorocode.md#Scorocode)</code>  
+
+**Тип**: Класс <code>Scorocode</code>  
+**Содержание**
+* [.UpdateOps](#Scorocode.UpdateOps)
+    * [.set(data)](#Scorocode.UpdateOps+set)
+    * [.push(key, value)](#Scorocode.UpdateOps+push) 
+    * [.pull(key, value)](#Scorocode.UpdateOps+pull) 
+    * [.pullAll(key, value)](#Scorocode.UpdateOps+pullAll) 
+    * [.addToSet(key, value)](#Scorocode.UpdateOps+addToSet) 
+    * [.pop(key, pos)](#Scorocode.UpdateOps+pop) 
+    * [.inc(key, amount)](#Scorocode.UpdateOps+inc)
+    * [.currentDate()](#Scorocode.UpdateOps+currentDate)
+    * [.mul(key, number)](#Scorocode.UpdateOps+mul)
+    * [.min()](#Scorocode.UpdateOps+min)
+    * [.max()](#Scorocode.UpdateOps+max)
 
 <a name="new_Scorocode.UpdateOps_new"></a>
 

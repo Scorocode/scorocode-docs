@@ -3,7 +3,7 @@
 ### Scorocode.Messenger
 Scorocode.Messenger
 
-**Тип**: Класс <code>[Scorocode](Scorocode.md#Scorocode)</code>  
+**Тип**: Класс <code>Scorocode</code>  
 
 * [.Messenger](#Scorocode.Messenger)
     * [new Messenger()](#new_Scorocode.Messenger_new)

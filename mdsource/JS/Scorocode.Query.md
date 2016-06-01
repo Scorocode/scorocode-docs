@@ -3,7 +3,7 @@
 ### Scorocode.Query
 Scorocode.Query
 
-**Тип**: Класс <code>[Scorocode](Scorocode.md#Scorocode)</code>  
+**Тип**: Класс <code>Scorocode</code>  
 
 * [.Query](#Scorocode.Query)
     * [new Query(collName)](#new_Scorocode.Query_new) ⇒ <code>Scorocode.Object</code>

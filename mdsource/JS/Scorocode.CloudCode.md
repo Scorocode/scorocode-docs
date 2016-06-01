@@ -3,18 +3,18 @@
 ### Scorocode.CloudCode
 Scorocode.CloudCode
 
-**Тип**: Класс <code>[Scorocode](Scorocode.Scorocode.md#Scorocode)</code>  
+**Тип**: Класс <code>Scorocode</code>  
 
-* [.CloudCode](Scorocode.CloudCode.md#Scorocode.CloudCode)
-    * [new CloudCode(id)](Scorocode.CloudCode.md#new_Scorocode.CloudCode_new)
-    * [.run(pool, callbacks)](Scorocode.CloudCode.md#Scorocode.CloudCode+run) ⇒ <code>promise.{error: Boolean}</code>
+* [.CloudCode](#Scorocode.CloudCode)
+    * [new CloudCode(id)](#new_Scorocode.CloudCode_new)
+    * [.run(pool, callbacks)](#Scorocode.CloudCode+run) ⇒ <code>promise.{error: Boolean}</code>
 
 <a name="new_Scorocode.CloudCode_new"></a>
 
 #### new CloudCode(id)
 Класс для работы с серверным кодом
 
-**Возвращает**: <code>[Scorocode.CloudCode](Scorocode.CloudCode.md#Scorocode.CloudCode)</code> - Возвращает новый экземпляр Scorocode.CloudCode
+**Возвращает**: <code>[Scorocode.CloudCode](#Scorocode.CloudCode)</code> - Возвращает новый экземпляр Scorocode.CloudCode
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |

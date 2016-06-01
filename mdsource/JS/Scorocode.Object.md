@@ -3,7 +3,7 @@
 ### Scorocode.Object
 Scorocode.Object
 
-**Тип**: Класс <code>[Scorocode](Scorocode.md#Scorocode)</code>  
+**Тип**: Класс <code>Scorocode</code>  
 **Содержание**
 * [.Object](#Scorocode.Object)
     * [new Object(collName)](#new_Scorocode.Object_new) ⇒ <code>Scorocode.Object</code>
@@ -12,7 +12,7 @@ Scorocode.Object
     * [.getFileLink(field)](#Scorocode.Object+getFileLink) ⇒ <code>String</code>
     * [.uploadFile(field, filename, file, options)](#Scorocode.Object+uploadFile) ⇒ <code>promise.&lt;String&gt;</code>
     * [.save(options)](#Scorocode.Object+save) ⇒ <code>[Scorocode.Object](#Scorocode.Object)</code>
-    * [.remove(options)](#Scorocode.Object+remove) ⇒ <code>{count: Number, docs: Array}</code>
+    * [.remove(options)](#Scorocode.Object+remove) ⇒ <code>Promise.{count: Number, docs: Array}</code>
     * [.extend(collName, childObject)](#Scorocode.Object+extend) ⇒ <code>[\[Scorocode.Object\]](#Scorocode.Object)</code>
     * [.set(data)](#Scorocode.Object+set)
     * [.push(key, value)](#Scorocode.Object+push) 
@@ -316,7 +316,7 @@ questItem.save()
 
 <a name="Scorocode.Object+remove"></a>
 
-#### Object.remove(options) ⇒ <code>dragons</code>
+#### Object.remove(options)
 Метод для удаления указанного объекта
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -354,7 +354,7 @@ getItem.getById("hejJU4BEGP")
 * [new Object(collName)](#new_Scorocode.Object_new)
 * [.getById(_id, options)](#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
 
-**Возвращает**: <code>Promise.&lt;Object&gt;</code> - Возвращает promise, который возвращает объект:
+**Возвращает**: <code>Promise.{count: Number, docs: Array}</code> - Возвращает promise, который возвращает объект:
 - "count" - <code>Number</code>  - количество удаленных объектов
 - "doc" - <code>Array</code>  - массив ID удаленных объектов
 ```

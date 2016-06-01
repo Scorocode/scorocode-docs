@@ -3,7 +3,7 @@
 ### Scorocode.User
 Scorocode.User
 
-**Тип**: Класс <code>[Scorocode](#Scorocode)</code>  
+**Тип**: Класс <code>Scorocode</code>  
 
 * [.User](#Scorocode.User)
     * [new User()](#new_Scorocode.User_new)
