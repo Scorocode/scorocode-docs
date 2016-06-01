@@ -5,26 +5,26 @@ Scorocode.Object
 
 **Тип**: Класс <code>[Scorocode](Scorocode.md#Scorocode)</code>  
 **Содержание**
-* [.Object](Scorocode.Object.md#Scorocode.Object)
-    * [new Object(collName)](Scorocode.Object.md#new_Scorocode.Object_new) ⇒ <code>Scorocode.Object</code>
-    * [.getById(_id, options)](Scorocode.Object.md#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
-    * [.get(key)](Scorocode.Object.md#Scorocode.Object+get)
-    * [.getFileLink(field)](Scorocode.Object.md#Scorocode.Object+getFileLink) ⇒ <code>String</code>
-    * [.uploadFile(field, filename, file, options)](Scorocode.Object.md#Scorocode.Object+uploadFile) ⇒ <code>promise.&lt;String&gt;</code>
-    * [.save(options)](Scorocode.Object.md#Scorocode.Object+save) ⇒ <code>[Scorocode.Object](#Scorocode.Object)</code>
-    * [.remove(options)](Scorocode.Object.md#Scorocode.Object+remove) ⇒ <code>{count: Number, docs: Array}</code>
-    * [.extend(collName, childObject)](Scorocode.Object.md#Scorocode.Object+extend) ⇒ <code>[\[Scorocode.Object\]](#Scorocode.Object)</code>
-    * [.set(data)](Scorocode.Object.md#Scorocode.Object+set)
-    * [.push(key, value)](Scorocode.Object.md#Scorocode.Object+push) 
-    * [.pull(key, value)](Scorocode.Object.md#Scorocode.Object+pull) 
-    * [.pullAll(key, value)](Scorocode.Object.md#Scorocode.Object+pullAll) 
-    * [.addToSet(key, value)](Scorocode.Object.md#Scorocode.Object+addToSet) 
-    * [.pop(key, pos)](Scorocode.Object.md#Scorocode.Object+pop) 
-    * [.inc(key, amount)](Scorocode.Object.md#Scorocode.Object+inc)
-    * [.currentDate()](Scorocode.Object.md#Scorocode.Object+currentDate)
-    * [.mul(key, number)](Scorocode.Object.md#Scorocode.Object+mul)
-    * [.min()](Scorocode.Object.md#Scorocode.Object+min)
-    * [.max()](Scorocode.Object.md#Scorocode.Object+max)
+* [.Object](#Scorocode.Object)
+    * [new Object(collName)](#new_Scorocode.Object_new) ⇒ <code>Scorocode.Object</code>
+    * [.getById(_id, options)](#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
+    * [.get(key)](#Scorocode.Object+get)
+    * [.getFileLink(field)](#Scorocode.Object+getFileLink) ⇒ <code>String</code>
+    * [.uploadFile(field, filename, file, options)](#Scorocode.Object+uploadFile) ⇒ <code>promise.&lt;String&gt;</code>
+    * [.save(options)](#Scorocode.Object+save) ⇒ <code>[Scorocode.Object](#Scorocode.Object)</code>
+    * [.remove(options)](#Scorocode.Object+remove) ⇒ <code>{count: Number, docs: Array}</code>
+    * [.extend(collName, childObject)](#Scorocode.Object+extend) ⇒ <code>[\[Scorocode.Object\]](#Scorocode.Object)</code>
+    * [.set(data)](#Scorocode.Object+set)
+    * [.push(key, value)](#Scorocode.Object+push) 
+    * [.pull(key, value)](#Scorocode.Object+pull) 
+    * [.pullAll(key, value)](#Scorocode.Object+pullAll) 
+    * [.addToSet(key, value)](#Scorocode.Object+addToSet) 
+    * [.pop(key, pos)](#Scorocode.Object+pop) 
+    * [.inc(key, amount)](#Scorocode.Object+inc)
+    * [.currentDate()](#Scorocode.Object+currentDate)
+    * [.mul(key, number)](#Scorocode.Object+mul)
+    * [.min()](#Scorocode.Object+min)
+    * [.max()](#Scorocode.Object+max)
 
 ----------------------------------------------------------------------------------------------
 
