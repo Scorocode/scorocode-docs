@@ -143,9 +143,7 @@ findUsers.find()
     Broadcast.sendPush({
         where: findUsers,
         data: {
-            "data": {
-                "message": "PUSH-уведомление!",
-                }           
+            "text": "Текст смс-сообщения"     
             }
         })
         .then((success)=>{

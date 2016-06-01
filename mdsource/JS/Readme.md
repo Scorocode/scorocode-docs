@@ -27,8 +27,8 @@
         * [.User](Scorocode.User.md#Scorocode.User)
             * [new User()](Scorocode.User.md#new_Scorocode.User_new)
             * [.signup(options)](Scorocode.User.md#Scorocode.User+signup) ⇒ <code>[promise.&lt;Scorocode.User&gt;](Scorocode.User.md#Scorocode.User)</code>
-            * [.logout(options)](Scorocode.User.md#Scorocode.User+logout) ⇒ <code>HereBeDragons</code>
-            * [.login(email, password, options)](Scorocode.User.md#Scorocode.User+login) ⇒ <code>HereBeDragons</code>
+            * [.logout(options)](Scorocode.User.md#Scorocode.User+logout)
+            * [.login(email, password, options)](Scorocode.User.md#Scorocode.User+login)
         * [.Query](Scorocode.Query.md#Scorocode.Query)
             * [new Query(collName)](Scorocode.Query.md#new_Scorocode.Query_new) ⇒ <code>Scorocode.Query</code>
             * [.find(options)](Scorocode.Query.md#Scorocode.Query+find) ⇒ <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code>
@@ -64,11 +64,10 @@
             * [.run(pool, callbacks)](Scorocode.CloudCode.md#Scorocode.CloudCode+run) ⇒ <code>promise.{error: Boolean}</code>
         * [.Messenger](Scorocode.Messenger.md#Scorocode.Messenger)
             * [new Messenger()](Scorocode.Messenger.md#new_Scorocode.Messenger_new)
-            * [.sendEmail(options, callbacks)](Scorocode.Messenger.md#Scorocode.Messenger+sendEmail) ⇒ <code>HereBeDragons</code>
-            * [.sendPush(options, callbacks)](Scorocode.Messenger.md#Scorocode.Messenger+sendPush) ⇒ <code>HereBeDragons</code>
-            * [.sendSms(options, callbacks)](Scorocode.Messenger.md#Scorocode.Messenger+sendSms) ⇒ <code>HereBeDragons</code>
+            * [.sendEmail(options, callbacks)](Scorocode.Messenger.md#Scorocode.Messenger+sendEmail) ⇒ <code>promise.{error: Boolean, count: Number}</code>
+            * [.sendPush(options, callbacks)](Scorocode.Messenger.md#Scorocode.Messenger+sendPush) ⇒ <code>promise.{error: Boolean, count: Number}</code>
+            * [.sendSms(options, callbacks)](Scorocode.Messenger.md#Scorocode.Messenger+sendSms) ⇒ <code>promise.{error: Boolean, count: Number}</code>
         * [.UpdateOps](Scorocode.UpdateOps.md#Scorocode.UpdateOps)
-            * [new UpdateOps()](Scorocode.UpdateOps.md#new_Scorocode.UpdateOps_new)
             * [.set(data)](Scorocode.UpdateOps.md#Scorocode.UpdateOps+set)
             * [.push(key, value)](Scorocode.UpdateOps.md#Scorocode.UpdateOps+push) 
             * [.pull(key, value)](Scorocode.UpdateOps.md#Scorocode.UpdateOps+pull) 
