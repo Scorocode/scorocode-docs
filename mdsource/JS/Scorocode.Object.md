@@ -11,8 +11,8 @@ Scorocode.Object
     * [.get(key)](#Scorocode.Object+get)
     * [.getFileLink(field)](#Scorocode.Object+getFileLink) ⇒ <code>String</code>
     * [.uploadFile(field, filename, file, options)](#Scorocode.Object+uploadFile) ⇒ <code>promise.&lt;String&gt;</code>
-    * [.save(options)](#Scorocode.Object+save) ⇒ <code>[Scorocode.Object](#Scorocode.Object)</code>
-    * [.remove(options)](#Scorocode.Object+remove) ⇒ <code>Promise.{count: Number, docs: Array}</code>
+    * [.save(options)](#Scorocode.Object+save) ⇒ <code>promise.[Scorocode.Object](#Scorocode.Object)</code>
+    * [.remove(options)](#Scorocode.Object+remove) ⇒ <code>promise.{count: Number, docs: Array}</code>
     * [.extend(collName, childObject)](#Scorocode.Object+extend) ⇒ <code>[\[Scorocode.Object\]](#Scorocode.Object)</code>
     * [.set(data)](#Scorocode.Object+set)
     * [.push(key, value)](#Scorocode.Object+push) 
@@ -39,6 +39,13 @@ Scorocode.Object представляет объект данных прилож
 
 **Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items.
 var questItem = new Scorocode.Object("items"); 
 // Используем метод set() для передачи объекту данных в поля "name" и "relatedquests".
@@ -87,8 +94,15 @@ questItem.save()
 | _id | <code>String</code> | Идентификатор объекта |
 | options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
-**Пример**  
+**Пример**
 ```js
+// Подключим и инициализируем SDK
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items.
 var getItem = new Scorocode.Object("items");
 // Запросим интересующий нас объект по его _id
@@ -143,8 +157,15 @@ getItem.getById("NseSaqqd5v")
 | --- | --- | --- |
 | key | <code>String</code> | Имя поля, значение которого нужно получить |
 
-**Пример**  
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items.
 var getItem = new Scorocode.Object("items");
 // Запросим интересующий нас объект по его _id
@@ -185,8 +206,17 @@ getItem.getById("NseSaqqd5v")
 | file | <code>String</code> | Файл в формате base64 |
 | options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
-**Пример**  
+
+**Пример**
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения",
+    FileKey: "fileKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items.
 var attachToItem = new Scorocode.Object("items");
 // Запросим интересующий нас объект по его _id
@@ -235,8 +265,16 @@ attachToItem.getById("xL0uOFtiJx")
 | --- | --- | --- |
 | field | <code>String</code> | Название поля коллекции |
 
-**Пример**
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения",
+    FileKey: "fileKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items.
 var attachToItem = new Scorocode.Object("items");
 // Запросим интересующий нас объект по его _id
@@ -269,7 +307,7 @@ attachToItem.getById("xL0uOFtiJx")
 
 <a name="Scorocode.Object+save"></a>
 
-#### Object.save(options) ⇒ <code>[Object](#Scorocode.Object)</code>
+#### Object.save(options) ⇒ <code>[promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
 Метод сохраняет объект в хранилище данных приложения или обновляет уже имеющийся там объект
 
 **Тип**: Метод <code>[Scorocode.Object](#Scorocode.Object)</code>  
@@ -278,8 +316,15 @@ attachToItem.getById("xL0uOFtiJx")
 | --- | --- | --- |
 | options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
-**Пример**  
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items.
 var questItem = new Scorocode.Object("items"); 
 // Используем метод set() для передачи объекту данных в поля "name" и "relatedquests".
@@ -325,8 +370,15 @@ questItem.save()
 | --- | --- | --- |
 | options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
-**Пример**  
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items.
 var getItem = new Scorocode.Object("items");
 // Запросим интересующий нас объект по его _id
@@ -368,7 +420,7 @@ getItem.getById("hejJU4BEGP")
 
 <a name="Scorocode.Object+extend"></a>
 
-#### Object.extend(collName, childObject) ⇒ <code>Scorocode.Object</code>
+#### Object.extend(collName, childObject) ⇒ <code>[Scorocode.Object]</code>
 
 Метод для преобразования данных выборки Scorocode.Query в отдельные экземпляры Scorocode.Object
 
@@ -379,8 +431,15 @@ getItem.getById("hejJU4BEGP")
 | collName | <code>String</code> | Название коллекции |
 | childObject | <code>Object</code> | Данные, которые необходимо преобразовать |
 
-**Пример**
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр  коллекции items.
 var data = new Scorocode.Query("items");
 // Запросим все объекты коллекции
@@ -422,8 +481,15 @@ data.find()
 | --- | --- | --- |
 | data | <code>Object</code> | Данные в формате {"key", "value"}, где key - идентификатор поля коллекции. |
 
-**Пример**  
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items.
 var questItem = new Scorocode.Object("items"); 
 // Используем метод set() для передачи объекту обновленных данных поля "name".
@@ -458,8 +524,15 @@ questItem.save()
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
 | value | <code>String | Number | Boolean | Date | Array | Object </code> | Значение нового элемента массива |
 
-**Пример**
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items.
 var Item = new Scorocode.Object("items"); 
 // Запросим интересующий нас объект по его _id
@@ -500,8 +573,15 @@ Item.getById("NseSaqqd5v")
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
 | value | <code>String | Number | Boolean | Date | Array | Object </code> | Удаляемое значение  |
 
-**Пример**
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый объект коллекции items.
 var Item = new Scorocode.Object("items"); 
 // Запросим интересующий нас объект по его _id
@@ -547,8 +627,15 @@ Item.getById("MgYs9BEQUM")
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
 | value | <code>Array</code> | Массив удаляемых значений |
 
-**Пример**
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый объект коллекции items.
 var Item = new Scorocode.Object("items"); 
 // Запросим интересующий нас объект по его _id
@@ -593,8 +680,15 @@ Item.getById("CrT49joIxn")
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
 | value | <code>Array</code> | Значение добавляемого элемента |
 
-**Пример**
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый объект коллекции items.
 var Item = new Scorocode.Object("items"); 
 // Запросим интересующий нас объект по его _id
@@ -639,7 +733,15 @@ Item.getById("CrT49joIxn")
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
 | pos | <code>Number</code> | Позиция удаляемого элемента в массиве: -1 для первого элемента и 1 для последнего |
 
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items.
 var getItem = new Scorocode.Object("items"); 
 // Запросим интересующий нас объект по его _id
@@ -685,8 +787,16 @@ getItem.getById("NseSaqqd5v")
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
 | amount | <code>Number</code> | Шаг изменения |
 
+
 **Пример** 
-```Js 
+```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items.
 var Item = new Scorocode.Object("items"); 
 // Запросим интересующий нас объект по его _id
@@ -732,8 +842,15 @@ Item.getById("gNxzwAfvDj")
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
 | type | <code>String | Boolean</code> | Тип даты. Принимает значения: true, 'date' или 'timestamp' |
 
-**Пример**:
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items
 var Item = new Scorocode.Object("items");
 // Запишем текущую дату в поле "someDate" в созданный ранее объект "gNxzwAfvDj"
@@ -769,8 +886,15 @@ Item.save()
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
 | number | <code>Number</code> | Мультипликатор |
 
-**Пример**  
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items.
 var Item = new Scorocode.Object("items"); 
 // Запросим интересующий нас объект по его _id
@@ -819,8 +943,15 @@ Item.getById("8Qcfll2GwE")
 | number | <code>Number</code> | Новое значение |
 
 
-**Пример**  
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items.
 var Item = new Scorocode.Object("items"); 
 // Запросим интересующий нас объект по его _id
@@ -863,8 +994,15 @@ Item.getById("CrT49joIxn")
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
 | number | <code>Number</code> | Новое значение |
 
-**Пример**  
+**Пример** 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр объекта коллекции items.
 var Item = new Scorocode.Object("items"); 
 // Запросим интересующий нас объект по его _id

@@ -50,6 +50,13 @@ Scorocode.Query
 
 **Пример**
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var data = new Scorocode.Query("items");
 // Запросим все объекты коллекции
@@ -84,6 +91,13 @@ data.find()
 
 **Пример**
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var data = new Scorocode.Query("items");
 // Запросим все объекты коллекции
@@ -150,6 +164,13 @@ data.find()
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var countItems = new Scorocode.Query("items");
 // Подсчитаем количество объектов с существующим значением поля "price".
@@ -185,7 +206,14 @@ countItems.exists("price")
 
 
 **Пример**
-```JS
+```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
 var Items = new Scorocode.Query("items");
 var updateItems = new Scorocode.UpdateOps("items");
@@ -253,6 +281,13 @@ Items.notEqualTo("price", 42)
 
 **Пример**
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 Items.exists("arrayField")
     // Выполним запрос к данным коллекции
     .find()
@@ -295,10 +330,38 @@ Items.exists("arrayField")
 <a name="Scorocode.Query+reset"></a>
 
 #### Query.reset() 
-Сброс условий выборки
+
+Метод для сброса условий выборки
 
 **Тип**: Метод <code>[Scorocode.Query](#Scorocode.Query)</code>  
-**Возвращает**: <code>Object</code> - Запрошенные данные 
+
+**Пример**  
+```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new Scorocode.Query("items");
+// Установим условие выборки - запросить все объекты со значением 42 в полe "price"
+getItems.equalTo("price", 42)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) => {
+            console.log(result)
+        })
+        // Обработчик ошибки
+        .catch((error) => {
+            // Сбросим условия выборки
+            getItems.reset()
+            console.log("Что-то пошло не так: \n", error)
+        });
+```
+----------------------------------------------------------------------------------------------
 
 <a name="Scorocode.Query+equalTo"></a>
 
@@ -315,6 +378,13 @@ Items.exists("arrayField")
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим условие выборки - запросить все объекты со значением 42 в полe "price"
@@ -323,8 +393,8 @@ getItems.equalTo("price", 42)
     .find()
         // Обработчик успешного выполнения запроса
         .then((result) => {
-            // Выведем результат в консоль.
             console.log(result) 
+            getItems.reset()
         })
         .catch((error) => {
             console.log("Что-то пошло не так: \n", error)
@@ -347,6 +417,13 @@ getItems.equalTo("price", 42)
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.
@@ -379,6 +456,13 @@ getItems.notEqualTo("price", 42)
 
 **Пример**
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим условие выборки - запросить все объекты со значением -42, 41.999 или 42 в полe "price"
@@ -414,6 +498,13 @@ getItems.containedIn("price",[-42, 41.999, 42])
 | value | <code>Array</code> | Массив значений |
 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим условие выборки - запросить все объекты, содержащие числа 4, 8, 15, 16, 23, 42 в полe "arrayField"
@@ -451,6 +542,13 @@ getItems.containsAll("arrayField",[4, 8, 15, 16, 23, 42])
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим условие выборки - запросить все объекты, значения поля которых не указано в массиве [41.999 или 42]
@@ -487,6 +585,13 @@ getItems.notContainedIn("price",[41.999, 42])
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим условие выборки - запросить все объекты, созданные позже 2016-05-19T15:35:16.000Z
@@ -519,6 +624,13 @@ getItems.greaterThan("createdAt", "2016-05-19T15:35:16.000Z")
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим условие выборки - запросить все объекты со значением больше, либо равным 41.999 
@@ -551,6 +663,13 @@ getItems.greaterThanOrEqualTo("price", 41.999)
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим условие выборки - запросить все объекты со значением поля price меньшe 41
@@ -583,6 +702,13 @@ getItems.lessThan("price", 41)
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим условие выборки - запросить все объекты, обновленные не позже 2016-05-19T15:35:16.000Z
@@ -614,6 +740,13 @@ getItems.lessThanOrEqualTo("updatedAt", "2016-05-19T15:35:16.000Z")
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var Items = new Scorocode.Query("items");
 // Подсчитаем количество объектов с существующим значением поля "price".
@@ -642,6 +775,13 @@ Items.exists("price")
 
 **Тип**: Метод <code>[Scorocode.Query](#Scorocode.Query)</code>  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var Items = new Scorocode.Query("items");
 // Подсчитаем количество объектов с отсутствующим значением поля "price".
@@ -673,6 +813,13 @@ Items.doesNotExist("price")
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры.
@@ -709,6 +856,13 @@ getItems.contains("someString","[0-9]")
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим условие выборки - запросить все объекты, значение поля "name" которых начинается с "Предм"
@@ -744,6 +898,13 @@ getItems.startsWith("name", "Предм");
 | value | <code>String</code> | Значение условия |
 
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим условие выборки - запросить все объекты, значение поля "name" которых заканчивается на "чип"
@@ -779,6 +940,13 @@ getItems.endsWith("name", "чип");
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим лимит выборки - не более 1000 объектов.
@@ -815,6 +983,13 @@ getItems.limit(1000).contains("someString","[a-zA-Z-0-9]")
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим лимит выборки - не более 1000 объектов.
@@ -852,6 +1027,13 @@ getItems.limit(1000).skip(1000).contains("someString","[a-zA-Z-0-9]")
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим лимит выборки - не более 30 объектов.
@@ -890,6 +1072,13 @@ getItems.limit(30).page(2).contains("someString","[a-zA-Z-0-9]")
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим лимит выборки - не более 30 объектов.
@@ -925,6 +1114,13 @@ getItems.limit(30).ascending("updatedAt").page(1).contains("someString","[a-zA-Z
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 // Установим лимит выборки - не более 30 объектов.
@@ -961,6 +1157,13 @@ getItems.limit(30).descending("price").page(1).contains("someString","[a-zA-Z-0-
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 var range1 = new Scorocode.Query("items");
@@ -1004,6 +1207,13 @@ getItems.or(range1).or(range2)
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var getItems = new Scorocode.Query("items");
 var range = new Scorocode.Query("items");
@@ -1039,6 +1249,13 @@ getItems.and(range).and(price)
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items.
 var data = new Scorocode.Query("items");
 // Запросим все объекты коллекции и получим значение их поля "price".

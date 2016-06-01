@@ -27,8 +27,8 @@
         * [.User](Scorocode.User.md#Scorocode.User)
             * [new User()](Scorocode.User.md#new_Scorocode.User_new)
             * [.signup(options)](Scorocode.User.md#Scorocode.User+signup) ⇒ <code>[promise.&lt;Scorocode.User&gt;](Scorocode.User.md#Scorocode.User)</code>
+            * [.login(email, password, options)](Scorocode.User.md#Scorocode.User+login) ⇒ <code>[promise.&lt;Scorocode.User&gt;](Scorocode.User.md#Scorocode.User)</code>
             * [.logout(options)](Scorocode.User.md#Scorocode.User+logout)
-            * [.login(email, password, options)](Scorocode.User.md#Scorocode.User+login)
         * [.Query](Scorocode.Query.md#Scorocode.Query)
             * [new Query(collName)](Scorocode.Query.md#new_Scorocode.Query_new) ⇒ <code>Scorocode.Query</code>
             * [.find(options)](Scorocode.Query.md#Scorocode.Query+find) ⇒ <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code>

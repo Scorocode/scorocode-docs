@@ -7,62 +7,188 @@ Scorocode.User
 
 * [.User](#Scorocode.User)
     * [new User()](#new_Scorocode.User_new)
-    * [.signup(options)](#Scorocode.User+signup) ⇒ <code>Response</code>
-    * [.logout(options)](#Scorocode.User+logout) ⇒ <code>Response</code>
-    * [.login(email, password, options)](#Scorocode.User+login) ⇒ <code>Response</code>
+    * [.signup(options)](#Scorocode.User+signup) ⇒ <code>[promise.&lt;Scorocode.User&gt;](#Scorocode.User)</code>
+    * [.login(email, password, options)](#Scorocode.User+login) ⇒ <code>[promise.&lt;Scorocode.User&gt;](#Scorocode.User)</code>
+    * [.logout(options)](#Scorocode.User+logout) 
+
 
 <a name="new_Scorocode.User_new"></a>
 
 #### new User()
 Класс для работы с пользователями приложения.
 
-**Returns**: <code>[User](#Scorocode.User)</code> - Возвращает экземпляр Scorocode.User  
-**Example**  
+**Пример**  
 ```js
-var player = new Scorocode.User();
-player.set("email", "Arrrr@mailinator.com").set("password", "password").set("username", "ArrrrPirate");
-player.signup()
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
+// Создадим новый экземпляр Scorocode.User
+var appUser = new Scorocode.User();
+// Передадим данные, необходимые для регистрации пользователя приложения
+appUser.set("email", "user@mailserver.domain").set("password", "52c7ab3dab2c").set("username", "ChosenOne");
+// Зарегистрируем пользователя приложения
+appUser.signup()
+    // Обработчик успешного выполнения запроса
+    .then((success)=>{
+        // Выведем результат в консоль
+        console.log(success);
+    })
+    // Обработчик ошибки
+    .catch((error)=>{
+        // Выведем результат в консоль    
+        console.log(error)
+    });
 ```
+
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.User+signup"></a>
 
-#### user.signup(options) ⇒ <code>Response</code>
+#### user.signup(options) ⇒ <code>[promise.&lt;Scorocode.User&gt;](#Scorocode.User)</code>
 Метод для регистрации пользователей приложения.
 
-**Тип**: instance method of <code>[User](#Scorocode.User)</code>  
-**Returns**: <code>Response</code> - Возвращает Here be Dragons  
+**Тип**: Метод <code>[Scorocode.User](#Scorocode.User)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| options | <code>Object</code> | Опции обратного вызова |
+| options | <code>Object</code> |  Коллбэки success и error для выполняемого запроса. |
 
-**Example**  
+
+**Пример**
 ```js
-var player = new Scorocode.User();
-player.set("email", "Arrrr@mailinator.com").set("password", "password").set("username", "ArrrrPirate");
-player.signup()
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
+// Создадим новый экземпляр Scorocode.User
+var appUser = new Scorocode.User();
+// Передадим данные, необходимые для регистрации пользователя приложения
+appUser.set("email", "user@mailserver.domain").set("password", "52c7ab3dab2c").set("username", "ChosenOne");
+// Зарегистрируем пользователя приложения
+appUser.signup()
+    // Обработчик успешного выполнения запроса
+    .then((success)=>{
+        // Выведем результат в консоль
+        console.log(success);
+    })
+    // Обработчик ошибки
+    .catch((error)=>{
+        // Выведем результат в консоль    
+        console.log(error)
+    });
 ```
-<a name="Scorocode.User+logout"></a>
 
-#### user.logout(options) ⇒ <code>Response</code>
-Метод для деаутентификации пользователя приложения и удаления пользовательской сессии.
+**Возвращает** <code>promise.{Scorocode.User}</code> - возвращает promise, который возвращает данные Scorocode.User
 
-**Тип**: instance method of <code>[User](#Scorocode.User)</code>  
-**Returns**: <code>Response</code> - Возвращает Here be Dragons  
+----------------------------------------------------------------------------------------------
 
-| Параметр | Тип | Описание |
-| --- | --- | --- |
-| options | <code>Object</code> | Опции обратного вызова |
 
 <a name="Scorocode.User+login"></a>
 
-#### user.login(email, password, options) ⇒ <code>Response</code>
+#### user.login(email, password, options) ⇒ <code>[promise.&lt;Scorocode.User&gt;](#Scorocode.User)</code>
 Метод для аутентификации пользователя приложения и получения пользовательской сессии.
 
 **Тип**: instance method of <code>[User](#Scorocode.User)</code>  
-**Returns**: <code>Response</code> - Возвращает Here be Dragons  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | email | <code>String</code> | Email пользователя |
 | password | <code>String</code> | Пароль пользователя |
-| options | <code>Object</code> | Опции обратного вызова |
+| options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
+
+**Пример**
+```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
+// Создадим новый экземпляр Scorocode.User
+var appUser = new Scorocode.User();
+// Аутентифицируем пользователя приложения, используя его email и password
+appUser.login("user@mailserver.domain", "52c7ab3dab2c")
+    // Обработчик успешного выполнения запроса
+    .then((loggedIn)=>{
+        console.log("Пользователь приложения аутентифицирован: \n", loggedIn);
+        // Установим время сессии - 10000 мс.
+        setTimeout( function () {
+        	// Деаутентифицируем пользователя приложения
+            appUser.logout()
+                // Обработчик успешного выполнения запроса
+                .then((loggedOut)=>{
+                    console.log("Пользователь приложения деаутентифицирован \n");
+                })
+                // Обработчик ошибки
+                .catch((errLogout)=>{
+                    console.log(errLogout)
+                });
+            },10000);
+    })
+	// Обработчик ошибки
+    .catch((errLogin)=>{
+        console.log(errLogin)
+    });
+```
+
+**Возвращает** <code>promise.{Scorocode.User}</code> - возвращает promise, который возвращает данные Scorocode.User
+
+----------------------------------------------------------------------------------------------
+
+<a name="Scorocode.User+logout"></a>
+
+#### user.logout(options) 
+Метод для деаутентификации пользователя приложения и удаления пользовательской сессии.
+
+**Тип**: Метод <code>[Scorocode.User](#Scorocode.User)</code>  
+
+| Параметр | Тип | Описание |
+| --- | --- | --- |
+| options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
+
+**Пример**
+```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения",
+});
+
+// Создадим новый экземпляр Scorocode.User
+var appUser = new Scorocode.User();
+// Аутентифицируем пользователя приложения, используя его email и password
+appUser.login("user@mailserver.domain", "52c7ab3dab2c")
+    // Обработчик успешного выполнения запроса
+    .then((loggedIn)=>{
+        console.log("Пользователь приложения аутентифицирован: \n", loggedIn);
+        // Установим время сессии - 10000 мс.
+        setTimeout( function () {
+            // Деаутентифицируем пользователя приложения
+            appUser.logout()
+                // Обработчик успешного выполнения запроса
+                .then((loggedOut)=>{
+                    console.log("Пользователь приложения деаутентифицирован \n");
+                })
+                // Обработчик ошибки
+                .catch((errLogout)=>{
+                    console.log(errLogout)
+                });
+            },10000);
+    })
+    // Обработчик ошибки
+    .catch((errLogin)=>{
+        console.log(errLogin)
+    });
+```
+
+
+

@@ -24,6 +24,13 @@
 
 **Пример**
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
 var Items = new Scorocode.Query("items");
 var updateItems = new Scorocode.UpdateOps("items");
@@ -68,6 +75,13 @@ Items.notEqualTo("price", 42)
 
 **Пример**
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
 var Items = new Scorocode.Query("items");
 var updateItems = new Scorocode.UpdateOps("items");
@@ -114,8 +128,13 @@ Items.notEqualTo("price", 42)
 
 **Пример**
 ```js
-**Пример**
-```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
 var Items = new Scorocode.Query("items");
 var updateItems = new Scorocode.UpdateOps("items");
@@ -156,7 +175,15 @@ Items.exists("arrayField")
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
 | value | <code>String | Number | Boolean | Date | Array | Object </code> | Удаляемое значение  |
 
+**Пример**
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
 var Items = new Scorocode.Query("items");
 var updateItems = new Scorocode.UpdateOps("items");
@@ -204,6 +231,13 @@ Items.exists("arrayField")
 
 **Пример**
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
 var Items = new Scorocode.Query("items");
 var updateItems = new Scorocode.UpdateOps("items");
@@ -251,6 +285,13 @@ Items.exists("arrayField")
 
 **Пример**
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
 var Items = new Scorocode.Query("items");
 var updateItems = new Scorocode.UpdateOps("items");
@@ -295,7 +336,15 @@ Items.exists("arrayField")
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
 | pos | <code>number</code> | Позиция удаляемого элемента в массиве: -1 для первого элемента и 1 для последнего |
 
+**Пример**
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
 var Items = new Scorocode.Query("items");
 var updateItems = new Scorocode.UpdateOps("items");
@@ -341,7 +390,14 @@ Items.exists("arrayField")
 | amount | <code>Number</code> | Шаг изменения |
 
 **Пример** 
-```Js
+```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
 var Items = new Scorocode.Query("items");
 var updateItems = new Scorocode.UpdateOps("items");
@@ -387,6 +443,13 @@ Items.exists("price")
 
 **Пример**:
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
 var Items = new Scorocode.Query("items");
 var updateItems = new Scorocode.UpdateOps("items");
@@ -431,6 +494,13 @@ Items.find()
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
 var Items = new Scorocode.Query("items");
 var updateItems = new Scorocode.UpdateOps("items");
@@ -479,6 +549,13 @@ Items.exists("price")
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
 var Items = new Scorocode.Query("items");
 var updateItems = new Scorocode.UpdateOps("items");
@@ -503,8 +580,13 @@ Items.exists("price")
         .catch((error) => {
             console.log("Что-то пошло не так: \n", error)
         });
- 
 ```
+
+**Исключения**:
+- <code>Error</code> 'For a new document use the method Set'
+- <code>Error</code> 'Field must by a type of number'
+- <code>Error</code> 'Value must by a type of number'
+
 
 ----------------------------------------------------------------------------------------------
 
@@ -523,6 +605,13 @@ Items.exists("price")
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
 var Items = new Scorocode.Query("items");
 var updateItems = new Scorocode.UpdateOps("items");

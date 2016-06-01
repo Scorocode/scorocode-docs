@@ -20,6 +20,8 @@ Scorocode.CloudCode
 | --- | --- | --- |
 | id | <code>String</code> | Идентификатор скрипта |
 
+----------------------------------------------------------------------------------------------
+
 <a name="Scorocode.CloudCode+run"></a>
 
 #### cloudCode.run(pool, callbacks) ⇒ <code>promise.{error: Boolean}</code>
@@ -35,6 +37,14 @@ Scorocode.CloudCode
 
 **Пример**
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения",
+    ScriptKey: "scriptKey_приложения"
+});
+
 var Prompt = require('prompt');
 Prompt.start();
 Prompt.get(['email', 'password', 'username'], function (err, result) {
@@ -62,6 +72,4 @@ Prompt.get(['email', 'password', 'username'], function (err, result) {
 **Исключения**:
 
 - <code>String</code> 'Invalid type of pool'
-
-
 
