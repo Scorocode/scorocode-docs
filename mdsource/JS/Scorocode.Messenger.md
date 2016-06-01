@@ -16,26 +16,22 @@ Scorocode.Messenger
 #### new Messenger()
 Класс для отправки сообщений
 
-**Возвращает**: <code>[Messenger](#Scorocode.Messenger)</code> - Удалить  
+**Пример**
+``js
+var Broadcast = new Scorocode.Messenger();
+``
+
 <a name="Scorocode.Messenger+sendEmail"></a>
 
-#### messenger.sendEmail(options, callbacks) ⇒ <code>Object</code>
+#### messenger.sendEmail(options, callbacks)
 Метод для отправки Email
 
-**Тип**: instance method of <code>[Messenger](#Scorocode.Messenger)</code>  
-**Возвращает**: <code>Object</code> - Возвращает promise  
-**Исключение**:
-
-- <code>String</code> 'Invalid options Тип'
-- <code>String</code> 'Where must be a Тип of Query'
-- <code>String</code> 'Invalid data Тип'
-- <code>String</code> 'Missing subject or text message'
-
+**Тип**: Метод <code>[Messenger](#Scorocode.Messenger)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| options | <code>Object</code> | Параметры сообщения (...) |
-| callbacks | <code>Object</code> | Действия, которые будут выполнены при обратном вызове в случае успешного или ошибочного выполнения |
+| options | <code>Object</code> | Параметры сообщения |
+| callbacks | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
 **Пример**  
 ```js
@@ -48,14 +44,24 @@ mailMeBaby.sendEmail({
         data: {
                 subject:"Тема письма",
                         text:"Текст письма"
-}})
+		}
+	})
 ```
+**Возвращает**: <code>Object</code> - Возвращает promise  
+**Исключение**:
+
+- <code>String</code> 'Invalid options Тип'
+- <code>String</code> 'Where must be a Тип of Query'
+- <code>String</code> 'Invalid data Тип'
+- <code>String</code> 'Missing subject or text message'
+
+
 <a name="Scorocode.Messenger+sendPush"></a>
 
 #### messenger.sendPush(options, callbacks) ⇒ <code>Object</code>
 Метод для отправки Push
 
-**Тип**: instance method of <code>[Messenger](#Scorocode.Messenger)</code>
+**Тип**: Метод <code>[Messenger](#Scorocode.Messenger)</code>
 **Возвращает**: <code>Object</code> - Возвращает promise
 **Исключение**:
 
@@ -68,17 +74,17 @@ mailMeBaby.sendEmail({
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | options | <code>Object</code> | Параметры сообщения |
-| callbacks | <code>Object</code> | Действия, которые будут выполнены при обратном вызове в случае успешного или ошибочного выполнения |
+| callbacks | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
 <a name="Scorocode.Messenger+sendSms"></a>
 
 #### messenger.sendSms(options, callbacks) ⇒ <code>Object</code>
 Метод для отправки СМС
 
-**Тип**: instance method of <code>[Messenger](#Scorocode.Messenger)</code>  
+**Тип**: Метод <code>[Messenger](#Scorocode.Messenger)</code>  
 **Возвращает**: <code>Object</code> - Возвращает promise  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | options | <code>Object</code> | Параметры сообщения |
-| callbacks | <code>Object</code> | Действия, которые будут выполнены при обратном вызове в случае успешного или ошибочного выполнения |
+| callbacks | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
