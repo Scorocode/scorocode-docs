@@ -7,9 +7,9 @@ Scorocode.Messenger
 
 * [.Messenger](#Scorocode.Messenger)
     * [new Messenger()](#new_Scorocode.Messenger_new)
-    * [.sendEmail(options, callbacks)](#Scorocode.Messenger+sendEmail) ⇒ <code>Object</code>
-    * [.sendPush(options, callbacks)](#Scorocode.Messenger+sendPush) ⇒ <code>Object</code>
-    * [.sendSms(options, callbacks)](#Scorocode.Messenger+sendSms) ⇒ <code>Object</code>
+    * [.sendEmail(options, callbacks)](#Scorocode.Messenger+sendEmail) ⇒ <code>{error: Boolean, count: Number}</code>
+    * [.sendPush(options, callbacks)](#Scorocode.Messenger+sendPush) ⇒ <code>{error: Boolean, count: Number}</code>
+    * [.sendSms(options, callbacks)](#Scorocode.Messenger+sendSms) ⇒ <code>{error: Boolean, count: Number}</code>
 
 <a name="new_Scorocode.Messenger_new"></a>
 
@@ -17,7 +17,7 @@ Scorocode.Messenger
 Класс для отправки сообщений
 
 **Пример**
-``js
+```js
 var Broadcast = new Scorocode.Messenger();
 ``
 
@@ -37,6 +37,14 @@ var Broadcast = new Scorocode.Messenger();
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения",
+    MessageKey: "messageKey_приложения"
+});
+
 var findUsers = new Scorocode.Query("users");
 findUsers.equalTo("username","SergeyYurievich");
 findUsers.find();
@@ -55,7 +63,7 @@ Broadcast.sendEmail({
         console.log(error)
     });
 ```
-**Возвращает**: <code>{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
+**Возвращает**: <code>promise.{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
 - "error" - <code>Boolean</code> - Флаг ошибки
 - "count" - <code>Number</code>  - Количество отправленных, собщений.
 
@@ -82,6 +90,14 @@ Broadcast.sendEmail({
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения",
+    MessageKey: "messageKey_приложения"
+});
+
 var Devices = new Scorocode.Query("devices");
 Devices.find()
 .then((finded)=> {
@@ -90,7 +106,7 @@ Devices.find()
         where: Devices,
         data: {
             "data": {
-                "message": "PUSH-уведомление!",
+                "message": "текст PUSH-уведомления!",
                 }           
             }
         })
@@ -107,7 +123,7 @@ Devices.find()
 
 ```
 
-**Возвращает**: <code>{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
+**Возвращает**: <code>promise.{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
 - "error" - <code>Boolean</code> - Флаг ошибки
 - "count" - <code>Number</code>  - Количество отправленных, собщений.
 
@@ -136,6 +152,14 @@ Devices.find()
 
 **Пример**  
 ```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения",
+    MessageKey: "messageKey_приложения"
+});
+
 var findUsers = new Scorocode.Query("users");
 findUsers.find()
 .then((finded)=> {
