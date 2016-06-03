@@ -1,21 +1,23 @@
-html, body {
+html,
+body {
     height: 100%;
-
 }
 body {
     margin: 0;
-//overflow-x: hidden;
     min-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
-
 .header {
     width: 100%;
     background: #536471;
     -webkit-flex: 0 0 50px;
     -ms-flex: 0 0 50px;
+    -webkit-box-flex: 0;
     flex: 0 0 50px;
     position: fixed;
-    z-index:100;
+    z-index: 100;
 }
 .logo {
     float: left;
@@ -23,11 +25,9 @@ body {
     height: 50px;
     line-height: 45px;
 }
-
 .logo a img {
     height: 50px;
 }
-
 .nav-header {
     position: relative;
     display: block;
@@ -39,77 +39,117 @@ body {
     padding: 0;
     list-style: none;
 }
-
 .wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
+    flex: 1 0 auto;
     min-height: 100%;
+    /*height: 100%;*/
 }
 
 .main {
     position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
-    background:#dae4ed;
+    background: #dae4ed;
     margin-top: 50px;
 }
-.sidebar{
+.sidebar {
     overflow: hidden;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 230px;
+    -ms-flex: 0 0 230px;
     flex: 0 0 230px;
+    -webkit-transition: -webkit-box-flex 0.3s ease, -webkit-flex 0.3s ease;
+    transition: -webkit-box-flex 0.3s ease, -webkit-flex 0.3s ease;
     transition: flex 0.3s ease;
+    transition: flex 0.3s ease, -webkit-box-flex 0.3s ease, -webkit-flex 0.3s ease, -ms-flex 0.3s ease;
     position: relative;
     min-height: 100%;
 }
-
+.sidebar > .fixed {
+    position: fixed;
+    width: 230px;
+}
 .content-wrapper {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     background: #fff;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
-
 .body {
     position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
 }
 .page {
     position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     min-width: 320px;
     background: #fff;
 }
-
 .right-panel {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 300px;
+    -ms-flex: 0 0 300px;
     flex: 0 0 300px;
     background: #fff;
     border-left: 1px solid #ccc;
     right: 0;
-    position:relative;
+    position: relative;
+    -webkit-transition: right 0.3s ease;
     transition: right 0.3s ease;
 }
-
 .navigation {
     list-style: none;
     padding: 0;
 }
-
 .navigation ul {
     display: none;
     padding: 0;
 }
-
 .navigation .active ul {
     display: block;
 }
-.navigation .active > a{
+.navigation .active > a {
     font-weight: bold;
 }
-.navigation ul li a{
+.navigation ul li a {
     padding-left: 25px;
     color: #536471;
 }
-
 .navigation a {
     width: 100%;
     display: block;
@@ -117,23 +157,23 @@ body {
     text-decoration: none;
     color: #536471;
 }
-
 .navigation a:hover {
     background: #f0f1f5;
     text-decoration: none;
     color: #536471;
 }
-
 footer {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50px;
+    -ms-flex: 0 0 50px;
     flex: 0 0 50px;
     border-top: 1px solid #ccc;
     line-height: 48px;
 }
-
 .bg-danger {
     padding: 15px;
 }
-
 .screenshot {
-    width: 50%;
+    /*width: 50%;*/
+    height: 500px;
 }
