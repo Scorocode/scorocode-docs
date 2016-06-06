@@ -250,7 +250,7 @@ attachToItem.getById("xL0uOFtiJx")
 
 **Исключения**:
 
-- <code>String</code> 'You must first create a document' -Dragons
+- <code>String</code> 'You must first create a document' 
 
 ----------------------------------------------------------------------------------------------
 
