@@ -49,13 +49,13 @@ appUser.signup()
 <a name="Scorocode.User+signup"></a>
 
 #### user.signup(options) ⇒ <code>[promise.&lt;Scorocode.User&gt;](#Scorocode.User)</code>
-Метод для регистрации пользователей приложения.
+Метод для регистрации пользователей приложения. 
 
 **Тип**: Метод <code>[Scorocode.User](#Scorocode.User)</code>  
 
-| Параметр | Тип | Описание |
-| --- | --- | --- |
-| options | <code>Object</code> |  Коллбэки success и error для выполняемого запроса. |
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| callback | <code>Object</code>| | Коллбэки success и error для выполняемого запроса. |  |
 
 
 **Пример**
@@ -70,7 +70,7 @@ Scorocode.Init({
 // Создадим новый экземпляр Scorocode.User
 var appUser = new Scorocode.User();
 // Передадим данные, необходимые для регистрации пользователя приложения
-appUser.set("email", "user@mailserver.domain").set("password", "52c7ab3dab2c").set("username", "ChosenOne");
+appUser.set("email", "user@domain.zone").set("password", "CorrectHorseBatteryStaple").set("username", "ChosenOne");
 // Зарегистрируем пользователя приложения
 appUser.signup()
     // Обработчик успешного выполнения запроса
@@ -97,11 +97,11 @@ appUser.signup()
 
 **Тип**: instance method of <code>[User](#Scorocode.User)</code>  
 
-| Параметр | Тип | Описание |
-| --- | --- | --- |
-| email | <code>String</code> | Email пользователя |
-| password | <code>String</code> | Пароль пользователя |
-| options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| email    | <code>String</code>| Обязательный | Email пользователя                                 | "user@domain.zone"          | 
+| password | <code>String</code>| Обязательный | Пароль пользователя                                | "CorrectHorseBatteryStaple" |
+| callback | <code>Object</code>|              | Коллбэки success и error для выполняемого запроса. |                             |
 
 **Пример**
 ```js
@@ -115,7 +115,7 @@ Scorocode.Init({
 // Создадим новый экземпляр Scorocode.User
 var appUser = new Scorocode.User();
 // Аутентифицируем пользователя приложения, используя его email и password
-appUser.login("user@mailserver.domain", "52c7ab3dab2c")
+appUser.login("user@domain.zone", "CorrectHorseBatteryStaple")
     // Обработчик успешного выполнения запроса
     .then((loggedIn)=>{
         console.log("Пользователь приложения аутентифицирован: \n", loggedIn);
@@ -150,9 +150,9 @@ appUser.login("user@mailserver.domain", "52c7ab3dab2c")
 
 **Тип**: Метод <code>[Scorocode.User](#Scorocode.User)</code>  
 
-| Параметр | Тип | Описание |
-| --- | --- | --- |
-| options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| callback | <code>Object</code>| | Коллбэки success и error для выполняемого запроса. |  |
 
 **Пример**
 ```js
@@ -166,7 +166,7 @@ Scorocode.Init({
 // Создадим новый экземпляр Scorocode.User
 var appUser = new Scorocode.User();
 // Аутентифицируем пользователя приложения, используя его email и password
-appUser.login("user@mailserver.domain", "52c7ab3dab2c")
+appUser.login("user@domain.zone", "CorrectHorseBatteryStaple")
     // Обработчик успешного выполнения запроса
     .then((loggedIn)=>{
         console.log("Пользователь приложения аутентифицирован: \n", loggedIn);
