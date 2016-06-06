@@ -3,7 +3,7 @@
 ## SС - Базовый класс для работы с SDK
 * [SC](#Scorocode)
 	* [Подключение SDK](#Подключение SDK)
-    * [.Init(opt) - Инициализация SDK](#Scorocode+Init)
+    * [.Init(opt)](#Scorocode+Init)
 
 <a name="Подключение SDK"></a>
 
@@ -17,7 +17,9 @@ git clone (https://github.com/Scorocode/scorocode-sdk-swift)
 
 <a name="Scorocode+initWith"></a>
 
-### SC.initWith(applicationId, clientId, accessKey, fileKey, messageKey) - Инициализация SDK
+### SC.initWith(applicationId, clientId, accessKey, fileKey, messageKey)
+Инициализация SDK
+
 
 **Тип**: Метод <code>[SC](#Scorocode)</code>  
 
