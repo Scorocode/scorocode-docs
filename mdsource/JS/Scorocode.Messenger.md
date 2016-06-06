@@ -69,9 +69,9 @@ Broadcast.sendEmail({
 
 **Исключение**:
 
-- <code>String</code> 'Invalid options Тип'
-- <code>String</code> 'Where must be a Тип of Query'
-- <code>String</code> 'Invalid data Тип'
+- <code>String</code> 'Invalid options type'
+- <code>String</code> 'Where must be a type of Query'
+- <code>String</code> 'Invalid data type'
 - <code>String</code> 'Missing subject or text message'
 
 ----------------------------------------------------------------------------------------------
@@ -129,9 +129,9 @@ Devices.find()
 
 **Исключение**:
 
-- <code>String</code> 'Invalid options Тип'
-- <code>String</code> 'Where must be a Тип of Query'
-- <code>String</code> 'Invalid data Тип'
+- <code>String</code> 'Invalid options type'
+- <code>String</code> 'Where must be a type of Query'
+- <code>String</code> 'Invalid data type'
 - <code>String</code> 'Missing subject or text message'
 
 
@@ -180,6 +180,7 @@ findUsers.find()
 .catch((error)=>{
     console.log(error)
 });
+
 **Возвращает**: <code>{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
 - "error" - <code>Boolean</code> - Флаг ошибки
 - "count" - <code>Number</code>  - Количество отправленных, собщений.

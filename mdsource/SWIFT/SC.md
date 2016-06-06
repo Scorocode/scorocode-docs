@@ -9,17 +9,10 @@
 
 ### Подключение SDK
 
-Для использования SDK в проекте неоходимо установить Carthage
-https://github.com/Carthage/Carthage
+Информация о подключении SDK и исходные коды опубликованы в репозитории (https://github.com/Scorocode/scorocode-sdk-swift)
 
-Клонируйте SDK в директорию вашего проекта.
 ```
-git clone <здесь будет адрес репозитория>
-```
-
-Для использования SDK подключите его в проекте:
-```SWIFT
-import SC
+git clone (https://github.com/Scorocode/scorocode-sdk-swift)
 ```
 
 <a name="Scorocode+initWith"></a>
