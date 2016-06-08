@@ -27,6 +27,29 @@ SCMessage
 
 **Пример**   
 ```SWIFT
+var queryUsers = SCQuery(collection: "users")
+queryUsers.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
+
+var Broadcast = new SCMessage();
+Broadcast.sendEmail(queryUsers, subject:"Тема письма", text:"Текст письма") {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 
 ```
 
@@ -45,7 +68,30 @@ SCMessage
 
 **Пример**   
 ```SWIFT
+var queryUserDevices = SCQuery(collection: "devices")
+queryUserDevices.exists("userRelation")
+queryUserDevices.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 
+var Broadcast = new SCMessage();
+Broadcast.sendEmail(queryUserDevices, text:"Текст Push-уведомления") {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 ----------------------------------------------------------------------------------------------
 <a name="SCMessage+sendSms"></a>
@@ -62,5 +108,28 @@ SCMessage
 
 **Пример**   
 ```SWIFT
+var queryUsersWithPhone = SCQuery(collection: "users")
+queryUsersWithPhone.exists("phone")
+queryUsersWithPhone.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 
+var Broadcast = new SCMessage();
+Broadcast.sendEmail(queryUsersWithPhone, text:"Текст СМС сообщения") {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
