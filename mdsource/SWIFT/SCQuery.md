@@ -3,8 +3,6 @@
 ### SCQuery
 SCQuery
 
-**Тип**: Класс <code>Scorocode</code>
-
 * [.Query](#SCQuery)
     * [init(collection: String)](#SCQuery+init)
     * [SCQuery.find(callback: (Bool, SCError?, [String: AnyObject]?) -> Void)](#SCQuery+find) 
@@ -43,7 +41,7 @@ SCQuery
 <a name="SCQuery+init"></a>
 ## init(collection)
 
-Инициализация запроса к данным коллекции.
+Инициализация запроса к данным коллекции. 
 
 **Тип**: метод <code>[SCObject](#SCObject)</code>
 
@@ -51,10 +49,10 @@ SCQuery
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| collection | <code>String</code> | Обязательное | Имя коллекции в которую добавляется объект | "testcoll" | 
+| collection | <code>String</code> | Обязательное | Имя коллекции в которую добавляется объект | "items" | 
 
 ```SWIFT
-
+var query = SCQuery(collection: "users")
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -71,7 +69,17 @@ SCQuery
 | callback  | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |        | Коллбэки для выполняемого запроса. |                 |
 
 ```SWIFT
-
+var query = SCQuery(collection: "users")
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -88,7 +96,17 @@ SCQuery
 | callback()   | <code>(Bool, SCError?, Int?) -> Void</code> |        | Коллбэки для выполняемого запроса. |                 |
 
 ```SWIFT
-
+var query = SCQuery(collection: "users")
+query.count() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+update"></a> 
@@ -105,7 +123,22 @@ SCQuery
 | callback()   | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |        | Коллбэки для выполняемого запроса. |                 |
 
 ```SWIFT
+var userArrivalTime = SCUpdate()
+let currentDate = SCUpdateOperator.currentDate("fieldName", typeSpec: "timestamp")
+logArrivalTime.addOperator(currentDate)
 
+var arrivedUsers = SCQuery(collection: "users")
+arrivedUsers.equalTo("flightRace", SCString("AF4926"))
+arrivedUsers.update(userArrivalTime) {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+remove"></a>
@@ -121,7 +154,18 @@ SCQuery
 | callback()   | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |        | Коллбэки для выполняемого запроса. |                 |
 
 ```SWIFT
-
+var oldStuff = SCQuery(collection: "Stuff")
+oldStuff.lessThan("createdAt", SCDate("2016-06-54T17:24:23.091+03:00"))
+oldStuff.remove() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+limit"></a> 
@@ -137,7 +181,18 @@ SCQuery
 | limit | <code>Int</code> | Обязательное | Лимит выборки  | 100 | 
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.limit(25)
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+skip"></a>
@@ -153,6 +208,18 @@ SCQuery
 | limit | <code>Int</code> | Обязательное | Количество пропускаемых документов  | 1000 | 
 
 ```SWIFT
+var query = SCQuery(collection: "items")
+query.skip(1000)
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -169,7 +236,19 @@ SCQuery
 | page | <code>Int</code> | Обязательное | Номер страницы | 4 | 
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.limit(25)
+query.page(4)
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+raw"></a> 
@@ -185,6 +264,18 @@ SCQuery
 | json| <code>String</code> | Обязательное | Условия выборки в  | {location: {$in: ['New California Republic', 'Vault City']}}| 
 
 ```SWIFT
+var query = SCQuery(collection: "items")
+query.raw("{ \"fieldString\" : \"Строка\" }")
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -196,6 +287,18 @@ SCQuery
 
 
 ```SWIFT
+var query = SCQuery(collection: "items")
+
+query.equalTo("fieldName", SCString("John Doe"))
+query.raw("{ \"fieldString\" : \"Строка\" }")
+query.ascending("field1")
+query.descending("field2")
+query.fields(["field1", "field2"])
+let and1 = SCOperator.EqualTo("fieldString", SCString("Строка"))
+let and2 = SCOperator.EqualTo("fieldNumber", SCInt(33))
+query.and([and1, and2])
+
+query.reset()
 
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -212,6 +315,18 @@ SCQuery
 | name | <code>String</code> | Обязательное | Имя поля | "price" | 
 
 ```SWIFT
+var sortByPrice = SCQuery(collection: "items")
+sortByPrice.ascending("price")
+sortByPrice.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -228,7 +343,18 @@ SCQuery
 | name | <code>String</code> | Обязательное | Имя поля | "reward" | 
 
 ```SWIFT
-
+var sortByReward = SCQuery(collection: "items")
+sortByReward.descending("reward")
+sortByReward.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -245,7 +371,18 @@ SCQuery
 | names | <code>[String]</code> | Обязательное | Массив имен запрашиваемых полей | ["price", "reward"] | 
 
 ```SWIFT
-
+var getPriceAndReward = SCQuery(collection: "items")
+getPriceAndReward.fields(["price", "reward"])
+getPriceAndReward.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -264,8 +401,8 @@ SCQuery
 
 
 ```SWIFT
-let op = SCOperator.LessThanOrEqualTo("price", 42)
-addOperator(name, oper: op)
+let lessNorEqual = SCOperator.LessThanOrEqualTo("price", 42)
+SCQuery.addOperator(name, oper: lessNorEqual)
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+equalTo"></a> 
@@ -282,7 +419,18 @@ addOperator(name, oper: op)
 | _ value        | <code>SCValue</code>      | Обязательный | Значение поля                                | 42     |
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.equalTo("equality", SCString("yep"))
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+notEqualTo"></a>
@@ -300,7 +448,18 @@ addOperator(name, oper: op)
 | _ value        | <code>SCValue</code>      | Обязательный | Значение поля                                | 43     |
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.notEqualTo("unequality", SCString("nope"))
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+containedIn"></a> 
@@ -317,7 +476,18 @@ addOperator(name, oper: op)
 | _ value        | <code>SCArray</code>      | Обязательный | Массив значений                              | [-42, 41.999, 42]     |
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.containedIn("someField", SCArray([SCString("A"), SCString("B")]))
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+containsAll"></a> 
@@ -334,6 +504,18 @@ addOperator(name, oper: op)
 | _ value        | <code>SCArray</code>      | Обязательный | Массив значений                           | [4, 8, 15, 16, 23, 42]     |
 
 ```SWIFT
+var query = SCQuery(collection: "items")
+query.containsAll("someField", SCArray([SCString("A"), SCString("B")]))
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -351,7 +533,18 @@ addOperator(name, oper: op)
 | _ value        | <code>SCArray</code>      | Обязательный | Массив значений                           | 42     |
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.notContainedIn("someField", SCArray([SCString("A"), SCString("B")]))
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+greaterThan"></a>
@@ -368,7 +561,18 @@ addOperator(name, oper: op)
 | _ value        | <code>SCValue</code>      | Обязательный |  Значение условия                           | 42     |
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.greaterThan("reward", SCInt(100))
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+greaterThanOrEqualTo"></a>
@@ -385,7 +589,18 @@ addOperator(name, oper: op)
 | _ value        | <code>SCValue</code>      | Обязательный |  Значение условия                            | 42     |
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.greaterThanOrEqualTo("createdAt", SCDate("2016-06-04T17:24:23.091+03:00"))
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+lessThan"></a>
@@ -402,7 +617,18 @@ addOperator(name, oper: op)
 | _ value        | <code>SCValue</code>      | Обязательный |  Значение условия                            | 42     |
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.lessThan("price", SCInt(42))
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+lessThanOrEqualTo"></a>
@@ -419,7 +645,18 @@ addOperator(name, oper: op)
 | _ value        | <code>SCValue</code>      | Обязательный |  Значение условия                            | 42     |
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.lessThanOrEqualTo("price", SCInt(42))
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+exists"></a>
@@ -435,7 +672,18 @@ addOperator(name, oper: op)
 | name | <code>String</code> | Обязательное | Имя поля, которому задается условие | "price" | 
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.exists("reward")
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+doesNotExist"></a>
@@ -451,7 +699,18 @@ addOperator(name, oper: op)
 | name | <code>String</code> | Обязательное |  Имя поля, которому задается условие | "price" | 
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.doesNotExist("price")
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+contains"></a>
@@ -469,7 +728,18 @@ addOperator(name, oper: op)
 | _ pattern      | <code>String</code>       | Обязательный | Регулярное выражение                         | [0-9]                |
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.contains("description", "[a-zA-Z0-9]")
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+startsWith"></a>
@@ -487,7 +757,18 @@ addOperator(name, oper: op)
 | _ pattern        | <code>String</code>      | Обязательный | Значение условия                            | "neverendi"     |
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.startsWith("fieldString", "[A-Z]")
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+endsWith"></a>
@@ -504,7 +785,18 @@ addOperator(name, oper: op)
 | _ pattern        | <code>String</code>      | Обязательный | Удаляемое значение                          | "ngdocuments"     |
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.endsWith("fieldString", "ing")
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+and"></a>
@@ -520,7 +812,18 @@ addOperator(name, oper: op)
 | operators | <code>[SCOperator]</code> | Обязательное | Условие выборки, которое включается в конъюнкцию |  | 
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.notEqualTo("unequality", SCString("nope"))
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+or"></a>
@@ -536,7 +839,18 @@ addOperator(name, oper: op)
 | operators | <code>[SCOperator]</code> | Обязательное | Условие выборки, которое включается в дизъюнкцию |  | 
 
 ```SWIFT
-
+var query = SCQuery(collection: "items")
+query.notEqualTo("unequality", SCString("nope"))
+query.find() {
+    success, error, result in
+    if success {
+        NSLog("Success")
+    } else {
+        if let error = error {
+            NSLog("Error")
+        }
+    }
+}
 ```
 
 

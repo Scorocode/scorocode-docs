@@ -2,7 +2,6 @@
 
 ### SCUpdate
 SCUpdate
-**Тип**: Класс <code>SC</code>  
 **Содержание**
 * [SCUpdate](#SCUpdate)
     * [.addOperator(oper: SCUpdateOperator)](#SCUpdate+addOperator)
@@ -23,9 +22,9 @@ SCUpdate
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCUpdate+addOperator"></a> 
 
-## SCQuery.addOperator(name, oper)
+## SCUpdate.addOperator(name, oper)
 
-Метод для передачи SCQuery условия выборки 
+Метод для передачи SCUpdate оператора для изменения данных
 
 **Параметры**
 
@@ -78,6 +77,7 @@ update.set(["fieldName": SCString("A")])
 ```SWIFT
 var update = SCUpdate()
 update.push("fieldName", SCString("A"))
+update.save()
 
 ```
 
