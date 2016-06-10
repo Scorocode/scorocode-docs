@@ -1,5 +1,100 @@
-<div style="height: 100%; display: flex; flex-direction: row; align-items: center; align-content: center;">
-    <div style="flex: 1; text-align: center;">
-        <h1 style="color: #cccccc">Страница в стадии разработки</h1>
-    </div>
-</div>
+<h2>Scorocode JS SDK</h2>
+
+<p>
+Дистрибутив Scorocode SWIFT SDK можно скачать <a href="https://github.com/Scorocode/scorocode-sdk-swift" target="_blank">тут</a>.
+</p>
+<pre>
+<a href="javascript:getTemplate('./mdsource/SWIFT/SC.md')">SC</a>
+    <a href="javascript:getTemplate('./mdsource/JS/SC.md')">.initWith(opt)</a>
+<a href="javascript:getTemplate('./mdsource/JS/SCValue.md')">SCValue</a>
+    SCValue
+	SCBool(value)
+	SCString(value)
+	SCInt(value)
+	SCDouble(value)
+	SCDate(value)
+	SCArray(value)
+	SCDictionary(value)
+	SCObject
+<a href="javascript:getTemplate('./mdsource/JS/SCValue.md')">SCObject</a>
+	init Object(collection, id?)
+	.set(dic)
+	.save(callback
+	.getById(id, collection, callback)
+	.get(name)
+	.upload(field, filename, data, callback
+	.getFileLink(fieldName, callback -> Void)
+	.getFile (field, filename, callback)
+	.deleteFile (field, filename, callback)
+	.remove(callback)
+	.push(name, _ value)
+	.pushEach(name, _ value)
+	.pull(name, _ value)
+	.pullAll(name, _ value)
+	.addToSet(name, _ value)
+	.addToSetEach(name, _ value)
+	.pop(name, _ value)
+	.inc(name, _ value)
+	.currentDate(name, typeSpec)
+	.mul(name, _ value)
+	.min(name, _ value)
+	.max(name, _ value)
+<a href="javascript:getTemplate('./mdsource/JS/SCValue.md')">SCUser</a>
+	init()
+	.login(email, password, callback)
+	.logout(callback)
+	.signup(username, email, password, callback)
+	.signup(callback)
+<a href="javascript:getTemplate('./mdsource/JS/SCValue.md')">SCQuery</a>
+	init(collection)
+	SCQuery.find(callback -> Void)
+	SCQuery.count(callback -> Void)
+	SCQuery.update(update, callback -> Void)
+	SCQuery.remove(callback)
+	SCQuery.limit(limit)
+	SCQuery.skip(skip)
+	SCQuery.page(page)
+	SCQuery.raw(json)
+	SCQuery.reset()
+	SCQuery.ascending(name)
+	SCQuery.descending(name)
+	SCQuery.fields(names)
+	SCQuery.addOperator(name, oper)
+	SCQuery.equalTo(name, _ value)
+	SCQuery.notEqualTo(name, _ value)
+	SCQuery.containedIn(name, _ value)
+	SCQuery.containsAll(name, _ value)
+	SCQuery.notContainedIn(name, _ value)
+	SCQuery.greaterThan(name, _ value)
+	SCQuery.greaterThanOrEqualTo(name, _ value)
+	SCQuery.lessThan(name, _ value)
+	SCQuery.lessThanOrEqualTo(name, _ value)
+	SCQuery.exists(name)
+	SCQuery.doesNotExist(name)
+	SCQuery.contains(name, _ pattern)
+	SCQuery.startsWith(name, _ pattern)
+	SCQuery.endsWith(name, _ pattern)
+	SCQuery.and(operators)
+	SCQuery.or(operators)
+<a href="javascript:getTemplate('./mdsource/JS/SCValue.md')">SCScript</a>
+	.run(scriptId, pool, callback)
+<a href="javascript:getTemplate('./mdsource/JS/SCValue.md')">SCMessage</a>
+	.sendEmail(query, subject, text, callback -> Void)
+	.sendPush(query, subject, text, callback -> Void)
+	.sendSms(query, subject, text, callback -> Void)
+<a href="javascript:getTemplate('./mdsource/JS/SCValue.md')">SCUpdate</a>
+	.addOperator(oper)
+	.set(dic)
+	.push(name, _ value)
+	.pushEach(name, _ value)
+	.pull(name, _ value)
+	.pullAll(name, _ value)
+	.addToSet(name, _ value)
+	.addToSetEach(name, _ value)
+	.pop(name, _ value)
+	.inc(name, _ value)
+	.currentDate(name, typeSpec)
+	.mul(name, _ value)
+	.min(name, _ value)
+	.max(name, _ value)
+</pre>

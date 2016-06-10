@@ -1,6 +1,6 @@
 <a name="SCQuery"></a>
 
-### SCQuery
+## SCQuery
 SCQuery
 
 * [.Query](#SCQuery)
@@ -39,7 +39,7 @@ SCQuery
 
 
 <a name="SCQuery+init"></a>
-## init(collection)
+### init(collection)
 
 Инициализация запроса к данным коллекции. 
 
@@ -58,7 +58,7 @@ var query = SCQuery(collection: "users")
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 <a name="SCQuery+find"></a> 
-## SCQuery.find(callback) 
+### SCQuery.find(callback) 
 
 Метод для поиска документов, на основе сформированного условия выборки. Возвращает ошибку или массив документов.
 
@@ -66,17 +66,17 @@ var query = SCQuery(collection: "users")
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| callback  | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |        | Коллбэки для выполняемого запроса. |                 |
+| callback  | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |        | Коллбэк для выполняемого запроса. |                 |
 
 ```SWIFT
 var query = SCQuery(collection: "users")
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -85,7 +85,7 @@ query.find() {
 
 <a name="SCQuery+count"></a> 
 
-## SCQuery.count(callback()) 
+### SCQuery.count(callback()) 
 
 Метод для подсчета количества объектов, которые удовлетворяют условиям запроса.
 
@@ -93,17 +93,17 @@ query.find() {
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| callback()   | <code>(Bool, SCError?, Int?) -> Void</code> |        | Коллбэки для выполняемого запроса. |                 |
+| callback()   | <code>(Bool, SCError?, Int?) -> Void</code> |        | Коллбэк для выполняемого запроса. |                 |
 
 ```SWIFT
 var query = SCQuery(collection: "users")
 query.count() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -111,7 +111,7 @@ query.count() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+update"></a> 
 
-## SCQuery.update(update, callback())
+### SCQuery.update(update, callback())
 
 Метод для обновления документов соответствующих условиям выборки.
 
@@ -120,7 +120,7 @@ query.count() {
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | update | <code>SCUpdate</code> | Обязательное | Объект SCUpdate в который переданы обновляемые данные |                                    | 
-| callback()   | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |        | Коллбэки для выполняемого запроса. |                 |
+| callback()   | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |        | Коллбэк для выполняемого запроса. |                 |
 
 ```SWIFT
 var userArrivalTime = SCUpdate()
@@ -132,10 +132,10 @@ arrivedUsers.equalTo("flightRace", SCString("AF4926"))
 arrivedUsers.update(userArrivalTime) {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -143,7 +143,7 @@ arrivedUsers.update(userArrivalTime) {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+remove"></a>
 
-## SCQuery.remove(callback()) 
+### SCQuery.remove(callback()) 
 
 Метод для удаления документов соответствующих условиям выборки.
 
@@ -151,7 +151,7 @@ arrivedUsers.update(userArrivalTime) {
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| callback()   | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |        | Коллбэки для выполняемого запроса. |                 |
+| callback()   | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |        | Коллбэк для выполняемого запроса. |                 |
 
 ```SWIFT
 var oldStuff = SCQuery(collection: "Stuff")
@@ -159,10 +159,10 @@ oldStuff.lessThan("createdAt", SCDate("2016-06-54T17:24:23.091+03:00"))
 oldStuff.remove() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -170,7 +170,7 @@ oldStuff.remove() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+limit"></a> 
 
-## SCQuery.limit(limit)
+### SCQuery.limit(limit)
 
 Метод для установки лимита выборки.
 
@@ -186,10 +186,10 @@ query.limit(25)
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -197,7 +197,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+skip"></a>
 
-## SCQuery.skip(skip) 
+### SCQuery.skip(skip) 
 
 Метод для установки количества пропускаемых перед совершением выборки документов
 
@@ -213,10 +213,10 @@ query.skip(1000)
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -225,7 +225,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+page"></a>
 
-## SCQuery.page(page: Int)
+### SCQuery.page(page: Int)
 
 Метод для "постраничного" вывода результатов выборки, в соответствуии с указанным limit.
 
@@ -242,10 +242,10 @@ query.page(4)
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -253,7 +253,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+raw"></a> 
 
-## SCQuery.raw(json: String) 
+### SCQuery.raw(json: String) 
 
 Метод для установки условий выборки в виде JSON-структуры для формирования запроса к БД на языке MongoDB.
 
@@ -269,10 +269,10 @@ query.raw("{ \"fieldString\" : \"Строка\" }")
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -281,7 +281,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+reset"></a> 
 
-## SCQuery.reset() 
+### SCQuery.reset() 
 
 Метод для очистки условий выборки
 
@@ -304,7 +304,7 @@ query.reset()
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+ascending"></a> 
 
-## SCQuery.ascending(name: String) 
+### SCQuery.ascending(name: String) 
 
 Метод для сортировки данных в порядке возрастания значений указанного поля перед совершением выборки.
 
@@ -320,10 +320,10 @@ sortByPrice.ascending("price")
 sortByPrice.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -332,7 +332,7 @@ sortByPrice.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+descending"></a>
 
-## SCQuery.descending(name) 
+### SCQuery.descending(name) 
 
 Метод для сортировки данных в порядке убывания значений указанного поля перед совершением выборки.
 
@@ -348,10 +348,10 @@ sortByReward.descending("reward")
 sortByReward.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -360,7 +360,7 @@ sortByReward.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+fields"></a>
 
-## SCQuery.fields(names)
+### SCQuery.fields(names)
 
 Метод для указания списка возвращаемых полей. 
 
@@ -376,10 +376,10 @@ getPriceAndReward.fields(["price", "reward"])
 getPriceAndReward.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -388,7 +388,7 @@ getPriceAndReward.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+addOperator"></a> 
 
-## SCQuery.addOperator(name, oper)
+### SCQuery.addOperator(name, oper)
 
 Метод для передачи SCQuery условия выборки 
 
@@ -407,7 +407,7 @@ SCQuery.addOperator(name, oper: lessNorEqual)
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+equalTo"></a> 
 
-## SCQuery.equalTo(name: String, _ value: SCValue)
+### SCQuery.equalTo(name: String, _ value: SCValue)
 
 Метод для получения всех документов c указанным в условии значением поля.
 
@@ -424,10 +424,10 @@ query.equalTo("equality", SCString("yep"))
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -435,7 +435,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+notEqualTo"></a>
 
-## SCQuery.notEqualTo(name: String, _ value: SCValue) 
+### SCQuery.notEqualTo(name: String, _ value: SCValue) 
 
 Метод для получения всех документов, за исключением объектов с указанным в условии значением поля.
 
@@ -453,10 +453,10 @@ query.notEqualTo("unequality", SCString("nope"))
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -464,7 +464,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+containedIn"></a> 
 
-## SCQuery.containedIn(name: String, _ value: SCArray)
+### SCQuery.containedIn(name: String, _ value: SCArray)
 
 Метод для получения всех объектов, значение поля которых содержит указанные в запросе элементы массива.
 
@@ -481,10 +481,10 @@ query.containedIn("someField", SCArray([SCString("A"), SCString("B")]))
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -492,7 +492,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+containsAll"></a> 
 
-## SCQuery.containsAll(name: String, _ value: SCArray)
+### SCQuery.containsAll(name: String, _ value: SCArray)
 
 Метод для получения всех объектов, значение поля которых содержит все указанные в запросе элементы массива.
 
@@ -509,10 +509,10 @@ query.containsAll("someField", SCArray([SCString("A"), SCString("B")]))
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -521,7 +521,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+notContainedIn"></a>
 
-## SCQuery.notContainedIn(name: String, _ value: SCArray)
+### SCQuery.notContainedIn(name: String, _ value: SCArray)
 
 Метод для получения всех объектов, значение поля которых не содержит указанные в запросе элементы массива.
 
@@ -538,10 +538,10 @@ query.notContainedIn("someField", SCArray([SCString("A"), SCString("B")]))
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -549,7 +549,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+greaterThan"></a>
 
-## SCQuery.greaterThan(name: String, _ value: SCValue)
+### SCQuery.greaterThan(name: String, _ value: SCValue)
 
 Метод для получения всех объектов, значение поля которых больше, чем указанное в запросе число.
 
@@ -566,10 +566,10 @@ query.greaterThan("reward", SCInt(100))
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -577,7 +577,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+greaterThanOrEqualTo"></a>
 
-## SCQuery.greaterThanOrEqualTo(name: String, _ value: SCValue)
+### SCQuery.greaterThanOrEqualTo(name: String, _ value: SCValue)
 
 Метод для получения всех объектов, значение поля которых не меньше, чем указанное в запросе число.
 
@@ -594,10 +594,10 @@ query.greaterThanOrEqualTo("createdAt", SCDate("2016-06-04T17:24:23.091+03:00"))
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -605,7 +605,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+lessThan"></a>
 
-## SCQuery.lessThan(name: String, _ value: SCValue)
+### SCQuery.lessThan(name: String, _ value: SCValue)
 
 Метод для получения всех объектов, значение поля которых меньше, чем указанное в запросе число.
 
@@ -622,10 +622,10 @@ query.lessThan("price", SCInt(42))
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -633,7 +633,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+lessThanOrEqualTo"></a>
 
-## SCQuery.lessThanOrEqualTo(name: String, _ value: SCValue)
+### SCQuery.lessThanOrEqualTo(name: String, _ value: SCValue)
 
 Метод для получения всех объектов, значение поля которых не больше, чем указанное в запросе число.
 
@@ -650,10 +650,10 @@ query.lessThanOrEqualTo("price", SCInt(42))
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -661,7 +661,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+exists"></a>
 
-## SCQuery.exists(name: String)
+### SCQuery.exists(name: String)
 
 Метод для получения всех объектов с существующим значением заданного поля
 
@@ -677,10 +677,10 @@ query.exists("reward")
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -688,7 +688,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+doesNotExist"></a>
 
-## SCQuery.doesNotExist(name: String)](#SCQuery+doesNotExist)
+### SCQuery.doesNotExist(name: String)](#SCQuery+doesNotExist)
 
 Метод для получения всех объектов с отсутствующим значением в заданном поле
 
@@ -704,10 +704,10 @@ query.doesNotExist("price")
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -715,7 +715,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+contains"></a>
 
-## SCQuery.contains(name: String, _ pattern: String)
+### SCQuery.contains(name: String, _ pattern: String)
 
 Метод для получения всех объектов со значением заданного поля, соответствующим заданному регулярному выражению.
 
@@ -733,10 +733,10 @@ query.contains("description", "[a-zA-Z0-9]")
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -744,7 +744,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+startsWith"></a>
 
-## SCQuery.startsWith(name: String, _ pattern: String)
+### SCQuery.startsWith(name: String, _ pattern: String)
 
 Метод для получения всех объектов со значением заданного поля, начинающимся с указанной строки.
 
@@ -762,10 +762,10 @@ query.startsWith("fieldString", "[A-Z]")
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -773,7 +773,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+endsWith"></a>
 
-## SCQuery.endsWith(name: String, _ pattern: String)]
+### SCQuery.endsWith(name: String, _ pattern: String)]
 
 Метод для получения всех объектов со значением заданного поля, заканчивающимся на указанную строку.
 
@@ -790,10 +790,10 @@ query.endsWith("fieldString", "ing")
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -801,7 +801,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+and"></a>
 
-## SCQuery.and(operators: [SCOperator])
+### SCQuery.and(operators: [SCOperator])
 
 Метод для логического умножения условий нескольких выборок
 
@@ -817,10 +817,10 @@ query.notEqualTo("unequality", SCString("nope"))
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -828,7 +828,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+or"></a>
 
-## SCQuery.or(operators: [SCOperator])
+### SCQuery.or(operators: [SCOperator])
 
 Метод для логического сложения условий нескольких выборок
 
@@ -844,10 +844,10 @@ query.notEqualTo("unequality", SCString("nope"))
 query.find() {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }

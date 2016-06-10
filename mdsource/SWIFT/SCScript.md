@@ -1,11 +1,9 @@
 <a name="SCScript"></a>
 
-### SCScript
+## SCScript
 SCScript
 
 Класс для работы с серверными скриптами приложения
-
-**Тип**: Класс <code>SC</code>  
 
 * [SCScript](#SCScript)
     * [.run(scriptId, pool, callback)](#SCScript+run)
@@ -15,8 +13,8 @@ SCScript
 
 <a name="SCScript+run"></a>
 
-#### SCScript.run(scriptID, pool, callback)
-Метод для запуска серверного кода
+### SCScript.run(scriptID, pool, callback)
+Метод для запуска серверного скрипта
 
 **Тип**: Метод <code>[SCScript](#SCScript)</code>  
 
@@ -25,7 +23,7 @@ SCScript
 | --- | --- | --- | --- | --- |
 | scriptID | <code>String</code> | Обязательный | Идентификатор серверного скрипта | "57484fb91c5666544db25675" | 
 | pool | <code>[String: AnyObject]</code> |  | Пул данных, которые будут переданы серверному скрипту | ["data": {"array": [0,1,2,3,"строка"], "logic": false}, "weekday": "friday"] |
-| callback | <code>(Bool, SCError?) -> Void</code> | | Коллбэки для выполняемого запроса. | |
+| callback | <code>(Bool, SCError?) -> Void</code> | | Коллбэк для выполняемого запроса. | |
 
 
 **Пример**   

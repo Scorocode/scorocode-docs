@@ -1,7 +1,7 @@
 <a name="SCValue"></a>
 
-### SCValue
-SCValue
+## SCValue
+
 Протокол для работы с данными.
 
 **Содержание**
@@ -17,7 +17,7 @@ SCValue
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCBool"></a> 
 
-## SCBool(value)
+### SCBool(value)
 
 Хранение логических значений
 
@@ -36,7 +36,7 @@ let dataBool = SCBool(true)
 
 <a name="SCString"></a> 
 
-## SCString(value)
+### SCString(value)
 
 Хранение строковых значений
 
@@ -56,7 +56,7 @@ let dataString = SCString("AbCdE")
 
 <a name="SCInt"></a> 
 
-## SCInt(value)
+### SCInt(value)
 
 Хранение целочисленных значений
 
@@ -75,7 +75,7 @@ let dataInt = SCInt(5)
 
 <a name="SCDouble"></a> 
 
-## SCDouble(value)
+### SCDouble(value)
 
 Хранение дробных значений
 
@@ -94,7 +94,7 @@ let dataDouble = SCDouble(3.1415926)
 
 <a name="SCDate"></a> 
 
-## SCDate(value)
+### SCDate(value)
 
 Хранение даты/времени
 
@@ -115,7 +115,7 @@ let dataDate = SCDate(dateFormatter.dateFromString("2016-05-31")!)
 
 <a name="SCArray"></a> 
 
-## SCArray(value)
+### SCArray(value)
 
 Хранение массива
 
@@ -141,7 +141,7 @@ let dataArray = SCArray([dataBool, dataString, dataInt, dataDouble, dataDate, da
 
 <a name="SCDictionary"></a>
 
-#### SCDictionary(value)
+###### SCDictionary(value)
 
 Хранение объекта "ключ"-"значение"
 

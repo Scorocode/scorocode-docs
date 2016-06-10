@@ -22,31 +22,21 @@ SCMessage
 | --- | --- | --- | --- | --- |
 | query    | <code>SCQuery</code>                        |              | запрос в коллекцию users для выборки адресатов |                        | 
 | subject  | <code>String</code>                         |              | Тема письма                                    | "They live"            |
-| text     | <code>String</code>                         | Обязательный | Текст письма                                   | "CONFORM CONSUME OBEY" |
-| callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэки для выполняемого запроса.             |                        |
+| text     | <code>String</code>                         |              | Текст письма                                   | "CONFORM CONSUME OBEY" |
+| callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэк для выполняемого запроса.             |                        |
 
 **Пример**   
 ```SWIFT
 var queryUsers = SCQuery(collection: "users")
-queryUsers.find() {
-    success, error, result in
-    if success {
-        NSLog("Success")
-    } else {
-        if let error = error {
-            NSLog("Error")
-        }
-    }
-}
+var broadcast = new SCMessage()
 
-var Broadcast = new SCMessage();
-Broadcast.sendEmail(queryUsers, subject:"Тема письма", text:"Текст письма") {
+broadcast.sendEmail(queryUsers, subject:"Тема письма", text:"Текст письма") {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -63,32 +53,22 @@ Broadcast.sendEmail(queryUsers, subject:"Тема письма", text:"Текс�
 | --- | --- | --- | --- | --- |
 | query    | <code>SCQuery</code>                        |              | запрос в коллекцию users для выборки адресатов |                        | 
 | subject  | <code>String</code>                         |              | Тема                                           | "They live"            |
-| text     | <code>String</code>                         | Обязательный | Текст Push                                     | "CONFORM CONSUME OBEY" |
-| callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэки для выполняемого запроса.             |                        |
+| text     | <code>String</code>                         |              | Текст Push                                     | "CONFORM CONSUME OBEY" |
+| callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэк для выполняемого запроса.             |                        |
 
 **Пример**   
 ```SWIFT
 var queryUserDevices = SCQuery(collection: "devices")
-queryUserDevices.exists("userRelation")
-queryUserDevices.find() {
-    success, error, result in
-    if success {
-        NSLog("Success")
-    } else {
-        if let error = error {
-            NSLog("Error")
-        }
-    }
-}
+var broadcast = SCMessage()
 
-var Broadcast = new SCMessage();
-Broadcast.sendEmail(queryUserDevices, text:"Текст Push-уведомления") {
+queryUserDevices.exists("userRelation")
+broadcast.sendEmail(queryUserDevices, text:"Текст Push-уведомления") {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
@@ -103,32 +83,22 @@ Broadcast.sendEmail(queryUserDevices, text:"Текст Push-уведомлени
 | --- | --- | --- | --- | --- |
 | query    | <code>SCQuery</code>                        |              | запрос в коллекцию users для выборки адресатов |                        | 
 | subject  | <code>String</code>                         |              | Тема                                           | "They live"            |
-| text     | <code>String</code>                         | Обязательный | Текст Sms                                      | "CONFORM CONSUME OBEY" |
-| callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэки для выполняемого запроса.             |                        |
+| text     | <code>String</code>                         |              | Текст Sms                                      | "CONFORM CONSUME OBEY" |
+| callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэк для выполняемого запроса.             |                        |
 
 **Пример**   
 ```SWIFT
 var queryUsersWithPhone = SCQuery(collection: "users")
-queryUsersWithPhone.exists("phone")
-queryUsersWithPhone.find() {
-    success, error, result in
-    if success {
-        NSLog("Success")
-    } else {
-        if let error = error {
-            NSLog("Error")
-        }
-    }
-}
+var broadcast = SCMessage()
 
-var Broadcast = new SCMessage();
-Broadcast.sendEmail(queryUsersWithPhone, text:"Текст СМС сообщения") {
+queryUsersWithPhone.exists("phone")
+broadcast.sendEmail(queryUsersWithPhone, text:"Текст СМС сообщения") {
     success, error, result in
     if success {
-        NSLog("Success")
+        print("Success")
     } else {
         if let error = error {
-            NSLog("Error")
+            print("Error")
         }
     }
 }
