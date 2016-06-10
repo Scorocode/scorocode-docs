@@ -2,14 +2,155 @@
 
 ### SCValue
 SCValue
+Протокол для работы с данными.
 
-Типы данных Scorocode SWIFT SDK
+**Содержание**
+* [SCValue](#SCValue)
+    * [SCBool(value)](#SCBool)
+    * [SCString(value)](#SCString) 
+    * [SCInt(value)](#SCInt)
+    * [SCDouble(value)](#SCDouble)  
+    * [SCDate(value)](#SCDate) 
+    * [SCArray(value)](#SCArray) 
+    * [SCDictionary(value)](#SCDictionary)
 
-| Данные | SCValue | Пример значения | 
-| Логические | SCBool | <code>true | false</code> | 
-| Cтрока | SCString | "Это SCString" |
-| Целочисленные | SCInt | -42 |
-| Дробные | SCDouble | 42.42 |
-| Дата/время | SCDate | "2016-05-30T21:00:00Z" |
-| Массив | SCArray | ["AB", "CD"] |
-| Объект | SCDictionary | ["key1": "AB", "key2": false] |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<a name="SCBool"></a> 
+
+## SCBool(value)
+
+Хранение логических значений
+
+**Параметры**
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| value | <code>Bool</code> | Обязательное | Логическое значение: <code>true | false</code> | true | 
+
+
+```SWIFT
+let dataBool = SCBool(true)
+```
+
+----------------------------------------------------------------------------------------------
+
+<a name="SCString"></a> 
+
+## SCString(value)
+
+Хранение строковых значений
+
+
+**Параметры**
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| value | <code>String</code> | Обязательное | Cтрока | "Это строка" | 
+
+
+```SWIFT
+let dataString = SCString("AbCdE")
+```
+
+----------------------------------------------------------------------------------------------
+
+<a name="SCInt"></a> 
+
+## SCInt(value)
+
+Хранение целочисленных значений
+
+**Параметры**
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| value | <code>Int</code> | Обязательное | Логическое значение | <code>true | false</code> | 
+
+
+```SWIFT
+let dataInt = SCInt(5)
+```
+
+----------------------------------------------------------------------------------------------
+
+<a name="SCDouble"></a> 
+
+## SCDouble(value)
+
+Хранение дробных значений
+
+**Параметры**
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| value | <code>Double</code> | Обязательное | Логическое значение | <code>true | false</code> | 
+
+
+```SWIFT
+let dataDouble = SCDouble(3.1415926)
+```
+
+----------------------------------------------------------------------------------------------
+
+<a name="SCDate"></a> 
+
+## SCDate(value)
+
+Хранение даты/времени
+
+**Параметры**
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| value | <code>NSDate</code> | Обязательное | Логическое значение | <code>true | false</code> | 
+
+
+```SWIFT
+let dataDate = SCDate(dateFormatter.dateFromString("2016-05-31")!)
+```
+
+
+
+----------------------------------------------------------------------------------------------
+
+<a name="SCArray"></a> 
+
+## SCArray(value)
+
+Хранение массива
+
+**Параметры**
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| value | <code>[SCValue]</code> | Обязательное | Логическое значение | <code>[SCInt(4), SCInt(8), SCInt(15), SCInt(16), SCInt(23), SCInt(42)]</code> | 
+
+
+```SWIFT
+let dataBool = SCBool(true)
+let dataString = SCString("AbCdE")
+let dataInt = SCInt(5)
+let dataDouble = SCDouble(3.1415926)
+let dataDate = SCDate(dateFormatter.dateFromString("2016-05-31")!)
+let dataDictionary = SCDictionary(["name" : dataString, "date" : dataDate])
+
+let dataArray = SCArray([dataBool, dataString, dataInt, dataDouble, dataDate, dataDictionary])
+```
+
+----------------------------------------------------------------------------------------------
+
+<a name="SCDictionary"></a>
+
+#### SCDictionary(value)
+
+Хранение объекта "ключ"-"значение"
+
+**Параметры**
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| value | <code>[String: SCValue]</code> | Обязательное | Логическое значение | ["key1" : SCString("A"), "key2" : SCString("B")] | 
+
+```SWIFT
+let dataDictionary = SCDictionary(["key1" : SCString("A"), "key2" : SCString("B")])
+```
