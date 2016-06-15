@@ -5,8 +5,8 @@
 </p>
 <pre>
 <a href="javascript:getTemplate('./mdsource/SWIFT/SC.md')">SC</a>
-    <a href="javascript:getTemplate('./mdsource/JS/SC.md')">.initWith(opt)</a>
-<a href="javascript:getTemplate('./mdsource/JS/SCValue.md')">SCValue</a>
+    .initWith(opt)
+<a href="javascript:getTemplate('./mdsource/SWIFT/SCValue.md')">SCValue</a>
     SCValue
 	SCBool(value)
 	SCString(value)
@@ -15,8 +15,7 @@
 	SCDate(value)
 	SCArray(value)
 	SCDictionary(value)
-	SCObject
-<a href="javascript:getTemplate('./mdsource/JS/SCValue.md')">SCObject</a>
+<a href="javascript:getTemplate('./mdsource/SWIFT/SCObject.md')">SCObject</a>
 	init Object(collection, id?)
 	.set(dic)
 	.save(callback
@@ -39,13 +38,13 @@
 	.mul(name, _ value)
 	.min(name, _ value)
 	.max(name, _ value)
-<a href="javascript:getTemplate('./mdsource/JS/SCValue.md')">SCUser</a>
+<a href="javascript:getTemplate('./mdsource/SWIFT/SCUser.md')">SCUser</a>
 	init()
 	.login(email, password, callback)
 	.logout(callback)
 	.signup(username, email, password, callback)
 	.signup(callback)
-<a href="javascript:getTemplate('./mdsource/JS/SCValue.md')">SCQuery</a>
+<a href="javascript:getTemplate('./mdsource/SWIFT/SCQuery.md')">SCQuery</a>
 	init(collection)
 	SCQuery.find(callback -> Void)
 	SCQuery.count(callback -> Void)
@@ -76,13 +75,13 @@
 	SCQuery.endsWith(name, _ pattern)
 	SCQuery.and(operators)
 	SCQuery.or(operators)
-<a href="javascript:getTemplate('./mdsource/JS/SCValue.md')">SCScript</a>
+<a href="javascript:getTemplate('./mdsource/SWIFT/SCScript.md')">SCScript</a>
 	.run(scriptId, pool, callback)
-<a href="javascript:getTemplate('./mdsource/JS/SCValue.md')">SCMessage</a>
+<a href="javascript:getTemplate('./mdsource/SWIFT/SCMessage.md')">SCMessage</a>
 	.sendEmail(query, subject, text, callback -> Void)
 	.sendPush(query, subject, text, callback -> Void)
 	.sendSms(query, subject, text, callback -> Void)
-<a href="javascript:getTemplate('./mdsource/JS/SCValue.md')">SCUpdate</a>
+<a href="javascript:getTemplate('./mdsource/SWIFT/SCUpdate.md')">SCUpdate</a>
 	.addOperator(oper)
 	.set(dic)
 	.push(name, _ value)
