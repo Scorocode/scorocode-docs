@@ -7,10 +7,10 @@ Scorocode.Query
 
 * [.Query](#Scorocode.Query)
     * [new Query(collName)](#new_Scorocode.Query_new) ⇒ <code>Scorocode.Object</code>
-    * [.find(options)](#Scorocode.Query+find) ⇒ <code>Promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code>
-    * [.count(options)](#Scorocode.Query+count) ⇒ <code>Promise.{error: Boolean, result: Number}</code>
-    * [.update(Object, options)](#Scorocode.Query+update) ⇒ <code>Promise.{error: Boolean, result: {count: Number, docs: Array}}</code>
-    * [.remove(options)](#Scorocode.Query+remove) ⇒ <code>Promise.{count: Number, docs: Array}</code> 
+    * [.find(options)](#Scorocode.Query+find) ⇒ <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code>
+    * [.count(options)](#Scorocode.Query+count) ⇒ <code>promise.{error: Boolean, result: Number}</code>
+    * [.update(Object, options)](#Scorocode.Query+update) ⇒ <code>promise.{error: Boolean, result: {count: Number, docs: Array}}</code>
+    * [.remove(options)](#Scorocode.Query+remove) ⇒ <code>promise.{count: Number, docs: Array}</code> 
     * [.reset()](#Scorocode.Query+reset) 
     * [.equalTo(field, value)](#Scorocode.Query+equalTo) 
     * [.notEqualTo(field, value)](#Scorocode.Query+notEqualTo) 
@@ -26,7 +26,7 @@ Scorocode.Query
     * [.contains(field, value)](#Scorocode.Query+contains) 
     * [.startsWith(field, value)](#Scorocode.Query+startsWith) 
     * [.endsWith(field, value)](#Scorocode.Query+endsWith) 
-    * [.limit(Limit)](#Scorocode.Query+limit) 
+    * [.limit(limit)](#Scorocode.Query+limit) 
     * [.skip(skip)](#Scorocode.Query+skip)
     * [.page(page)](#Scorocode.Query+page) 
     * [.ascending(field)](#Scorocode.Query+ascending)
@@ -79,7 +79,7 @@ data.find()
 
 <a name="Scorocode.Query+find"></a>
 
-#### Query.find(options) ⇒ <code>Promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code>
+#### Query.find(options) ⇒ <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code>
 
 Метод для запроса документов из коллекции. Возвращает данные объектов, которые соответствуют условиям выборки. Если условия не заданы, по-умолчанию возвращает первые 100 объектов коллекции.
 
@@ -114,7 +114,7 @@ data.find()
     });    
 ```
 
-**Возвращает**: <code>Promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса. 
+**Возвращает**: <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса. 
 - "error" - <code>Boolean</code> - Флаг ошибки
 - "limit" - <code>Number</code>  - лимит размера выборки
 - "skip" - <code>Number</code>  - количество документов, которое было пропущено при выборке
@@ -152,7 +152,7 @@ data.find()
 
 <a name="Scorocode.Query+count"></a>
 
-#### Query.count(options) ⇒ <code>Promise.{error: Boolean, result: Number}</code>
+#### Query.count(options) ⇒ <code>promise.{error: Boolean, result: Number}</code>
 
 Метод для подсчета количества объектов, которые удовлетворяют условиям запроса.
 
@@ -185,7 +185,7 @@ countItems.exists("price")
             console.log("Что-то пошло не так: \n", error)
         });
 ```
-**Возвращает**: <code>Promise.{error: Boolean, result: Number}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
+**Возвращает**: <code>promise.{error: Boolean, result: Number}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
 - "error" - <code>Boolean</code> - Флаг ошибки
 - "result" - <code>Number</code>  - Количество объектов, подходящих под условие выборки.
 
@@ -193,7 +193,7 @@ countItems.exists("price")
 
 <a name="Scorocode.Query+update"></a>
 
-#### Query.update(Object, options) ⇒ <code>Promise.{error: Boolean, result: {count: Number, docs: Array}}</code>
+#### Query.update(Object, options) ⇒ <code>promise.{error: Boolean, result: {count: Number, docs: Array}}</code>
 
 Метод для обновления запрошенных объектов.
 
@@ -241,7 +241,7 @@ Items.notEqualTo("price", 42)
 
 ```
 
-**Возвращает**: <code>Promise.{error: Boolean, result: {count: Number, docs: Array}}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
+**Возвращает**: <code>promise.{error: Boolean, result: {count: Number, docs: Array}}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
 
 - "error" - <code>Boolean</code> - Флаг ошибки
 - "result" - <code>Object</code>  - Результат выполнения запроса
@@ -269,7 +269,7 @@ Items.notEqualTo("price", 42)
 
 <a name="Scorocode.Query+remove"></a>
 
-#### Query.remove(options) ⇒ <code>Promise.{count: Number, docs: Array}</code> 
+#### Query.remove(options) ⇒ <code>promise.{count: Number, docs: Array}</code> 
 
 Метод для удаления запрошенных объектов.
 
@@ -310,7 +310,7 @@ Items.exists("arrayField")
         });
 ```
 
-**Возвращает**: <code>Promise.{ecount: Number, docs: Array}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
+**Возвращает**: <code>promise.{ecount: Number, docs: Array}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
 - "count" - <code>Number</code>  - Количество измененных объектов
 - "docs" - <code>Array</code>  - Массив _id измененных объектов.
 ```
@@ -374,7 +374,7 @@ getItems.equalTo("price", 42)
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | field | <code>String</code> | Имя поля, которому задается условие |
-| value | <code>String | Number | Boolean | Date | Array | Object</code> | Значение поля |
+| value | <code>String / Number / Boolean / Date / Array / Object</code> | Значение поля |
 
 **Пример**  
 ```js
@@ -413,7 +413,7 @@ getItems.equalTo("price", 42)
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | field | <code>String</code> | Имя поля, которому задается условие |
-| value | <code>String | Number | Boolean | Date | Array | Object </code> | Значение поля |
+| value | <code>String / Number / Boolean / Date / Array / Object </code> | Значение поля |
 
 **Пример**  
 ```js
@@ -537,8 +537,8 @@ getItems.containsAll("arrayField",[4, 8, 15, 16, 23, 42])
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| field | <code>string</code> | Имя поля, которому задается условие |
-| value | <code>array</code> | Массив значений |
+| field | <code>String</code> | Имя поля, которому задается условие |
+| value | <code>Array</code> | Массив значений |
 
 **Пример**  
 ```js
@@ -581,7 +581,7 @@ getItems.notContainedIn("price",[41.999, 42])
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | field | <code>String</code> | Имя поля, которому задается условие |
-| value | <code>Number | Date</code> | Значение условия |
+| value | <code>Number / Date</code> | Значение условия |
 
 **Пример**  
 ```js
@@ -620,7 +620,7 @@ getItems.greaterThan("createdAt", "2016-05-19T15:35:16.000Z")
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | field | <code>String</code> | Имя поля, которому задается условие |
-| value | <code>Number | Date</code> | Значение условия |
+| value | <code>Number / Date</code> | Значение условия |
 
 **Пример**  
 ```js
@@ -659,7 +659,7 @@ getItems.greaterThanOrEqualTo("price", 41.999)
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | field | <code>String</code> | Имя поля, которому задается условие |
-| value | <code>Number | Date</code> | Значение условия |
+| value | <code>Number / Date</code> | Значение условия |
 
 **Пример**  
 ```js
@@ -698,7 +698,7 @@ getItems.lessThan("price", 41)
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | field | <code>String</code> | Имя поля, которому задается условие |
-| value | <code>Number | Date</code> | Значение условия |
+| value | <code>Number / Date</code> | Значение условия |
 
 **Пример**  
 ```js
@@ -929,14 +929,14 @@ getItems.endsWith("name", "чип");
 
 <a name="Scorocode.Query+limit"></a>
 
-#### Query.limit(Limit) 
+#### Query.limit(limit) 
 Метод для указания лимита количества объектов выборки
 
 **Тип**: Метод <code>[Scorocode.Query](#Scorocode.Query)</code>  
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| Limit | <code>Number</code> | Лимит выборки |
+| limit | <code>Number</code> | Лимит выборки |
 
 **Пример**  
 ```js
@@ -979,7 +979,7 @@ getItems.limit(1000).contains("someString","[a-zA-Z-0-9]")
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| skip | <code>number</code> | Количество пропускаемых объектов |
+| skip | <code>Number</code> | Количество пропускаемых объектов |
 
 **Пример**  
 ```js
@@ -1258,8 +1258,8 @@ Scorocode.Init({
 
 // Создадим новый экземпляр запроса к коллекции items.
 var data = new Scorocode.Query("items");
-// Запросим все объекты коллекции и получим значение их поля "price".
-data.select("price").find()
+// Запросим все объекты коллекции и получим значение их поля "price" и "reward".
+data.select("price", "reward").find()
     // Обработка успешного выполнения запроса
     .then((finded) =>{
         //Выведем полученные данные в консоль. 
@@ -1274,8 +1274,6 @@ data.select("price").find()
 
 ----------------------------------------------------------------------------------------------
 
-#### TODO
-
 <a name="Scorocode.Query+raw"></a>
 
 #### Query.raw(filter) 
@@ -1285,5 +1283,27 @@ data.select("price").find()
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| filter | <code>Object</code> | Применяемый фильтр |
+| filter | <code>Object</code> | Применяемый фильтр в формате языка запросов MongoDB |
 
+
+```js
+// Подключим SDK и инициализируем его. 
+var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
+
+var query = Scorocode.Query("items");
+query.raw("{ \"fieldString\" : \"Строка\" }");
+query.find()
+    .then((finded) =>{
+        //Выведем полученные данные в консоль. 
+        console.log(finded);
+    })
+    // Обработка ошибки 
+    .catch((err)=>{
+        console.log(err)
+    });    
+```

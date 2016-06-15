@@ -7,7 +7,7 @@ Scorocode.Object
 **Содержание**
 * [.Object](#Scorocode.Object)
     * [new Object(collName)](#new_Scorocode.Object_new) ⇒ <code>Scorocode.Object</code>
-    * [.getById(_id, options)](#Scorocode.Object+getById) ⇒ <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code>
+    * [.getById(_id, options)](#Scorocode.Object+getById) ⇒ <code>promise.[Scorocode.Object](#Scorocode.Object)</code>
     * [.get(key)](#Scorocode.Object+get)
     * [.getFileLink(field)](#Scorocode.Object+getFileLink) ⇒ <code>String</code>
     * [.uploadFile(field, filename, file, options)](#Scorocode.Object+uploadFile) ⇒ <code>promise.&lt;String&gt;</code>
