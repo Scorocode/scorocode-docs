@@ -173,7 +173,7 @@ Items.exists("arrayField")
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
-| value | <code>String | Number | Boolean | Date | Array | Object </code> | Удаляемое значение  |
+| value | <code>String / Number / Boolean / Date / Array / Object</code> | Удаляемое значение  |
 
 **Пример**
 ```js
@@ -334,7 +334,7 @@ Items.exists("arrayField")
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
-| pos | <code>number</code> | Позиция удаляемого элемента в массиве: -1 для первого элемента и 1 для последнего |
+| pos | <code>Number</code> | Позиция удаляемого элемента в массиве: -1 для первого элемента и 1 для последнего |
 
 **Пример**
 ```js
@@ -439,7 +439,7 @@ Items.exists("price")
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
-| type | <code>String | Boolean</code> | Тип даты. Принимает значения: true, 'date' или 'timestamp' |
+| type | <code>String / Boolean</code> | Тип даты. Принимает значения: true, 'date' или 'timestamp' |
 
 **Пример**:
 ```js
