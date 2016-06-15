@@ -20,7 +20,7 @@ SCMessage
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| query    | <code>SCQuery</code>                        |              | запрос в коллекцию users для выборки адресатов |                        | 
+| query    | <code>SCQuery</code>                        |              | Запрос в коллекцию users для выборки адресатов |                        | 
 | subject  | <code>String</code>                         |              | Тема письма                                    | "They live"            |
 | text     | <code>String</code>                         |              | Текст письма                                   | "CONFORM CONSUME OBEY" |
 | callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэк для выполняемого запроса.             |                        |
@@ -51,8 +51,8 @@ broadcast.sendEmail(queryUsers, subject:"Тема письма", text:"Текс�
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| query    | <code>SCQuery</code>                        |              | запрос в коллекцию users для выборки адресатов |                        | 
-| subject  | <code>String</code>                         |              | Тема                                           | "They live"            |
+| query    | <code>SCQuery</code>                        |              | Запрос в коллекцию users для выборки адресатов |                        | 
+| subject  | <code>String</code>                         |              | Тема                                           |                        |
 | text     | <code>String</code>                         |              | Текст Push                                     | "CONFORM CONSUME OBEY" |
 | callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэк для выполняемого запроса.             |                        |
 
@@ -82,7 +82,7 @@ broadcast.sendEmail(queryUserDevices, text:"Текст Push-уведомлени
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | query    | <code>SCQuery</code>                        |              | запрос в коллекцию users для выборки адресатов |                        | 
-| subject  | <code>String</code>                         |              | Тема                                           | "They live"            |
+| subject  | <code>String</code>                         |              | Тема                                           |                        |
 | text     | <code>String</code>                         |              | Текст Sms                                      | "CONFORM CONSUME OBEY" |
 | callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэк для выполняемого запроса.             |                        |
 

@@ -4,29 +4,28 @@
 SCObject
 **Содержание**
 * [SCObject](#SCObject)
-   * [init Object(collection: String, id: String?)](#SCObject+init)
-    * [.set(dic: [String: SCValue])](#SCObject+set)
-    * [.save(callback: (Bool, SCError?, [String: AnyObject]?)](#SCObject+save)  
+    * [init Object(collection, id?)](#SCObject+init)
+    * [.set(dic)](#SCObject+set)
+    * [.save(callback](#SCObject+save)  
     * [.getById(id, collection, callback)](#SCObject+getById)
-    * [.get(name: String)](#SCObject+get)
-    * [.upload(field: String, filename: String, data: NSData, callback: (Bool, SCError?)](#SCObject+upload)
-    * [.getFileLink(fieldName: String, callback: (Bool, SCError?, NSURL?) -> Void)](#SCObject+getFileLink)
-    * [.getFile (field: String, filename: String, callback: (Bool, SCError?)](#SCObject+getFile)
-    * [.deleteFile (field: String, filename: String, callback: (Bool, SCError?)](#SCObject+deleteFile)  
-    * [.remove(callback: (Bool, SCError?, [String: AnyObject]?)](#SCObject+remove) 
-    * [.push(name: String, _ value: SCValue)](#SCObject+push)
-    * [.pushEach(name: String, _ value: SCValue)](#SCObject+pushEach)  
-    * [.pull(name: String, _ value: SCPullable)](#SCObject+pull) 
-    * [.pullAll(name: String, _ value: SCValue)](#SCObject+pullAll) 
-    * [.addToSet(name: String, _ value: SCValue)](#SCObject+addToSet)
-    * [.addToSetEach(name: String, _ value: SCValue)](#SCObject+addToSetEach) 
-    * [.pop(name: String, _ value: Int)](#SCObject+pop) 
-    * [.inc(name: String, _ value: SCValue)](#SCObject+inc)
-    * [.currentDate(name: String, typeSpec: String)](#SCObject+currentDate)
-    * [.mul(name: String, _ value: SCValue)](#SCObject+mul)
-    * [.min(name: String, _ value: SCValue)](#SCObject+min)
-    * [.max(name: String, _ value: SCValue)](#SCObject+max)
-
+    * [.get(name)](#SCObject+get)
+    * [.upload(field, filename, data, callback](#SCObject+upload)
+    * [.getFileLink(fieldName, callback -> Void)](#SCObject+getFileLink)
+    * [.getFile (field, filename, callback)](#SCObject+getFile)
+    * [.deleteFile (field, filename, callback)](#SCObject+deleteFile)  
+    * [.remove(callback)](#SCObject+remove) 
+    * [.push(name, _ value)](#SCObject+push)
+    * [.pushEach(name, _ value)](#SCObject+pushEach)  
+    * [.pull(name, _ value)](#SCObject+pull) 
+    * [.pullAll(name, _ value)](#SCObject+pullAll) 
+    * [.addToSet(name, _ value)](#SCObject+addToSet)
+    * [.addToSetEach(name, _ value)](#SCObject+addToSetEach) 
+    * [.pop(name, _ value)](#SCObject+pop) 
+    * [.inc(name, _ value)](#SCObject+inc)
+    * [.currentDate(name, typeSpec)](#SCObject+currentDate)
+    * [.mul(name, _ value)](#SCObject+mul)
+    * [.min(name, _ value)](#SCObject+min)
+    * [.max(name, _ value)](#SCObject+max)
 
 ---------------------------------------------------------------------------------------------
 
@@ -52,14 +51,14 @@ let obj2 = SCObject(collection: "items")
 
 ----------------------------------------------------------------------------------------------
 
-#### SCObject.set(dic: [String: SCValue])
+#### SCObject.set(dic)
 Метод для передачи данных объекту
 
 **Тип**: Метод <code>[SCObject](#SCObject)</code>  
 
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
-| dic        |[String: SCValue] |              |Объект с данными для передачи объекту | ["fieldString": SCString("NewValue")] |
+| dic        |<code>[String: SCValue]</code> |              |Объект с данными для передачи объекту | ["fieldString": SCString("NewValue")] |
 
 **Пример**  
 ```SWIFT
@@ -90,7 +89,7 @@ newItem.save() {
 
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения |
 |------------|------------------|--------------|--------------------------------------|-----------------|
-| callback | (Bool, SCError?) |              | Коллбэк для выполняемого запроса.   |                 |
+| callback |  <code>(Bool, SCError?, [String: AnyObject]?)</code> |              | Коллбэк для выполняемого запроса.   |                 |
 
 **Пример**  
 ```SWIFT
@@ -159,7 +158,7 @@ dataItem.get("price")
 
 <a name="SCObject+upload"></a>
 
-#### SCObject.upload(field: String, filename: String, data: NSData, callback: (Bool, SCError?)
+#### SCObject.upload(field, filename, data, callback)
 Метод для загрузки файлов
 
 **Тип**: Метод <code>[SCObject](#SCObject)</code>  
@@ -202,15 +201,15 @@ newItem.save() {
 
 <a name="SCObject+getFileLink"></a>
 
-#### Object.getFileLink(fieldName: String, callback: (Bool, SCError?, NSURL?) -> Void)
+#### Object.getFileLink(fieldName, callback)
 Метод для получения ссылки на файл.
 
 **Тип**: Метод <code>[SCObject](#SCObject)</code>  
 
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения |
 |------------|------------------|--------------|--------------------------------------|-----------------|
-| fieldName  | String           | Обязательный | Имя файла                            | "attachments"   |
-| callback | (Bool, SCError?) |              | Коллбэк для выполняемого запроса.   |                 |
+| fieldName  | <code>String</code>           | Обязательный | Имя файла                            | "attachments"   |
+| callback   | <code>(Bool, SCError?)</code> |              | Коллбэк для выполняемого запроса.   |                 |
 
 **Пример**
 ```SWIFT
@@ -288,14 +287,14 @@ item.delete("attachment", "swiftDocs.pdf")
 
 <a name="SCObject+remove"></a>
 
-#### SCObject.remove(Bool, SCError?, [String: AnyObject]?)
+#### SCObject.remove(callback)
 Метод для удаления указанного объекта
 
 **Тип**: Метод <code>[SCObject](#SCObject)</code>  
 
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения |
 |------------|------------------|--------------|--------------------------------------|-----------------|
-| callback   | (Bool, SCError?) |              | Коллбэк для выполняемого запроса.   |                 |
+| callback   | <code>(Bool, SCError?)</code> |              | Коллбэк для выполняемого запроса.   |                 |
 
 
 **Пример**  
@@ -321,7 +320,7 @@ obj.remove() {
 
 <a name="SCObject+push"></a>
 
-#### Object.push(name: String, _ value: SCValue))
+#### Object.push(name, _ value))
 Метод для добавления элемента в массив.
 
 **Тип**: Метод <code>[SCObject](#SCObject)</code>  
@@ -329,7 +328,7 @@ obj.remove() {
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | name           |<code>String</code>         | Обязательный |  Имя поля, значение которого нужно изменить  | "tags" |
-| _ value        | SCValue      | Обязательный |  Значение нового элемента массива            | 42     |
+| _ value        | <code>SCValue</code>      | Обязательный |  Значение нового элемента массива            | 42     |
 
 
 **Пример**
@@ -342,7 +341,7 @@ editItem.push("location", SCString("Sierra Army Depot"))
 
 <a name="SCObject+pushEach"></a>
 
-#### SCObject.pushEach(name: String, _ value: SCValue))
+#### SCObject.pushEach(name, _ value))
 Метод для добавления нескольких элементов в массив.
 
 **Тип**: Метод <code>[SCObject](#SCObject)</code>  
@@ -350,7 +349,7 @@ editItem.push("location", SCString("Sierra Army Depot"))
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | name           | <code>String</code>       | Обязательный |  Имя поля, значение которого нужно изменить  | "tags" |
-| _ value        | SCValue      | Обязательный |  Значения новых элементов массива            | 42, [43,43], 44     |
+| _ value        | <code>SCValue</code>      | Обязательный |  Значения новых элементов массива            | 42, [43,43], 44     |
 
 
 **Пример**
@@ -363,7 +362,7 @@ editItem.pushEach("location", SCArray([SCString("Sierra Army Depot"), SCString("
 
 <a name="SCObject+pull"></a>
 
-#### SCObject.pull(name: String, _ value: SCPullable)
+#### SCObject.pull(name, _ value)
 Метод для удаления всех элементов массива, значение которых равно указанному.
 
 **Тип**: Метод <code>[Object](#SCObject)</code>  
@@ -371,7 +370,7 @@ editItem.pushEach("location", SCArray([SCString("Sierra Army Depot"), SCString("
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | name           | <code>String</code>       | Обязательный |  Имя поля, значение которого нужно изменить  | "tags" |
-| _ value        | SCPullable      | Обязательный | Удаляемое значение            | 42     |
+| _ value        | <code>SCPullable</code>      | Обязательный | Удаляемое значение            | 42     |
 
 ----------------------------------------------------------------------------------------------
 
@@ -392,7 +391,7 @@ editItem.pushEach("location", SCArray([SCString("Sierra Army Depot"), SCString("
 
 <a name="SCObject+addToSet"></a>
 
-#### SCObject.addToSet(name: String, _ value: SCValue)
+#### SCObject.addToSet(name, _ value)
 Метод для добавления элемента в массив только в том случае, если в массиве отсутствуют элементы с таким значением.
 
 **Тип**: Метод <code>[SCObject](#SCObject)</code>  
@@ -413,7 +412,7 @@ editItem.addToSet("location", SCString("A"))
 
 <a name="SCObject+addToSetEach"></a>
 
-#### SCObject.addToSetEach(name: String, _ value: SCValue)
+#### SCObject.addToSetEach(name, _ value)
 Метод для добавления элементов в массив только в том случае, если в массиве отсутствуют элементы с таким значением.
 
 **Тип**: Метод <code>[SCObject](#SCObject)</code>  
@@ -434,7 +433,7 @@ editItem.addToSetEach("location", SCArray([SCString("Sierra Army Depot"), SCStri
 
 <a name="SCObject+pop"></a>
 
-#### SCSCObject.pop(name: String, _ value: Int)
+#### SCSCObject.pop(name, _ value)
 Метод для удаления первого или последнего элемента массива
 
 **Тип**: Метод <code>[SCObject](#SCObject)</code>  
@@ -455,7 +454,7 @@ editItem.pop("location", 1)
 
 <a name="SCObject+inc"></a>
 
-#### SCObject.inc(name: String, _ value: SCValue)
+#### SCObject.inc(name, _ value)
 Метод увеличивает значение числового поля на заданное число
 
 **Тип**: Метод <code>[SCObject](#SCObject)</code>  
