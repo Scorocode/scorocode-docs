@@ -4,36 +4,36 @@
 SCQuery
 
 * [.Query](#SCQuery)
-    * [init(collection: String)](#SCQuery+init)
-    * [SCQuery.find(callback: (Bool, SCError?, [String: AnyObject]?) -> Void)](#SCQuery+find) 
-    * [SCQuery.count(callback: (Bool, SCError?, Int?) -> Void)](#SCQuery+count)
-    * [SCQuery.update(update: SCUpdate, callback: (Bool, SCError?, [String: AnyObject]?) -> Void)](#SCQuery+update) 
-    * [SCQuery.remove(callback: (Bool, SCError?, [String: AnyObject]?)](#SCQuery+remove) 
-    * [SCQuery.limit(limit: Int)](#SCQuery+limit)
-    * [SCQuery.skip(skip: Int)](#SCQuery+skip)
-    * [SCQuery.page(page: Int)](#SCQuery+page)
-    * [SCQuery.raw(json: String)](#SCQuery+raw)
-    * [SCQuery.reset()](#SCQuery+reset)
-    * [SCQuery.ascending(name: String)](#SCQuery+ascending)
-    * [SCQuery.descending(name: String)](#SCQuery+descending) 
-    * [SCQuery.fields(names: [String])](#SCQuery+fields) 
-    * [SCQuery.addOperator(name: String, oper: SCOperator)](#SCQuery+addOperator) 
-    * [SCQuery.equalTo(name: String, _ value: SCValue)](#SCQuery+equalTo) 
-    * [SCQuery.notEqualTo(name: String, _ value: SCValue)](#SCQuery+notEqualTo)
-    * [SCQuery.containedIn(name: String, _ value: SCArray)](#SCQuery+containedIn) 
-    * [SCQuery.containsAll(name: String, _ value: SCArray)](#SCQuery+containsAll) 
-    * [SCQuery.notContainedIn(name: String, _ value: SCArray)](#SCQuery+notContainedIn)
-    * [SCQuery.greaterThan(name: String, _ value: SCValue)](#SCQuery+greaterThan)
-    * [SCQuery.greaterThanOrEqualTo(name: String, _ value: SCValue)](#SCQuery+greaterThanOrEqualTo)
-    * [SCQuery.lessThan(name: String, _ value: SCValue)](#SCQuery+lessThan)
-    * [SCQuery.lessThanOrEqualTo(name: String, _ value: SCValue)](#SCQuery+lessThanOrEqualTo)
-    * [SCQuery.exists(name: String)](#SCQuery+exists)
-    * [SCQuery.doesNotExist(name: String)](#SCQuery+doesNotExist)
-    * [SCQuery.contains(name: String, _ pattern: String)](#SCQuery+contains)
-    * [SCQuery.startsWith(name: String, _ pattern: String)](#SCQuery+startsWith)
-    * [SCQuery.endsWith(name: String, _ pattern: String)](#SCQuery+endsWith)
-    * [SCQuery.and(operators: [SCOperator])](#SCQuery+and)
-    * [SCQuery.or(operators: [SCOperator])](#SCQuery+or)
+    * [.init(collection)](#SCQuery+init)
+    * [.find(callback -> Void)](#SCQuery+find) 
+    * [.count(callback -> Void)](#SCQuery+count)
+    * [.update(update, callback -> Void)](#SCQuery+update) 
+    * [.remove(callback)](#SCQuery+remove) 
+    * [.limit(limit)](#SCQuery+limit)
+    * [.skip(skip)](#SCQuery+skip)
+    * [.page(page)](#SCQuery+page)
+    * [.raw(json)](#SCQuery+raw)
+    * [.reset()](#SCQuery+reset)
+    * [.ascending(name)](#SCQuery+ascending)
+    * [.descending(name)](#SCQuery+descending) 
+    * [.fields(names)](#SCQuery+fields) 
+    * [.addOperator(name, oper)](#SCQuery+addOperator) 
+    * [.equalTo(name, _ value)](#SCQuery+equalTo) 
+    * [.notEqualTo(name, _ value)](#SCQuery+notEqualTo)
+    * [.containedIn(name, _ value)](#SCQuery+containedIn) 
+    * [.containsAll(name, _ value)](#SCQuery+containsAll) 
+    * [.notContainedIn(name, _ value)](#SCQuery+notContainedIn)
+    * [.greaterThan(name, _ value)](#SCQuery+greaterThan)
+    * [.greaterThanOrEqualTo(name, _ value)](#SCQuery+greaterThanOrEqualTo)
+    * [.lessThan(name, _ value)](#SCQuery+lessThan)
+    * [.lessThanOrEqualTo(name, _ value)](#SCQuery+lessThanOrEqualTo)
+    * [.exists(name)](#SCQuery+exists)
+    * [.doesNotExist(name)](#SCQuery+doesNotExist)
+    * [.contains(name, _ pattern)](#SCQuery+contains)
+    * [.startsWith(name, _ pattern)](#SCQuery+startsWith)
+    * [.endsWith(name, _ pattern)](#SCQuery+endsWith)
+    * [.and(operators)](#SCQuery+and)
+    * [.or(operators)](#SCQuery+or)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -85,7 +85,7 @@ query.find() {
 
 <a name="SCQuery+count"></a> 
 
-### SCQuery.count(callback()) 
+### SCQuery.count(callback) 
 
 Метод для подсчета количества объектов, которые удовлетворяют условиям запроса.
 
@@ -111,7 +111,7 @@ query.count() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+update"></a> 
 
-### SCQuery.update(update, callback())
+### SCQuery.update(update, callback)
 
 Метод для обновления документов соответствующих условиям выборки.
 
@@ -143,7 +143,7 @@ arrivedUsers.update(userArrivalTime) {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+remove"></a>
 
-### SCQuery.remove(callback()) 
+### SCQuery.remove(callback) 
 
 Метод для удаления документов соответствующих условиям выборки.
 
@@ -225,7 +225,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+page"></a>
 
-### SCQuery.page(page: Int)
+### SCQuery.page(page)
 
 Метод для "постраничного" вывода результатов выборки, в соответствуии с указанным limit.
 
@@ -253,7 +253,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+raw"></a> 
 
-### SCQuery.raw(json: String) 
+### SCQuery.raw(json) 
 
 Метод для установки условий выборки в виде JSON-структуры для формирования запроса к БД на языке MongoDB.
 
@@ -304,7 +304,7 @@ query.reset()
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+ascending"></a> 
 
-### SCQuery.ascending(name: String) 
+### SCQuery.ascending(name) 
 
 Метод для сортировки данных в порядке возрастания значений указанного поля перед совершением выборки.
 
@@ -407,7 +407,7 @@ SCQuery.addOperator(name, oper: lessNorEqual)
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+equalTo"></a> 
 
-### SCQuery.equalTo(name: String, _ value: SCValue)
+### SCQuery.equalTo(name, _ value)
 
 Метод для получения всех документов c указанным в условии значением поля.
 
@@ -435,7 +435,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+notEqualTo"></a>
 
-### SCQuery.notEqualTo(name: String, _ value: SCValue) 
+### SCQuery.notEqualTo(name, _ value) 
 
 Метод для получения всех документов, за исключением объектов с указанным в условии значением поля.
 
@@ -464,7 +464,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+containedIn"></a> 
 
-### SCQuery.containedIn(name: String, _ value: SCArray)
+### SCQuery.containedIn(name, _ value)
 
 Метод для получения всех объектов, значение поля которых содержит указанные в запросе элементы массива.
 
@@ -492,7 +492,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+containsAll"></a> 
 
-### SCQuery.containsAll(name: String, _ value: SCArray)
+### SCQuery.containsAll(name, _ value)
 
 Метод для получения всех объектов, значение поля которых содержит все указанные в запросе элементы массива.
 
@@ -521,7 +521,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+notContainedIn"></a>
 
-### SCQuery.notContainedIn(name: String, _ value: SCArray)
+### SCQuery.notContainedIn(name, _ value)
 
 Метод для получения всех объектов, значение поля которых не содержит указанные в запросе элементы массива.
 
@@ -549,7 +549,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+greaterThan"></a>
 
-### SCQuery.greaterThan(name: String, _ value: SCValue)
+### SCQuery.greaterThan(name, _ value)
 
 Метод для получения всех объектов, значение поля которых больше, чем указанное в запросе число.
 
@@ -577,7 +577,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+greaterThanOrEqualTo"></a>
 
-### SCQuery.greaterThanOrEqualTo(name: String, _ value: SCValue)
+### SCQuery.greaterThanOrEqualTo(name, _ value)
 
 Метод для получения всех объектов, значение поля которых не меньше, чем указанное в запросе число.
 
@@ -605,7 +605,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+lessThan"></a>
 
-### SCQuery.lessThan(name: String, _ value: SCValue)
+### SCQuery.lessThan(name, _ value)
 
 Метод для получения всех объектов, значение поля которых меньше, чем указанное в запросе число.
 
@@ -633,7 +633,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+lessThanOrEqualTo"></a>
 
-### SCQuery.lessThanOrEqualTo(name: String, _ value: SCValue)
+### SCQuery.lessThanOrEqualTo(name, _ value)
 
 Метод для получения всех объектов, значение поля которых не больше, чем указанное в запросе число.
 
@@ -661,7 +661,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+exists"></a>
 
-### SCQuery.exists(name: String)
+### SCQuery.exists(name)
 
 Метод для получения всех объектов с существующим значением заданного поля
 
@@ -688,7 +688,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+doesNotExist"></a>
 
-### SCQuery.doesNotExist(name: String)](#SCQuery+doesNotExist)
+### SCQuery.doesNotExist(name)
 
 Метод для получения всех объектов с отсутствующим значением в заданном поле
 
@@ -715,7 +715,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+contains"></a>
 
-### SCQuery.contains(name: String, _ pattern: String)
+### SCQuery.contains(name, _ pattern)
 
 Метод для получения всех объектов со значением заданного поля, соответствующим заданному регулярному выражению.
 
@@ -744,7 +744,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+startsWith"></a>
 
-### SCQuery.startsWith(name: String, _ pattern: String)
+### SCQuery.startsWith(name, _ pattern)
 
 Метод для получения всех объектов со значением заданного поля, начинающимся с указанной строки.
 
@@ -773,7 +773,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+endsWith"></a>
 
-### SCQuery.endsWith(name: String, _ pattern: String)]
+### SCQuery.endsWith(name, _ pattern)
 
 Метод для получения всех объектов со значением заданного поля, заканчивающимся на указанную строку.
 
@@ -801,7 +801,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+and"></a>
 
-### SCQuery.and(operators: [SCOperator])
+### SCQuery.and(operators)
 
 Метод для логического умножения условий нескольких выборок
 
@@ -828,7 +828,7 @@ query.find() {
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <a name="SCQuery+or"></a>
 
-### SCQuery.or(operators: [SCOperator])
+### SCQuery.or(operators)
 
 Метод для логического сложения условий нескольких выборок
 
