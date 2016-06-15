@@ -25,7 +25,7 @@
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| value | <code>Bool</code> | Обязательное | Логическое значение: <code>true | false</code> | true | 
+| value | <code>Bool</code> | Обязательное | Логическое значение | `true` или `false` | 
 
 
 ```SWIFT
@@ -64,7 +64,7 @@ let dataString = SCString("AbCdE")
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| value | <code>Int</code> | Обязательное | Логическое значение | <code>true | false</code> | 
+| value | <code>Int</code> | Обязательное | целочисленное | 42 | 
 
 
 ```SWIFT
@@ -83,7 +83,7 @@ let dataInt = SCInt(5)
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| value | <code>Double</code> | Обязательное | Логическое значение | <code>true | false</code> | 
+| value | <code>Double</code> | Обязательное | Дробное | 3.1415926 | 
 
 
 ```SWIFT
@@ -102,7 +102,7 @@ let dataDouble = SCDouble(3.1415926)
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| value | <code>NSDate</code> | Обязательное | Логическое значение | <code>true | false</code> | 
+| value | <code>NSDate</code> | Обязательное | Дата | 2016-05-31 | 
 
 
 ```SWIFT
@@ -123,7 +123,7 @@ let dataDate = SCDate(dateFormatter.dateFromString("2016-05-31")!)
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| value | <code>[SCValue]</code> | Обязательное | Логическое значение | <code>[SCInt(4), SCInt(8), SCInt(15), SCInt(16), SCInt(23), SCInt(42)]</code> | 
+| value | <code>[SCValue]</code> | Обязательное | Массив | <code>[SCInt(4), SCInt(8), SCInt(15), SCInt(16), SCInt(23), SCInt(42)]</code> | 
 
 
 ```SWIFT
@@ -149,7 +149,7 @@ let dataArray = SCArray([dataBool, dataString, dataInt, dataDouble, dataDate, da
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| value | <code>[String: SCValue]</code> | Обязательное | Логическое значение | ["key1" : SCString("A"), "key2" : SCString("B")] | 
+| value | <code>[String: SCValue]</code> | Обязательное | Объект с данными типа "ключ": "значение" | ["key1" : SCString("A"), "key2" : SCString("B")] | 
 
 ```SWIFT
 let dataDictionary = SCDictionary(["key1" : SCString("A"), "key2" : SCString("B")])
