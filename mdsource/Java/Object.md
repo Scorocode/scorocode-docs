@@ -1,6 +1,6 @@
 <a name="Object"></a>
 
-### Object
+## Object
 Object
 
 **Тип**: Класс <code>Scorocode</code>  

@@ -20,7 +20,7 @@
 ----------------------------------------------------------------------------------------------
 <a name="SC+initWith"></a>
 
-## SC.init(appId, clientKey, masterKey, fileKey, messageKey)
+### SC.init(appId, clientKey, masterKey, fileKey, messageKey)
 
 Инициализация SDK. 
 
@@ -42,7 +42,7 @@ SC.init("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", 
 ----------------------------------------------------------------------------------------------
 <a name="SC+isInitialized"></a>
 
-## SC.isInitialized()
+### SC.isInitialized()
 
 Метод для проверки статуса инициализации SDK.
 
@@ -50,7 +50,7 @@ SC.init("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", 
 
 <a name="SC+getAppId"></a>
 
-## SC.getAppId()
+### SC.getAppId()
 
 Метод для получения текущего идентификатора приложения.
 
@@ -60,7 +60,7 @@ SC.init("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", 
 
 <a name="SC+getClientKey"></a>
 
-## SC.getClientKey()
+### SC.getClientKey()
 
 Метод для получения текущего клиентского ключа.
 
@@ -72,7 +72,7 @@ SC.init("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", 
 
 <a name="SC+getMasterKey"></a>
 
-## SC.getMasterKey()
+### SC.getMasterKey()
 
 Метод для получения текущего ключа доступа.
 
@@ -83,7 +83,7 @@ SC.init("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", 
 
 <a name="SC+getFileKey"></a>
 
-## SC.getFileKey()
+### SC.getFileKey()
 
 Метод для получения текущего ключа доступа к файлам.
 
@@ -94,7 +94,7 @@ SC.init("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", 
 
 <a name="SC+getMessageKey"></a>
 
-## SC.getMessageKey()
+### SC.getMessageKey()
 
 Метод для получения текущего ключа доступа к уведомлениям.
 
