@@ -29,9 +29,9 @@ let appUser = SCUser()
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| email    | <code>String</code>                                         | Обязательный | Email пользователя                 | "user@domain.zone"          | 
-| password | <code>String</code>                                         | Обязательный | Пароль пользователя                | "CorrectHorseBatteryStaple" |
-| callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |              | Коллбэк для выполняемого запроса. |                             |
+| email    <code>    </code> | <code>String</code> <code>    </code>                                         | Обязательный <code>    </code> | Email пользователя        <code>    </code>  | "user@domain.zone"          | 
+| password <code>    </code> | <code>String</code> <code>    </code>                                         | Обязательный <code>    </code> | Пароль пользователя       <code>    </code> | "CorrectHorseBatteryStaple" |
+| callback <code>    </code> | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> <code>    </code> |        <code>    </code> | Коллбэк для выполняемого запроса. <code>    </code>|                             |
 
 **Пример**   
 ```SWIFT
