@@ -23,7 +23,7 @@ SCScript
 | --- | --- | --- | --- | --- |
 | scriptID | <code>String</code> | Обязательный | Идентификатор серверного скрипта | "57484fb91c5666544db25675" | 
 | pool | <code>[String: AnyObject]</code> |  | Пул данных, которые будут переданы серверному скрипту | ["data": {"array": [0,1,2,3,"строка"], "logic": false}, "weekday": "friday"] |
-| callback | <code>(Bool, SCError?) -> Void</code> | | Коллбэк для выполняемого запроса. | |
+| callback | <code>(Bool, SCError?) -> Void</code> | | Коллбэк для выполняемого запроса | |
 
 
 **Пример**   
