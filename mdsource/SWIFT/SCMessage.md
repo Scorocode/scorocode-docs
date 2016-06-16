@@ -21,9 +21,9 @@ SCMessage
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | query    | <code>SCQuery</code>                        |              | Запрос в коллекцию users для выборки адресатов |                        | 
-| subject  | <code>String</code>                         |              | Тема письма                                    | "They live"            |
-| text     | <code>String</code>                         |              | Текст письма                                   | "CONFORM CONSUME OBEY" |
-| callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэк для выполняемого запроса.             |                        |
+| subject  | <code>String</code>                         |              | Тема письма                                    | "Тема письма"          |
+| text     | <code>String</code>                         |              | Текст письма                                   | "Текст письма"         |
+| callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэк для выполняемого запроса.              |                        |
 
 **Пример**   
 ```SWIFT
@@ -53,8 +53,8 @@ broadcast.sendEmail(queryUsers, subject:"Тема письма", text:"Текс�
 | --- | --- | --- | --- | --- |
 | query    | <code>SCQuery</code>                        |              | Запрос в коллекцию users для выборки адресатов |                        | 
 | subject  | <code>String</code>                         |              | Тема                                           |                        |
-| text     | <code>String</code>                         |              | Текст Push                                     | "CONFORM CONSUME OBEY" |
-| callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэк для выполняемого запроса.             |                        |
+| text     | <code>String</code>                         |              | Текст письма                                   | "Текст письма"         |
+| callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэк для выполняемого запроса.              |                        |
 
 **Пример**   
 ```SWIFT
@@ -83,8 +83,8 @@ broadcast.sendEmail(queryUserDevices, text:"Текст Push-уведомлени
 | --- | --- | --- | --- | --- |
 | query    | <code>SCQuery</code>                        |              | запрос в коллекцию users для выборки адресатов |                        | 
 | subject  | <code>String</code>                         |              | Тема                                           |                        |
-| text     | <code>String</code>                         |              | Текст Sms                                      | "CONFORM CONSUME OBEY" |
-| callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэк для выполняемого запроса.             |                        |
+| text     | <code>String</code>                         |              | Текст письма                                   | "Текст письма"         |
+| callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэк для выполняемого запроса.              |                        |
 
 **Пример**   
 ```SWIFT

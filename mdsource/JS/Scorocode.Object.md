@@ -3,10 +3,10 @@
 ### Scorocode.Object
 Scorocode.Object
 
-**Тип**: Класс <code>Scorocode</code>  
 **Содержание**
+
 * [.Object](#Scorocode.Object)
-    * [new Object(collName)](#new_Scorocode.Object_new) ⇒ <code>Scorocode.Object</code>
+    * [new Object(collName)](#new_Scorocode.Object_new) ⇒ <code>[Scorocode.Object](#Scorocode.Object)</code>
     * [.getById(_id, options)](#Scorocode.Object+getById) ⇒ <code>promise.[Scorocode.Object](#Scorocode.Object)</code>
     * [.get(key)](#Scorocode.Object+get)
     * [.getFileLink(field)](#Scorocode.Object+getFileLink) ⇒ <code>String</code>
@@ -522,7 +522,7 @@ questItem.save()
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
-| value | <code>String | Number | Boolean | Date | Array | Object </code> | Значение нового элемента массива |
+| value | <code>String / Number / Boolean / Date / Array / Object </code> | Значение нового элемента массива |
 
 **Пример** 
 ```js
@@ -571,7 +571,7 @@ Item.getById("NseSaqqd5v")
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
-| value | <code>String | Number | Boolean | Date | Array | Object </code> | Удаляемое значение  |
+| value | <code>String / Number / Boolean / Date / Array / Object </code> | Удаляемое значение  |
 
 **Пример** 
 ```js
@@ -840,7 +840,7 @@ Item.getById("gNxzwAfvDj")
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
-| type | <code>String | Boolean</code> | Тип даты. Принимает значения: true, 'date' или 'timestamp' |
+| type | <code>String / Boolean</code> | Тип даты. Принимает значения: true, 'date' или 'timestamp' |
 
 **Пример** 
 ```js
