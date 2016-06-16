@@ -47,3 +47,13 @@
     errMsg      : "Текст ошибки"
 }
 </pre>
+<p>
+    Пример cURL
+</p>
+<pre>
+curl -X POST -H "Content-Type: application/json" -d '{
+    "app": "db8a1b41b8543397a798a181d9891b4c",
+    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+    "acc": "2aceceec7d2e96b1121ec399f5afa101"
+}' "https://api.scorocode.ru/api/v1/stat"
+</pre>
