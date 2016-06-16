@@ -2,8 +2,8 @@
 
 ### Scorocode.UpdateOps
 
-**Тип**: Класс <code>Scorocode</code>  
 **Содержание**
+
 * [.UpdateOps](#Scorocode.UpdateOps)
     * [.set(data)](#Scorocode.UpdateOps+set)
     * [.push(key, value)](#Scorocode.UpdateOps+push) 

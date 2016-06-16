@@ -3,7 +3,7 @@
 ### Scorocode.CloudCode
 Scorocode.CloudCode
 
-**Тип**: Класс <code>Scorocode</code>  
+**Содержание**
 
 * [.CloudCode](#Scorocode.CloudCode)
     * [new CloudCode(id)](#new_Scorocode.CloudCode_new)
