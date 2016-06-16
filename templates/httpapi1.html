@@ -45,6 +45,24 @@
     errMsg      : "Текст ошибки"
 }
 </pre>
+<p>
+    cURL
+</p>
+<pre>
+curl -X POST -H "Content-Type: application/json" -d '{
+    "app": "db8a1b41b8543397a798a181d9891b4c",
+    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+    "username": "username",
+    "email": "useremail@domain.zone",
+    "password": "CorrectHorseStapleButton",
+    "doc": {
+        "exampleField": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!",
+        "anotherExampleField": "Не знаю, что и сказать. Когда-то я хотел быть астрофизиком. К сожалению, это правда."
+    }
+}
+' "https://api.scorocode.ru/api/v1/register"
+</pre>
+
 
 <hr>
 <h4>https://api.scorocode.ru/api/v1/login</h4>
@@ -91,6 +109,19 @@
     errMsg      : "Текст ошибки"
 }
 </pre>
+<p>
+    cURL
+</p>
+<pre>
+curl -X POST -H "Content-Type: application/json" -d '{
+    "app": "db8a1b41b8543397a798a181d9891b4c",
+    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+    "email": "useremail@domain.zone",
+    "password": "CorrectHorseStapleButton"
+}' "https://api.scorocode.ru/api/v1/login"
+</pre>
+
+
 
 <hr>
 <h4>https://api.scorocode.ru/api/v1/logout</h4>
@@ -133,4 +164,14 @@
     errCode     : 4XX/5XX, // Код ошибки
     errMsg      : "Текст ошибки"
 }
+</pre>
+<p>
+    cURL
+</p>
+<pre>
+curl -X POST -H "Content-Type: application/json" -d '{
+    "app": "db8a1b41b8543397a798a181d9891b4c",
+    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+    "sess": "6rnbKKGvLLdU9Sl9"
+}' "https://api.scorocode.ru/api/v1/logout"
 </pre>
