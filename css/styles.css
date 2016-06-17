@@ -177,3 +177,11 @@ footer {
     /*width: 50%;*/
     height: 500px;
 }
+
+table tr td {
+    padding: 10px;
+}
+
+table thead tr th {
+    padding: 10px;
+}
