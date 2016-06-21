@@ -78,8 +78,8 @@ item.set("name", "Водяной чип");
 | Параметр | Тип                     | Свойства | Описание                         | Пример значения |
 | -------- | ----------------------- | -------- | -------------------------------- | --------------- |
 | callback | <code>SCCallback</code> |          | Коллбэк для выполняемого запроса |                 | 
-| sess     | <code>String</code>     |          |                                  |                 |
-| acc      | <code>String</code>     |          |                                  |                 | 
+| sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
+| acc      | <code>String</code>     |          | Ключ доступа                     |                 | 
 | coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
 | query    | <code>Query</code>      |          | Условия выборки                  |                 | 
 | limit    | <code>int</code>        |          | Лимит выборки                    |                 |
@@ -93,7 +93,7 @@ item.set("name", "Водяной чип");
 | Параметр | Тип                     | Свойства | Описание                         | Пример значения |
 | -------- | ----------------------- | -------- | -------------------------------- | --------------- |
 | callback | <code>SCCallback<String></code> |          | Коллбэк для выполняемого запроса |                 | 
-| sess     | <code>String</code>     |          |                                  |                 |
+| sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
 | coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
 | query    | <code>Query</code>      |          | Условия выборки                  |                 | 
 
@@ -116,7 +116,7 @@ item.set("name", "Водяной чип");
 | Параметр | Тип                     | Свойства | Описание                         | Пример значения |
 | -------- | ----------------------- | -------- | -------------------------------- | --------------- |
 | callback | <code>SCCallback<DataResponseEntity></code> |          | Коллбэк для выполняемого запроса |                 | 
-| sess     | <code>String</code>     |          |                                  |                 |
+| sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
 | coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
 | doc      | <code>Object</code>     |          | Объект с данными для обновления  |                 |  
 
@@ -131,8 +131,8 @@ item.set("name", "Водяной чип");
 | Параметр | Тип                     | Свойства | Описание                         | Пример значения |
 | -------- | ----------------------- | -------- | -------------------------------- | --------------- |
 | callback | <code>SCCallback<UpdateDataResponseEntity></code> |          | Коллбэк для выполняемого запроса |                 | 
-| sess     | <code>String</code>     |          |                                  |                 |
-| acc      | <code>String</code>     |          |                                  |                 | 
+| sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
+| acc      | <code>String</code>     |          | Ключ доступа                     |                 | 
 | coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
 | query    | <code>Query</code>      |          | Условия выборки                  |                 |
 | doc      | <code>Object</code>     |          |                                  |                 |  
@@ -149,7 +149,7 @@ item.set("name", "Водяной чип");
 | Параметр | Тип                     | Свойства | Описание                         | Пример значения |
 | -------- | ----------------------- | -------- | -------------------------------- | --------------- |
 | callback | <code>SCCallback<UpdateDataResponseEntity></code> |          | Коллбэк для выполняемого запроса |                 | 
-| sess     | <code>String</code>     |          |                                  |                 |
+| sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
 | coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
 | query    | <code>Query</code>      |          | Условия выборки                  |                 |
 
@@ -163,8 +163,8 @@ item.set("name", "Водяной чип");
 | Параметр | Тип                     | Свойства | Описание                         | Пример значения |
 | -------- | ----------------------- | -------- | -------------------------------- | --------------- |
 | callback | <code>SCCallback<InputStream></code> |          | Коллбэк для выполняемого запроса |                 | 
-| sess     | <code>String</code>     |          |                                  |                 |
-| app      | <code>String</code>     |          |                                  |                 | 
+| sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
+| app      | <code>String</code>     |          | Ключ доступа                     |                 | 
 | coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
 | field    | <code>String</code>     |          | Имя поля                         |                 |
 | file     | <code>String</code>     |          | Имя файла                        |                 |  
@@ -209,8 +209,8 @@ item.set("name", "Водяной чип");
 | Параметр | Тип                     | Свойства | Описание                         | Пример значения |
 | -------- | ----------------------- | -------- | -------------------------------- | --------------- |
 | callback | <code>SCCallback<UpdateDataResponseEntity></code> |          | Коллбэк для выполняемого запроса |                 | 
-| sess     | <code>String</code>     |          |                                  |                 |
-| acc      | <code>String</code>     |          |                                  |                 | 
+| sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
+| acc      | <code>String</code>     |          | Ключ доступа                     |                 | 
 | coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
 | query    | <code>Query</code>      |          | Условия выборки                  |                 |
 | doc      | <code>Object</code>     |          | Объект с данными для обновления  |                 |  

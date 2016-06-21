@@ -21,7 +21,7 @@ User
 
 **Пример** 
 ```Java
-User appUser = new User("user1");
+User appUser = new User("appUser");
 ```
 
 ----------------------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ User appUser = new User("user1");
 
 | Параметр  | Тип                              | Свойства     | Описание                         | Пример значения |
 | --------- | -------------------------------- | ------------ | -------------------------------- | --------------- |
-| callback  | <code>SCCallback<RegistrationResponseEntity></code> |              | Коллбэк для выполняемого запроса |                 | 
+| callback  | <code>SCCallback<RegistrationResponseEntity></code> || Коллбэк для выполняемого запроса |            | 
 | username  | <code>String</code>              | Обязательный | Имя пользователя                 | "Jovan"                     | 
 | email     | <code>String</code>              | Обязательный | Email пользователя               | "user@domain.zone"          | 
 | password  | <code>String</code>              | Обязательный | Пароль пользователя              | "CorrectHorseBatteryStaple" |
@@ -41,16 +41,8 @@ User appUser = new User("user1");
 **Пример** 
 **Пример** 
 ```Java
-String username = username.getText().toString();
-String email = email.getText().toString();
-String password = password.getText().toString();
-
-if (TextUtils.isEmpty(username) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
-    showToast("Пожалуйста, заполните все поля");
-    return;
-}
-User appUser = new User("user1");
-appUser.register(callback, username, email, password);
+User appUser = new User("appUser");
+appUser.register(callback, "username", "email@domain.zone", "password");
 ```
 ----------------------------------------------------------------------------------------------
 <a name="User+login"></a>
@@ -61,13 +53,14 @@ appUser.register(callback, username, email, password);
 
 | Параметр  | Тип                              | Свойства     | Описание                         | Пример значения |
 | --------- | -------------------------------- | ------------ | -------------------------------- | --------------- |
-| callback  | <code>SCCallback<LoginResponseEntity></code> |              | Коллбэк для выполняемого запроса |                 | 
-| email     | <code>String</code>              | Обязательный | Email пользователя               | "user@domain.zone"          | 
+| callback  | <code>SCCallback<LoginResponseEntity></code> |  | Коллбэк для выполняемого запроса |                 | 
+| email     | <code>String</code>              | Обязательный | Email пользователя               | "user@domain.zone" | 
 | password  | <code>String</code>              | Обязательный | Пароль пользователя              | "CorrectHorseBatteryStaple" |
 
 **Пример** 
 ```Java
-
+User appUser = new User("appUser");
+appUser.login(callback, "email@domain.zone", "password");
 ```
 ----------------------------------------------------------------------------------------------
 <a name="User+logout"></a>
@@ -83,5 +76,7 @@ appUser.register(callback, username, email, password);
 
 **Пример** 
 ```Java
-
+User appUser = new User("appUser");
+appUser.login(callback, "email@domain.zone", "password");
+appUser.logout(callback, "YWr5FlU0OcL7rOcJ");
 ```
