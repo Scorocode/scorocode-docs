@@ -283,8 +283,8 @@ item.set("name", "Водяной чип");
 | Параметр | Тип                     | Свойства | Описание                         | Пример значения |
 | -------- | ----------------------- | -------- | -------------------------------- | --------------- |
 | callback | <code>SCCallback<String></code> |          | Коллбэк для выполняемого запроса |                 | 
-| acc      | <code>String</code>     |          |                                  |                 | 
-| sess     | <code>String</code>     |          |                                  |                 |
+| acc      | <code>String</code>     |          | Ключ доступа|                    | 
+| sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
 | coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
 | doc      | <code>String</code>     |          | Идентификатор документа          |                 |  
 | field    | <code>String</code>     |          | Имя поля                         |                 |
@@ -292,7 +292,24 @@ item.set("name", "Водяной чип");
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey");
 
+Object object = new Object("name");
+String doc = Base64.encodeToString(file);
+
+object.upload(
+    new SCCallback<String>() {
+        @Override
+        public void onSuccess(String result) {
+            Log.d(TAG, "File was successfully uploaded");
+        }
+
+        @Override
+        public void onError(String message) {
+            Log.d(TAG, "Upload failed");
+        }
+    }, 
+    SC.getClientKey(), SC.getMasterKey(), "collection", doc, "field", "content");
 ```
 ----------------------------------------------------------------------------------------------
 <a name="Object+getId"></a>
