@@ -48,7 +48,20 @@ Object представляет объект данных приложения. 
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
+
 Object item = new Object("item1");
+item.set("name", "Водяной чип");
+item.save(new SCCallback() {
+            @Override
+            public void onSuccess(String result) {
+                Log.d(TAG, "Объект успешно сохранен");
+                )
+            @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+        }, SC.getClientKey(), null, SC.getMasterKey(), "items", null, null);   
 ```
 
 ----------------------------------------------------------------------------------------------
@@ -65,8 +78,20 @@ Object item = new Object("item1");
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
+
 Object item = new Object("item1");
 item.set("name", "Водяной чип");
+item.save(new SCCallback() {
+            @Override
+            public void onSuccess(String result) {
+                Log.d(TAG, "Объект успешно сохранен");
+                )
+            @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+        }, null, SC.getMasterKey(), "items", null, null);   
 ```
 
 ----------------------------------------------------------------------------------------------
@@ -78,7 +103,7 @@ item.set("name", "Водяной чип");
 | Параметр | Тип                     | Свойства | Описание                         | Пример значения |
 | -------- | ----------------------- | -------- | -------------------------------- | --------------- |
 | callback | <code>SCCallback</code> |          | Коллбэк для выполняемого запроса |                 | 
-| sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
+| sess     | <code>String</code>     | Обязательный, если ACLPublic приложения на операцию == false и acc != masterKey        | Идентификатор сессии  |                 |
 | acc      | <code>String</code>     |          | Ключ доступа                     |                 | 
 | coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
 | query    | <code>Query</code>      |          | Условия выборки                  |                 |
@@ -86,6 +111,20 @@ item.set("name", "Водяной чип");
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
+
+Object item = new Object("item1");
+item.set("name", "Водяной чип");
+item.save(new SCCallback() {
+            @Override
+            public void onSuccess(String result) {
+                Log.d(TAG, "Объект успешно сохранен");
+                )
+            @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+        }, null, SC.getMasterKey(), "items", null, null);   
 
 ```
 
@@ -104,7 +143,23 @@ item.set("name", "Водяной чип");
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
 
+Object item = new Object("item1");
+Query itemById = new Query("");
+itemById.equalTo("_id", "ZMaMjnMgYd");
+
+
+item.getById(SCCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                Log.d(TAG, result);
+                )
+            @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+        }, null, "items", itemById);   
 ```
 
 ----------------------------------------------------------------------------------------------
@@ -119,6 +174,24 @@ item.set("name", "Водяной чип");
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
+
+Object item = new Object("item1");
+Query itemById = new Query("");
+itemById.equalTo("_id", "ZMaMjnMgYd");
+
+
+item.getById(SCCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                Log.d(TAG, Item.get("SomeField"));
+                )
+            @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+        }, null, "items", itemById);   
+```
 
 ```
 
@@ -133,10 +206,24 @@ item.set("name", "Водяной чип");
 | callback | <code>SCCallback<DataResponseEntity></code> |          | Коллбэк для выполняемого запроса |                 | 
 | sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
 | coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
-| doc      | <code>Object</code>     |          | Объект с данными для обновления  |                 |  
+| doc      | <code>Object</code>     |          | Объект с данными                 |                 |  
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
+
+Object item = new Object("item1");
+item.set("name", "Водяной чип");
+item.insert(new SCCallback() {
+            @Override
+            public void onSuccess(String result) {
+                Log.d(TAG, "Объект успешно сохранен");
+                )
+            @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+        }, null, "items", doc);   
 
 ```
 
@@ -283,7 +370,7 @@ item.set("name", "Водяной чип");
 | Параметр | Тип                     | Свойства | Описание                         | Пример значения |
 | -------- | ----------------------- | -------- | -------------------------------- | --------------- |
 | callback | <code>SCCallback<String></code> |          | Коллбэк для выполняемого запроса |                 | 
-| acc      | <code>String</code>     |          | Ключ доступа|                    | 
+| acc      | <code>String</code>     |          | Ключ доступа                     |                 | 
 | sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
 | coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
 | doc      | <code>String</code>     |          | Идентификатор документа          |                 |  
