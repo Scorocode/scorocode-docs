@@ -241,19 +241,41 @@ item.insert(new SCCallback() {
 | acc      | <code>String</code>     |          | Ключ доступа                     |                 | 
 | coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
 | query    | <code>Query</code>      |          | Условия выборки                  |                 |
-| doc      | <code>Object</code>     |          |                                  |                 |  
+| doc      | <code>Object</code>     | Обязательный | Объект с парами оператор:значение | "$set": {"exampleField": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 21. С днём рождения, Мюриэл!"}|  
 | limit    | <code>int</code>        |          | Лимит выборки                    |                 |
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
 
+Query itemById = new Query("");
+itemById.equalTo("_id", "ZMaMjnMgYd");
+
+var doc = {
+    "$set": {
+        "exampleField": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 21. С днём рождения, Мюриэл!"
+        "anotherExampleField": "Не знаю, что и сказать. Когда-то я хотел быть астрофизиком."
+    }
+}
+
+Object item = new Object("item1");
+item.updateById(new SCCallback<UpdateDataResponseEntity> {
+            @Override
+            public void onSuccess(String result) {
+                Log.d(TAG, "Объект успешно обновлен");
+                )
+            @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+        }, null, SC.getMasterKey(), "items", itemById, doc, null);   
 ```
 
 ----------------------------------------------------------------------------------------------
 <a name="Object+remove"></a>
 ### Object.remove(callback, sess, coll, query) ⇒ void
 
-Метод для удаления указанного объекта
+Метод для удаления выбранных объектов
 
 
 | Параметр | Тип                     | Свойства | Описание                         | Пример значения |
@@ -265,8 +287,63 @@ item.insert(new SCCallback() {
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
+
+Object item = new Object("");
+Query queryItems = new Query("");
+queryItems.equalTo("deletable", true);
+
+item.remove(new SCCallback<UpdateDataResponseEntity> {
+            @Override
+            public void onSuccess(String result) {
+                Log.d(TAG, "Объекты успешно удалены");
+                )
+            @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+        }, null, SC.getMasterKey(), "items", queryItems);   
 
 ```
+
+----------------------------------------------------------------------------------------------
+<a name="Object+upload"></a>
+### Object.upload(callback, acc, sess, coll, doc, field, content) ⇒ void
+
+Метод для загрузки файлов
+
+| Параметр | Тип                     | Свойства | Описание                         | Пример значения |
+| -------- | ----------------------- | -------- | -------------------------------- | --------------- |
+| callback | <code>SCCallback<String></code> |          | Коллбэк для выполняемого запроса |                 | 
+| acc      | <code>String</code>     |          | Ключ доступа                     |                 | 
+| sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
+| coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
+| doc      | <code>String</code>     |          | Идентификатор документа          |                 |  
+| field    | <code>String</code>     |          | Имя поля                         |                 |
+| content  | <code>String</code>     |          | Контент файла в формате Base64   |                 |  
+
+**Пример** 
+```Java
+SC.init("appId", "clientKey");
+
+Object object = new Object("name");
+String content = Base64.encodeToString(file);
+
+object.upload(
+    new SCCallback<String>() {
+        @Override
+        public void onSuccess(String result) {
+            Log.d(TAG, "File was successfully uploaded");
+        }
+
+        @Override
+        public void onError(String message) {
+            Log.d(TAG, "Upload failed");
+        }
+    }, 
+    SC.getMasterKey(), null, "items", doc, "attachments", content);
+```
+
 ----------------------------------------------------------------------------------------------
 <a name="Object+getFile"></a>
 ### Object.getFile(callback, app, coll, field, file) ⇒ void
@@ -361,42 +438,7 @@ item.insert(new SCCallback() {
 ```Java
 
 ```
-----------------------------------------------------------------------------------------------
-<a name="Object+upload"></a>
-### Object.upload(callback, acc, sess, coll, doc, field, content) ⇒ void
 
-Метод для загрузки файлов
-
-| Параметр | Тип                     | Свойства | Описание                         | Пример значения |
-| -------- | ----------------------- | -------- | -------------------------------- | --------------- |
-| callback | <code>SCCallback<String></code> |          | Коллбэк для выполняемого запроса |                 | 
-| acc      | <code>String</code>     |          | Ключ доступа                     |                 | 
-| sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
-| coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
-| doc      | <code>String</code>     |          | Идентификатор документа          |                 |  
-| field    | <code>String</code>     |          | Имя поля                         |                 |
-| content  | <code>String</code>     |          | Контент файла в формате Base64   |                 |  
-
-**Пример** 
-```Java
-SC.init("appId", "clientKey");
-
-Object object = new Object("name");
-String doc = Base64.encodeToString(file);
-
-object.upload(
-    new SCCallback<String>() {
-        @Override
-        public void onSuccess(String result) {
-            Log.d(TAG, "File was successfully uploaded");
-        }
-
-        @Override
-        public void onError(String message) {
-            Log.d(TAG, "Upload failed");
-        }
-    }, 
-    SC.getClientKey(), SC.getMasterKey(), "collection", doc, "field", "content");
 ```
 ----------------------------------------------------------------------------------------------
 <a name="Object+getId"></a>

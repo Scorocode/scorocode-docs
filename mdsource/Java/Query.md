@@ -90,7 +90,17 @@ Query
 
 **Пример** 
 ```Java
-
+Query query = new Query("name");
+query.update(new SCCallback<UpdateDataResponseEntity>() {
+        @Override
+        public void onSuccess(UpdateDataResponseEntity result) {
+            Log.d(TAG, "Object was successfully updated");
+        }
+        @Override
+            public void onError(String message) {
+                Log.d(TAG, "Update failed");
+            }
+    }, SC.getClientKey(), SC.getMasterKey(), "collection", object);
 ```
 ---------------------------------------------------------------------------------------------
 <a name="#Query+remove"></a>
