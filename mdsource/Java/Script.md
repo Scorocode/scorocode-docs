@@ -22,12 +22,25 @@ Script
 | sessionId | <code>String</code>              |          | Идентификатор сессии             |                 |
 | accessKey | <code>String</code>              |          | Ключ авторизации для запуска серверного кода |   "28f06b89b62165c33de55265166d8781" | 
 | scriptId  | <code>String</code>              |          | Идентификатор скрипта                        |    "57484fb91c5666544db25675"    |
-| pool      | <code>String[]</code>            |          |                   | Пул данных, которые будут переданы серверному скрипту | ["data": {"array": [0,1,2,3,"строка"], "logic": false}, "weekday": "friday"] | 
+| pool      | <code>String[]</code>            |          | Пул данных, которые будут переданы серверному скрипту | ["data": {"array": [0,1,2,3,"строка"], "logic": false}, "weekday": "friday"] | 
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
+
 Script serverSide = new Script();
-serverside.run(callback, "AECDakkw8vdnugan", "28f06b89b62165c33de55265166d8781", "57484fb91c5666544db25675", ["data": {"array": [0,1,2,3,"строка"], "logic": false}, "weekday": "friday"]);
+serverside.run(new SCCallback<Boolean>() {
+	    @Override
+	    public void onSuccess(Boolean result) {
+	        Log.d(TAG, "Скрипт успешно запущен");
+	    }
+
+	    @Override
+	    public void onError(String message) {
+	        Log.d(TAG, "Что-то пошло не так");
+	    }
+    },
+    "AECDakkw8vdnugan", "28f06b89b62165c33de55265166d8781", "57484fb91c5666544db25675", ["data": {"array": [0,1,2,3,"строка"], "logic": false}, "weekday": "friday"]);
 ```
 
 ----------------------------------------------------------------------------------------------
@@ -44,7 +57,19 @@ serverside.run(callback, "AECDakkw8vdnugan", "28f06b89b62165c33de55265166d8781",
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
+
 Script serverSide = new Script();
-serverSide.run(callback, "AECDakkw8vdnugan", "28f06b89b62165c33de55265166d8781", "57484fb91c5666544db25675", ["data": {"array": [0,1,2,3,"строка"], "logic": false}, "weekday": "friday"]);
-serverSide.stat(callback, "28f06b89b62165c33de55265166d8781");
+serverside.run(new SCCallback<Boolean>() {
+	    @Override
+	    public void onSuccess(Boolean result) {
+	        Log.d(TAG, "Скрипт успешно запущен");
+	    }
+
+	    @Override
+	    public void onError(String message) {
+	        Log.d(TAG, "Что-то пошло не так");
+	    }
+    },
+    "AECDakkw8vdnugan", "28f06b89b62165c33de55265166d8781", "57484fb91c5666544db25675", ["data": {"array": [0,1,2,3,"строка"], "logic": false}, "weekday": "friday"]);
 ```

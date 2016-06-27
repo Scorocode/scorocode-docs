@@ -50,7 +50,7 @@ Object представляет объект данных приложения. 
 ```Java
 SC.init("appId", "clientKey", "masterKey");
 
-Object item = new Object("item1");
+Object item = new Object("exampleItem");
 item.set("name", "Водяной чип");
 item.save(new SCCallback() {
             @Override
@@ -80,7 +80,7 @@ item.save(new SCCallback() {
 ```Java
 SC.init("appId", "clientKey", "masterKey");
 
-Object item = new Object("item1");
+Object item = new Object("exampleItem");
 item.set("name", "Водяной чип");
 item.save(new SCCallback() {
             @Override
@@ -303,7 +303,6 @@ item.remove(new SCCallback<UpdateDataResponseEntity> {
                 Log.d(TAG, "Что-то пошло не так");
             }
         }, null, SC.getMasterKey(), "items", queryItems);   
-
 ```
 
 ----------------------------------------------------------------------------------------------
@@ -324,7 +323,7 @@ item.remove(new SCCallback<UpdateDataResponseEntity> {
 
 **Пример** 
 ```Java
-SC.init("appId", "clientKey");
+SC.init("appId", "clientKey", "masterKey");
 
 Object object = new Object("name");
 String content = Base64.encodeToString(file);
@@ -333,15 +332,15 @@ object.upload(
     new SCCallback<String>() {
         @Override
         public void onSuccess(String result) {
-            Log.d(TAG, "File was successfully uploaded");
+            Log.d(TAG, "Файл успешно загружен");
         }
 
         @Override
         public void onError(String message) {
-            Log.d(TAG, "Upload failed");
+            Log.d(TAG, "Что-то пошло не так");
         }
     }, 
-    SC.getMasterKey(), null, "items", doc, "attachments", content);
+    SC.getMasterKey(), null, "items", "vud3QlK00v", "attachments", content);
 ```
 
 ----------------------------------------------------------------------------------------------
@@ -357,12 +356,28 @@ object.upload(
 | sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
 | app      | <code>String</code>     |          | Ключ доступа                     |                 | 
 | coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
-| field    | <code>String</code>     |          | Имя поля                         |                 |
+| field    | <code>String</code>     |          | Имя поля                         |  "attachments"  |
 | file     | <code>String</code>     |          | Имя файла                        |                 |  
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "fileKey");
 
+Object object = new Object("name");
+
+object.upload(
+    new SCCallback<String>() {
+        @Override
+        public void onSuccess(String result) {
+            Log.d(TAG, "Файл успешно получен");
+        }
+
+        @Override
+        public void onError(String message) {
+            Log.d(TAG, "Что-то пошло не так");
+        }
+    }, 
+    SC.getFileKey(), sess, "items", doc, "attachments", "file.pdf");
 ```
 
 ----------------------------------------------------------------------------------------------
@@ -382,7 +397,23 @@ object.upload(
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "fileKey");
 
+Object object = new Object("name");
+
+object.upload(
+    new SCCallback<String>() {
+        @Override
+        public void onSuccess(String result) {
+            Log.d(TAG, "Вот ссылка на файл");
+        }
+
+        @Override
+        public void onError(String message) {
+            Log.d(TAG, "Что-то пошло не так");
+        }
+    }, 
+    SC.getFileKey(), sess, "items", doc, "attachments", "file.pdf");
 ```
 ----------------------------------------------------------------------------------------------
 <a name="Object+deleteFile"></a>
@@ -401,6 +432,23 @@ object.upload(
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "fileKey");
+
+Object object = new Object("name");
+
+object.deleteFile(
+    new SCCallback<String>() {
+        @Override
+        public void onSuccess(String result) {
+            Log.d(TAG, "Файл удален");
+        }
+
+        @Override
+        public void onError(String message) {
+            Log.d(TAG, "Что-то пошло не так");
+        }
+    }, 
+    SC.getFileKey(), sess, "items", doc, "attachments", "file.pdf");
 
 ```
 ----------------------------------------------------------------------------------------------
@@ -436,8 +484,6 @@ object.upload(
 
 **Пример** 
 ```Java
-
-```
 
 ```
 ----------------------------------------------------------------------------------------------
