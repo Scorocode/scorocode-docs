@@ -42,6 +42,14 @@ Query
 
 Экземпляр запроса к данным коллекции
 
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+|  name  | <code>String</code>  |    | Имя экземпляра Query  |    |
+
+```Java
+Query query = new Query("name");
+```
+
 ---------------------------------------------------------------------------------------------
 <a name="#Query+find"></a>
 
@@ -56,7 +64,20 @@ Query
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
 
+Query query = new Query("name");
+
+query.find(new SCCallback<String>() {
+        @Override
+        public void onSuccess(UpdateDataResponseEntity result) {
+            Log.d(TAG, "Данные по запросу успешно найдены");
+        }
+        @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+    }, null, "items");
 ```
 ---------------------------------------------------------------------------------------------
 <a name="#Query+count"></a>
@@ -72,7 +93,20 @@ Query
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
 
+Query query = new Query("name");
+
+query.count(new SCCallback<Integer>() {
+        @Override
+        public void onSuccess(UpdateDataResponseEntity result) {
+            Log.d(TAG, "Запрос успешно выполнен");
+        }
+        @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+    }, null, "items");
 ```
 ---------------------------------------------------------------------------------------------
 <a name="#Query+update"></a>
@@ -86,21 +120,26 @@ Query
 |  sess     | String                               |    |  Идентификатор сессии  |    |
 |  acc      | String                               |    |  Ключ доступа  |    |
 |  coll     | String                               |    |  Имя коллекции  |    | 
-|  doc      | Object                               |    |  Данные для изменения  |    |
+|  doc      | Object                               |    |  Object с данными для изменения  |    |
 
 **Пример** 
 ```Java
-Query query = new Query("name");
+SC.init("appId", "clientKey", "masterKey");
+
+Object item = new Object("exampleItem");
+item.set("name", "Водяной чип");
+
+Query query = new Query("exampleQuery");
 query.update(new SCCallback<UpdateDataResponseEntity>() {
         @Override
         public void onSuccess(UpdateDataResponseEntity result) {
-            Log.d(TAG, "Object was successfully updated");
+            Log.d(TAG, "Запрошенные документы успешно обновлены");
         }
         @Override
             public void onError(String message) {
                 Log.d(TAG, "Update failed");
             }
-    }, SC.getClientKey(), SC.getMasterKey(), "collection", object);
+    }, null, SC.getMasterKey(), "items");
 ```
 ---------------------------------------------------------------------------------------------
 <a name="#Query+remove"></a>
@@ -116,6 +155,23 @@ query.update(new SCCallback<UpdateDataResponseEntity>() {
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
+
+Object item = new Object("exampleItem");
+item.set("name", "Водяной чип");
+
+Query query = new Query("exampleQuery");
+query.limit(1);
+query.remove(new SCCallback<UpdateDataResponseEntity>() {
+        @Override
+        public void onSuccess(UpdateDataResponseEntity result) {
+            Log.d(TAG, "Запрошенные документы успешно удалены");
+        }
+        @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+    }, null, "items");
 
 ```
 ---------------------------------------------------------------------------------------------
@@ -130,7 +186,23 @@ query.update(new SCCallback<UpdateDataResponseEntity>() {
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
 
+Object item = new Object("exampleItem");
+item.set("name", "Водяной чип");
+
+Query query = new Query("exampleQuery");
+query.limit(1);
+query.find(new SCCallback<String>() {
+        @Override
+        public void onSuccess(UpdateDataResponseEntity result) {
+            Log.d(TAG, "Данные по запросу успешно найдены");
+        }
+        @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+    }, null, "items");
 ```
 ---------------------------------------------------------------------------------------------
 <a name="#Query+skip"></a>
@@ -144,7 +216,20 @@ query.update(new SCCallback<UpdateDataResponseEntity>() {
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
 
+Query query = new Query("exampleQuery");
+query.skip(1);
+query.find(new SCCallback<String>() {
+        @Override
+        public void onSuccess(UpdateDataResponseEntity result) {
+            Log.d(TAG, "Данные по запросу успешно найдены");
+        }
+        @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+    }, null, "items");
 ```
 ---------------------------------------------------------------------------------------------
 <a name="#Query+page"></a>
@@ -158,7 +243,21 @@ query.update(new SCCallback<UpdateDataResponseEntity>() {
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
 
+Query query = new Query("exampleQuery");
+query.limit(20);
+query.page(1);
+query.find(new SCCallback<String>() {
+        @Override
+        public void onSuccess(UpdateDataResponseEntity result) {
+            Log.d(TAG, "Данные по запросу успешно найдены");
+        }
+        @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+    }, null, "items");
 ```
 ---------------------------------------------------------------------------------------------
 <a name="#Query+equalTo"></a>
@@ -173,7 +272,20 @@ query.update(new SCCallback<UpdateDataResponseEntity>() {
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
 
+Query query = new Query("exampleQuery");
+query.equalTo("name", "Водяной чип");
+query.find(new SCCallback<String>() {
+        @Override
+        public void onSuccess(UpdateDataResponseEntity result) {
+            Log.d(TAG, "Данные по запросу успешно найдены");
+        }
+        @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+    }, null, "items");
 ```
 ---------------------------------------------------------------------------------------------
 <a name="#Query+notEqualTo"></a>
@@ -188,7 +300,20 @@ query.update(new SCCallback<UpdateDataResponseEntity>() {
 
 **Пример** 
 ```Java
+SC.init("appId", "clientKey", "masterKey");
 
+Query query = new Query("exampleQuery");
+query.notEequalTo("name", "Водяной чип");
+query.find(new SCCallback<String>() {
+        @Override
+        public void onSuccess(UpdateDataResponseEntity result) {
+            Log.d(TAG, "Данные по запросу успешно найдены");
+        }
+        @Override
+            public void onError(String message) {
+                Log.d(TAG, "Что-то пошло не так");
+            }
+    }, null, "items");
 ```
 ---------------------------------------------------------------------------------------------
 <a name="#Query+containedIn"></a>
