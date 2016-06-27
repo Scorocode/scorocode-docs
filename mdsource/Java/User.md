@@ -39,10 +39,26 @@ User appUser = new User("appUser");
 | password  | <code>String</code>              | Обязательный | Пароль пользователя              | "CorrectHorseBatteryStaple" |
 
 **Пример** 
-**Пример** 
 ```Java
-User appUser = new User("appUser");
-appUser.register(callback, "username", "email@domain.zone", "password");
+SC.init("appId", "clientKey")ж
+
+User appUser = new User("example");
+user.register(new SCCallback<RegistrationResponseEntity>() {
+        @Override
+        public void onSuccess(RegistrationResponseEntity result) {
+            showToast("Success, registered username " + result.getUsername());
+        }
+
+        @Override
+        public void onError(String message) {
+            showToast("Error: " + message);
+        }
+    };, "Username", "useremail@domain.zone", "CorrectHorseStapleButton");
+    }
+
+    public void showToast(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+    }
 ```
 ----------------------------------------------------------------------------------------------
 <a name="User+login"></a>
@@ -59,8 +75,7 @@ appUser.register(callback, "username", "email@domain.zone", "password");
 
 **Пример** 
 ```Java
-User appUser = new User("appUser");
-appUser.login(callback, "email@domain.zone", "password");
+
 ```
 ----------------------------------------------------------------------------------------------
 <a name="User+logout"></a>
