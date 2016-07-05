@@ -29,10 +29,11 @@
 | Параметр | Тип | Свойства | Описание | Пример знаычения |
 | --- | --- | --- | --- | --- |
 | appId | <code>String</code> | Обязательный | Идентификатор приложения | "db8a1b41b8543397a798a181d9891b4c" |
-| clientKey      | <code>String</code> | Обязательный | Клиентский ключ для платформы iOs | "563452bbc611d8106d5da767365897de" |
-| masterKey     | <code>String</code> |  | Ключ авторизации (master key, script key) | "28f06b89b62165c33de55265166d8781"  |
-| fileKey       | <code>String</code> |  | Ключ авторизации для доступа к файлам | "6305ee7ac8023191a333d9267f1a07e8" |
-| messageKey    | <code>String</code> |  | Ключ авторизации для отправки сообщений |  "9d774f6fa704f192e6aef53933f44e4f" |
+| clientKey  | <code>String</code> | Обязательный | Клиентский ключ для платформы iOs | "563452bbc611d8106d5da767365897de" |
+| masterKey  | <code>String</code> |  | Ключ авторизации (master key, script key) | "28f06b89b62165c33de55265166d8781"  |
+| fileKey    | <code>String</code> |  | Ключ авторизации для доступа к файлам | "6305ee7ac8023191a333d9267f1a07e8" |
+| messageKey | <code>String</code> |  | Ключ авторизации для отправки сообщений |  "9d774f6fa704f192e6aef53933f44e4f" |
+| scriptKey  | <code>String</code> |  | Ключ авторизации для запуска серверного кода |  "2ba656a564e8e3868356318cb64a9d6d" |
 
 **Пример**  
 

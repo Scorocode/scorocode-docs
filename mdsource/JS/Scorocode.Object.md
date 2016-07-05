@@ -678,7 +678,7 @@ Item.getById("CrT49joIxn")
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | key | <code>String</code> | Имя поля, значение которого нужно изменить |
-| value | <code>Array</code> | Значение добавляемого элемента |
+| value | <code>String / Number / Boolean / Date / Array / Object</code> | Значение добавляемого элемента |
 
 **Пример** 
 ```js
