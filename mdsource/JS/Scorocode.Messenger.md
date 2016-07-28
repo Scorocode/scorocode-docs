@@ -46,8 +46,7 @@ Scorocode.Init({
 });
 
 var findUsers = new Scorocode.Query("users");
-findUsers.equalTo("username","SergeyYurievich");
-findUsers.find();
+findUsers.equalTo("username","ChosenOne");
 var Broadcast = new Scorocode.Messenger();
 Broadcast.sendEmail({
     where: findUsers,
@@ -99,7 +98,6 @@ Scorocode.Init({
 });
 
 var Devices = new Scorocode.Query("devices");
-Devices.find()
 .then((finded)=> {
     var Broadcast = new Scorocode.Messenger();
     Broadcast.sendPush({
@@ -161,7 +159,6 @@ Scorocode.Init({
 });
 
 var findUsers = new Scorocode.Query("users");
-findUsers.find()
 .then((finded)=> {
     var Broadcast = new Scorocode.Messenger();
     Broadcast.sendPush({
