@@ -47,6 +47,7 @@ Scorocode.Init({
 
 var findUsers = new Scorocode.Query("users");
 findUsers.equalTo("username","ChosenOne");
+
 var Broadcast = new Scorocode.Messenger();
 Broadcast.sendEmail({
     where: findUsers,
@@ -98,9 +99,8 @@ Scorocode.Init({
 });
 
 var Devices = new Scorocode.Query("devices");
-.then((finded)=> {
-    var Broadcast = new Scorocode.Messenger();
-    Broadcast.sendPush({
+var Broadcast = new Scorocode.Messenger();
+Broadcast.sendPush({
         where: Devices,
         data: {
             "data": {
@@ -114,11 +114,6 @@ var Devices = new Scorocode.Query("devices");
         .catch((error)=>{
             console.log(error)
         });
-    })
-.catch((error)=>{
-    console.log(error)
-});
-
 ```
 
 **Возвращает**: <code>promise.{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
@@ -159,9 +154,8 @@ Scorocode.Init({
 });
 
 var findUsers = new Scorocode.Query("users");
-.then((finded)=> {
-    var Broadcast = new Scorocode.Messenger();
-    Broadcast.sendPush({
+var Broadcast = new Scorocode.Messenger();
+Broadcast.sendPush({
         where: findUsers,
         data: {
             "text": "Текст смс-сообщения"     
@@ -173,10 +167,7 @@ var findUsers = new Scorocode.Query("users");
         .catch((error)=>{
             console.log(error)
         });
-    })
-.catch((error)=>{
-    console.log(error)
-});
+```
 
 **Возвращает**: <code>{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
 - "error" - <code>Boolean</code> - Флаг ошибки
