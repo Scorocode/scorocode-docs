@@ -65,7 +65,7 @@ Broadcast.sendEmail({
 ```
 **Возвращает**: <code>promise.{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
 - "error" - <code>Boolean</code> - Флаг ошибки
-- "count" - <code>Number</code>  - Количество отправленных, собщений.
+- "count" - <code>Number</code>  - Количество отправленных сообщений.
 
 **Исключение**:
 
@@ -125,7 +125,7 @@ Devices.find()
 
 **Возвращает**: <code>promise.{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
 - "error" - <code>Boolean</code> - Флаг ошибки
-- "count" - <code>Number</code>  - Количество отправленных, собщений.
+- "count" - <code>Number</code>  - Количество отправленных сообщений.
 
 **Исключение**:
 
@@ -183,4 +183,4 @@ findUsers.find()
 
 **Возвращает**: <code>{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
 - "error" - <code>Boolean</code> - Флаг ошибки
-- "count" - <code>Number</code>  - Количество отправленных, собщений.
+- "count" - <code>Number</code>  - Количество отправленных сообщений.

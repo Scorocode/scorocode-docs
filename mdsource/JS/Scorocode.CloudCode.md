@@ -67,7 +67,7 @@ Prompt.get(['email', 'password', 'username'], function (err, result) {
   });
 ```
 
-**Возвращает**: <code>promise.{error: Boolean}</code> - Возвращает promise, который возращает объект {error: false}.
+**Возвращает**: <code>promise.{error: Boolean}</code> - Возвращает promise, который возвращает объект {error: false}.
 
 **Исключения**:
 

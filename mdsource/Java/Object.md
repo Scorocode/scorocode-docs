@@ -136,7 +136,7 @@ item.save(new SCCallback() {
 
 | Параметр | Тип                     | Свойства | Описание                         | Пример значения |
 | -------- | ----------------------- | -------- | -------------------------------- | --------------- |
-| callback | <code>SCCallback<String></code> |          | Коллбэк для выполняемого запроса |                 | 
+| callback | <code>SCCallback<String></code> |          | Коллбэк для выполняемого запроса |         | 
 | sess     | <code>String</code>     |          | Идентификатор сессии             |                 |
 | coll     | <code>String</code>     |          | Имя коллекции                    |    "items"      |
 | query    | <code>Query</code>      |          | Условия выборки                  |                 | 
