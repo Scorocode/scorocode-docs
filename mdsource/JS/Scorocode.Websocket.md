@@ -3,6 +3,11 @@
 ### Scorocode.WebSocket
 Scorocode.WebSocket
 
+Класс для работы с WebSocket-соединениями. 
+
+Пример реализации чат-приложения с использованием Scorocode.WebSocket - [Scorochat](niksmith.github.io). Исходный код приложения опубликован на GitHub в репозитории [NikSmith/niksmith.github.io](https://github.com/NikSmith/niksmith.github.io)
+
+
 **Содержание**
 
 * [.WebSocket](#Scorocode.WebSocket)
