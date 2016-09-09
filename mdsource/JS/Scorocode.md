@@ -43,6 +43,7 @@ var Scorocode = require('scorocode');
 | FileKey | <code>String</code> | Ключ авторизации для доступа к файлам |
 | ScriptKey | <code>String</code> | Ключ авторизации для запуска серверных скриптов |
 | MessageKey | <code>String</code> | Ключ авторизации для отправки сообщений |
+| WebSocketKey |<code>String</code> | Ключ авторизации для открытия WebSocket-соединения |
 | MasterKey | <code>String</code> | Мастер-ключ приложения|
 
 **Пример**  

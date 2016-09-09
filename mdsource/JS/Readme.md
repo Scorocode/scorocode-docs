@@ -79,3 +79,7 @@
             * [.mul(key, number)](Scorocode.UpdateOps.md#Scorocode.UpdateOps+mul)
             * [.min()](Scorocode.UpdateOps.md#Scorocode.UpdateOps+min)
             * [.max()](Scorocode.UpdateOps.md#Scorocode.UpdateOps+max)
+        * [.WebSocket](Scorocode.WebSocket.md#Scorocode.WebSocket)
+            * [new WebSocket(channame)](Scorocode.WebSocket.md#new_Scorocode.WebSocket_new)
+            * [.on(event, callback)](Scorocode.WebSocket.m#Scorocode.WebSocket+on) 
+            * [.send(message)](Scorocode.WebSocket.m#Scorocode.WebSocket+send) 
