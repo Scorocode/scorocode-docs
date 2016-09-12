@@ -56,7 +56,7 @@ var Scorocode = require('scorocode');
 Scorocode.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения",
-    WebSocketKey: "WebSocketKey_приложения"
+    WebSocketKey: "webSocketKey_приложения"
 });
 
 
