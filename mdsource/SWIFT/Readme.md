@@ -92,3 +92,4 @@
     * [.mul(name, _ value)](#SCUpdate+mul)
     * [.min(name, _ value)](#SCUpdate+min)
     * [.max(name, _ value)](#SCUpdate+max)
+* [WebSocket](#WebSocket)
