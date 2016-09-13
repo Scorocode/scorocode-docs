@@ -61,34 +61,51 @@ $(SRCROOT)/Carthage/Build/iOS/Starscream.framework
 #### Подробную информацию о способах испольования библиотеки Starscream вы сможете найти в Readme.md репозитория [daltoniam/Starscream](https://github.com/daltoniam/Starscream).
 
 ```
+import UIKit
 import Starscream
 
-class WebSocketViewController: UIViewController, WebSocketDelegate {
+class ViewController: UIViewController {
+    
+    var socket: WebSocket!
 
-	var socket = WebSocket(url: NSURL(string: "wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom/")!)
-
-	override func viewDidLoad() {
+    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var textView: UITextView!
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
-        socket.delegate = self
-        socket.connect()
-        socket.writeString("Hi Server!")
+        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    func websocketDidConnect(ws: WebSocket) {
-        print("websocket is connected")
+    @IBAction private func connectTapped() {
+        
+        socket = WebSocket(url: NSURL(string: "wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom")!)
+        socket.connect()
+        
+        socket.onConnect = {
+            print("connected")
+        }
+        
+        socket.onText = {
+            text in
+            print(text)
+            self.textView.text = self.textView.text + "\n\(text)"
+        }
+        
+        socket.onData = {
+            data in
+            print(data)
+        }
+        
     }
     
-    func websocketDidDisconnect(ws: WebSocket, error: NSError?) {
-        if let e = error {
-            print("websocket is disconnected: \(e.localizedDescription)")
-        } else {
-            print("websocket disconnected")
-        }
+    @IBAction private func disconnectTapped() {
+        
     }
-
-	func websocketDidReceiveMessage(socket: WebSocket, text: String) {
-        print("got some text: \(text)")
+    
+    @IBAction private func sendTapped() {
+        socket.writeString(textField.text!)
     }
+    
 
 }
 ```
