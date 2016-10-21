@@ -1,97 +1,165 @@
 <a name="User"></a>
 
 ### User
-User
+Класс для работы с пользователями приложения.
 
 **Содержание**
 * [User](#User)
     * [new User(name)](#User_new)
-    * [.register(callback, username, email, password)](#User+run)
-    * [.login(callback, email, password)](#User+stat)
-    * [.logout(callback, sessionId)](#User+stat)
+    * [.register(username, email,  password,  documentContent,  callback)](#User+register1) 
+    * [.register(username, email, password, callback)](#User+register2)
+    * [.login(email, password, callback)](#User+login) ⇒ ResponseLogin
+    * [.logout(callback)](#User+logout)
 
 
 <a name="User_new"></a>
 
-### new User(name)
+### new User()
 
-| Параметр | Тип | Описание |
-| --- | --- | --- |
-| name | <code>String</code> | Идентификатор объекта |
+Инициализация экземпляра класса User
 
 **Пример** 
 ```Java
-User appUser = new User("appUser");
+User appUser = new User();
 ```
 
 ----------------------------------------------------------------------------------------------
-<a name="User+register"></a>
+<a name="User+register1"></a>
 
-### User.register(callback, username, email, password) ⇒ void
+### User.register(callback, username, email, password)
+
+Метод для регистрации нового пользователя приложения (с возможностью добавления дополнительной информации о нем).
+
+| Параметр  | Тип                              | Свойства     | Описание                         | Пример значения |
+| --------- | -------------------------------- | ------------ | -------------------------------- | --------------- |
+| username  | <code>String</code>              | Обязательный | Имя пользователя                 | "Jovan"                     | 
+| email     | <code>String</code>              | Обязательный | Email пользователя               | "user@domain.zone"          | 
+| password  | <code>String</code>              | Обязательный | Пароль пользователя              | "CorrectHorseBatteryStaple" |
+| documentConten  | <code>DocumentInfo</code>  | Необязательный | Документ, ассоциированный с пользователем | doc.getDocumentContent() |
+| callback  | <code>CallbackRegisterUser</code> | Обязательныйй | Callback, который будет вызван после выполнения запроса. |  new CallbackRegisterUser() {} |
+
+
+**Пример** 
+```Java
+SC.init("appId", "clientKey");
+
+Document doc = new Document("userInfo");
+doc.setField("city", "Moscow");
+doc.setField("isPlaceAnyOrder", true);
+
+User user = new User();
+user.register("any_username", "anyemail@gmail.com", "test1111", doc.getDocumentContent(), 
+    new CallbackRegisterUser() {
+            @Override
+            public void onRegisterSucceed() {
+                //user register succeed
+            }
+
+            @Override
+            public void onRegisterFailed(String errorCode, String errorMessage) {
+                //user regiser failed
+              //See errorCode and errorMessage
+            }
+        });
+
+```
+
+----------------------------------------------------------------------------------------------
+<a name="User+register2"></a>
+
+### User.register(username, email, password, callback)
 
 Метод для регистрации нового пользователя приложения
 
 | Параметр  | Тип                              | Свойства     | Описание                         | Пример значения |
 | --------- | -------------------------------- | ------------ | -------------------------------- | --------------- |
-| callback  | <code>SCCallback<RegistrationResponseEntity></code> || Коллбэк для выполняемого запроса |            | 
 | username  | <code>String</code>              | Обязательный | Имя пользователя                 | "Jovan"                     | 
 | email     | <code>String</code>              | Обязательный | Email пользователя               | "user@domain.zone"          | 
 | password  | <code>String</code>              | Обязательный | Пароль пользователя              | "CorrectHorseBatteryStaple" |
+| callback  | <code>CallbackRegisterUser</code> | Обязательныйй | Callback, который будет вызван после выполнения запроса. |  new CallbackRegisterUser() {} |
+
 
 **Пример** 
 ```Java
-SC.init("appId", "clientKey")ж
+SC.init("appId", "clientKey");
 
-User appUser = new User("example");
-user.register(new SCCallback<RegistrationResponseEntity>() {
-        @Override
-        public void onSuccess(RegistrationResponseEntity result) {
-            showToast("Success, registered username " + result.getUsername());
-        }
+User user = new User();
+user.register("any_username", "anyemail@gmail.com", "test1111", doc.getDocumentContent(), 
+    new CallbackRegisterUser() {
+            @Override
+            public void onRegisterSucceed() {
+                //user register succeed
+            }
 
-        @Override
-        public void onError(String message) {
-            showToast("Error: " + message);
-        }
-    };, "Username", "useremail@domain.zone", "CorrectHorseStapleButton");
-    }
-
-    public void showToast(String msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
-    }
+            @Override
+            public void onRegisterFailed(String errorCode, String errorMessage) {
+                //user regiser failed
+        //See errorCode and errorMessage
+            }
+        });
 ```
+
+
 ----------------------------------------------------------------------------------------------
 <a name="User+login"></a>
 
-### User.login(callback, email, password) ⇒ void
+### login(email, password, callback)
 
 Метод для аутентификации пользователя приложения
 
 | Параметр  | Тип                              | Свойства     | Описание                         | Пример значения |
 | --------- | -------------------------------- | ------------ | -------------------------------- | --------------- |
-| callback  | <code>SCCallback<LoginResponseEntity></code> |  | Коллбэк для выполняемого запроса |                 | 
 | email     | <code>String</code>              | Обязательный | Email пользователя               | "user@domain.zone" | 
 | password  | <code>String</code>              | Обязательный | Пароль пользователя              | "CorrectHorseBatteryStaple" |
+| callback  | <code>SCCallback<LoginResponseEntity></code> |  | Коллбэк для выполняемого запроса |                 | 
+
 
 **Пример** 
 ```Java
+ScorocodeSdk.initWith("applicationId", "cientKey");
+
+User user = new User();
+user.login(“anymail@mail.com”, “any pass”, new CallbackLoginUser() {
+            @Override
+            public void onLoginSucceed(ResponseLogin responseLogin) {
+                 //login succed. See returned responseLogin instance:
+                 //which contain session id and user info   
+            }
+
+            @Override
+            public void onLoginFailed(String errorCode, String errorMessage) {
+                 //Login failed. 
+          //See errorCode and errorMessage
+            }
+        });
 
 ```
 ----------------------------------------------------------------------------------------------
 <a name="User+logout"></a>
 
-### User.logout(callback, sessionId) ⇒ void
+### User.logout(callback) ⇒ void
 
 Метод для завершения активноий сессии пользователя.
 
 | Параметр  | Тип                              | Свойства     | Описание                         | Пример значения |
 | --------- | -------------------------------- | ------------ | -------------------------------- | --------------- |
-| callback  | <code>SCCallback<Boolean></code> |              | Коллбэк для выполняемого запроса |                 | 
-| sessionId  | <code>String</code>             | Обязательный | Идентификатор сессии             |                 | 
+| callback  | <code>CallbackLogoutUser</code> | Обязательный | Callback, который будет вызван после выполнения запроса.   |                 | 
+
 
 **Пример** 
 ```Java
-User appUser = new User("appUser");
-appUser.login(callback, "email@domain.zone", "password");
-appUser.logout(callback, "YWr5FlU0OcL7rOcJ");
+User user = new User();
+user.logout(new CallbackLogoutUser() {
+            @Override
+            public void onLogoutSucceed() {
+                //user logout succeed
+            }
+
+            @Override
+            public void onLogoutFailed(String errorCode, String errorMessage) {
+                //user logout failed
+                //See errorCode and errorMessage
+            }
+        });
+
 ```

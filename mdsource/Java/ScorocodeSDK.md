@@ -3,7 +3,7 @@
 ## ScorocodeSDK - Базовый класс для работы с SDK
 * [ScorocodeSDK](#ScorocodeSDK)
 	* [Подключение SDK](#Подключение SDK)
-    * [.initWith(appId, clientKey, masterKey, fileKey, messageKey)](#ScorocodeSDK+init)
+    * [.initWith(appId, clientKey, masterKey, fileKey, messageKey, scriptKey, websocketKey)](#ScorocodeSDK+init)
 
 ----------------------------------------------------------------------------------------------
 <a name="Подключение SDK"></a>
@@ -30,7 +30,7 @@ compile 'ru.prof_itgroup:scorocode_sdk:1.0.1'
 | Параметр | Тип | Свойства | Описание | Пример знаычения |
 | --- | --- | --- | --- | --- |
 | applicationId | <code>String</code> | Обязательный | Идентификатор приложения | "db8a1b41b8543397a798a181d9891b4c" |
-| clientKey  | <code>String</code> | Обязательный | Клиентский ключ приложения (Android Key ) | 563452bbc611d8106d5da767365897de" |
+| clientKey  | <code>String</code> | Обязательный | Клиентский ключ приложения (Android Key ) | "563452bbc611d8106d5da767365897de" |
 | masterKey  | <code>String</code> | Необязательный | Мастер ключ приложения | "28f06b89b62165c33de55265166d8781"  |
 | fileKey    | <code>String</code> | Необязательный| Ключ для доступа к файлам | "6305ee7ac8023191a333d9267f1a07e8" |
 | messageKey | <code>String</code> | Необязательный | Ключ для отправки сообщений |  "9d774f6fa704f192e6aef53933f44e4f" |
@@ -38,14 +38,14 @@ compile 'ru.prof_itgroup:scorocode_sdk:1.0.1'
 | websocketKey | <code>String</code> | Необязательный |  WebSocket ключ приложения |  "694bcf2ffd29369dab1c3d0e3f1776ae" |
 
 
-**Примечание**
-* Инициализация Sdk должна происходить ранее использования других методов SDK.
-* Посмотреть значения ключей можно на вкладке “Безопастность” настроек проекта.
-* ClientKey соответствует ключ с именем “android”.
+**Примечания**
+* Инициализация Sdk должна происходить ранее использования других методов SDK;
+* Посмотреть значения ключей можно на вкладке “Безопастность” настроек проекта;
+* ClientKey соответствует ключ с именем “android”;
 
 
 **Пример**  
 
 ```Java
-ScorocodeSdk. initWith(“694bcf2ffd29369dab1c3d0e3f1776ae”, “694bcf2ffd29369dab1c3d0e3f1776ae”, “694bcf2ffd29369dab1c3d0e3f1776ae”, null, null, null, “694bcf2ffd29369dab1c3d0e3f1776ae”)
+ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, "694bcf2ffd29369dab1c3d0e3f1776ae");
 ```
