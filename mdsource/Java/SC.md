@@ -1,102 +1,51 @@
-<a name="SC"></a>
+<a name="ScorocodeSDK"></a>
 
-## SС - Базовый класс для работы с SDK
-* [SC](#SC)
+## ScorocodeSDK - Базовый класс для работы с SDK
+* [ScorocodeSDK](#ScorocodeSDK)
 	* [Подключение SDK](#Подключение SDK)
-    * [.init(appId, clientKey, masterKey, fileKey, messageKey)](#SC+init)
-    * [.isInitialized()](#SC+isInitialized)
-    * [.getAppId()](#SC+getAppId)
-    * [.getClientKey()](#SC+getClientKey)
-    * [.getMasterKey()](#SC+getMasterKey)
-    * [.getFileKey()](#SC+getFileKey)
-    * [.getMessageKey()](#SC+getMessageKey)
+    * [.initWith(appId, clientKey, masterKey, fileKey, messageKey)](#ScorocodeSDK+init)
 
 ----------------------------------------------------------------------------------------------
 <a name="Подключение SDK"></a>
 
-## Подключение SDK
+### Подключение SDK
 
+SDK предоставляет доступ к платформе Scorocode для построения приложений,<br>
+основанных на Java / Android. Подробности на нашем сайте: https://scorocode.ru
+
+Подключить библиотеку к проекту можно при помощи Gradle добавив в dependencies:
+```java
+compile 'ru.prof_itgroup:scorocode_sdk:1.0.1'
+```
 
 ----------------------------------------------------------------------------------------------
-<a name="SC+initWith"></a>
+<a name="ScorocodeSDK+initWith"></a>
 
-### SC.init(appId, clientKey, masterKey, fileKey, messageKey)
+### ScorocodeSDK.initWith(appId, clientKey, masterKey, fileKey, messageKey)
 
 Инициализация SDK. 
 
-**Тип**: Метод <code>[SC](#SC)</code>  
+**Тип**: Метод <code>[ScorocodeSDK](#ScorocodeSDK)</code>  
 
 | Параметр | Тип | Свойства | Описание | Пример знаычения |
 | --- | --- | --- | --- | --- |
-| appId | <code>String</code> | Обязательный | Идентификатор приложения | "db8a1b41b8543397a798a181d9891b4c" |
-| clientKey  | <code>String</code> | Обязательный | Клиентский ключ для платформы iOs | "563452bbc611d8106d5da767365897de" |
-| masterKey  | <code>String</code> |  | Ключ авторизации (master key, script key) | "28f06b89b62165c33de55265166d8781"  |
-| fileKey    | <code>String</code> |  | Ключ авторизации для доступа к файлам | "6305ee7ac8023191a333d9267f1a07e8" |
-| messageKey | <code>String</code> |  | Ключ авторизации для отправки сообщений |  "9d774f6fa704f192e6aef53933f44e4f" |
-| scriptKey  | <code>String</code> |  | Ключ авторизации для запуска серверного кода |  "2ba656a564e8e3868356318cb64a9d6d" |
+| applicationId | <code>String</code> | Обязательный | Идентификатор приложения | "db8a1b41b8543397a798a181d9891b4c" |
+| clientKey  | <code>String</code> | Обязательный | Клиентский ключ приложения (Android Key ) | 563452bbc611d8106d5da767365897de" |
+| masterKey  | <code>String</code> | Необязательный | Мастер ключ приложения | "28f06b89b62165c33de55265166d8781"  |
+| fileKey    | <code>String</code> | Необязательный| Ключ для доступа к файлам | "6305ee7ac8023191a333d9267f1a07e8" |
+| messageKey | <code>String</code> | Необязательный | Ключ для отправки сообщений |  "9d774f6fa704f192e6aef53933f44e4f" |
+| scriptKey  | <code>String</code> | Необязательный | Ключ для запуска скриптов |  "2ba656a564e8e3868356318cb64a9d6d" |
+| websocketKey | <code>String</code> | Необязательный |  WebSocket ключ приложения |  "694bcf2ffd29369dab1c3d0e3f1776ae" |
+
+
+**Примечание**
+* Инициализация Sdk должна происходить ранее использования других методов SDK.
+* Посмотреть значения ключей можно на вкладке “Безопастность” настроек проекта.
+* ClientKey соответствует ключ с именем “android”.
+
 
 **Пример**  
 
 ```Java
-SC.init("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", null, null, null);
+ScorocodeSdk. initWith(“694bcf2ffd29369dab1c3d0e3f1776ae”, “694bcf2ffd29369dab1c3d0e3f1776ae”, “694bcf2ffd29369dab1c3d0e3f1776ae”, null, null, null, “694bcf2ffd29369dab1c3d0e3f1776ae”)
 ```
-----------------------------------------------------------------------------------------------
-<a name="SC+isInitialized"></a>
-
-### SC.isInitialized()
-
-Метод для проверки статуса инициализации SDK.
-
-----------------------------------------------------------------------------------------------
-
-<a name="SC+getAppId"></a>
-
-### SC.getAppId()
-
-Метод для получения текущего идентификатора приложения.
-
-**Возвращает**: <code>String</code> - возвращает идентификатор приложения
-
-----------------------------------------------------------------------------------------------
-
-<a name="SC+getClientKey"></a>
-
-### SC.getClientKey()
-
-Метод для получения текущего клиентского ключа.
-
-
-**Возвращает**: <code>String</code> - возвращает клиентский ключ.
-
-
-----------------------------------------------------------------------------------------------
-
-<a name="SC+getMasterKey"></a>
-
-### SC.getMasterKey()
-
-Метод для получения текущего ключа доступа.
-
-
-**Возвращает**: <code>String</code> - возвращает ключ доступа.
-
-----------------------------------------------------------------------------------------------
-
-<a name="SC+getFileKey"></a>
-
-### SC.getFileKey()
-
-Метод для получения текущего ключа доступа к файлам.
-
-
-**Возвращает**: <code>String</code> - возвращает ключ доступа к файлам.
-
-----------------------------------------------------------------------------------------------
-
-<a name="SC+getMessageKey"></a>
-
-### SC.getMessageKey()
-
-Метод для получения текущего ключа доступа к уведомлениям.
-
-**Возвращает**: <code>String</code> - возвращает ключ доступа к уведомлениям.
