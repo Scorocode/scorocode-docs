@@ -20,6 +20,8 @@
 
 **Пример** 
 ```Java
+
+
 User appUser = new User();
 ```
 
@@ -32,23 +34,23 @@ User appUser = new User();
 
 | Параметр  | Тип                              | Свойства     | Описание                         | Пример значения |
 | --------- | -------------------------------- | ------------ | -------------------------------- | --------------- |
-| username  | <code>String</code>              | Обязательный | Имя пользователя                 | "Jovan"                     | 
+| username  | <code>String</code>              | Обязательный | Имя пользователя                 | "Username"                     | 
 | email     | <code>String</code>              | Обязательный | Email пользователя               | "user@domain.zone"          | 
 | password  | <code>String</code>              | Обязательный | Пароль пользователя              | "CorrectHorseBatteryStaple" |
-| documentConten  | <code>DocumentInfo</code>  | Необязательный | Документ, ассоциированный с пользователем | doc.getDocumentContent() |
+| documentContent  | <code>DocumentInfo</code>  | Необязательный | Документ, ассоциированный с пользователем | doc.getDocumentContent() |
 | callback  | <code>CallbackRegisterUser</code> | Обязательныйй | Callback, который будет вызван после выполнения запроса. |  new CallbackRegisterUser() {} |
 
 
 **Пример** 
 ```Java
-SC.init("appId", "clientKey");
+ScorocodeSdk.initWith("applicationId", "cientKey");
 
-Document doc = new Document("userInfo");
+Document doc = new Document("users");
 doc.setField("city", "Moscow");
 doc.setField("isPlaceAnyOrder", true);
-
 User user = new User();
-user.register("any_username", "anyemail@gmail.com", "test1111", doc.getDocumentContent(), 
+user.register("any_username", "anyemail@mailinator.com", "test1111", doc.getDocumentContent(), 
+
     new CallbackRegisterUser() {
             @Override
             public void onRegisterSucceed() {
@@ -58,7 +60,7 @@ user.register("any_username", "anyemail@gmail.com", "test1111", doc.getDocumentC
             @Override
             public void onRegisterFailed(String errorCode, String errorMessage) {
                 //user regiser failed
-              //See errorCode and errorMessage
+                //See errorCode and errorMessage
             }
         });
 
@@ -81,7 +83,7 @@ user.register("any_username", "anyemail@gmail.com", "test1111", doc.getDocumentC
 
 **Пример** 
 ```Java
-SC.init("appId", "clientKey");
+ScorocodeSdk.initWith("applicationId", "cientKey");
 
 User user = new User();
 user.register("any_username", "anyemail@gmail.com", "test1111", doc.getDocumentContent(), 
@@ -148,6 +150,8 @@ user.login(“anymail@mail.com”, “any pass”, new CallbackLoginUser() {
 
 **Пример** 
 ```Java
+ScorocodeSdk.initWith("applicationId", "cientKey");
+
 User user = new User();
 user.logout(new CallbackLogoutUser() {
             @Override

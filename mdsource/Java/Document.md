@@ -1,102 +1,65 @@
-<a name="Object"></a>
+<a name="Document"></a>
 
-## Object
-Object
+## Document
+Класс для работы с документами коллекций.
 
-**Тип**: Класс <code>Scorocode</code>  
 **Содержание**
-* [Object](#Object)
-    * [new Object(name)](#new_Scorocode.Object_new)
-    * [.set(name, value)](#Object+set)
-    * [.save(callback, sess, coll, doc)](#Object+save)  
-    * [.getById(callback, sess, coll, query)](#Object+getById)
-    * [.get(name)](#Object+get)
-    * [.insert(callback, sess, coll, doc)](#Object+insert)
-    * [.updateById(callback, sess, acc, coll, query, doc, limit)](#Object+updateById)
-    * [.remove(collback, sess, coll, query)](#Object+remove)
-    * [.getFile(callback, app, coll, field, file)](#Object+getFile)
-    * [.getFileLink(callback, coll, doc, field, file)](#Object+getFileLink)
-    * [.deleteFile(callback, coll, doc, field, file)](#Object+deleteFile)  
-    * [.update(callbacl, sess, acc, coll, query, doc, limit)](#Object+upload)
-    * [.count(callback, sess, coll, query)](#Object+count)
-    * [.upload(callback, acc, sess, coll, doc, field, content)](#Object+upload)
-    * [.getId()](#Object+getId)
-    * [.setId(id)](#Object+setId)
-    * [.getCreatedAt()](#Object+getCreatedAt)
-    * [.setCreatedAt(createdAt)](#Object+setCreatedAt)
-    * [.getUpdatedAt()](#Object+getUpdatedAt)
-    * [.setUpdatedAt(updatedAt)](#Object+setUpdatedAt)
-    * [.getReadACL()](#Object+getReadACL)
-    * [.setReadACL(readACL)](#Object+setReadACL)
-    * [.getRemoveACL()](#Object+getRemoveACL)
-    * [.setRemoveACL(removeACL)](#Object+setRemoveACL)
-    * [.getUpdateACL()](#Object+getUpdateACL)
-    * [.setUpdateACL(updateACL)](#Object+setUpdateACL)
-    * [.setUpdate(update)](#Object+setUpdate)
+* [Document](#Document)
+    * [new Document(collection_name)](#new_Scorocode.Document_new)
+    * [.setField(field, value)](#Document+setField)
+    * [.saveDocument(callback)](#Document+saveDocument)  
+    * [.getDocumentById(documentId, callback)](#Document+getDocumentById)
+    * [.getField(field)](#Document+getField)
+    * [.updateDocument()](#Document+updateDocument)
+    * [.uploadFile(fieldName, fileName, contentToUploadInBase64, callback)](#Document+uploadFile)
+    * [.getFileLink(fieldName, fileName)](#Document+getFileLink)
+    * [.removeFile( fieldName,  fileName,  callback)](#Document+removeFile)
+    * [.removeDocument(callback)](#Document+removeDocument)  
 
 ----------------------------------------------------------------------------------------------
-<a name="new_Scorocode.Object_new"></a>
+<a name="new_Scorocode.Document_new"></a>
 
-### new Object(name)
+### new Document(collection_name)
 
-Object представляет объект данных приложения. Конструктор формирует минимальную базовую "обёртку" для пользовательских данных.
-
+Инициализация экземпляра класса Document
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| name | <code>String</code> | Имя экземпляра |
+| collection_name | <code>String</code> | имя коллекции в которой будет идти работа с документом |
+
+**Примечания**
+* ACLPublic приложения на операцию == false, для работы с методами данного класса должна быть открыта активная пользовательская сессия или ScorocodeSDK должен быть инициализирован с указанием masterKey. 
 
 **Пример** 
 ```Java
-SC.init("appId", "clientKey", "masterKey");
+ScorocodeSdk.initWith("applicationId", "clientKey", "masterKey");
 
-Object item = new Object("exampleItem");
-item.set("name", "Водяной чип");
-item.save(new SCCallback() {
-            @Override
-            public void onSuccess(String result) {
-                Log.d(TAG, "Объект успешно сохранен");
-                )
-            @Override
-            public void onError(String message) {
-                Log.d(TAG, "Что-то пошло не так");
-            }
-        }, SC.getClientKey(), null, SC.getMasterKey(), "items", null, null);   
+Document exampleItem = new Document("Items");
 ```
 
 ----------------------------------------------------------------------------------------------
-<a name="Object+set"></a>
+<a name="Document+setField"></a>
 
-### Object.set(name, value) ⇒ void
+### Document.setField(field, value)
 
-Метод для передачи данных объекту
+Метод для передачи данных полю документа.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name | <code>String</code> | Обязательное | Имя поля | "testcoll" |
-| value | <code>ValueType</code> |   | Данные поля | "huNr3L7QDh" |
+| field | <code>String</code> | Обязательное | Название поля | "testcoll" |
+| value | <code>Object</code> | Обязательное  | Данные поля | "huNr3L7QDh" |
 
 **Пример** 
 ```Java
-SC.init("appId", "clientKey", "masterKey");
+ScorocodeSdk.initWith("applicationId", "clientKey", "masterKey");
 
-Object item = new Object("exampleItem");
-item.set("name", "Водяной чип");
-item.save(new SCCallback() {
-            @Override
-            public void onSuccess(String result) {
-                Log.d(TAG, "Объект успешно сохранен");
-                )
-            @Override
-            public void onError(String message) {
-                Log.d(TAG, "Что-то пошло не так");
-            }
-        }, null, SC.getMasterKey(), "items", null, null);   
+final Document order = new Document(“orders”);
+order.setField(“orderId”, “Ku128A439ads”);
 ```
 
 ----------------------------------------------------------------------------------------------
-<a name="Object+save"></a>
-### Object.save(callback, sess, acc, coll, query, limit) ⇒ void
+<a name="Document+saveDocument"></a>
+### Document.saveDocument) ⇒ void
 
 Метод сохраняет объект в хранилище данных приложения или обновляет уже имеющийся там объект
 
@@ -129,7 +92,7 @@ item.save(new SCCallback() {
 ```
 
 ----------------------------------------------------------------------------------------------
-<a name="Object+getById"></a>
+<a name="Document+getById"></a>
 ### Object.getById(callback, sess, coll, query) ⇒ void
 
 Метод для для получения объекта коллекции из БД по его _id. 
@@ -163,7 +126,7 @@ item.getById(SCCallback<String>() {
 ```
 
 ----------------------------------------------------------------------------------------------
-<a name="Object+get"></a>
+<a name="Document+get"></a>
 ### Object.get(String name) ⇒ ValueType
 
 Метод для получения данных указанного поля объекта.
@@ -196,7 +159,7 @@ item.getById(SCCallback<String>() {
 ```
 
 ----------------------------------------------------------------------------------------------
-<a name="Object+insert"></a>
+<a name="Document+insert"></a>
 ### Object.insert(callback, sess, coll, doc) ⇒ void
 
 Метод сохраняет новый объект в хранилище данных приложения
@@ -228,7 +191,7 @@ item.insert(new SCCallback() {
 ```
 
 ----------------------------------------------------------------------------------------------
-<a name="Object+updateById"></a>
+<a name="Document+updateById"></a>
 ### Object.updateById(callback, sess, acc, coll, query, doc, limit) ⇒ void
 
 Метод обновляет уже имеющийся в хранилище данных приложения объект по его идентификатору
