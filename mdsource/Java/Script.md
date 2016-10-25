@@ -1,75 +1,87 @@
 <a name="Script"></a>
 
 ### Script
-Script
+Класс для работы с серверными скриптами.
 
 **Содержание**
 * [Script](#Script)
-    * [.run()](#Script+run)
-    * [.stat(callback, accessKey)](#Script+stat)
+    * [new Script()](#Script_new)
+    * [.runScript(scriptId, dataPoolForScript, callbackRunScript)](#Script+runScript1)
+    * [.runScript(scriptId, callbackRunScript)](#Script+runScript1)
+
 
 
 ----------------------------------------------------------------------------------------------
-<a name="Script+run"></a>
 
-### Script.run(callback, sessionId, accessKey, scriptId, pool) ⇒ void
+<a name="Script_new"></a>
 
-Метод для запуска выполнения серверного скрипта.
+Конструктор Script
+
+```Java
+Script script = new Script();
+```
+----------------------------------------------------------------------------------------------
+<a name="Script+runScript1"></a>
+### Script.runScript(scriptId, dataPoolForScript, callbackRunScript)
+Метод для запуска серверного скрипта 
 
 | Параметр  | Тип                              | Свойства | Описание                         | Пример значения |
 | --------- | -------------------------------- | -------- | -------------------------------- | --------------- |
-| callback  | <code>SCCallback<Boolean></code> |          | Коллбэк для выполняемого запроса |                 | 
-| sessionId | <code>String</code>              |          | Идентификатор сессии             |                 |
-| accessKey | <code>String</code>              |          | Ключ авторизации для запуска серверного кода |   "28f06b89b62165c33de55265166d8781" | 
-| scriptId  | <code>String</code>              |          | Идентификатор скрипта                        |    "57484fb91c5666544db25675"    |
-| pool      | <code>String[]</code>            |          | Пул данных, которые будут переданы серверному скрипту | ["data": {"array": [0,1,2,3,"строка"], "logic": false}, "weekday": "friday"] | 
+| scriptId	        | String	            | Обязательный	 | Идентификатор скрипта	                             | "57e1503b48e5f54441189790" |
+| dataPoolForScript	| Object	            | Необязательный | Объект, содержащий параметры скрипта для выполнени    | см.пример ниже |
+| callback	        | callbackRunScript 	| Обязательный	 | Callback, который будет вызван после выполнения запроса.	| см.пример ниже |
 
-**Пример** 
+**Примечание**
+* объект dataPoolForScript будет сериализован в json при помощи парсера Google Gson. Если у вас возникли вопросы по передаче параметров в скрипт обратитесь к официальной документации https://github.com/google/gson
+
+**Пример**
 ```Java
-SC.init("appId", "clientKey", "masterKey");
+Script script = new Script();
+HashMap<String, Object> dataPool = new HashMap<>();
+dataPool.put(“collname”,”items”);
+dataPool.put(“key”,”exampleField”);
+dataPool.put(“val”,”anyInfo”);
+	
+script.runScript("57e1503b48e5f54441189790", dataPool, new CallbackSendScript() {
+            @Override
+            public void onScriptSended() {
+                //script sended and  runed
+            }
 
-Script serverSide = new Script();
-serverside.run(new SCCallback<Boolean>() {
-	    @Override
-	    public void onSuccess(Boolean result) {
-	        Log.d(TAG, "Скрипт успешно запущен");
-	    }
-
-	    @Override
-	    public void onError(String message) {
-	        Log.d(TAG, "Что-то пошло не так");
-	    }
-    },
-    "AECDakkw8vdnugan", "28f06b89b62165c33de55265166d8781", "57484fb91c5666544db25675", ["data": {"array": [0,1,2,3,"строка"], "logic": false}, "weekday": "friday"]);
+            @Override
+            public void onScriptSendFailed(String errorCode, String errorMessage) {
+                //error during script send
+            }
+        });
 ```
 
+
+
 ----------------------------------------------------------------------------------------------
-<a name="Script+stat"></a>
+<a name="Script+runScript2"></a>
+### Script.runScript(scriptId, callbackRunScript)
+Метод для запуска серверного скрипта 
 
-### Script.stat(callback, accessKey) ⇒ void
+| Параметр  | Тип                              | Свойства | Описание                         | Пример значения |
+| --------- | -------------------------------- | -------- | -------------------------------- | --------------- |
+| scriptId	        | String	            | Обязательный	 | Идентификатор скрипта	                             | "57e1503b48e5f54441189790" |
+| callback	        | callbackRunScript 	| Обязательный	 | Callback, который будет вызван после выполнения запроса.	| см.пример ниже |
 
-Метод для получения информации о работе скрипта.
+**Примечание**
+* объект dataPoolForScript будет сериализован в json при помощи парсера Google Gson. Если у вас возникли вопросы по передаче параметров в скрипт обратитесь к официальной документации https://github.com/google/gson
 
-| Параметр | Тип | Свойства | Описание | Пример значения |
-| --- | --- | --- | --- | --- |
-| callback  | <code>SCCallback<Boolean></code> |          | Коллбэк для выполняемого запроса |                 | 
-| accessKey | <code>String</code>              |          | Ключ авторизации для запуска серверного кода |   "28f06b89b62165c33de55265166d8781" | 
-
-**Пример** 
+**Пример**
 ```Java
-SC.init("appId", "clientKey", "masterKey");
+Script script = new Script();
+script.runScript("57e1503b48e5f54441189790", new CallbackSendScript() {
+            @Override
+            public void onScriptSended() {
+                //script sended and  runed
+            }
 
-Script serverSide = new Script();
-serverside.run(new SCCallback<Boolean>() {
-	    @Override
-	    public void onSuccess(Boolean result) {
-	        Log.d(TAG, "Скрипт успешно запущен");
-	    }
-
-	    @Override
-	    public void onError(String message) {
-	        Log.d(TAG, "Что-то пошло не так");
-	    }
-    },
-    "AECDakkw8vdnugan", "28f06b89b62165c33de55265166d8781", "57484fb91c5666544db25675", ["data": {"array": [0,1,2,3,"строка"], "logic": false}, "weekday": "friday"]);
+            @Override
+            public void onScriptSendFailed(String errorCode, String errorMessage) {
+                //error during script send
+            }
+        });
 ```

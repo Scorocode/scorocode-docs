@@ -5,6 +5,7 @@
 
 **Содержание**
 * [Query](#Query)
+    * [Query(name)](#Query_new)
     * [.findDocuments(callback)](#Query+findDocuments)
     * [.countDocuments(callback)](#Query+countDocuments)
     * [.updateDocument(update, callback)](#Query+updateDocument)
