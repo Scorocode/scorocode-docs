@@ -35,39 +35,6 @@
     * [.setFieldsForSearch(fields)](#Query+setFieldsForSearch)
     * [.getQueryInfo()](#Query+getQueryInfo)
 
-
-
-
-findDocuments
-countDocuments
-updateDocument
-removeDocument
-setLimit
-setSkip
-setPage
-equalTo
-notEqualTo
-containedIn
-containsAll
-notContainedIn
-greaterThan
-greaterThenOrEqualTo
-lessThan
-lessThanOrEqualTo
-exists
-doesNotExist
-contains
-startsWith
-endsWith
-and
-or
-raw
-reset
-ascending
-descending
-setFieldsForSearch
-getQueryInfo
-
 ---------------------------------------------------------------------------------------------
 <a name="#Query_new"></a>
 
