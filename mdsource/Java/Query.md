@@ -1,41 +1,74 @@
 <a name="Query"></a>
 
 ## Query
-Query
+Класс для вборки документов коллекции.
 
 **Содержание**
 * [Query](#Query)
-    * [new Query(name)](#Query_new)
-    * [.find(SCCallback<String> callback, String sess, String coll)](#Query+find)
-    * [.count(SCCallback<Integer> callback, String sess, String coll)](#Query+count)
-    * [.update(SCCallback<UpdateDataResponseEntity> callback, String sess, String acc, String coll, Object doc)](#Query+update)
-    * [.remove(SCCallback<UpdateDataResponseEntity> callback, String sess, String coll)](#Query+remove)
-    * [.limit(int limit)](#Query+limit)
-    * [.skip(int skip)](#Query+skip)
-    * [.page(int pageNumber)](#Query+page)
-    * [.equalTo(String name String value)](#Query+equalTo)
-    * [.notEqualTo(String name String value)](#Query+notEqualTo)
-    * [.containedIn(String name String value)](#Query+containedIn)
-    * [.containsAll(String name String value)](#Query+containsAll)
-    * [.notContainedIn(String name String value)](#Query+notContainedIn)
-    * [.greaterThan(String name String value)](#Query+greaterThan)
-    * [.lessThan(String name String value)](#Query+lessThan)
-    * [.lessThanOrEqualTo(String name String value)](#Query+lessThanOrEqualTo)
-    * [.exists(String name String value)](#Query+exists)
-    * [.doesNotExist(String name String value)](#Query+doesNotExist)
-    * [.contains(String name String value)](#Query+contains)
-    * [.startsWith(String name String value)](#Query+startsWith)
-    * [.endsWith(String name String value)](#Query+endsWith)
-    * [.or(String name String value)](#Query+or)
-    * [.and(String name String value)](#Query+and)
-    * [.raw(JSONObject options)](#Query+raw)
+    * [.findDocuments(callback)](#Query+findDocuments)
+    * [.countDocuments(callback)](#Query+countDocuments)
+    * [.updateDocument(update, callback)](#Query+updateDocument)
+    * [.removeDocument(callback)](#Query+removeDocument)
+    * [.setLimit(limit)](#Query+setLimit)
+    * [.setSkip(skip)](#Query+setSkip)
+    * [.setPage(page)](#Query+setPage)
+    * [.equalTo(field, value)](#Query+equalTo)
+    * [.notEqualTo(field, value)](#Query+notEqualTo)
+    * [.containedIn(field, values)](#Query+containedIn)
+    * [.containsAll(field, values)](#Query+containsAll)
+    * [.notContainedIn(field, values)](#Query+notContainedIn)
+    * [.greaterThan(field, value)](#Query+greaterThan)
+    * [.greaterThenOrEqualTo(field, value)](#Query+greaterThenOrEqualTo)
+    * [.lessThan(field,  value)](#Query+lessThan)
+    * [.lessThanOrEqualTo(field, value)](#Query+lessThanOrEqualTo)
+    * [.exists(field)](#Query+exists)
+    * [.doesNotExist(field)](#Query+doesNotExist)
+    * [.contains(field, regEx, options)](#Query+contains)
+    * [.startsWith(field, regEx, options)](#Query+startsWith)
+    * [.endsWith(field, regEx, options)](#Query+endsWith)
+    * [.and(field, query)](#Query+and)
+    * [.or(field, query)](#Query+or)
+    * [.raw(json)](#Query+raw)
     * [.reset()](#Query+reset)
-    * [.ascending(String asc)](#Query+ascending)
-    * [.descending(String dsc)](#Query+descending)
-    * [.fields(String[] fields)](#Query+fields)
+    * [.ascending(field)](#Query+ascending)
+    * [.descending(field)](#Query+descending)
+    * [.setFieldsForSearch(fields)](#Query+setFieldsForSearch)
+    * [.getQueryInfo()](#Query+getQueryInfo)
 
 
 
+
+findDocuments
+countDocuments
+updateDocument
+removeDocument
+setLimit
+setSkip
+setPage
+equalTo
+notEqualTo
+containedIn
+containsAll
+notContainedIn
+greaterThan
+greaterThenOrEqualTo
+lessThan
+lessThanOrEqualTo
+exists
+doesNotExist
+contains
+startsWith
+endsWith
+and
+or
+raw
+reset
+ascending
+descending
+setFieldsForSearch
+getQueryInfo
+
+---------------------------------------------------------------------------------------------
 <a name="#Query_new"></a>
 
 ###Query(name)
@@ -49,547 +82,590 @@ Query
 ```Java
 Query query = new Query("name");
 ```
-
 ---------------------------------------------------------------------------------------------
-<a name="#Query+find"></a>
 
-### Query.find
-Метод для запроса документов из коллекции. Возвращает данные объектов, которые соответствуют условиям выборки. Если условия не заданы, по-умолчанию возвращает первые 100 объектов коллекции.
+<a name="#Query+findDocuments"></a>
+### Query.findDocuments(callback)
+Метод для поиска документа на основании сформированной выборки.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-|  callback  | SCCallback<String>  |    | Коллбэк для выполняемого запроса  |    |
-|  sess      | String              |    | Идентификатор сессии   |    |
-|  coll      | String              |    | Имя коллекции   |    |
+| callback | <code>CallbackFindDocument</code> |    Обязательный | Callback, который будет вызван после выполнения запроса.|    |
+
+**Примечание**
+* Если вы хотите чтобы вместе с id найденных документов возвращались их поля, задайте название необходимых полей с помощью функции setFieldsForSearch(fields)
 
 **Пример** 
-```Java
-SC.init("appId", "clientKey", "masterKey");
+```JavaQuery query = new Query(“mycollection”)
+                .equalTo("number3", 10)
+                .exists("number2");
 
-Query query = new Query("name");
-
-query.find(new SCCallback<String>() {
-        @Override
-        public void onSuccess(UpdateDataResponseEntity result) {
-            Log.d(TAG, "Данные по запросу успешно найдены");
-        }
-        @Override
-            public void onError(String message) {
-                Log.d(TAG, "Что-то пошло не так");
+query.findDocuments(new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+                //found. See document list what match query
             }
-    }, null, "items");
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //no documents what match query
+            }
+        });
 ```
 ---------------------------------------------------------------------------------------------
-<a name="#Query+count"></a>
 
-### Query.count
-Метод для подсчета количества объектов, которые удовлетворяют условиям запроса.
+<a name="#Query+countDocuments"></a>
+### Query.countDocuments(callback)
+Метод для подсчета документов из сформированной выборки.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-|  callback  | SCCallback<Integer> |    | Коллбэк для выполняемого запроса  |    |
-|  sess      | String              |    | Идентификатор сессии   |    |
-|  coll      | String              |    | Имя коллекции   |    |
+| callback | <code>CallbackCountDocument </code> |                                            Обязательный | Callback, который будет вызван после выполнения запроса.|    |
+
 
 **Пример** 
 ```Java
-SC.init("appId", "clientKey", "masterKey");
+Query query = new Query(“mycollection”);
+        query.greaterThan("rating", 10);
 
-Query query = new Query("name");
-
-query.count(new SCCallback<Integer>() {
-        @Override
-        public void onSuccess(UpdateDataResponseEntity result) {
-            Log.d(TAG, "Запрос успешно выполнен");
-        }
-        @Override
-            public void onError(String message) {
-                Log.d(TAG, "Что-то пошло не так");
+        query.countDocuments(new CallbackCountDocument() {
+            @Override
+            public void onDocumentsCounted(ResponseCount responseCount) {
+                //see responseCount.getResult() to find how many documents was found.
             }
-    }, null, "items");
+
+            @Override
+            public void onCountFailed(String errorCode, String errorMessage) {
+                //error during count
+            }
+        });
 ```
 ---------------------------------------------------------------------------------------------
-<a name="#Query+update"></a>
 
-### Query.update
-Метод для обновления запрошенных объектов.
+<a name="#Query+updateDocument"></a>
+### Query.updateDocument(update, callback)
+Метод для обновления документов из сформированной выборки.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-|  callback | SCCallback<UpdateDataResponseEntity> |    |  Коллбэк для выполняемого запроса  |    |
-|  sess     | String                               |    |  Идентификатор сессии  |    |
-|  acc      | String                               |    |  Ключ доступа  |    |
-|  coll     | String                               |    |  Имя коллекции  |    | 
-|  doc      | Object                               |    |  Object с данными для изменения  |    |
+| update | <code>Update</code> | Обязательный | Объект Update  |   |
+| callback | <code>CallbackUpdateDocument</code> | Обязательный |  Callback, который будет вызван после выполнения запроса.  |  |
 
 **Пример** 
 ```Java
-SC.init("appId", "clientKey", "masterKey");
+ Query query = new Query(“mycollection”);
+        query.equalTo("number3", 10);
 
-Object item = new Object("exampleItem");
-item.set("name", "Водяной чип");
+        Update update = new Update()
+                .set("number2", 199)
+                .set("numberField", 111)
+                .addToSet("array1", 900);
 
-Query query = new Query("exampleQuery");
-query.update(new SCCallback<UpdateDataResponseEntity>() {
-        @Override
-        public void onSuccess(UpdateDataResponseEntity result) {
-            Log.d(TAG, "Запрошенные документы успешно обновлены");
-        }
-        @Override
-            public void onError(String message) {
-                Log.d(TAG, "Update failed");
+        query.updateDocument(update, new CallbackUpdateDocument() {
+            @Override
+            public void onUpdateSucceed(ResponseUpdate responseUpdate) {
+                //documents updated successful
             }
-    }, null, SC.getMasterKey(), "items");
+
+            @Override
+            public void onUpdateFailed(String errorCode, String errorMessage) {
+                //error during update
+            }
+        });
 ```
 ---------------------------------------------------------------------------------------------
-<a name="#Query+remove"></a>
 
-### Query.remove
-Метод для удаления запрошенных объектов.
+<a name="#Query+removeDocument"></a>
+### Query.removeDocument(callback)
+Метод для удаления документов на основании сформированной выборки.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-|  callback  | SCCallback<UpdateDataResponseEntity> |    |   Коллбэк для выполняемого запроса  |    |
-|  sess      | String                               |    |   Идентификатор сессии |    |
-|  coll      | String                               |    |   Имя коллекции |    |
+| callback | <code>CallbackRemoveDocument</code> | Обязательный |  Callback, который будет вызван после выполнения запроса.  |  |
 
 **Пример** 
 ```Java
-SC.init("appId", "clientKey", "masterKey");
+Query query = new Query(“mycollection”);
+        query.equalTo("_id", "aJfkipJags");
 
-Object item = new Object("exampleItem");
-item.set("name", "Водяной чип");
-
-Query query = new Query("exampleQuery");
-query.limit(1);
-query.remove(new SCCallback<UpdateDataResponseEntity>() {
-        @Override
-        public void onSuccess(UpdateDataResponseEntity result) {
-            Log.d(TAG, "Запрошенные документы успешно удалены");
-        }
-        @Override
-            public void onError(String message) {
-                Log.d(TAG, "Что-то пошло не так");
+        query.removeDocument(new CallbackRemoveDocument() {
+            @Override
+            public void onRemoveSucceed(ResponseRemove responseRemove) {
+                //succeed. See responseRemove to findout how many documents was removed
+            //and get list of removed documents
             }
-    }, null, "items");
+
+            @Override
+            public void onRemoveFailed(String errorCode, String errorMessage) {
+                //error during remove operation
+            }
+        });
 
 ```
 ---------------------------------------------------------------------------------------------
-<a name="#Query+limit"></a>
 
-### Query.limit
-Метод для указания лимита количества объектов выборки
+<a name="#Query+setLimit"></a>
+### Query.setLimit(limit)
+Метод для установки лимита на количество удаляемых, обновляемых и искомых документов.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| limit | int | | Лимит выборки | |
+| limit | <code>Integer</code> |    Обязательный | Лимит для установки | 15  |
 
 **Пример** 
 ```Java
-SC.init("appId", "clientKey", "masterKey");
+Query query = new Query(“mycollection”);
+query.setLimit(15);
+//query.findDocuments(…);
 
-Object item = new Object("exampleItem");
-item.set("name", "Водяной чип");
-
-Query query = new Query("exampleQuery");
-query.limit(1);
-query.find(new SCCallback<String>() {
-        @Override
-        public void onSuccess(UpdateDataResponseEntity result) {
-            Log.d(TAG, "Данные по запросу успешно найдены");
-        }
-        @Override
-            public void onError(String message) {
-                Log.d(TAG, "Что-то пошло не так");
-            }
-    }, null, "items");
 ```
 ---------------------------------------------------------------------------------------------
-<a name="#Query+skip"></a>
 
-### Query.skip
-Метод для пропуска части объектов перед совершением выборки
+<a name="#Query+setSkip"></a>
+### Query.setSkip(skip)
+Метод для пропуска части объектов перед возвратом результата совершенной выборки
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| skip  | int | | Количество пропускаемых объектов | |
+| skip | <code>Integer</code> |                                            Обязательный | Количество пропускаемых документов | 100  |
 
 **Пример** 
 ```Java
-SC.init("appId", "clientKey", "masterKey");
-
-Query query = new Query("exampleQuery");
-query.skip(1);
-query.find(new SCCallback<String>() {
-        @Override
-        public void onSuccess(UpdateDataResponseEntity result) {
-            Log.d(TAG, "Данные по запросу успешно найдены");
-        }
-        @Override
-            public void onError(String message) {
-                Log.d(TAG, "Что-то пошло не так");
-            }
-    }, null, "items");
+Query query = new Query(“mycollection”);
+query.setSkip(12);
+//query.findDocuments(…);
 ```
 ---------------------------------------------------------------------------------------------
-<a name="#Query+page"></a>
 
-### Query.page
-Метод для постраничного вывода результатов выборки в соответствии с лимитом выборки.
+<a name="#Query+setPage"></a>
+### Query.setPage(page)
+Метод для постраничного вывода результатов выборки
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| pageNumber | int |  | номер страницы |  |
+| page | <code>Integer</code> |  Обязательный | Номер страницы | 2  |
 
 **Пример** 
 ```Java
-SC.init("appId", "clientKey", "masterKey");
-
-Query query = new Query("exampleQuery");
-query.limit(20);
-query.page(1);
-query.find(new SCCallback<String>() {
-        @Override
-        public void onSuccess(UpdateDataResponseEntity result) {
-            Log.d(TAG, "Данные по запросу успешно найдены");
-        }
-        @Override
-            public void onError(String message) {
-                Log.d(TAG, "Что-то пошло не так");
-            }
-    }, null, "items");
+Query query = new Query(“mycollection”);
+//query.setLimit(15);
+query.setPage(1);
+//query.findDocuments(…);
 ```
 ---------------------------------------------------------------------------------------------
+
 <a name="#Query+equalTo"></a>
+### Query.equalTo(field, value)
+Метод для добавления условия выборки: только документы для которых значение поля равно значению в условии выборки.
 
-### Query.equalTo
-Метод для получения всех объектов c указанным в условии значением поля.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" | 
-| value | String  | Обязательный | Значение | "" |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "orderNumber"   |
+| value | <code>String / Integer / Double / Boolean / Date / List / Object</code> | Обязательный |  Значение для сравнения                   |  22 |
 
 **Пример** 
 ```Java
-SC.init("appId", "clientKey", "masterKey");
-
-Query query = new Query("exampleQuery");
-query.equalTo("name", "Водяной чип");
-query.find(new SCCallback<String>() {
-        @Override
-        public void onSuccess(UpdateDataResponseEntity result) {
-            Log.d(TAG, "Данные по запросу успешно найдены");
-        }
-        @Override
-            public void onError(String message) {
-                Log.d(TAG, "Что-то пошло не так");
-            }
-    }, null, "items");
+Query query = new Query(“mycollection”);
+query.equalTo(“orderNumber”, 22);
+//query.findDocuments(…);
 ```
+**Примечание**
+* если вы пытаетесь задать данное условие для поля id документа, помните, что поскольку id – первичный ключ для документа, вам нужно добавить “_” перед именем поля.
+
+```Java
+Query query = new Query(“mycollection”);
+query.equalTo(“_id”, “dasds12dskm”);
+//query.findDocuments(…);
+```
+
 ---------------------------------------------------------------------------------------------
+
 <a name="#Query+notEqualTo"></a>
-
-### Query.notEqualTo
-Метод для получения всех объектов, за исключением объектов с указанным в условии значением поля.
+### Query.notEqualTo(field, value)
+Метод для добавления условия выборки: только документы для которых значение поля не равно значению в условии выборки.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |   
-| value | String  | Обязательный | Значение | "" |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "orderNumber"   |
+| value | <code>String / Integer / Double / Boolean / Date / List / Object</code> | Обязательный | Значение для сравнения                   |  22 |
+
 
 **Пример** 
 ```Java
-SC.init("appId", "clientKey", "masterKey");
-
-Query query = new Query("exampleQuery");
-query.notEequalTo("name", "Водяной чип");
-query.find(new SCCallback<String>() {
-        @Override
-        public void onSuccess(UpdateDataResponseEntity result) {
-            Log.d(TAG, "Данные по запросу успешно найдены");
-        }
-        @Override
-            public void onError(String message) {
-                Log.d(TAG, "Что-то пошло не так");
-            }
-    }, null, "items");
+Query query = new Query(“mycollection”);
+query.notEqualTo(“orderNumber”, 22);
+//query.findDocuments(…);
 ```
+
+**Примечание**
+* если вы пытаетесь задать данное условие для поля id документа, помните, что поскольку id – первичный ключ для документа, вам нужно добавить “_” перед именем поля.
+
+```Java
+Query query = new Query(“mycollection”);
+query.equalTo(“_id”, “dasds12dskm”);
+//query.findDocuments(…);
+```
+
 ---------------------------------------------------------------------------------------------
+
 <a name="#Query+containedIn"></a>
+### Query.containedIn(field, values)
+Метод для добавления условия выборки: только документы у которых значение поля совпадает с одним из значений заданного массива.
 
-### Query.containedIn
-Метод для получения всех объектов, значение поля которых содержит указанные в запросе элементы массива.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |   
-| value | String  | Обязательный | Значение | "" |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "orderNumbers"   |
+| value | <code>List<тип поля></code> | Обязательный |  Массив элементов                  |  см.пример |
 
 **Пример** 
 ```Java
+List<Object> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(5);
+        numbers.add(10);
+        numbers.add(15);
 
+Query query = new Query(“mycollection”).containedIn("number3", numbers);
+//query.findDocuments(…);
 ```
 ---------------------------------------------------------------------------------------------
+
 <a name="#Query+containsAll"></a>
-
-### Query.containsAll
-Метод для получения всех объектов, значение поля которых содержит все указанные в запросе элементы массива.
+### Query.containsAll(field, values)
+Метод для добавления условия выборки:только документы у которых поле (типа массив) содержит все элементы заданного массива
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |   
-| value | String  | Обязательный | Значение | "" |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "orderNumbers"   |
+| value | <code>List<тип поля></code> | Обязательный |  Массив элементов                  |  см.пример |
 
 **Пример** 
 ```Java
-
+List<Object> containsAllNumbers = new ArrayList<>();
+        containsAllNumbers.add(1);
+        containsAllNumbers.add(2);
+        containsAllNumbers.add(3);
+        containsAllNumbers.add(900);
+Query query = new Query(“mycollection”).containsAll("array1", containsAllNumbers);
+//query.findDocuments(…);
 ```
 ---------------------------------------------------------------------------------------------
+
 <a name="#Query+notContainedIn"></a>
+### Query.notContainedIn(field, values)
+Метод для добавления условия выборки: только документы у которых
+* значение поля не совпадает ни с одним из значений заданного массива.
+* значение поля не задано (not exist).
 
-### Query.notContainedIn
-Метод для получения всех объектов, значение поля которых не содержит указанные в запросе элементы массива.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |   
-| value | String  | Обязательный | Значение | "" |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "orderNumbers"   |
+| value | <code>List<тип поля></code> | Обязательный |  Массив элементов                  |  см.пример |
+
 
 **Пример** 
 ```Java
+List<Object> notContainsInList = new ArrayList<>();
+        notContainsInList.add(1);
+        notContainsInList.add(111);
+        notContainsInList.add(11);
+        notContainsInList.add(50);
+Query query = new Query(“mycollection”).notContainedIn("orderNumbers", notContainsInList)
+//query.findDocuments(…);
 
 ```
 ---------------------------------------------------------------------------------------------
+
 <a name="#Query+greaterThan"></a>
-
-### Query.greaterThan
-Метод для получения всех объектов, значение поля которых больше, чем указанное в запросе число.
-
-| Параметр | Тип | Свойства | Описание | Пример значения |
-| --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |   
-| value | String  | Обязательный | Значение | "" |
-
-**Пример** 
-```Java
-
-```
----------------------------------------------------------------------------------------------
-<a name="#Query+greaterThanOrEqualTo"></a>
-
-### Query.greaterThanOrEqualTo
-Метод для получения всех объектов, значение поля которых не меньше, чем указанное в запросе число.
+### Query.greaterThan(field, value)
+Метод для добавления условия выборки: только документы у которых значение поля больше указанного в value значения
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |   
-| value | String  | Обязательный | Значение | "" |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "fieldname"   |
+| value | <code>Integer / Double / Date</code> | Обязательный |  Значение для сравнения                  |  22 |
 
 **Пример** 
 ```Java
-
+Query query = new Query(“mycollection”).greaterThan("number", 22)
+//query.findDocuments(…);
 ```
 ---------------------------------------------------------------------------------------------
-<a name="#Query+lessThan"></a>"></a>
 
-### Query.lessThan
-Метод для получения всех объектов, значение поля которых меньше, чем указанное в запросе число.
+<a name="#Query+greaterThenOrEqualTo"></a>
+### Query.greaterThenOrEqualTo(field, value)
+Метод для добавления условия выборки: только документы у которых значение поля больше или равно указанного в value значения
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |   
-| value | String  | Обязательный | Значение | "" |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "fieldname"   |
+| value | <code>Integer / Double / Date</code> | Обязательный |  Значение для сравнения                  |  22 |
 
 **Пример** 
 ```Java
+Query query = new Query(“mycollection”).greaterThenOrEqualTo ("number", 22)
+//query.findDocuments(…);
+```
+---------------------------------------------------------------------------------------------
+
+<a name="#Query+lessThan"></a>
+### Query.lessThan(field, value)
+Метод для добавления условия выборки: только документы у которых значение поля меньше указанного в value значения
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "fieldname"   |
+| value | <code>Integer / Double / Date</code> | Обязательный |  Значение для сравнения                  |  22 |
+
+**Пример** 
+```Java
+Query query = new Query(“mycollection”). lessThan("number", 22)
+//query.findDocuments(…);
 
 ```
 ---------------------------------------------------------------------------------------------
+
 <a name="#Query+lessThanOrEqualTo"></a>
-
-### Query.lessThanOrEqualTo
-Метод для получения всех объектов, значение поля которых не больше, чем указанное в запросе число.
+### Query.lessThanOrEqualTo(field, value)
+Метод для добавления условия выборки: только документы у которых значение поля меньше или равно указанного в value значения
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |   
-| value | String  | Обязательный | Значение | "" |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "fieldname"   |
+| value | <code>Integer / Double / Date</code> | Обязательный |  Значение для сравнения                  |  22 |
 
 **Пример** 
 ```Java
-
+Query query = new Query(“mycollection”).lessThanOrEqualTo ("number", 22)
+//query.findDocuments(…);
 ```
 ---------------------------------------------------------------------------------------------
+
 <a name="#Query+exists"></a>
-
-### Query.exists
-Метод для получения всех объектов с существующим значением заданного поля
+### Query.exists(field)
+Метод для добавления условия выборки: только документы у которых задано значение поля, т.е поле существует и не является пустым.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |   
-| value | String  | Обязательный | Значение | "" |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "fieldname"   |
 
 **Пример** 
-```Java
-
+```JavaQuery query = new Query(“mycollection”). exists("phoneNumber")
+//query.findDocuments(…);
 ```
 ---------------------------------------------------------------------------------------------
+
 <a name="#Query+doesNotExist"></a>
-
-### Query.doesNotExist
-Метод для получения всех объектов с отсутствующим значением в заданном поле
+### Query.doesNotExist(field)
+Метод для добавления условия выборки: только документы у которых не задано значение поля, т.е поле не существует или является пустым.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |   
-| value | String  | Обязательный | Значение | "" |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "fieldname"   |
 
 **Пример** 
 ```Java
-
+Query query = new Query(“mycollection”).doesNotExist("phoneNumber")
+//query.findDocuments(…);
 ```
 ---------------------------------------------------------------------------------------------
+
 <a name="#Query+contains"></a>
+### Query.contains(field, regEx, options)
+Метод для добавления условия выборки: только документы у которых значение поля соответствуют заданному регулярному выражению.
 
-### Query.contains
-Метод для получения всех объектов со значением заданного поля, соответствующим заданному регулярному выражению.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |   
-| value | String  | Обязательный | Значение | "" |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "fieldname"   |
+| regEx | <code>String</code> |                                            Обязательный | Регулярное выражение | “aB”   |
+| options | <code>RegexOptions</code> |                                            Необязательный | Опции регулярного выражения | см.пример ниже  |
 
 **Пример** 
 ```Java
+ RegexOptions regexOptions = new RegexOptions();
+ regexOptions.setRegexCaseInsenssitive();
 
+ Query query = new Query(“mycollection”).contains("exampleField", "BC", regexOptions)
+ //query.findDocuments(…);         
 ```
 ---------------------------------------------------------------------------------------------
+
 <a name="#Query+startsWith"></a>
-
-### Query.startsWith
-Метод для получения всех объектов со значением заданного поля, начинающимся с указанной строки.
+### Query.startsWith(field, regEx, options)
+Метод для добавления условия выборки: только документы у которых значение поля начинается с заданной строки
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |   
-| value | String  | Обязательный | Значение | "" |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "fieldname"   |
+| regEx | <code>String</code> |                                            Обязательный | Строка с которой должно начинаться значение поля | “aB”   |
+| options | <code>RegexOptions</code> |                                            Необязательный | Опции регулярного выражения | см.пример ниже  |
+
+**Примечание**
+* Параметр options позволяет, к примеру, искать все документы начинающиеся с “aB” не зависимо от регистра, т.е искать документы, начинающиеся на ab, aB, Ab, AB.
 
 **Пример** 
 ```Java
+ RegexOptions regexOptions = new RegexOptions();
+ regexOptions.setRegexCaseInsenssitive();
+
+ Query query = new Query(“mycollection”).startsWith ("exampleField", "a", regexOptions)
+ //query.findDocuments(…);
 
 ```
 ---------------------------------------------------------------------------------------------
+
 <a name="#Query+endsWith"></a>
+### Query.endsWith(field, regEx, options)
+Метод для добавления условия выборки: только документы у которых значение поля заканчивается с заданной строки
 
-### Query.endsWith
-Метод для получения всех объектов со значением заданного поля, заканчивающимся на указанную строку.
-
-| Параметр | Тип | Свойства | Описание | Пример значения |
-| --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |   
-| value | String  | Обязательный | Значение | "" |
-
-**Пример** 
-```Java
-
-```
----------------------------------------------------------------------------------------------
-<a name="#Query+or"></a>
-
-### Query.or
-Метод для логического сложения условий нескольких выборок
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |
-| value | String  | Обязательный | Значение | "" |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "fieldname"   |
+| regEx | <code>String</code> |                                            Обязательный | Строка, на которую должно заканчиваться значение поля | “aaB”   |
+| options | <code>RegexOptions</code> |                                            Необязательный | Опции регулярного выражения | см.пример ниже  |
+
+**Примечание**
+* Параметр options позволяет, к примеру, искать все документы начинающиеся с “aB” не зависимо от регистра, т.е искать документы, начинающиеся на ab, aB, Ab, AB.
 
 **Пример** 
 ```Java
+ RegexOptions regexOptions = new RegexOptions();
+ regexOptions.setRegexCaseInsenssitive();
 
+ Query query = new Query(“mycollection”).startsWith ("exampleField", "a", regexOptions)
+ //query.findDocuments(…);
 ```
 ---------------------------------------------------------------------------------------------
+
 <a name="#Query+and"></a>
-
-### Query.and
-Метод для логического умножения условий нескольких выборок
+### Query.and(field, query)
+Метод логического умножения нескольких условий выборки по одному полю
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| name  |  String | Обязательный | Имя поля | "" |
-| value | String  | Обязательный | Значение | "" |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "fieldname"   |
+| query | <code>Query</code> | Обязательный |  Объект класса Query, содержащий данные для выборки                   |  см.пример ниже |
 
 **Пример** 
 ```Java
+Query query1 = new Query(COLLECTION_NAME).greaterThan("raiting", 50);
+Query query2 = new Query(COLLECTION_NAME).lessThan("raiting", 100);
 
+query1.and("number3", query2);
+//query1.findDocuments(…);
 ```
 ---------------------------------------------------------------------------------------------
+
+<a name="#Query+or"></a>
+### Query.or(field, query)
+Метод логического сложения нескольких условий выборки по одному полю
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "fieldname"   |
+| query | <code>Query</code> | Обязательный |  Объект класса Query, содержащий данные для выборки                   |  см.пример ниже |
+
+**Пример** 
+```Java
+Query query1 = new Query(“mycollection”).greaterThan("raiting", 50);
+Query query2 = new Query(“mycollection”).equalTo("status", 0);
+
+query1.or("number3", query2);
+//query1.findDocuments(…);
+```
+---------------------------------------------------------------------------------------------
+
 <a name="#Query+raw"></a>
-
-### Query.raw
-Прямой запрос к БД приложения
-
+### Query.raw(json)
+Метод для задания условий выборки в формате json.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| options | JSONObject | Обязательный | Применяемый фильтр в формате языка запросов MongoDB |  |
+| json | <code>String</code> |                                            Обязательный | Условия выборки в формате json | "{\"_id\": {\"$eq\": \"W9vrMS9SuW\"}}"  |
 
 **Пример** 
 ```Java
-
+  Query query = new Query(“mycollection”);
+  query.raw("{\"_id\": {\"$eq\": \"W9vrMS9SuW\"}}");
+  //query.findDocuments(…)
 ```
 ---------------------------------------------------------------------------------------------
+
 <a name="#Query+reset"></a>
-
-### Query.reset
-Метод для сброса условий выборки
+### Query.reset()
+Метод для очистки условия выборки.
 
 **Пример** 
 ```Java
-
+Query query = new Query(“mycollection”);
+query.equalTo(“_id”, “dsads123sd”);
+query.reset();
+query.equalTo(“_id”, “ds54522sd”);
+//query.findDocuments(…)
 ```
 ---------------------------------------------------------------------------------------------
-<a name="#Query+ascending"></a>
 
-### Query.ascending
+<a name="#Query+ascending"></a>
+### Query.ascending(field)
 Метод для сортировки данных указанного поля в порядке возрастания перед совершением выборки.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| asc | String | Обязательный | Имя поля |  |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "fieldname"   |
 
 **Пример** 
 ```Java
 
 ```
 ---------------------------------------------------------------------------------------------
-<a name="#Query+descending"></a>
 
-### Query.descending
+<a name="#Query+descending"></a>
+### Query.descending(field)
 Метод для сортировки данных указанного поля в порядке убывания перед совершением выборки.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| dsc | String |Обязательный | Имя поля | |
+| field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "fieldname"   |
 
 **Пример** 
 ```Java
 
 ```
 ---------------------------------------------------------------------------------------------
-<a name="#Query+fields"></a>
 
-### Query.fields
-Метод для указания списка возвращаемых полей. 
+<a name="#Query+setFieldsForSearch"></a>
+### Query.setFieldsForSearch(fields)
+Метод для задания списка возвращаемых полей.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| fields | String[] | Обязательный | Массив имен полей | ["price"] |
+| fields | <code>List<String></code> |                                            Обязательный | Имена полей | см.пример ниже   |
 
 **Пример** 
 ```Java
+List<Strings> fieldNames = new ArrayList<>();
+fieldNames.add(“orderId”);
+fieldNames.add(“buyerName”);
+fieldNames.add(“phoneNumber”);
 
-``` 
+Query query = new Query(“mycollection”).setFieldsForSearch(fieldNames);
+//query.findDocuments(…);
+```
 ---------------------------------------------------------------------------------------------
+
+<a name="#Query+getQueryInfo"></a>
+### Query.getQueryInfo()
+Метод для получения информации о условиях выборки
+
+**Пример** 
+```Java
+Query query = new Query(“mycollection”);
+query.equalTo(“_id”, “dsads123sd”);
+
+QueryInfo queryInfo = query.getQueryInfo();
+```

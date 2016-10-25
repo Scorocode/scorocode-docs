@@ -11,7 +11,6 @@ SCObject
     * [.get(name)](#SCObject+get)
     * [.upload(field, filename, data, callback](#SCObject+upload)
     * [.getFileLink(fieldName, callback)](#SCObject+getFileLink)
-    * [.getFile (field, filename, callback)](#SCObject+getFile)
     * [.deleteFile (field, filename, callback)](#SCObject+deleteFile)  
     * [.remove(callback)](#SCObject+remove) 
     * [.push(name, _ value)](#SCObject+push)
@@ -227,34 +226,6 @@ item.getFileLink("attachment")
 
 ```
 
-----------------------------------------------------------------------------------------------
-
-<a name="SCObject+getFile"></a>
-
-### SCObject.getFile(field, filename, callback)
-Метод для получения содержания файла
-
-**Тип**: Метод <code>[SCObject](#SCObject)</code>  
-
-| Параметр   | Тип                                    | Свойства     | Описание                             | Пример значения |
-|------------|----------------------------------------|--------------|--------------------------------------|-----------------|
-| field      | <code>String</code>                    | Обязательный | Имя поля                             | "attachments"   |
-| filename   | <code>String</code>                    | Обязательный | Имя файла                            | "docname.pdf"   |
-| callback   | <code>(Bool, SCError?)  -> Void</code> |              | Коллбэк для выполняемого запроса.    |                 |
-
-**Пример**  
-```SWIFT
-let item = SCObject(collection: "items", id: "huNr3L7QDh")
-item.getFile("attachment", "swiftDocs.pdf")
-    if success {
-        print("Success")
-    } else {
-    if let error = error {
-            print("Error")
-        }
-    }
-}
-```
 ----------------------------------------------------------------------------------------------
 
 <a name="SCObject+deleteFile"></a>

@@ -11,6 +11,7 @@
     * [.login(email, password, callback)](#User+login) ⇒ ResponseLogin
     * [.logout(callback)](#User+logout)
 
+----------------------------------------------------------------------------------------------
 
 <a name="User_new"></a>
 
@@ -20,8 +21,6 @@
 
 **Пример** 
 ```Java
-
-
 User appUser = new User();
 ```
 
