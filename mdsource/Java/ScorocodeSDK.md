@@ -1,4 +1,5 @@
 <a name="ScorocodeSDK"></a>
+SDK предоставляет доступ к платформе Scorocode для построения приложений, основанных на Java / Android. Подробности на нашем сайте: https://scorocode.ru
 
 ## ScorocodeSDK - Базовый класс для работы с SDK
 * [ScorocodeSDK](#ScorocodeSDK)
@@ -10,12 +11,22 @@
 
 ### Подключение SDK
 
-SDK предоставляет доступ к платформе Scorocode для построения приложений,<br>
-основанных на Java / Android. Подробности на нашем сайте: https://scorocode.ru
 
 Подключить библиотеку к проекту можно при помощи Gradle добавив в dependencies:
 ```java
-compile 'ru.prof_itgroup:scorocode_sdk:1.0.1'
+
+dependencies {
+   compile 'ru.prof-itgroup:scorocode_sdk:1.0.7-beta'
+}
+
+```
+
+Убедитесь, что gradle ищет библиотеки в рекомендуемом Google репозитории jcenter (который включает в себя библиотеки maven):
+```java
+
+repositories {
+   jcenter()
+}
 ```
 
 ----------------------------------------------------------------------------------------------
