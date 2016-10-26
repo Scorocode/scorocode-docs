@@ -66,7 +66,8 @@ Query query = new Query("name");
 
 
 **Пример** 
-```JavaQuery query = new Query(“mycollection”)
+```Java
+Query query = new Query(“mycollection”)
                 .equalTo("number3", 10)
                 .exists("number2");
 
@@ -433,7 +434,7 @@ Query query = new Query(“mycollection”).lessThanOrEqualTo ("number", 22)
 
 **Пример** 
 ```Java
-Query query = new Query(“mycollection”). exists("phoneNumber")
+Query query = new Query(“mycollection”).exists("phoneNumber")
 //query.findDocuments(…);
 ```
 ---------------------------------------------------------------------------------------------
@@ -600,7 +601,9 @@ query.equalTo(“_id”, “ds54522sd”);
 
 **Пример** 
 ```Java
-
+Query query = new Query("ordersCollection");
+query.ascending("itemId");
+//query.findDocuments(...)
 ```
 ---------------------------------------------------------------------------------------------
 
@@ -614,7 +617,9 @@ query.equalTo(“_id”, “ds54522sd”);
 
 **Пример** 
 ```Java
-
+Query query = new Query("ordersCollection");
+query.descending("itemId");
+//query.findDocuments(...)
 ```
 ---------------------------------------------------------------------------------------------
 
