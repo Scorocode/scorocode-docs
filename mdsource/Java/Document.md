@@ -66,7 +66,8 @@ order.setField(“orderId”, “Ku128A439ads”);
 
 **Примеры** 
 
-* Пример создания нового документа коллекции
+Пример создания нового документа коллекции
+
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null);
 
@@ -90,12 +91,13 @@ newDocument.saveDocument(new CallbackDocumentSaved() {
         });
 ```
 
-* Пример обновления уже имеющегося в БД документа коллекции
+Пример обновления уже имеющегося в БД документа коллекции
+
 ```Java
  final Document document = new Document(“orderInfo”);
  document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //we found document and we can make changes in it and save it
             //...change document fields...
             //save  
