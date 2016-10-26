@@ -37,7 +37,7 @@
     * [.getQueryInfo()](#Query+getQueryInfo)
 
 ---------------------------------------------------------------------------------------------
-<a name="#Query_new"></a>
+<a name="Query_new"></a>
 
 ### new Query()
 
@@ -52,7 +52,7 @@ Query query = new Query("name");
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+findDocuments"></a>
+<a name="Query+findDocuments"></a>
 ### Query.findDocuments(callback)
 Метод для поиска документа на основании сформированной выборки.
 
@@ -82,7 +82,7 @@ query.findDocuments(new CallbackFindDocument() {
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+countDocuments"></a>
+<a name="Query+countDocuments"></a>
 ### Query.countDocuments(callback)
 Метод для подсчета документов из сформированной выборки.
 
@@ -110,7 +110,7 @@ Query query = new Query(“mycollection”);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+updateDocument"></a>
+<a name="Query+updateDocument"></a>
 ### Query.updateDocument(update, callback)
 Метод для обновления документов из сформированной выборки.
 
@@ -143,7 +143,7 @@ Query query = new Query(“mycollection”);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+removeDocument"></a>
+<a name="Query+removeDocument"></a>
 ### Query.removeDocument(callback)
 Метод для удаления документов на основании сформированной выборки.
 
@@ -172,7 +172,7 @@ Query query = new Query(“mycollection”);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+setLimit"></a>
+<a name="Query+setLimit"></a>
 ### Query.setLimit(limit)
 Метод для установки лимита на количество удаляемых, обновляемых и искомых документов.
 
@@ -189,7 +189,7 @@ query.setLimit(15);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+setSkip"></a>
+<a name="Query+setSkip"></a>
 ### Query.setSkip(skip)
 Метод для пропуска части объектов перед возвратом результата совершенной выборки
 
@@ -205,7 +205,7 @@ query.setSkip(12);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+setPage"></a>
+<a name="Query+setPage"></a>
 ### Query.setPage(page)
 Метод для постраничного вывода результатов выборки
 
@@ -222,7 +222,7 @@ query.setPage(1);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+equalTo"></a>
+<a name="Query+equalTo"></a>
 ### Query.equalTo(field, value)
 Метод для добавления условия выборки: только документы для которых значение поля равно значению в условии выборки.
 
@@ -249,7 +249,7 @@ query.equalTo(“_id”, “dasds12dskm”);
 
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+notEqualTo"></a>
+<a name="Query+notEqualTo"></a>
 ### Query.notEqualTo(field, value)
 Метод для добавления условия выборки: только документы для которых значение поля не равно значению в условии выборки.
 
@@ -277,7 +277,7 @@ query.equalTo(“_id”, “dasds12dskm”);
 
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+containedIn"></a>
+<a name="Query+containedIn"></a>
 ### Query.containedIn(field, values)
 Метод для добавления условия выборки: только документы у которых значение поля совпадает с одним из значений заданного массива.
 
@@ -300,7 +300,7 @@ Query query = new Query(“mycollection”).containedIn("number3", numbers);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+containsAll"></a>
+<a name="Query+containsAll"></a>
 ### Query.containsAll(field, values)
 Метод для добавления условия выборки:только документы у которых поле (типа массив) содержит все элементы заданного массива
 
@@ -321,7 +321,7 @@ Query query = new Query(“mycollection”).containsAll("array1", containsAllNum
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+notContainedIn"></a>
+<a name="Query+notContainedIn"></a>
 ### Query.notContainedIn(field, values)
 Метод для добавления условия выборки: только документы у которых
 * значение поля не совпадает ни с одним из значений заданного массива.
@@ -347,7 +347,7 @@ Query query = new Query(“mycollection”).notContainedIn("orderNumbers", notCo
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+greaterThan"></a>
+<a name="Query+greaterThan"></a>
 ### Query.greaterThan(field, value)
 Метод для добавления условия выборки: только документы у которых значение поля больше указанного в value значения
 
@@ -363,7 +363,7 @@ Query query = new Query(“mycollection”).greaterThan("number", 22)
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+greaterThenOrEqualTo"></a>
+<a name="Query+greaterThenOrEqualTo"></a>
 ### Query.greaterThenOrEqualTo(field, value)
 Метод для добавления условия выборки: только документы у которых значение поля больше или равно указанного в value значения
 
@@ -379,7 +379,7 @@ Query query = new Query(“mycollection”).greaterThenOrEqualTo ("number", 22)
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+lessThan"></a>
+<a name="Query+lessThan"></a>
 ### Query.lessThan(field, value)
 Метод для добавления условия выборки: только документы у которых значение поля меньше указанного в value значения
 
@@ -396,7 +396,7 @@ Query query = new Query(“mycollection”). lessThan("number", 22)
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+lessThanOrEqualTo"></a>
+<a name="Query+lessThanOrEqualTo"></a>
 ### Query.lessThanOrEqualTo(field, value)
 Метод для добавления условия выборки: только документы у которых значение поля меньше или равно указанного в value значения
 
@@ -412,7 +412,7 @@ Query query = new Query(“mycollection”).lessThanOrEqualTo ("number", 22)
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+exists"></a>
+<a name="Query+exists"></a>
 ### Query.exists(field)
 Метод для добавления условия выборки: только документы у которых задано значение поля, т.е поле существует и не является пустым.
 
@@ -421,12 +421,13 @@ Query query = new Query(“mycollection”).lessThanOrEqualTo ("number", 22)
 | field | <code>String</code> |                                            Обязательный | Имя поля, которому задается условие | "fieldname"   |
 
 **Пример** 
-```JavaQuery query = new Query(“mycollection”). exists("phoneNumber")
+```Java
+Query query = new Query(“mycollection”). exists("phoneNumber")
 //query.findDocuments(…);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+doesNotExist"></a>
+<a name="Query+doesNotExist"></a>
 ### Query.doesNotExist(field)
 Метод для добавления условия выборки: только документы у которых не задано значение поля, т.е поле не существует или является пустым.
 
@@ -441,7 +442,7 @@ Query query = new Query(“mycollection”).doesNotExist("phoneNumber")
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+contains"></a>
+<a name="Query+contains"></a>
 ### Query.contains(field, regEx, options)
 Метод для добавления условия выборки: только документы у которых значение поля соответствуют заданному регулярному выражению.
 
@@ -462,7 +463,7 @@ Query query = new Query(“mycollection”).doesNotExist("phoneNumber")
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+startsWith"></a>
+<a name="Query+startsWith"></a>
 ### Query.startsWith(field, regEx, options)
 Метод для добавления условия выборки: только документы у которых значение поля начинается с заданной строки
 
@@ -486,7 +487,7 @@ Query query = new Query(“mycollection”).doesNotExist("phoneNumber")
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+endsWith"></a>
+<a name="Query+endsWith"></a>
 ### Query.endsWith(field, regEx, options)
 Метод для добавления условия выборки: только документы у которых значение поля заканчивается с заданной строки
 
@@ -510,7 +511,7 @@ Query query = new Query(“mycollection”).doesNotExist("phoneNumber")
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+and"></a>
+<a name="Query+and"></a>
 ### Query.and(field, query)
 Метод логического умножения нескольких условий выборки по одному полю
 
@@ -529,7 +530,7 @@ query1.and("number3", query2);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+or"></a>
+<a name="Query+or"></a>
 ### Query.or(field, query)
 Метод логического сложения нескольких условий выборки по одному полю
 
@@ -548,7 +549,7 @@ query1.or("number3", query2);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+raw"></a>
+<a name="Query+raw"></a>
 ### Query.raw(json)
 Метод для задания условий выборки в формате json.
 
@@ -564,7 +565,7 @@ query1.or("number3", query2);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+reset"></a>
+<a name="Query+reset"></a>
 ### Query.reset()
 Метод для очистки условия выборки.
 
@@ -578,7 +579,7 @@ query.equalTo(“_id”, “ds54522sd”);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+ascending"></a>
+<a name="Query+ascending"></a>
 ### Query.ascending(field)
 Метод для сортировки данных указанного поля в порядке возрастания перед совершением выборки.
 
@@ -592,7 +593,7 @@ query.equalTo(“_id”, “ds54522sd”);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+descending"></a>
+<a name="Query+descending"></a>
 ### Query.descending(field)
 Метод для сортировки данных указанного поля в порядке убывания перед совершением выборки.
 
@@ -606,7 +607,7 @@ query.equalTo(“_id”, “ds54522sd”);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+setFieldsForSearch"></a>
+<a name="Query+setFieldsForSearch"></a>
 ### Query.setFieldsForSearch(fields)
 Метод для задания списка возвращаемых полей.
 
@@ -626,7 +627,7 @@ Query query = new Query(“mycollection”).setFieldsForSearch(fieldNames);
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Query+getQueryInfo"></a>
+<a name="Query+getQueryInfo"></a>
 ### Query.getQueryInfo()
 Метод для получения информации о условиях выборки
 
