@@ -8,7 +8,7 @@
     * [new User(name)](#User_new)
     * [.register(username, email,  password,  documentContent,  callback)](#User+register1) 
     * [.register(username, email, password, callback)](#User+register2)
-    * [.login(email, password, callback)](#User+login) ⇒ ResponseLogin
+    * [.login(email, password, callback)](#User+login)
     * [.logout(callback)](#User+logout)
 
 ----------------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ User appUser = new User();
 | email     | <code>String</code>              | Обязательный | Email пользователя               | "user@domain.zone"          | 
 | password  | <code>String</code>              | Обязательный | Пароль пользователя              | "CorrectHorseBatteryStaple" |
 | documentContent  | <code>DocumentInfo</code>  | Необязательный | Документ, ассоциированный с пользователем | doc.getDocumentContent() |
-| callback  | <code>CallbackRegisterUser</code> | Обязательныйй | Callback, который будет вызван после выполнения запроса. |  new CallbackRegisterUser() {} |
+| callback  | <code>CallbackRegisterUser</code> | Обязательныйй | Callback, который будет вызван после выполнения запроса. |  см.пример ниже |
 
 
 **Пример** 
@@ -77,7 +77,7 @@ user.register("any_username", "anyemail@mailinator.com", "test1111", doc.getDocu
 | username  | <code>String</code>              | Обязательный | Имя пользователя                 | "Jovan"                     | 
 | email     | <code>String</code>              | Обязательный | Email пользователя               | "user@domain.zone"          | 
 | password  | <code>String</code>              | Обязательный | Пароль пользователя              | "CorrectHorseBatteryStaple" |
-| callback  | <code>CallbackRegisterUser</code> | Обязательныйй | Callback, который будет вызван после выполнения запроса. |  new CallbackRegisterUser() {} |
+| callback  | <code>CallbackRegisterUser</code> | Обязательныйй | Callback, который будет вызван после выполнения запроса. |  см.пример ниже |
 
 
 **Пример** 
@@ -112,7 +112,7 @@ user.register("any_username", "anyemail@gmail.com", "test1111", doc.getDocumentC
 | --------- | -------------------------------- | ------------ | -------------------------------- | --------------- |
 | email     | <code>String</code>              | Обязательный | Email пользователя               | "user@domain.zone" | 
 | password  | <code>String</code>              | Обязательный | Пароль пользователя              | "CorrectHorseBatteryStaple" |
-| callback  | <code>SCCallback<LoginResponseEntity></code> |  | Коллбэк для выполняемого запроса |                 | 
+| callback  | <code>CallbackLoginUser</code> |  | Коллбэк для выполняемого запроса |  см.пример ниже  | 
 
 
 **Пример** 
@@ -138,13 +138,13 @@ user.login(“anymail@mail.com”, “any pass”, new CallbackLoginUser() {
 ----------------------------------------------------------------------------------------------
 <a name="User+logout"></a>
 
-### User.logout(callback) ⇒ void
+### User.logout(callback)
 
 Метод для завершения активноий сессии пользователя.
 
 | Параметр  | Тип                              | Свойства     | Описание                         | Пример значения |
 | --------- | -------------------------------- | ------------ | -------------------------------- | --------------- |
-| callback  | <code>CallbackLogoutUser</code> | Обязательный | Callback, который будет вызван после выполнения запроса.   |                 | 
+| callback  | <code>CallbackLogoutUser</code> | Обязательный | Callback, который будет вызван после выполнения запроса.   |       см.пример ниже          | 
 
 
 **Пример** 
