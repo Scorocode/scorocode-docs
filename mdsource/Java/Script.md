@@ -6,13 +6,13 @@
 **Содержание**
 * [Script](#Script)
     * [new Script()](#Script_new)
-    * [.runScript(scriptId, dataPoolForScript, callbackRunScript)](#Script+runScript1)
-    * [.runScript(scriptId, callbackRunScript)](#Script+runScript1)
+    * [.runScript(scriptId, dataPoolForScript, callback)](#Script+runScript1)
+    * [.runScript(scriptId, callback)](#Script+runScript1)
 
 ----------------------------------------------------------------------------------------------
 
 <a name="Script_new"></a>
-
+### new Script()
 Конструктор Script
 
 ```Java
@@ -20,7 +20,7 @@ Script script = new Script();
 ```
 ----------------------------------------------------------------------------------------------
 <a name="Script+runScript1"></a>
-### Script.runScript(scriptId, dataPoolForScript, callbackRunScript)
+### Script.runScript(scriptId, dataPoolForScript, callback)
 Метод для запуска серверного скрипта 
 
 | Параметр  | Тип                              | Свойства | Описание                         | Пример значения |
@@ -40,7 +40,7 @@ dataPool.put(“collname”,”items”);
 dataPool.put(“key”,”exampleField”);
 dataPool.put(“val”,”anyInfo”);
 	
-script.runScript("57e1503b48e5f54441189790", dataPool, new CallbackSendScript() {
+script.runScript("57e1503b48e5f54441189790", dataPool, new CallbackRunScript() {
             @Override
             public void onScriptSended() {
                 //script sended and  runed
@@ -48,7 +48,7 @@ script.runScript("57e1503b48e5f54441189790", dataPool, new CallbackSendScript() 
 
             @Override
             public void onScriptSendFailed(String errorCode, String errorMessage) {
-                //error during script send
+                //error during script run
             }
         });
 ```
@@ -57,7 +57,7 @@ script.runScript("57e1503b48e5f54441189790", dataPool, new CallbackSendScript() 
 
 ----------------------------------------------------------------------------------------------
 <a name="Script+runScript2"></a>
-### Script.runScript(scriptId, callbackRunScript)
+### Script.runScript(scriptId, callback)
 Метод для запуска серверного скрипта 
 
 | Параметр  | Тип                              | Свойства | Описание                         | Пример значения |
@@ -71,7 +71,7 @@ script.runScript("57e1503b48e5f54441189790", dataPool, new CallbackSendScript() 
 **Пример**
 ```Java
 Script script = new Script();
-script.runScript("57e1503b48e5f54441189790", new CallbackSendScript() {
+script.runScript("57e1503b48e5f54441189790", new CallbackRunScript() {
             @Override
             public void onScriptSended() {
                 //script sended and  runed
@@ -79,7 +79,7 @@ script.runScript("57e1503b48e5f54441189790", new CallbackSendScript() {
 
             @Override
             public void onScriptSendFailed(String errorCode, String errorMessage) {
-                //error during script send
+                //error during script run
             }
         });
 ```

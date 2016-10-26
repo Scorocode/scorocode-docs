@@ -27,7 +27,7 @@ List<BasicNameValuePair> extraHeaders = Arrays.asList(
     new BasicNameValuePair("Cookie", "session=abcd");
 );
 
-WebSocketClient client = new WebSocketClient(URI.create("wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/b3asd4e75e1fds2f7ae20c2fce02f63d6/”chat_channel"), new WebSocketClient.Handler() {
+WebSocketClient client = new WebSocketClient(URI.create("wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/b3asd4e75e1fds2f7ae20c2fce02f63d6/chat_channel), new WebSocketClient.Handler() {
     @Override
     public void onConnect() {
         Log.d(TAG, "Connected!");
