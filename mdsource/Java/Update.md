@@ -56,7 +56,7 @@ Document document = new Document("ordersCollection");
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //document found, we can update it
  
                 document.updateDocument()
@@ -104,7 +104,7 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //document found, we can update it
  
                 document.updateDocument().push("array1", 1);
@@ -149,7 +149,7 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //document found, we can update it
  
                 document.updateDocument().popFirst("array1");
@@ -195,7 +195,7 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //document found, we can update it
  
                 document.updateDocument().popLast("array1");
