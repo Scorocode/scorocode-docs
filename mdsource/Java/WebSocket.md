@@ -56,7 +56,7 @@ WebSocketClient client = new WebSocketClient(URI.create("wss://wss.scorocode.ru/
 
 client.connect();
 
-// Later…
+// Позже…
 client.send("hello!");
 client.send(new byte[] { 0xDE, 0xAD, 0xBE, 0xEF });
 client.disconnect();

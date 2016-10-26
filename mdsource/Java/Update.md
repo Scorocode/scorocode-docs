@@ -1,0 +1,579 @@
+<a name="Update"></a>
+
+### Update
+Класс для обновления полей документа из БД
+
+**Содержание**
+* [Update](#Update)
+    * [new Update()](#Update_new)
+	* [.set(field,value)](#Update+set)
+	* [.push(field, value)](#Update+push)
+	* [.popFirst(field)](#Update+popFirst)
+	* [.popLast(field)](#Update+popLast)
+	* [.pull(field, value)](#Update+pull)
+	* [.pullAll(field, value)](#Update+pullAll)
+	* [.addToSet(field, value)](#Update+addToSet)
+	* [.inc(field,  increaseValue)](#Update+inc)
+	* [.setCurrentDate(field)](#Update+setCurrentDate)
+	* [.mul(field, value)](#Update+mul)
+	* [.min(field, valueToCompare)](#Update+min)
+	* [.max(field, valueToCompare)](#Update+max)
+	* [.getUpdateInfo()](#Update+getUpdateInfo)
+
+
+---------------------------------------------------------------------------------------------
+<a name="#Update_new"></a>
+
+### new Update()
+Конструктор Update()
+
+```Java
+Update  = new Update();
+```
+
+
+---------------------------------------------------------------------------------------------
+
+<a name="#Update+set"></a>
+### Update.set(field,value)
+Метод для установки нового значения поля документа БД.
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| field | <code>String</code> |                                            Обязательный | Имя поля для изменения  | "orderNumber"   |
+| value | <code>String / Integer / Double / Boolean / Date / List / Object</code> | Обязательный |  Новое значение поля |  22 |
+
+
+**Пример**
+```Java
+final Document document = new Document(“ordersCollection”);
+document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+                //document found, we can update it
+ 
+                document.updateDocument()
+                        .set("exampleField", "random Any1")
+                        .set("anotherExampleField", "random Any2");
+
+
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successfull
+                    }
+
+
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+				//check update info
+				//see errorCode and errorMessage
+                    }
+                });
+            }
+
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });
+```
+
+---------------------------------------------------------------------------------------------
+
+<a name="#Update+push"></a>
+### Update.push(field, value)
+Метод для добавления элемента в поле (типа массив) документа БД
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| field | <code>String</code> |                                            Обязательный | Имя поля типа Array  | "orderNumber"   |
+| value | <code>String / Integer / Double / Boolean / Date / List / Object</code> | Обязательный | Элемент для добавления в массив | {"key": value} |
+
+**Пример**
+```Java
+final Document document = new Document(“ordersCollection”);
+document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+                //document found, we can update it
+ 
+                document.updateDocument().push("array1", 1);
+
+
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
+
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+				//check update info
+				//see errorCode and errorMessage
+                    }
+                });
+            }
+
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });
+```
+
+
+---------------------------------------------------------------------------------------------
+
+<a name="#Update+popFirst"></a>
+### Update.popFirst(field)
+Метод для удаления первого элемента из поля (типа массив) документа БД.
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| field | <code>String</code> |                                            Обязательный | Имя поля типа Array  | "orderNumber"   |
+
+**Пример**
+```Java
+final Document document = new Document(“ordersCollection”);
+document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+                //document found, we can update it
+ 
+                document.updateDocument().popFirst("array1");
+
+
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
+
+
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+				//check update info
+				//see errorCode and errorMessage
+                    }
+                });
+            }
+
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });
+```
+
+---------------------------------------------------------------------------------------------
+
+<a name="#Update+popLast"></a>
+### Update.popLast(field)
+Метод для удаления последнего элемента из поля (типа массив) документа БД.
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| field | <code>String</code> |                                            Обязательный | Имя поля типа Array  | "orderNumber"   |
+
+
+**Пример**
+```Java
+final Document document = new Document(“ordersCollection”);
+document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+                //document found, we can update it
+ 
+                document.updateDocument().popLast("array1");
+
+
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
+
+
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+				//check update info
+				//see errorCode and errorMessage
+                    }
+                });
+            }
+
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });
+```
+
+---------------------------------------------------------------------------------------------
+
+<a name="#Update+pull"></a>
+### Update.pull(field, value)
+Метод для удаления заданного элемента из поля (типа массив) документа БД.
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| field | <code>String</code> |                                            Обязательный | Имя поля типа Array  | "orderNumber"   |
+| value | <code>String / Integer / Double / Boolean / Date / List / Object</code> | Обязательный | Элемент для удаления из массива | "delete me" |
+
+**Пример**
+```Java
+final Document document = new Document(“ordersCollection”);
+document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+                //document found, we can update it
+ 
+                document.updateDocument().pull("array2", 3);
+
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
+
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+				//check update info
+				//see errorCode and errorMessage
+                    }
+                });
+            }
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });
+```
+---------------------------------------------------------------------------------------------
+
+<a name="#Update+pullAll"></a>
+### Update.pullAll(field, value)
+Метод для удаления всех переданных (в качестве параметра values) элементов из поля (типа массив) документа БД.
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| field | <code>String</code> |                                            Обязательный | Имя поля типа Array  | "orderNumber"   |
+| value | <code>List<String / Integer / Double / Boolean / Date / List / Object></code> | Обязательный | Элементы для удаления из массива | см. пример ниже |
+
+
+**Пример**
+```Java
+final Document document = new Document(“ordersCollection”);
+document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+                //document found, we can update it
+ 		
+                //create array of elements to delete from array
+		    List<Object> objects = new ArrayList<>();
+                objects.add(1);
+                objects.add(2);
+		    objects.add(3);
+
+                document.updateDocument().pullAll("array2", objects);
+
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
+
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+				//check update info
+				//see errorCode and errorMessage
+                    }
+                });
+            }
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });
+```
+
+---------------------------------------------------------------------------------------------
+
+<a name="#Update+addToSet"></a>
+### Update.addToSet(field, value)
+Метод для для добавления элемента в поле (типа массив) документа БД если он еще не присутствует в нем.
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| field | <code>String</code> |                                            Обязательный | Имя поля типа Array  | "orderNumber"   |
+| value | <code>List<String / Integer / Double / Boolean / Date / List / Object></code> | Обязательный | Элементы для добавления в массив | см. пример ниже |
+
+
+**Пример**
+```Java
+final Document document = new Document(“ordersCollection”);
+document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+                //document found, we can update it
+ 
+                document.updateDocument().addToSet("array4", 7);
+
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
+
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+				//check update info
+				//see errorCode and errorMessage
+                    }
+                });
+            }
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });
+```
+---------------------------------------------------------------------------------------------
+
+<a name="#Update+inc"></a>
+### Update.inc(field,  increaseValue)
+Метод для увеличения значения поля документа БД на заданное значение. Примечание: число может иметь отрицательное значение
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| field | <code>String</code> |                                            Обязательный | Имя поля  | "counter"   |
+| value | <code>Integer / Double / Date</code> | Обязательный | Шаг изменения | -2.2 |
+
+**Пример**
+```Java
+final Document document = new Document(“ordersCollection”);
+document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+                //document found, we can update it
+ 
+                document.updateDocument().inc("numberField", 2);
+		    document.updateDocument().inc("anotherNumberField", -10);
+
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
+
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+				//check update info
+				//see errorCode and errorMessage
+                    }
+                });
+            }
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });
+```
+
+---------------------------------------------------------------------------------------------
+
+<a name="#Update+setCurrentDate"></a>
+### Update.setCurrentDate(field)
+Метод для установки текущей даты в поле (типа Date) документа БД.
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| field | <code>String</code> |                                            Обязательный | Имя поля типа Date  | "registerDate"   |
+
+
+**Пример**
+```Java
+final Document document = new Document(“ordersCollection”);
+document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+                //document found, we can update it
+ 
+                document.updateDocument().setCurrentDate("date1");
+
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
+
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+				//check update info
+				//see errorCode and errorMessage
+                    }
+                });
+            }
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });
+```
+
+
+---------------------------------------------------------------------------------------------
+
+<a name="#Update+mul"></a>
+### Update.mul(field, value)
+Метод для умножения поля документа БД на заданное значение.
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| field | <code>String</code> |                                            Обязательный | Имя поля  | "counter"   |
+| value | <code>Integer / Double</code> | Обязательный | Мультипликатор | -2.2 |
+
+
+**Пример**
+```Java
+final Document document = new Document(“ordersCollection”);
+document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+                //document found, we can update it
+ 
+                document.updateDocument().mul("numberForMulTest", 3);
+
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
+
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+				//check update info
+				//see errorCode and errorMessage
+                    }
+                });
+            }
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });
+```
+
+---------------------------------------------------------------------------------------------
+
+<a name="#Update+min"></a>
+### Update.min(field, valueToCompare)
+Метод обновляет значение числового поля только в случае, если новое значение меньше текущего значения поля
+
+| Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
+|------------|------------------|--------------|--------------------------------------|---------------------------------------|
+| field           |<code>String</code>         | Обязательный |  Имя поля, значение которого нужно изменить  | "price" |
+| valueToCompare        | <code>Integer / Double</code>      | Обязательный | значение для сравнения с текущим значением поля | 43    |
+
+**Пример**
+```Java
+final Document document = new Document(“ordersCollection”);
+document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+                //document found, we can update it
+ 
+                document.updateDocument().min("number2", 10);
+
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successfull
+                    }
+
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+				//check update info
+				//see errorCode and errorMessage
+                    }
+                });
+            }
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });
+```
+
+---------------------------------------------------------------------------------------------
+
+<a name="#Update+max"></a>
+### Update.max(field, valueToCompare)
+Метод обновляет значение числового поля только в случае, если новое значение больше текущего значения поля
+
+| Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
+|------------|------------------|--------------|--------------------------------------|---------------------------------------|
+| field           |<code>String</code>         | Обязательный |  Имя поля, значение которого нужно изменить  | "price" |
+| valueToCompare        | <code>Integer / Double</code>      | Обязательный | значение для сравнения с текущим значением поля | 43    |
+
+**Пример**
+```Java
+final Document document = new Document(“ordersCollection”);
+document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+                //document found, we can update it
+ 
+                document.updateDocument().max("number2", 10);
+
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successfull
+                    }
+
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+				//check update info
+				//see errorCode and errorMessage
+                    }
+                });
+            }
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });
+```
+
+
+---------------------------------------------------------------------------------------------
+
+<a name="#Update+getUpdateInfo"></a>
+### Update.getUpdateInfo()
+Метод для получения информации, необходимой методам для обновления документа.

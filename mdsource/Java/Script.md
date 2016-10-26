@@ -9,8 +9,6 @@
     * [.runScript(scriptId, dataPoolForScript, callbackRunScript)](#Script+runScript1)
     * [.runScript(scriptId, callbackRunScript)](#Script+runScript1)
 
-
-
 ----------------------------------------------------------------------------------------------
 
 <a name="Script_new"></a>

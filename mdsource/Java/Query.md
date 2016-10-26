@@ -5,7 +5,7 @@
 
 **Содержание**
 * [Query](#Query)
-    * [Query(name)](#Query_new)
+    * [new Query(name)](#Query_new)
     * [.findDocuments(callback)](#Query+findDocuments)
     * [.countDocuments(callback)](#Query+countDocuments)
     * [.updateDocument(update, callback)](#Query+updateDocument)
@@ -39,13 +39,13 @@
 ---------------------------------------------------------------------------------------------
 <a name="#Query_new"></a>
 
-###Query(name)
+### new Query()
 
 Экземпляр запроса к данным коллекции
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-|  name  | <code>String</code>  |    | Имя экземпляра Query  |    |
+|  collection_name  | <code>String</code>  |    | Имя коллекции |  "things"  |
 
 ```Java
 Query query = new Query("name");
