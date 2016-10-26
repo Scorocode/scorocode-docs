@@ -22,7 +22,7 @@
 
 
 ---------------------------------------------------------------------------------------------
-<a name="#Update_new"></a>
+<a name="Update_new"></a>
 
 ### new Update()
 Конструктор Update()
@@ -31,17 +31,24 @@
 Update  = new Update();
 ```
 
+Работа с методами данного класса возможна также через метод .updateDocument класса Document
+
+```Java
+Document document = new Document("ordersCollection");
+//document.getDocumentById(...);
+//document.updateDocument();
+```
 
 ---------------------------------------------------------------------------------------------
 
-<a name="#Update+set"></a>
-### Update.set(field,value)
+<a name="Update+set"></a>
+### .set(field,value)
 Метод для установки нового значения поля документа БД.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | field | <code>String</code> |                                            Обязательный | Имя поля для изменения  | "orderNumber"   |
-| value | <code>String / Integer / Double / Boolean / Date / List / Object</code> | Обязательный |  Новое значение поля |  22 |
+| value | <code>Object</code> | Обязательный |  Новое значение поля |  22 |
 
 
 **Пример**
@@ -83,14 +90,14 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 
 ---------------------------------------------------------------------------------------------
 
-<a name="#Update+push"></a>
-### Update.push(field, value)
+<a name="Update+push"></a>
+### .push(field, value)
 Метод для добавления элемента в поле (типа массив) документа БД
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | field | <code>String</code> |                                            Обязательный | Имя поля типа Array  | "orderNumber"   |
-| value | <code>String / Integer / Double / Boolean / Date / List / Object</code> | Обязательный | Элемент для добавления в массив | {"key": value} |
+| value | <code>Object</code> | Обязательный | Элемент для добавления в массив | -42.42 |
 
 **Пример**
 ```Java
@@ -129,8 +136,8 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 
 ---------------------------------------------------------------------------------------------
 
-<a name="#Update+popFirst"></a>
-### Update.popFirst(field)
+<a name="Update+popFirst"></a>
+### .popFirst(field)
 Метод для удаления первого элемента из поля (типа массив) документа БД.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
@@ -174,8 +181,8 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 
 ---------------------------------------------------------------------------------------------
 
-<a name="#Update+popLast"></a>
-### Update.popLast(field)
+<a name="Update+popLast"></a>
+### .popLast(field)
 Метод для удаления последнего элемента из поля (типа массив) документа БД.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
@@ -220,21 +227,24 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 
 ---------------------------------------------------------------------------------------------
 
-<a name="#Update+pull"></a>
-### Update.pull(field, value)
+<a name="Update+pull"></a>
+### .pull(field, value)
 Метод для удаления заданного элемента из поля (типа массив) документа БД.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | field | <code>String</code> |                                            Обязательный | Имя поля типа Array  | "orderNumber"   |
-| value | <code>String / Integer / Double / Boolean / Date / List / Object</code> | Обязательный | Элемент для удаления из массива | "delete me" |
+| value | <code>Object</code> | Обязательный | Элемент для удаления из массива | "delete me" |
+
+**Примечание**
+* если в массиве несколько элементов со значением, соответствующим значению value, данный метод удалит все эти элементы.
 
 **Пример**
 ```Java
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //document found, we can update it
  
                 document.updateDocument().pull("array2", 3);
@@ -262,14 +272,14 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Update+pullAll"></a>
-### Update.pullAll(field, value)
+<a name="Update+pullAll"></a>
+### .pullAll(field, value)
 Метод для удаления всех переданных (в качестве параметра values) элементов из поля (типа массив) документа БД.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | field | <code>String</code> |                                            Обязательный | Имя поля типа Array  | "orderNumber"   |
-| value | <code>List<String / Integer / Double / Boolean / Date / List / Object></code> | Обязательный | Элементы для удаления из массива | см. пример ниже |
+| value | <code>List<Object></code> | Обязательный | Элементы для удаления из массива | см. пример ниже |
 
 
 **Пример**
@@ -277,7 +287,7 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //document found, we can update it
  		
                 //create array of elements to delete from array
@@ -312,14 +322,14 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 
 ---------------------------------------------------------------------------------------------
 
-<a name="#Update+addToSet"></a>
-### Update.addToSet(field, value)
+<a name="Update+addToSet"></a>
+### .addToSet(field, value)
 Метод для для добавления элемента в поле (типа массив) документа БД если он еще не присутствует в нем.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | field | <code>String</code> |                                            Обязательный | Имя поля типа Array  | "orderNumber"   |
-| value | <code>List<String / Integer / Double / Boolean / Date / List / Object></code> | Обязательный | Элементы для добавления в массив | см. пример ниже |
+| value | <code>List<Object></code> | Обязательный | Элементы для добавления в массив | см. пример ниже |
 
 
 **Пример**
@@ -327,7 +337,7 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //document found, we can update it
  
                 document.updateDocument().addToSet("array4", 7);
@@ -355,8 +365,8 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 ```
 ---------------------------------------------------------------------------------------------
 
-<a name="#Update+inc"></a>
-### Update.inc(field,  increaseValue)
+<a name="Update+inc"></a>
+### .inc(field,  increaseValue)
 Метод для увеличения значения поля документа БД на заданное значение. Примечание: число может иметь отрицательное значение
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
@@ -369,7 +379,7 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //document found, we can update it
  
                 document.updateDocument().inc("numberField", 2);
@@ -399,8 +409,8 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 
 ---------------------------------------------------------------------------------------------
 
-<a name="#Update+setCurrentDate"></a>
-### Update.setCurrentDate(field)
+<a name="Update+setCurrentDate"></a>
+### .setCurrentDate(field)
 Метод для установки текущей даты в поле (типа Date) документа БД.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
@@ -413,7 +423,7 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //document found, we can update it
  
                 document.updateDocument().setCurrentDate("date1");
@@ -443,8 +453,8 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 
 ---------------------------------------------------------------------------------------------
 
-<a name="#Update+mul"></a>
-### Update.mul(field, value)
+<a name="Update+mul"></a>
+### .mul(field, value)
 Метод для умножения поля документа БД на заданное значение.
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
@@ -458,7 +468,7 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //document found, we can update it
  
                 document.updateDocument().mul("numberForMulTest", 3);
@@ -487,8 +497,8 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 
 ---------------------------------------------------------------------------------------------
 
-<a name="#Update+min"></a>
-### Update.min(field, valueToCompare)
+<a name="Update+min"></a>
+### .min(field, valueToCompare)
 Метод обновляет значение числового поля только в случае, если новое значение меньше текущего значения поля
 
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
@@ -501,7 +511,7 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //document found, we can update it
  
                 document.updateDocument().min("number2", 10);
@@ -530,8 +540,8 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 
 ---------------------------------------------------------------------------------------------
 
-<a name="#Update+max"></a>
-### Update.max(field, valueToCompare)
+<a name="Update+max"></a>
+### .max(field, valueToCompare)
 Метод обновляет значение числового поля только в случае, если новое значение больше текущего значения поля
 
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
@@ -544,7 +554,7 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //document found, we can update it
  
                 document.updateDocument().max("number2", 10);
@@ -574,6 +584,6 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 
 ---------------------------------------------------------------------------------------------
 
-<a name="#Update+getUpdateInfo"></a>
-### Update.getUpdateInfo()
+<a name="Update+getUpdateInfo"></a>
+### .getUpdateInfo()
 Метод для получения информации, необходимой методам для обновления документа.

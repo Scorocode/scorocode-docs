@@ -62,6 +62,8 @@ Query query = new Query("name");
 
 **Примечание**
 * Если вы хотите чтобы вместе с id найденных документов возвращались их поля, задайте название необходимых полей с помощью функции setFieldsForSearch(fields)
+* Данный метод по-умолчанию возвращает 50 документов коллекции.
+
 
 **Пример** 
 ```JavaQuery query = new Query(“mycollection”)
@@ -119,6 +121,9 @@ Query query = new Query(“mycollection”);
 | update | <code>Update</code> | Обязательный | Объект Update  |   |
 | callback | <code>CallbackUpdateDocument</code> | Обязательный |  Callback, который будет вызван после выполнения запроса.  |  |
 
+**Примечание**
+* Данный метод обновляет не более 1000 документов
+
 **Пример** 
 ```Java
  Query query = new Query(“mycollection”);
@@ -151,6 +156,9 @@ Query query = new Query(“mycollection”);
 | --- | --- | --- | --- | --- |
 | callback | <code>CallbackRemoveDocument</code> | Обязательный |  Callback, который будет вызван после выполнения запроса.  |  |
 
+**Примечание**
+* Данный метод удаляет не более 1000 документов
+
 **Пример** 
 ```Java
 Query query = new Query(“mycollection”);
@@ -179,6 +187,9 @@ Query query = new Query(“mycollection”);
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | limit | <code>Integer</code> |    Обязательный | Лимит для установки | 15  |
+
+**Примечание**
+* Данный метод принимает 100 в качестве максимального значения limit
 
 **Пример** 
 ```Java
