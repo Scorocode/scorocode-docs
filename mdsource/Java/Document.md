@@ -140,7 +140,7 @@ ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da
 final Document document = new Document("ordersCollection");
 document.getDocumentById("nV0p50CDKq", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //document found
             }
 
@@ -191,12 +191,12 @@ String orderId = document.getField(“orderId”);
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("nV0p50CDKq", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
             //document found and we can upload document in this file
-            
+
                 document.uploadFile("file_field", "any_filename.txt", 
             Base64.encodeToString("hello world".getBytes(), Base64.DEFAULT), new CallbackUploadFile() {
-                    
+
               @Override
                     public void onDocumentUploaded() {
                         //document upload succeed
@@ -216,7 +216,6 @@ document.getDocumentById("nV0p50CDKq", new CallbackFindDocument() {
                 //document not found
             }
         });
-
 ```
 
 ----------------------------------------------------------------------------------------------
@@ -235,7 +234,7 @@ document.getDocumentById("nV0p50CDKq", new CallbackFindDocument() {
 final Document documentWithFile = new Document(“ordersCollection”);
 documentWithFile.getDocumentById("nV0p50CDKq", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                     //document found. We can try to get link on file in this document
             String fileLink = documentWithFile.getFileLink("test", "file.txt");
             }
@@ -265,7 +264,7 @@ documentWithFile.getDocumentById("nV0p50CDKq", new CallbackFindDocument() {
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("nV0p50CDKq", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
             //document found we can try to delete file from this doc
 
 
@@ -306,7 +305,7 @@ document.getDocumentById("nV0p50CDKq", new CallbackFindDocument() {
 final Document document = new Document(“ordersCollection”);
 document.getDocumentById("7BOlVr1Acp", new CallbackFindDocument() {
             @Override
-            public void onDocumentFound(List<DocumentInfo> documentInfos) {
+            public void onDocumentFound(DocumentInfo documentInfo) {
                 //we found document in collection and can remove it
                 document.removeDocument(new CallbackRemoveDocument() {
                     @Override
