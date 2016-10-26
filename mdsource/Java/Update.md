@@ -279,7 +279,7 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | field | <code>String</code> |                                            Обязательный | Имя поля типа Array  | "orderNumber"   |
-| value | <code>List<Object></code> | Обязательный | Элементы для удаления из массива | см. пример ниже |
+| value | <code>List&ltObject&gt</code> | Обязательный | Элементы для удаления из массива | см. пример ниже |
 
 
 **Пример**
@@ -329,7 +329,7 @@ document.getDocumentById("KH3JCojAyT", new CallbackFindDocument() {
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | field | <code>String</code> |                                            Обязательный | Имя поля типа Array  | "orderNumber"   |
-| value | <code>List<Object></code> | Обязательный | Элементы для добавления в массив | см. пример ниже |
+| value | <code>List&ltObject&gt</code> | Обязательный | Элементы для добавления в массив | см. пример ниже |
 
 
 **Пример**

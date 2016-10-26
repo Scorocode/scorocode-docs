@@ -27,7 +27,7 @@ User appUser = new User();
 ----------------------------------------------------------------------------------------------
 <a name="User+register1"></a>
 
-### User.register(callback, username, email, password)
+### .register(callback, username, email, password)
 
 Метод для регистрации нового пользователя приложения (с возможностью добавления дополнительной информации о нем).
 
@@ -36,14 +36,12 @@ User appUser = new User();
 | username  | <code>String</code>              | Обязательный | Имя пользователя                 | "Username"                     | 
 | email     | <code>String</code>              | Обязательный | Email пользователя               | "user@domain.zone"          | 
 | password  | <code>String</code>              | Обязательный | Пароль пользователя              | "CorrectHorseBatteryStaple" |
-| documentContent  | <code>DocumentInfo</code>  | Необязательный | Документ, ассоциированный с пользователем | doc.getDocumentContent() |
-| callback  | <code>CallbackRegisterUser</code> | Обязательныйй | Callback, который будет вызван после выполнения запроса. |  см.пример ниже |
+| documentContent  | <code>DocumentInfo</code>  | Необязательный | Документ, ассоциированный с пользователем | см.пример ниже |
+| callback  | <code>CallbackRegisterUser</code> | Обязательныйй | Callback, который будет вызван после выполнения запроса. | см.пример ниже  |
 
 
 **Пример** 
 ```Java
-ScorocodeSdk.initWith("applicationId", "cientKey");
-
 Document doc = new Document("users");
 doc.setField("city", "Moscow");
 doc.setField("isPlaceAnyOrder", true);
@@ -68,7 +66,7 @@ user.register("any_username", "anyemail@mailinator.com", "test1111", doc.getDocu
 ----------------------------------------------------------------------------------------------
 <a name="User+register2"></a>
 
-### User.register(username, email, password, callback)
+### .register(username, email, password, callback)
 
 Метод для регистрации нового пользователя приложения
 
@@ -82,8 +80,6 @@ user.register("any_username", "anyemail@mailinator.com", "test1111", doc.getDocu
 
 **Пример** 
 ```Java
-ScorocodeSdk.initWith("applicationId", "cientKey");
-
 User user = new User();
 user.register("any_username", "anyemail@gmail.com", "test1111", doc.getDocumentContent(), 
     new CallbackRegisterUser() {
@@ -104,7 +100,7 @@ user.register("any_username", "anyemail@gmail.com", "test1111", doc.getDocumentC
 ----------------------------------------------------------------------------------------------
 <a name="User+login"></a>
 
-### login(email, password, callback)
+### .login(email, password, callback)
 
 Метод для аутентификации пользователя приложения
 
@@ -117,8 +113,6 @@ user.register("any_username", "anyemail@gmail.com", "test1111", doc.getDocumentC
 
 **Пример** 
 ```Java
-ScorocodeSdk.initWith("applicationId", "cientKey");
-
 User user = new User();
 user.login(“anymail@mail.com”, “any pass”, new CallbackLoginUser() {
             @Override
@@ -138,7 +132,7 @@ user.login(“anymail@mail.com”, “any pass”, new CallbackLoginUser() {
 ----------------------------------------------------------------------------------------------
 <a name="User+logout"></a>
 
-### User.logout(callback)
+### .logout(callback)
 
 Метод для завершения активноий сессии пользователя.
 
@@ -149,8 +143,6 @@ user.login(“anymail@mail.com”, “any pass”, new CallbackLoginUser() {
 
 **Пример** 
 ```Java
-ScorocodeSdk.initWith("applicationId", "cientKey");
-
 User user = new User();
 user.logout(new CallbackLogoutUser() {
             @Override
