@@ -11,19 +11,19 @@ SDK предоставляет доступ к платформе Scorocode дл
 
 ### Подключение SDK
 
+Исходный код Scorocode Java SDK опубликован в репозитории (https://github.com/Scorocode/scorocode-sdk-java).
 
 Подключить библиотеку к проекту можно при помощи Gradle добавив в dependencies:
 ```java
 
 dependencies {
-   compile 'ru.prof-itgroup:scorocode_sdk:1.0.7-beta'
+   compile 'ru.prof-itgroup:scorocode_sdk:1.0.15-beta'
 }
-
 ```
 
 Убедитесь, что gradle ищет библиотеки в рекомендуемом Google репозитории jcenter (который включает в себя библиотеки maven):
-```java
 
+```java
 repositories {
    jcenter()
 }
@@ -53,6 +53,7 @@ repositories {
 * Инициализация Sdk должна происходить ранее использования других методов SDK;
 * Посмотреть значения ключей можно на вкладке “Безопастность” настроек проекта;
 * ClientKey соответствует ключ с именем “android”;
+* В случае,
 
 
 **Пример**  
