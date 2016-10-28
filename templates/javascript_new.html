@@ -1,0 +1,51 @@
+<h2>Scorocode JavaScript SDK</h2>
+
+<p>
+Дистрибутив Scorocode JavaScript SDK можно скачать <a href="https://github.com/Scorocode/scorocode-SDK-JS" target="_blank">тут</a>.
+</p>
+
+<h3>Быстрый старт</h3>
+
+<p>
+    Зарегистрируйтесь и создайте приложение в Scorocode.
+</p>
+<p>
+    Зайдите в Настройки приложения, пункт Безопасность, и установите все флаги напротив пункта "Разрешить анонимный доступ к данным".
+    Это нам нужно для того, чтобы можно было без авторизации читать данные.
+</p>
+<p>
+    Для разработки примера мы использовали <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a>.
+    Требования для установки смотрите по ссылке. Установить его можно из консоли командой:
+</p>
+<pre>
+    npm install -g create-react-app
+</pre>
+<p>Создайте приложение и установите JS SDK последовательностью команд в консоли:</p>
+<pre>
+    create-react-app first-scorocode
+    cd first-scorocode
+    npm install scorocode --save
+</pre>
+
+<p>
+    Откройте файл src/index.js и добавьте в него строки, заменив ключи "xxx" на соответствующие ключи из вашего приложения (раздел Настройки->Безопасность):
+</p>
+<pre>
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import App from './App';
+    import './index.css';
+    import Scorocode from 'scorocode' // <- добавить импорт SDK
+
+    // Добавить инициализацию SDK
+    Scorocode.Init({
+        ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
+        JavaScriptKey: "xxx"  // <- заменить xxx на ключ javascript приложения
+    });
+
+
+    ReactDOM.render(
+      <App />,
+      document.getElementById('root')
+    );
+</pre>
