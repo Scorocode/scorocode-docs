@@ -94,10 +94,13 @@ var Scorocode = require('scorocode');
 Scorocode.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения",
-    MessageKey: "messageKey_приложения"
+    WebSocketKey: "webSocketKey_приложения"
 });
 
 var WS = new Scorocode.WebSocket('Helloworld');
 var data = "Wello Horld";
-WS.send(data);
+
+WS.on('open', function(){
+    WS.send(data);
+});
 ```
