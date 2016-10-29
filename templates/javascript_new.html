@@ -18,7 +18,7 @@
 npm install -g create-react-app
 </pre>
 <p>Создайте новое приложение и установите JS SDK последовательностью команд в консоли:</p>
-<pre>
+<pre class="prettyprint">
 create-react-app first-scorocode
 cd first-scorocode
 npm install scorocode --save
@@ -42,7 +42,7 @@ Scorocode.Init({
 });
 
 ReactDOM.render(
-  &ltApp //>,
+  &lt;App //&gt;,
   document.getElementById('root')
 );
 </pre>
@@ -73,26 +73,26 @@ class App extends Component {
     // Создаем две формы: для регистрации и для авторизации
     render() {
         return (
-            &ltdiv>
-                &lth2>Регистрация&lt/h2>
-                &ltform onSubmit={(event) => {this.handleRegister(event)}}>
-                    &ltinput type="text" placeholder="имя пользователя"/> {' '}
-                    &ltinput type="email" placeholder="email"/> {' '}
-                    &ltinput type="password" placeholder="password"/>
-                    &ltbutton type="submit">Зарегистрироваться&lt/button>
-                &lt/form>
+            &lt;div&gt;
+                &lt;h2&gt;Регистрация&lt;/h2&gt;
+                &lt;form onSubmit={(event) =&gt; {this.handleRegister(event)}}&gt;
+                    &lt;input type="text" placeholder="имя пользователя"/&gt; {' '}
+                    &lt;input type="email" placeholder="email"/&gt; {' '}
+                    &lt;input type="password" placeholder="password"/&gt;
+                    &lt;button type="submit"&gt;Зарегистрироваться&lt;/button&gt;
+                &lt;/form&gt;
 
-                &ltpre>{this.state.registerResult}&lt/pre>
+                &lt;pre&gt;{this.state.registerResult}&lt;/pre&gt;
 
-                &lth2>Вход в систему&lt/h2>
-                &ltform onSubmit={(event) => {this.handleLogin(event)}}>
-                    &ltinput type="email" placeholder="email"/> {' '}
-                    &ltinput type="password" placeholder="password"/>
-                    &ltbutton type="submit">Войти&lt/button>
-                &lt/form>
+                &lt;h2&gt;Вход в систему&lt;/h2&gt;
+                &lt;form onSubmit={(event) =&gt; {this.handleLogin(event)}}&gt;
+                    &lt;input type="email" placeholder="email"/&gt; {' '}
+                    &lt;input type="password" placeholder="password"/&gt;
+                    &lt;button type="submit"&gt;Войти&lt;/button&gt;
+                &lt;/form&gt;
 
-                &ltpre>{this.state.loginResult}&lt/pre>
-            &lt/div>
+                &lt;pre&gt;{this.state.loginResult}&lt;/pre&gt;
+            &lt;/div&gt;
         );
     }
 
@@ -158,7 +158,7 @@ export default App;
 </pre>
 
 <p>
-    Сохрание файл и запустите приложение из консоли командой:
+    Сохраните файл и запустите приложение из консоли командой:
 </p>
 <pre>
 npm start
@@ -166,4 +166,6 @@ npm start
 <p>
     В результате в браузере откроется страница с двумя формами: регистрации и авторизации.
     Поэкспериментируйте с регистрацией пользователей и их авторизацией и посмотрите на ответы от API Scorocode.
+    После успешной регистрации вы можете увидеть в коллекции users добавленного пользователя и авторизоваться, используя
+    его email и пароль.
 </p>
