@@ -90,8 +90,8 @@ Scorocode.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения",
     ScriptKey: "scriptKey_приложения"
-    MasterKey: "scriptKey_приложения" // необходим для отладки
-    WebSocketKey: "scriptKey_приложения" // необходим для отладки
+    MasterKey: "masterKey_приложения" // необходим для отладки
+    WebSocketKey: "websocketKey_приложения" // необходим для отладки
 });
 
 var Prompt = require('prompt');
