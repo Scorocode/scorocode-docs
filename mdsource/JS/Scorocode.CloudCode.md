@@ -100,7 +100,7 @@ Prompt.get(['email', 'password', 'username'], function (err, result) {
 
 // Создадим новый экземпляр запроса к серверному скрипту "574860d2781267d34f7a2415".
 // Вторым параметром передаем вновь созданный объект Logger
-var newUserRegistration = new Scorocode.CloudCode("574860d2781267d34f7a2415", {logger: new SC.Logger()});
+var newUserRegistration = new Scorocode.CloudCode("574860d2781267d34f7a2415", {logger: new Scorocode.Logger()});
 
 // Определим данные, которые будут переданы скрипту при запуске
 var pool = {
