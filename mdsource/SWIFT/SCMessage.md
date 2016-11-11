@@ -52,8 +52,7 @@ broadcast.sendEmail(queryUsers, subject:"Тема письма", text:"Текс�
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | query    | <code>SCQuery</code>                        |              | Запрос в коллекцию users для выборки адресатов |                        | 
-| subject  | <code>String</code>                         |              | Тема                                           |                        |
-| text     | <code>String</code>                         |              | Текст письма                                   | "Текст письма"         |
+| text     | <code>String</code>                         |              | Текст письма                                   | "Текст Push-уведомления"         |
 | callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэк для выполняемого запроса.              |                        |
 
 **Пример**   
@@ -62,7 +61,7 @@ var queryUserDevices = SCQuery(collection: "devices")
 var broadcast = SCMessage()
 
 queryUserDevices.exists("userRelation")
-broadcast.sendEmail(queryUserDevices, text:"Текст Push-уведомления") {
+broadcast.sendPush(queryUserDevices, text:"Текст Push-уведомления") {
     success, error, result in
     if success {
         print("Success")
@@ -82,8 +81,7 @@ broadcast.sendEmail(queryUserDevices, text:"Текст Push-уведомлени
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | query    | <code>SCQuery</code>                        |              | запрос в коллекцию users для выборки адресатов |                        | 
-| subject  | <code>String</code>                         |              | Тема                                           |                        |
-| text     | <code>String</code>                         |              | Текст письма                                   | "Текст письма"         |
+| text     | <code>String</code>                         |              | Текст письма                                   | "Текст СМС сообщения"         |
 | callback | <code>(Bool, SCError?, Int?) -> Void</code> |              | Коллбэк для выполняемого запроса.              |                        |
 
 **Пример**   
@@ -92,7 +90,7 @@ var queryUsersWithPhone = SCQuery(collection: "users")
 var broadcast = SCMessage()
 
 queryUsersWithPhone.exists("phone")
-broadcast.sendEmail(queryUsersWithPhone, text:"Текст СМС сообщения") {
+broadcast.sendSms(queryUsersWithPhone, text:"Текст СМС сообщения") {
     success, error, result in
     if success {
         print("Success")
