@@ -5,6 +5,7 @@
 $(document).ready(function() {
     function getTemplate(name) {
 
+
         window.scrollTo(0,0)
 
         var url = name.replace('#','');
