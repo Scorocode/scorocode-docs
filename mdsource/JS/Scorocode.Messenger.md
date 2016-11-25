@@ -103,9 +103,8 @@ var Broadcast = new Scorocode.Messenger();
 Broadcast.sendPush({
         where: Devices,
         data: {
-            "data": {
-                "message": "текст PUSH-уведомления!",
-                }           
+            "data": { }, // Объект с любыми параметрами 
+            "text": "текст PUSH-уведомления"
             }
         })
         .then((success)=>{
