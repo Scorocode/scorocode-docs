@@ -462,13 +462,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sendemailoptions-callbacks" title=".sendEmail(options, callbacks)" class="md-nav__link">
-    .sendEmail(options, callbacks)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#sendpushoptions-callbacks" title=".sendPush(options, callbacks)" class="md-nav__link">
     .sendPush(options, callbacks)
   </a>
@@ -865,13 +858,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sendemailoptions-callbacks" title=".sendEmail(options, callbacks)" class="md-nav__link">
-    .sendEmail(options, callbacks)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#sendpushoptions-callbacks" title=".sendPush(options, callbacks)" class="md-nav__link">
     .sendPush(options, callbacks)
   </a>
@@ -901,7 +887,6 @@
 <ul>
 <li><a href="#Scorocode.Messenger">Messenger</a><ul>
 <li><a href="#new_Scorocode.Messenger_new">new Messenger()</a></li>
-<li><a href="#Scorocode.Messenger+sendEmail">.sendEmail(options, callbacks)</a> ⇒ <code>{error: Boolean, count: Number}</code></li>
 <li><a href="#Scorocode.Messenger+sendPush">.sendPush(options, callbacks)</a> ⇒ <code>{error: Boolean, count: Number}</code></li>
 <li><a href="#Scorocode.Messenger+sendSms">.sendSms(options, callbacks)</a> ⇒ <code>{error: Boolean, count: Number}</code></li>
 </ul>
@@ -916,72 +901,6 @@
 </pre></div>
 
 
-<hr />
-<p><a name="Scorocode.Messenger+sendEmail"></a></p>
-<h2 id="sendemailoptions-callbacks">.sendEmail(options, callbacks)<a class="headerlink" href="#sendemailoptions-callbacks" title="Permanent link">&para;</a></h2>
-<p>Метод для отправки Email</p>
-<table>
-<thead>
-<tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Описание</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>options</td>
-<td><code>Object</code></td>
-<td>Параметры сообщения</td>
-</tr>
-<tr>
-<td>callbacks</td>
-<td><code>Object</code></td>
-<td>Коллбэки success и error для выполняемого запроса.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Пример</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">MessageKey</span><span class="o">:</span> <span class="s2">&quot;messageKey_приложения&quot;</span>
-<span class="p">});</span>
-
-<span class="kd">var</span> <span class="nx">findUsers</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;users&quot;</span><span class="p">);</span>
-<span class="nx">findUsers</span><span class="p">.</span><span class="nx">equalTo</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span><span class="s2">&quot;ChosenOne&quot;</span><span class="p">);</span>
-
-<span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
-<span class="nx">Broadcast</span><span class="p">.</span><span class="nx">sendEmail</span><span class="p">({</span>
-    <span class="nx">where</span><span class="o">:</span> <span class="nx">findUsers</span><span class="p">,</span>
-    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">subject</span><span class="o">:</span><span class="s2">&quot;Тема письма&quot;</span><span class="p">,</span>
-        <span class="nx">text</span><span class="o">:</span><span class="s2">&quot;Текст письма&quot;</span>
-        <span class="p">}</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
-
-<p><strong>Возвращает</strong>: <code>promise.{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.</p>
-<ul>
-<li>"error" - <code>Boolean</code> - Флаг ошибки</li>
-<li>"count" - <code>Number</code>  - Количество отправленных сообщений.</li>
-</ul>
-<p><strong>Исключение</strong>:</p>
-<ul>
-<li><code>String</code> 'Invalid options type'</li>
-<li><code>String</code> 'Where must be a type of Query'</li>
-<li><code>String</code> 'Invalid data type'</li>
-<li><code>String</code> 'Missing subject or text message'</li>
-</ul>
 <hr />
 <p><a name="Scorocode.Messenger+sendPush"></a></p>
 <h2 id="sendpushoptions-callbacks">.sendPush(options, callbacks)<a class="headerlink" href="#sendpushoptions-callbacks" title="Permanent link">&para;</a></h2>
