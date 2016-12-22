@@ -7,8 +7,6 @@ Message
 
 * [Message](#Message)
     * [new Message(from, subject, text)](#Message_new)
-    * [.sendEmail(messageEmail, query, callback)](#Message+sendEmail1)
-    * [.sendEmail(messageEmail, callback)](#Message+sendEmail2)
     * [.sendPush(messagePush, query, callback)](#Message+sendPush1)
     * [.sendPush(messagePush, callback)](#Message+sendPush2)
     * [.sendSms(messageSms, query, callback)](#Message+sendSms1)
