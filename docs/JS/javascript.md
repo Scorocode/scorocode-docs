@@ -47,7 +47,7 @@ Scorocode.Init({
 });
 
 ReactDOM.render(
-  &lt;App /&gt;,
+  <App >,
   document.getElementById('root')
 );
 ```
@@ -77,26 +77,26 @@ class App extends Component {
     // Создаем две формы: для регистрации и для авторизации
     render() {
         return (
-            &lt;div&gt;
-                &lt;h2&gt;Регистрация&lt;/h2&gt;
-                &lt;form onSubmit={(event) =&gt; {this.handleRegister(event)}}&gt;
-                    &lt;input type="text" placeholder="имя пользователя"/&gt; {' '}
-                    &lt;input type="email" placeholder="email"/&gt; {' '}
-                    &lt;input type="password" placeholder="password"/&gt;
-                    &lt;button type="submit"&gt;Зарегистрироваться&lt;/button&gt;
-                &lt;/form&gt;
+            <div>
+                <h2>Регистрация</h2>
+                <form onSubmit={(event) => {this.handleRegister(event)}}>
+                    <input type="text" placeholder="имя пользователя"> {' '}
+                    <input type="email" placeholder="email"> {' '}
+                    <input type="password" placeholder="password">
+                    <button type="submit">Зарегистрироваться</button>
+                </form>
 
-                &lt;pre&gt;{this.state.registerResult}&lt;/pre&gt;
+                <pre>{this.state.registerResult}</pre>
 
-                &lt;h2&gt;Вход в систему&lt;/h2&gt;
-                &lt;form onSubmit={(event) =&gt; {this.handleLogin(event)}}&gt;
-                    &lt;input type="email" placeholder="email"/&gt; {' '}
-                    &lt;input type="password" placeholder="password"/&gt;
-                    &lt;button type="submit"&gt;Войти&lt;/button&gt;
-                &lt;/form&gt;
+                <h2>Вход в систему</h2>
+                <form onSubmit={(event) => {this.handleLogin(event)}}>
+                    <input type="email" placeholder="email"> {' '}
+                    <input type="password" placeholder="password">
+                    <button type="submit">Войти</button>
+                </form>
 
-                &lt;pre&gt;{this.state.loginResult}&lt;/pre&gt;
-            &lt;/div&gt;
+                <pre>{this.state.loginResult}</pre>
+            </div>
         );
     }
 
