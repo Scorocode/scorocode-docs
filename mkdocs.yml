@@ -10,6 +10,7 @@ pages:
         - 'Индексы': 'app/app3.md'
         - 'Триггеры': 'app/app4.md'
         - 'Серверный код приложения': 'app/app5.md'
+        - 'Боты Telegram': 'app/bots.md'
         - 'Настройки приложения': 'app/app6.md'
     - 'HTTP API': 
         - 'Работа с приложением': 'httpapi/appapi.md'
