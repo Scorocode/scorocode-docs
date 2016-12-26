@@ -21,7 +21,7 @@
 
 При включении бота создается `webhook` на который приходят данные от `Telegram`. Эти данные доступны в серверном скрипте в объекте `pool` при каждом вызове. Полное описание полей доступно в [документации к Telegram Bot API](https://core.telegram.org/bots/api#getting-updates)
 
-Ответные сообщения от бота передаются в объекте, имеющем следующую структуру:
+Ответные сообщения от бота передаются при помощи метода .send(data) класса Scorocode.Bot, где data - объект, имеющий следующую структуру:
 
 ```
 {
@@ -43,45 +43,16 @@
 ## Пример серверного скрипта Бота:
 
 ```js
-var sc = require('scorocode');
+var Scorocode = require('scorocode');
 
-var client = sc.Init({
-  ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
-  JavaScriptKey: "xxx", // <- заменить xxx на ключ javascript приложения
-  MasterKey: "xxx" // <- заменить xxx на ключ masterKey приложения
+var client = Scorocode.Init({
+  ApplicationID: "5c46ec2f6f94aa92556ef831228ef14c", // <- заменить xxx на ключ appId приложения
+  JavaScriptKey: "86df1ce52d81db61d632f1d6a8e15936", // <- заменить xxx на ключ javascript приложения
+  MasterKey: "e9c6a65b9d6acd5043aee1405c1e6dc3" // <- заменить xxx на ключ masterKey приложения
 });
 
+var bot = new Scorocode.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
 var querystring = require('querystring');
-var http = require('https');
-
-function PostCode(post_data) {
-
-  // An object of options to indicate where to post to
-  var post_options = {
-    host: 'bots.scorocode.ru',
-    port: '443',
-    path: '/bots/321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg/response',
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Content-Length': Buffer.byteLength(post_data)
-    }
-  };
-
-  // Set up the request
-  var post_req = http.request(post_options, function(res) {
-    res.setEncoding('utf8');
-    console.log(res.statusCode);
-    res.on('data', function(chunk) {
-      console.log('Response: ' + chunk);
-    });
-  });
-
-  // post the data
-  post_req.write(post_data);
-  post_req.end();
-
-}
 
 // Crate new button for ReplyKeyboardMarkup
 function newKeyboardButton(text, request_contact, request_location) {
@@ -100,17 +71,17 @@ function newKeyboardButton(text, request_contact, request_location) {
   return button
 }
 
-// Main logic
+// Основная логика
 
 const sourceMessage = pool.message.text.toLowerCase()
 var request = null
 
-if (sourceMessage === '/start' || sourceMessage === 'hello') {
+if (sourceMessage === '/start' || sourceMessage === 'привет') {
 
   var keyBoard = {
     'keyboard': [
-      [ newKeyboardButton('goodbye') ],
-      [ newKeyboardButton('my phone number', true), newKeyboardButton('my location', null, true) ],
+      [ newKeyboardButton('Привет') ],
+      [ newKeyboardButton('my phone number', true)],
       [ newKeyboardButton('logo') ]
     ]
   }
@@ -119,12 +90,11 @@ if (sourceMessage === '/start' || sourceMessage === 'hello') {
     'method': 'sendMessage',
     'method_params': {
       'chat_id': pool.message.chat.id.toString(),
-      'text': 'Hello!',
+      'text': 'Привет',
       'reply_to_message_id': pool.message.message_id,
       'reply_markup': keyBoard
     },
   }
-
 
 } else if (sourceMessage === 'logo') {
 
@@ -140,5 +110,5 @@ if (sourceMessage === '/start' || sourceMessage === 'hello') {
   return
 }
 
-PostCode(JSON.stringify(request));
+bot.send(request);
 ```
