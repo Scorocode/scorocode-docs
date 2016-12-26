@@ -46,9 +46,9 @@
 var Scorocode = require('scorocode');
 
 var client = Scorocode.Init({
-  ApplicationID: "5c46ec2f6f94aa92556ef831228ef14c", // <- заменить xxx на ключ appId приложения
-  JavaScriptKey: "86df1ce52d81db61d632f1d6a8e15936", // <- заменить xxx на ключ javascript приложения
-  MasterKey: "e9c6a65b9d6acd5043aee1405c1e6dc3" // <- заменить xxx на ключ masterKey приложения
+  ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
+  JavaScriptKey: "xxx", // <- заменить xxx на ключ javascript приложения
+  MasterKey: "xxx" // <- заменить xxx на ключ masterKey приложения
 });
 
 var bot = new Scorocode.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
