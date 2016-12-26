@@ -52,6 +52,8 @@ pages:
         - 'Класс Script': 'Java/Script.md'
         - 'Класс Message': 'Java/Message.md'
         - 'Класс WebSocket': 'Java/WebSocket.md'
+        - 'Класс ApplicationInfo':  'Java/ApplicationInfo.md'
+        - 'Класс Bot':  'Java/Bot.md'
     - 'Примеры приложений':
         - 'Склад (Android)': 'Java/Storehouse.md'
 theme_dir: 'material'
