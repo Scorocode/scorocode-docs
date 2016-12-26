@@ -301,6 +301,18 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/Java/ApplicationInfo/</loc>
+     <lastmod>2016-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Java/Bot/</loc>
+     <lastmod>2016-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
