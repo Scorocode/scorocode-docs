@@ -168,6 +168,12 @@
     </url>
         
     <url>
+     <loc>/JS/Scorocode.Bot/</loc>
+     <lastmod>2016-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/JS/Scorocode.Websocket/</loc>
      <lastmod>2016-12-26</lastmod>
      <changefreq>daily</changefreq>

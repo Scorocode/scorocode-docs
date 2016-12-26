@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
-      <title>Scorocode - Документация Scorocode</title>
+      <title>Scorocode.Bot - Документация Scorocode</title>
     
     
     
@@ -36,7 +36,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <span class="md-flex__ellipsis md-header-nav__title">
-          Scorocode
+          Scorocode.Bot
         </span>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -389,29 +389,11 @@
           
           
   <li class="md-nav__item">
-    <input class="md-toggle md-nav__toggle" type="checkbox" id="toc">
-    <label class="md-nav__link md-nav__link--active" for="toc">
-      Scorocode
-    </label>
-    <a href="./" title="Scorocode" class="md-nav__link md-nav__link--active">
-      Scorocode
-    </a>
-    <nav class="md-nav md-nav--secondary">
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list">
-      
-        <li class="md-nav__item">
-  <a href="#initopt-sdk" title=".Init(opt) - Инициализация SDK" class="md-nav__link">
-    .Init(opt) - Инициализация SDK
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
+    
+      <a href="../Scorocode/" title="Scorocode" class="md-nav__link">
+        Scorocode
+      </a>
+    
   </li>
 
           
@@ -498,11 +480,36 @@
           
           
   <li class="md-nav__item">
-    
-      <a href="../Scorocode.Bot/" title="Scorocode.Bot" class="md-nav__link">
-        Scorocode.Bot
-      </a>
-    
+    <input class="md-toggle md-nav__toggle" type="checkbox" id="toc">
+    <label class="md-nav__link md-nav__link--active" for="toc">
+      Scorocode.Bot
+    </label>
+    <a href="./" title="Scorocode.Bot" class="md-nav__link md-nav__link--active">
+      Scorocode.Bot
+    </a>
+    <nav class="md-nav md-nav--secondary">
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list">
+      
+        <li class="md-nav__item">
+  <a href="#new-botbotid" title="new Bot(botId)" class="md-nav__link">
+    new Bot(botId)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sendpool-callbacks" title=".send(pool, callbacks)" class="md-nav__link">
+    .send(pool, callbacks)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
   </li>
 
           
@@ -863,8 +870,15 @@
     <ul class="md-nav__list">
       
         <li class="md-nav__item">
-  <a href="#initopt-sdk" title=".Init(opt) - Инициализация SDK" class="md-nav__link">
-    .Init(opt) - Инициализация SDK
+  <a href="#new-botbotid" title="new Bot(botId)" class="md-nav__link">
+    new Bot(botId)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sendpool-callbacks" title=".send(pool, callbacks)" class="md-nav__link">
+    .send(pool, callbacks)
   </a>
   
 </li>
@@ -880,16 +894,20 @@
             <article class="md-content__inner md-typeset">
               
                 
-                <p><a name="Scorocode"></a></p>
-<p><strong>Содержание</strong></p>
+                <p><a name="Scorocode.Bot"></a></p>
+<p>Содержание</p>
 <ul>
-<li><a href="#Scorocode">Scorocode</a><ul>
-<li><a href="#Scorocode+Init">.Init(opt) - Инициализация SDK</a></li>
+<li><a href="#Scorocode.Bot">.Bot</a><ul>
+<li><a href="#new_Scorocode.Bot">new Bot(botId)</a></li>
+<li><a href="#Scorocode.Bot+send">.send(data)</a> </li>
 </ul>
 </li>
 </ul>
-<p><a name="Scorocode+Init"></a></p>
-<h2 id="initopt-sdk">.Init(opt) - Инициализация SDK<a class="headerlink" href="#initopt-sdk" title="Permanent link">&para;</a></h2>
+<hr />
+<p><a name="new_Scorocode.Bot"></a></p>
+<h2 id="new-botbotid">new Bot(botId)<a class="headerlink" href="#new-botbotid" title="Permanent link">&para;</a></h2>
+<p>Конструктор Scorocode.Bot</p>
+<p><strong>Возвращает</strong>: <code><a href="#Scorocode.Bot">Scorocode.Bot</a></code> - Возвращает новый экземпляр Scorocode.Bot</p>
 <table>
 <thead>
 <tr>
@@ -900,13 +918,54 @@
 </thead>
 <tbody>
 <tr>
-<td>opt</td>
-<td><code>Object</code></td>
-<td>Ключи для инициализации: идентификатор приложения, клиентский ключ вашей платформы и необходимые вам ключи доступа.</td>
+<td>botId</td>
+<td><code>String</code></td>
+<td>Telegram id бота, полученный от '@BotFather'</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Свойства</strong></p>
+<p><strong>Пример</strong></p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+
+<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ appId приложения</span>
+    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ javascript приложения</span>
+    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span> <span class="c1">// &lt;- заменить xxx на ключ masterKey приложения</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;methodname&quot;</span><span class="p">,</span> <span class="c1">//название метода Telegram bot API </span>
+    <span class="s2">&quot;method_params&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="c1">// параметры метода Telegram Bot API</span>
+    <span class="p">}};</span>
+
+<span class="nx">bot</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<p><a name="Scorocode.Bot+send"></a></p>
+<h2 id="sendpool-callbacks">.send(pool, callbacks)<a class="headerlink" href="#sendpool-callbacks" title="Permanent link">&para;</a></h2>
+<p>Метод для запуска серверного кода</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td><code>Object</code></td>
+<td>Объект, содержащий данные для передачи Telegram Bot API</td>
+</tr>
+</tbody>
+</table>
+<p>Свойства параметра <code>data</code></p>
 <table>
 <thead>
 <tr>
@@ -917,64 +976,35 @@
 </thead>
 <tbody>
 <tr>
-<td>ApplicationID</td>
+<td>method</td>
 <td><code>String</code></td>
-<td>Идентификатор приложения</td>
+<td>Название метода Telegram bot API</td>
 </tr>
 <tr>
-<td>JavaScriptKey</td>
-<td><code>String</code></td>
-<td>Клиентский ключ для платформы JavaScript</td>
-</tr>
-<tr>
-<td>AndroidKey</td>
-<td><code>String</code></td>
-<td>Клиентский ключ для платформы Android</td>
-</tr>
-<tr>
-<td>iOsKey</td>
-<td><code>String</code></td>
-<td>Клиентский ключ для платформы iOs</td>
-</tr>
-<tr>
-<td>WinPhoneKey</td>
-<td><code>String</code></td>
-<td>Клиентский ключ для платформы WindowsPhone</td>
-</tr>
-<tr>
-<td>FileKey</td>
-<td><code>String</code></td>
-<td>Ключ авторизации для доступа к файлам</td>
-</tr>
-<tr>
-<td>ScriptKey</td>
-<td><code>String</code></td>
-<td>Ключ авторизации для запуска серверных скриптов</td>
-</tr>
-<tr>
-<td>MessageKey</td>
-<td><code>String</code></td>
-<td>Ключ авторизации для отправки сообщений</td>
-</tr>
-<tr>
-<td>WebSocketKey</td>
-<td><code>String</code></td>
-<td>Ключ авторизации для открытия WebSocket-соединения</td>
-</tr>
-<tr>
-<td>MasterKey</td>
-<td><code>String</code></td>
-<td>Мастер-ключ приложения</td>
+<td>method_params</td>
+<td><code>Object</code></td>
+<td>Объект с параметрами для указанного метода</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;a3d04e75e157b2f7ae20c2fce02f63d6&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;</span><span class="p">,</span>
-    <span class="nx">FileKey</span><span class="o">:</span> <span class="s2">&quot;2aceceec7d2e96b1487ec399f5afa101&quot;</span><span class="p">,</span>
-    <span class="nx">MessageKey</span><span class="o">:</span> <span class="s2">&quot;e215ed465646775b42d65cca2d2f5db9&quot;</span>
+<p><strong>Пример</strong></p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+
+<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ appId приложения</span>
+    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ javascript приложения</span>
+    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span> <span class="c1">// &lt;- заменить xxx на ключ masterKey приложения</span>
 <span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;methodname&quot;</span><span class="p">,</span> <span class="c1">//название метода Telegram bot API </span>
+    <span class="s2">&quot;method_params&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="c1">// параметры метода Telegram Bot API</span>
+    <span class="p">}};</span>
+
+<span class="nx">bot</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </pre></div>
               
               <hr>
@@ -999,7 +1029,7 @@
     
       <nav class="md-footer-nav md-grid">
         
-          <a href="../javascript/" title="JavaScript SDK" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Scorocode.CloudCode/" title="Scorocode.CloudCode" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--back md-footer-nav__icon"></i>
             </div>
@@ -1008,19 +1038,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                JavaScript SDK
+                Scorocode.CloudCode
               </span>
             </div>
           </a>
         
         
-          <a href="../Scorocode.Object/" title="Scorocode.Object" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Scorocode.Websocket/" title="Scorocode.WebSocket" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Scorocode.Object
+                Scorocode.WebSocket
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
