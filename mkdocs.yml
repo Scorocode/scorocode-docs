@@ -54,6 +54,9 @@ pages:
         - 'Класс WebSocket': 'Java/WebSocket.md'
         - 'Класс ApplicationInfo':  'Java/ApplicationInfo.md'
         - 'Класс Bot':  'Java/Bot.md'
+        - 'Класс Collections':  'Java/Collections.md'
+        - 'Класс Folders':  'Java/Folders.md'
+        - 'Класс ScorocodeScript':  'Java/ScorocodeScript.md'
     - 'Примеры приложений':
         - 'Склад (Android)': 'Java/Storehouse.md'
 theme_dir: 'material'

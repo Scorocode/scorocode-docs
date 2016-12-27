@@ -192,7 +192,7 @@ String orderId = document.getField(“orderId”);
 **Пример** 
 ```Java
 final Document document = new Document(“ordersCollection”);
-document.getDocumentById("nV0p50CDKq", new CallbackFindDocument() {
+document.getDocumentById("nV0p50CDKq", new CallbackGetDocumentById() {
             @Override
             public void onDocumentFound(DocumentInfo documentInfo) {
             //document found and we can upload document in this file
