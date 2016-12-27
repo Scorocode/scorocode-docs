@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      <title>Класс Collections - Документация Scorocode</title>
+    
+    
+    
+    
+    <meta name="generator" content="mkdocs+mkdocs-material#0.2.1">
+    <script src="../../assets/javascripts/modernizr-dede1352ed.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../../assets/stylesheets/application.css">
+    
+  </head>
+  <body>
+    <input class="md-toggle md-toggle--drawer" type="checkbox" id="drawer">
+    <input class="md-toggle md-toggle--search" type="checkbox" id="search">
+    <label class="md-overlay" for="drawer"></label>
+    <header class="md-header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Документация Scorocode" class="md-icon md-header-nav__icon md-header-nav__icon--home">
+          layers
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-header-nav__icon md-header-nav__icon--menu" for="drawer">
+          menu
+        </label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          Класс Collections
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-header-nav__icon md-header-nav__icon--search" for="search">
+          search
+        </label>
+        <div class="md-search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form">
+      <input type="text" class="md-search__input" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" id="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap">
+        <div class="md-search-result">
+          <div class="md-search-result__meta">
+            Indexing
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    <div class="md-container">
+      <main class="md-main">
+        <div class="md-main__inner md-grid">
+          
+          
+            <div class="md-sidebar md-sidebar--primary" data-md-sidebar="primary">
+              <div class="md-sidebar__scrollwrap">
+                <div class="md-sidebar__inner">
+                  <nav class="md-nav md-nav--primary">
+  <label class="md-nav__title" for="drawer">Документация Scorocode</label>
+  <ul class="md-nav__list">
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Scorocode
+    </label>
+    <nav class="md-nav" data-md-collapse>
+      <label class="md-nav__title" for="nav-1">
+        Scorocode
+      </label>
+      <ul class="md-nav__list">
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../.." title="Общие сведения" class="md-nav__link">
+        Общие сведения
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../main/main1/" title="Начало работы" class="md-nav__link">
+        Начало работы
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../main/main2/" title="Личный кабинет" class="md-nav__link">
+        Личный кабинет
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../app/app/" title="Работа с приложением" class="md-nav__link">
+        Работа с приложением
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../app/app1/" title="Аналитика приложения" class="md-nav__link">
+        Аналитика приложения
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../app/app2/" title="Данные приложения" class="md-nav__link">
+        Данные приложения
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../app/app3/" title="Индексы" class="md-nav__link">
+        Индексы
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../app/app4/" title="Триггеры" class="md-nav__link">
+        Триггеры
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../app/app5/" title="Серверный код приложения" class="md-nav__link">
+        Серверный код приложения
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../app/bots/" title="Боты Telegram" class="md-nav__link">
+        Боты Telegram
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../app/app6/" title="Настройки приложения" class="md-nav__link">
+        Настройки приложения
+      </a>
+    
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      HTTP API
+    </label>
+    <nav class="md-nav" data-md-collapse>
+      <label class="md-nav__title" for="nav-2">
+        HTTP API
+      </label>
+      <ul class="md-nav__list">
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../httpapi/appapi/" title="Работа с приложением" class="md-nav__link">
+        Работа с приложением
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../httpapi/httpapi1/" title="Пользователи" class="md-nav__link">
+        Пользователи
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../httpapi/httpapi2/" title="Данные" class="md-nav__link">
+        Данные
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../httpapi/httpapi3/" title="Файлы" class="md-nav__link">
+        Файлы
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../httpapi/httpapi4/" title="Сообщения" class="md-nav__link">
+        Сообщения
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../httpapi/httpapi5/" title="Скрипты" class="md-nav__link">
+        Скрипты
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../httpapi/httpapi6/" title="Статистика" class="md-nav__link">
+        Статистика
+      </a>
+    
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      JavaScript SDK
+    </label>
+    <nav class="md-nav" data-md-collapse>
+      <label class="md-nav__title" for="nav-3">
+        JavaScript SDK
+      </label>
+      <ul class="md-nav__list">
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/javascript/" title="JavaScript SDK" class="md-nav__link">
+        JavaScript SDK
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode/" title="Scorocode" class="md-nav__link">
+        Scorocode
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.Object/" title="Scorocode.Object" class="md-nav__link">
+        Scorocode.Object
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.Query/" title="Scorocode.Query" class="md-nav__link">
+        Scorocode.Query
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.UpdateOps/" title="Scorocode.UpdateOps" class="md-nav__link">
+        Scorocode.UpdateOps
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.User/" title="Scorocode.User" class="md-nav__link">
+        Scorocode.User
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.Messenger/" title="Scorocode.Messenger" class="md-nav__link">
+        Scorocode.Messenger
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.CloudCode/" title="Scorocode.CloudCode" class="md-nav__link">
+        Scorocode.CloudCode
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.Bot/" title="Scorocode.Bot" class="md-nav__link">
+        Scorocode.Bot
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.Websocket/" title="Scorocode.WebSocket" class="md-nav__link">
+        Scorocode.WebSocket
+      </a>
+    
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      SWIFT SDK (iOs, Mac OS)
+    </label>
+    <nav class="md-nav" data-md-collapse>
+      <label class="md-nav__title" for="nav-4">
+        SWIFT SDK (iOs, Mac OS)
+      </label>
+      <ul class="md-nav__list">
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SWIFT/" title="SWIFT SDK" class="md-nav__link">
+        SWIFT SDK
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SC/" title="SC" class="md-nav__link">
+        SC
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SCValue/" title="SCValue" class="md-nav__link">
+        SCValue
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SCObject/" title="SCObject" class="md-nav__link">
+        SCObject
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SCQuery/" title="SCQuery" class="md-nav__link">
+        SCQuery
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SCUpdate/" title="SCUpdate" class="md-nav__link">
+        SCUpdate
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SCUser/" title="SCUser" class="md-nav__link">
+        SCUser
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SCMessage/" title="SCMessage" class="md-nav__link">
+        SCMessage
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SCScript/" title="SCScript" class="md-nav__link">
+        SCScript
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/WebSocket/" title="WebSocket" class="md-nav__link">
+        WebSocket
+      </a>
+    
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Java SDK (Android)
+    </label>
+    <nav class="md-nav" data-md-collapse>
+      <label class="md-nav__title" for="nav-5">
+        Java SDK (Android)
+      </label>
+      <ul class="md-nav__list">
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../Java/" title="Java SDK" class="md-nav__link">
+        Java SDK
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../ScorocodeSDK/" title="Класс ScorocodeSDK" class="md-nav__link">
+        Класс ScorocodeSDK
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../Document/" title="Класс Document" class="md-nav__link">
+        Класс Document
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../Update/" title="Класс Update" class="md-nav__link">
+        Класс Update
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../User/" title="Класс User" class="md-nav__link">
+        Класс User
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../Query/" title="Класс Query" class="md-nav__link">
+        Класс Query
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../Script/" title="Класс Script" class="md-nav__link">
+        Класс Script
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../Message/" title="Класс Message" class="md-nav__link">
+        Класс Message
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../WebSocket/" title="Класс WebSocket" class="md-nav__link">
+        Класс WebSocket
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../ApplicationInfo/" title="Класс ApplicationInfo" class="md-nav__link">
+        Класс ApplicationInfo
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../Bot/" title="Класс Bot" class="md-nav__link">
+        Класс Bot
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    <input class="md-toggle md-nav__toggle" type="checkbox" id="toc">
+    <label class="md-nav__link md-nav__link--active" for="toc">
+      Класс Collections
+    </label>
+    <a href="./" title="Класс Collections" class="md-nav__link md-nav__link--active">
+      Класс Collections
+    </a>
+    <nav class="md-nav md-nav--secondary">
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list">
+      
+        <li class="md-nav__item">
+  <a href="#collections" title="Collections" class="md-nav__link">
+    Collections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-collections" title="new Collections()" class="md-nav__link">
+    new Collections()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getcollectionslistcallback" title=".getCollectionsList(callback)" class="md-nav__link">
+    .getCollectionsList(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getcollectionbynamecollectionname-callback" title=".getCollectionByName(collectionName, callback)" class="md-nav__link">
+    .getCollectionByName(collectionName, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createcollectioncollection-callback" title=".createCollection(collection, callback)" class="md-nav__link">
+    .createCollection(collection, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatecollcetioncollectionid-collection-callback" title=".updateCollcetion(collectionId, collection, callback)" class="md-nav__link">
+    .updateCollcetion(collectionId, collection, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clonecollectioncollectionid-collectionname-callback" title=".cloneCollection(collectionId, collectionName, callback)" class="md-nav__link">
+    .cloneCollection(collectionId, collectionName, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createcollectionindexcollectionname-index-callback" title=".createCollectionIndex(collectionName, index, callback)" class="md-nav__link">
+    .createCollectionIndex(collectionName, index, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletecollectionindexcollectionname-indexname-callback" title=".deleteCollectionIndex(collectionName, indexName, callback)" class="md-nav__link">
+    .deleteCollectionIndex(collectionName, indexName, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatecollectiontriggerscollectionname-triggers-callback" title=".updateCollectionTriggers(collectionName, triggers, callback)" class="md-nav__link">
+    .updateCollectionTriggers(collectionName, triggers, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createcollectionfieldcallback" title=".createCollectionField(callback)" class="md-nav__link">
+    .createCollectionField(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletecollectionfieldcollectionname-fieldname-callback" title=".deleteCollectionField(collectionName, fieldName, callback)" class="md-nav__link">
+    .deleteCollectionField(collectionName, fieldName, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletecollectioncollectionid-callback" title=".deleteCollection(collectionId, callback)" class="md-nav__link">
+    .deleteCollection(collectionId, callback)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../Folders/" title="Класс Folders" class="md-nav__link">
+        Класс Folders
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../ScorocodeScript/" title="Класс ScorocodeScript" class="md-nav__link">
+        Класс ScorocodeScript
+      </a>
+    
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Примеры приложений
+    </label>
+    <nav class="md-nav" data-md-collapse>
+      <label class="md-nav__title" for="nav-6">
+        Примеры приложений
+      </label>
+      <ul class="md-nav__list">
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../Storehouse/" title="Склад (Android)" class="md-nav__link">
+        Склад (Android)
+      </a>
+    
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+  
+</nav>
+                </div>
+              </div>
+            </div>
+          
+          
+            <div class="md-sidebar md-sidebar--secondary" data-md-sidebar="secondary">
+              <div class="md-sidebar__scrollwrap">
+                <div class="md-sidebar__inner">
+                  <nav class="md-nav md-nav--secondary">
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list">
+      
+        <li class="md-nav__item">
+  <a href="#collections" title="Collections" class="md-nav__link">
+    Collections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-collections" title="new Collections()" class="md-nav__link">
+    new Collections()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getcollectionslistcallback" title=".getCollectionsList(callback)" class="md-nav__link">
+    .getCollectionsList(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getcollectionbynamecollectionname-callback" title=".getCollectionByName(collectionName, callback)" class="md-nav__link">
+    .getCollectionByName(collectionName, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createcollectioncollection-callback" title=".createCollection(collection, callback)" class="md-nav__link">
+    .createCollection(collection, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatecollcetioncollectionid-collection-callback" title=".updateCollcetion(collectionId, collection, callback)" class="md-nav__link">
+    .updateCollcetion(collectionId, collection, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clonecollectioncollectionid-collectionname-callback" title=".cloneCollection(collectionId, collectionName, callback)" class="md-nav__link">
+    .cloneCollection(collectionId, collectionName, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createcollectionindexcollectionname-index-callback" title=".createCollectionIndex(collectionName, index, callback)" class="md-nav__link">
+    .createCollectionIndex(collectionName, index, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletecollectionindexcollectionname-indexname-callback" title=".deleteCollectionIndex(collectionName, indexName, callback)" class="md-nav__link">
+    .deleteCollectionIndex(collectionName, indexName, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatecollectiontriggerscollectionname-triggers-callback" title=".updateCollectionTriggers(collectionName, triggers, callback)" class="md-nav__link">
+    .updateCollectionTriggers(collectionName, triggers, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createcollectionfieldcallback" title=".createCollectionField(callback)" class="md-nav__link">
+    .createCollectionField(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletecollectionfieldcollectionname-fieldname-callback" title=".deleteCollectionField(collectionName, fieldName, callback)" class="md-nav__link">
+    .deleteCollectionField(collectionName, fieldName, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletecollectioncollectionid-callback" title=".deleteCollection(collectionId, callback)" class="md-nav__link">
+    .deleteCollection(collectionId, callback)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                </div>
+              </div>
+            </div>
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                <p><a name="Collections"></a></p>
+<h2 id="collections">Collections<a class="headerlink" href="#collections" title="Permanent link">&para;</a></h2>
+<p>Класс для работы с коллекциями приложения</p>
+<p><strong>Содержание</strong></p>
+<ul>
+<li><a href="#Collections">Collections</a><ul>
+<li><a href="#Collections_new">new Collections()</a></li>
+<li><a href="#Collections+getCollectionsList">.getCollectionsList(callback)</a></li>
+<li><a href="#Collections+getCollectionByName">.getCollectionByName(collectionName, callback)</a></li>
+<li><a href="#Collections+createCollection">.createCollection(collection, callback)</a></li>
+<li><a href="#Collections+updateCollcetion">.updateCollcetion(collectionId, collection, callback)</a></li>
+<li><a href="#Collections+cloneCollection">.cloneCollection(collectionId, collectionName, callback)</a></li>
+<li><a href="#Collections+createCollectionIndex">.createCollectionIndex(collectionName, index, callback)</a></li>
+<li><a href="#Collections+deleteCollectionIndex">.deleteCollectionIndex(collectionName, indexName, callback)</a></li>
+<li><a href="#Collections+updateCollectionTriggers">.updateCollectionTriggers(collectionName, triggers, callback)</a></li>
+<li><a href="#Collections+createCollectionField">.createCollectionField(collectionName, field, callback)</a></li>
+<li><a href="#Collections+deleteCollectionField">.deleteCollectionField(collectionName, fieldName, callback)</a></li>
+<li><a href="#Collections+deleteCollection">.deleteCollection(collectionId, callback)</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<p><a name="Collections_new"></a></p>
+<h2 id="new-collections">new Collections()<a class="headerlink" href="#new-collections" title="Permanent link">&para;</a></h2>
+<p>Конструктор Collections</p>
+<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Для использования методов класса Collections необходима инициализация SDK с указанием MasterKey.</p>
+</div>
+<hr />
+<p><a name="Collections+getCollectionsList"></a></p>
+<h2 id="getcollectionslistcallback">.getCollectionsList(callback)<a class="headerlink" href="#getcollectionslistcallback" title="Permanent link">&para;</a></h2>
+<p>Метод для получения списка коллекций приложения.</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>CallbackGetCollectionsList</code></td>
+<td>Обязательный</td>
+<td>Callback, который будет вызван после выполнения запроса.</td>
+<td>см. пример ниже</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
+<span class="n">collections</span><span class="o">.</span><span class="na">getCollectionsList</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackGetCollectionsList</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestSucceed</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">ScorocodeCollection</span><span class="o">&gt;</span> <span class="n">collections</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//sdk returned collections list</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//error during request</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
+
+<hr />
+<p><a name="Collections+getCollectionByName"></a></p>
+<h2 id="getcollectionbynamecollectionname-callback">.getCollectionByName(collectionName, callback)<a class="headerlink" href="#getcollectionbynamecollectionname-callback" title="Permanent link">&para;</a></h2>
+<p>Метод для получения информации о коллекции по ее имени.</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>collectionName</td>
+<td><code>String</code></td>
+<td>Обязательный</td>
+<td>Имя запрашиваемой коллекции</td>
+<td>“testcollection”</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>CallbackGetCollection</code></td>
+<td>Обязательный</td>
+<td>Callback, который будет вызван после выполнения запроса.</td>
+<td>см. пример ниже</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
+<span class="n">collections</span><span class="o">.</span><span class="na">getCollectionByName</span><span class="o">(</span><span class="s">&quot;testCollection&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackGetCollection</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestSucceed</span><span class="o">(</span><span class="n">ScorocodeCollection</span> <span class="n">collection</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//sdk returned the collection</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//error during request</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
+
+<hr />
+<p><a name="Collections+createCollection"></a></p>
+<h2 id="createcollectioncollection-callback">.createCollection(collection, callback)<a class="headerlink" href="#createcollectioncollection-callback" title="Permanent link">&para;</a></h2>
+<p>Метод для создания новой коллекции.</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>collection</td>
+<td><code>ScorocodeCollection</code></td>
+<td>Обязательный</td>
+<td>Информация о создаваемой коллекции</td>
+<td>см. пример ниже</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>CallbackCreateCollection</code></td>
+<td>Обязательный</td>
+<td>Callback, который будет вызван после выполнения запроса.</td>
+<td>см. пример ниже</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="n">ScorocodeCollection</span> <span class="n">newCollection</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScorocodeCollection</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">setCollectionName</span><span class="o">(</span><span class="err">“</span><span class="n">testcollection</span><span class="err">”</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setUseDocsACL</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setACL</span><span class="o">(</span><span class="n">getTestACL</span><span class="o">());</span>
+
+<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
+<span class="n">collections</span><span class="o">.</span><span class="na">createCollection</span><span class="o">(</span><span class="n">newCollection</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackCreateCollection</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCollectionCreated</span><span class="o">(</span><span class="n">ScorocodeCollection</span> <span class="n">collection</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//collection created</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreationFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//error during request</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
+
+<hr />
+<p><a name="Collections+updateCollcetion"></a></p>
+<h2 id="updatecollcetioncollectionid-collection-callback">.updateCollcetion(collectionId, collection, callback)<a class="headerlink" href="#updatecollcetioncollectionid-collection-callback" title="Permanent link">&para;</a></h2>
+<p>Метод для обновления параметров коллекции</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>collectionId</td>
+<td><code>String</code></td>
+<td>Обязательный</td>
+<td>Id обновляемой коллекции</td>
+<td>“584fba2c42d52f1ba275fdb”</td>
+</tr>
+<tr>
+<td>collection</td>
+<td><code>ScorocodeCollection</code></td>
+<td>Обязательный</td>
+<td>Новая информация о коллекции</td>
+<td>см. пример ниже</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>CallbackUpdateCollection</code></td>
+<td>Обязательный</td>
+<td>Callback, который будет вызван после выполнения запроса.</td>
+<td>см. пример ниже</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
+
+<span class="n">ScorocodeCollection</span> <span class="n">collection</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScorocodeCollection</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">setCollectionName</span><span class="o">(</span><span class="err">&quot;</span><span class="n">updatedcollection</span><span class="err">”</span><span class="o">))</span>
+        <span class="o">.</span><span class="na">setUseDocsACL</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setACL</span><span class="o">(</span><span class="n">getTestACL</span><span class="o">());</span>
+
+<span class="n">collections</span><span class="o">.</span><span class="na">updateCollection</span><span class="o">(</span><span class="err">“</span><span class="n">ahfdsjlsdlffdsdsa</span><span class="err">”</span><span class="o">,</span> <span class="n">collection</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackUpdateCollection</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCollectionUpdated</span><span class="o">(</span><span class="n">ScorocodeCollection</span> <span class="n">collection</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//collection updated</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUpdateFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//error during request</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
+
+<hr />
+<p><a name="Collections+cloneCollection"></a></p>
+<h2 id="clonecollectioncollectionid-collectionname-callback">.cloneCollection(collectionId, collectionName, callback)<a class="headerlink" href="#clonecollectioncollectionid-collectionname-callback" title="Permanent link">&para;</a></h2>
+<p>Метод для клонирования коллекции</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>collectionId</td>
+<td><code>String</code></td>
+<td>Обязательный</td>
+<td>Id  клонируемой коллекции</td>
+<td>“584fba2c42d52f1ba275fdb”</td>
+</tr>
+<tr>
+<td>collectionName</td>
+<td><code>String</code></td>
+<td>Обязательный</td>
+<td>Имя новой коллекции</td>
+<td>см. пример ниже</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>CallbackCloneCollection</code></td>
+<td>Обязательный</td>
+<td>Callback, который будет вызван после выполнения запроса.</td>
+<td>см. пример ниже</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
+<span class="n">collections</span><span class="o">.</span><span class="na">cloneCollection</span><span class="o">(</span><span class="err">“</span><span class="n">asdhjkasdjska</span><span class="err">”</span><span class="o">,</span> <span class="err">&quot;</span><span class="n">clonedtestcollection</span><span class="err">”</span><span class="o">),</span> <span class="k">new</span> <span class="n">CallbackCloneCollection</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCollectionCloned</span><span class="o">(</span><span class="n">ScorocodeCollection</span> <span class="n">collection</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//collection cloned</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCloneOperationFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//error during request</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
+
+<hr />
+<p><a name="Collections+createCollectionIndex"></a></p>
+<h2 id="createcollectionindexcollectionname-index-callback">.createCollectionIndex(collectionName, index, callback)<a class="headerlink" href="#createcollectionindexcollectionname-index-callback" title="Permanent link">&para;</a></h2>
+<p>Метод для создания индекса коллекции</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>collectionName</td>
+<td><code>String</code></td>
+<td>Обязательный</td>
+<td>Имя новой коллекции</td>
+<td>"testcoll"</td>
+</tr>
+<tr>
+<td>index</td>
+<td><code>Index</code></td>
+<td>Обязательный</td>
+<td>Информация о создаваемом индексе коллекции</td>
+<td>см. пример ниже</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>CallbackCreateCollectionIndex</code></td>
+<td>Обязательный</td>
+<td>Callback, который будет вызван после выполнения запроса.</td>
+<td>см. пример ниже</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">IndexField</span><span class="o">&gt;</span> <span class="n">indexFields</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">indexFields</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">IndexField</span><span class="o">(</span><span class="s">&quot;readACL&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">));</span>
+
+<span class="n">Index</span> <span class="n">index</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Index</span><span class="o">(</span><span class="err">“</span><span class="n">newindex</span><span class="err">”</span><span class="o">,</span> <span class="n">indexFields</span><span class="o">);</span>
+
+<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
+<span class="n">collections</span><span class="o">.</span><span class="na">createCollectionIndex</span><span class="o">(</span><span class="err">“</span><span class="n">testcollection</span><span class="err">”</span><span class="o">,</span> <span class="n">index</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackCreateCollectionIndex</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onIndexCreated</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//index created</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onIndexCreationFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//error during request</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
+
+<hr />
+<p><a name="Collections+deleteCollectionIndex"></a></p>
+<h2 id="deletecollectionindexcollectionname-indexname-callback">.deleteCollectionIndex(collectionName, indexName, callback)<a class="headerlink" href="#deletecollectionindexcollectionname-indexname-callback" title="Permanent link">&para;</a></h2>
+<p>Метод для удаления индекса коллекции.</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>collectionName</td>
+<td><code>String</code></td>
+<td>Обязательный</td>
+<td>Имя новой коллекции</td>
+<td>"testcoll"</td>
+</tr>
+<tr>
+<td>indexName</td>
+<td><code>String</code></td>
+<td>Обязательный</td>
+<td>Название удаляемого индекса</td>
+<td>"testindex"</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>CallbackDeleteCollectionIndex</code></td>
+<td>Обязательный</td>
+<td>Callback, который будет вызван после выполнения запроса.</td>
+<td>см. пример ниже</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
+<span class="n">collections</span><span class="o">.</span><span class="na">deleteCollectionIndex</span><span class="o">(</span><span class="n">testCollection</span><span class="o">.</span><span class="na">getCollectionName</span><span class="o">(),</span> <span class="n">INDEX_NAME</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackDeleteCollectionIndex</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onIndexDeleted</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//index deleted</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onIndexDeletionFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//error during request</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
+
+<hr />
+<p><a name="Collections+updateCollectionTriggers"></a></p>
+<h2 id="updatecollectiontriggerscollectionname-triggers-callback">.updateCollectionTriggers(collectionName, triggers, callback)<a class="headerlink" href="#updatecollectiontriggerscollectionname-triggers-callback" title="Permanent link">&para;</a></h2>
+<p>Метод для обновления информации о триггерах коллекции.</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>collectionName</td>
+<td><code>String</code></td>
+<td>Обязательный</td>
+<td>Имя коллекции в которой мы обновляем триггеры</td>
+<td>"testcoll"</td>
+</tr>
+<tr>
+<td>triggers</td>
+<td><code>ScorocodeTriggers</code></td>
+<td>Обязательный</td>
+<td>Информаци о триггерах для обновления</td>
+<td>см. пример ниже</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>CallbackUpdateCollectionTriggers</code></td>
+<td>Обязательный</td>
+<td>Callback, который будет вызван после выполнения запроса.</td>
+<td>см. пример ниже</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="kt">boolean</span> <span class="n">isActive</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+<span class="n">ScorocodeTriggers</span> <span class="n">triggers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScorocodeTriggers</span><span class="o">();</span>
+<span class="n">triggers</span><span class="o">.</span><span class="na">setBeforeInsert</span><span class="o">(</span><span class="k">new</span> <span class="n">Trigger</span><span class="o">(</span><span class="s">&quot;BFI code&quot;</span><span class="o">,</span> <span class="n">isActive</span><span class="o">));</span>
+<span class="n">triggers</span><span class="o">.</span><span class="na">setAfterInsert</span><span class="o">(</span><span class="k">new</span> <span class="n">Trigger</span><span class="o">(</span><span class="s">&quot;AFI code&quot;</span><span class="o">,</span> <span class="n">isActive</span><span class="o">));</span>
+<span class="n">triggers</span><span class="o">.</span><span class="na">setBeforeRemove</span><span class="o">(</span><span class="k">new</span> <span class="n">Trigger</span><span class="o">(</span><span class="s">&quot;BFR code&quot;</span><span class="o">,</span> <span class="n">isActive</span><span class="o">));</span>
+<span class="n">triggers</span><span class="o">.</span><span class="na">setAfterRemove</span><span class="o">(</span><span class="k">new</span> <span class="n">Trigger</span><span class="o">(</span><span class="s">&quot;AFR code&quot;</span><span class="o">,</span> <span class="n">isActive</span><span class="o">));</span>
+<span class="n">triggers</span><span class="o">.</span><span class="na">setBeforeUpdate</span><span class="o">(</span><span class="k">new</span> <span class="n">Trigger</span><span class="o">(</span><span class="s">&quot;BFU code&quot;</span><span class="o">,</span> <span class="n">isActive</span><span class="o">));</span>
+<span class="n">triggers</span><span class="o">.</span><span class="na">setAfterUpdate</span><span class="o">(</span><span class="k">new</span> <span class="n">Trigger</span><span class="o">(</span><span class="s">&quot;AFU code&quot;</span><span class="o">,</span> <span class="n">isActive</span><span class="o">));</span>
+
+<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
+<span class="n">collections</span><span class="o">.</span><span class="na">updateCollectionTriggers</span><span class="o">(</span><span class="err">“</span><span class="n">testcollection</span><span class="err">”</span><span class="o">,</span> <span class="n">triggers</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackUpdateCollectionTriggers</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onTriggersUpdated</span><span class="o">(</span><span class="n">ScorocodeTriggers</span> <span class="n">triggers</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//trigger updated</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUpdateFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//error during request</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
+
+<hr />
+<p><a name="Collections+createCollectionField"></a></p>
+<h2 id="createcollectionfieldcallback">.createCollectionField(callback)<a class="headerlink" href="#createcollectionfieldcallback" title="Permanent link">&para;</a></h2>
+<p>Метод для создания нового поля коллекции.</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>collectionName</td>
+<td><code>String</code></td>
+<td>Обязательный</td>
+<td>Имя коллекции в которую мы добавляем поле</td>
+<td>"testcoll"</td>
+</tr>
+<tr>
+<td>field</td>
+<td><code>ScorocodeField</code></td>
+<td>Обязательный</td>
+<td>Информация о добавляемом поле</td>
+<td>см. пример ниже</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>CallbackAddField</code></td>
+<td>Обязательный</td>
+<td>Callback, который будет вызван после выполнения запроса.</td>
+<td>см. пример ниже</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="n">ScorocodeField</span> <span class="n">field</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScorocodeField</span><span class="o">(</span><span class="s">&quot;testnumberfield&quot;</span><span class="o">,</span> <span class="n">ScorocodeTypes</span><span class="o">.</span><span class="na">TypeNumber</span><span class="o">,</span> <span class="s">&quot;&quot;</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+
+<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
+<span class="n">collections</span><span class="o">.</span><span class="na">createCollectionField</span><span class="o">(</span><span class="err">“</span><span class="n">testcollection</span><span class="err">”</span><span class="o">,</span> <span class="n">field</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackAddField</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFieldAdded</span><span class="o">(</span><span class="n">ScorocodeField</span> <span class="n">field</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//field created</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAddFieldFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//error during request</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
+
+<hr />
+<p><a name="Collections+deleteCollectionField"></a></p>
+<h2 id="deletecollectionfieldcollectionname-fieldname-callback">.deleteCollectionField(collectionName, fieldName, callback)<a class="headerlink" href="#deletecollectionfieldcollectionname-fieldname-callback" title="Permanent link">&para;</a></h2>
+<p>Метод для удаления поля из коллекции.</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>collectionName</td>
+<td><code>String</code></td>
+<td>Обязательный</td>
+<td>Имя коллекции из которой мы удаляем поле</td>
+<td>"testcoll"</td>
+</tr>
+<tr>
+<td>fieldName</td>
+<td><code>String</code></td>
+<td>Обязательный</td>
+<td>Имя удаляемого поля</td>
+<td>"testfield"</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>CallbackDeleteField</code></td>
+<td>Обязательный</td>
+<td>Callback, который будет вызван после выполнения запроса.</td>
+<td>см. пример ниже</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
+<span class="n">collections</span><span class="o">.</span><span class="na">deleteCollectionField</span><span class="o">(</span><span class="err">“</span><span class="n">testcoll</span><span class="err">”</span><span class="o">,</span> <span class="s">&quot;testnumberfield&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackDeleteField</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFieldDeleted</span><span class="o">(</span><span class="n">ScorocodeCollection</span> <span class="n">collection</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//field deleted</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDeletionFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//error during request</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+
+
+<hr />
+<p><a name="Collections+deleteCollection"></a></p>
+<h2 id="deletecollectioncollectionid-callback">.deleteCollection(collectionId, callback)<a class="headerlink" href="#deletecollectioncollectionid-callback" title="Permanent link">&para;</a></h2>
+<p>Метод для удаления коллекции и всех её документов</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>collectionId</td>
+<td><code>String</code></td>
+<td>Обязательный</td>
+<td>Id удаляемрй коллекции</td>
+<td>"584fba2c42d52f1ba275fdb"</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>CallbackDeleteCollection</code></td>
+<td>Обязательный</td>
+<td>Callback, который будет вызван после выполнения запроса.</td>
+<td>см. пример ниже</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
+<span class="n">collections</span><span class="o">.</span><span class="na">deleteCollection</span><span class="o">(</span><span class="err">“</span><span class="n">sdfjksdlf2312fdsj</span><span class="err">”</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackDeleteCollection</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCollectionDeleted</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//collection deleted</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDeletionFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCodes</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//error during request</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+              
+              <hr>
+              <small class="md-content__copyright">
+                
+                This document was created with
+                <a href="http://www.mkdocs.org">
+                  MkDocs
+                </a>
+                and the
+                <a href="http://squidfunk.github.io/mkdocs-material/">
+                  Material
+                </a>
+                theme.
+              </small>
+            </article>
+          </div>
+        </div>
+      </main>
+      <footer class="md-footer">
+  <div class="md-footer__inner">
+    
+      <nav class="md-footer-nav md-grid">
+        
+          <a href="../Bot/" title="Класс Bot" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--back md-footer-nav__icon"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Класс Bot
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Folders/" title="Класс Folders" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Класс Folders
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--forward md-footer-nav__icon"></i>
+            </div>
+          </a>
+        
+      </nav>
+    
+  </div>
+</footer>
+    </div>
+    <script src="../../assets/javascripts/application.js"></script>
+    <script>
+      /* Configuration for application */
+      var config = {
+        url: {
+          base: "../..",
+        },
+        repo: {
+          url: "",
+          icon: "",
+        },
+        storage: window.sessionStorage,
+      };
+      /* Initialize application */
+      var app = new Application(config);
+      app.initialize();
+    </script>
+    
+  </body>
+</html>
