@@ -2378,7 +2378,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
                 "on": [int],
                 "hours": int,
                 "minutes": int
-            }
+            },
             "monthly": {
                 "on": [int],
                 "days": [int],
@@ -2499,7 +2499,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
                 "on": [int],
                 "hours": int,
                 "minutes": int
-            }
+            },
             "monthly": {
                 "on": [int],
                 "days": [int],

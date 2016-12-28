@@ -15,7 +15,7 @@
     "acc"         : "", // ключ доступа, необязательный, для полного доступа masterKey
     "sess"        : "", // ID сессии, обязательный, если ACLPublic приложения на операцию == false и acc != masterKey
     "coll"        : "", // имя коллекции, обязательный
-    "doc"         : {}, // документ с парами имя_поля:значение, необязательный
+    "doc"         : {}  // документ с парами имя_поля:значение, необязательный
 }
 ```
 
@@ -25,7 +25,7 @@
 
 ```JSON
 {
-    "error"       : false
+    "error"       : false,
     "result"      : {} // созданный документ
 }
 ```
@@ -87,7 +87,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 ```JSON
 {
-    "error"       : false
+    "error"       : false,
     "result"      : {
         "count"       : int, // количество удаленных документов
         "docs"        : [] // массив ID удаленных документов
@@ -154,7 +154,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 ```JSON
 {
-    "error"       : false
+    "error"       : false,
     "result"      : {
         "count"       : int, // количество измененных документов
         "docs"        : [] // массив ID измененных документов
@@ -224,7 +224,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 ```JSON
 {
-    "error"       : false
+    "error"       : false,
     "result"      : {} // обновленный документ
 }
 ```
@@ -296,7 +296,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 ```JSON
 {
-    "error"       : false
+    "error"       : false,
     "result"      : string // bson результат запроса, закодированный в base64
 }
 ```
@@ -360,7 +360,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 ```JSON
 {
-    "error"       : false
+    "error"       : false,
     "result"      : int // количество документов
 }
 ```

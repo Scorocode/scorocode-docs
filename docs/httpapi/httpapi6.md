@@ -22,7 +22,7 @@
 
 ```JSON
 {
-    "error"       : false
+    "error"       : false,
     "results"     : {
         "dataSize"    : int, // Размер данных приложения, в байтах
         "indexSize"   : int, // "Размер" индексов приложения, в байтах

@@ -1,67 +1,3 @@
-## Отправка email пользователям.
-
-**https://api.scorocode.ru/api/v1/sendemail**
-
-Метод: `POST`
-
-Заголовки:
-
-`Content-Type: application/json`
-
-```JSON
-{
-    "app"         : "", // идентификатор приложения, обязательный
-    "cli"         : "", // клиентский ключ, обязательный
-    "acc"         : "", // ключ доступа, обязательный, messageKey или для полного доступа masterKey
-    "sess"        : "", // ID сессии, обязательный, если acc != masterKey
-    "coll"        : "", // имя коллекции, обязательный, "users" или "roles"
-    "query"       : {}, // запрос в коллекцию users для выборки адресатов с парами имя_поля/оператор:значение, необязательный
-    "msg"         : {
-        "subject"     : "", // Тема письма
-        "text"        : "", // Текст письма
-        "from"        : ""  // Имя отправителя
-    }
-}
-```
-
-**Ответы:**
-
-*Выполнено*
-
-```JSON
-{
-    "count"       : int       //Количество отправленных сообщений 
-    "error"       : false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "fb33e473e08515ff6b57ef6f59392e5d",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "roles",
-    "msg": {
-        "subject": "Тема письма",
-        "text": "Текст письма",
-        "from": "Отправитель"
-    }
-}' "https://api.scorocode.ru/api/v1/sendemail"
-```
-
 ## Отправка push на устройства.
 
 **https://api.scorocode.ru/api/v1/sendpush**
@@ -75,10 +11,10 @@ curl -X POST -H "Content-Type: application/json" -d '{
 ```JSON
 {
     "app"         : "", // идентификатор приложения, обязательный
-    cli         : "", // клиентский ключ, обязательный
+    "cli"         : "", // клиентский ключ, обязательный
     "acc"         : "", // ключ доступа, обязательный, messageKey или для полного доступа masterKey
-    sess        : "", // ID сессии, обязательный, если acc != masterKey
-    "coll"        : "", // имя коллекции, обязательный, "users", "roles" или "devices"
+    "sess"        : "", // ID сессии, обязательный, если acc != masterKey
+    "coll"        : "", // имя коллекции, обязательный; users, roles или devices
     "query"       : {}, // запрос в коллекцию devices для выборки адресатов с парами имя_поля/оператор:значение, необязательный
     "msg"         : {
         "text"        : "", // Текст сообщения
@@ -93,7 +29,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 ```JSON
 {
-    "count"       : int       //Количество отправленных сообщений 
+    "count"       : int,       //Количество отправленных сообщений 
     "error"       : false
 }
 ```
@@ -144,7 +80,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
     "cli"         : "", // клиентский ключ, обязательный
     "acc"         : "", // ключ доступа, обязательный, messageKey или для полного доступа masterKey
     "sess"        : "", // ID сессии, обязательный, если acc != masterKey
-    "coll"        : "", // имя коллекции, обязательный, "users" или "roles"
+    "coll"        : "", // имя коллекции, обязательный, users или roles
     "query"       : {}, // запрос в коллекцию users для выборки адресатов с парами имя_поля/оператор:значение, необязательный
     "msg"         : {
         "text"        : "", // Текст sms
@@ -158,7 +94,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 ```JSON
 {
-    "count"       : int       //Количество отправленных сообщений 
+    "count"       : int,       //Количество отправленных сообщений 
     "error"       : false
 }
 ```
