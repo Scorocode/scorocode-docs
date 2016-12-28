@@ -1074,7 +1074,7 @@
     <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа,</span> <span class="err">необязательный,</span> <span class="err">для</span> <span class="err">полного</span> <span class="err">доступа</span> <span class="err">masterKey</span>
     <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ID</span> <span class="err">сессии,</span> <span class="err">обязательный,</span> <span class="err">если</span> <span class="err">ACLPublic</span> <span class="err">приложения</span> <span class="err">на</span> <span class="err">операцию</span> <span class="err">==</span> <span class="err">false</span> <span class="err">и</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span>
     <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;doc&quot;</span>         <span class="p">:</span> <span class="p">{},</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля:значение,</span> <span class="err">необязательный</span>
+    <span class="nt">&quot;doc&quot;</span>         <span class="p">:</span> <span class="p">{}</span>  <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля</span><span class="p">:</span><span class="err">значение</span><span class="p">,</span> <span class="err">необязательный</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1082,8 +1082,8 @@
 <p><strong>Ответы:</strong></p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
-    <span class="s2">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{}</span> <span class="err">//</span> <span class="err">созданный</span> <span class="err">документ</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{}</span> <span class="err">//</span> <span class="err">созданный</span> <span class="err">документ</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1136,8 +1136,8 @@
 <p><strong>Ответы:</strong>
 <em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
-    <span class="s2">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span><span class="p">,</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">удаленных</span> <span class="err">документов</span>
         <span class="nt">&quot;docs&quot;</span>        <span class="p">:</span> <span class="p">[]</span> <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">удаленных</span> <span class="err">документов</span>
     <span class="p">}</span>
@@ -1195,8 +1195,8 @@
 <p><strong>Ответы:</strong></p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
-    <span class="s2">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span><span class="p">,</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">измененных</span> <span class="err">документов</span>
         <span class="nt">&quot;docs&quot;</span>        <span class="p">:</span> <span class="p">[]</span> <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">измененных</span> <span class="err">документов</span>
     <span class="p">}</span>
@@ -1255,8 +1255,8 @@
 <p><strong>Ответы:</strong></p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
-    <span class="s2">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{}</span> <span class="err">//</span> <span class="err">обновленный</span> <span class="err">документ</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{}</span> <span class="err">//</span> <span class="err">обновленный</span> <span class="err">документ</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1320,8 +1320,8 @@
 <p><strong>Ответы:</strong></p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
-    <span class="s2">&quot;result&quot;</span>      <span class="p">:</span> <span class="err">string</span> <span class="err">//</span> <span class="err">bson</span> <span class="err">результат</span> <span class="err">запроса</span><span class="p">,</span> <span class="err">закодированный</span> <span class="err">в</span> <span class="err">base64</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="err">string</span> <span class="err">//</span> <span class="err">bson</span> <span class="err">результат</span> <span class="err">запроса</span><span class="p">,</span> <span class="err">закодированный</span> <span class="err">в</span> <span class="err">base64</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1376,8 +1376,8 @@
 <p><strong>Ответы:</strong></p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
-    <span class="s2">&quot;result&quot;</span>      <span class="p">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">документов</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">документов</span>
 <span class="p">}</span>
 </pre></div>
 

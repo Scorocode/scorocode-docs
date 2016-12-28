@@ -375,13 +375,6 @@
     <ul class="md-nav__list">
       
         <li class="md-nav__item">
-  <a href="#email" title="Отправка email пользователям." class="md-nav__link">
-    Отправка email пользователям.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#push" title="Отправка push на устройства." class="md-nav__link">
     Отправка push на устройства.
   </a>
@@ -987,13 +980,6 @@
     <ul class="md-nav__list">
       
         <li class="md-nav__item">
-  <a href="#email" title="Отправка email пользователям." class="md-nav__link">
-    Отправка email пользователям.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#push" title="Отправка push на устройства." class="md-nav__link">
     Отправка push на устройства.
   </a>
@@ -1021,8 +1007,8 @@
                 
                   <h1>Сообщения</h1>
                 
-                <h2 id="email">Отправка email пользователям.<a class="headerlink" href="#email" title="Permanent link">&para;</a></h2>
-<p><strong>https://api.scorocode.ru/api/v1/sendemail</strong></p>
+                <h2 id="push">Отправка push на устройства.<a class="headerlink" href="#push" title="Permanent link">&para;</a></h2>
+<p><strong>https://api.scorocode.ru/api/v1/sendpush</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
 <p><code>Content-Type: application/json</code></p>
@@ -1031,63 +1017,8 @@
     <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа,</span> <span class="err">обязательный,</span> <span class="err">messageKey</span> <span class="err">или</span> <span class="err">для</span> <span class="err">полного</span> <span class="err">доступа</span> <span class="err">masterKey</span>
     <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ID</span> <span class="err">сессии,</span> <span class="err">обязательный,</span> <span class="err">если</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span>
-    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный,</span> <span class="nt">&quot;users&quot;</span> <span class="err">или</span> <span class="s2">&quot;roles&quot;</span>
-    <span class="s2">&quot;query&quot;</span>       <span class="p">:</span> <span class="p">{},</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">в</span> <span class="err">коллекцию</span> <span class="err">users</span> <span class="err">для</span> <span class="err">выборки</span> <span class="err">адресатов</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный</span>
-    <span class="nt">&quot;msg&quot;</span>         <span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;subject&quot;</span>     <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">Тема</span> <span class="err">письма</span>
-        <span class="nt">&quot;text&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">Текст</span> <span class="err">письма</span>
-        <span class="nt">&quot;from&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span>  <span class="err">//</span> <span class="err">Имя</span> <span class="err">отправителя</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span>       <span class="err">//Количество</span> <span class="err">отправленных</span> <span class="err">сообщений</span> 
-    <span class="s2">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
-<span class="s1">    &quot;acc&quot;: &quot;fb33e473e08515ff6b57ef6f59392e5d&quot;,</span>
-<span class="s1">    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,</span>
-<span class="s1">    &quot;coll&quot;: &quot;roles&quot;,</span>
-<span class="s1">    &quot;msg&quot;: {</span>
-<span class="s1">        &quot;subject&quot;: &quot;Тема письма&quot;,</span>
-<span class="s1">        &quot;text&quot;: &quot;Текст письма&quot;,</span>
-<span class="s1">        &quot;from&quot;: &quot;Отправитель&quot;</span>
-<span class="s1">    }</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/sendemail&quot;</span>
-</pre></div>
-
-
-<h2 id="push">Отправка push на устройства.<a class="headerlink" href="#push" title="Permanent link">&para;</a></h2>
-<p><strong>https://api.scorocode.ru/api/v1/sendpush</strong></p>
-<p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
-    <span class="err">cli</span>         <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа,</span> <span class="err">обязательный,</span> <span class="err">messageKey</span> <span class="err">или</span> <span class="err">для</span> <span class="err">полного</span> <span class="err">доступа</span> <span class="err">masterKey</span>
-    <span class="err">sess</span>        <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ID</span> <span class="err">сессии,</span> <span class="err">обязательный,</span> <span class="err">если</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span>
-    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный,</span> <span class="nt">&quot;users&quot;</span><span class="p">,</span> <span class="nt">&quot;roles&quot;</span> <span class="err">или</span> <span class="s2">&quot;devices&quot;</span>
-    <span class="s2">&quot;query&quot;</span>       <span class="p">:</span> <span class="p">{},</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">в</span> <span class="err">коллекцию</span> <span class="err">devices</span> <span class="err">для</span> <span class="err">выборки</span> <span class="err">адресатов</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный</span>
+    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный;</span> <span class="err">users,</span> <span class="err">roles</span> <span class="err">или</span> <span class="err">devices</span>
+    <span class="nt">&quot;query&quot;</span>       <span class="p">:</span> <span class="p">{},</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">в</span> <span class="err">коллекцию</span> <span class="err">devices</span> <span class="err">для</span> <span class="err">выборки</span> <span class="err">адресатов</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный</span>
     <span class="nt">&quot;msg&quot;</span>         <span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;text&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">Текст</span> <span class="err">сообщения</span>
         <span class="nt">&quot;data&quot;</span>        <span class="p">:</span> <span class="p">{</span> <span class="p">}</span> <span class="err">//</span> <span class="err">объект</span> <span class="err">с</span> <span class="err">передаваемыми</span> <span class="err">данными</span>
@@ -1099,8 +1030,8 @@
 <p><strong>Ответы:</strong></p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span>       <span class="err">//Количество</span> <span class="err">отправленных</span> <span class="err">сообщений</span> 
-    <span class="s2">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
+    <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span><span class="p">,</span>       <span class="err">//Количество</span> <span class="err">отправленных</span> <span class="err">сообщений</span> 
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1143,8 +1074,8 @@
     <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа,</span> <span class="err">обязательный,</span> <span class="err">messageKey</span> <span class="err">или</span> <span class="err">для</span> <span class="err">полного</span> <span class="err">доступа</span> <span class="err">masterKey</span>
     <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ID</span> <span class="err">сессии,</span> <span class="err">обязательный,</span> <span class="err">если</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span>
-    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный,</span> <span class="nt">&quot;users&quot;</span> <span class="err">или</span> <span class="s2">&quot;roles&quot;</span>
-    <span class="s2">&quot;query&quot;</span>       <span class="p">:</span> <span class="p">{},</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">в</span> <span class="err">коллекцию</span> <span class="err">users</span> <span class="err">для</span> <span class="err">выборки</span> <span class="err">адресатов</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный</span>
+    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный,</span> <span class="err">users</span> <span class="err">или</span> <span class="err">roles</span>
+    <span class="nt">&quot;query&quot;</span>       <span class="p">:</span> <span class="p">{},</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">в</span> <span class="err">коллекцию</span> <span class="err">users</span> <span class="err">для</span> <span class="err">выборки</span> <span class="err">адресатов</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный</span>
     <span class="nt">&quot;msg&quot;</span>         <span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;text&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">Текст</span> <span class="err">sms</span>
     <span class="p">}</span>
@@ -1155,8 +1086,8 @@
 <p><strong>Ответы:</strong></p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span>       <span class="err">//Количество</span> <span class="err">отправленных</span> <span class="err">сообщений</span> 
-    <span class="s2">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
+    <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span><span class="p">,</span>       <span class="err">//Количество</span> <span class="err">отправленных</span> <span class="err">сообщений</span> 
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
 <span class="p">}</span>
 </pre></div>
 
