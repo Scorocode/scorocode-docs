@@ -16,9 +16,16 @@
 
 **Возвращает**: <code>[Scorocode.CloudCode](#Scorocode.CloudCode)</code> - Возвращает новый экземпляр Scorocode.CloudCode
 
-| Параметр | Тип | Описание |
-| --- | --- | --- |
-| id | <code>String</code> | Идентификатор скрипта |
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| id | <code>String</code> | Обязательный | Идентификатор скрипта | "574860d2781267d34f7a2415" | 
+| logger | <code>Object</code> | Необязательный | Объект Scorocode.Logger для режима отладки | См. пример ниже |
+
+**Пример**
+
+```js
+var newUserRegistration = new Scorocode.CloudCode("574860d2781267d34f7a2415", {logger: new Scorocode.Logger()});
+```
 
 ----------------------------------------------------------------------------------------------
 
@@ -28,10 +35,11 @@
 
 Метод для запуска серверного кода
 
-| Параметр | Тип | Описание |
-| --- | --- | --- |
-| pool | <code>Object</code> | Объект с данными, которые будут переданы серверному коду |
-| callbacks | <code>Object</code> | Коллбэки success и error для выполняемого запроса |
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| pool | <code>Object</code> | Необязательный | Объект с данными, которые будут переданы серверному коду | {"key": "value"} |
+| debug | `Boolean` | Необязательный | Флаг включения режима отладки | true |
+| callbacks | <code>Object</code> | Необязательный | Коллбэки success и error для выполняемого запроса | |
 
 **Пример**
 
@@ -48,7 +56,7 @@ var Prompt = require('prompt');
 Prompt.start();
 Prompt.get(['email', 'password', 'username'], function (err, result) {
     // Создадим новый экземпляр запроса к серверному скрипту "574860d2781267d34f7a2415".
-    var newUserRegistration = new Scorocode.CloudCode("574860d2781267d34f7a2415");
+    var newUserRegistration = new Scorocode.CloudCode("574860d2781267d34f7a2415", {logger: new Scorocode.Logger()});
     // Определим данные, которые будут переданы скрипту при запуске
     var pool = {
         "email":result.email,
@@ -56,7 +64,7 @@ Prompt.get(['email', 'password', 'username'], function (err, result) {
         "username":result.username
     };
     // Запустим выполнение серверного кода
-    newUserRegistration.run(pool)
+    newUserRegistration.run(pool, true)
         .then((success)=>{
             console.log(success);
         })

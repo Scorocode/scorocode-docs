@@ -1,6 +1,5 @@
 <a name="ApplicationInfo"></a>
 
-## ApplicationInfo
 Класс для работы с информацией о приложении.
 
 **Содержание**

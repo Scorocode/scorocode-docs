@@ -1,5 +1,6 @@
 <nav class="md-nav md-nav--secondary">
-  {% if h1 %}
+  {% set toc = page.toc %}
+  {% if "\x3ch1 id=" in page.content %}
     {% set toc = (toc | first).children %}
   {% endif %}
   {% if toc and (toc | first) %}
