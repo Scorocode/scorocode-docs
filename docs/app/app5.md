@@ -33,7 +33,7 @@
 
 Пример:
 
-```
+```JSON
     {
         "dependencies": {
             "scorocode": ""

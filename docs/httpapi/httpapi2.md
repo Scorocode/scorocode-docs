@@ -8,7 +8,7 @@
 
 `Content-Type: application/json`
 
-```
+```JSON
 {
     "app"         : "", // идентификатор приложения, обязательный
     "cli"         : "", // клиентский ключ, обязательный
@@ -23,7 +23,7 @@
 
 *Выполнено*
 
-```
+```JSON
 {
     "error"       : false
     "result"      : {} // созданный документ
@@ -32,7 +32,7 @@
 
 *Ошибка*
 
-```
+```JSON
 {
     "error"       : true,
     "errCode"     : 4XX/5XX, // Код ошибки
@@ -42,7 +42,7 @@
 
 **Пример cURL**
 
-```
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{
     "app": "db8a1b41b8543397a798a181d9891b4c",
     "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
@@ -66,7 +66,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 `Content-Type: application/json`
 
-```
+```JSON
 {
     "app"         : "", // идентификатор приложения, обязательный
     "cli"         : "", // клиентский ключ, обязательный
@@ -85,7 +85,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 **Ответы:**
 *Выполнено*
 
-```
+```JSON
 {
     "error"       : false
     "result"      : {
@@ -97,7 +97,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 *Ошибка*
 
-```
+```JSON
 {
     "error"       : true,
     "errCode"     : 4XX/5XX, // Код ошибки
@@ -107,7 +107,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 **Пример cURL**
 
-```
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{
     "app": "db8a1b41b8543397a798a181d9891b4c",
     "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
@@ -132,7 +132,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 `Content-Type: application/json`
 
-```
+```JSON
 {
     "app"         : "", // идентификатор приложения, обязательный
     "cli"         : "", // клиентский ключ, обязательный
@@ -152,7 +152,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 *Выполнено*
 
-```
+```JSON
 {
     "error"       : false
     "result"      : {
@@ -165,7 +165,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 *Ошибка*
 
-```
+```JSON
 {
     "error"       : true,
     "errCode"     : 4XX/5XX, // Код ошибки
@@ -175,7 +175,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 **Пример cURL**
 
-```
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{
     "app": "db8a1b41b8543397a798a181d9891b4c",
     "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
@@ -206,7 +206,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 `Content-Type: application/json`
 
-```
+```JSON
 {
     "app"         : "", // идентификатор приложения, обязательный
     "cli"         : "", // клиентский ключ, обязательный
@@ -222,7 +222,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 *Выполнено*
 
-```
+```JSON
 {
     "error"       : false
     "result"      : {} // обновленный документ
@@ -231,7 +231,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 *Ошибка*
 
-```
+```JSON
 {
     "error"       : true,
     "errCode"     : 4XX/5XX, // Код ошибки
@@ -241,7 +241,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 **Пример cURL**
 
-```
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{
     "app": "db8a1b41b8543397a798a181d9891b4c",
     "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
@@ -270,7 +270,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 `Content-Type: application/json`
 
-```
+```JSON
 {
     "app"         : "", // идентификатор приложения, обязательный
     "cli"         : "", // клиентский ключ, обязательный
@@ -294,7 +294,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 *Выполнено*
 
-```
+```JSON
 {
     "error"       : false
     "result"      : string // bson результат запроса, закодированный в base64
@@ -303,7 +303,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 *Ошибка*
 
-```
+```JSON
 {
     "error"       : true,
     "errCode"     : 4XX/5XX, // Код ошибки
@@ -313,7 +313,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 **Пример cURL**
 
-```
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{
     "app": "db8a1b41b8543397a798a181d9891b4c",
     "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
@@ -343,7 +343,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 `Content-Type: application/json`
 
-```
+```JSON
 {
     "app"         : "", // идентификатор приложения, обязательный
     "cli"         : "", // клиентский ключ, обязательный
@@ -358,7 +358,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 *Выполнено*
 
-```
+```JSON
 {
     "error"       : false
     "result"      : int // количество документов
@@ -367,7 +367,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 *Ошибка*
 
-```
+```JSON
 {
     "error"       : true,
     "errCode"     : 4XX/5XX, // Код ошибки
@@ -377,7 +377,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 **Пример cURL**
 
-```
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{
     "app": "db8a1b41b8543397a798a181d9891b4c",
     "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",

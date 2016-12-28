@@ -9,7 +9,7 @@
 
 `Content-Type: application/json`
 
-```
+```JSON
 {
     "app"         : "", // идентификатор приложения, обязательный
     "cli"         : "", // клиентский ключ, обязательный
@@ -26,7 +26,7 @@
 
 *Выполнено*
 
-```
+```JSON
 {
     "error"       : false
 }
@@ -34,7 +34,7 @@
 
 *Ошибка*
 
-```
+```JSON
 {
     "error"       : true,
     "errCode"     : 4XX/5XX, // Код ошибки
@@ -44,7 +44,7 @@
 
 **Пример cURL**
 
-```
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{
     "app": "db8a1b41b8543397a798a181d9891b4c",
     "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
@@ -91,7 +91,7 @@ https://api.scorocode.ru/api/v1/getfile/{app}/{coll}/{field}/{docId}/{file}
 
 *Ошибка*
 
-```
+```JSON
 {
     "error"       : true,
     "errCode"     : 4XX/5XX, // Код ошибки
@@ -101,7 +101,7 @@ https://api.scorocode.ru/api/v1/getfile/{app}/{coll}/{field}/{docId}/{file}
 
 **Пример cURL**
 
-```
+```bash
 curl -X GET -H "Content-Type: application/json" "https://api.scorocode.ru/api/v1/getfile/db8a1b41b8543397a798a181d9891b4c/items/attachment/Y3bET236FX/file.txt"
 ```
 
@@ -115,7 +115,7 @@ curl -X GET -H "Content-Type: application/json" "https://api.scorocode.ru/api/v1
 
 `Content-Type: application/json`
 
-```
+```JSON
 {
     "app"         : "", // идентификатор приложения, обязательный
     "cli"         : "", // клиентский ключ, обязательный
@@ -132,7 +132,7 @@ curl -X GET -H "Content-Type: application/json" "https://api.scorocode.ru/api/v1
 
 *Выполнено*
 
-```
+```JSON
 {
     "error"       : false
 }
@@ -140,7 +140,7 @@ curl -X GET -H "Content-Type: application/json" "https://api.scorocode.ru/api/v1
 
 *Ошибка*
 
-```
+```JSON
 {
     "error"       : true,
     "errCode"     : 4XX/5XX, // Код ошибки
@@ -150,7 +150,7 @@ curl -X GET -H "Content-Type: application/json" "https://api.scorocode.ru/api/v1
 
 **Пример cURL**
 
-```
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{
     "app": "db8a1b41b8543397a798a181d9891b4c",
     "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",

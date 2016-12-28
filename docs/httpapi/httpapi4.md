@@ -8,7 +8,7 @@
 
 `Content-Type: application/json`
 
-```
+```JSON
 {
     "app"         : "", // идентификатор приложения, обязательный
     "cli"         : "", // клиентский ключ, обязательный
@@ -28,7 +28,7 @@
 
 *Выполнено*
 
-```
+```JSON
 {
     "count"       : int       //Количество отправленных сообщений 
     "error"       : false
@@ -37,7 +37,7 @@
 
 *Ошибка*
 
-```
+```JSON
 {
     "error"       : true,
     "errCode"     : 4XX/5XX, // Код ошибки
@@ -47,7 +47,7 @@
 
 **Пример cURL**
 
-```
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{
     "app": "db8a1b41b8543397a798a181d9891b4c",
     "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
@@ -72,7 +72,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 `Content-Type: application/json`
 
-```
+```JSON
 {
     "app"         : "", // идентификатор приложения, обязательный
     cli         : "", // клиентский ключ, обязательный
@@ -91,7 +91,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 *Выполнено*
 
-```
+```JSON
 {
     "count"       : int       //Количество отправленных сообщений 
     "error"       : false
@@ -100,7 +100,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 *Ошибка*
 
-```
+```JSON
 {
     "error"       : true,
     "errCode"     : 4XX/5XX, // Код ошибки
@@ -110,7 +110,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 **Пример cURL**
 
-```
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{
     "app": "db8a1b41b8543397a798a181d9891b4c",
     "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
@@ -138,7 +138,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 `Content-Type: application/json`
 
-```
+```JSON
 {
     "app"         : "", // идентификатор приложения, обязательный
     "cli"         : "", // клиентский ключ, обязательный
@@ -156,7 +156,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 *Выполнено*
 
-```
+```JSON
 {
     "count"       : int       //Количество отправленных сообщений 
     "error"       : false
@@ -165,7 +165,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 *Ошибка*
 
-```
+```JSON
 {
     "error"       : true,
     "errCode"     : 4XX/5XX, // Код ошибки
@@ -175,7 +175,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 **Пример cURL**
 
-```
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{
     "app": "db8a1b41b8543397a798a181d9891b4c",
     "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
