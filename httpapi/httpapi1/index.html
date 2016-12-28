@@ -1026,48 +1026,48 @@
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
 <p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;         : &quot;&quot;, // идентификатор приложения, обязательный
-    &quot;cli&quot;         : &quot;&quot;, // клиентский ключ, обязательный
-    &quot;acc&quot;         : &quot;&quot;, // ключ доступа, необязательный, для полного доступа masterKey
-    &quot;username&quot;    : &quot;&quot;, // имя пользователя, обязательный, минимум 5 символов
-    &quot;email&quot;       : &quot;&quot;, // email, обязательный
-    &quot;password&quot;    : &quot;&quot;, // пароль, обязательный, минимум 6 символов
-    &quot;doc&quot;         : { } // значения пользовательских полей в коллекции &#39;users&#39;, необязательный
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
+    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
+    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа,</span> <span class="err">необязательный,</span> <span class="err">для</span> <span class="err">полного</span> <span class="err">доступа</span> <span class="err">masterKey</span>
+    <span class="nt">&quot;username&quot;</span>    <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">пользователя,</span> <span class="err">обязательный,</span> <span class="err">минимум</span> <span class="err">5</span> <span class="err">символов</span>
+    <span class="nt">&quot;email&quot;</span>       <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">email,</span> <span class="err">обязательный</span>
+    <span class="nt">&quot;password&quot;</span>    <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">пароль,</span> <span class="err">обязательный,</span> <span class="err">минимум</span> <span class="err">6</span> <span class="err">символов</span>
+    <span class="nt">&quot;doc&quot;</span>         <span class="p">:</span> <span class="p">{</span> <span class="p">}</span> <span class="err">//</span> <span class="err">значения</span> <span class="err">пользовательских</span> <span class="err">полей</span> <span class="err">в</span> <span class="err">коллекции</span> <span class="err">&#39;users&#39;</span><span class="p">,</span> <span class="err">необязательный</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><strong>Ответы:</strong></p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : false
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Код ошибки
-    &quot;errMsg&quot;      : &quot;Текст ошибки&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
-    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
-    &quot;username&quot;: &quot;username&quot;,
-    &quot;email&quot;: &quot;useremail@domain.zone&quot;,
-    &quot;password&quot;: &quot;CorrectHorseStapleButton&quot;,
-    &quot;doc&quot;: {
-        &quot;exampleField&quot;: &quot;Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!&quot;,
-        &quot;anotherExampleField&quot;: &quot;Не знаю, что и сказать. Когда-то я хотел быть астрофизиком. К сожалению, это правда.&quot;
-    }
-}
-&#39; &quot;https://api.scorocode.ru/api/v1/register&quot;
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
+<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
+<span class="s1">    &quot;username&quot;: &quot;username&quot;,</span>
+<span class="s1">    &quot;email&quot;: &quot;useremail@domain.zone&quot;,</span>
+<span class="s1">    &quot;password&quot;: &quot;CorrectHorseStapleButton&quot;,</span>
+<span class="s1">    &quot;doc&quot;: {</span>
+<span class="s1">        &quot;exampleField&quot;: &quot;Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!&quot;,</span>
+<span class="s1">        &quot;anotherExampleField&quot;: &quot;Не знаю, что и сказать. Когда-то я хотел быть астрофизиком. К сожалению, это правда.&quot;</span>
+<span class="s1">    }</span>
+<span class="s1">}</span>
+<span class="s1">&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/register&quot;</span>
 </pre></div>
 
 
@@ -1076,43 +1076,43 @@
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
 <p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;         : &quot;&quot;, // идентификатор приложения, обязательный
-    &quot;cli&quot;         : &quot;&quot;, // клиентский ключ, обязательный
-    &quot;email&quot;       : &quot;&quot;, // email, обязательный
-    &quot;password&quot;    : &quot;&quot;, // пароль, обязательный
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
+    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
+    <span class="nt">&quot;email&quot;</span>       <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">email,</span> <span class="err">обязательный</span>
+    <span class="nt">&quot;password&quot;</span>    <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">пароль,</span> <span class="err">обязательный</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><strong>Ответы:</strong></p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : false,
-    &quot;result&quot;      : {
-        &quot;sessionId&quot;     : &quot;&quot;, // ID сессии
-        &quot;user&quot;          : {}  // Документ, содержащий пользователя
-    }
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;sessionId&quot;</span>     <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ID</span> <span class="err">сессии</span>
+        <span class="nt">&quot;user&quot;</span>          <span class="p">:</span> <span class="p">{}</span>  <span class="err">//</span> <span class="err">Документ</span><span class="p">,</span> <span class="err">содержащий</span> <span class="err">пользователя</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Код ошибки
-    &quot;errMsg&quot;      : &quot;Текст ошибки&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
-    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
-    &quot;email&quot;: &quot;useremail@domain.zone&quot;,
-    &quot;password&quot;: &quot;CorrectHorseStapleButton&quot;
-}&#39; &quot;https://api.scorocode.ru/api/v1/login&quot;
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
+<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
+<span class="s1">    &quot;email&quot;: &quot;useremail@domain.zone&quot;,</span>
+<span class="s1">    &quot;password&quot;: &quot;CorrectHorseStapleButton&quot;</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/login&quot;</span>
 </pre></div>
 
 
@@ -1121,37 +1121,37 @@
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
 <p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;         : &quot;&quot;, // идентификатор приложения, обязательный
-    &quot;cli&quot;         : &quot;&quot;, // клиентский ключ, обязательный
-    &quot;sess&quot;        : &quot;&quot;  // ID сессии, обязательный
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
+    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
+    <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span>  <span class="err">//</span> <span class="err">ID</span> <span class="err">сессии</span><span class="p">,</span> <span class="err">обязательный</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><strong>Ответы:</strong></p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : false
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Код ошибки
-    &quot;errMsg&quot;      : &quot;Текст ошибки&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
-    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
-    &quot;sess&quot;: &quot;6rnbKKGvLLdU9Sl9&quot;
-}&#39; &quot;https://api.scorocode.ru/api/v1/logout&quot;
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
+<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
+<span class="s1">    &quot;sess&quot;: &quot;6rnbKKGvLLdU9Sl9&quot;</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/logout&quot;</span>
 </pre></div>
               
             </article>

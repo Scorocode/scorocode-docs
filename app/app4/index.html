@@ -1358,62 +1358,62 @@
 <h2 id="pool">Объект pool<a class="headerlink" href="#pool" title="Permanent link">&para;</a></h2>
 <p>Объект <code>pool</code> содержит следующие данные:</p>
 <h3 id="insert">Перед операцией <code>insert</code>:<a class="headerlink" href="#insert" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>{
-    doc : {}, // документ с парами имя_поля:значение
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">doc</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля:значение</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <h3 id="insert_1">После операции <code>insert</code>:<a class="headerlink" href="#insert_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>{
-    newDoc : {}, // вновь созданный документ с парами имя_поля:значение
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">newDoc</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">вновь</span> <span class="err">созданный</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля:значение</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <h3 id="remove">Перед операцией <code>remove</code>:<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>{
-    query : {}, // поисковый запрос, в соответствии с которым необходимо удалить документы
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">query</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">поисковый</span> <span class="err">запрос,</span> <span class="err">в</span> <span class="err">соответствии</span> <span class="err">с</span> <span class="err">которым</span> <span class="err">необходимо</span> <span class="err">удалить</span> <span class="err">документы</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <h3 id="remove_1">После операции <code>remove</code>:<a class="headerlink" href="#remove_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>{
-    count : int // количество удаленных документов
-    docs  : []  // массив ID удаленных документов
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">count</span> <span class="err">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">удаленных</span> <span class="err">документов</span>
+    <span class="err">docs</span>  <span class="err">:</span> <span class="err">[]</span>  <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">удаленных</span> <span class="err">документов</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h3 id="update">Перед операцией <code>update</code>:<a class="headerlink" href="#update" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>{
-    doc   : {}, // документ с правилами обновления значений
-    query : {}, // поисковый запрос, в соответствии с которым необходимо обновить документы
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">doc</span>   <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">правилами</span> <span class="err">обновления</span> <span class="err">значений</span>
+    <span class="err">query</span> <span class="err">:</span> <span class="p">{}</span><span class="err">,</span> <span class="err">//</span> <span class="err">поисковый</span> <span class="err">запрос,</span> <span class="err">в</span> <span class="err">соответствии</span> <span class="err">с</span> <span class="err">которым</span> <span class="err">необходимо</span> <span class="err">обновить</span> <span class="err">документы</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <h3 id="update_1">После операции <code>update</code>:<a class="headerlink" href="#update_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>{
-    count : int // количество обновленный документов
-    docs  : []  // массив ID обновленных документов
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">count</span> <span class="err">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">обновленный</span> <span class="err">документов</span>
+    <span class="err">docs</span>  <span class="err">:</span> <span class="err">[]</span>  <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">обновленных</span> <span class="err">документов</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h3 id="updatebyid">Перед операцией <code>updatebyid</code>:<a class="headerlink" href="#updatebyid" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>{
-    doc         : {}, // документ с правилами обновления значений
-    query       : {}, // поисковый запрос {&quot;_id&quot; : }
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">doc</span>         <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">правилами</span> <span class="err">обновления</span> <span class="err">значений</span>
+    <span class="err">query</span>       <span class="err">:</span> <span class="p">{}</span><span class="err">,</span> <span class="err">//</span> <span class="err">поисковый</span> <span class="err">запрос</span> <span class="p">{</span><span class="nt">&quot;_id&quot;</span> <span class="p">:</span> <span class="p">}</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <h3 id="updatebyid_1">После операции <code>updatebyid</code>:<a class="headerlink" href="#updatebyid_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>{
-    newDoc      : { } // обновленный документ
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">newDoc</span>      <span class="err">:</span> <span class="err">{</span> <span class="p">}</span> <span class="err">//</span> <span class="err">обновленный</span> <span class="err">документ</span>
+<span class="err">}</span>
 </pre></div>
 
 
@@ -1422,212 +1422,212 @@
 <h3 id="datamanagerinsertdata-object">DataManager.Insert(data Object)<a class="headerlink" href="#datamanagerinsertdata-object" title="Permanent link">&para;</a></h3>
 <p>Метод для вставки документа в коллекцию. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
-<div class="codehilite"><pre><span></span>{
-    coll : &quot;&quot;, // имя коллекции, обязательный
-    doc  : {}, // документ с парами имя_поля:значение, необязательный
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">coll</span> <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
+    <span class="err">doc</span>  <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля:значение,</span> <span class="err">необязательный</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span>{
-    error  : false
-    result : {} // созданный документ
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">error</span>  <span class="err">:</span> <span class="err">false</span>
+    <span class="err">result</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span> <span class="err">//</span> <span class="err">созданный</span> <span class="err">документ</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span>{
-    error   : true,
-    errCode : 4XX/5XX, // Код ошибки
-    errMsg  : &quot;Текст ошибки&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">error</span>   <span class="err">:</span> <span class="err">true,</span>
+    <span class="err">errCode</span> <span class="err">:</span> <span class="err">4XX/5XX,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="err">errMsg</span>  <span class="err">:</span> <span class="nt">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h3 id="datamanagerremovedata-object">DataManager.Remove(data Object)<a class="headerlink" href="#datamanagerremovedata-object" title="Permanent link">&para;</a></h3>
 <p>Метод для удаления документов из коллекции. Параметры:</p>
 <p><code>Data Object</code> - объект, содержащий следующие атрибуты:</p>
-<div class="codehilite"><pre><span></span>{
-    coll  : &quot;&quot;, // имя коллекции, обязательный
-    query : {}, // запрос с парами имя_поля/оператор:значение, необязательный
-    limit : int // лимит количества удаляемых документов, необязательный,
-                // если не указан, то удалятся первые 1000 документов
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">coll</span>  <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
+    <span class="err">query</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный</span>
+    <span class="err">limit</span> <span class="err">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">лимит</span> <span class="err">количества</span> <span class="err">удаляемых</span> <span class="err">документов,</span> <span class="err">необязательный,</span>
+                <span class="err">//</span> <span class="err">если</span> <span class="err">не</span> <span class="err">указан,</span> <span class="err">то</span> <span class="err">удалятся</span> <span class="err">первые</span> <span class="mi">1000</span> <span class="err">документов</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span>{
-    error  : false
-    result : {
-        count : int, // количество удаленных документов
-        docs  : [] // массив ID удаленных документов
-    }
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">error</span>  <span class="err">:</span> <span class="err">false</span>
+    <span class="err">result</span> <span class="err">:</span> <span class="err">{</span>
+        <span class="err">count</span> <span class="err">:</span> <span class="err">int,</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">удаленных</span> <span class="err">документов</span>
+        <span class="err">docs</span>  <span class="err">:</span> <span class="err">[]</span> <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">удаленных</span> <span class="err">документов</span>
+    <span class="p">}</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span>{
-    error   : true,
-    errCode : 4XX/5XX, // Код ошибки
-    errMsg  : &quot;Текст ошибки&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">error</span>   <span class="err">:</span> <span class="err">true,</span>
+    <span class="err">errCode</span> <span class="err">:</span> <span class="err">4XX/5XX,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="err">errMsg</span>  <span class="err">:</span> <span class="nt">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h3 id="datamanagerupdatedata-object">DataManager.Update(data Object)<a class="headerlink" href="#datamanagerupdatedata-object" title="Permanent link">&para;</a></h3>
 <p>Метод для обновления документов в коллекции. Параметры:</p>
 <p><code>Data Object</code> - объект, содержащий следующие атрибуты:</p>
-<div class="codehilite"><pre><span></span>{
-    coll  : &quot;&quot;, // имя коллекции, обязательный
-    query : {}, // запрос с парами имя_поля/оператор:значение, необязательный
-    doc   : {}, // документ с парами оператор:значение, обязательный
-    limit : int // лимит количества обновляемых документов, необязательный,
-                // если не указан, то обновятся первые 1000 документов
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">coll</span>  <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
+    <span class="err">query</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный</span>
+    <span class="err">doc</span>   <span class="err">:</span> <span class="p">{}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">оператор:значение,</span> <span class="err">обязательный</span>
+    <span class="err">limit</span> <span class="err">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">лимит</span> <span class="err">количества</span> <span class="err">обновляемых</span> <span class="err">документов,</span> <span class="err">необязательный,</span>
+                <span class="err">//</span> <span class="err">если</span> <span class="err">не</span> <span class="err">указан,</span> <span class="err">то</span> <span class="err">обновятся</span> <span class="err">первые</span> <span class="mi">1000</span> <span class="err">документов</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span>{
-    error  : false
-    result : {
-        count : int, // количество удаленных документов
-        docs  : [] // массив ID измененных документов
-    }
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">error</span>  <span class="err">:</span> <span class="err">false</span>
+    <span class="err">result</span> <span class="err">:</span> <span class="err">{</span>
+        <span class="err">count</span> <span class="err">:</span> <span class="err">int,</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">удаленных</span> <span class="err">документов</span>
+        <span class="err">docs</span>  <span class="err">:</span> <span class="err">[]</span> <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">измененных</span> <span class="err">документов</span>
+    <span class="p">}</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span>{
-    error   : true,
-    errCode : 4XX/5XX, // Код ошибки
-    errMsg  : &quot;Текст ошибки&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">error</span>   <span class="err">:</span> <span class="err">true,</span>
+    <span class="err">errCode</span> <span class="err">:</span> <span class="err">4XX/5XX,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="err">errMsg</span>  <span class="err">:</span> <span class="nt">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h3 id="datamanagerupdatebyiddata-object">DataManager.UpdateById(data Object)<a class="headerlink" href="#datamanagerupdatebyiddata-object" title="Permanent link">&para;</a></h3>
 <p>Метод для обновления одного документа в коллекции, идентифицируемого по ID. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
-<div class="codehilite"><pre><span></span>{
-    coll  : &quot;&quot;, // имя коллекции, обязательный
-    query : {}, // запрос в формате &quot;_id&quot; : &quot;&lt;идентификатор документа&gt;&quot;, обязательный
-    doc   : {}, // документ с парами оператор:значение, обязательный
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">coll</span>  <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
+    <span class="err">query</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">в</span> <span class="err">формате</span> <span class="s2">&quot;_id&quot;</span> <span class="err">:</span> <span class="s2">&quot;&lt;идентификатор документа&gt;&quot;</span><span class="err">,</span> <span class="err">обязательный</span>
+    <span class="err">doc</span>   <span class="err">:</span> <span class="p">{}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">оператор:значение,</span> <span class="err">обязательный</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span>{
-    error  : false
-    result : {} // обновленный документ
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">error</span>  <span class="err">:</span> <span class="err">false</span>
+    <span class="err">result</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span> <span class="err">//</span> <span class="err">обновленный</span> <span class="err">документ</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span>{
-    error   : true,
-    errCode : 4XX/5XX, // Код ошибки
-    errMsg  : &quot;Текст ошибки&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">error</span>   <span class="err">:</span> <span class="err">true,</span>
+    <span class="err">errCode</span> <span class="err">:</span> <span class="err">4XX/5XX,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="err">errMsg</span>  <span class="err">:</span> <span class="nt">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h3 id="datamanagerfinddata-object">DataManager.Find(data Object)<a class="headerlink" href="#datamanagerfinddata-object" title="Permanent link">&para;</a></h3>
 <p>Метод для запроса документов из коллекции. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
-<div class="codehilite"><pre><span></span>{
-    coll   : &quot;&quot;, // имя коллекции, обязательный
-    query  : {}, // запрос с парами имя_поля/оператор:значение, необязательный, если пустой,
-                 // то будут возвращены первые 100 документов
-    sort   : {}, // сортировка по полям в формате имя_поля:1/-1, необязательный
-    fields : [], // список имен полей, которые будут возвращены в каждом документе, необязательный
-    limit  : int,// лимит размера выборки, необязательный, по умолчанию 50
-    skip   : int,// количество документов, которое нужно пропустить в выборке
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">coll</span>   <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
+    <span class="err">query</span>  <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный,</span> <span class="err">если</span> <span class="err">пустой,</span>
+                 <span class="err">//</span> <span class="err">то</span> <span class="err">будут</span> <span class="err">возвращены</span> <span class="err">первые</span> <span class="mi">100</span> <span class="err">документов</span>
+    <span class="err">sort</span>   <span class="err">:</span> <span class="p">{}</span><span class="err">,</span> <span class="err">//</span> <span class="err">сортировка</span> <span class="err">по</span> <span class="err">полям</span> <span class="err">в</span> <span class="err">формате</span> <span class="err">имя_поля:</span><span class="mi">1</span><span class="err">/</span><span class="mi">-1</span><span class="err">,</span> <span class="err">необязательный</span>
+    <span class="err">fields</span> <span class="err">:</span> <span class="p">[]</span><span class="err">,</span> <span class="err">//</span> <span class="err">список</span> <span class="err">имен</span> <span class="err">полей,</span> <span class="err">которые</span> <span class="err">будут</span> <span class="err">возвращены</span> <span class="err">в</span> <span class="err">каждом</span> <span class="err">документе,</span> <span class="err">необязательный</span>
+    <span class="err">limit</span>  <span class="err">:</span> <span class="err">int,//</span> <span class="err">лимит</span> <span class="err">размера</span> <span class="err">выборки,</span> <span class="err">необязательный,</span> <span class="err">по</span> <span class="err">умолчанию</span> <span class="mi">50</span>
+    <span class="err">skip</span>   <span class="err">:</span> <span class="err">int,//</span> <span class="err">количество</span> <span class="err">документов,</span> <span class="err">которое</span> <span class="err">нужно</span> <span class="err">пропустить</span> <span class="err">в</span> <span class="err">выборке</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span>{
-    error  : false
-    result : [] // массив выбранных документов с учетом лимита
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">error</span>  <span class="err">:</span> <span class="err">false</span>
+    <span class="err">result</span> <span class="err">:</span> <span class="err">[]</span> <span class="err">//</span> <span class="err">массив</span> <span class="err">выбранных</span> <span class="err">документов</span> <span class="err">с</span> <span class="err">учетом</span> <span class="err">лимита</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span>{
-    error   : true,
-    errCode : 4XX/5XX, // Код ошибки
-    errMsg  : &quot;Текст ошибки&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">error</span>   <span class="err">:</span> <span class="err">true,</span>
+    <span class="err">errCode</span> <span class="err">:</span> <span class="err">4XX/5XX,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="err">errMsg</span>  <span class="err">:</span> <span class="nt">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h3 id="datamanagercountdata-object">DataManager.Count(data Object)<a class="headerlink" href="#datamanagercountdata-object" title="Permanent link">&para;</a></h3>
 <p>Метод для запроса количества документов по условию в коллекции. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
-<div class="codehilite"><pre><span></span>{
-    coll  : &quot;&quot;, // имя коллекции, обязательный
-    query : {}, // запрос с парами имя_поля/оператор:значение, необязательный
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">coll</span>  <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
+    <span class="err">query</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span>{
-    error  : false
-    result : int // количество документов
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">error</span>  <span class="err">:</span> <span class="err">false</span>
+    <span class="err">result</span> <span class="err">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">документов</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span>{
-    error   : true,
-    errCode : 4XX/5XX, // Код ошибки
-    errMsg  : &quot;Текст ошибки&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">error</span>   <span class="err">:</span> <span class="err">true,</span>
+    <span class="err">errCode</span> <span class="err">:</span> <span class="err">4XX/5XX,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="err">errMsg</span>  <span class="err">:</span> <span class="nt">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h3 id="datamanagerrunscriptdata-object">DataManager.RunScript(data Object)<a class="headerlink" href="#datamanagerrunscriptdata-object" title="Permanent link">&para;</a></h3>
 <p>Метод для запуска серверного скрипта. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
-<div class="codehilite"><pre><span></span>{
-    script   : &quot;&quot;, // ID скрипта, обязательный
-    pool     : {}, // пул данных для установки передачи в контекст скрипта, необязательный
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">script</span>   <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ID</span> <span class="err">скрипта,</span> <span class="err">обязательный</span>
+    <span class="err">pool</span>     <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">пул</span> <span class="err">данных</span> <span class="err">для</span> <span class="err">установки</span> <span class="err">передачи</span> <span class="err">в</span> <span class="err">контекст</span> <span class="err">скрипта,</span> <span class="err">необязательный</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>ыполнено</em></p>
-<div class="codehilite"><pre><span></span>{
-    error  : false
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">error</span>  <span class="err">:</span> <span class="err">false</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span>{
-    error   : true,
-    errCode : 4XX/5XX, // Код ошибки
-    errMsg  : &quot;Текст ошибки&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">error</span>   <span class="err">:</span> <span class="err">true,</span>
+    <span class="err">errCode</span> <span class="err">:</span> <span class="err">4XX/5XX,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="err">errMsg</span>  <span class="err">:</span> <span class="nt">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
