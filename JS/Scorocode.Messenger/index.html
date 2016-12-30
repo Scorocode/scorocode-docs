@@ -1056,7 +1056,7 @@
 <tr>
 <td>options</td>
 <td><code>Object</code></td>
-<td>Объект, состоящий из параметров where и data</td>
+<td>Параметры сообщения</td>
 </tr>
 <tr>
 <td>callbacks</td>
@@ -1065,22 +1065,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Описание объекта options</strong></p>
-<ul>
-<li>Параметр where - принимает в качестве значения Scorocode.Query("devices") с условиями выборки устройств, которым будет отпрален PUSH.</li>
-<li>Параметр data - объект, содержащий данные для передачи в PUSH-сообщении и имеющий следующую структуру:</li>
-</ul>
-<div class="codehilite"><pre><span></span>data: {
-    &quot;gcm&quot;: {
-        //данные для отправки Android-устройствам
-    },
-    &quot;apns&quot;: {
-        //данные для отправки iOs-устройствам
-    } 
-}
-</pre></div>
-
-
 <p><strong>Пример</strong>  </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
@@ -1095,37 +1079,17 @@
 <span class="nx">Broadcast</span><span class="p">.</span><span class="nx">sendPush</span><span class="p">({</span>
         <span class="nx">where</span><span class="o">:</span> <span class="nx">Devices</span><span class="p">,</span>
         <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;gcm&quot;</span><span class="o">:</span> <span class="p">{</span>
-                <span class="s2">&quot;protocol&quot;</span><span class="o">:</span> <span class="s2">&quot;http&quot;</span>
-                <span class="s2">&quot;notification&quot;</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="s2">&quot;body&quot;</span> <span class="o">:</span> <span class="s2">&quot;great match!&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;title&quot;</span> <span class="o">:</span> <span class="s2">&quot;Portugal vs. Denmark&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;icon&quot;</span> <span class="o">:</span> <span class="s2">&quot;myicon&quot;</span>
-                <span class="p">},</span>
-                <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;value&quot;</span>
-                <span class="p">}</span>
-            <span class="p">},</span>
-            <span class="s2">&quot;apns&quot;</span><span class="o">:</span> <span class="p">{</span>
-                <span class="s2">&quot;aps&quot;</span> <span class="o">:</span> <span class="p">{</span>
-                    <span class="s2">&quot;alert&quot;</span> <span class="o">:</span> <span class="p">{</span>
-                        <span class="s2">&quot;title&quot;</span> <span class="o">:</span> <span class="s2">&quot;Portugal vs. Denmark&quot;</span><span class="p">,</span>
-                        <span class="s2">&quot;body&quot;</span> <span class="o">:</span> <span class="s2">&quot;great match!&quot;</span><span class="p">,</span>
-                        <span class="s2">&quot;action-loc-key&quot;</span> <span class="o">:</span> <span class="s2">&quot;Watch&quot;</span>
-                    <span class="p">},</span>
-                    <span class="s2">&quot;badge&quot;</span> <span class="o">:</span> <span class="mi">5</span>
-                <span class="p">},</span>
-                <span class="s2">&quot;acme1&quot;</span> <span class="o">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;acme2&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;bang&quot;</span><span class="p">,</span>  <span class="s2">&quot;whiz&quot;</span> <span class="p">]</span>
+            <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;текст PUSH-уведомления!&quot;</span><span class="p">,</span>
+                <span class="p">}</span>           
             <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+        <span class="p">});</span>
 </pre></div>
 
 
