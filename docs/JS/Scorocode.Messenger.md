@@ -31,27 +31,10 @@ var Broadcast = new Scorocode.Messenger();
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| options | <code>Object</code> | Объект, состоящий из параметров where и data |
+| options | <code>Object</code> | Параметры сообщения |
 | callbacks | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
-**Описание объекта options**
-
-* Параметр where - принимает в качестве значения Scorocode.Query("devices") с условиями выборки устройств, которым будет отпрален PUSH.
-* Параметр data - объект, содержащий данные для передачи в PUSH-сообщении и имеющий следующую структуру:
-
-```
-data: {
-    "gcm": {
-        //данные для отправки Android-устройствам
-    },
-    "apns": {
-        //данные для отправки iOs-устройствам
-    } 
-}
-```
-
 **Пример**  
-
 ```js
 // Подключим SDK и инициализируем его. 
 var Scorocode = require('scorocode');
@@ -66,37 +49,17 @@ var Broadcast = new Scorocode.Messenger();
 Broadcast.sendPush({
         where: Devices,
         data: {
-            "gcm": {
-                "protocol": "http"
-                "notification": {
-                    "body" : "great match!",
-                    "title" : "Portugal vs. Denmark",
-                    "icon" : "myicon"
-                },
-                "data": {
-                    "key": "value"
-                }
-            },
-            "apns": {
-                "aps" : {
-                    "alert" : {
-                        "title" : "Portugal vs. Denmark",
-                        "body" : "great match!",
-                        "action-loc-key" : "Watch"
-                    },
-                    "badge" : 5
-                },
-                "acme1" : "bar",
-                "acme2" : [ "bang",  "whiz" ]
+            "data": {
+                "message": "текст PUSH-уведомления!",
+                }           
             }
-        }
-    })
-    .then((success)=>{
-        console.log(success);
-    })
-    .catch((error)=>{
-        console.log(error)
-    });
+        })
+        .then((success)=>{
+            console.log(success);
+        })
+        .catch((error)=>{
+            console.log(error)
+        });
 ```
 
 **Возвращает**: <code>promise.{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
