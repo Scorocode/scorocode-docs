@@ -10,7 +10,7 @@
 ----------------------------------------------------------------------------------------------
 <a name="ScorocodeSDK+initWith"></a>
 
-### ScorocodeSDK.initWith(appId, clientKey, masterKey, fileKey, messageKey)
+### .initWith(appId, clientKey, masterKey, fileKey, messageKey)
 
 Инициализация SDK. 
 

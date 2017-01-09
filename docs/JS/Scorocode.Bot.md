@@ -1,37 +1,37 @@
-<a name="Scorocode.Bot"></a>
+<a name="sc.Bot"></a>
 
 Содержание
 
-* [.Bot](#Scorocode.Bot)
-    * [new Bot(botId)](#new_Scorocode.Bot)
-    * [.send(data)](#Scorocode.Bot+send) 
+* [.Bot](#sc.Bot)
+    * [new Bot(botId)](#new_sc.Bot)
+    * [.send(data)](#sc.Bot+send) 
 
 ----------------------------------------------------------------------------------------------
 
-<a name="new_Scorocode.Bot"></a>
+<a name="new_sc.Bot"></a>
 
 ## new Bot(botId)
 
-Конструктор Scorocode.Bot
+Конструктор sc.Bot
 
-**Возвращает**: <code>[Scorocode.Bot](#Scorocode.Bot)</code> - Возвращает новый экземпляр Scorocode.Bot
+**Возвращает**: <code>[sc.Bot](#sc.Bot)</code> - Возвращает новый экземпляр sc.Bot
 
 | Параметр | Тип | Описание |
-| --- | --- | --- |
+| --- | --- | --- |пше ыефегы
 | botId | <code>String</code> | Telegram id бота, полученный от '@BotFather' |
 
 **Пример**
 
 ```js
-var Scorocode = require('scorocode');
+var sc = require('scorocode');
 
-Scorocode.Init({
+sc.Init({
     ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
     JavaScriptKey: "xxx", // <- заменить xxx на ключ javascript приложения
     MasterKey: "xxx" // <- заменить xxx на ключ masterKey приложения
 });
 
-var bot = new Scorocode.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
+var bot = new sc.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
 
 var data = {
     "method": "methodname", //название метода Telegram bot API 
@@ -43,7 +43,7 @@ bot.send(data)
 ```
 --------------------------------------------------------------------------
 
-<a name="Scorocode.Bot+send"></a>
+<a name="sc.Bot+send"></a>
 
 ## .send(pool, callbacks) 
 
@@ -63,15 +63,15 @@ bot.send(data)
 **Пример**
 
 ```js
-var Scorocode = require('scorocode');
+var sc = require('scorocode');
 
-Scorocode.Init({
+sc.Init({
     ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
     JavaScriptKey: "xxx", // <- заменить xxx на ключ javascript приложения
     MasterKey: "xxx" // <- заменить xxx на ключ masterKey приложения
 });
 
-var bot = new Scorocode.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
+var bot = new sc.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
 
 var data = {
     "method": "methodname", //название метода Telegram bot API 

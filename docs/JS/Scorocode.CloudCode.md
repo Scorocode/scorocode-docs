@@ -1,35 +1,35 @@
-<a name="Scorocode.CloudCode"></a>
+<a name="sc.CloudCode"></a>
 
 Содержание
 
-* [.CloudCode](#Scorocode.CloudCode)
-    * [new CloudCode(id)](#new_Scorocode.CloudCode_new)
-    * [.run(pool, callbacks)](#Scorocode.CloudCode+run) ⇒ <code>promise.{error: Boolean}</code>
+* [.CloudCode](#sc.CloudCode)
+    * [new CloudCode(id)](#new_sc.CloudCode_new)
+    * [.run(pool, callbacks)](#sc.CloudCode+run) ⇒ <code>promise.{error: Boolean}</code>
 
 ----------------------------------------------------------------------------------------------
 
-<a name="new_Scorocode.CloudCode_new"></a>
+<a name="new_sc.CloudCode_new"></a>
 
 ## new CloudCode(id)
 
 Класс для работы с серверным кодом
 
-**Возвращает**: <code>[Scorocode.CloudCode](#Scorocode.CloudCode)</code> - Возвращает новый экземпляр Scorocode.CloudCode
+**Возвращает**: <code>[sc.CloudCode](#sc.CloudCode)</code> - Возвращает новый экземпляр sc.CloudCode
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | id | <code>String</code> | Обязательный | Идентификатор скрипта | "574860d2781267d34f7a2415" | 
-| logger | <code>Object</code> | Необязательный | Объект Scorocode.Logger для режима отладки | См. пример ниже |
+| logger | <code>Object</code> | Необязательный | Объект sc.Logger для режима отладки | См. пример ниже |
 
 **Пример**
 
 ```js
-var newUserRegistration = new Scorocode.CloudCode("574860d2781267d34f7a2415", {logger: new Scorocode.Logger()});
+var newUserRegistration = new sc.CloudCode("574860d2781267d34f7a2415", {logger: new sc.Logger()});
 ```
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.CloudCode+run"></a>
+<a name="sc.CloudCode+run"></a>
 
 ## .run(pool, callbacks) 
 
@@ -45,8 +45,8 @@ var newUserRegistration = new Scorocode.CloudCode("574860d2781267d34f7a2415", {l
 
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения",
     ScriptKey: "scriptKey_приложения"
@@ -56,7 +56,7 @@ var Prompt = require('prompt');
 Prompt.start();
 Prompt.get(['email', 'password', 'username'], function (err, result) {
     // Создадим новый экземпляр запроса к серверному скрипту "574860d2781267d34f7a2415".
-    var newUserRegistration = new Scorocode.CloudCode("574860d2781267d34f7a2415", {logger: new Scorocode.Logger()});
+    var newUserRegistration = new sc.CloudCode("574860d2781267d34f7a2415", {logger: new sc.Logger()});
     // Определим данные, которые будут переданы скрипту при запуске
     var pool = {
         "email":result.email,
@@ -85,7 +85,7 @@ Prompt.get(['email', 'password', 'username'], function (err, result) {
 ## Отладка
 
 При использовании JavaScript SDK возможна отладка серверных скриптов. Для этого при инициализации библиотеки с помощью
-<code>Scorocode.Init({})</code> необходимо передать еще два ключа: <code>MasterKey</code> и <code>WebSocketKey</code>. Это связано с тем, что
+<code>sc.Init({})</code> необходимо передать еще два ключа: <code>MasterKey</code> и <code>WebSocketKey</code>. Это связано с тем, что
 консольный вывод выполняемого на сервере скрипта перенаправляется через websockets на вызывающего клиента.
 
 Для включения режима отладки также необходимо создать объект <code>Logger</code>.
@@ -94,8 +94,8 @@ Prompt.get(['email', 'password', 'username'], function (err, result) {
 
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения",
     ScriptKey: "scriptKey_приложения"
@@ -109,7 +109,7 @@ Prompt.get(['email', 'password', 'username'], function (err, result) {
 
 // Создадим новый экземпляр запроса к серверному скрипту "574860d2781267d34f7a2415".
 // Вторым параметром передаем вновь созданный объект Logger
-var newUserRegistration = new Scorocode.CloudCode("574860d2781267d34f7a2415", {logger: new Scorocode.Logger()});
+var newUserRegistration = new sc.CloudCode("574860d2781267d34f7a2415", {logger: new sc.Logger()});
 
 // Определим данные, которые будут переданы скрипту при запуске
 var pool = {

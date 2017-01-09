@@ -1,20 +1,20 @@
-<a name="Scorocode.WebSocket"></a>
+<a name="sc.WebSocket"></a>
 
 Класс для работы с WebSocket-соединениями. 
 
-Пример реализации чат-приложения с использованием Scorocode.WebSocket - [Scorochat](https://niksmith.github.io/). Исходный код приложения опубликован на GitHub в репозитории [NikSmith/niksmith.github.io](https://github.com/NikSmith/niksmith.github.io)
+Пример реализации чат-приложения с использованием sc.WebSocket - [Scorochat](https://niksmith.github.io/). Исходный код приложения опубликован на GitHub в репозитории [NikSmith/niksmith.github.io](https://github.com/NikSmith/niksmith.github.io)
 
 
 Содержание
 
-* [.WebSocket](#Scorocode.WebSocket)
-    * [new WebSocket(channame)](#new_Scorocode.WebSocket_new)
-    * [.on(event, callback)](#Scorocode.WebSocket+on) 
-    * [.send(message)](#Scorocode.WebSocket+send) 
+* [.WebSocket](#sc.WebSocket)
+    * [new WebSocket(channame)](#new_sc.WebSocket_new)
+    * [.on(event, callback)](#sc.WebSocket+on) 
+    * [.send(message)](#sc.WebSocket+send) 
 
 ----------------------------------------------------------------------------------------------
 
-<a name="new_Scorocode.WebSocket_new"></a>
+<a name="new_sc.WebSocket_new"></a>
 
 ## new WebSocket(channame)
 
@@ -27,12 +27,12 @@
 **Пример**
 
 ```js
-var WS = new Scorocode.WebSocket('chatroom');
+var WS = new sc.WebSocket('chatroom');
 ```
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.WebSocket+on"></a>
+<a name="sc.WebSocket+on"></a>
 
 ## .on(event, callback)
 Метод для установления коллбэка на одно из событий:
@@ -42,7 +42,7 @@ var WS = new Scorocode.WebSocket('chatroom');
 * error - Ошибка
 * message - Получены данные
 
-**Тип**: Метод <code>[WebSocket](#Scorocode.WebSocket)</code>  
+**Тип**: Метод <code>[WebSocket](#sc.WebSocket)</code>  
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
@@ -53,16 +53,16 @@ var WS = new Scorocode.WebSocket('chatroom');
 
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
+var sc = require('scorocode');
 
-Scorocode.Init({
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения",
     WebSocketKey: "webSocketKey_приложения"
 });
 
 
-var WS = new Scorocode.WebSocket('Helloworld');
+var WS = new sc.WebSocket('Helloworld');
 
 
 WS.on("open", onOpen () {});
@@ -78,12 +78,12 @@ WS.send(data);
 ```
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.WebSocket+send"></a>
+<a name="sc.WebSocket+send"></a>
 
 ## .send(message)
 Метод для отправки сообщения в канал
 
-**Тип**: Метод <code>[WebSocket](#Scorocode.WebSocket)</code>
+**Тип**: Метод <code>[WebSocket](#sc.WebSocket)</code>
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
@@ -93,14 +93,14 @@ WS.send(data);
 
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения",
     WebSocketKey: "webSocketKey_приложения"
 });
 
-var WS = new Scorocode.WebSocket('Helloworld');
+var WS = new sc.WebSocket('Helloworld');
 var data = "Wello Horld";
 
 WS.on('open', function(){

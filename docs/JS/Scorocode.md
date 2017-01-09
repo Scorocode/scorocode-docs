@@ -31,7 +31,9 @@
 **Пример**  
 
 ```Javascript
-Scorocode.Init({
+var sc = require('scorocode');
+
+sc.Init({
     ApplicationID: "a3d04e75e157b2f7ae20c2fce02f63d6",
     JavaScriptKey: "ad6a8fe72ef7dfb9c46958aacb15196a",
     FileKey: "2aceceec7d2e96b1487ec399f5afa101",

@@ -2,19 +2,19 @@
 
 ## Подключение SDK
 
-Для использования SDK на стороне браузера, скачайте библиотеку [lib/browser/scorocode.min.js](https://github.com/Scorocode/scorocode-SDK-JS/blob/master/lib/browser/scorocode.min.js) и подключите ее в проекте: 
+Для использования SDK на стороне браузера, скачайте библиотеку [lib/browser/sc.min.js](https://github.com/Scorocode/scorocode-SDK-JS/blob/master/lib/browser/sc.min.js) и подключите ее в проекте: 
 ```js
-<script src="js/scorocode.min.js"></script>
+<script src="js/sc.min.js"></script>
 ```
  
 Для использования SDK на стороне сервера (NodeJS) установите модуль SDK `npm install scorocode` и подключите его в проекте:
 ```js
-var Scorocode = require('scorocode');
+var sc = require('scorocode');
 ```
 
 ## Быстрый старт
 
-Зарегистрируйтесь и создайте приложение с любым именем в [Scorocode](https://scorocode.ru/).
+Зарегистрируйтесь и создайте приложение с любым именем в [Scorocode](https://sc.ru/).
 
 Для разработки примера мы использовали библиотеку [react](https://facebook.github.io/react/) и утилиту для быстрого создания каркаса приложения [create-react-app](https://github.com/facebookincubator/create-react-app) Требования для установки смотрите по ссылке. Установить утилиту можно из консоли командой:
 
@@ -40,7 +40,7 @@ import './index.css';
 import Scorocode from 'scorocode' // <- добавить импорт SDK Scorocode
 
 // Добавить инициализацию SDK
-Scorocode.Init({
+sc.Init({
     ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
     JavaScriptKey: "xxx", // <- заменить xxx на ключ javascript приложения
     MasterKey:     "xxx"  // <- заменить xxx на ключ masterKey приложения
@@ -110,8 +110,8 @@ class App extends Component {
         // Очищаем переменную результата
         this.setState({registerResult: ""})
 
-        // Создадим новый экземпляр Scorocode.User
-        var appUser = new Scorocode.User();
+        // Создадим новый экземпляр sc.User
+        var appUser = new sc.User();
 
         // Установим данные, необходимые для регистрации пользователя приложения
         appUser
@@ -141,8 +141,8 @@ class App extends Component {
         // Очищаем переменную результата
         this.setState({loginResult: ""})
 
-        // Создадим новый экземпляр Scorocode.User
-        var appUser = new Scorocode.User();
+        // Создадим новый экземпляр sc.User
+        var appUser = new sc.User();
 
         // Аутентифицируем пользователя приложения, используя email и password
         appUser.login(email, password)
@@ -168,5 +168,5 @@ npm start
 ```
 
 В результате в браузере откроется страница с двумя формами: регистрации и авторизации.
-Поэкспериментируйте с регистрацией пользователей и их авторизацией и посмотрите на ответы от API Scorocode.
+Поэкспериментируйте с регистрацией пользователей и их авторизацией и посмотрите на ответы от API sc.
 После успешной регистрации вы можете увидеть в коллекции users добавленного пользователя и авторизоваться, используя его email и пароль.

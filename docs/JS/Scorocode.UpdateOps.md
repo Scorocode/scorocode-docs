@@ -1,21 +1,21 @@
-<a name="Scorocode.UpdateOps"></a>
+<a name="sc.UpdateOps"></a>
 
 Содержание
 
-* [.UpdateOps](#Scorocode.UpdateOps)
-    * [.set(data)](#Scorocode.UpdateOps+set)
-    * [.push(key, value)](#Scorocode.UpdateOps+push) 
-    * [.pull(key, value)](#Scorocode.UpdateOps+pull) 
-    * [.pullAll(key, value)](#Scorocode.UpdateOps+pullAll) 
-    * [.addToSet(key, value)](#Scorocode.UpdateOps+addToSet) 
-    * [.pop(key, pos)](#Scorocode.UpdateOps+pop) 
-    * [.inc(key, amount)](#Scorocode.UpdateOps+inc)
-    * [.currentDate()](#Scorocode.UpdateOps+currentDate)
-    * [.mul(key, number)](#Scorocode.UpdateOps+mul)
-    * [.min()](#Scorocode.UpdateOps+min)
-    * [.max()](#Scorocode.UpdateOps+max)
+* [.UpdateOps](#sc.UpdateOps)
+    * [.set(data)](#sc.UpdateOps+set)
+    * [.push(key, value)](#sc.UpdateOps+push) 
+    * [.pull(key, value)](#sc.UpdateOps+pull) 
+    * [.pullAll(key, value)](#sc.UpdateOps+pullAll) 
+    * [.addToSet(key, value)](#sc.UpdateOps+addToSet) 
+    * [.pop(key, pos)](#sc.UpdateOps+pop) 
+    * [.inc(key, amount)](#sc.UpdateOps+inc)
+    * [.currentDate()](#sc.UpdateOps+currentDate)
+    * [.mul(key, number)](#sc.UpdateOps+mul)
+    * [.min()](#sc.UpdateOps+min)
+    * [.max()](#sc.UpdateOps+max)
 
-<a name="new_Scorocode.UpdateOps_new"></a>
+<a name="new_sc.UpdateOps_new"></a>
 
 ## new UpdateOps()
 Класс для осуществления операций множественного обновления объектов
@@ -23,15 +23,15 @@
 **Пример**
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
-var Items = new Scorocode.Query("items");
-var updateItems = new Scorocode.UpdateOps("items");
+var Items = new sc.Query("items");
+var updateItems = new sc.UpdateOps("items");
 
 // Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.
 Items.notEqualTo("price", 42)
@@ -55,11 +55,11 @@ Items.notEqualTo("price", 42)
         });
 ```
 
-**Возвращает**: <code>[UpdateOps](#Scorocode.UpdateOps)</code> - Возвращает экземпляр Scorocode.UpdateOps  
+**Возвращает**: <code>[UpdateOps](#sc.UpdateOps)</code> - Возвращает экземпляр sc.UpdateOps  
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.UpdateOps+set"></a>
+<a name="sc.UpdateOps+set"></a>
 
 ## .set(data)
 Метод для передачи данных объекту
@@ -73,15 +73,15 @@ Items.notEqualTo("price", 42)
 **Пример**
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
-var Items = new Scorocode.Query("items");
-var updateItems = new Scorocode.UpdateOps("items");
+var Items = new sc.Query("items");
+var updateItems = new sc.UpdateOps("items");
 
 // Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.
 Items.notEqualTo("price", 42)
@@ -107,12 +107,12 @@ Items.notEqualTo("price", 42)
 
 см.
 
-* [new Object(collName)](#new_Scorocode.Object_new)
-* [.save(options)](#Scorocode.UpdateOps+save) ⇒ <code>[Scorocode.UpdateOps](#Scorocode.UpdateOps)</code>
+* [new Object(collName)](#new_sc.Object_new)
+* [.save(options)](#sc.UpdateOps+save) ⇒ <code>[sc.UpdateOps](#sc.UpdateOps)</code>
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.UpdateOps+push"></a>
+<a name="sc.UpdateOps+push"></a>
 
 ## .push(key, value)
 Метод для добавления элемента в массив.
@@ -126,15 +126,15 @@ Items.notEqualTo("price", 42)
 **Пример**
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
-var Items = new Scorocode.Query("items");
-var updateItems = new Scorocode.UpdateOps("items");
+var Items = new sc.Query("items");
+var updateItems = new sc.UpdateOps("items");
 
 // Установим условие выборки - запросить все объекты с существующим значением поля "arrayField".
 Items.exists("arrayField")
@@ -160,7 +160,7 @@ Items.exists("arrayField")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.UpdateOps+pull"></a>
+<a name="sc.UpdateOps+pull"></a>
 
 ## .pull(key, value)
 Метод для удаления всех элементов массива, значение которых равно указанному.
@@ -174,15 +174,15 @@ Items.exists("arrayField")
 **Пример**
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
-var Items = new Scorocode.Query("items");
-var updateItems = new Scorocode.UpdateOps("items");
+var Items = new sc.Query("items");
+var updateItems = new sc.UpdateOps("items");
 
 // Установим условие выборки - запросить все объекты с существующим значением поля "arrayField".
 Items.exists("arrayField")
@@ -213,7 +213,7 @@ Items.exists("arrayField")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.UpdateOps+pullAll"></a>
+<a name="sc.UpdateOps+pullAll"></a>
 
 ## .pullAll(key, value)
 
@@ -228,15 +228,15 @@ Items.exists("arrayField")
 **Пример**
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
-var Items = new Scorocode.Query("items");
-var updateItems = new Scorocode.UpdateOps("items");
+var Items = new sc.Query("items");
+var updateItems = new sc.UpdateOps("items");
 
 // Установим условие выборки - запросить все объекты с существующим значением поля "arrayField".
 Items.exists("arrayField")
@@ -268,7 +268,7 @@ Items.exists("arrayField")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.UpdateOps+addToSet"></a>
+<a name="sc.UpdateOps+addToSet"></a>
 
 ## .addToSet(key, value)
 Метод для добавления элемента в массив только в том случае, если в массиве отсутствуют элементы с таким значением.
@@ -282,15 +282,15 @@ Items.exists("arrayField")
 **Пример**
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
-var Items = new Scorocode.Query("items");
-var updateItems = new Scorocode.UpdateOps("items");
+var Items = new sc.Query("items");
+var updateItems = new sc.UpdateOps("items");
 
 // Установим условие выборки - запросить все объекты с существующим значением поля "arrayField".
 Items.exists("arrayField")
@@ -321,7 +321,7 @@ Items.exists("arrayField")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.UpdateOps+pop"></a>
+<a name="sc.UpdateOps+pop"></a>
 
 ## .pop(key, pos)
 Метод для удаления первого или последнего элемента массива
@@ -335,15 +335,15 @@ Items.exists("arrayField")
 **Пример**
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
-var Items = new Scorocode.Query("items");
-var updateItems = new Scorocode.UpdateOps("items");
+var Items = new sc.Query("items");
+var updateItems = new sc.UpdateOps("items");
 
 // Установим условие выборки - запросить все объекты с существующим значением поля "arrayField".
 Items.exists("arrayField")
@@ -374,7 +374,7 @@ Items.exists("arrayField")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.UpdateOps+inc"></a>
+<a name="sc.UpdateOps+inc"></a>
 
 ## .inc(key, amount)
 Метод увеличивает значение числового поля на заданное число
@@ -388,15 +388,15 @@ Items.exists("arrayField")
 **Пример** 
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
-var Items = new Scorocode.Query("items");
-var updateItems = new Scorocode.UpdateOps("items");
+var Items = new sc.Query("items");
+var updateItems = new sc.UpdateOps("items");
 
 // Установим условие выборки - запросить все объекты с существующим значением поля "price".
 Items.exists("price")
@@ -426,7 +426,7 @@ Items.exists("price")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.UpdateOps+currentDate"></a>
+<a name="sc.UpdateOps+currentDate"></a>
 
 ## .currentDate()
 Устанавливает текущее время в качестве значения поля
@@ -440,15 +440,15 @@ Items.exists("price")
 **Пример**:
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
-var Items = new Scorocode.Query("items");
-var updateItems = new Scorocode.UpdateOps("items");
+var Items = new sc.Query("items");
+var updateItems = new sc.UpdateOps("items");
 
 // Запросим все объекты коллекции "items"
 Items.find()
@@ -477,7 +477,7 @@ Items.find()
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.UpdateOps+mul"></a>
+<a name="sc.UpdateOps+mul"></a>
 
 ## .mul(key, number)
 Метод умножает значение числового поля на заданное число
@@ -491,15 +491,15 @@ Items.find()
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
-var Items = new Scorocode.Query("items");
-var updateItems = new Scorocode.UpdateOps("items");
+var Items = new sc.Query("items");
+var updateItems = new sc.UpdateOps("items");
 
 // Установим условие выборки - запросить все объекты с существующим значением поля "price".
 Items.exists("price")
@@ -531,7 +531,7 @@ Items.exists("price")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.UpdateOps+min"></a>
+<a name="sc.UpdateOps+min"></a>
 
 ## .min()
 Метод обновляет значение числового поля только в случае, если новое значение меньше текущего значения поля
@@ -546,15 +546,15 @@ Items.exists("price")
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
-var Items = new Scorocode.Query("items");
-var updateItems = new Scorocode.UpdateOps("items");
+var Items = new sc.Query("items");
+var updateItems = new sc.UpdateOps("items");
 
 // Установим условие выборки - запросить все объекты с существующим значением поля "price".
 Items.exists("price")
@@ -588,7 +588,7 @@ Items.exists("price")
 ----------------------------------------------------------------------------------------------
 
 
-<a name="Scorocode.UpdateOps+max"></a>
+<a name="sc.UpdateOps+max"></a>
 
 ## .max()
 Метод обновляет значение числового поля только в случае, если новое значение больше текущего значения поля
@@ -602,15 +602,15 @@ Items.exists("price")
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
-var Items = new Scorocode.Query("items");
-var updateItems = new Scorocode.UpdateOps("items");
+var Items = new sc.Query("items");
+var updateItems = new sc.UpdateOps("items");
 
 // Установим условие выборки - запросить все объекты с существующим значением поля "price".
 Items.exists("price")

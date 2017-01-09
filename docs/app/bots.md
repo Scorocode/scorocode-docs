@@ -21,9 +21,9 @@
 
 При включении бота создается `webhook` на который приходят данные от `Telegram`. Эти данные доступны в серверном скрипте в объекте `pool` при каждом вызове. Полное описание полей доступно в [документации к Telegram Bot API](https://core.telegram.org/bots/api#getting-updates)
 
-Ответные сообщения от бота передаются при помощи метода .send(data) класса Scorocode.Bot, где data - объект, имеющий следующую структуру:
+Ответные сообщения от бота передаются при помощи метода .send(data) класса sc.Bot, где data - объект, имеющий следующую структуру:
 
-```
+```JSON
 {
     'method': 'sendMessage',                            // метод Telegram Bot API
     'method_params': {                                  // параметры для передачи в метод
@@ -43,15 +43,15 @@
 ## Пример серверного скрипта Бота:
 
 ```js
-var Scorocode = require('scorocode');
+var sc = require('scorocode');
 
-var client = Scorocode.Init({
+var client = sc.Init({
   ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
   JavaScriptKey: "xxx", // <- заменить xxx на ключ javascript приложения
   MasterKey: "xxx" // <- заменить xxx на ключ masterKey приложения
 });
 
-var bot = new Scorocode.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
+var bot = new sc.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
 var querystring = require('querystring');
 
 // Crate new button for ReplyKeyboardMarkup

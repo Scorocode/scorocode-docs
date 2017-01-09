@@ -1,15 +1,15 @@
-<a name="Scorocode.Messenger"></a>
+<a name="sc.Messenger"></a>
 
 Содержание
 
-* [Messenger](#Scorocode.Messenger)
-    * [new Messenger()](#new_Scorocode.Messenger_new)
-    * [.sendPush(options, callbacks)](#Scorocode.Messenger+sendPush) ⇒ <code>{error: Boolean, count: Number}</code>
-    * [.sendSms(options, callbacks)](#Scorocode.Messenger+sendSms) ⇒ <code>{error: Boolean, count: Number}</code>
+* [Messenger](#sc.Messenger)
+    * [new Messenger()](#new_sc.Messenger_new)
+    * [.sendPush(options, callbacks)](#sc.Messenger+sendPush) ⇒ <code>{error: Boolean, count: Number}</code>
+    * [.sendSms(options, callbacks)](#sc.Messenger+sendSms) ⇒ <code>{error: Boolean, count: Number}</code>
 
 ----------------------------------------------------------------------------------------------
 
-<a name="new_Scorocode.Messenger_new"></a>
+<a name="new_sc.Messenger_new"></a>
 
 ## new Messenger()
 
@@ -17,12 +17,12 @@
 
 **Пример**
 ```js
-var Broadcast = new Scorocode.Messenger();
+var Broadcast = new sc.Messenger();
 ```
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Messenger+sendPush"></a>
+<a name="sc.Messenger+sendPush"></a>
 
 ## .sendPush(options, callbacks)
 
@@ -36,7 +36,7 @@ var Broadcast = new Scorocode.Messenger();
 
 **Описание объекта options**
 
-* Параметр where - принимает в качестве значения Scorocode.Query("devices") с условиями выборки устройств, которым будет отпрален PUSH.
+* Параметр where - принимает в качестве значения sc.Query("devices") с условиями выборки устройств, которым будет отпрален PUSH.
 * Параметр data - объект, содержащий данные для передачи в PUSH-сообщении и имеющий следующую структуру:
 
 ```
@@ -54,15 +54,15 @@ data: {
 
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения",
     MessageKey: "messageKey_приложения"
 });
 
-var Devices = new Scorocode.Query("devices");
-var Broadcast = new Scorocode.Messenger();
+var Devices = new sc.Query("devices");
+var Broadcast = new sc.Messenger();
 Broadcast.sendPush({
         where: Devices,
         data: {
@@ -115,7 +115,7 @@ Broadcast.sendPush({
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Messenger+sendSms"></a>
+<a name="sc.Messenger+sendSms"></a>
 
 ## .sendSms(options, callbacks)
 
@@ -130,15 +130,15 @@ Broadcast.sendPush({
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения",
     MessageKey: "messageKey_приложения"
 });
 
-var findUsers = new Scorocode.Query("users");
-var Broadcast = new Scorocode.Messenger();
+var findUsers = new sc.Query("users");
+var Broadcast = new sc.Messenger();
 Broadcast.sendPush({
         where: findUsers,
         data: {

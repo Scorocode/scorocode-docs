@@ -1,39 +1,39 @@
 Содержание
 
-* [.Query](#Scorocode.Query)
-    * [new Query(collName)](#new_Scorocode.Query_new) ⇒ <code>Scorocode.Object</code>
-    * [.find(options)](#Scorocode.Query+find) ⇒ <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code>
-    * [.count(options)](#Scorocode.Query+count) ⇒ <code>promise.{error: Boolean, result: Number}</code>
-    * [.update(Object, options)](#Scorocode.Query+update) ⇒ <code>promise.{error: Boolean, result: {count: Number, docs: Array}}</code>
-    * [.remove(options)](#Scorocode.Query+remove) ⇒ <code>promise.{count: Number, docs: Array}</code> 
-    * [.reset()](#Scorocode.Query+reset) 
-    * [.equalTo(field, value)](#Scorocode.Query+equalTo) 
-    * [.notEqualTo(field, value)](#Scorocode.Query+notEqualTo) 
-    * [.containedIn(field, value)](#Scorocode.Query+containedIn) 
-    * [.containsAll(field, value)](#Scorocode.Query+containsAll) 
-    * [.notContainedIn(field, value)](#Scorocode.Query+notContainedIn) 
-    * [.greaterThan(field, value)](#Scorocode.Query+greaterThan) 
-    * [.greaterThanOrEqualTo(field, value)](#Scorocode.Query+greaterThanOrEqualTo) 
-    * [.lessThan(field, value)](#Scorocode.Query+lessThan) 
-    * [.lessThanOrEqualTo(field, value)](#Scorocode.Query+lessThanOrEqualTo) 
-    * [.exists(field)](#Scorocode.Query+exists) 
-    * [.doesNotExist(field)](#Scorocode.Query+doesNotExist) 
-    * [.contains(field, value)](#Scorocode.Query+contains) 
-    * [.startsWith(field, value)](#Scorocode.Query+startsWith) 
-    * [.endsWith(field, value)](#Scorocode.Query+endsWith) 
-    * [.limit(limit)](#Scorocode.Query+limit) 
-    * [.skip(skip)](#Scorocode.Query+skip)
-    * [.page(page)](#Scorocode.Query+page) 
-    * [.ascending(field)](#Scorocode.Query+ascending)
-    * [.descending(field)](#Scorocode.Query+descending) 
-    * [.or(query)](#Scorocode.Query+or)
-    * [.and(query)](#Scorocode.Query+and) 
-    * [.select()](#Scorocode.Query+select) 
-    * [.raw(filter)](#Scorocode.Query+raw) 
+* [.Query](#sc.Query)
+    * [new Query(collName)](#new_sc.Query_new) ⇒ <code>sc.Object</code>
+    * [.find(options)](#sc.Query+find) ⇒ <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{sc.Object}]}</code>
+    * [.count(options)](#sc.Query+count) ⇒ <code>promise.{error: Boolean, result: Number}</code>
+    * [.update(Object, options)](#sc.Query+update) ⇒ <code>promise.{error: Boolean, result: {count: Number, docs: Array}}</code>
+    * [.remove(options)](#sc.Query+remove) ⇒ <code>promise.{count: Number, docs: Array}</code> 
+    * [.reset()](#sc.Query+reset) 
+    * [.equalTo(field, value)](#sc.Query+equalTo) 
+    * [.notEqualTo(field, value)](#sc.Query+notEqualTo) 
+    * [.containedIn(field, value)](#sc.Query+containedIn) 
+    * [.containsAll(field, value)](#sc.Query+containsAll) 
+    * [.notContainedIn(field, value)](#sc.Query+notContainedIn) 
+    * [.greaterThan(field, value)](#sc.Query+greaterThan) 
+    * [.greaterThanOrEqualTo(field, value)](#sc.Query+greaterThanOrEqualTo) 
+    * [.lessThan(field, value)](#sc.Query+lessThan) 
+    * [.lessThanOrEqualTo(field, value)](#sc.Query+lessThanOrEqualTo) 
+    * [.exists(field)](#sc.Query+exists) 
+    * [.doesNotExist(field)](#sc.Query+doesNotExist) 
+    * [.contains(field, value)](#sc.Query+contains) 
+    * [.startsWith(field, value)](#sc.Query+startsWith) 
+    * [.endsWith(field, value)](#sc.Query+endsWith) 
+    * [.limit(limit)](#sc.Query+limit) 
+    * [.skip(skip)](#sc.Query+skip)
+    * [.page(page)](#sc.Query+page) 
+    * [.ascending(field)](#sc.Query+ascending)
+    * [.descending(field)](#sc.Query+descending) 
+    * [.or(query)](#sc.Query+or)
+    * [.and(query)](#sc.Query+and) 
+    * [.select()](#sc.Query+select) 
+    * [.raw(filter)](#sc.Query+raw) 
 
 ----------------------------------------------------------------------------------------------
 
-<a name="new_Scorocode.Query_new"></a>
+<a name="new_sc.Query_new"></a>
 
 ## new Query(collName)
 Экземпляр запроса к данным коллекции
@@ -46,14 +46,14 @@
 **Пример**
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var data = new Scorocode.Query("items");
+var data = new sc.Query("items");
 // Запросим все объекты коллекции
 data.find()
     // Обработка успешного выполнения запроса
@@ -66,14 +66,14 @@ data.find()
         console.log(err)
     });    
 ```
-**Возвращает**: <code>[Scorocode.Query](#Scorocode.Query)</code> - Возвращает экземпляр Scorocode.Query  
+**Возвращает**: <code>[sc.Query](#sc.Query)</code> - Возвращает экземпляр sc.Query  
 **Исключение**:
 
 - <code>String</code> 'Collection name must be a type of string'
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+find"></a>
+<a name="sc.Query+find"></a>
 
 ## .find(options)
 
@@ -87,14 +87,14 @@ data.find()
 **Пример**
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var data = new Scorocode.Query("items");
+var data = new sc.Query("items");
 // Запросим все объекты коллекции
 data.find()
     // Обработка успешного выполнения запроса
@@ -109,7 +109,7 @@ data.find()
     });    
 ```
 
-**Возвращает**: <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса. 
+**Возвращает**: <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{sc.Object}]}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса. 
 
 - "error" - <code>Boolean</code> - Флаг ошибки
 - "limit" - <code>Number</code>  - лимит размера выборки
@@ -146,7 +146,7 @@ data.find()
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+count"></a>
+<a name="sc.Query+count"></a>
 
 ## .count(options)
 
@@ -160,14 +160,14 @@ data.find()
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var countItems = new Scorocode.Query("items");
+var countItems = new sc.Query("items");
 // Подсчитаем количество объектов с существующим значением поля "price".
 countItems.exists("price")
     .count()
@@ -187,7 +187,7 @@ countItems.exists("price")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+update"></a>
+<a name="sc.Query+update"></a>
 
 ## .update(Object, options) 
 
@@ -196,22 +196,22 @@ countItems.exists("price")
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| Object | <code>Scorocode.UpdateOps</code> | Объект Scorocode.UpdateOps в который переданы обновляемые данные. |
+| Object | <code>sc.UpdateOps</code> | Объект sc.UpdateOps в который переданы обновляемые данные. |
 | options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
 
 **Пример**
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items и объект обновления.
-var Items = new Scorocode.Query("items");
-var updateItems = new Scorocode.UpdateOps("items");
+var Items = new sc.Query("items");
+var updateItems = new sc.UpdateOps("items");
 
 // Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.
 Items.notEqualTo("price", 42)
@@ -262,7 +262,7 @@ Items.notEqualTo("price", 42)
 ```
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+remove"></a>
+<a name="sc.Query+remove"></a>
 
 ## .remove(options)
 
@@ -276,8 +276,8 @@ Items.notEqualTo("price", 42)
 **Пример**
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
@@ -323,7 +323,7 @@ Items.exists("arrayField")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+reset"></a>
+<a name="sc.Query+reset"></a>
 
 ## .reset() 
 
@@ -333,14 +333,14 @@ Items.exists("arrayField")
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты со значением 42 в полe "price"
 getItems.equalTo("price", 42)
     // Выполним запрос к данным коллекции
@@ -358,7 +358,7 @@ getItems.equalTo("price", 42)
 ```
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+equalTo"></a>
+<a name="sc.Query+equalTo"></a>
 
 ## .equalTo(field, value)
 
@@ -373,14 +373,14 @@ getItems.equalTo("price", 42)
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты со значением 42 в полe "price"
 getItems.equalTo("price", 42)
     // Выполним запрос к данным коллекции
@@ -397,7 +397,7 @@ getItems.equalTo("price", 42)
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+notEqualTo"></a>
+<a name="sc.Query+notEqualTo"></a>
 
 ## .notEqualTo(field, value)
 Метод для получения всех объектов, за исключением объектов с указанным в условии значением поля.
@@ -411,14 +411,14 @@ getItems.equalTo("price", 42)
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.
 getItems.notEqualTo("price", 42)
     // Выполним запрос к данным коллекции
@@ -435,7 +435,7 @@ getItems.notEqualTo("price", 42)
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+containedIn"></a>
+<a name="sc.Query+containedIn"></a>
 
 ## .containedIn(field, value)
 Метод для получения всех объектов, значение поля которых содержит указанные в запросе элементы массива.
@@ -449,14 +449,14 @@ getItems.notEqualTo("price", 42)
 **Пример**
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты со значением -42, 41.999 или 42 в полe "price"
 getItems.containedIn("price",[-42, 41.999, 42])
     // Выполним запрос к данным коллекции
@@ -477,7 +477,7 @@ getItems.containedIn("price",[-42, 41.999, 42])
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+containsAll"></a>
+<a name="sc.Query+containsAll"></a>
 
 ## .containsAll(field, value)
 Метод для получения всех объектов, значение поля которых содержит все указанные в запросе элементы массива.
@@ -490,14 +490,14 @@ getItems.containedIn("price",[-42, 41.999, 42])
 
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты, содержащие числа 4, 8, 15, 16, 23, 42 в полe "arrayField"
 getItems.containsAll("arrayField",[4, 8, 15, 16, 23, 42])
     // Выполним запрос к данным коллекции
@@ -518,7 +518,7 @@ getItems.containsAll("arrayField",[4, 8, 15, 16, 23, 42])
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+notContainedIn"></a>
+<a name="sc.Query+notContainedIn"></a>
 
 ## .notContainedIn(field, value)
 Метод для получения всех объектов, значение поля которых не содержит указанные в запросе элементы массива.
@@ -533,14 +533,14 @@ getItems.containsAll("arrayField",[4, 8, 15, 16, 23, 42])
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты, значения поля которых не указано в массиве [41.999 или 42]
 getItems.notContainedIn("price",[41.999, 42])
     // Выполним запрос к данным коллекции
@@ -561,7 +561,7 @@ getItems.notContainedIn("price",[41.999, 42])
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+greaterThan"></a>
+<a name="sc.Query+greaterThan"></a>
 
 ## .greaterThan(field, value)
 Метод для получения всех объектов, значение поля которых больше, чем указанное в запросе число.
@@ -576,14 +576,14 @@ getItems.notContainedIn("price",[41.999, 42])
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты, созданные позже 2016-05-19T15:35:16.000Z
 getItems.greaterThan("createdAt", "2016-05-19T15:35:16.000Z")
     // Выполним запрос к данным коллекции
@@ -600,7 +600,7 @@ getItems.greaterThan("createdAt", "2016-05-19T15:35:16.000Z")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+greaterThanOrEqualTo"></a>
+<a name="sc.Query+greaterThanOrEqualTo"></a>
 
 ## .greaterThanOrEqualTo(field, value)
 Метод для получения всех объектов, значение поля которых не меньше, чем указанное в запросе число.
@@ -614,14 +614,14 @@ getItems.greaterThan("createdAt", "2016-05-19T15:35:16.000Z")
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты со значением больше, либо равным 41.999 
 getItems.greaterThanOrEqualTo("price", 41.999)
     // Выполним запрос к данным коллекции
@@ -638,7 +638,7 @@ getItems.greaterThanOrEqualTo("price", 41.999)
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+lessThan"></a>
+<a name="sc.Query+lessThan"></a>
 
 ## .lessThan(field, value)
 Метод для получения всех объектов, значение поля которых меньше, чем указанное в запросе число.
@@ -652,14 +652,14 @@ getItems.greaterThanOrEqualTo("price", 41.999)
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты со значением поля price меньшe 41
 getItems.lessThan("price", 41)
     // Выполним запрос к данным коллекции
@@ -676,7 +676,7 @@ getItems.lessThan("price", 41)
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+lessThanOrEqualTo"></a>
+<a name="sc.Query+lessThanOrEqualTo"></a>
 
 ## .lessThanOrEqualTo(field, value) 
 Метод для получения всех объектов, значение поля которых не больше, чем указанное в запросе число.
@@ -690,14 +690,14 @@ getItems.lessThan("price", 41)
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты, обновленные не позже 2016-05-19T15:35:16.000Z
 getItems.lessThanOrEqualTo("updatedAt", "2016-05-19T15:35:16.000Z")
     // Выполним запрос к данным коллекции
@@ -714,7 +714,7 @@ getItems.lessThanOrEqualTo("updatedAt", "2016-05-19T15:35:16.000Z")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+exists"></a>
+<a name="sc.Query+exists"></a>
 
 ## .exists(field
 Метод для получения всех объектов с существующим значением заданного поля
@@ -727,14 +727,14 @@ getItems.lessThanOrEqualTo("updatedAt", "2016-05-19T15:35:16.000Z")
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var Items = new Scorocode.Query("items");
+var Items = new sc.Query("items");
 // Подсчитаем количество объектов с существующим значением поля "price".
 Items.exists("price")
     .find()
@@ -749,7 +749,7 @@ Items.exists("price")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+doesNotExist"></a>
+<a name="sc.Query+doesNotExist"></a>
 
 ## .doesNotExist(field)
 Метод для получения всех объектов с отсутствующим значением в заданном поле
@@ -761,14 +761,14 @@ Items.exists("price")
 
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var Items = new Scorocode.Query("items");
+var Items = new sc.Query("items");
 // Подсчитаем количество объектов с отсутствующим значением поля "price".
 Items.doesNotExist("price")
     .find()
@@ -783,7 +783,7 @@ Items.doesNotExist("price")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+contains"></a>
+<a name="sc.Query+contains"></a>
 
 ## .contains(field, value)
 Метод для получения всех объектов со значением заданного поля, соответствующим заданному регулярному выражению.
@@ -798,14 +798,14 @@ Items.doesNotExist("price")
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры.
 getItems.contains("someString","[0-9]")
     // Выполним запрос к данным коллекции
@@ -826,7 +826,7 @@ getItems.contains("someString","[0-9]")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+startsWith"></a>
+<a name="sc.Query+startsWith"></a>
 
 ## .startsWith(field, value) 
 Метод для получения всех объектов со значением заданного поля, начинающимся с указанной строки.
@@ -840,14 +840,14 @@ getItems.contains("someString","[0-9]")
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты, значение поля "name" которых начинается с "Предм"
 getItems.startsWith("name", "Предм");
     // Выполним запрос к данным коллекции
@@ -868,7 +868,7 @@ getItems.startsWith("name", "Предм");
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+endsWith"></a>
+<a name="sc.Query+endsWith"></a>
 
 ## .endsWith(field, value)
 Метод для получения всех объектов со значением заданного поля, заканчивающимся на указанную строку.
@@ -881,14 +881,14 @@ getItems.startsWith("name", "Предм");
 
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты, значение поля "name" которых заканчивается на "чип"
 getItems.endsWith("name", "чип");
     // Выполним запрос к данным коллекции
@@ -909,7 +909,7 @@ getItems.endsWith("name", "чип");
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+limit"></a>
+<a name="sc.Query+limit"></a>
 
 ## .limit(limit) 
 Метод для указания лимита количества объектов выборки
@@ -922,14 +922,14 @@ getItems.endsWith("name", "чип");
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим лимит выборки - не более 1000 объектов.
 // Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
 getItems.limit(1000).contains("someString","[a-zA-Z-0-9]")
@@ -951,7 +951,7 @@ getItems.limit(1000).contains("someString","[a-zA-Z-0-9]")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+skip"></a>
+<a name="sc.Query+skip"></a>
 
 ## .skip(skip)
 Метод для пропуска части объектов перед совершением выборки
@@ -965,14 +965,14 @@ getItems.limit(1000).contains("someString","[a-zA-Z-0-9]")
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим лимит выборки - не более 1000 объектов.
 // Пропустим первые 1000 объектов и получим вторую тысячу.
 // Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
@@ -995,7 +995,7 @@ getItems.limit(1000).skip(1000).contains("someString","[a-zA-Z-0-9]")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+page"></a>
+<a name="sc.Query+page"></a>
 
 ## .page(page)
 Метод для постраничного вывода результатов выборки
@@ -1008,14 +1008,14 @@ getItems.limit(1000).skip(1000).contains("someString","[a-zA-Z-0-9]")
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим лимит выборки - не более 30 объектов.
 // Запросим вторую страницу выборки
 // Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
@@ -1038,7 +1038,7 @@ getItems.limit(30).page(2).contains("someString","[a-zA-Z-0-9]")
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+ascending"></a>
+<a name="sc.Query+ascending"></a>
 
 ## .ascending(field)
 Метод для сортировки данных указанного поля в порядке возрастания перед совершением выборки.
@@ -1052,14 +1052,14 @@ getItems.limit(30).page(2).contains("someString","[a-zA-Z-0-9]")
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим лимит выборки - не более 30 объектов.
 // Отсортируем объекты в порядке возрастания даты изменения
 // Запросим первую страницу выборки
@@ -1079,7 +1079,7 @@ getItems.limit(30).ascending("updatedAt").page(1).contains("someString","[a-zA-Z
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+descending"></a>
+<a name="sc.Query+descending"></a>
 
 ## .descending(field)
 Метод для сортировки данных указанного поля в порядке убывания перед совершением выборки.
@@ -1093,14 +1093,14 @@ getItems.limit(30).ascending("updatedAt").page(1).contains("someString","[a-zA-Z
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим лимит выборки - не более 30 объектов.
 // Отсортируем объекты в порядке убывания значения поля "price"
 // Запросим первую страницу выборки
@@ -1120,7 +1120,7 @@ getItems.limit(30).descending("price").page(1).contains("someString","[a-zA-Z-0-
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+or"></a>
+<a name="sc.Query+or"></a>
 
 ## .or(query)
 
@@ -1130,23 +1130,23 @@ getItems.limit(30).descending("price").page(1).contains("someString","[a-zA-Z-0-
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| query | <code>Scorocode.Query</code> | Запрос, который включается в дизъюнкцию |
+| query | <code>sc.Query</code> | Запрос, который включается в дизъюнкцию |
 
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
-var range1 = new Scorocode.Query("items");
-var range2 = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
+var range1 = new sc.Query("items");
+var range2 = new sc.Query("items");
 
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты, созданные не позже 2016-05-18T10:00:00.000Z
 range1.lessThanOrEqualTo("createdAt", "2016-05-19T10:00:00.000Z");
 // Установим условие выборки - запросить все объекты, созданные не раньше 2016-05-20T10:00:00.000Z
@@ -1171,7 +1171,7 @@ getItems.or(range1).or(range2)
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+and"></a>
+<a name="sc.Query+and"></a>
 
 ## .and(query) 
 Метод для логического умножения условий нескольких выборок
@@ -1179,23 +1179,23 @@ getItems.or(range1).or(range2)
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |
-| query | <code>Scorocode.Query</code> | Запрос, который включается в конъюнкцию |
+| query | <code>sc.Query</code> | Запрос, который включается в конъюнкцию |
 
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var getItems = new Scorocode.Query("items");
-var range = new Scorocode.Query("items");
-var price = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
+var range = new sc.Query("items");
+var price = new sc.Query("items");
 
-var getItems = new Scorocode.Query("items");
+var getItems = new sc.Query("items");
 // Установим условие выборки - запросить все объекты, созданные не раньше 2016-05-18T10:00:00.000Z
 range.greaterThanOrEqualTo("createdAt", "2016-05-19T10:00:00.000Z");
 // Установим условие выборки - запросить все объекты, значение поля "price" которых отсутствует
@@ -1216,7 +1216,7 @@ getItems.and(range).and(price)
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+select"></a>
+<a name="sc.Query+select"></a>
 
 ## .select() 
 Метод для указания списка возвращаемых полей. 
@@ -1225,14 +1225,14 @@ getItems.and(range).and(price)
 **Пример**  
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 // Создадим новый экземпляр запроса к коллекции items.
-var data = new Scorocode.Query("items");
+var data = new sc.Query("items");
 // Запросим все объекты коллекции и получим значение их поля "price" и "reward".
 data.select("price", "reward").find()
     // Обработка успешного выполнения запроса
@@ -1249,7 +1249,7 @@ data.select("price", "reward").find()
 
 ----------------------------------------------------------------------------------------------
 
-<a name="Scorocode.Query+raw"></a>
+<a name="sc.Query+raw"></a>
 
 ## .raw(filter) 
 Прямой запрос к БД приложения
@@ -1262,14 +1262,14 @@ data.select("price", "reward").find()
 
 ```js
 // Подключим SDK и инициализируем его. 
-var Scorocode = require('scorocode');
-Scorocode.Init({
+var sc = require('scorocode');
+sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения"
 });
 
 
-var query = Scorocode.Query("items");
+var query = sc.Query("items");
 query.raw("{ \"fieldString\" : \"Строка\" }");
 query.find()
     .then((finded) =>{
