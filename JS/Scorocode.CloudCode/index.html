@@ -1021,20 +1021,20 @@
                 
                   <h1>Scorocode.CloudCode</h1>
                 
-                <p><a name="Scorocode.CloudCode"></a></p>
+                <p><a name="sc.CloudCode"></a></p>
 <p>Содержание</p>
 <ul>
-<li><a href="#Scorocode.CloudCode">.CloudCode</a><ul>
-<li><a href="#new_Scorocode.CloudCode_new">new CloudCode(id)</a></li>
-<li><a href="#Scorocode.CloudCode+run">.run(pool, callbacks)</a> ⇒ <code>promise.{error: Boolean}</code></li>
+<li><a href="#sc.CloudCode">.CloudCode</a><ul>
+<li><a href="#new_sc.CloudCode_new">new CloudCode(id)</a></li>
+<li><a href="#sc.CloudCode+run">.run(pool, callbacks)</a> ⇒ <code>promise.{error: Boolean}</code></li>
 </ul>
 </li>
 </ul>
 <hr />
-<p><a name="new_Scorocode.CloudCode_new"></a></p>
+<p><a name="new_sc.CloudCode_new"></a></p>
 <h2 id="new-cloudcodeid">new CloudCode(id)<a class="headerlink" href="#new-cloudcodeid" title="Permanent link">&para;</a></h2>
 <p>Класс для работы с серверным кодом</p>
-<p><strong>Возвращает</strong>: <code><a href="#Scorocode.CloudCode">Scorocode.CloudCode</a></code> - Возвращает новый экземпляр Scorocode.CloudCode</p>
+<p><strong>Возвращает</strong>: <code><a href="#sc.CloudCode">sc.CloudCode</a></code> - Возвращает новый экземпляр sc.CloudCode</p>
 <table>
 <thead>
 <tr>
@@ -1057,18 +1057,18 @@
 <td>logger</td>
 <td><code>Object</code></td>
 <td>Необязательный</td>
-<td>Объект Scorocode.Logger для режима отладки</td>
+<td>Объект sc.Logger для режима отладки</td>
 <td>См. пример ниже</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Пример</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">newUserRegistration</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;574860d2781267d34f7a2415&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">newUserRegistration</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;574860d2781267d34f7a2415&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
 </pre></div>
 
 
 <hr />
-<p><a name="Scorocode.CloudCode+run"></a></p>
+<p><a name="sc.CloudCode+run"></a></p>
 <h2 id="runpool-callbacks">.run(pool, callbacks)<a class="headerlink" href="#runpool-callbacks" title="Permanent link">&para;</a></h2>
 <p>Метод для запуска серверного кода</p>
 <table>
@@ -1107,8 +1107,8 @@
 </table>
 <p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
     <span class="nx">ScriptKey</span><span class="o">:</span> <span class="s2">&quot;scriptKey_приложения&quot;</span>
@@ -1118,7 +1118,7 @@
 <span class="nx">Prompt</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 <span class="nx">Prompt</span><span class="p">.</span><span class="nx">get</span><span class="p">([</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;username&#39;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Создадим новый экземпляр запроса к серверному скрипту &quot;574860d2781267d34f7a2415&quot;.</span>
-    <span class="kd">var</span> <span class="nx">newUserRegistration</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;574860d2781267d34f7a2415&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
+    <span class="kd">var</span> <span class="nx">newUserRegistration</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;574860d2781267d34f7a2415&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
     <span class="c1">// Определим данные, которые будут переданы скрипту при запуске</span>
     <span class="kd">var</span> <span class="nx">pool</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;email&quot;</span><span class="o">:</span><span class="nx">result</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span>
@@ -1145,13 +1145,13 @@
 <hr />
 <h2 id="_1">Отладка<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>При использовании JavaScript SDK возможна отладка серверных скриптов. Для этого при инициализации библиотеки с помощью
-<code>Scorocode.Init({})</code> необходимо передать еще два ключа: <code>MasterKey</code> и <code>WebSocketKey</code>. Это связано с тем, что
+<code>sc.Init({})</code> необходимо передать еще два ключа: <code>MasterKey</code> и <code>WebSocketKey</code>. Это связано с тем, что
 консольный вывод выполняемого на сервере скрипта перенаправляется через websockets на вызывающего клиента.</p>
 <p>Для включения режима отладки также необходимо создать объект <code>Logger</code>.</p>
 <p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
     <span class="nx">ScriptKey</span><span class="o">:</span> <span class="s2">&quot;scriptKey_приложения&quot;</span>
@@ -1165,7 +1165,7 @@
 
 <span class="c1">// Создадим новый экземпляр запроса к серверному скрипту &quot;574860d2781267d34f7a2415&quot;.</span>
 <span class="c1">// Вторым параметром передаем вновь созданный объект Logger</span>
-<span class="kd">var</span> <span class="nx">newUserRegistration</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;574860d2781267d34f7a2415&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
+<span class="kd">var</span> <span class="nx">newUserRegistration</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;574860d2781267d34f7a2415&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
 
 <span class="c1">// Определим данные, которые будут переданы скрипту при запуске</span>
 <span class="kd">var</span> <span class="nx">pool</span> <span class="o">=</span> <span class="p">{</span>

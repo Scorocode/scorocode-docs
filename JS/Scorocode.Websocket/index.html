@@ -1021,20 +1021,20 @@
                 
                   <h1>Scorocode.WebSocket</h1>
                 
-                <p><a name="Scorocode.WebSocket"></a></p>
+                <p><a name="sc.WebSocket"></a></p>
 <p>Класс для работы с WebSocket-соединениями. </p>
-<p>Пример реализации чат-приложения с использованием Scorocode.WebSocket - <a href="https://niksmith.github.io/">Scorochat</a>. Исходный код приложения опубликован на GitHub в репозитории <a href="https://github.com/NikSmith/niksmith.github.io">NikSmith/niksmith.github.io</a></p>
+<p>Пример реализации чат-приложения с использованием sc.WebSocket - <a href="https://niksmith.github.io/">Scorochat</a>. Исходный код приложения опубликован на GitHub в репозитории <a href="https://github.com/NikSmith/niksmith.github.io">NikSmith/niksmith.github.io</a></p>
 <p>Содержание</p>
 <ul>
-<li><a href="#Scorocode.WebSocket">.WebSocket</a><ul>
-<li><a href="#new_Scorocode.WebSocket_new">new WebSocket(channame)</a></li>
-<li><a href="#Scorocode.WebSocket+on">.on(event, callback)</a> </li>
-<li><a href="#Scorocode.WebSocket+send">.send(message)</a> </li>
+<li><a href="#sc.WebSocket">.WebSocket</a><ul>
+<li><a href="#new_sc.WebSocket_new">new WebSocket(channame)</a></li>
+<li><a href="#sc.WebSocket+on">.on(event, callback)</a> </li>
+<li><a href="#sc.WebSocket+send">.send(message)</a> </li>
 </ul>
 </li>
 </ul>
 <hr />
-<p><a name="new_Scorocode.WebSocket_new"></a></p>
+<p><a name="new_sc.WebSocket_new"></a></p>
 <h2 id="new-websocketchanname">new WebSocket(channame)<a class="headerlink" href="#new-websocketchanname" title="Permanent link">&para;</a></h2>
 <p>Открытие канала WebSocket. </p>
 <table>
@@ -1058,12 +1058,12 @@
 </tbody>
 </table>
 <p><strong>Пример</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">WS</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;chatroom&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">WS</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;chatroom&#39;</span><span class="p">);</span>
 </pre></div>
 
 
 <hr />
-<p><a name="Scorocode.WebSocket+on"></a></p>
+<p><a name="sc.WebSocket+on"></a></p>
 <h2 id="onevent-callback">.on(event, callback)<a class="headerlink" href="#onevent-callback" title="Permanent link">&para;</a></h2>
 <p>Метод для установления коллбэка на одно из событий:</p>
 <ul>
@@ -1072,7 +1072,7 @@
 <li>error - Ошибка</li>
 <li>message - Получены данные</li>
 </ul>
-<p><strong>Тип</strong>: Метод <code><a href="#Scorocode.WebSocket">WebSocket</a></code>  </p>
+<p><strong>Тип</strong>: Метод <code><a href="#sc.WebSocket">WebSocket</a></code>  </p>
 <table>
 <thead>
 <tr>
@@ -1102,16 +1102,16 @@
 </table>
 <p><strong>Пример</strong>  </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
     <span class="nx">WebSocketKey</span><span class="o">:</span> <span class="s2">&quot;webSocketKey_приложения&quot;</span>
 <span class="p">});</span>
 
 
-<span class="kd">var</span> <span class="nx">WS</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;Helloworld&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">WS</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;Helloworld&#39;</span><span class="p">);</span>
 
 
 <span class="nx">WS</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;open&quot;</span><span class="p">,</span> <span class="nx">onOpen</span> <span class="p">()</span> <span class="p">{});</span>
@@ -1128,10 +1128,10 @@
 
 
 <hr />
-<p><a name="Scorocode.WebSocket+send"></a></p>
+<p><a name="sc.WebSocket+send"></a></p>
 <h2 id="sendmessage">.send(message)<a class="headerlink" href="#sendmessage" title="Permanent link">&para;</a></h2>
 <p>Метод для отправки сообщения в канал</p>
-<p><strong>Тип</strong>: Метод <code><a href="#Scorocode.WebSocket">WebSocket</a></code></p>
+<p><strong>Тип</strong>: Метод <code><a href="#sc.WebSocket">WebSocket</a></code></p>
 <table>
 <thead>
 <tr>
@@ -1154,14 +1154,14 @@
 </table>
 <p><strong>Пример</strong>  </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
     <span class="nx">WebSocketKey</span><span class="o">:</span> <span class="s2">&quot;webSocketKey_приложения&quot;</span>
 <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">WS</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;Helloworld&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">WS</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;Helloworld&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s2">&quot;Wello Horld&quot;</span><span class="p">;</span>
 
 <span class="nx">WS</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>

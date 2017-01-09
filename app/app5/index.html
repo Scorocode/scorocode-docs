@@ -1011,7 +1011,21 @@
 <p>Серверный код – это скрипты на JavaScript, выполняемые на сервере с помощью движка Google V8. Разработанный серверный код выполняется по расписанию (плану) или одноразово по вызову через метод API.Для создания нового скрипта нажмите кнопку "Создать".</p>
 <p><img alt="Серверный код" src="../../img/scripts.png" /></p>
 <p><img alt="Серверный код" src="../../img/scriptcreate.png" /></p>
-<p>Введите серверный код в отведенном для этого окне. Для сохранения введенного описания нажмите на ссылку «Сохранить». Для допуска запуска кода анонимному пользователю (без авторизации) установите соответствующий флаг на закладке «ACL». Для настройки плана запуска серверного кода перейдите на закладку «Запланировать запуск». Задайте опцию «Включить таймер» для выполнения созданного серверного кода по расписанию. Далее настройте расписание и укажите дату начала его действия.</p>
+<p>При создании нового серверного скрипта, в него автоматически будет подставлен следующий код инициализации Scorocode JavaScript SDK с подставленными ключами ApplicationId, JavaScriptKey и MasterKey приложения:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// Init Scorocode</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">)</span>
+
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+    <span class="nx">MasterKey</span><span class="o">:</span>     <span class="s2">&quot;xxx&quot;</span>
+<span class="p">})</span>
+
+<span class="c1">// Write your code here</span>
+</pre></div>
+
+
+<p>Для сохранения введенного кода нажмите на ссылку «Сохранить». Для допуска запуска кода анонимному пользователю (без авторизации) установите соответствующий флаг на закладке «ACL». Для настройки плана запуска серверного кода перейдите на закладку «Запланировать запуск». Задайте опцию «Включить таймер» для выполнения созданного серверного кода по расписанию. Далее настройте расписание и укажите дату начала его действия.</p>
 <p><img alt="Серверный код" src="../../img/scriptacl.png" /></p>
 <p>Возможны следующие варианты расписания:</p>
 <ul>

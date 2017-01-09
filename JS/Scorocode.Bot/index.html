@@ -1007,26 +1007,27 @@
                 
                   <h1>Scorocode.Bot</h1>
                 
-                <p><a name="Scorocode.Bot"></a></p>
+                <p><a name="sc.Bot"></a></p>
 <p>Содержание</p>
 <ul>
-<li><a href="#Scorocode.Bot">.Bot</a><ul>
-<li><a href="#new_Scorocode.Bot">new Bot(botId)</a></li>
-<li><a href="#Scorocode.Bot+send">.send(data)</a> </li>
+<li><a href="#sc.Bot">.Bot</a><ul>
+<li><a href="#new_sc.Bot">new Bot(botId)</a></li>
+<li><a href="#sc.Bot+send">.send(data)</a> </li>
 </ul>
 </li>
 </ul>
 <hr />
-<p><a name="new_Scorocode.Bot"></a></p>
+<p><a name="new_sc.Bot"></a></p>
 <h2 id="new-botbotid">new Bot(botId)<a class="headerlink" href="#new-botbotid" title="Permanent link">&para;</a></h2>
-<p>Конструктор Scorocode.Bot</p>
-<p><strong>Возвращает</strong>: <code><a href="#Scorocode.Bot">Scorocode.Bot</a></code> - Возвращает новый экземпляр Scorocode.Bot</p>
+<p>Конструктор sc.Bot</p>
+<p><strong>Возвращает</strong>: <code><a href="#sc.Bot">sc.Bot</a></code> - Возвращает новый экземпляр sc.Bot</p>
 <table>
 <thead>
 <tr>
 <th>Параметр</th>
 <th>Тип</th>
 <th>Описание</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
@@ -1034,19 +1035,20 @@
 <td>botId</td>
 <td><code>String</code></td>
 <td>Telegram id бота, полученный от '@BotFather'</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Пример</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ appId приложения</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ javascript приложения</span>
     <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span> <span class="c1">// &lt;- заменить xxx на ключ masterKey приложения</span>
 <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;methodname&quot;</span><span class="p">,</span> <span class="c1">//название метода Telegram bot API </span>
@@ -1059,7 +1061,7 @@
 
 
 <hr />
-<p><a name="Scorocode.Bot+send"></a></p>
+<p><a name="sc.Bot+send"></a></p>
 <h2 id="sendpool-callbacks">.send(pool, callbacks)<a class="headerlink" href="#sendpool-callbacks" title="Permanent link">&para;</a></h2>
 <p>Метод для запуска серверного кода</p>
 <table>
@@ -1101,15 +1103,15 @@
 </tbody>
 </table>
 <p><strong>Пример</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ appId приложения</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ javascript приложения</span>
     <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span> <span class="c1">// &lt;- заменить xxx на ключ masterKey приложения</span>
 <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;methodname&quot;</span><span class="p">,</span> <span class="c1">//название метода Telegram bot API </span>

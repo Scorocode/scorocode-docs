@@ -1245,36 +1245,36 @@
                 
                   <h1>Scorocode.Object</h1>
                 
-                <p><a name="Scorocode.Object"></a></p>
+                <p><a name="sc.Object"></a></p>
 <p><strong>Содержание</strong></p>
 <ul>
-<li><a href="#Scorocode.Object">.Object</a><ul>
-<li><a href="#new_Scorocode.Object_new">new Object(collName)</a> ⇒ <code><a href="#Scorocode.Object">Scorocode.Object</a></code></li>
-<li><a href="#Scorocode.Object+getById">.getById(_id, options)</a> ⇒ <code>promise.<a href="#Scorocode.Object">Scorocode.Object</a></code></li>
-<li><a href="#Scorocode.Object+get">.get(key)</a></li>
-<li><a href="#Scorocode.Object+getFileLink">.getFileLink(field)</a> ⇒ <code>String</code></li>
-<li><a href="#Scorocode.Object+uploadFile">.uploadFile(field, filename, file, options)</a> ⇒ <code>promise.&lt;String&gt;</code></li>
-<li><a href="#Scorocode.Object+save">.save(options)</a> ⇒ <code>promise.<a href="#Scorocode.Object">Scorocode.Object</a></code></li>
-<li><a href="#Scorocode.Object+remove">.remove(options)</a> ⇒ <code>promise.{count: Number, docs: Array}</code></li>
-<li><a href="#Scorocode.Object+extend">.extend(collName, childObject)</a> ⇒ <code><a href="#Scorocode.Object">[Scorocode.Object]</a></code></li>
-<li><a href="#Scorocode.Object+set">.set(data)</a></li>
-<li><a href="#Scorocode.Object+push">.push(key, value)</a> </li>
-<li><a href="#Scorocode.Object+pull">.pull(key, value)</a> </li>
-<li><a href="#Scorocode.Object+pullAll">.pullAll(key, value)</a> </li>
-<li><a href="#Scorocode.Object+addToSet">.addToSet(key, value)</a> </li>
-<li><a href="#Scorocode.Object+pop">.pop(key, pos)</a> </li>
-<li><a href="#Scorocode.Object+inc">.inc(key, amount)</a></li>
-<li><a href="#Scorocode.Object+currentDate">.currentDate()</a></li>
-<li><a href="#Scorocode.Object+mul">.mul(key, number)</a></li>
-<li><a href="#Scorocode.Object+min">.min()</a></li>
-<li><a href="#Scorocode.Object+max">.max()</a></li>
+<li><a href="#sc.Object">.Object</a><ul>
+<li><a href="#new_sc.Object_new">new Object(collName)</a> ⇒ <code><a href="#sc.Object">sc.Object</a></code></li>
+<li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code>promise.<a href="#sc.Object">sc.Object</a></code></li>
+<li><a href="#sc.Object+get">.get(key)</a></li>
+<li><a href="#sc.Object+getFileLink">.getFileLink(field)</a> ⇒ <code>String</code></li>
+<li><a href="#sc.Object+uploadFile">.uploadFile(field, filename, file, options)</a> ⇒ <code>promise.&lt;String&gt;</code></li>
+<li><a href="#sc.Object+save">.save(options)</a> ⇒ <code>promise.<a href="#sc.Object">sc.Object</a></code></li>
+<li><a href="#sc.Object+remove">.remove(options)</a> ⇒ <code>promise.{count: Number, docs: Array}</code></li>
+<li><a href="#sc.Object+extend">.extend(collName, childObject)</a> ⇒ <code><a href="#sc.Object">[sc.Object]</a></code></li>
+<li><a href="#sc.Object+set">.set(data)</a></li>
+<li><a href="#sc.Object+push">.push(key, value)</a> </li>
+<li><a href="#sc.Object+pull">.pull(key, value)</a> </li>
+<li><a href="#sc.Object+pullAll">.pullAll(key, value)</a> </li>
+<li><a href="#sc.Object+addToSet">.addToSet(key, value)</a> </li>
+<li><a href="#sc.Object+pop">.pop(key, pos)</a> </li>
+<li><a href="#sc.Object+inc">.inc(key, amount)</a></li>
+<li><a href="#sc.Object+currentDate">.currentDate()</a></li>
+<li><a href="#sc.Object+mul">.mul(key, number)</a></li>
+<li><a href="#sc.Object+min">.min()</a></li>
+<li><a href="#sc.Object+max">.max()</a></li>
 </ul>
 </li>
 </ul>
 <hr />
-<p><a name="new_Scorocode.Object_new"></a></p>
+<p><a name="new_sc.Object_new"></a></p>
 <h2 id="new-objectcollname">new Object(collName)<a class="headerlink" href="#new-objectcollname" title="Permanent link">&para;</a></h2>
-<p>Scorocode.Object представляет объект данных приложения и включает методы для работы с этими данными. Конструктор формирует минимальную базовую "обёртку" для пользовательских данных.</p>
+<p>sc.Object представляет объект данных приложения и включает методы для работы с этими данными. Конструктор формирует минимальную базовую "обёртку" для пользовательских данных.</p>
 <table>
 <thead>
 <tr>
@@ -1293,14 +1293,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">questItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">questItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
 <span class="c1">// Используем метод set() для передачи объекту данных в поля &quot;name&quot; и &quot;relatedquests&quot;.</span>
 <span class="nx">questItem</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;Водяной чип&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;relatedquests&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;huNr3L7QDh&quot;</span><span class="p">]);</span> 
 <span class="c1">// Используем метод save() для записи данных объекта в базу данных приложения</span>
@@ -1318,13 +1318,13 @@
 
 <p>См.</p>
 <ul>
-<li><a href="#Scorocode.Object+set">.set(data)</a></li>
-<li><a href="#Scorocode.Object+save">.save(options)</a> ⇒ <code><a href="#Scorocode.Object">Scorocode.Object</a></code></li>
+<li><a href="#sc.Object+set">.set(data)</a></li>
+<li><a href="#sc.Object+save">.save(options)</a> ⇒ <code><a href="#sc.Object">sc.Object</a></code></li>
 </ul>
 <p><strong>Исключения</strong>:</p>
 <ul>
 <li><code>Error</code> "Invalid collection name" - некорректно указано имя коллекции
-<a name="Scorocode.Object+getById"></a></li>
+<a name="sc.Object+getById"></a></li>
 </ul>
 <div class="codehilite"><pre><span></span>Что-то пошло не так:
 { 
@@ -1336,7 +1336,7 @@
 
 
 <hr />
-<p><a name="Scorocode.Object+getById"></a></p>
+<p><a name="sc.Object+getById"></a></p>
 <h2 id="getbyid_id-options">.getById(_id, options)<a class="headerlink" href="#getbyid_id-options" title="Permanent link">&para;</a></h2>
 <p>Метод для для получения объекта коллекции из БД по его _id. </p>
 <p><strong>Параметры</strong></p>
@@ -1363,14 +1363,14 @@
 </table>
 <p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим и инициализируем SDK</span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">getItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 <span class="c1">// Запросим интересующий нас объект по его _id</span>
 <span class="nx">getItem</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;NseSaqqd5v&quot;</span><span class="p">)</span>
     <span class="c1">// Обработчик успешного выполнения запроса</span>
@@ -1386,10 +1386,10 @@
 
 <p>См.</p>
 <ul>
-<li><a href="#new_Scorocode.Object_new">new Object(collName)</a></li>
-<li><a href="#Scorocode.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#Scorocode.Object">Promise.&lt;Scorocode.Object&gt;</a></code></li>
+<li><a href="#new_sc.Object_new">new Object(collName)</a></li>
+<li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
 </ul>
-<p><strong>Возвращает</strong>: <code><a href="#Scorocode.Object">Promise.&lt;Scorocode.Object&gt;</a></code> - Возвращает promise, который возвращает запрошенный объект.</p>
+<p><strong>Возвращает</strong>: <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code> - Возвращает promise, который возвращает запрошенный объект.</p>
 <div class="codehilite"><pre><span></span>{
     _id: &#39;NseSaqqd5v&#39;,
     name: &#39;Водяной чип&#39;,
@@ -1405,7 +1405,7 @@
 
 <p>См.</p>
 <ul>
-<li><a href="#new_Scorocode.Object_new">new Object(collName)</a></li>
+<li><a href="#new_sc.Object_new">new Object(collName)</a></li>
 </ul>
 <p><strong>Исключения</strong>:</p>
 <ul>
@@ -1416,7 +1416,7 @@
 
 
 <hr />
-<p><a name="Scorocode.Object+get"></a></p>
+<p><a name="sc.Object+get"></a></p>
 <h2 id="getkey">.get(key)<a class="headerlink" href="#getkey" title="Permanent link">&para;</a></h2>
 <p>Метод для получения данных указанного поля объекта.</p>
 <table>
@@ -1437,14 +1437,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">getItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 <span class="c1">// Запросим интересующий нас объект по его _id</span>
 <span class="nx">getItem</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;NseSaqqd5v&quot;</span><span class="p">)</span>
     <span class="c1">// Обработчик успешного выполнения запроса</span>
@@ -1461,8 +1461,8 @@
 
 <p>См.</p>
 <ul>
-<li><a href="#new_Scorocode.Object_new">new Object(collName)</a>    </li>
-<li><a href="#Scorocode.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#Scorocode.Object">Promise.&lt;Scorocode.Object&gt;</a></code></li>
+<li><a href="#new_sc.Object_new">new Object(collName)</a>    </li>
+<li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
 </ul>
 <p><strong>Возвращает</strong>: <code>value</code> - Возвращает значение поля  </p>
 <div class="codehilite"><pre><span></span>Вот значение интересующего вас поля:
@@ -1471,7 +1471,7 @@
 
 
 <hr />
-<p><a name="Scorocode.Object+uploadFile"></a></p>
+<p><a name="sc.Object+uploadFile"></a></p>
 <h2 id="uploadfilefield-filename-file-options">.uploadFile(field, filename, file, options)<a class="headerlink" href="#uploadfilefield-filename-file-options" title="Permanent link">&para;</a></h2>
 <p>Метод для загрузки файлов</p>
 <table>
@@ -1507,15 +1507,15 @@
 </table>
 <p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
     <span class="nx">FileKey</span><span class="o">:</span> <span class="s2">&quot;fileKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">attachToItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">attachToItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 <span class="c1">// Запросим интересующий нас объект по его _id</span>
 <span class="nx">attachToItem</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;xL0uOFtiJx&quot;</span><span class="p">)</span>
     <span class="c1">// Обработчик успешного выполнения запроса</span>
@@ -1539,8 +1539,8 @@
 
 
 <ul>
-<li><a href="#new_Scorocode.Object_new">new Object(collName)</a></li>
-<li><a href="#Scorocode.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#Scorocode.Object">Promise.&lt;Scorocode.Object&gt;</a></code></li>
+<li><a href="#new_sc.Object_new">new Object(collName)</a></li>
+<li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
 </ul>
 <p><strong>Возвращает</strong>: <code>promise.&lt;String&gt;</code> - Возвращает название загруженного файла</p>
 <div class="codehilite"><pre><span></span>Этот файл был успешно загружен: waterchip.txt
@@ -1552,7 +1552,7 @@
 <li><code>String</code> 'You must first create a document' </li>
 </ul>
 <hr />
-<p><a name="Scorocode.Object+getFileLink"></a></p>
+<p><a name="sc.Object+getFileLink"></a></p>
 <h2 id="getfilelinkfield">.getFileLink(field)<a class="headerlink" href="#getfilelinkfield" title="Permanent link">&para;</a></h2>
 <p>Метод для получения ссылки на файл.</p>
 <table>
@@ -1573,15 +1573,15 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
     <span class="nx">FileKey</span><span class="o">:</span> <span class="s2">&quot;fileKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">attachToItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">attachToItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 <span class="c1">// Запросим интересующий нас объект по его _id</span>
 <span class="nx">attachToItem</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;xL0uOFtiJx&quot;</span><span class="p">)</span>
     <span class="c1">// Обработчик успешного выполнения запроса</span>
@@ -1598,11 +1598,11 @@
 
 <p>см.</p>
 <ul>
-<li><a href="#new_Scorocode.Object_new">new Object(collName)</a></li>
-<li><a href="#Scorocode.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#Scorocode.Object">Promise.&lt;Scorocode.Object&gt;</a></code></li>
+<li><a href="#new_sc.Object_new">new Object(collName)</a></li>
+<li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
 </ul>
 <p><strong>Возвращает</strong>: <code>String</code> - Возвращает ссылку на запрошенный файл</p>
-<div class="codehilite"><pre><span></span>Вот ссылка на файл: https://api.scorocode.ru/api/v1/getfile/e1afa40259773b4f9af4306b545d4165/items/attachment/NseSaqqd5v/waterchip.txt
+<div class="codehilite"><pre><span></span>Вот ссылка на файл: https://api.sc.ru/api/v1/getfile/e1afa40259773b4f9af4306b545d4165/items/attachment/NseSaqqd5v/waterchip.txt
 </pre></div>
 
 
@@ -1613,7 +1613,7 @@
 <li><code>Error</code> 'Field is empty' - Поле пустое</li>
 </ul>
 <hr />
-<p><a name="Scorocode.Object+save"></a></p>
+<p><a name="sc.Object+save"></a></p>
 <h2 id="saveoptions">.save(options)<a class="headerlink" href="#saveoptions" title="Permanent link">&para;</a></h2>
 <p>Метод сохраняет объект в хранилище данных приложения или обновляет уже имеющийся там объект</p>
 <table>
@@ -1634,14 +1634,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">questItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">questItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
 <span class="c1">// Используем метод set() для передачи объекту данных в поля &quot;name&quot; и &quot;relatedquests&quot;.</span>
 <span class="nx">questItem</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;Водяной чип&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;relatedquests&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;huNr3L7QDh&quot;</span><span class="p">]);</span> 
 <span class="c1">// Используем метод save() для записи данных объекта в базу данных приложения</span>
@@ -1659,10 +1659,10 @@
 
 <p>см.</p>
 <ul>
-<li><a href="#new_Scorocode.Object_new">new Object(collName)</a></li>
-<li><a href="#Scorocode.Object+set">.set(data)</a></li>
+<li><a href="#new_sc.Object_new">new Object(collName)</a></li>
+<li><a href="#sc.Object+set">.set(data)</a></li>
 </ul>
-<p><strong>Возвращает</strong>: <code><a href="#Scorocode.Object">Promise.&lt;Scorocode.Object&gt;</a></code> - Возвращает promise, который возвращает сохраненный объект </p>
+<p><strong>Возвращает</strong>: <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code> - Возвращает promise, который возвращает сохраненный объект </p>
 <div class="codehilite"><pre><span></span>Вот ваш объект:
  { _id: &#39;NseSaqqd5v&#39;,
   name: &#39;Водяной чип&#39;,
@@ -1676,7 +1676,7 @@
 
 
 <hr />
-<p><a name="Scorocode.Object+remove"></a></p>
+<p><a name="sc.Object+remove"></a></p>
 <h2 id="removeoptions">.remove(options)<a class="headerlink" href="#removeoptions" title="Permanent link">&para;</a></h2>
 <p>Метод для удаления указанного объекта</p>
 <table>
@@ -1697,14 +1697,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">getItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 <span class="c1">// Запросим интересующий нас объект по его _id</span>
 <span class="nx">getItem</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;hejJU4BEGP&quot;</span><span class="p">)</span>
     <span class="c1">// Обработчик успешного выполнения запроса</span>
@@ -1730,8 +1730,8 @@
 
 <p>см.</p>
 <ul>
-<li><a href="#new_Scorocode.Object_new">new Object(collName)</a></li>
-<li><a href="#Scorocode.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#Scorocode.Object">Promise.&lt;Scorocode.Object&gt;</a></code></li>
+<li><a href="#new_sc.Object_new">new Object(collName)</a></li>
+<li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
 </ul>
 <p><strong>Возвращает</strong>: <code>Promise.{count: Number, docs: Array}</code> - Возвращает promise, который возвращает объект:</p>
 <ul>
@@ -1746,9 +1746,9 @@
 
 
 <hr />
-<p><a name="Scorocode.Object+extend"></a></p>
+<p><a name="sc.Object+extend"></a></p>
 <h2 id="extendcollname-childobject">.extend(collName, childObject)<a class="headerlink" href="#extendcollname-childobject" title="Permanent link">&para;</a></h2>
-<p>Метод для преобразования данных выборки Scorocode.Query в отдельные экземпляры Scorocode.Object</p>
+<p>Метод для преобразования данных выборки sc.Query в отдельные экземпляры sc.Object</p>
 <table>
 <thead>
 <tr>
@@ -1772,21 +1772,21 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр  коллекции items.</span>
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 <span class="c1">// Запросим все объекты коллекции</span>
 <span class="nx">data</span><span class="p">.</span><span class="nx">find</span><span class="p">()</span>
     <span class="c1">// Обработчик успешного выполнения запроса</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">finded</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">// Преобразуем полученный массив сырых данных в массив Scorocode.Object и передадим их экземпляры переменной objects.</span>
+        <span class="c1">// Преобразуем полученный массив сырых данных в массив sc.Object и передадим их экземпляры переменной objects.</span>
         <span class="kd">var</span> <span class="nx">objects</span> <span class="o">=</span> <span class="nx">finded</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="k">return</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
         <span class="p">});</span>
         <span class="k">return</span> <span class="nx">objects</span><span class="p">;</span>
     <span class="p">})</span>
@@ -1804,12 +1804,12 @@
 
 <p>см.</p>
 <ul>
-<li><a href="#new_Scorocode.Object_new">new Object(collName)</a></li>
-<li><a href="../Scorocode.Query/#Scorocode.Query+find">.find(options)</a> ⇒ <code>Promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code></li>
+<li><a href="#new_sc.Object_new">new Object(collName)</a></li>
+<li><a href="sc.Query.md#sc.Query+find">.find(options)</a> ⇒ <code>Promise.{error: Boolean, limit: Number, skip: Number, result: [{sc.Object}]}</code></li>
 </ul>
-<p><strong>Возвращает</strong>: <code>Scorocode.Object</code> - Возвращает Scorocode.Object</p>
+<p><strong>Возвращает</strong>: <code>sc.Object</code> - Возвращает sc.Object</p>
 <hr />
-<p><a name="Scorocode.Object+set"></a></p>
+<p><a name="sc.Object+set"></a></p>
 <h2 id="setdata">.set(data)<a class="headerlink" href="#setdata" title="Permanent link">&para;</a></h2>
 <p>Метод для передачи данных объекту</p>
 <table>
@@ -1830,14 +1830,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">questItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">questItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
 <span class="c1">// Используем метод set() для передачи объекту обновленных данных поля &quot;name&quot;.</span>
 <span class="nx">questItem</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;_id&quot;</span><span class="p">,</span> <span class="s2">&quot;NseSaqqd5v&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;Water chip&quot;</span><span class="p">);</span> 
 <span class="c1">// Используем метод save() для записи данных объекта в базу данных приложения</span>
@@ -1855,11 +1855,11 @@
 
 <p>см.</p>
 <ul>
-<li><a href="#new_Scorocode.Object_new">new Object(collName)</a></li>
-<li><a href="#Scorocode.Object+save">.save(options)</a> ⇒ <code><a href="#Scorocode.Object">Scorocode.Object</a></code></li>
+<li><a href="#new_sc.Object_new">new Object(collName)</a></li>
+<li><a href="#sc.Object+save">.save(options)</a> ⇒ <code><a href="#sc.Object">sc.Object</a></code></li>
 </ul>
 <hr />
-<p><a name="Scorocode.Object+push"></a></p>
+<p><a name="sc.Object+push"></a></p>
 <h2 id="pushkey-value">.push(key, value)<a class="headerlink" href="#pushkey-value" title="Permanent link">&para;</a></h2>
 <p>Метод для добавления элемента в массив.</p>
 <table>
@@ -1885,14 +1885,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
 <span class="c1">// Запросим интересующий нас объект по его _id</span>
 <span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;NseSaqqd5v&quot;</span><span class="p">)</span>
     <span class="c1">// Обработчик успешного выполнения запроса</span>
@@ -1919,7 +1919,7 @@
 
 
 <hr />
-<p><a name="Scorocode.Object+pull"></a></p>
+<p><a name="sc.Object+pull"></a></p>
 <h2 id="pullkey-value">.pull(key, value)<a class="headerlink" href="#pullkey-value" title="Permanent link">&para;</a></h2>
 <p>Метод для удаления всех элементов массива, значение которых равно указанному.</p>
 <table>
@@ -1945,14 +1945,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый объект коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
 <span class="c1">// Запросим интересующий нас объект по его _id</span>
 <span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;MgYs9BEQUM&quot;</span><span class="p">)</span>
 <span class="c1">// Обработчик успешного выполнения запроса</span>
@@ -1984,7 +1984,7 @@
 <li><code>Error</code> 'Field must by a type of array'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.Object+pullAll"></a></p>
+<p><a name="sc.Object+pullAll"></a></p>
 <h2 id="pullallkey-value">.pullAll(key, value)<a class="headerlink" href="#pullallkey-value" title="Permanent link">&para;</a></h2>
 <p>Метод для удаления всех элементов массива, значения которых равны одному из указанных значений.</p>
 <table>
@@ -2010,14 +2010,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый объект коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
 <span class="c1">// Запросим интересующий нас объект по его _id</span>
 <span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;CrT49joIxn&quot;</span><span class="p">)</span>
 <span class="c1">// Обработчик успешного выполнения запроса</span>
@@ -2050,7 +2050,7 @@
 <li><code>Error</code> 'Value must by a type of array'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.Object+addToSet"></a></p>
+<p><a name="sc.Object+addToSet"></a></p>
 <h2 id="addtosetkey-value">.addToSet(key, value)<a class="headerlink" href="#addtosetkey-value" title="Permanent link">&para;</a></h2>
 <p>Метод для добавления элемента в массив только в том случае, если в массиве отсутствуют элементы с таким значением.</p>
 <table>
@@ -2076,14 +2076,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый объект коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
 <span class="c1">// Запросим интересующий нас объект по его _id</span>
 <span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;CrT49joIxn&quot;</span><span class="p">)</span>
 <span class="c1">// Обработчик успешного выполнения запроса</span>
@@ -2115,7 +2115,7 @@
 <li><code>Error</code> 'Field must by a type of array'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.Object+pop"></a></p>
+<p><a name="sc.Object+pop"></a></p>
 <h2 id="popkey-pos">.pop(key, pos)<a class="headerlink" href="#popkey-pos" title="Permanent link">&para;</a></h2>
 <p>Метод для удаления первого или последнего элемента массива</p>
 <table>
@@ -2141,14 +2141,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">getItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
 <span class="c1">// Запросим интересующий нас объект по его _id</span>
 <span class="nx">getItem</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;NseSaqqd5v&quot;</span><span class="p">)</span>
     <span class="c1">// Обработчик успешного выполнения запроса</span>
@@ -2181,7 +2181,7 @@
 <li><code>Error</code> 'Field must by a type of array'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.Object+inc"></a></p>
+<p><a name="sc.Object+inc"></a></p>
 <h2 id="inckey-amount">.inc(key, amount)<a class="headerlink" href="#inckey-amount" title="Permanent link">&para;</a></h2>
 <p>Метод увеличивает значение числового поля на заданное число</p>
 <table>
@@ -2207,14 +2207,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
 <span class="c1">// Запросим интересующий нас объект по его _id</span>
 <span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;gNxzwAfvDj&quot;</span><span class="p">)</span>
     <span class="c1">// Обработчик успешного выполнения запроса</span>
@@ -2248,7 +2248,7 @@
 <li><code>Error</code> 'Field must by a type of number'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.Object+currentDate"></a></p>
+<p><a name="sc.Object+currentDate"></a></p>
 <h2 id="currentdate">.currentDate()<a class="headerlink" href="#currentdate" title="Permanent link">&para;</a></h2>
 <p>Устанавливает текущее время в качестве значения поля</p>
 <table>
@@ -2274,14 +2274,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 <span class="c1">// Запишем текущую дату в поле &quot;someDate&quot; в созданный ранее объект &quot;gNxzwAfvDj&quot;</span>
 <span class="nx">Item</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;_id&quot;</span><span class="p">,</span> <span class="s2">&quot;gNxzwAfvDj&quot;</span><span class="p">).</span><span class="nx">currentDate</span><span class="p">(</span><span class="s2">&quot;someDate&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 <span class="c1">// Используем метод save() для записи данных объекта в базу данных приложения</span>
@@ -2304,7 +2304,7 @@
 <li><code>Error</code> 'Invalid type'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.Object+mul"></a></p>
+<p><a name="sc.Object+mul"></a></p>
 <h2 id="mulkey-number">.mul(key, number)<a class="headerlink" href="#mulkey-number" title="Permanent link">&para;</a></h2>
 <p>Метод умножает значение числового поля на заданное число</p>
 <table>
@@ -2330,14 +2330,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
 <span class="c1">// Запросим интересующий нас объект по его _id</span>
 <span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;8Qcfll2GwE&quot;</span><span class="p">)</span>
     <span class="c1">// Обработчик успешного выполнения запроса</span>
@@ -2372,7 +2372,7 @@
 <li><code>Error</code> 'Value must by a type of number'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.Object+min"></a></p>
+<p><a name="sc.Object+min"></a></p>
 <h2 id="min">.min()<a class="headerlink" href="#min" title="Permanent link">&para;</a></h2>
 <p>Метод обновляет значение числового поля только в случае, если новое значение меньше текущего значения поля</p>
 <table>
@@ -2398,14 +2398,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
 <span class="c1">// Запросим интересующий нас объект по его _id</span>
 <span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;CrT49joIxn&quot;</span><span class="p">)</span>
     <span class="c1">// Обработчик успешного выполнения запроса</span>
@@ -2433,7 +2433,7 @@
 
 
 <hr />
-<p><a name="Scorocode.Object+max"></a></p>
+<p><a name="sc.Object+max"></a></p>
 <h2 id="max">.max()<a class="headerlink" href="#max" title="Permanent link">&para;</a></h2>
 <p>Метод обновляет значение числового поля только в случае, если новое значение больше текущего значения поля</p>
 <table>
@@ -2459,14 +2459,14 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
+<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
 <span class="c1">// Запросим интересующий нас объект по его _id</span>
 <span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;CrT49joIxn&quot;</span><span class="p">)</span>
     <span class="c1">// Обработчик успешного выполнения запроса</span>

@@ -1060,16 +1060,16 @@
 <p><img alt="Редактирование бота" src="../../img/botedit.png" /></p>
 <h2 id="_1">Принципы работы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>При включении бота создается <code>webhook</code> на который приходят данные от <code>Telegram</code>. Эти данные доступны в серверном скрипте в объекте <code>pool</code> при каждом вызове. Полное описание полей доступно в <a href="https://core.telegram.org/bots/api#getting-updates">документации к Telegram Bot API</a></p>
-<p>Ответные сообщения от бота передаются при помощи метода .send(data) класса Scorocode.Bot, где data - объект, имеющий следующую структуру:</p>
-<div class="codehilite"><pre><span></span>{
-    &#39;method&#39;: &#39;sendMessage&#39;,                            // метод Telegram Bot API
-    &#39;method_params&#39;: {                                  // параметры для передачи в метод
-      &#39;chat_id&#39;: pool.message.chat.id.toString(),
-      &#39;text&#39;: &#39;Hello!&#39;,
-      &#39;reply_to_message_id&#39;: pool.message.message_id,
-      &#39;reply_markup&#39;: keyBoard
-    },
-  }
+<p>Ответные сообщения от бота передаются при помощи метода .send(data) класса sc.Bot, где data - объект, имеющий следующую структуру:</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="err">&#39;method&#39;:</span> <span class="err">&#39;sendMessage&#39;,</span>                            <span class="err">//</span> <span class="err">метод</span> <span class="err">Telegram</span> <span class="err">Bot</span> <span class="err">API</span>
+    <span class="err">&#39;method_params&#39;:</span> <span class="err">{</span>                                  <span class="err">//</span> <span class="err">параметры</span> <span class="err">для</span> <span class="err">передачи</span> <span class="err">в</span> <span class="err">метод</span>
+      <span class="err">&#39;chat_id&#39;:</span> <span class="err">pool.message.chat.id.toString(),</span>
+      <span class="err">&#39;text&#39;:</span> <span class="err">&#39;Hello!&#39;,</span>
+      <span class="err">&#39;reply_to_message_id&#39;:</span> <span class="err">pool.message.message_id,</span>
+      <span class="err">&#39;reply_markup&#39;:</span> <span class="err">keyBoard</span>
+    <span class="p">}</span><span class="err">,</span>
+  <span class="err">}</span>
 </pre></div>
 
 
@@ -1079,15 +1079,15 @@
 <p>Поддерживаеются все методы Telegram Bot API 2.3.1, за исключением Telegram Bot Games API</p>
 </div>
 <h2 id="_2">Пример серверного скрипта Бота:<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
   <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ appId приложения</span>
   <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ javascript приложения</span>
   <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span> <span class="c1">// &lt;- заменить xxx на ключ masterKey приложения</span>
 <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">querystring</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;querystring&#39;</span><span class="p">);</span>
 
 <span class="c1">// Crate new button for ReplyKeyboardMarkup</span>

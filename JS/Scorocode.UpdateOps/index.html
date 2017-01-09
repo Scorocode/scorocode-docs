@@ -1147,38 +1147,38 @@
                 
                   <h1>Scorocode.UpdateOps</h1>
                 
-                <p><a name="Scorocode.UpdateOps"></a></p>
+                <p><a name="sc.UpdateOps"></a></p>
 <p>Содержание</p>
 <ul>
-<li><a href="#Scorocode.UpdateOps">.UpdateOps</a><ul>
-<li><a href="#Scorocode.UpdateOps+set">.set(data)</a></li>
-<li><a href="#Scorocode.UpdateOps+push">.push(key, value)</a> </li>
-<li><a href="#Scorocode.UpdateOps+pull">.pull(key, value)</a> </li>
-<li><a href="#Scorocode.UpdateOps+pullAll">.pullAll(key, value)</a> </li>
-<li><a href="#Scorocode.UpdateOps+addToSet">.addToSet(key, value)</a> </li>
-<li><a href="#Scorocode.UpdateOps+pop">.pop(key, pos)</a> </li>
-<li><a href="#Scorocode.UpdateOps+inc">.inc(key, amount)</a></li>
-<li><a href="#Scorocode.UpdateOps+currentDate">.currentDate()</a></li>
-<li><a href="#Scorocode.UpdateOps+mul">.mul(key, number)</a></li>
-<li><a href="#Scorocode.UpdateOps+min">.min()</a></li>
-<li><a href="#Scorocode.UpdateOps+max">.max()</a></li>
+<li><a href="#sc.UpdateOps">.UpdateOps</a><ul>
+<li><a href="#sc.UpdateOps+set">.set(data)</a></li>
+<li><a href="#sc.UpdateOps+push">.push(key, value)</a> </li>
+<li><a href="#sc.UpdateOps+pull">.pull(key, value)</a> </li>
+<li><a href="#sc.UpdateOps+pullAll">.pullAll(key, value)</a> </li>
+<li><a href="#sc.UpdateOps+addToSet">.addToSet(key, value)</a> </li>
+<li><a href="#sc.UpdateOps+pop">.pop(key, pos)</a> </li>
+<li><a href="#sc.UpdateOps+inc">.inc(key, amount)</a></li>
+<li><a href="#sc.UpdateOps+currentDate">.currentDate()</a></li>
+<li><a href="#sc.UpdateOps+mul">.mul(key, number)</a></li>
+<li><a href="#sc.UpdateOps+min">.min()</a></li>
+<li><a href="#sc.UpdateOps+max">.max()</a></li>
 </ul>
 </li>
 </ul>
-<p><a name="new_Scorocode.UpdateOps_new"></a></p>
+<p><a name="new_sc.UpdateOps_new"></a></p>
 <h2 id="new-updateops">new UpdateOps()<a class="headerlink" href="#new-updateops" title="Permanent link">&para;</a></h2>
 <p>Класс для осуществления операций множественного обновления объектов</p>
 <p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр запроса к коллекции items и объект обновления.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 
 <span class="c1">// Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.</span>
 <span class="nx">Items</span><span class="p">.</span><span class="nx">notEqualTo</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
@@ -1203,9 +1203,9 @@
 </pre></div>
 
 
-<p><strong>Возвращает</strong>: <code><a href="#Scorocode.UpdateOps">UpdateOps</a></code> - Возвращает экземпляр Scorocode.UpdateOps  </p>
+<p><strong>Возвращает</strong>: <code><a href="#sc.UpdateOps">UpdateOps</a></code> - Возвращает экземпляр sc.UpdateOps  </p>
 <hr />
-<p><a name="Scorocode.UpdateOps+set"></a></p>
+<p><a name="sc.UpdateOps+set"></a></p>
 <h2 id="setdata">.set(data)<a class="headerlink" href="#setdata" title="Permanent link">&para;</a></h2>
 <p>Метод для передачи данных объекту</p>
 <table>
@@ -1226,15 +1226,15 @@
 </table>
 <p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр запроса к коллекции items и объект обновления.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 
 <span class="c1">// Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.</span>
 <span class="nx">Items</span><span class="p">.</span><span class="nx">notEqualTo</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
@@ -1261,11 +1261,11 @@
 
 <p>см.</p>
 <ul>
-<li><a href="#new_Scorocode.Object_new">new Object(collName)</a></li>
-<li><a href="#Scorocode.UpdateOps+save">.save(options)</a> ⇒ <code><a href="#Scorocode.UpdateOps">Scorocode.UpdateOps</a></code></li>
+<li><a href="#new_sc.Object_new">new Object(collName)</a></li>
+<li><a href="#sc.UpdateOps+save">.save(options)</a> ⇒ <code><a href="#sc.UpdateOps">sc.UpdateOps</a></code></li>
 </ul>
 <hr />
-<p><a name="Scorocode.UpdateOps+push"></a></p>
+<p><a name="sc.UpdateOps+push"></a></p>
 <h2 id="pushkey-value">.push(key, value)<a class="headerlink" href="#pushkey-value" title="Permanent link">&para;</a></h2>
 <p>Метод для добавления элемента в массив.</p>
 <table>
@@ -1291,15 +1291,15 @@
 </table>
 <p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр запроса к коллекции items и объект обновления.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 
 <span class="c1">// Установим условие выборки - запросить все объекты с существующим значением поля &quot;arrayField&quot;.</span>
 <span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">)</span>
@@ -1325,7 +1325,7 @@
 
 
 <hr />
-<p><a name="Scorocode.UpdateOps+pull"></a></p>
+<p><a name="sc.UpdateOps+pull"></a></p>
 <h2 id="pullkey-value">.pull(key, value)<a class="headerlink" href="#pullkey-value" title="Permanent link">&para;</a></h2>
 <p>Метод для удаления всех элементов массива, значение которых равно указанному.</p>
 <table>
@@ -1351,15 +1351,15 @@
 </table>
 <p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр запроса к коллекции items и объект обновления.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 
 <span class="c1">// Установим условие выборки - запросить все объекты с существующим значением поля &quot;arrayField&quot;.</span>
 <span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">)</span>
@@ -1390,7 +1390,7 @@
 <li><code>Error</code> 'Field must by a type of array'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.UpdateOps+pullAll"></a></p>
+<p><a name="sc.UpdateOps+pullAll"></a></p>
 <h2 id="pullallkey-value">.pullAll(key, value)<a class="headerlink" href="#pullallkey-value" title="Permanent link">&para;</a></h2>
 <p>Метод для удаления всех элементов массива, значения которых равны одному из указанных значений.</p>
 <table>
@@ -1416,15 +1416,15 @@
 </table>
 <p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр запроса к коллекции items и объект обновления.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 
 <span class="c1">// Установим условие выборки - запросить все объекты с существующим значением поля &quot;arrayField&quot;.</span>
 <span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">)</span>
@@ -1456,7 +1456,7 @@
 <li><code>Error</code> 'Value must by a type of array'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.UpdateOps+addToSet"></a></p>
+<p><a name="sc.UpdateOps+addToSet"></a></p>
 <h2 id="addtosetkey-value">.addToSet(key, value)<a class="headerlink" href="#addtosetkey-value" title="Permanent link">&para;</a></h2>
 <p>Метод для добавления элемента в массив только в том случае, если в массиве отсутствуют элементы с таким значением.</p>
 <table>
@@ -1482,15 +1482,15 @@
 </table>
 <p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр запроса к коллекции items и объект обновления.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 
 <span class="c1">// Установим условие выборки - запросить все объекты с существующим значением поля &quot;arrayField&quot;.</span>
 <span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">)</span>
@@ -1521,7 +1521,7 @@
 <li><code>Error</code> 'Field must by a type of array'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.UpdateOps+pop"></a></p>
+<p><a name="sc.UpdateOps+pop"></a></p>
 <h2 id="popkey-pos">.pop(key, pos)<a class="headerlink" href="#popkey-pos" title="Permanent link">&para;</a></h2>
 <p>Метод для удаления первого или последнего элемента массива</p>
 <table>
@@ -1547,15 +1547,15 @@
 </table>
 <p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр запроса к коллекции items и объект обновления.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 
 <span class="c1">// Установим условие выборки - запросить все объекты с существующим значением поля &quot;arrayField&quot;.</span>
 <span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">)</span>
@@ -1586,7 +1586,7 @@
 <li><code>Error</code> 'Field must by a type of array'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.UpdateOps+inc"></a></p>
+<p><a name="sc.UpdateOps+inc"></a></p>
 <h2 id="inckey-amount">.inc(key, amount)<a class="headerlink" href="#inckey-amount" title="Permanent link">&para;</a></h2>
 <p>Метод увеличивает значение числового поля на заданное число</p>
 <table>
@@ -1612,15 +1612,15 @@
 </table>
 <p><strong>Пример</strong> </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр запроса к коллекции items и объект обновления.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 
 <span class="c1">// Установим условие выборки - запросить все объекты с существующим значением поля &quot;price&quot;.</span>
 <span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">)</span>
@@ -1651,7 +1651,7 @@
 <li><code>Error</code> 'Field must by a type of number'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.UpdateOps+currentDate"></a></p>
+<p><a name="sc.UpdateOps+currentDate"></a></p>
 <h2 id="currentdate">.currentDate()<a class="headerlink" href="#currentdate" title="Permanent link">&para;</a></h2>
 <p>Устанавливает текущее время в качестве значения поля</p>
 <table>
@@ -1677,15 +1677,15 @@
 </table>
 <p><strong>Пример</strong>:</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр запроса к коллекции items и объект обновления.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 
 <span class="c1">// Запросим все объекты коллекции &quot;items&quot;</span>
 <span class="nx">Items</span><span class="p">.</span><span class="nx">find</span><span class="p">()</span>
@@ -1714,7 +1714,7 @@
 <li><code>Error</code> 'Invalid type'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.UpdateOps+mul"></a></p>
+<p><a name="sc.UpdateOps+mul"></a></p>
 <h2 id="mulkey-number">.mul(key, number)<a class="headerlink" href="#mulkey-number" title="Permanent link">&para;</a></h2>
 <p>Метод умножает значение числового поля на заданное число</p>
 <table>
@@ -1740,15 +1740,15 @@
 </table>
 <p><strong>Пример</strong>  </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр запроса к коллекции items и объект обновления.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 
 <span class="c1">// Установим условие выборки - запросить все объекты с существующим значением поля &quot;price&quot;.</span>
 <span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">)</span>
@@ -1780,7 +1780,7 @@
 <li><code>Error</code> 'Value must by a type of number'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.UpdateOps+min"></a></p>
+<p><a name="sc.UpdateOps+min"></a></p>
 <h2 id="min">.min()<a class="headerlink" href="#min" title="Permanent link">&para;</a></h2>
 <p>Метод обновляет значение числового поля только в случае, если новое значение меньше текущего значения поля</p>
 <table>
@@ -1806,15 +1806,15 @@
 </table>
 <p><strong>Пример</strong>  </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр запроса к коллекции items и объект обновления.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 
 <span class="c1">// Установим условие выборки - запросить все объекты с существующим значением поля &quot;price&quot;.</span>
 <span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">)</span>
@@ -1846,7 +1846,7 @@
 <li><code>Error</code> 'Value must by a type of number'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.UpdateOps+max"></a></p>
+<p><a name="sc.UpdateOps+max"></a></p>
 <h2 id="max">.max()<a class="headerlink" href="#max" title="Permanent link">&para;</a></h2>
 <p>Метод обновляет значение числового поля только в случае, если новое значение больше текущего значения поля</p>
 <table>
@@ -1872,15 +1872,15 @@
 </table>
 <p><strong>Пример</strong>  </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
 <span class="c1">// Создадим новый экземпляр запроса к коллекции items и объект обновления.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 
 <span class="c1">// Установим условие выборки - запросить все объекты с существующим значением поля &quot;price&quot;.</span>
 <span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">)</span>

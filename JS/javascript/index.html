@@ -1009,18 +1009,18 @@
                 
                 <p>Дистрибутив Scorocode JavaScript SDK можно скачать <a href="https://github.com/Scorocode/scorocode-SDK-JS">тут</a>.</p>
 <h2 id="sdk">Подключение SDK<a class="headerlink" href="#sdk" title="Permanent link">&para;</a></h2>
-<p>Для использования SDK на стороне браузера, скачайте библиотеку <a href="https://github.com/Scorocode/scorocode-SDK-JS/blob/master/lib/browser/scorocode.min.js">lib/browser/scorocode.min.js</a> и подключите ее в проекте: </p>
-<div class="codehilite"><pre><span></span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;js/scorocode.min.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+<p>Для использования SDK на стороне браузера, скачайте библиотеку <a href="https://github.com/Scorocode/scorocode-SDK-JS/blob/master/lib/browser/sc.min.js">lib/browser/sc.min.js</a> и подключите ее в проекте: </p>
+<div class="codehilite"><pre><span></span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;js/sc.min.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
 </pre></div>
 
 
 <p>Для использования SDK на стороне сервера (NodeJS) установите модуль SDK <code>npm install scorocode</code> и подключите его в проекте:</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 </pre></div>
 
 
 <h2 id="_1">Быстрый старт<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Зарегистрируйтесь и создайте приложение с любым именем в <a href="https://scorocode.ru/">Scorocode</a>.</p>
+<p>Зарегистрируйтесь и создайте приложение с любым именем в <a href="https://sc.ru/">Scorocode</a>.</p>
 <p>Для разработки примера мы использовали библиотеку <a href="https://facebook.github.io/react/">react</a> и утилиту для быстрого создания каркаса приложения <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> Требования для установки смотрите по ссылке. Установить утилиту можно из консоли командой:</p>
 <div class="codehilite"><pre><span></span>npm install -g create-react-app
 </pre></div>
@@ -1041,7 +1041,7 @@ npm install scorocode --save
 <span class="kr">import</span> <span class="nx">Scorocode</span> <span class="nx">from</span> <span class="s1">&#39;scorocode&#39;</span> <span class="c1">// &lt;- добавить импорт SDK Scorocode</span>
 
 <span class="c1">// Добавить инициализацию SDK</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ appId приложения</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ javascript приложения</span>
     <span class="nx">MasterKey</span><span class="o">:</span>     <span class="s2">&quot;xxx&quot;</span>  <span class="c1">// &lt;- заменить xxx на ключ masterKey приложения</span>
@@ -1110,8 +1110,8 @@ npm install scorocode --save
         <span class="c1">// Очищаем переменную результата</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">registerResult</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">})</span>
 
-        <span class="c1">// Создадим новый экземпляр Scorocode.User</span>
-        <span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
+        <span class="c1">// Создадим новый экземпляр sc.User</span>
+        <span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
 
         <span class="c1">// Установим данные, необходимые для регистрации пользователя приложения</span>
         <span class="nx">appUser</span>
@@ -1141,8 +1141,8 @@ npm install scorocode --save
         <span class="c1">// Очищаем переменную результата</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">loginResult</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">})</span>
 
-        <span class="c1">// Создадим новый экземпляр Scorocode.User</span>
-        <span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
+        <span class="c1">// Создадим новый экземпляр sc.User</span>
+        <span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
 
         <span class="c1">// Аутентифицируем пользователя приложения, используя email и password</span>
         <span class="nx">appUser</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span> <span class="nx">password</span><span class="p">)</span>
@@ -1168,7 +1168,7 @@ npm install scorocode --save
 
 
 <p>В результате в браузере откроется страница с двумя формами: регистрации и авторизации.
-Поэкспериментируйте с регистрацией пользователей и их авторизацией и посмотрите на ответы от API Scorocode.
+Поэкспериментируйте с регистрацией пользователей и их авторизацией и посмотрите на ответы от API sc.
 После успешной регистрации вы можете увидеть в коллекции users добавленного пользователя и авторизоваться, используя его email и пароль.</p>
               
             </article>

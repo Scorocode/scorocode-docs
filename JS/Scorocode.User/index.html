@@ -1035,31 +1035,31 @@
                 
                   <h1>Scorocode.User</h1>
                 
-                <p><a name="Scorocode.User"></a></p>
+                <p><a name="sc.User"></a></p>
 <p>Содержание</p>
 <ul>
-<li><a href="#Scorocode.User">.User</a><ul>
-<li><a href="#new_Scorocode.User_new">new User()</a></li>
-<li><a href="#Scorocode.User+signup">.signup(options)</a> ⇒ <code><a href="#Scorocode.User">promise.&lt;Scorocode.User&gt;</a></code></li>
-<li><a href="#Scorocode.User+login">.login(email, password, options)</a> ⇒ <code><a href="#Scorocode.User">promise.&lt;Scorocode.User&gt;</a></code></li>
-<li><a href="#Scorocode.User+logout">.logout(options)</a> </li>
+<li><a href="#sc.User">.User</a><ul>
+<li><a href="#new_sc.User_new">new User()</a></li>
+<li><a href="#sc.User+signup">.signup(options)</a> ⇒ <code><a href="#sc.User">promise.&lt;sc.User&gt;</a></code></li>
+<li><a href="#sc.User+login">.login(email, password, options)</a> ⇒ <code><a href="#sc.User">promise.&lt;sc.User&gt;</a></code></li>
+<li><a href="#sc.User+logout">.logout(options)</a> </li>
 </ul>
 </li>
 </ul>
 <hr />
-<p><a name="new_Scorocode.User_new"></a></p>
+<p><a name="new_sc.User_new"></a></p>
 <h2 id="new-user">new User()<a class="headerlink" href="#new-user" title="Permanent link">&para;</a></h2>
 <p>Класс для работы с пользователями приложения.</p>
 <p><strong>Пример</strong>  </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
-<span class="c1">// Создадим новый экземпляр Scorocode.User</span>
-<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
+<span class="c1">// Создадим новый экземпляр sc.User</span>
+<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
 <span class="c1">// Передадим данные, необходимые для регистрации пользователя приложения</span>
 <span class="nx">appUser</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;user@mailserver.domain&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="s2">&quot;52c7ab3dab2c&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;ChosenOne&quot;</span><span class="p">);</span>
 <span class="c1">// Зарегистрируем пользователя приложения</span>
@@ -1078,10 +1078,10 @@
 
 
 <hr />
-<p><a name="Scorocode.User+signup"></a></p>
+<p><a name="sc.User+signup"></a></p>
 <h2 id="signupoptions">.signup(options)<a class="headerlink" href="#signupoptions" title="Permanent link">&para;</a></h2>
 <p>Метод для регистрации пользователей приложения. </p>
-<p><strong>Тип</strong>: Метод <code><a href="#Scorocode.User">Scorocode.User</a></code>  </p>
+<p><strong>Тип</strong>: Метод <code><a href="#sc.User">sc.User</a></code>  </p>
 <table>
 <thead>
 <tr>
@@ -1104,14 +1104,14 @@
 </table>
 <p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
-<span class="c1">// Создадим новый экземпляр Scorocode.User</span>
-<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
+<span class="c1">// Создадим новый экземпляр sc.User</span>
+<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
 <span class="c1">// Передадим данные, необходимые для регистрации пользователя приложения</span>
 <span class="nx">appUser</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;user@domain.zone&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="s2">&quot;CorrectHorseBatteryStaple&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;ChosenOne&quot;</span><span class="p">);</span>
 <span class="c1">// Зарегистрируем пользователя приложения</span>
@@ -1129,12 +1129,12 @@
 </pre></div>
 
 
-<p><strong>Возвращает</strong> <code>promise.{Scorocode.User}</code> - возвращает promise, который возвращает данные Scorocode.User</p>
+<p><strong>Возвращает</strong> <code>promise.{sc.User}</code> - возвращает promise, который возвращает данные sc.User</p>
 <hr />
-<p><a name="Scorocode.User+login"></a></p>
+<p><a name="sc.User+login"></a></p>
 <h2 id="loginemail-password-options">.login(email, password, options)<a class="headerlink" href="#loginemail-password-options" title="Permanent link">&para;</a></h2>
 <p>Метод для аутентификации пользователя приложения и получения пользовательской сессии.</p>
-<p><strong>Тип</strong>: instance method of <code><a href="#Scorocode.User">User</a></code>  </p>
+<p><strong>Тип</strong>: instance method of <code><a href="#sc.User">User</a></code>  </p>
 <table>
 <thead>
 <tr>
@@ -1171,14 +1171,14 @@
 </table>
 <p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
 <span class="p">});</span>
 
-<span class="c1">// Создадим новый экземпляр Scorocode.User</span>
-<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
+<span class="c1">// Создадим новый экземпляр sc.User</span>
+<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
 <span class="c1">// Аутентифицируем пользователя приложения, используя его email и password</span>
 <span class="nx">appUser</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="s2">&quot;user@domain.zone&quot;</span><span class="p">,</span> <span class="s2">&quot;CorrectHorseBatteryStaple&quot;</span><span class="p">)</span>
     <span class="c1">// Обработчик успешного выполнения запроса</span>
@@ -1205,12 +1205,12 @@
 </pre></div>
 
 
-<p><strong>Возвращает</strong> <code>promise.{Scorocode.User}</code> - возвращает promise, который возвращает данные Scorocode.User</p>
+<p><strong>Возвращает</strong> <code>promise.{sc.User}</code> - возвращает promise, который возвращает данные sc.User</p>
 <hr />
-<p><a name="Scorocode.User+logout"></a></p>
+<p><a name="sc.User+logout"></a></p>
 <h2 id="logoutoptions">.logout(options)<a class="headerlink" href="#logoutoptions" title="Permanent link">&para;</a></h2>
 <p>Метод для деаутентификации пользователя приложения и удаления пользовательской сессии.</p>
-<p><strong>Тип</strong>: Метод <code><a href="#Scorocode.User">Scorocode.User</a></code>  </p>
+<p><strong>Тип</strong>: Метод <code><a href="#sc.User">sc.User</a></code>  </p>
 <table>
 <thead>
 <tr>
@@ -1233,14 +1233,14 @@
 </table>
 <p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
 <span class="p">});</span>
 
-<span class="c1">// Создадим новый экземпляр Scorocode.User</span>
-<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
+<span class="c1">// Создадим новый экземпляр sc.User</span>
+<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
 <span class="c1">// Аутентифицируем пользователя приложения, используя его email и password</span>
 <span class="nx">appUser</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="s2">&quot;user@domain.zone&quot;</span><span class="p">,</span> <span class="s2">&quot;CorrectHorseBatteryStaple&quot;</span><span class="p">)</span>
     <span class="c1">// Обработчик успешного выполнения запроса</span>

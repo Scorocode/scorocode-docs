@@ -1021,27 +1021,27 @@
                 
                   <h1>Scorocode.Messenger</h1>
                 
-                <p><a name="Scorocode.Messenger"></a></p>
+                <p><a name="sc.Messenger"></a></p>
 <p>Содержание</p>
 <ul>
-<li><a href="#Scorocode.Messenger">Messenger</a><ul>
-<li><a href="#new_Scorocode.Messenger_new">new Messenger()</a></li>
-<li><a href="#Scorocode.Messenger+sendPush">.sendPush(options, callbacks)</a> ⇒ <code>{error: Boolean, count: Number}</code></li>
-<li><a href="#Scorocode.Messenger+sendSms">.sendSms(options, callbacks)</a> ⇒ <code>{error: Boolean, count: Number}</code></li>
+<li><a href="#sc.Messenger">Messenger</a><ul>
+<li><a href="#new_sc.Messenger_new">new Messenger()</a></li>
+<li><a href="#sc.Messenger+sendPush">.sendPush(options, callbacks)</a> ⇒ <code>{error: Boolean, count: Number}</code></li>
+<li><a href="#sc.Messenger+sendSms">.sendSms(options, callbacks)</a> ⇒ <code>{error: Boolean, count: Number}</code></li>
 </ul>
 </li>
 </ul>
 <hr />
-<p><a name="new_Scorocode.Messenger_new"></a></p>
+<p><a name="new_sc.Messenger_new"></a></p>
 <h2 id="new-messenger">new Messenger()<a class="headerlink" href="#new-messenger" title="Permanent link">&para;</a></h2>
 <p>Класс для отправки сообщений</p>
 <p><strong>Пример</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
 </pre></div>
 
 
 <hr />
-<p><a name="Scorocode.Messenger+sendPush"></a></p>
+<p><a name="sc.Messenger+sendPush"></a></p>
 <h2 id="sendpushoptions-callbacks">.sendPush(options, callbacks)<a class="headerlink" href="#sendpushoptions-callbacks" title="Permanent link">&para;</a></h2>
 <p>Метод для отправки Push</p>
 <table>
@@ -1067,7 +1067,7 @@
 </table>
 <p><strong>Описание объекта options</strong></p>
 <ul>
-<li>Параметр where - принимает в качестве значения Scorocode.Query("devices") с условиями выборки устройств, которым будет отпрален PUSH.</li>
+<li>Параметр where - принимает в качестве значения sc.Query("devices") с условиями выборки устройств, которым будет отпрален PUSH.</li>
 <li>Параметр data - объект, содержащий данные для передачи в PUSH-сообщении и имеющий следующую структуру:</li>
 </ul>
 <div class="codehilite"><pre><span></span>data: {
@@ -1083,15 +1083,15 @@
 
 <p><strong>Пример</strong>  </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
     <span class="nx">MessageKey</span><span class="o">:</span> <span class="s2">&quot;messageKey_приложения&quot;</span>
 <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">Devices</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;devices&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">Devices</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;devices&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
 <span class="nx">Broadcast</span><span class="p">.</span><span class="nx">sendPush</span><span class="p">({</span>
         <span class="nx">where</span><span class="o">:</span> <span class="nx">Devices</span><span class="p">,</span>
         <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
@@ -1142,7 +1142,7 @@
 <li><code>String</code> 'Missing subject or text message'</li>
 </ul>
 <hr />
-<p><a name="Scorocode.Messenger+sendSms"></a></p>
+<p><a name="sc.Messenger+sendSms"></a></p>
 <h2 id="sendsmsoptions-callbacks">.sendSms(options, callbacks)<a class="headerlink" href="#sendsmsoptions-callbacks" title="Permanent link">&para;</a></h2>
 <p>Метод для отправки СМС</p>
 <table>
@@ -1168,15 +1168,15 @@
 </table>
 <p><strong>Пример</strong>  </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
     <span class="nx">MessageKey</span><span class="o">:</span> <span class="s2">&quot;messageKey_приложения&quot;</span>
 <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">findUsers</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;users&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">findUsers</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;users&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
 <span class="nx">Broadcast</span><span class="p">.</span><span class="nx">sendPush</span><span class="p">({</span>
         <span class="nx">where</span><span class="o">:</span> <span class="nx">findUsers</span><span class="p">,</span>
         <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
