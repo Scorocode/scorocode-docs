@@ -1021,9 +1021,35 @@
     <span class="nt">&quot;query&quot;</span>       <span class="p">:</span> <span class="p">{},</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">в</span> <span class="err">коллекцию</span> <span class="err">devices</span> <span class="err">для</span> <span class="err">выборки</span> <span class="err">адресатов</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный</span>
     <span class="nt">&quot;msg&quot;</span>         <span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;text&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">Текст</span> <span class="err">сообщения</span>
-        <span class="nt">&quot;data&quot;</span>        <span class="p">:</span> <span class="p">{</span> <span class="p">}</span> <span class="err">//</span> <span class="err">объект</span> <span class="err">с</span> <span class="err">передаваемыми</span> <span class="err">данными</span>
+        <span class="nt">&quot;data&quot;</span>        <span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;gcm&quot;</span><span class="p">:</span> <span class="p">{</span>        <span class="err">//</span> <span class="err">Данные</span> <span class="err">для</span> <span class="err">передачи</span> <span class="err">Android-устройствам</span>
+                <span class="nt">&quot;protocol&quot;</span><span class="p">:</span> <span class="s2">&quot;http&quot;</span><span class="p">,</span>   <span class="err">//</span> <span class="err">Протокол</span> <span class="err">передачи</span> <span class="nt">&quot;http&quot;</span> <span class="err">||</span> <span class="s2">&quot;xmpp&quot;</span>
+                <span class="s2">&quot;notification&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;body&quot;</span> <span class="p">:</span> <span class="s2">&quot;great match!&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Portugal vs. Denmark&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;icon&quot;</span> <span class="p">:</span> <span class="s2">&quot;myicon&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;apns&quot;</span><span class="p">:</span> <span class="p">{</span>       <span class="err">//</span> <span class="err">Данные</span> <span class="err">для</span> <span class="err">передачи</span> <span class="err">iOs-устройствам</span>
+                <span class="nt">&quot;aps&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;alert&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Portugal vs. Denmark&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;body&quot;</span> <span class="p">:</span> <span class="s2">&quot;great match!&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;action-loc-key&quot;</span> <span class="p">:</span> <span class="s2">&quot;Watch&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;badge&quot;</span> <span class="p">:</span> <span class="mi">5</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;acme1&quot;</span> <span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;acme2&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;bang&quot;</span><span class="p">,</span>  <span class="s2">&quot;whiz&quot;</span> <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">}</span><span class="err">&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/sendpush&quot;</span> <span class="err">}</span> <span class="err">//</span> <span class="err">объект</span> <span class="err">с</span> <span class="err">передаваемыми</span> <span class="err">данными</span>
+    <span class="err">}</span>
+<span class="err">}</span>
 </pre></div>
 
 
