@@ -18,7 +18,33 @@
     "query"       : {}, // запрос в коллекцию devices для выборки адресатов с парами имя_поля/оператор:значение, необязательный
     "msg"         : {
         "text"        : "", // Текст сообщения
-        "data"        : { } // объект с передаваемыми данными
+        "data"        : {
+            "gcm": {        // Данные для передачи Android-устройствам
+                "protocol": "http",   // Протокол передачи "http" || "xmpp"
+                "notification": {
+                    "body" : "great match!",
+                    "title" : "Portugal vs. Denmark",
+                    "icon" : "myicon"
+                },
+                "data": {
+                    "key": "value"
+                }
+            },
+            "apns": {       // Данные для передачи iOs-устройствам
+                "aps" : {
+                    "alert" : {
+                        "title" : "Portugal vs. Denmark",
+                        "body" : "great match!",
+                        "action-loc-key" : "Watch"
+                    },
+                    "badge" : 5
+                },
+                "acme1" : "bar",
+                "acme2" : [ "bang",  "whiz" ]
+            }
+        }
+    }
+}' "https://api.scorocode.ru/api/v1/sendpush" } // объект с передаваемыми данными
     }
 }
 ```
