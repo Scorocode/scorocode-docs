@@ -17,10 +17,10 @@
     "coll"        : "", // имя коллекции, обязательный; users, roles или devices
     "query"       : {}, // запрос в коллекцию devices для выборки адресатов с парами имя_поля/оператор:значение, необязательный
     "msg"         : {
-        "text"        : "", // Текст сообщения
+        "text"        : "", // Текст сообщения, обязательный.
         "data"        : {
-            "gcm": {        // Данные для передачи Android-устройствам
-                "protocol": "http",   // Протокол передачи "http" || "xmpp"
+            "gcm": {        // Данные для передачи Android-устройствам, необязательно
+                "protocol": "http",   // Протокол передачи 'http' || 'xmpp', необязательно
                 "notification": {
                     "body" : "great match!",
                     "title" : "Portugal vs. Denmark",
@@ -30,7 +30,7 @@
                     "key": "value"
                 }
             },
-            "apns": {       // Данные для передачи iOs-устройствам
+            "apns": {       // Данные для передачи iOs-устройствам, необязательно
                 "aps" : {
                     "alert" : {
                         "title" : "Portugal vs. Denmark",
@@ -43,8 +43,6 @@
                 "acme2" : [ "bang",  "whiz" ]
             }
         }
-    }
-}' "https://api.scorocode.ru/api/v1/sendpush" } // объект с передаваемыми данными
     }
 }
 ```
@@ -74,18 +72,44 @@
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "fb33e473e08515ff6b57ef6f59392e5d",
-    "sess": "rYgRe6xL2y8VccMJ",
+    "acc": "e9c6a65b9d6acd5043aeeasasd1e6dc3",
+    "app": "5c46ec2f6f94aa92sd6ef831228ef14c",
+    "cli": "86df1ce52d8sdftr61d632f1d6e15936",
+    "sess": "",
+    "debug": true,
     "coll": "devices",
     "query": {
-        "userId": {
-            "$exists": true
+        "deviceType": {
+            "$eq": "android"
         }
     },
     "msg": {
-        "text": "Текст PUSH"
+        "text": "push",
+        "data": {
+            "gcm": {
+                "protocol": "http",
+                "notification": {
+                    "body" : "great match!",
+                    "title" : "Portugal vs. Denmark",
+                    "icon" : "myicon"
+                },
+                "data": {
+                    "key": "value"
+                }
+            },
+            "apns": {
+                "aps" : {
+                    "alert" : {
+                        "title" : "Portugal vs. Denmark",
+                        "body" : "great match!",
+                        "action-loc-key" : "Watch"
+                    },
+                    "badge" : 5
+                },
+                "acme1" : "bar",
+                "acme2" : [ "bang",  "whiz" ]
+            }
+        }
     }
 }' "https://api.scorocode.ru/api/v1/sendpush"
 ```
