@@ -1009,8 +1009,8 @@
                 
                 <h2 id="_1">Общая информация<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>Серверный код – это скрипты на JavaScript, выполняемые на сервере с помощью движка Google V8. Разработанный серверный код выполняется по расписанию (плану) или одноразово по вызову через метод API.Для создания нового скрипта нажмите кнопку "Создать".</p>
-<p><img alt="Серверный код" src="../../img/scripts.png" /></p>
 <p><img alt="Серверный код" src="../../img/scriptcreate.png" /></p>
+<p><img alt="Серверный код" src="../../img/scripts.png" /></p>
 <p>При создании нового серверного скрипта, в него автоматически будет подставлен следующий код инициализации Scorocode JavaScript SDK с подставленными ключами ApplicationId, JavaScriptKey и MasterKey приложения:</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Init Scorocode</span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">)</span>
@@ -1039,7 +1039,7 @@
 <p><code>pool</code> – произвольный объект, переданный при вызове метода выполнения скрипта через API, содержащий переданные данные.</p>
 <h2 id="npm">Поддержка NPM модулей<a class="headerlink" href="#npm" title="Permanent link">&para;</a></h2>
 <p>Для того чтобы подключить сторонние модули в вашем скрипте, необходимо описать все имеющиеся зависимости. Для этого перейдите в раздел Настройки приложения и выберите пункт NPM зависимости.</p>
-<p><img alt="Серверный код" src="../../img/scriptacl.png" /></p>
+<p><img alt="Серверный код" src="../../img/npm.png" /></p>
 <p>В секции <code>dependencies</code> опишите все модули, которые вы собираетесь использовать, где свойство - это название модуля, а значение - необходимая версия (вы можете оставить значение версии пустым, в этом случае будет установлена последняя версия модуля).</p>
 <p>Пример:</p>
 <div class="codehilite"><pre><span></span>    <span class="p">{</span>
