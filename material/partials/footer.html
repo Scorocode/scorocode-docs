@@ -1,3 +1,4 @@
+{% import "partials/i18n.html" as i18n %}
 <footer class="md-footer">
   {% if page.previous_page or page.next_page %}
     <div class="md-footer-nav">
@@ -10,7 +11,7 @@
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
-                  Previous
+                  {{ i18n.t('footer.previous') }}
                 </span>
                 {{ page.previous_page.title }}
               </span>
@@ -22,7 +23,7 @@
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
-                  Next
+                  {{ i18n.t('footer.next') }}
                 </span>
                 {{ page.next_page.title }}
               </span>
@@ -39,24 +40,19 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         {% if config.copyright %}
-          <span class="md-footer-copyright__highlight">
+          <div class="md-footer-copyright__highlight">
             {{ config.copyright }}
-          </span>
-          <br>
+          </div>
         {% endif %}
         powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
-        and the
-        <a href="http://squidfunk.github.io/mkdocs-material/">Material</a>
-        theme
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
       </div>
-      {% if config.extra.social %}
-        <div class="md-footer-social">
-          {% for social in config.extra.social %}
-            <a href="{{ social.link }}" class="md-footer-social__link socicon-{{ social.type }}"></a>
-          {% endfor %}
-        </div>
-      {% endif %}
+      {% block social %}
+        {% include "partials/social.html" %}
+      {% endblock %}
     </div>
   </div>
 </footer>
