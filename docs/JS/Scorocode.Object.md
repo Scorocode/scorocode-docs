@@ -457,7 +457,7 @@ data.find()
 см.
 
 * [new Object(collName)](#new_sc.Object_new)
-* [.find(options)](sc.Query.md#sc.Query+find) ⇒ <code>Promise.{error: Boolean, limit: Number, skip: Number, result: [{sc.Object}]}</code>
+* [.find(options)](Scorocode.Query.md#sc.Query+find) ⇒ <code>Promise.{error: Boolean, limit: Number, skip: Number, result: [{sc.Object}]}</code>
 
 **Возвращает**: <code>sc.Object</code> - Возвращает sc.Object
 
