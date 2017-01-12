@@ -2,9 +2,10 @@
 
 ## Подключение SDK
 
-Для использования SDK на стороне браузера, скачайте библиотеку [lib/browser/sc.min.js](https://github.com/Scorocode/scorocode-SDK-JS/blob/master/lib/browser/sc.min.js) и подключите ее в проекте: 
+Для использования SDK на стороне браузера, скачайте библиотеку [lib/browser/scorocode.min.js](https://raw.githubusercontent.com/Scorocode/scorocode-SDK-JS/master/lib/browser/scorocode.min.js) и подключите ее в проекте: 
+
 ```js
-<script src="js/sc.min.js"></script>
+<script src="js/scorocode.min.js"></script>
 ```
  
 Для использования SDK на стороне сервера (NodeJS) установите модуль SDK `npm install scorocode` и подключите его в проекте:
