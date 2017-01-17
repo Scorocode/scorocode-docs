@@ -1104,7 +1104,7 @@
 
 <span class="kd">var</span> <span class="nx">findUsers</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;users&quot;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
-<span class="nx">Broadcast</span><span class="p">.</span><span class="nx">sendPush</span><span class="p">({</span>
+<span class="nx">Broadcast</span><span class="p">.</span><span class="nx">sendSms</span><span class="p">({</span>
         <span class="nx">where</span><span class="o">:</span> <span class="nx">findUsers</span><span class="p">,</span>
         <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
             <span class="s2">&quot;text&quot;</span><span class="o">:</span> <span class="s2">&quot;Текст смс-сообщения&quot;</span>     
