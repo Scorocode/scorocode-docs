@@ -150,7 +150,7 @@ sc.Init({
 
 var findUsers = new sc.Query("users");
 var Broadcast = new sc.Messenger();
-Broadcast.sendPush({
+Broadcast.sendSms({
         where: findUsers,
         data: {
             "text": "Текст смс-сообщения"     
