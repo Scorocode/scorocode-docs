@@ -1082,6 +1082,17 @@
 </tr>
 </tbody>
 </table>
+<p><strong>Описание объекта options</strong></p>
+<ul>
+<li>Параметр where - принимает в качестве значения sc.Query("user") с условиями выборки пользователей, которым будет отпралено sms.</li>
+<li>Параметр data - объект, содержащий данные для передачи в СМС-сообщении и имеющий следующую структуру:</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="err">data:</span> <span class="p">{</span>
+            <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Текст смс-сообщения&quot;</span>     
+      <span class="p">}</span>
+</pre></div>
+
+
 <p><strong>Пример</strong>  </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
