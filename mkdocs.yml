@@ -31,6 +31,7 @@ pages:
         - 'Scorocode.CloudCode': 'JS/Scorocode.CloudCode.md'
         - 'Scorocode.Bot': 'JS/Scorocode.Bot.md'
         - 'Scorocode.WebSocket': 'JS/Scorocode.Websocket.md'
+        - 'Scorocode.System': 'JS/Scorocode.System.md'
     - 'SWIFT SDK (iOs, Mac OS)':
         - 'SWIFT SDK': 'SWIFT/SWIFT.md'
         - 'SC': 'SWIFT/SC.md'

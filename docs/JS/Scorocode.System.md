@@ -4,9 +4,12 @@
 
 * [.System](#sc.System)
     * [new System()](#new_sc.System)
-    * [.getDataStats()](#sc.System+getDataStats) 
-    * [.getApp()](#sc.System+getApp) 
-    * []
+    * [.getDataStats(callbacks)](#sc.System+getDataStats) 
+    * [.getApp(callbacks)](#sc.System+getApp) 
+    * [App.getCollections](#App.getCollections)
+    * [App.getFolderContent](#App.getFolderContent)
+    * [App.getScript](#App.getScript)
+    * [App.getCollections](#App.getCollections)
 
 --------------------------------------------------------------------------------
 
@@ -14,7 +17,7 @@
 
 ## new System()
 
-Конструктор Scorocode.Systemю 
+Конструктор Scorocode.System.
 
 ```js
 var sys = new sc.System();
@@ -33,7 +36,7 @@ var sys = new sc.System();
 
 | Параметр | Тип | 	Свойства	| Описание |	Пример значения |
 | --- | --- | --- | --- | --- |
-| callback | `CallbackGetApplicationInfo` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| callbacks | <code>Object</code> | необязательный | Коллбэки success и error для выполняемого запроса. | см. пример ниже |
 
 ```js
 var sc = require('scorocode');
@@ -53,6 +56,7 @@ sys.getDataStats()
     .catch((error)=>{
         console.log(error)
     });
+```
 
 **Возвращает**: <code>promise.{dataSize: int, filesSize: int, indexSize: int, store: int}
 </code> - Возвращает promise, который возвращает объект со статистикой приложения:
@@ -62,3 +66,182 @@ sys.getDataStats()
 * indexSixe - объем данных, занятый индексами приложения;
 * store - объем данных, доступных приложению.
 
+------------------------------------------------------------------------
+
+<a name="sc.System+getApp"></a>
+
+## .getApp(callbacks)
+
+Метод для получения полной информации о приложении.
+
+| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| --- | --- | --- | --- | --- |
+| callbacks | <code>Object</code> | необязательный | Коллбэки success и error для выполняемого запроса. | см. пример ниже |
+
+```js
+var sc = require('scorocode');
+
+sc.Init({
+    ApplicationID: "5c46ec2f6f94aa92sdfef83122ff1gc",
+    JavaScriptKey: "86df1sd52d81dbhskn32f1d6a8e15936",
+    MasterKey: "e9c6vf5b9d6acd5tyu3aav1405c1e6dc3"
+});
+
+var sys = new sc.System();
+
+sys.getApp()
+   .then((app)=>{
+   		console.log(app);
+    })
+    .catch((error)=>{
+        console.log(error)
+    });
+```
+
+**Возвращает**: <code>promise.<App></code> - Возвращает promise, который возвращает объект `App`.
+
+
+---------------------------------------------------------------------
+
+<a name="App.getCollections"></a>
+
+## App.getCollections(callbacks)
+
+Метод для получения списка коллекций приложения.
+
+| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| --- | --- | --- | --- | --- |
+| callbacks | <code>Object</code> | необязательный | Коллбэки success и error для выполняемого запроса. | см. пример ниже |
+
+```js
+var sc = require('scorocode');
+
+sc.Init({
+    ApplicationID: "5c46ec2f6f94aa92sdfef83122ff1gc",
+    JavaScriptKey: "86df1sd52d81dbhskn32f1d6a8e15936",
+    MasterKey: "e9c6vf5b9d6acd5tyu3aav1405c1e6dc3"
+});
+
+var system = new sc.System();
+system.getApp()
+  .then((app)=>{
+   		app.getCollections()
+     	  	.then((result) => {
+     		   	console.log(result);
+          })
+  })
+  .catch((error)=>{
+      console.log(error)
+  });
+```
+
+**Возвращает**: <code>promise.[Collection]</code> - Возвращает promise, который возвращает массив объектов `Collection`.
+
+---------------------------------------------------------------------
+<a name="App.getFolderContent"></a>
+
+## App.getFolderContent(path, callbacks)
+
+Метод для получения папки по указанному пути.
+
+| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| --- | --- | --- | --- | --- |
+| path | `String` | Обязательный | Путь к папке | "/" | 
+| callbacks | <code>Object</code> | необязательный | Коллбэки success и error для выполняемого запроса. | см. пример ниже |
+
+```js
+var sc = require('scorocode');
+
+sc.Init({
+    ApplicationID: "5c46ec2f6f94aa92sdfef83122ff1gc",
+    JavaScriptKey: "86df1sd52d81dbhskn32f1d6a8e15936",
+    MasterKey: "e9c6vf5b9d6acd5tyu3aav1405c1e6dc3"
+});
+
+var system = new sc.System();
+system.getApp()
+  .then((app)=>{
+   		app.getFolderContent("/")
+     	  	.then((result) => {
+     		   	console.log(result);
+          })
+  })
+  .catch((error)=>{
+      console.log(error)
+  });
+```
+
+**Возвращает**: <code>promise.<[Script, Folder]></code> - Возвращает promise, который возвращает массив объектов `Script` и `Folder`
+
+---------------------------------------------------------------------
+<a name="App.getScript"></a>
+
+## App.getScript(id, callbacks}
+
+Метод для получения скрипта по его id.
+
+| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| --- | --- | --- | --- | --- |
+| id | <code>String</code> | Обязательный | Идентификатор скрипта | "574860d2781267d34f7a2415" | 
+| callbacks | <code>Object</code> | необязательный | Коллбэки success и error для выполняемого запроса. | см. пример ниже |
+
+```js
+var sc = require('scorocode');
+
+sc.Init({
+    ApplicationID: "5c46ec2f6f94aa92sdfef83122ff1gc",
+    JavaScriptKey: "86df1sd52d81dbhskn32f1d6a8e15936",
+    MasterKey: "e9c6vf5b9d6acd5tyu3aav1405c1e6dc3"
+});
+
+var system = new sc.System();
+system.getApp()
+  .then((app)=>{
+   		app.getScript("57c941e50293e02aea8b5b14")
+     	  	.then((result) => {
+     		   	console.log(result);
+          })
+  })
+  .catch((error)=>{
+      console.log(error)
+  });
+```
+
+**Возвращает**: <code>promise.<Script></code> - Возвращает promise, который возвращает объект `Script`
+
+---------------------------------------------------------------------
+<a name="App.getBots"></a>
+
+## App.getBots(skip, limit, callbacks)
+
+Метод для получения списка ботов.
+
+| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| --- | --- | --- | --- | --- |
+| skip      | <code>Number</code> | необязательный, по-умолчанию 0  | Количество пропускаемых объектов |1|
+| limit     | <code>Number</code> | необязательный, по-умолчанию 50 | Лимит выборки | 5 |
+| callbacks | <code>Object</code> | необязательный | Коллбэки success и error для выполняемого запроса. | см. пример ниже |
+
+```js
+var sc = require('scorocode');
+
+sc.Init({
+    ApplicationID: "5c46ec2f6f94aa92sdfef83122ff1gc",
+    JavaScriptKey: "86df1sd52d81dbhskn32f1d6a8e15936",
+    MasterKey: "e9c6vf5b9d6acd5tyu3aav1405c1e6dc3"
+});
+
+var system = new sc.System();
+system.getApp()
+  .then((app)=>{
+   		app.getBots()
+     	  	.then((result) => {
+     		   	console.log(result);
+          })
+  })
+  .catch((error)=>{
+      console.log(error)
+  });
+```
+
+**Возвращает**: <code>promise.<Bot></code> - Возвращает promise, который возвращает массив объектов `Bot`
