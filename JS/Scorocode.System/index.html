@@ -1011,10 +1011,10 @@
 <li><a href="#new_sc.System">new System()</a></li>
 <li><a href="#sc.System+getDataStats">.getDataStats(callbacks)</a> </li>
 <li><a href="#sc.System+getApp">.getApp(callbacks)</a> </li>
-<li><a href="#App.getCollections">App.getCollections</a></li>
-<li><a href="#App.getFolderContent">App.getFolderContent</a></li>
-<li><a href="#App.getScript">App.getScript</a></li>
-<li><a href="#App.getCollections">App.getCollections</a></li>
+<li><a href="#App.getCollections">App.getCollections(callbacks)</a></li>
+<li><a href="#App.getFolderContent">App.getFolderContent(path, callbacks)</a></li>
+<li><a href="#App.getScript">App.getScript(id, callbacks}</a></li>
+<li><a href="#App.getBots">App.getBots(skip, limit, callbacks)</a></li>
 </ul>
 </li>
 </ul>
@@ -1074,8 +1074,7 @@
 </pre></div>
 
 
-<p><strong>Возвращает</strong>: <code>promise.{dataSize: int, filesSize: int, indexSize: int, store: int}
-</code> - Возвращает promise, который возвращает объект со статистикой приложения:</p>
+<p><strong>Возвращает</strong>: <code>promise.{dataSize: int, filesSize: int, indexSize: int, store: int}</code> - Возвращает promise, который возвращает объект со статистикой приложения:</p>
 <ul>
 <li>dataSize - объем данных приложения;</li>
 <li>fileSize - объем данных, занятый файлами приложения;</li>
@@ -1126,7 +1125,7 @@
 </pre></div>
 
 
-<p><strong>Возвращает</strong>: <code>promise.<App></code> - Возвращает promise, который возвращает объект <code>App</code>.</p>
+<p><strong>Возвращает</strong>: <code>promise.&lt;App&gt;</code> - Возвращает promise, который возвращает объект <code>App</code>.</p>
 <hr />
 <p><a name="App.getCollections"></a></p>
 <h2 id="appgetcollectionscallbacks">App.getCollections(callbacks)<a class="headerlink" href="#appgetcollectionscallbacks" title="Permanent link">&para;</a></h2>
@@ -1227,7 +1226,7 @@
 </pre></div>
 
 
-<p><strong>Возвращает</strong>: <code>promise.&lt;[Script, Folder]&gt;</code> - Возвращает promise, который возвращает массив объектов <code>Script</code> и <code>Folder</code></p>
+<p><strong>Возвращает</strong>: <code>promise.[Script, Folder]</code> - Возвращает promise, который возвращает массив объектов <code>Script</code> и <code>Folder</code></p>
 <hr />
 <p><a name="App.getScript"></a></p>
 <h2 id="appgetscriptid-callbacks">App.getScript(id, callbacks}<a class="headerlink" href="#appgetscriptid-callbacks" title="Permanent link">&para;</a></h2>
@@ -1342,7 +1341,7 @@
 </pre></div>
 
 
-<p><strong>Возвращает</strong>: <code>promise.<Bot></code> - Возвращает promise, который возвращает массив объектов <code>Bot</code></p>
+<p><strong>Возвращает</strong>: <code>promise.&lt;Bot&gt;</code> - Возвращает promise, который возвращает массив объектов <code>Bot</code></p>
               
             </article>
           </div>
