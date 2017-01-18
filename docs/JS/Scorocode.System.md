@@ -6,10 +6,10 @@
     * [new System()](#new_sc.System)
     * [.getDataStats(callbacks)](#sc.System+getDataStats) 
     * [.getApp(callbacks)](#sc.System+getApp) 
-    * [App.getCollections](#App.getCollections)
-    * [App.getFolderContent](#App.getFolderContent)
-    * [App.getScript](#App.getScript)
-    * [App.getCollections](#App.getCollections)
+    * [App.getCollections(callbacks)](#App.getCollections)
+    * [App.getFolderContent(path, callbacks)](#App.getFolderContent)
+    * [App.getScript(id, callbacks}](#App.getScript)
+    * [App.getBots(skip, limit, callbacks)](#App.getBots)
 
 --------------------------------------------------------------------------------
 
@@ -58,8 +58,7 @@ sys.getDataStats()
     });
 ```
 
-**Возвращает**: <code>promise.{dataSize: int, filesSize: int, indexSize: int, store: int}
-</code> - Возвращает promise, который возвращает объект со статистикой приложения:
+**Возвращает**: `promise.{dataSize: int, filesSize: int, indexSize: int, store: int}` - Возвращает promise, который возвращает объект со статистикой приложения:
 
 * dataSize - объем данных приложения;
 * fileSize - объем данных, занятый файлами приложения;
@@ -98,7 +97,7 @@ sys.getApp()
     });
 ```
 
-**Возвращает**: <code>promise.<App></code> - Возвращает promise, который возвращает объект `App`.
+**Возвращает**: `promise.<App>` - Возвращает promise, который возвращает объект `App`.
 
 
 ---------------------------------------------------------------------
@@ -135,7 +134,7 @@ system.getApp()
   });
 ```
 
-**Возвращает**: <code>promise.[Collection]</code> - Возвращает promise, который возвращает массив объектов `Collection`.
+**Возвращает**: `promise.[Collection]` - Возвращает promise, который возвращает массив объектов `Collection`.
 
 ---------------------------------------------------------------------
 <a name="App.getFolderContent"></a>
@@ -171,7 +170,7 @@ system.getApp()
   });
 ```
 
-**Возвращает**: <code>promise.<[Script, Folder]></code> - Возвращает promise, который возвращает массив объектов `Script` и `Folder`
+**Возвращает**: `promise.[Script, Folder]` - Возвращает promise, который возвращает массив объектов `Script` и `Folder`
 
 ---------------------------------------------------------------------
 <a name="App.getScript"></a>
@@ -244,4 +243,4 @@ system.getApp()
   });
 ```
 
-**Возвращает**: <code>promise.<Bot></code> - Возвращает promise, который возвращает массив объектов `Bot`
+**Возвращает**: `promise.<Bot>` - Возвращает promise, который возвращает массив объектов `Bot`
