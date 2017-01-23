@@ -41,12 +41,14 @@ var Broadcast = new sc.Messenger();
 
 ```
 data: {
-    "gcm": {
-        //данные для отправки Android-устройствам
-    },
-    "apns": {
-        //данные для отправки iOs-устройствам
-    } 
+    "data": {
+        "gcm": {
+            //данные для отправки Android-устройствам
+        },
+        "apns": {
+            //данные для отправки iOs-устройствам
+        }
+    }    
 }
 ```
 
@@ -66,28 +68,30 @@ var Broadcast = new sc.Messenger();
 Broadcast.sendPush({
         where: Devices,
         data: {
-            "gcm": {
-                "protocol": "http"
-                "notification": {
-                    "body" : "great match!",
-                    "title" : "Portugal vs. Denmark",
-                    "icon" : "myicon"
-                },
-                "data": {
-                    "key": "value"
-                }
-            },
-            "apns": {
-                "aps" : {
-                    "alert" : {
-                        "title" : "Portugal vs. Denmark",
+            "data": {
+                "gcm": {
+                    "protocol": "http",
+                    "notification": {
                         "body" : "great match!",
-                        "action-loc-key" : "Watch"
+                        "title" : "Portugal vs. Denmark",
+                        "icon" : "myicon"
                     },
-                    "badge" : 5
+                    "data": {
+                        "key": "value"
+                    }
                 },
-                "acme1" : "bar",
-                "acme2" : [ "bang",  "whiz" ]
+                "apns": {
+                    "aps" : {
+                        "alert" : {
+                            "title" : "Portugal vs. Denmark",
+                            "body" : "great match!",
+                            "action-loc-key" : "Watch"
+                        },
+                        "badge" : 5
+                    },
+                    "acme1" : "bar",
+                    "acme2" : [ "bang",  "whiz" ]
+                }
             }
         }
     })
@@ -109,7 +113,6 @@ Broadcast.sendPush({
 - <code>String</code> 'Invalid options type'
 - <code>String</code> 'Where must be a type of Query'
 - <code>String</code> 'Invalid data type'
-- <code>String</code> 'Missing subject or text message'
 
 
 
