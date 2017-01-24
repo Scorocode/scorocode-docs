@@ -73,8 +73,8 @@ extra:
     primary: 'blue'
     accent: 'light blue'
 markdown_extensions:
+  - pymdownx.superfences
   - markdown.extensions.admonition
   - markdown.extensions.codehilite(guess_lang=false)
   - markdown.extensions.footnotes
   - markdown.extensions.meta
-  - markdown.extensions.toc(permalink=true)
