@@ -1,10 +1,8 @@
 <nav class="md-nav md-nav--primary">
   <label class="md-nav__title md-nav__title--site" for="drawer">
-    <i class="md-icon md-nav__icon">
+    <i class="{% if config.extra.logo %} md-logo {% else %} md-icon md-icon--home {% endif %} md-nav__button">
       {% if config.extra.logo %}
         <img src="{{ base_url }}/{{ config.extra.logo }}">
-      {% else %}
-        school
       {% endif %}
     </i>
     {{ config.site_name }}
