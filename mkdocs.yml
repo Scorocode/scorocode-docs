@@ -60,7 +60,7 @@ pages:
         - 'Класс ScorocodeScript':  'Java/ScorocodeScript.md'
     - 'Примеры приложений':
         - 'Склад (Android)': 'Java/Storehouse.md'
-theme_dir: 'material'
+theme: 'material'
 extra:
   logo: 'logo.png'
   font:
