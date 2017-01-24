@@ -1226,7 +1226,7 @@
                 
                   <h1>Работа с приложением</h1>
                 
-                <h2 id="_1">Получение полной информации о приложении<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h2 id="_1">Получение полной информации о приложении</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -1695,20 +1695,19 @@
 
 
 <hr />
-<h2 id="_2">Получение списка коллекций приложения и их настроек<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">Получение списка коллекций приложения и их настроек</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
 <p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
+<p><div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;acc&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>      <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа</span><span class="p">,</span> <span class="err">обязательный,</span> <span class="err">только</span> <span class="err">masterKey</span>
 <span class="p">}</span>
 </pre></div>
 
-
-<p><strong>Ответы:</strong></p>
+<strong>Ответы:</strong></p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;collections&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -2104,7 +2103,7 @@
 
 
 <hr />
-<h2 id="_3">Просмотр структуры и настроек конкретной коллекции.<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">Просмотр структуры и настроек конкретной коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/get</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -2263,12 +2262,12 @@
 
 
 <hr />
-<h2 id="_4">Создание новой коллекции<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">Создание новой коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/create</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
 <p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
+<p><div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;acc&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа,</span> <span class="err">обязательный,</span> <span class="err">только</span> <span class="err">masterKey</span>
@@ -2280,8 +2279,7 @@
 <span class="p">}</span>
 </pre></div>
 
-
-<p><strong>Ответы:</strong></p>
+<strong>Ответы:</strong></p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;collection&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -2417,12 +2415,12 @@
 
 
 <hr />
-<h2 id="_5">Изменение настроек коллекции<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">Изменение настроек коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/update</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
 <p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
+<p><div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;acc&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа,</span> <span class="err">обязательный,</span> <span class="err">только</span> <span class="err">masterKey</span>
@@ -2435,8 +2433,7 @@
 <span class="p">}</span>
 </pre></div>
 
-
-<p><strong>Ответы:</strong></p>
+<strong>Ответы:</strong></p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;collection&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -2556,7 +2553,7 @@
 
 
 <hr />
-<h2 id="_6">Удаление коллекции<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6">Удаление коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/delete</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -2601,7 +2598,7 @@
 
 
 <hr />
-<h2 id="_7">Создание дубликата коллекции<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_7">Создание дубликата коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/clone</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -2725,7 +2722,7 @@
 
 
 <hr />
-<h2 id="_8">Создание индекса коллекции<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_8">Создание индекса коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/index/create</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -2785,7 +2782,7 @@
 
 
 <hr />
-<h2 id="_9">Удаление индекса коллекции<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_9">Удаление индекса коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/index/delete</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -2833,7 +2830,7 @@
 
 
 <hr />
-<h2 id="_10">Создание поля коллекции<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_10">Создание поля коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/fields/create</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -2893,7 +2890,7 @@
 
 
 <hr />
-<h2 id="_11">Удаление поля коллекции<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_11">Удаление поля коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/fields/delete</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -3090,7 +3087,7 @@
 
 
 <hr />
-<h2 id="_12">Изменение триггеров коллекции<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h2 id="_12">Изменение триггеров коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/triggers</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -3195,7 +3192,7 @@
 
 
 <hr />
-<h2 id="_13">Получение списка папок и скриптов директории<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h2 id="_13">Получение списка папок и скриптов директории</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/scripts/folders</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -3257,7 +3254,7 @@
 
 
 <hr />
-<h2 id="_14">Создание новой папки<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h2 id="_14">Создание новой папки</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/scripts/folders/create</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -3299,7 +3296,7 @@
 
 
 <hr />
-<h2 id="_15">Удаление папки со всем содержимым<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h2 id="_15">Удаление папки со всем содержимым</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/scripts/folders/delete</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -3341,7 +3338,7 @@
 
 
 <hr />
-<h2 id="_16">Получение скрипта<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<h2 id="_16">Получение скрипта</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/scripts/get</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -3417,7 +3414,7 @@
 
 
 <hr />
-<h2 id="_17">Создание нового скрипта<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<h2 id="_17">Создание нового скрипта</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/scripts/create</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -3525,7 +3522,7 @@
 
 
 <hr />
-<h2 id="_18">Изменение скрипта<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<h2 id="_18">Изменение скрипта</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/scripts/update</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -3624,7 +3621,7 @@
 
 
 <hr />
-<h2 id="_19">Удаление скрипта<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<h2 id="_19">Удаление скрипта</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/scripts/delete</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -3666,7 +3663,7 @@
 
 
 <hr />
-<h2 id="_20">Получение списка ботов приложения<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<h2 id="_20">Получение списка ботов приложения</h2>
 <p><strong>https://api.scorocode.ru/api/v1/bots</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -3716,7 +3713,7 @@
 
 
 <hr />
-<h2 id="_21">Создание бота<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<h2 id="_21">Создание бота</h2>
 <p><strong>https://api.scorocode.ru/api/v1/bots/create</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -3776,7 +3773,7 @@
 
 
 <hr />
-<h2 id="_22">Изменение бота<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<h2 id="_22">Изменение бота</h2>
 <p><strong>https://api.scorocode.ru/api/v1/bots/update</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -3839,7 +3836,7 @@
 
 
 <hr />
-<h2 id="_23">Удаление бота<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
+<h2 id="_23">Удаление бота</h2>
 <p><strong>https://api.scorocode.ru/api/v1/bots/delete</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>

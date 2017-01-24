@@ -1277,33 +1277,44 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Прерывание/выполнение операций в результате работы триггера</p>
-<p>При выполнении триггеров <strong>перед</strong> операциями "insert", "update" и "delete", необходимо в результате выполнять return true для продолжения выполнения операциий документа, и return false для прерывания выполнения операций. Если триггер не возвращает значения, то по умолчание результат его работы - false.</p>
+<p>При выполнении триггеров <strong>перед</strong> операциями "insert", "update" и "delete", необходимо в результате выполнять return true для продолжения выполнения операциий документа, и return false для прерывания выполнения операций. Если триггер не возвращает значения, то по умолчание результат его работы - false</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Возврат данных при прерывании выполнения операции триггера</p>
+<p>В случае, если вам необходимо при прерывании операции триггера вернуть данные - вы можете указать возвращаемые данне в параметре pool.result
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// проверим наличие поля &quot;name&quot; в создаваемом документе</span>
+    <span class="nx">pool</span><span class="p">.</span><span class="nx">result</span> <span class="o">=</span> <span class="s2">&quot;Необходимо указать имя&quot;</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                     <span class="c1">// прервем создание документа в случае отсутствия поля</span>
+<span class="p">}</span> 
+<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                      <span class="c1">// В случае, если значение поля присутствует - продолжим операцию</span>
+</pre></div>
+</p>
 </div>
 <p>При выполнении триггера в его контексте создаются объекты <code>DataManager</code> и <code>pool</code>.</p>
-<h2 id="pool">Объект pool<a class="headerlink" href="#pool" title="Permanent link">&para;</a></h2>
+<h2 id="pool">Объект pool</h2>
 <p>Объект <code>pool</code> содержит следующие данные:</p>
-<h3 id="insert">Перед операцией <code>insert</code>:<a class="headerlink" href="#insert" title="Permanent link">&para;</a></h3>
+<h3 id="insert">Перед операцией <code>insert</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="err">doc</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля:значение</span>
 <span class="err">}</span>
 </pre></div>
 
 
-<h3 id="insert_1">После операции <code>insert</code>:<a class="headerlink" href="#insert_1" title="Permanent link">&para;</a></h3>
+<h3 id="insert_1">После операции <code>insert</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="err">newDoc</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">вновь</span> <span class="err">созданный</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля:значение</span>
 <span class="err">}</span>
 </pre></div>
 
 
-<h3 id="remove">Перед операцией <code>remove</code>:<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
+<h3 id="remove">Перед операцией <code>remove</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="err">query</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">поисковый</span> <span class="err">запрос,</span> <span class="err">в</span> <span class="err">соответствии</span> <span class="err">с</span> <span class="err">которым</span> <span class="err">необходимо</span> <span class="err">удалить</span> <span class="err">документы</span>
 <span class="err">}</span>
 </pre></div>
 
 
-<h3 id="remove_1">После операции <code>remove</code>:<a class="headerlink" href="#remove_1" title="Permanent link">&para;</a></h3>
+<h3 id="remove_1">После операции <code>remove</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="err">count</span> <span class="err">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">удаленных</span> <span class="err">документов</span>
     <span class="err">docs</span>  <span class="err">:</span> <span class="err">[]</span>  <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">удаленных</span> <span class="err">документов</span>
@@ -1311,7 +1322,7 @@
 </pre></div>
 
 
-<h3 id="update">Перед операцией <code>update</code>:<a class="headerlink" href="#update" title="Permanent link">&para;</a></h3>
+<h3 id="update">Перед операцией <code>update</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="err">doc</span>   <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">правилами</span> <span class="err">обновления</span> <span class="err">значений</span>
     <span class="err">query</span> <span class="err">:</span> <span class="p">{}</span><span class="err">,</span> <span class="err">//</span> <span class="err">поисковый</span> <span class="err">запрос,</span> <span class="err">в</span> <span class="err">соответствии</span> <span class="err">с</span> <span class="err">которым</span> <span class="err">необходимо</span> <span class="err">обновить</span> <span class="err">документы</span>
@@ -1319,7 +1330,7 @@
 </pre></div>
 
 
-<h3 id="update_1">После операции <code>update</code>:<a class="headerlink" href="#update_1" title="Permanent link">&para;</a></h3>
+<h3 id="update_1">После операции <code>update</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="err">count</span> <span class="err">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">обновленный</span> <span class="err">документов</span>
     <span class="err">docs</span>  <span class="err">:</span> <span class="err">[]</span>  <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">обновленных</span> <span class="err">документов</span>
@@ -1327,7 +1338,7 @@
 </pre></div>
 
 
-<h3 id="updatebyid">Перед операцией <code>updatebyid</code>:<a class="headerlink" href="#updatebyid" title="Permanent link">&para;</a></h3>
+<h3 id="updatebyid">Перед операцией <code>updatebyid</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="err">doc</span>         <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">правилами</span> <span class="err">обновления</span> <span class="err">значений</span>
     <span class="err">query</span>       <span class="err">:</span> <span class="p">{}</span><span class="err">,</span> <span class="err">//</span> <span class="err">поисковый</span> <span class="err">запрос</span> <span class="p">{</span><span class="nt">&quot;_id&quot;</span> <span class="p">:</span> <span class="p">}</span>
@@ -1335,16 +1346,16 @@
 </pre></div>
 
 
-<h3 id="updatebyid_1">После операции <code>updatebyid</code>:<a class="headerlink" href="#updatebyid_1" title="Permanent link">&para;</a></h3>
+<h3 id="updatebyid_1">После операции <code>updatebyid</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="err">newDoc</span>      <span class="err">:</span> <span class="err">{</span> <span class="p">}</span> <span class="err">//</span> <span class="err">обновленный</span> <span class="err">документ</span>
 <span class="err">}</span>
 </pre></div>
 
 
-<h2 id="datamanager">Объект DataManager<a class="headerlink" href="#datamanager" title="Permanent link">&para;</a></h2>
+<h2 id="datamanager">Объект DataManager</h2>
 <p>Объект <code>DataManager</code> содержит следующие методы работы с данными:</p>
-<h3 id="datamanagerinsertdata-object">DataManager.Insert(data Object)<a class="headerlink" href="#datamanagerinsertdata-object" title="Permanent link">&para;</a></h3>
+<h3 id="datamanagerinsertdata-object">DataManager.Insert(data Object)</h3>
 <p>Метод для вставки документа в коллекцию. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
@@ -1372,7 +1383,7 @@
 </pre></div>
 
 
-<h3 id="datamanagerremovedata-object">DataManager.Remove(data Object)<a class="headerlink" href="#datamanagerremovedata-object" title="Permanent link">&para;</a></h3>
+<h3 id="datamanagerremovedata-object">DataManager.Remove(data Object)</h3>
 <p>Метод для удаления документов из коллекции. Параметры:</p>
 <p><code>Data Object</code> - объект, содержащий следующие атрибуты:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
@@ -1405,7 +1416,7 @@
 </pre></div>
 
 
-<h3 id="datamanagerupdatedata-object">DataManager.Update(data Object)<a class="headerlink" href="#datamanagerupdatedata-object" title="Permanent link">&para;</a></h3>
+<h3 id="datamanagerupdatedata-object">DataManager.Update(data Object)</h3>
 <p>Метод для обновления документов в коллекции. Параметры:</p>
 <p><code>Data Object</code> - объект, содержащий следующие атрибуты:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
@@ -1439,7 +1450,7 @@
 </pre></div>
 
 
-<h3 id="datamanagerupdatebyiddata-object">DataManager.UpdateById(data Object)<a class="headerlink" href="#datamanagerupdatebyiddata-object" title="Permanent link">&para;</a></h3>
+<h3 id="datamanagerupdatebyiddata-object">DataManager.UpdateById(data Object)</h3>
 <p>Метод для обновления одного документа в коллекции, идентифицируемого по ID. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
@@ -1468,7 +1479,7 @@
 </pre></div>
 
 
-<h3 id="datamanagerfinddata-object">DataManager.Find(data Object)<a class="headerlink" href="#datamanagerfinddata-object" title="Permanent link">&para;</a></h3>
+<h3 id="datamanagerfinddata-object">DataManager.Find(data Object)</h3>
 <p>Метод для запроса документов из коллекции. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
@@ -1501,7 +1512,7 @@
 </pre></div>
 
 
-<h3 id="datamanagercountdata-object">DataManager.Count(data Object)<a class="headerlink" href="#datamanagercountdata-object" title="Permanent link">&para;</a></h3>
+<h3 id="datamanagercountdata-object">DataManager.Count(data Object)</h3>
 <p>Метод для запроса количества документов по условию в коллекции. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
@@ -1529,7 +1540,7 @@
 </pre></div>
 
 
-<h3 id="datamanagerrunscriptdata-object">DataManager.RunScript(data Object)<a class="headerlink" href="#datamanagerrunscriptdata-object" title="Permanent link">&para;</a></h3>
+<h3 id="datamanagerrunscriptdata-object">DataManager.RunScript(data Object)</h3>
 <p>Метод для запуска серверного скрипта. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
@@ -1556,8 +1567,8 @@
 </pre></div>
 
 
-<h2 id="_1">Примеры триггеров<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">Установка обязательности наличия значения поля.<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_1">Примеры триггеров</h2>
+<h3 id="_2">Установка обязательности наличия значения поля.</h3>
 <p>Перед добавлением документа проверим наличие значения поля "name" и, в случае его отсутствия, прервем операцию добавления документа.</p>
 <div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span>   <span class="c1">// проверим наличие поля &quot;name&quot; в создаваемом документе</span>
         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                     <span class="c1">// прервем создание документа в случае отсутствия поля</span>
@@ -1567,7 +1578,7 @@
 </pre></div>
 
 
-<h3 id="-">Установка значения по-умолчанию.<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<h3 id="-">Установка значения по-умолчанию.</h3>
 <p>Перед добавлением документа проверим наличие значения поля "name" и, в случае его отсутствия, установим значение по-умолчанию.</p>
 <div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// проверим наличие поля &quot;name&quot; в создаваемом документе</span>
         <span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Джон Сноу&quot;</span><span class="p">;</span>    <span class="c1">// в случае отсутствия значения, установим значение по-умолчанию</span>
@@ -1577,7 +1588,7 @@
 </pre></div>
 
 
-<h3 id="_3">Добавление связанного документа другой коллекции.<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_3">Добавление связанного документа другой коллекции.</h3>
 <p>После добавления документа, создадим документ в другой коллекции со ссылкой на добавленный.</p>
 <div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Insert</span><span class="p">({</span>                           <span class="c1">// выполним операцию добавления документа в коллекцию &quot;stuff&quot;</span>
         <span class="nx">coll</span> <span class="o">:</span> <span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
@@ -1588,7 +1599,7 @@
 </pre></div>
 
 
-<h3 id="_4">Удаление связанных документов другой коллекции.<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">Удаление связанных документов другой коллекции.</h3>
 <p>Перед удалением документа, удалим все документы другой коллекции со ссылкой на удаляемый.</p>
 <div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Remove</span><span class="p">({</span>                           <span class="c1">// выполним удаление связанных документов в коллекции &quot;stuff&quot;</span>
     <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
@@ -1600,7 +1611,7 @@
 </pre></div>
 
 
-<h3 id="_5">Вызов серверного скрипта.<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_5">Вызов серверного скрипта.</h3>
 <p>После добавления документа, запустим скрипт, передав ему новый документ. Скрипт может, например, осуществлять рассылку PUSH-уведомлений.</p>
 <div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">RunScript</span><span class="p">({</span>                   <span class="c1">// выполним запуск скрипта с ID 580b386d42d52f1ba275fc24</span>
     <span class="nx">script</span>  <span class="o">:</span> <span class="s2">&quot;580b386d42d52f1ba275fc24&quot;</span><span class="p">,</span>

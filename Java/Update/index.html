@@ -1127,7 +1127,7 @@
                   <h1>Класс Update</h1>
                 
                 <p><a name="Update"></a></p>
-<h2 id="update">Update<a class="headerlink" href="#update" title="Permanent link">&para;</a></h2>
+<h2 id="update">Update</h2>
 <p>Класс для обновления полей документа из БД</p>
 <p><strong>Содержание</strong></p>
 <ul>
@@ -1151,7 +1151,7 @@
 </ul>
 <hr />
 <p><a name="Update_new"></a></p>
-<h3 id="new-update">new Update()<a class="headerlink" href="#new-update" title="Permanent link">&para;</a></h3>
+<h3 id="new-update">new Update()</h3>
 <p>Конструктор Update()</p>
 <div class="codehilite"><pre><span></span><span class="n">Update</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">Update</span><span class="o">();</span>
 </pre></div>
@@ -1166,7 +1166,7 @@
 
 <hr />
 <p><a name="Update+set"></a></p>
-<h3 id="setfieldvalue">.set(field,value)<a class="headerlink" href="#setfieldvalue" title="Permanent link">&para;</a></h3>
+<h3 id="setfieldvalue">.set(field,value)</h3>
 <p>Метод для установки нового значения поля документа БД.</p>
 <table>
 <thead>
@@ -1195,7 +1195,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1230,11 +1230,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Update+push"></a></p>
-<h3 id="pushfield-value">.push(field, value)<a class="headerlink" href="#pushfield-value" title="Permanent link">&para;</a></h3>
+<h3 id="pushfield-value">.push(field, value)</h3>
 <p>Метод для добавления элемента в поле (типа массив) документа БД</p>
 <table>
 <thead>
@@ -1263,7 +1262,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1295,11 +1294,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Update+popFirst"></a></p>
-<h3 id="popfirstfield">.popFirst(field)<a class="headerlink" href="#popfirstfield" title="Permanent link">&para;</a></h3>
+<h3 id="popfirstfield">.popFirst(field)</h3>
 <p>Метод для удаления первого элемента из поля (типа массив) документа БД.</p>
 <table>
 <thead>
@@ -1321,7 +1319,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1354,11 +1352,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Update+popLast"></a></p>
-<h3 id="poplastfield">.popLast(field)<a class="headerlink" href="#poplastfield" title="Permanent link">&para;</a></h3>
+<h3 id="poplastfield">.popLast(field)</h3>
 <p>Метод для удаления последнего элемента из поля (типа массив) документа БД.</p>
 <table>
 <thead>
@@ -1380,7 +1377,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1413,11 +1410,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Update+pull"></a></p>
-<h3 id="pullfield-value">.pull(field, value)<a class="headerlink" href="#pullfield-value" title="Permanent link">&para;</a></h3>
+<h3 id="pullfield-value">.pull(field, value)</h3>
 <p>Метод для удаления заданного элемента из поля (типа массив) документа БД.</p>
 <table>
 <thead>
@@ -1450,7 +1446,7 @@
 <p class="admonition-title">Примечание</p>
 <p>Если в массиве несколько элементов со значением, соответствующим значению value, данный метод удалит все эти элементы.</p>
 </div>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1480,11 +1476,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Update+pullAll"></a></p>
-<h3 id="pullallfield-value">.pullAll(field, value)<a class="headerlink" href="#pullallfield-value" title="Permanent link">&para;</a></h3>
+<h3 id="pullallfield-value">.pullAll(field, value)</h3>
 <p>Метод для удаления всех переданных (в качестве параметра values) элементов из поля (типа массив) документа БД.</p>
 <table>
 <thead>
@@ -1513,7 +1508,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1549,11 +1544,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Update+addToSet"></a></p>
-<h3 id="addtosetfield-value">.addToSet(field, value)<a class="headerlink" href="#addtosetfield-value" title="Permanent link">&para;</a></h3>
+<h3 id="addtosetfield-value">.addToSet(field, value)</h3>
 <p>Метод для для добавления элемента в поле (типа массив) документа БД если он еще не присутствует в нем.</p>
 <table>
 <thead>
@@ -1582,7 +1576,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1612,11 +1606,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Update+inc"></a></p>
-<h3 id="incfield-increasevalue">.inc(field,  increaseValue)<a class="headerlink" href="#incfield-increasevalue" title="Permanent link">&para;</a></h3>
+<h3 id="incfield-increasevalue">.inc(field,  increaseValue)</h3>
 <p>Метод для увеличения значения поля документа БД на заданное значение. Примечание: число может иметь отрицательное значение</p>
 <table>
 <thead>
@@ -1645,7 +1638,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1676,11 +1669,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Update+setCurrentDate"></a></p>
-<h3 id="setcurrentdatefield">.setCurrentDate(field)<a class="headerlink" href="#setcurrentdatefield" title="Permanent link">&para;</a></h3>
+<h3 id="setcurrentdatefield">.setCurrentDate(field)</h3>
 <p>Метод для установки текущей даты в поле (типа Date) документа БД.</p>
 <table>
 <thead>
@@ -1702,7 +1694,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1732,11 +1724,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Update+mul"></a></p>
-<h3 id="mulfield-value">.mul(field, value)<a class="headerlink" href="#mulfield-value" title="Permanent link">&para;</a></h3>
+<h3 id="mulfield-value">.mul(field, value)</h3>
 <p>Метод для умножения поля документа БД на заданное значение.</p>
 <table>
 <thead>
@@ -1765,7 +1756,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1795,11 +1786,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Update+min"></a></p>
-<h3 id="minfield-valuetocompare">.min(field, valueToCompare)<a class="headerlink" href="#minfield-valuetocompare" title="Permanent link">&para;</a></h3>
+<h3 id="minfield-valuetocompare">.min(field, valueToCompare)</h3>
 <p>Метод обновляет значение числового поля только в случае, если новое значение меньше текущего значения поля</p>
 <table>
 <thead>
@@ -1828,7 +1818,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1858,11 +1848,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Update+max"></a></p>
-<h3 id="maxfield-valuetocompare">.max(field, valueToCompare)<a class="headerlink" href="#maxfield-valuetocompare" title="Permanent link">&para;</a></h3>
+<h3 id="maxfield-valuetocompare">.max(field, valueToCompare)</h3>
 <p>Метод обновляет значение числового поля только в случае, если новое значение больше текущего значения поля</p>
 <table>
 <thead>
@@ -1891,7 +1880,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1921,11 +1910,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Update+getUpdateInfo"></a></p>
-<h3 id="getupdateinfo">.getUpdateInfo()<a class="headerlink" href="#getupdateinfo" title="Permanent link">&para;</a></h3>
+<h3 id="getupdateinfo">.getUpdateInfo()</h3>
 <p>Метод для получения информации, необходимой методам для обновления документа.</p>
               
             </article>

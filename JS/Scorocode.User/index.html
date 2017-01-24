@@ -973,7 +973,7 @@
 </ul>
 <hr />
 <p><a name="new_sc.User_new"></a></p>
-<h2 id="new-user">new User()<a class="headerlink" href="#new-user" title="Permanent link">&para;</a></h2>
+<h2 id="new-user">new User()</h2>
 <p>Класс для работы с пользователями приложения.</p>
 <p><strong>Пример</strong>  </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
@@ -1004,7 +1004,7 @@
 
 <hr />
 <p><a name="sc.User+signup"></a></p>
-<h2 id="signupoptions">.signup(options)<a class="headerlink" href="#signupoptions" title="Permanent link">&para;</a></h2>
+<h2 id="signupoptions">.signup(options)</h2>
 <p>Метод для регистрации пользователей приложения. </p>
 <p><strong>Тип</strong>: Метод <code><a href="#sc.User">sc.User</a></code>  </p>
 <table>
@@ -1027,7 +1027,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1052,12 +1052,11 @@
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Возвращает</strong> <code>promise.{sc.User}</code> - возвращает promise, который возвращает данные sc.User</p>
 <hr />
 <p><a name="sc.User+login"></a></p>
-<h2 id="loginemail-password-options">.login(email, password, options)<a class="headerlink" href="#loginemail-password-options" title="Permanent link">&para;</a></h2>
+<h2 id="loginemail-password-options">.login(email, password, options)</h2>
 <p>Метод для аутентификации пользователя приложения и получения пользовательской сессии.</p>
 <p><strong>Тип</strong>: instance method of <code><a href="#sc.User">User</a></code>  </p>
 <table>
@@ -1094,7 +1093,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1128,12 +1127,11 @@
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">errLogin</span><span class="p">)</span>
     <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Возвращает</strong> <code>promise.{sc.User}</code> - возвращает promise, который возвращает данные sc.User</p>
 <hr />
 <p><a name="sc.User+logout"></a></p>
-<h2 id="logoutoptions">.logout(options)<a class="headerlink" href="#logoutoptions" title="Permanent link">&para;</a></h2>
+<h2 id="logoutoptions">.logout(options)</h2>
 <p>Метод для деаутентификации пользователя приложения и удаления пользовательской сессии.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#sc.User">sc.User</a></code>  </p>
 <table>
@@ -1156,7 +1154,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1190,6 +1188,7 @@
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">errLogin</span><span class="p">)</span>
     <span class="p">});</span>
 </pre></div>
+</p>
               
             </article>
           </div>

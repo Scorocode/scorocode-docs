@@ -1071,7 +1071,7 @@
                   <h1>Класс Document</h1>
                 
                 <p><a name="Document"></a></p>
-<h2 id="document">Document<a class="headerlink" href="#document" title="Permanent link">&para;</a></h2>
+<h2 id="document">Document</h2>
 <p>Класс для работы с документами коллекций.</p>
 <p><strong>Содержание</strong></p>
 <ul>
@@ -1091,7 +1091,7 @@
 </ul>
 <hr />
 <p><a name="new_Scorocode.Document_new"></a></p>
-<h3 id="new-documentcollection_name">new Document(collection_name)<a class="headerlink" href="#new-documentcollection_name" title="Permanent link">&para;</a></h3>
+<h3 id="new-documentcollection_name">new Document(collection_name)</h3>
 <p>Инициализация экземпляра класса Document</p>
 <table>
 <thead>
@@ -1113,16 +1113,15 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">Document</span> <span class="n">exampleItem</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="s">&quot;Items&quot;</span><span class="o">);</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Document+setField"></a></p>
-<h3 id="setfieldfield-value">.setField(field, value)<a class="headerlink" href="#setfieldfield-value" title="Permanent link">&para;</a></h3>
+<h3 id="setfieldfield-value">.setField(field, value)</h3>
 <p>Метод для передачи данных полю документа.</p>
 <table>
 <thead>
@@ -1151,17 +1150,16 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="kd">final</span> <span class="n">Document</span> <span class="n">order</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">orders</span><span class="err">”</span><span class="o">);</span>
 <span class="n">order</span><span class="o">.</span><span class="na">setField</span><span class="o">(</span><span class="err">“</span><span class="n">orderId</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">Ku128A439ads</span><span class="err">”</span><span class="o">);</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Document+saveDocument"></a></p>
-<h3 id="savedocumentcallback">.saveDocument(callback)<a class="headerlink" href="#savedocumentcallback" title="Permanent link">&para;</a></h3>
+<h3 id="savedocumentcallback">.saveDocument(callback)</h3>
 <p>Метод сохраняет документ в хранилище данных приложения или обновляет уже имеющийся там документ</p>
 <table>
 <thead>
@@ -1240,7 +1238,7 @@
 
 <hr />
 <p><a name="Document+getDocumentById"></a></p>
-<h3 id="getdocumentbyiddocumentid-callback">.getDocumentById(documentId, callback)<a class="headerlink" href="#getdocumentbyiddocumentid-callback" title="Permanent link">&para;</a></h3>
+<h3 id="getdocumentbyiddocumentid-callback">.getDocumentById(documentId, callback)</h3>
 <p>Метод для для получения документа коллекции из БД по его id. </p>
 <table>
 <thead>
@@ -1290,7 +1288,7 @@
 
 <hr />
 <p><a name="Document+getField"></a></p>
-<h3 id="getfieldfield">.getField(field)<a class="headerlink" href="#getfieldfield" title="Permanent link">&para;</a></h3>
+<h3 id="getfieldfield">.getField(field)</h3>
 <p>Метод для получения данных указанного поля документа.</p>
 <table>
 <thead>
@@ -1312,19 +1310,18 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">String</span> <span class="n">orderId</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">getField</span><span class="o">(</span><span class="err">“</span><span class="n">orderId</span><span class="err">”</span><span class="o">);</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Document+updateDocument"></a></p>
-<h3 id="updatedocument">.updateDocument()<a class="headerlink" href="#updatedocument" title="Permanent link">&para;</a></h3>
+<h3 id="updatedocument">.updateDocument()</h3>
 <p>Метод для обновления документа при помощи класса Update (см. документацию к классу Update)</p>
 <hr />
 <p><a name="Document+uploadFile"></a></p>
-<h3 id="uploadfilefieldname-filename-contenttouploadinbase64-callback">.uploadFile(fieldName, fileName, contentToUploadInBase64, callback)<a class="headerlink" href="#uploadfilefieldname-filename-contenttouploadinbase64-callback" title="Permanent link">&para;</a></h3>
+<h3 id="uploadfilefieldname-filename-contenttouploadinbase64-callback">.uploadFile(fieldName, fileName, contentToUploadInBase64, callback)</h3>
 <p>Метод для загрузки файла в поле документа.</p>
 <table>
 <thead>
@@ -1367,7 +1364,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;nV0p50CDKq&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackGetDocumentById</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1397,11 +1394,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Document+getFileLink"></a></p>
-<h3 id="getfilelinkfieldname-filename">.getFileLink(fieldName, fileName)<a class="headerlink" href="#getfilelinkfieldname-filename" title="Permanent link">&para;</a></h3>
+<h3 id="getfilelinkfieldname-filename">.getFileLink(fieldName, fileName)</h3>
 <p>Метод для получения ссылки на файл.</p>
 <table>
 <thead>
@@ -1430,7 +1426,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">documentWithFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">documentWithFile</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;nV0p50CDKq&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1446,11 +1442,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Document+removeFile"></a></p>
-<h3 id="removefilefieldname-filename-callback">.removeFile(fieldName, fileName, callback)<a class="headerlink" href="#removefilefieldname-filename-callback" title="Permanent link">&para;</a></h3>
+<h3 id="removefilefieldname-filename-callback">.removeFile(fieldName, fileName, callback)</h3>
 <p>Метод для удаления файла из поля документа</p>
 <table>
 <thead>
@@ -1486,7 +1481,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;nV0p50CDKq&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1515,11 +1510,10 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="Document+removeDocument"></a></p>
-<h3 id="removedocumentcallback">.removeDocument(callback)<a class="headerlink" href="#removedocumentcallback" title="Permanent link">&para;</a></h3>
+<h3 id="removedocumentcallback">.removeDocument(callback)</h3>
 <p>Метод для удаления документа из коллекции</p>
 <table>
 <thead>
@@ -1541,7 +1535,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
 <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;7BOlVr1Acp&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
@@ -1568,6 +1562,7 @@
             <span class="o">}</span>
         <span class="o">});</span>
 </pre></div>
+</p>
               
             </article>
           </div>

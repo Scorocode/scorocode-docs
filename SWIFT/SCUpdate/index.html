@@ -1113,7 +1113,7 @@
                   <h1>SCUpdate</h1>
                 
                 <p><a name="SCUpdate"></a></p>
-<h2 id="scupdate">SCUpdate<a class="headerlink" href="#scupdate" title="Permanent link">&para;</a></h2>
+<h2 id="scupdate">SCUpdate</h2>
 <p><strong>Содержание</strong></p>
 <ul>
 <li><a href="#SCUpdate">SCUpdate</a><ul>
@@ -1136,7 +1136,7 @@
 </ul>
 <hr />
 <p><a name="SCUpdate+addOperator"></a> </p>
-<h3 id="addoperatorname-oper">.addOperator(name, oper)<a class="headerlink" href="#addoperatorname-oper" title="Permanent link">&para;</a></h3>
+<h3 id="addoperatorname-oper">.addOperator(name, oper)</h3>
 <p>Метод для передачи SCUpdate оператора для изменения данных</p>
 <p><strong>Параметры</strong></p>
 <table>
@@ -1186,7 +1186,7 @@
 
 <hr />
 <p><a name="SCUpdate+push"></a></p>
-<h3 id="pushname-string-_-value-scvalue">.push(name: String, _ value: SCValue))<a class="headerlink" href="#pushname-string-_-value-scvalue" title="Permanent link">&para;</a></h3>
+<h3 id="pushname-string-_-value-scvalue">.push(name: String, _ value: SCValue))</h3>
 <p>Метод для добавления элемента в массив.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCUpdate">SCUpdate</a></code>  </p>
 <table>
@@ -1216,16 +1216,15 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
 <span class="n">update</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">))</span>
 <span class="n">update</span><span class="p">.</span><span class="n">save</span><span class="p">()</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCUpdate+pushEach"></a></p>
-<h3 id="pusheachname-string-_-value-scvalue">.pushEach(name: String, _ value: SCValue))<a class="headerlink" href="#pusheachname-string-_-value-scvalue" title="Permanent link">&para;</a></h3>
+<h3 id="pusheachname-string-_-value-scvalue">.pushEach(name: String, _ value: SCValue))</h3>
 <p>Метод для добавления нескольких элементов в массив.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCUpdate">SCUpdate</a></code>  </p>
 <table>
@@ -1255,15 +1254,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
 <span class="n">update</span><span class="p">.</span><span class="n">pushEach</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)]))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCUpdate+pull"></a></p>
-<h3 id="pullname-string-_-value-scpullable">.pull(name: String, _ value: SCPullable)<a class="headerlink" href="#pullname-string-_-value-scpullable" title="Permanent link">&para;</a></h3>
+<h3 id="pullname-string-_-value-scpullable">.pull(name: String, _ value: SCPullable)</h3>
 <p>Метод для удаления всех элементов массива, значение которых равно указанному.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCUpdate">Object</a></code>  </p>
 <table>
@@ -1293,15 +1291,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
 <span class="n">update</span><span class="p">.</span><span class="n">pull</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCUpdate+pullAll"></a></p>
-<h3 id="pullallname-string-_-value-scvalue">.pullAll(name: String, _ value: SCValue)<a class="headerlink" href="#pullallname-string-_-value-scvalue" title="Permanent link">&para;</a></h3>
+<h3 id="pullallname-string-_-value-scvalue">.pullAll(name: String, _ value: SCValue)</h3>
 <p>Метод для удаления всех элементов массива, значения которых равны одному из указанных значений.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCUpdate">SCUpdate</a></code>  </p>
 <table>
@@ -1331,15 +1328,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
 <span class="n">update</span><span class="p">.</span><span class="n">pullAll</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)]))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCUpdate+addToSet"></a></p>
-<h3 id="addtosetname-string-_-value-scvalue">.addToSet(name: String, _ value: SCValue)<a class="headerlink" href="#addtosetname-string-_-value-scvalue" title="Permanent link">&para;</a></h3>
+<h3 id="addtosetname-string-_-value-scvalue">.addToSet(name: String, _ value: SCValue)</h3>
 <p>Метод для добавления элемента в массив только в том случае, если в массиве отсутствуют элементы с таким значением.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCUpdate">SCUpdate</a></code>  </p>
 <table>
@@ -1369,15 +1365,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
 <span class="n">update</span><span class="p">.</span><span class="n">addToSet</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCUpdate+addToSetEach"></a></p>
-<h3 id="addtoseteachname-string-_-value-scvalue">.addToSetEach(name: String, _ value: SCValue)<a class="headerlink" href="#addtoseteachname-string-_-value-scvalue" title="Permanent link">&para;</a></h3>
+<h3 id="addtoseteachname-string-_-value-scvalue">.addToSetEach(name: String, _ value: SCValue)</h3>
 <p>Метод для добавления элементов в массив только в том случае, если в массиве отсутствуют элементы с таким значением.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCUpdate">SCUpdate</a></code>  </p>
 <table>
@@ -1407,15 +1402,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
 <span class="n">update</span><span class="p">.</span><span class="n">addToSetEach</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">(</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCUpdate+pop"></a></p>
-<h3 id="popname-string-_-value-int">.pop(name: String, _ value: Int)<a class="headerlink" href="#popname-string-_-value-int" title="Permanent link">&para;</a></h3>
+<h3 id="popname-string-_-value-int">.pop(name: String, _ value: Int)</h3>
 <p>Метод для удаления первого или последнего элемента массива</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCUpdate">SCUpdate</a></code>  </p>
 <table>
@@ -1452,7 +1446,7 @@
 
 <hr />
 <p><a name="SCUpdate+inc"></a></p>
-<h3 id="incname-string-_-value-scvalue">.inc(name: String, _ value: SCValue)<a class="headerlink" href="#incname-string-_-value-scvalue" title="Permanent link">&para;</a></h3>
+<h3 id="incname-string-_-value-scvalue">.inc(name: String, _ value: SCValue)</h3>
 <p>Метод увеличивает значение числового поля на заданное число</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCUpdate">SCUpdate</a></code>  </p>
 <table>
@@ -1482,15 +1476,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
 <span class="n">update</span><span class="p">.</span><span class="n">inc</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCUpdate+currentDate"></a></p>
-<h3 id="currentdatename-string-typespec-string">.currentDate(name: String, typeSpec: String)<a class="headerlink" href="#currentdatename-string-typespec-string" title="Permanent link">&para;</a></h3>
+<h3 id="currentdatename-string-typespec-string">.currentDate(name: String, typeSpec: String)</h3>
 <p>Устанавливает текущее время в качестве значения поля</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCUpdate">SCUpdate</a></code>  </p>
 <table>
@@ -1520,15 +1513,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>:</p>
+<p><strong>Пример</strong>:
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
 <span class="n">update</span><span class="p">.</span><span class="n">currentDate</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">typeSpec</span><span class="p">:</span> <span class="s">&quot;date&quot;</span><span class="p">)</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCUpdate+mul"></a></p>
-<h3 id="mulname-string-_-value-scvalue">.mul(name: String, _ value: SCValue)<a class="headerlink" href="#mulname-string-_-value-scvalue" title="Permanent link">&para;</a></h3>
+<h3 id="mulname-string-_-value-scvalue">.mul(name: String, _ value: SCValue)</h3>
 <p>Метод умножает значение числового поля на заданное число</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCUpdate">SCUpdate</a></code>  </p>
 <table>
@@ -1558,15 +1550,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
 <span class="n">update</span><span class="p">.</span><span class="n">mul</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCUpdate+min"></a></p>
-<h3 id="minname-string-_-value-scvalue">.min(name: String, _ value: SCValue)<a class="headerlink" href="#minname-string-_-value-scvalue" title="Permanent link">&para;</a></h3>
+<h3 id="minname-string-_-value-scvalue">.min(name: String, _ value: SCValue)</h3>
 <p>Метод обновляет значение числового поля только в случае, если новое значение меньше текущего значения поля</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCUpdate">SCUpdate</a></code>  </p>
 <table>
@@ -1596,15 +1587,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
 <span class="n">update</span><span class="p">.</span><span class="bp">min</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCUpdate+max"></a></p>
-<h3 id="maxname-string-_-value-scvalue">.max(name: String, _ value: SCValue)<a class="headerlink" href="#maxname-string-_-value-scvalue" title="Permanent link">&para;</a></h3>
+<h3 id="maxname-string-_-value-scvalue">.max(name: String, _ value: SCValue)</h3>
 <p>Метод обновляет значение числового поля только в случае, если новое значение больше текущего значения поля</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCUpdate">SCUpdate</a></code>  </p>
 <table>

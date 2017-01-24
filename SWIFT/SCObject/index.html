@@ -1225,7 +1225,7 @@
                   <h1>SCObject</h1>
                 
                 <p><a name="SCObject"></a></p>
-<h2 id="scobject">SCObject<a class="headerlink" href="#scobject" title="Permanent link">&para;</a></h2>
+<h2 id="scobject">SCObject</h2>
 <p>SCObject</p>
 <p><strong>Содержание</strong></p>
 <ul>
@@ -1256,7 +1256,7 @@
 </ul>
 <hr />
 <p><a name="SCObject+init"></a></p>
-<h3 id="init-objectcollection-id">init Object(collection, id?)<a class="headerlink" href="#init-objectcollection-id" title="Permanent link">&para;</a></h3>
+<h3 id="init-objectcollection-id">init Object(collection, id?)</h3>
 <p>SCObject представляет объект данных приложения и включает методы для работы с этими данными. Конструктор формирует минимальную базовую "обёртку" для пользовательских данных.</p>
 <table>
 <thead>
@@ -1285,16 +1285,15 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
 <span class="kd">let</span> <span class="nv">obj1</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="s">&quot;huNr3L7QDh&quot;</span><span class="p">)</span>
 <span class="kd">let</span> <span class="nv">obj2</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+set"></a></p>
-<h3 id="setdic">.set(dic)<a class="headerlink" href="#setdic" title="Permanent link">&para;</a></h3>
+<h3 id="setdic">.set(dic)</h3>
 <p>Метод для передачи данных объекту</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -1317,7 +1316,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">newItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">newItem</span><span class="p">.</span><span class="kr">set</span><span class="p">([</span>
     <span class="s">&quot;fieldString&quot;</span><span class="p">:</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Some test string&quot;</span><span class="p">),</span>
@@ -1334,11 +1333,10 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+save"></a></p>
-<h3 id="savecallback">.save(callback)<a class="headerlink" href="#savecallback" title="Permanent link">&para;</a></h3>
+<h3 id="savecallback">.save(callback)</h3>
 <p>Метод сохраняет объект в хранилище данных приложения или обновляет уже имеющийся там объект</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -1361,7 +1359,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">newItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">newItem</span><span class="p">.</span><span class="kr">set</span><span class="p">([</span><span class="s">&quot;fieldName&quot;</span><span class="p">:</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Value&quot;</span><span class="p">)])</span>
 <span class="n">newItem</span><span class="p">.</span><span class="n">save</span><span class="p">()</span> <span class="p">{</span>
@@ -1375,11 +1373,10 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+getById"></a></p>
-<h3 id="getbyidid-collection-callback">.getById(id, collection, callback)<a class="headerlink" href="#getbyidid-collection-callback" title="Permanent link">&para;</a></h3>
+<h3 id="getbyidid-collection-callback">.getById(id, collection, callback)</h3>
 <p>Метод для для получения объекта коллекции из БД по его _id. </p>
 <p><strong>Тип</strong>: метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <p><strong>Параметры</strong></p>
@@ -1417,7 +1414,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="n">SCObject</span><span class="p">.</span><span class="n">getById</span><span class="p">(</span><span class="s">&quot;p3OtsLXw8p&quot;</span><span class="p">,</span> <span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
     <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
@@ -1429,11 +1426,10 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+get"></a></p>
-<h3 id="getname">.get(name)<a class="headerlink" href="#getname" title="Permanent link">&para;</a></h3>
+<h3 id="getname">.get(name)</h3>
 <p>Метод для получения данных указанного поля объекта.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -1456,15 +1452,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">dataItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="s">&quot;huNr3L7QDh&quot;</span><span class="p">)</span>
 <span class="n">dataItem</span><span class="p">.</span><span class="kr">get</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">)</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+upload"></a></p>
-<h3 id="uploadfield-filename-data-callback">.upload(field, filename, data, callback)<a class="headerlink" href="#uploadfield-filename-data-callback" title="Permanent link">&para;</a></h3>
+<h3 id="uploadfield-filename-data-callback">.upload(field, filename, data, callback)</h3>
 <p>Метод для загрузки файлов</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -1508,7 +1503,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">newItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="kd">let</span> <span class="nv">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span><span class="s">&quot;forupload&quot;</span><span class="p">)</span>
 <span class="n">newItem</span><span class="p">.</span><span class="kr">set</span><span class="p">([</span>
@@ -1534,11 +1529,10 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+getFileLink"></a></p>
-<h3 id="getfilelinkfieldname-callback">.getFileLink(fieldName, callback)<a class="headerlink" href="#getfilelinkfieldname-callback" title="Permanent link">&para;</a></h3>
+<h3 id="getfilelinkfieldname-callback">.getFileLink(fieldName, callback)</h3>
 <p>Метод для получения ссылки на файл.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -1568,7 +1562,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">item</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="s">&quot;huNr3L7QDh&quot;</span><span class="p">)</span>
 <span class="n">item</span><span class="p">.</span><span class="n">getFileLink</span><span class="p">(</span><span class="s">&quot;attachment&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
@@ -1580,11 +1574,10 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+deleteFile"></a></p>
-<h3 id="deletefilefield-filename-callback">.deleteFile(field, filename, callback)<a class="headerlink" href="#deletefilefield-filename-callback" title="Permanent link">&para;</a></h3>
+<h3 id="deletefilefield-filename-callback">.deleteFile(field, filename, callback)</h3>
 <p>Метод для удаления файла</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -1621,7 +1614,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">item</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="s">&quot;huNr3L7QDh&quot;</span><span class="p">)</span>
 <span class="n">item</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="s">&quot;attachment&quot;</span><span class="p">,</span> <span class="s">&quot;swiftDocs.pdf&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
@@ -1633,11 +1626,10 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+remove"></a></p>
-<h3 id="removecallback">.remove(callback)<a class="headerlink" href="#removecallback" title="Permanent link">&para;</a></h3>
+<h3 id="removecallback">.remove(callback)</h3>
 <p>Метод для удаления указанного объекта</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -1660,7 +1652,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">item</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="s">&quot;huNr3L7QDh&quot;</span><span class="p">)</span>
 <span class="n">obj</span><span class="p">.</span><span class="n">remove</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
@@ -1673,13 +1665,12 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключение</strong></p>
 <p>"Id не заполнен" - <code>String</code></p>
 <hr />
 <p><a name="SCObject+push"></a></p>
-<h3 id="pushname-_-value">.push(name, _ value)<a class="headerlink" href="#pushname-_-value" title="Permanent link">&para;</a></h3>
+<h3 id="pushname-_-value">.push(name, _ value)</h3>
 <p>Метод для добавления элемента в массив.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -1709,15 +1700,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">editItem</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Sierra Army Depot&quot;</span><span class="p">))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+pushEach"></a></p>
-<h3 id="pusheachname-_-value">.pushEach(name, _ value)<a class="headerlink" href="#pusheachname-_-value" title="Permanent link">&para;</a></h3>
+<h3 id="pusheachname-_-value">.pushEach(name, _ value)</h3>
 <p>Метод для добавления нескольких элементов в массив.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -1747,15 +1737,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="n">collection</span><span class="p">)</span>
 <span class="n">editItem</span><span class="p">.</span><span class="n">pushEach</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Sierra Army Depot&quot;</span><span class="p">),</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Navarro&quot;</span><span class="p">)]))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+pull"></a></p>
-<h3 id="pullname-_-value">.pull(name, _ value)<a class="headerlink" href="#pullname-_-value" title="Permanent link">&para;</a></h3>
+<h3 id="pullname-_-value">.pull(name, _ value)</h3>
 <p>Метод для удаления всех элементов массива, значение которых равно указанному.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">Object</a></code>  </p>
 <table>
@@ -1787,7 +1776,7 @@
 </table>
 <hr />
 <p><a name="SCObject+pullAll"></a></p>
-<h3 id="pullallname-_-value">.pullAll(name, _ value)<a class="headerlink" href="#pullallname-_-value" title="Permanent link">&para;</a></h3>
+<h3 id="pullallname-_-value">.pullAll(name, _ value)</h3>
 <p>Метод для удаления всех элементов массива, значения которых равны одному из указанных значений.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -1819,7 +1808,7 @@
 </table>
 <hr />
 <p><a name="SCObject+addToSet"></a></p>
-<h3 id="addtosetname-_-value">.addToSet(name, _ value)<a class="headerlink" href="#addtosetname-_-value" title="Permanent link">&para;</a></h3>
+<h3 id="addtosetname-_-value">.addToSet(name, _ value)</h3>
 <p>Метод для добавления элемента в массив только в том случае, если в массиве отсутствуют элементы с таким значением.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -1849,15 +1838,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">editItem</span><span class="p">.</span><span class="n">addToSet</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+addToSetEach"></a></p>
-<h3 id="addtoseteachname-_-value">.addToSetEach(name, _ value)<a class="headerlink" href="#addtoseteachname-_-value" title="Permanent link">&para;</a></h3>
+<h3 id="addtoseteachname-_-value">.addToSetEach(name, _ value)</h3>
 <p>Метод для добавления элементов в массив только в том случае, если в массиве отсутствуют элементы с таким значением.</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -1887,15 +1875,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">editItem</span><span class="p">.</span><span class="n">addToSetEach</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Sierra Army Depot&quot;</span><span class="p">),</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Navarro&quot;</span><span class="p">)]))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+pop"></a></p>
-<h3 id="popname-_-value">.pop(name, _ value)<a class="headerlink" href="#popname-_-value" title="Permanent link">&para;</a></h3>
+<h3 id="popname-_-value">.pop(name, _ value)</h3>
 <p>Метод для удаления первого или последнего элемента массива</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -1932,7 +1919,7 @@
 
 <hr />
 <p><a name="SCObject+inc"></a></p>
-<h3 id="incname-_-value">.inc(name, _ value)<a class="headerlink" href="#incname-_-value" title="Permanent link">&para;</a></h3>
+<h3 id="incname-_-value">.inc(name, _ value)</h3>
 <p>Метод увеличивает значение числового поля на заданное число</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -1962,15 +1949,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">editItem</span><span class="p">.</span><span class="n">inc</span><span class="p">(</span><span class="s">&quot;amount&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="o">-</span><span class="mi">14</span><span class="p">))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+currentDate"></a></p>
-<h3 id="currentdatename-typespec">.currentDate(name, typeSpec)<a class="headerlink" href="#currentdatename-typespec" title="Permanent link">&para;</a></h3>
+<h3 id="currentdatename-typespec">.currentDate(name, typeSpec)</h3>
 <p>Устанавливает текущее время в качестве значения поля</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -2000,15 +1986,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>:</p>
+<p><strong>Пример</strong>:
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">editItem</span><span class="p">.</span><span class="n">currentDate</span><span class="p">(</span><span class="s">&quot;someDate&quot;</span><span class="p">,</span> <span class="n">typeSpec</span><span class="p">:</span> <span class="s">&quot;date&quot;</span><span class="p">)</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+mul"></a></p>
-<h3 id="mulname-_-value">.mul(name, _ value)<a class="headerlink" href="#mulname-_-value" title="Permanent link">&para;</a></h3>
+<h3 id="mulname-_-value">.mul(name, _ value)</h3>
 <p>Метод умножает значение числового поля на заданное число</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -2038,15 +2023,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">editItem</span><span class="p">.</span><span class="bp">min</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">,</span> <span class="n">SCDouble</span><span class="p">(</span><span class="mf">42.42</span><span class="p">))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+min"></a></p>
-<h3 id="minname-_-value">.min(name, _ value)<a class="headerlink" href="#minname-_-value" title="Permanent link">&para;</a></h3>
+<h3 id="minname-_-value">.min(name, _ value)</h3>
 <p>Метод обновляет значение числового поля только в случае, если новое значение меньше текущего значения поля</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -2076,15 +2060,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">editItem</span><span class="p">.</span><span class="bp">min</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCObject+max"></a></p>
-<h3 id="maxname-_-value">.max(name, _ value)<a class="headerlink" href="#maxname-_-value" title="Permanent link">&para;</a></h3>
+<h3 id="maxname-_-value">.max(name, _ value)</h3>
 <p>Метод обновляет значение числового поля только в случае, если новое значение больше текущего значения поля</p>
 <p><strong>Тип</strong>: Метод <code><a href="#SCObject">SCObject</a></code>  </p>
 <table>
@@ -2114,9 +2097,10 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 </pre></div>
+</p>
               
             </article>
           </div>

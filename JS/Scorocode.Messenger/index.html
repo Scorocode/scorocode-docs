@@ -958,16 +958,15 @@
 </ul>
 <hr />
 <p><a name="new_sc.Messenger_new"></a></p>
-<h2 id="new-messenger">new Messenger()<a class="headerlink" href="#new-messenger" title="Permanent link">&para;</a></h2>
+<h2 id="new-messenger">new Messenger()</h2>
 <p>Класс для отправки сообщений</p>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Messenger+sendPush"></a></p>
-<h2 id="sendpushoptions-callbacks">.sendPush(options, callbacks)<a class="headerlink" href="#sendpushoptions-callbacks" title="Permanent link">&para;</a></h2>
+<h2 id="sendpushoptions-callbacks">.sendPush(options, callbacks)</h2>
 <p>Метод для отправки Push</p>
 <table>
 <thead>
@@ -1071,7 +1070,7 @@
 </ul>
 <hr />
 <p><a name="sc.Messenger+sendSms"></a></p>
-<h2 id="sendsmsoptions-callbacks">.sendSms(options, callbacks)<a class="headerlink" href="#sendsmsoptions-callbacks" title="Permanent link">&para;</a></h2>
+<h2 id="sendsmsoptions-callbacks">.sendSms(options, callbacks)</h2>
 <p>Метод для отправки СМС</p>
 <table>
 <thead>
@@ -1105,7 +1104,7 @@
 </pre></div>
 
 
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1129,8 +1128,7 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Возвращает</strong>: <code>{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.</p>
 <ul>
 <li>"error" - <code>Boolean</code> - Флаг ошибки</li>

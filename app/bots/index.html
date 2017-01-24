@@ -946,7 +946,7 @@
                 
                   <h1>Боты Telegram</h1>
                 
-                <h2 id="telegram">Создание бота Telegram<a class="headerlink" href="#telegram" title="Permanent link">&para;</a></h2>
+                <h2 id="telegram">Создание бота Telegram</h2>
 <p>Прежде чем начинать разработку, в качестве первого шага, бота необходимо зарегистрировать в Telegram и получить его уникальный id. Для этого в Telegram существует специальный бот — <code>@BotFather</code>. Отправьте ему команду <code>/newbot</code> — и бот просит придумать имя новому боту. Единственное ограничение на имя — в конце оно должно оканчиваться на «bot». В случае успеха <code>@BotFather</code> возвращает id бота.</p>
 <p>Затем, в вашем приложении на Scorocode необходимо создать серверный скрипт, который будет привязан к боту и в котором будет происходить обработка событий.</p>
 <p>Третьим шагом, необходимо создать бота в приложении. Для этого предейтите в раздел "Боты" и нажмите на кнопку "Создать бота". В открывшейся форме создания бота задайте слeдующие данные:</p>
@@ -983,7 +983,7 @@
 </table>
 <p>Для сохранения бота, нажмите кнопку "сохранить" и ваш бот появится в списке ботов приложения. Вы в любой момент можете отредактировать любые настройки бота, заданные при его создании, нажав на кнопку редактирования бота.  </p>
 <p><img alt="Редактирование бота" src="../../img/botedit.png" /></p>
-<h2 id="_1">Принципы работы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">Принципы работы</h2>
 <p>При включении бота создается <code>webhook</code> на который приходят данные от <code>Telegram</code>. Эти данные доступны в серверном скрипте в объекте <code>pool</code> при каждом вызове. Полное описание полей доступно в <a href="https://core.telegram.org/bots/api#getting-updates">документации к Telegram Bot API</a></p>
 <p>Ответные сообщения от бота передаются при помощи метода .send(data) класса sc.Bot, где data - объект, имеющий следующую структуру:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
@@ -1003,7 +1003,7 @@
 <p class="admonition-title">Поддерживаемые методы</p>
 <p>Поддерживаеются все методы Telegram Bot API 2.3.1, за исключением Telegram Bot Games API</p>
 </div>
-<h2 id="_2">Пример серверного скрипта Бота:<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">Пример серверного скрипта Бота:</h2>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>

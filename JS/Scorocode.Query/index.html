@@ -473,6 +473,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#error-false-result-count-8-docs-crt49joixn-8qcfll2gwe-dmsysk8jld-6tfvg5uqv6-gnxzwafvdj-eovweg9oey-vrf58kedpo-abokjqanye" title="{ error: false," class="md-nav__link">
+    { error: false,
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#removeoptions" title=".remove(options)" class="md-nav__link">
     .remove(options)
   </a>
@@ -1121,6 +1128,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#error-false-result-count-8-docs-crt49joixn-8qcfll2gwe-dmsysk8jld-6tfvg5uqv6-gnxzwafvdj-eovweg9oey-vrf58kedpo-abokjqanye" title="{ error: false," class="md-nav__link">
+    { error: false,
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#removeoptions" title=".remove(options)" class="md-nav__link">
     .remove(options)
   </a>
@@ -1347,7 +1361,7 @@
 </ul>
 <hr />
 <p><a name="new_sc.Query_new"></a></p>
-<h2 id="new-querycollname">new Query(collName)<a class="headerlink" href="#new-querycollname" title="Permanent link">&para;</a></h2>
+<h2 id="new-querycollname">new Query(collName)</h2>
 <p>Экземпляр запроса к данным коллекции</p>
 <table>
 <thead>
@@ -1365,7 +1379,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1388,15 +1402,14 @@
     <span class="p">});</span>    
 </pre></div>
 
-
-<p><strong>Возвращает</strong>: <code><a href="#sc.Query">sc.Query</a></code> - Возвращает экземпляр sc.Query<br />
+<strong>Возвращает</strong>: <code><a href="#sc.Query">sc.Query</a></code> - Возвращает экземпляр sc.Query<br />
 <strong>Исключение</strong>:</p>
 <ul>
 <li><code>String</code> 'Collection name must be a type of string'</li>
 </ul>
 <hr />
 <p><a name="sc.Query+find"></a></p>
-<h2 id="findoptions">.find(options)<a class="headerlink" href="#findoptions" title="Permanent link">&para;</a></h2>
+<h2 id="findoptions">.find(options)</h2>
 <p>Метод для запроса документов из коллекции. Возвращает данные объектов, которые соответствуют условиям выборки. Если условия не заданы, по-умолчанию возвращает первые 100 объектов коллекции.</p>
 <table>
 <thead>
@@ -1414,7 +1427,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1437,8 +1450,7 @@
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
     <span class="p">});</span>    
 </pre></div>
-
-
+</p>
 <p><strong>Возвращает</strong>: <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{sc.Object}]}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса. </p>
 <ul>
 <li>"error" - <code>Boolean</code> - Флаг ошибки</li>
@@ -1476,7 +1488,7 @@
 
 <hr />
 <p><a name="sc.Query+count"></a></p>
-<h2 id="countoptions">.count(options)<a class="headerlink" href="#countoptions" title="Permanent link">&para;</a></h2>
+<h2 id="countoptions">.count(options)</h2>
 <p>Метод для подсчета количества объектов, которые удовлетворяют условиям запроса.</p>
 <table>
 <thead>
@@ -1494,7 +1506,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1517,15 +1529,14 @@
         <span class="p">});</span>
 </pre></div>
 
-
-<p><strong>Возвращает</strong>: <code>promise.{error: Boolean, result: Number}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.</p>
+<strong>Возвращает</strong>: <code>promise.{error: Boolean, result: Number}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.</p>
 <ul>
 <li>"error" - <code>Boolean</code> - Флаг ошибки</li>
 <li>"result" - <code>Number</code>  - Количество объектов, подходящих под условие выборки.</li>
 </ul>
 <hr />
 <p><a name="sc.Query+update"></a></p>
-<h2 id="updateobject-options">.update(Object, options)<a class="headerlink" href="#updateobject-options" title="Permanent link">&para;</a></h2>
+<h2 id="updateobject-options">.update(Object, options)</h2>
 <p>Метод для обновления запрошенных объектов.</p>
 <table>
 <thead>
@@ -1548,7 +1559,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1581,8 +1592,7 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Возвращает</strong>: <code>promise.{error: Boolean, result: {count: Number, docs: Array}}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.</p>
 <ul>
 <li>"error" - <code>Boolean</code> - Флаг ошибки</li>
@@ -1592,7 +1602,7 @@
 </ul>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span>{ error: false,
+<h2 id="error-false-result-count-8-docs-crt49joixn-8qcfll2gwe-dmsysk8jld-6tfvg5uqv6-gnxzwafvdj-eovweg9oey-vrf58kedpo-abokjqanye"><div class="codehilite"><pre><span></span>{ error: false,
   result:
    { count: 8,
      docs:[ 
@@ -1608,11 +1618,9 @@
     } 
 }
 </pre></div>
-
-
-<hr />
+</h2>
 <p><a name="sc.Query+remove"></a></p>
-<h2 id="removeoptions">.remove(options)<a class="headerlink" href="#removeoptions" title="Permanent link">&para;</a></h2>
+<h2 id="removeoptions">.remove(options)</h2>
 <p>Метод для удаления запрошенных объектов.</p>
 <table>
 <thead>
@@ -1630,7 +1638,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1659,8 +1667,7 @@
                 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Возвращает</strong>: <code>promise.{ecount: Number, docs: Array}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.</p>
 <ul>
 <li>"count" - <code>Number</code>  - Количество измененных объектов</li>
@@ -1680,9 +1687,9 @@
 
 <hr />
 <p><a name="sc.Query+reset"></a></p>
-<h2 id="reset">.reset()<a class="headerlink" href="#reset" title="Permanent link">&para;</a></h2>
+<h2 id="reset">.reset()</h2>
 <p>Метод для сброса условий выборки</p>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1707,11 +1714,10 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Query+equalTo"></a></p>
-<h2 id="equaltofield-value">.equalTo(field, value)<a class="headerlink" href="#equaltofield-value" title="Permanent link">&para;</a></h2>
+<h2 id="equaltofield-value">.equalTo(field, value)</h2>
 <p>Метод для получения всех объектов c указанным в условии значением поля.</p>
 <table>
 <thead>
@@ -1734,7 +1740,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1757,11 +1763,10 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Query+notEqualTo"></a></p>
-<h2 id="notequaltofield-value">.notEqualTo(field, value)<a class="headerlink" href="#notequaltofield-value" title="Permanent link">&para;</a></h2>
+<h2 id="notequaltofield-value">.notEqualTo(field, value)</h2>
 <p>Метод для получения всех объектов, за исключением объектов с указанным в условии значением поля.</p>
 <table>
 <thead>
@@ -1784,7 +1789,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1807,11 +1812,10 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Query+containedIn"></a></p>
-<h2 id="containedinfield-value">.containedIn(field, value)<a class="headerlink" href="#containedinfield-value" title="Permanent link">&para;</a></h2>
+<h2 id="containedinfield-value">.containedIn(field, value)</h2>
 <p>Метод для получения всех объектов, значение поля которых содержит указанные в запросе элементы массива.</p>
 <table>
 <thead>
@@ -1834,7 +1838,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1857,15 +1861,14 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключения</strong></p>
 <ul>
 <li><code>String</code> 'Value must be of Тип: Array'</li>
 </ul>
 <hr />
 <p><a name="sc.Query+containsAll"></a></p>
-<h2 id="containsallfield-value">.containsAll(field, value)<a class="headerlink" href="#containsallfield-value" title="Permanent link">&para;</a></h2>
+<h2 id="containsallfield-value">.containsAll(field, value)</h2>
 <p>Метод для получения всех объектов, значение поля которых содержит все указанные в запросе элементы массива.</p>
 <table>
 <thead>
@@ -1918,7 +1921,7 @@
 </ul>
 <hr />
 <p><a name="sc.Query+notContainedIn"></a></p>
-<h2 id="notcontainedinfield-value">.notContainedIn(field, value)<a class="headerlink" href="#notcontainedinfield-value" title="Permanent link">&para;</a></h2>
+<h2 id="notcontainedinfield-value">.notContainedIn(field, value)</h2>
 <p>Метод для получения всех объектов, значение поля которых не содержит указанные в запросе элементы массива.</p>
 <table>
 <thead>
@@ -1941,7 +1944,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1964,15 +1967,14 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключения</strong>:</p>
 <ul>
 <li><code>String</code> 'Value must be of Тип: Array'</li>
 </ul>
 <hr />
 <p><a name="sc.Query+greaterThan"></a></p>
-<h2 id="greaterthanfield-value">.greaterThan(field, value)<a class="headerlink" href="#greaterthanfield-value" title="Permanent link">&para;</a></h2>
+<h2 id="greaterthanfield-value">.greaterThan(field, value)</h2>
 <p>Метод для получения всех объектов, значение поля которых больше, чем указанное в запросе число.</p>
 <p><strong>Возвращает</strong>: <code>Object</code> - Запрошенные данные  </p>
 <table>
@@ -1996,7 +1998,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2019,11 +2021,10 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Query+greaterThanOrEqualTo"></a></p>
-<h2 id="greaterthanorequaltofield-value">.greaterThanOrEqualTo(field, value)<a class="headerlink" href="#greaterthanorequaltofield-value" title="Permanent link">&para;</a></h2>
+<h2 id="greaterthanorequaltofield-value">.greaterThanOrEqualTo(field, value)</h2>
 <p>Метод для получения всех объектов, значение поля которых не меньше, чем указанное в запросе число.</p>
 <table>
 <thead>
@@ -2046,7 +2047,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2069,11 +2070,10 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Query+lessThan"></a></p>
-<h2 id="lessthanfield-value">.lessThan(field, value)<a class="headerlink" href="#lessthanfield-value" title="Permanent link">&para;</a></h2>
+<h2 id="lessthanfield-value">.lessThan(field, value)</h2>
 <p>Метод для получения всех объектов, значение поля которых меньше, чем указанное в запросе число.</p>
 <table>
 <thead>
@@ -2096,7 +2096,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2119,11 +2119,10 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Query+lessThanOrEqualTo"></a></p>
-<h2 id="lessthanorequaltofield-value">.lessThanOrEqualTo(field, value)<a class="headerlink" href="#lessthanorequaltofield-value" title="Permanent link">&para;</a></h2>
+<h2 id="lessthanorequaltofield-value">.lessThanOrEqualTo(field, value)</h2>
 <p>Метод для получения всех объектов, значение поля которых не больше, чем указанное в запросе число.</p>
 <table>
 <thead>
@@ -2146,7 +2145,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2169,11 +2168,10 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Query+exists"></a></p>
-<h2 id="existsfield">.exists(field<a class="headerlink" href="#existsfield" title="Permanent link">&para;</a></h2>
+<h2 id="existsfield">.exists(field</h2>
 <p>Метод для получения всех объектов с существующим значением заданного поля</p>
 <table>
 <thead>
@@ -2191,7 +2189,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2212,11 +2210,10 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Query+doesNotExist"></a></p>
-<h2 id="doesnotexistfield">.doesNotExist(field)<a class="headerlink" href="#doesnotexistfield" title="Permanent link">&para;</a></h2>
+<h2 id="doesnotexistfield">.doesNotExist(field)</h2>
 <p>Метод для получения всех объектов с отсутствующим значением в заданном поле</p>
 <table>
 <thead>
@@ -2258,7 +2255,7 @@
 
 <hr />
 <p><a name="sc.Query+contains"></a></p>
-<h2 id="containsfield-value">.contains(field, value)<a class="headerlink" href="#containsfield-value" title="Permanent link">&para;</a></h2>
+<h2 id="containsfield-value">.contains(field, value)</h2>
 <p>Метод для получения всех объектов со значением заданного поля, соответствующим заданному регулярному выражению.</p>
 <table>
 <thead>
@@ -2281,7 +2278,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2304,15 +2301,14 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключение</strong>:</p>
 <ul>
 <li><code>String</code> '"Value must be a string"'</li>
 </ul>
 <hr />
 <p><a name="sc.Query+startsWith"></a></p>
-<h2 id="startswithfield-value">.startsWith(field, value)<a class="headerlink" href="#startswithfield-value" title="Permanent link">&para;</a></h2>
+<h2 id="startswithfield-value">.startsWith(field, value)</h2>
 <p>Метод для получения всех объектов со значением заданного поля, начинающимся с указанной строки.</p>
 <table>
 <thead>
@@ -2335,7 +2331,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2358,15 +2354,14 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключение</strong>:</p>
 <ul>
 <li><code>String</code> "Value must be a string"</li>
 </ul>
 <hr />
 <p><a name="sc.Query+endsWith"></a></p>
-<h2 id="endswithfield-value">.endsWith(field, value)<a class="headerlink" href="#endswithfield-value" title="Permanent link">&para;</a></h2>
+<h2 id="endswithfield-value">.endsWith(field, value)</h2>
 <p>Метод для получения всех объектов со значением заданного поля, заканчивающимся на указанную строку.</p>
 <table>
 <thead>
@@ -2419,7 +2414,7 @@
 </ul>
 <hr />
 <p><a name="sc.Query+limit"></a></p>
-<h2 id="limitlimit">.limit(limit)<a class="headerlink" href="#limitlimit" title="Permanent link">&para;</a></h2>
+<h2 id="limitlimit">.limit(limit)</h2>
 <p>Метод для указания лимита количества объектов выборки</p>
 <table>
 <thead>
@@ -2437,7 +2432,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2461,15 +2456,14 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключение</strong>:</p>
 <ul>
 <li><code>String</code> "Limit must be a positive number"</li>
 </ul>
 <hr />
 <p><a name="sc.Query+skip"></a></p>
-<h2 id="skipskip">.skip(skip)<a class="headerlink" href="#skipskip" title="Permanent link">&para;</a></h2>
+<h2 id="skipskip">.skip(skip)</h2>
 <p>Метод для пропуска части объектов перед совершением выборки</p>
 <table>
 <thead>
@@ -2487,7 +2481,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2512,15 +2506,14 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключение</strong></p>
 <ul>
 <li><code>String</code> "Skip must be a positive number"</li>
 </ul>
 <hr />
 <p><a name="sc.Query+page"></a></p>
-<h2 id="pagepage">.page(page)<a class="headerlink" href="#pagepage" title="Permanent link">&para;</a></h2>
+<h2 id="pagepage">.page(page)</h2>
 <p>Метод для постраничного вывода результатов выборки</p>
 <table>
 <thead>
@@ -2538,7 +2531,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2563,15 +2556,14 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключение</strong>:</p>
 <ul>
 <li><code>String</code> "Page must be a positive number"</li>
 </ul>
 <hr />
 <p><a name="sc.Query+ascending"></a></p>
-<h2 id="ascendingfield">.ascending(field)<a class="headerlink" href="#ascendingfield" title="Permanent link">&para;</a></h2>
+<h2 id="ascendingfield">.ascending(field)</h2>
 <p>Метод для сортировки данных указанного поля в порядке возрастания перед совершением выборки.</p>
 <table>
 <thead>
@@ -2589,7 +2581,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2615,11 +2607,10 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Query+descending"></a></p>
-<h2 id="descendingfield">.descending(field)<a class="headerlink" href="#descendingfield" title="Permanent link">&para;</a></h2>
+<h2 id="descendingfield">.descending(field)</h2>
 <p>Метод для сортировки данных указанного поля в порядке убывания перед совершением выборки.</p>
 <p><strong>Возвращает</strong>: <code>Object</code> - Запрошенные данные  </p>
 <table>
@@ -2638,7 +2629,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2664,11 +2655,10 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Query+or"></a></p>
-<h2 id="orquery">.or(query)<a class="headerlink" href="#orquery" title="Permanent link">&para;</a></h2>
+<h2 id="orquery">.or(query)</h2>
 <p>Метод для логического сложения условий нескольких выборок</p>
 <table>
 <thead>
@@ -2686,7 +2676,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2717,15 +2707,14 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключение</strong>:</p>
 <ul>
 <li><code>String</code> "Invalid Тип of Query"</li>
 </ul>
 <hr />
 <p><a name="sc.Query+and"></a></p>
-<h2 id="andquery">.and(query)<a class="headerlink" href="#andquery" title="Permanent link">&para;</a></h2>
+<h2 id="andquery">.and(query)</h2>
 <p>Метод для логического умножения условий нескольких выборок</p>
 <table>
 <thead>
@@ -2743,7 +2732,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2774,13 +2763,12 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Query+select"></a></p>
-<h2 id="select">.select()<a class="headerlink" href="#select" title="Permanent link">&para;</a></h2>
+<h2 id="select">.select()</h2>
 <p>Метод для указания списка возвращаемых полей. </p>
-<p><strong>Пример</strong>  </p>
+<p><strong>Пример</strong><br />
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2802,11 +2790,10 @@
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
     <span class="p">});</span>    
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Query+raw"></a></p>
-<h2 id="rawfilter">.raw(filter)<a class="headerlink" href="#rawfilter" title="Permanent link">&para;</a></h2>
+<h2 id="rawfilter">.raw(filter)</h2>
 <p>Прямой запрос к БД приложения</p>
 <table>
 <thead>

@@ -1198,7 +1198,7 @@
 </ul>
 <hr />
 <p><a name="new_sc.Object_new"></a></p>
-<h2 id="new-objectcollname">new Object(collName)<a class="headerlink" href="#new-objectcollname" title="Permanent link">&para;</a></h2>
+<h2 id="new-objectcollname">new Object(collName)</h2>
 <p>sc.Object представляет объект данных приложения и включает методы для работы с этими данными. Конструктор формирует минимальную базовую "обёртку" для пользовательских данных.</p>
 <table>
 <thead>
@@ -1216,7 +1216,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1240,8 +1240,7 @@
     <span class="p">});</span>
 </pre></div>
 
-
-<p>См.</p>
+См.</p>
 <ul>
 <li><a href="#sc.Object+set">.set(data)</a></li>
 <li><a href="#sc.Object+save">.save(options)</a> ⇒ <code><a href="#sc.Object">sc.Object</a></code></li>
@@ -1249,8 +1248,7 @@
 <p><strong>Исключения</strong>:</p>
 <ul>
 <li><code>Error</code> "Invalid collection name" - некорректно указано имя коллекции
-<a name="sc.Object+getById"></a></li>
-</ul>
+<a name="sc.Object+getById"></a>
 <div class="codehilite"><pre><span></span>Что-то пошло не так:
 { 
     errCode: 404,
@@ -1258,11 +1256,11 @@
     error: true 
 }
 </pre></div>
-
-
+</li>
+</ul>
 <hr />
 <p><a name="sc.Object+getById"></a></p>
-<h2 id="getbyid_id-options">.getById(_id, options)<a class="headerlink" href="#getbyid_id-options" title="Permanent link">&para;</a></h2>
+<h2 id="getbyid_id-options">.getById(_id, options)</h2>
 <p>Метод для для получения объекта коллекции из БД по его _id. </p>
 <p><strong>Параметры</strong></p>
 <table>
@@ -1286,7 +1284,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим и инициализируем SDK</span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1308,14 +1306,13 @@
     <span class="p">});</span>
 </pre></div>
 
-
-<p>См.</p>
+См.</p>
 <ul>
 <li><a href="#new_sc.Object_new">new Object(collName)</a></li>
 <li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
 </ul>
 <p><strong>Возвращает</strong>: <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code> - Возвращает promise, который возвращает запрошенный объект.</p>
-<div class="codehilite"><pre><span></span>{
+<p><div class="codehilite"><pre><span></span>{
     _id: &#39;NseSaqqd5v&#39;,
     name: &#39;Водяной чип&#39;,
     relatedquests: [ &#39;huNr3L7QDh&#39; ],
@@ -1327,22 +1324,20 @@
 }
 </pre></div>
 
-
-<p>См.</p>
+См.</p>
 <ul>
 <li><a href="#new_sc.Object_new">new Object(collName)</a></li>
 </ul>
 <p><strong>Исключения</strong>:</p>
 <ul>
-<li><code>Error</code> "Document not found" - Объект не найден</li>
-</ul>
+<li><code>Error</code> "Document not found" - Объект не найден
 <div class="codehilite"><pre><span></span> [Error: Document not found]
 </pre></div>
-
-
+</li>
+</ul>
 <hr />
 <p><a name="sc.Object+get"></a></p>
-<h2 id="getkey">.get(key)<a class="headerlink" href="#getkey" title="Permanent link">&para;</a></h2>
+<h2 id="getkey">.get(key)</h2>
 <p>Метод для получения данных указанного поля объекта.</p>
 <table>
 <thead>
@@ -1360,7 +1355,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1383,21 +1378,19 @@
     <span class="p">});</span>
 </pre></div>
 
-
-<p>См.</p>
+См.</p>
 <ul>
 <li><a href="#new_sc.Object_new">new Object(collName)</a>    </li>
 <li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
 </ul>
-<p><strong>Возвращает</strong>: <code>value</code> - Возвращает значение поля  </p>
+<p><strong>Возвращает</strong>: <code>value</code> - Возвращает значение поля<br />
 <div class="codehilite"><pre><span></span>Вот значение интересующего вас поля:
  Водяной чип
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Object+uploadFile"></a></p>
-<h2 id="uploadfilefield-filename-file-options">.uploadFile(field, filename, file, options)<a class="headerlink" href="#uploadfilefield-filename-file-options" title="Permanent link">&para;</a></h2>
+<h2 id="uploadfilefield-filename-file-options">.uploadFile(field, filename, file, options)</h2>
 <p>Метод для загрузки файлов</p>
 <table>
 <thead>
@@ -1430,7 +1423,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1461,24 +1454,22 @@
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <ul>
 <li><a href="#new_sc.Object_new">new Object(collName)</a></li>
 <li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
 </ul>
-<p><strong>Возвращает</strong>: <code>promise.&lt;String&gt;</code> - Возвращает название загруженного файла</p>
+<p><strong>Возвращает</strong>: <code>promise.&lt;String&gt;</code> - Возвращает название загруженного файла
 <div class="codehilite"><pre><span></span>Этот файл был успешно загружен: waterchip.txt
 </pre></div>
-
-
+</p>
 <p><strong>Исключения</strong>:</p>
 <ul>
 <li><code>String</code> 'You must first create a document' </li>
 </ul>
 <hr />
 <p><a name="sc.Object+getFileLink"></a></p>
-<h2 id="getfilelinkfield">.getFileLink(field)<a class="headerlink" href="#getfilelinkfield" title="Permanent link">&para;</a></h2>
+<h2 id="getfilelinkfield">.getFileLink(field)</h2>
 <p>Метод для получения ссылки на файл.</p>
 <table>
 <thead>
@@ -1496,7 +1487,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1520,18 +1511,16 @@
     <span class="p">});</span>
 </pre></div>
 
-
-<p>см.</p>
+см.</p>
 <ul>
 <li><a href="#new_sc.Object_new">new Object(collName)</a></li>
 <li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
 </ul>
-<p><strong>Возвращает</strong>: <code>String</code> - Возвращает ссылку на запрошенный файл</p>
+<p><strong>Возвращает</strong>: <code>String</code> - Возвращает ссылку на запрошенный файл
 <div class="codehilite"><pre><span></span>Вот ссылка на файл: https://api.sc.ru/api/v1/getfile/e1afa40259773b4f9af4306b545d4165/items/attachment/NseSaqqd5v/waterchip.txt
 </pre></div>
 
-
-<p><strong>Исключения</strong>:</p>
+<strong>Исключения</strong>:</p>
 <ul>
 <li><code>Error</code> 'You must first create a document and upload file' - Объект коллекции, к которому обращается метод, должен быть создан и сохранен.</li>
 <li><code>Error</code> 'Unknown field' - Поле не существует</li>
@@ -1539,7 +1528,7 @@
 </ul>
 <hr />
 <p><a name="sc.Object+save"></a></p>
-<h2 id="saveoptions">.save(options)<a class="headerlink" href="#saveoptions" title="Permanent link">&para;</a></h2>
+<h2 id="saveoptions">.save(options)</h2>
 <p>Метод сохраняет объект в хранилище данных приложения или обновляет уже имеющийся там объект</p>
 <table>
 <thead>
@@ -1557,7 +1546,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1581,13 +1570,12 @@
     <span class="p">});</span>
 </pre></div>
 
-
-<p>см.</p>
+см.</p>
 <ul>
 <li><a href="#new_sc.Object_new">new Object(collName)</a></li>
 <li><a href="#sc.Object+set">.set(data)</a></li>
 </ul>
-<p><strong>Возвращает</strong>: <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code> - Возвращает promise, который возвращает сохраненный объект </p>
+<p><strong>Возвращает</strong>: <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code> - Возвращает promise, который возвращает сохраненный объект 
 <div class="codehilite"><pre><span></span>Вот ваш объект:
  { _id: &#39;NseSaqqd5v&#39;,
   name: &#39;Водяной чип&#39;,
@@ -1598,11 +1586,10 @@
   updateACL: [],
   removeACL: [] }
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Object+remove"></a></p>
-<h2 id="removeoptions">.remove(options)<a class="headerlink" href="#removeoptions" title="Permanent link">&para;</a></h2>
+<h2 id="removeoptions">.remove(options)</h2>
 <p>Метод для удаления указанного объекта</p>
 <table>
 <thead>
@@ -1620,7 +1607,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1652,8 +1639,7 @@
     <span class="p">});</span>
 </pre></div>
 
-
-<p>см.</p>
+см.</p>
 <ul>
 <li><a href="#new_sc.Object_new">new Object(collName)</a></li>
 <li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
@@ -1661,18 +1647,17 @@
 <p><strong>Возвращает</strong>: <code>Promise.{count: Number, docs: Array}</code> - Возвращает promise, который возвращает объект:</p>
 <ul>
 <li>"count" - <code>Number</code>  - количество удаленных объектов</li>
-<li>"doc" - <code>Array</code>  - массив ID удаленных объектов</li>
-</ul>
+<li>"doc" - <code>Array</code>  - массив ID удаленных объектов
 <div class="codehilite"><pre><span></span>{ 
     count: 1, 
     docs: [ &#39;hejJU4BEGP&#39; ] 
 }
 </pre></div>
-
-
+</li>
+</ul>
 <hr />
 <p><a name="sc.Object+extend"></a></p>
-<h2 id="extendcollname-childobject">.extend(collName, childObject)<a class="headerlink" href="#extendcollname-childobject" title="Permanent link">&para;</a></h2>
+<h2 id="extendcollname-childobject">.extend(collName, childObject)</h2>
 <p>Метод для преобразования данных выборки sc.Query в отдельные экземпляры sc.Object</p>
 <table>
 <thead>
@@ -1695,7 +1680,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1726,8 +1711,7 @@
     <span class="p">});</span>    
 </pre></div>
 
-
-<p>см.</p>
+см.</p>
 <ul>
 <li><a href="#new_sc.Object_new">new Object(collName)</a></li>
 <li><a href="../Scorocode.Query/#sc.Query+find">.find(options)</a> ⇒ <code>Promise.{error: Boolean, limit: Number, skip: Number, result: [{sc.Object}]}</code></li>
@@ -1735,7 +1719,7 @@
 <p><strong>Возвращает</strong>: <code>sc.Object</code> - Возвращает sc.Object</p>
 <hr />
 <p><a name="sc.Object+set"></a></p>
-<h2 id="setdata">.set(data)<a class="headerlink" href="#setdata" title="Permanent link">&para;</a></h2>
+<h2 id="setdata">.set(data)</h2>
 <p>Метод для передачи данных объекту</p>
 <table>
 <thead>
@@ -1753,7 +1737,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1776,8 +1760,7 @@
          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p>см.</p>
 <ul>
 <li><a href="#new_sc.Object_new">new Object(collName)</a></li>
@@ -1785,7 +1768,7 @@
 </ul>
 <hr />
 <p><a name="sc.Object+push"></a></p>
-<h2 id="pushkey-value">.push(key, value)<a class="headerlink" href="#pushkey-value" title="Permanent link">&para;</a></h2>
+<h2 id="pushkey-value">.push(key, value)</h2>
 <p>Метод для добавления элемента в массив.</p>
 <table>
 <thead>
@@ -1808,7 +1791,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1841,11 +1824,10 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Object+pull"></a></p>
-<h2 id="pullkey-value">.pull(key, value)<a class="headerlink" href="#pullkey-value" title="Permanent link">&para;</a></h2>
+<h2 id="pullkey-value">.pull(key, value)</h2>
 <p>Метод для удаления всех элементов массива, значение которых равно указанному.</p>
 <table>
 <thead>
@@ -1868,7 +1850,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1901,8 +1883,7 @@
          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключения</strong>:</p>
 <ul>
 <li><code>Error</code> "For a new document use the method Set"</li>
@@ -1910,7 +1891,7 @@
 </ul>
 <hr />
 <p><a name="sc.Object+pullAll"></a></p>
-<h2 id="pullallkey-value">.pullAll(key, value)<a class="headerlink" href="#pullallkey-value" title="Permanent link">&para;</a></h2>
+<h2 id="pullallkey-value">.pullAll(key, value)</h2>
 <p>Метод для удаления всех элементов массива, значения которых равны одному из указанных значений.</p>
 <table>
 <thead>
@@ -1933,7 +1914,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1967,8 +1948,7 @@
     <span class="p">});</span>
 </pre></div>
 
-
-<p><strong>Исключения</strong>:</p>
+<strong>Исключения</strong>:</p>
 <ul>
 <li><code>Error</code> 'For a new document use the method Set'</li>
 <li><code>Error</code> 'Field must by a type of array'</li>
@@ -1976,7 +1956,7 @@
 </ul>
 <hr />
 <p><a name="sc.Object+addToSet"></a></p>
-<h2 id="addtosetkey-value">.addToSet(key, value)<a class="headerlink" href="#addtosetkey-value" title="Permanent link">&para;</a></h2>
+<h2 id="addtosetkey-value">.addToSet(key, value)</h2>
 <p>Метод для добавления элемента в массив только в том случае, если в массиве отсутствуют элементы с таким значением.</p>
 <table>
 <thead>
@@ -1999,7 +1979,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2032,8 +2012,7 @@
          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключения</strong>:</p>
 <ul>
 <li><code>Error</code> 'For a new document use the method Set'</li>
@@ -2041,7 +2020,7 @@
 </ul>
 <hr />
 <p><a name="sc.Object+pop"></a></p>
-<h2 id="popkey-pos">.pop(key, pos)<a class="headerlink" href="#popkey-pos" title="Permanent link">&para;</a></h2>
+<h2 id="popkey-pos">.pop(key, pos)</h2>
 <p>Метод для удаления первого или последнего элемента массива</p>
 <table>
 <thead>
@@ -2064,7 +2043,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2098,8 +2077,7 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключения</strong>:</p>
 <ul>
 <li><code>Error</code> 'For a new document use the method Set'</li>
@@ -2107,7 +2085,7 @@
 </ul>
 <hr />
 <p><a name="sc.Object+inc"></a></p>
-<h2 id="inckey-amount">.inc(key, amount)<a class="headerlink" href="#inckey-amount" title="Permanent link">&para;</a></h2>
+<h2 id="inckey-amount">.inc(key, amount)</h2>
 <p>Метод увеличивает значение числового поля на заданное число</p>
 <table>
 <thead>
@@ -2130,7 +2108,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2166,15 +2144,14 @@
     <span class="p">});</span>
 </pre></div>
 
-
-<p><strong>Исключения</strong>:</p>
+<strong>Исключения</strong>:</p>
 <ul>
 <li><code>Error</code> 'For a new document use the method Set'</li>
 <li><code>Error</code> 'Field must by a type of number'</li>
 </ul>
 <hr />
 <p><a name="sc.Object+currentDate"></a></p>
-<h2 id="currentdate">.currentDate()<a class="headerlink" href="#currentdate" title="Permanent link">&para;</a></h2>
+<h2 id="currentdate">.currentDate()</h2>
 <p>Устанавливает текущее время в качестве значения поля</p>
 <table>
 <thead>
@@ -2197,7 +2174,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2221,8 +2198,7 @@
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключения</strong>:</p>
 <ul>
 <li><code>Error</code> 'For a new document use the method Set'</li>
@@ -2230,7 +2206,7 @@
 </ul>
 <hr />
 <p><a name="sc.Object+mul"></a></p>
-<h2 id="mulkey-number">.mul(key, number)<a class="headerlink" href="#mulkey-number" title="Permanent link">&para;</a></h2>
+<h2 id="mulkey-number">.mul(key, number)</h2>
 <p>Метод умножает значение числового поля на заданное число</p>
 <table>
 <thead>
@@ -2253,7 +2229,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2288,8 +2264,7 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключения</strong>:</p>
 <ul>
 <li><code>Error</code> 'For a new document use the method Set'</li>
@@ -2298,7 +2273,7 @@
 </ul>
 <hr />
 <p><a name="sc.Object+min"></a></p>
-<h2 id="min">.min()<a class="headerlink" href="#min" title="Permanent link">&para;</a></h2>
+<h2 id="min">.min()</h2>
 <p>Метод обновляет значение числового поля только в случае, если новое значение меньше текущего значения поля</p>
 <table>
 <thead>
@@ -2321,7 +2296,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2355,11 +2330,10 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="sc.Object+max"></a></p>
-<h2 id="max">.max()<a class="headerlink" href="#max" title="Permanent link">&para;</a></h2>
+<h2 id="max">.max()</h2>
 <p>Метод обновляет значение числового поля только в случае, если новое значение больше текущего значения поля</p>
 <table>
 <thead>
@@ -2382,7 +2356,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> </p>
+<p><strong>Пример</strong> 
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -2416,8 +2390,7 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </pre></div>
-
-
+</p>
 <p><strong>Исключения</strong>:</p>
 <ul>
 <li><code>Error</code> 'For a new document use the method Set'</li>

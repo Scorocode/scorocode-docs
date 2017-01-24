@@ -959,14 +959,13 @@
                   <h1>WebSocket</h1>
                 
                 <p><a name="WebSocket"></a></p>
-<h2 id="websocket">WebSocket<a class="headerlink" href="#websocket" title="Permanent link">&para;</a></h2>
+<h2 id="websocket">WebSocket</h2>
 <p>Для использования WebSocket в вашем проекте, вы можете воспользоваться библиотекой <a href="https://github.com/daltoniam/Starscream">daltoniam/Starscream</a>, используя следующую схему url при инициализации WebSocket: </p>
-<div class="codehilite"><pre><span></span>    var socket = WebSocket(url: NSURL(string: &quot;wss://wss.scorocode.ru/{appID}/{wsKey}/{chanName}&quot;)!)
+<p><div class="codehilite"><pre><span></span>    var socket = WebSocket(url: NSURL(string: &quot;wss://wss.scorocode.ru/{appID}/{wsKey}/{chanName}&quot;)!)
     socket.connect()
 </pre></div>
 
-
-<p>где</p>
+где</p>
 <table>
 <thead>
 <tr>
@@ -1001,13 +1000,12 @@
 </tr>
 </tbody>
 </table>
-<p>Пример:</p>
+<p>Пример:
 <div class="codehilite"><pre><span></span>    var socket = WebSocket(url: NSURL(string: &quot;wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom&quot;)!)
     socket.connect()
 </pre></div>
-
-
-<h3 id="starscream">Подключение библиотеки Starscream<a class="headerlink" href="#starscream" title="Permanent link">&para;</a></h3>
+</p>
+<h3 id="starscream">Подключение библиотеки Starscream</h3>
 <p><strong>Подробную информацию о способах подключения библиотеки Starscream вы сможете найти в Readme.md репозитория <a href="https://github.com/daltoniam/Starscream">daltoniam/Starscream</a>.</strong></p>
 <p>Для подключения библиотеки к проекту, необходимо установить <a href="https://github.com/Carthage/Carthage">Carthage</a></p>
 <p>Cоздать в корне проекта Xcode файл с именем "Cartfile" или изменить уже существующий "Cartfile", записав в него строку:</p>
@@ -1015,28 +1013,24 @@
 </pre></div>
 
 
-<p>Закрыть проект в xcode, запустить в консоли:</p>
+<p>Закрыть проект в xcode, запустить в консоли:
 <div class="codehilite"><pre><span></span>carthage update --platform iOS,Mac
 </pre></div>
-
-
-<p>Открыть заново проект в Xcode. В Target -&gt; General -&gt; Linked Frameworks and Libraries из &lt;Каталог проекта&gt; -&gt; Carthage -&gt; Build -&gt; iOS перетащить 1 файл:</p>
+</p>
+<p>Открыть заново проект в Xcode. В Target -&gt; General -&gt; Linked Frameworks and Libraries из &lt;Каталог проекта&gt; -&gt; Carthage -&gt; Build -&gt; iOS перетащить 1 файл:
 <div class="codehilite"><pre><span></span>Starscream.framework
 </pre></div>
-
-
+</p>
 <p>В Target -&gt; Build Phases добавить New Run Script Phase:</p>
-<p>Скрипт:</p>
+<p>Скрипт:
 <div class="codehilite"><pre><span></span>/usr/local/bin/carthage copy-frameworks
 </pre></div>
-
-
-<p>и Input File:</p>
+</p>
+<p>и Input File:
 <div class="codehilite"><pre><span></span>$(SRCROOT)/Carthage/Build/iOS/Starscream.framework
 </pre></div>
-
-
-<h3 id="starscream_1">Пример использования библиотеки Starscream<a class="headerlink" href="#starscream_1" title="Permanent link">&para;</a></h3>
+</p>
+<h3 id="starscream_1">Пример использования библиотеки Starscream</h3>
 <p><strong>Подробную информацию о способах испольования библиотеки Starscream вы сможете найти в Readme.md репозитория <a href="https://github.com/daltoniam/Starscream">daltoniam/Starscream</a>.</strong></p>
 <div class="codehilite"><pre><span></span>import UIKit
 import Starscream

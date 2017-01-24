@@ -988,7 +988,7 @@
                 
                   <h1>Данные</h1>
                 
-                <h2 id="_1">Создание нового документа в коллекции.<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h2 id="_1">Создание нового документа в коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/insert</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -1037,7 +1037,7 @@
 </pre></div>
 
 
-<h2 id="_2">Удаление документа из коллекции.<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">Удаление документа из коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/remove</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -1095,7 +1095,7 @@
 </pre></div>
 
 
-<h2 id="_3">Изменение документов в коллекции.<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">Изменение документов в коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/update</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -1160,7 +1160,7 @@
 </pre></div>
 
 
-<h2 id="_4">Изменение одного документа в коллекции по идентификатору.<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">Изменение одного документа в коллекции по идентификатору.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/updatebyid</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
@@ -1214,26 +1214,11 @@
 </pre></div>
 
 
-<h2 id="_5">Запрос документов из коллекции.<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">Запрос документов из коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/find</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>
 <p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа,</span> <span class="err">необязательный,</span> <span class="err">для</span> <span class="err">полного</span> <span class="err">доступа</span> <span class="err">masterKey</span>
-    <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ID</span> <span class="err">сессии,</span> <span class="err">обязательный,</span> <span class="err">если</span> <span class="err">ACLPublic</span> <span class="err">приложения</span> <span class="err">на</span> <span class="err">операцию</span> <span class="err">==</span> <span class="err">false</span> <span class="err">и</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span>
-    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;query&quot;</span>       <span class="p">:</span> <span class="p">{},</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный,</span> <span class="err">если</span> <span class="err">пустой,</span> <span class="err">то</span> <span class="err">будут</span> <span class="err">возвращены</span> <span class="err">первые</span> <span class="err">100</span> <span class="err">документов</span>
-    <span class="nt">&quot;sort&quot;</span>        <span class="p">:</span> <span class="p">{},</span> <span class="err">//</span> <span class="err">сортировка</span> <span class="err">по</span> <span class="err">полям</span> <span class="err">в</span> <span class="err">формате</span> <span class="err">имя_поля:1/-1,</span> <span class="err">необязательный</span>
-    <span class="nt">&quot;fields&quot;</span>      <span class="p">:</span> <span class="p">[],</span> <span class="err">//</span> <span class="err">список</span> <span class="err">имен</span> <span class="err">полей,</span> <span class="err">которые</span> <span class="err">будут</span> <span class="err">возвращены</span> <span class="err">в</span> <span class="err">каждом</span> <span class="err">документе,</span> <span class="err">необязательный</span>
-    <span class="nt">&quot;limit&quot;</span>       <span class="p">:</span> <span class="err">int</span><span class="p">,</span><span class="err">//</span> <span class="err">лимит</span> <span class="err">размера</span> <span class="err">выборки,</span> <span class="err">необязательный,</span> <span class="err">по</span> <span class="err">умолчанию</span> <span class="err">50</span>
-    <span class="nt">&quot;skip&quot;</span>        <span class="p">:</span> <span class="err">int</span><span class="p">,</span><span class="err">//</span> <span class="err">количество</span> <span class="err">документов,</span> <span class="err">которое</span> <span class="err">нужно</span> <span class="err">пропустить</span> <span class="err">в</span> <span class="err">выборке</span>
-<span class="p">}</span>
-</pre></div>
-
-
 <div class="admonition warning">
 <p class="admonition-title">Ограничения</p>
 <p>Возвращает не более 100 документов</p>
@@ -1282,7 +1267,7 @@
 </pre></div>
 
 
-<h2 id="_6">Запрос количества документов из коллекции.<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6">Запрос количества документов из коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/count</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки:</p>

@@ -1001,7 +1001,7 @@
                   <h1>SCUser</h1>
                 
                 <p><a name="SCUser"></a></p>
-<h2 id="scuser">SCUser<a class="headerlink" href="#scuser" title="Permanent link">&para;</a></h2>
+<h2 id="scuser">SCUser</h2>
 <p>Класс для работы с польщователями приложения</p>
 <ul>
 <li><a href="#SCUser">SCUser</a><ul>
@@ -1015,16 +1015,15 @@
 </ul>
 <hr />
 <p><a name="SCUser+init"></a></p>
-<h3 id="init">init()<a class="headerlink" href="#init" title="Permanent link">&para;</a></h3>
+<h3 id="init">init()</h3>
 <p>Инициализация SCUser</p>
-<p><strong>Пример</strong></p>
+<p><strong>Пример</strong>
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">appUser</span> <span class="p">=</span> <span class="n">SCUser</span><span class="p">()</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCUser+login"></a></p>
-<h3 id="loginemail-password-callback">.login(email, password, callback)<a class="headerlink" href="#loginemail-password-callback" title="Permanent link">&para;</a></h3>
+<h3 id="loginemail-password-callback">.login(email, password, callback)</h3>
 <p>Метод для аутентификации пользователя приложения</p>
 <table>
 <thead>
@@ -1060,7 +1059,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>   </p>
+<p><strong>Пример</strong> <br />
 <div class="codehilite"><pre><span></span>    <span class="kr">@IBAction</span> <span class="kd">private</span> <span class="kd">func</span> <span class="nf">loginPressed</span><span class="p">()</span> <span class="p">{</span>
 
         <span class="n">guard</span> <span class="kd">let</span> <span class="nv">email</span> <span class="p">=</span> <span class="n">emailTextField</span><span class="p">.</span><span class="n">text</span> <span class="k">where</span> <span class="n">email</span> <span class="o">!=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
@@ -1089,11 +1088,10 @@
             <span class="p">}</span>
         <span class="p">}</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCUser+logout"></a></p>
-<h3 id="logoutcallback">.logout(callback)<a class="headerlink" href="#logoutcallback" title="Permanent link">&para;</a></h3>
+<h3 id="logoutcallback">.logout(callback)</h3>
 <p>Метод для завершения активной сессии пользователя.</p>
 <table>
 <thead>
@@ -1115,7 +1113,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>   </p>
+<p><strong>Пример</strong> <br />
 <div class="codehilite"><pre><span></span>    <span class="kr">@IBAction</span> <span class="kd">private</span> <span class="kd">func</span> <span class="nf">logoutPressed</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">SCUser</span><span class="p">.</span><span class="n">logout</span><span class="p">()</span> <span class="p">{</span>
             <span class="n">success</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
@@ -1125,11 +1123,10 @@
         <span class="p">}</span>
     <span class="p">}</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCUser+signup"></a></p>
-<h3 id="signupusername-email-password-callback">.signup(username, email, password, callback)<a class="headerlink" href="#signupusername-email-password-callback" title="Permanent link">&para;</a></h3>
+<h3 id="signupusername-email-password-callback">.signup(username, email, password, callback)</h3>
 <p>Метод для регистрации пользователя приложения.</p>
 <table>
 <thead>
@@ -1172,7 +1169,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>   </p>
+<p><strong>Пример</strong> <br />
 <div class="codehilite"><pre><span></span><span class="kr">@IBAction</span> <span class="kd">private</span> <span class="kd">func</span> <span class="nf">signupPressed</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">guard</span> <span class="kd">let</span> <span class="nv">email</span> <span class="p">=</span> <span class="n">emailTextField</span><span class="p">.</span><span class="n">text</span> <span class="k">where</span> <span class="n">email</span> <span class="o">!=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
         <span class="kd">let</span> <span class="nv">password</span> <span class="p">=</span> <span class="n">passwordTextField</span><span class="p">.</span><span class="n">text</span> <span class="k">where</span> <span class="n">password</span> <span class="o">!=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
@@ -1216,11 +1213,10 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-
-
+</p>
 <hr />
 <p><a name="SCUser+signup2"></a></p>
-<h3 id="signupcallback">.signup(callback)<a class="headerlink" href="#signupcallback" title="Permanent link">&para;</a></h3>
+<h3 id="signupcallback">.signup(callback)</h3>
 <p>Метод для регистрации пользователя приложения. Поля устанавливаются методами родительского класса Object.</p>
 <table>
 <thead>
