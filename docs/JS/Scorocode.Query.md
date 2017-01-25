@@ -116,7 +116,7 @@ data.find()
 - "skip" - <code>Number</code>  - количество документов, которое было пропущено при выборке
 - "result" - <code>Array</code>  - массив полученных данных
 
-```
+```js
 { 
     error: false,
     limit: 100,
@@ -243,20 +243,22 @@ Items.notEqualTo("price", 42)
     - "count" - <code>Number</code>  - Количество измененных объектов
     - "docs" - <code>Array</code>  - Массив _id измененных объектов.
 
-```
-{ error: false,
-  result:
-   { count: 8,
-     docs:[ 
-        'CrT49joIxn',
-        '8Qcfll2GwE',
-        'dMSYsK8jld',
-        '6TFVG5UqV6',
-        'gNxzwAfvDj',
-        'eoVWeg9oeY',
-        'vRf58kEDpo',
-        'abOkjQAnYE' 
-        ] 
+```js
+{ 
+    error: false,
+    result:
+        { 
+            count: 8,
+            docs:[ 
+                'CrT49joIxn',
+                '8Qcfll2GwE',
+                'dMSYsK8jld',
+                '6TFVG5UqV6',
+                'gNxzwAfvDj',
+                'eoVWeg9oeY',
+                'vRf58kEDpo',
+                'abOkjQAnYE' 
+            ] 
     } 
 }
 ```
