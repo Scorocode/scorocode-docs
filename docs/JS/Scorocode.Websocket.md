@@ -52,7 +52,6 @@ var WS = new sc.WebSocket('chatroom');
 **Пример**  
 
 ```js
-// Подключим SDK и инициализируем его. 
 var sc = require('scorocode');
 
 sc.Init({
@@ -92,7 +91,6 @@ WS.send(data);
 **Пример**  
 
 ```js
-// Подключим SDK и инициализируем его. 
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: "applicationId_приложения",
