@@ -473,13 +473,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#error-false-result-count-8-docs-crt49joixn-8qcfll2gwe-dmsysk8jld-6tfvg5uqv6-gnxzwafvdj-eovweg9oey-vrf58kedpo-abokjqanye" title="{ " class="md-nav__link">
-    { 
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#removeoptions" title=".remove(options)" class="md-nav__link">
     .remove(options)
   </a>
@@ -1128,13 +1121,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#error-false-result-count-8-docs-crt49joixn-8qcfll2gwe-dmsysk8jld-6tfvg5uqv6-gnxzwafvdj-eovweg9oey-vrf58kedpo-abokjqanye" title="{ " class="md-nav__link">
-    { 
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#removeoptions" title=".remove(options)" class="md-nav__link">
     .remove(options)
   </a>
@@ -1506,8 +1492,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong><br />
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
+<p><strong>Пример</strong>  </p>
+<p><div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
@@ -1559,7 +1545,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>
+<p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1592,35 +1578,38 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-</p>
+
+
 <p><strong>Возвращает</strong>: <code>promise.{error: Boolean, result: {count: Number, docs: Array}}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.</p>
 <ul>
 <li>"error" - <code>Boolean</code> - Флаг ошибки</li>
 <li>"result" - <code>Object</code>  - Результат выполнения запроса<ul>
-<li>"count" - <code>Number</code>  - Количество измененных объектов</li>
-<li>"docs" - <code>Array</code>  - Массив _id измененных объектов.</li>
+<li>"count" - <code>Number</code> - Количество измененных объектов</li>
+<li>"docs" - <code>Array</code>  - Массив _id измененных объектов</li>
 </ul>
 </li>
 </ul>
-<h2 id="error-false-result-count-8-docs-crt49joixn-8qcfll2gwe-dmsysk8jld-6tfvg5uqv6-gnxzwafvdj-eovweg9oey-vrf58kedpo-abokjqanye"><div class="codehilite"><pre><span></span><span class="p">{</span> 
-    <span class="nx">error</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nx">result</span><span class="o">:</span>
-        <span class="p">{</span> 
-            <span class="nx">count</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
-            <span class="nx">docs</span><span class="o">:</span><span class="p">[</span> 
-                <span class="s1">&#39;CrT49joIxn&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;8Qcfll2GwE&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;dMSYsK8jld&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;6TFVG5UqV6&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;gNxzwAfvDj&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;eoVWeg9oeY&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;vRf58kEDpo&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;abOkjQAnYE&#39;</span> 
-            <span class="p">]</span> 
-    <span class="p">}</span> 
-<span class="p">}</span>
+<div class="codehilite"><pre><span></span>{
+    error: false,
+    result:
+        { 
+            count: 8,
+            docs:[ 
+                &#39;CrT49joIxn&#39;,
+                &#39;8Qcfll2GwE&#39;,
+                &#39;dMSYsK8jld&#39;,
+                &#39;6TFVG5UqV6&#39;,
+                &#39;gNxzwAfvDj&#39;,
+                &#39;eoVWeg9oeY&#39;,
+                &#39;vRf58kEDpo&#39;,
+                &#39;abOkjQAnYE&#39; 
+            ] 
+    } 
+}
 </pre></div>
-</h2>
+
+
+<hr />
 <p><a name="sc.Query+remove"></a></p>
 <h2 id="removeoptions">.remove(options)</h2>
 <p>Метод для удаления запрошенных объектов.</p>
@@ -1675,15 +1664,15 @@
 <li>"count" - <code>Number</code>  - Количество измененных объектов</li>
 <li>"docs" - <code>Array</code>  - Массив _id измененных объектов.</li>
 </ul>
-<div class="codehilite"><pre><span></span>{ 
-    count: 4, 
-    docs:[ 
-        &#39;CrT49joIxn&#39;, 
-        &#39;eoVWeg9oeY&#39;, 
-        &#39;vRf58kEDpo&#39;, 
-        &#39;abOkjQAnYE&#39;
-        ] 
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span> 
+    <span class="nx">count</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> 
+    <span class="nx">docs</span><span class="o">:</span><span class="p">[</span> 
+        <span class="s1">&#39;CrT49joIxn&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;eoVWeg9oeY&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;vRf58kEDpo&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;abOkjQAnYE&#39;</span>
+        <span class="p">]</span> 
+<span class="p">}</span>
 </pre></div>
 
 
