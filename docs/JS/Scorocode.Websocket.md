@@ -49,8 +49,8 @@ var WS = new sc.WebSocket('chatroom');
 | event | <code>String</code> | Обязательный, значение из списка | Событие, на которое устанавливается коллбэк | "open", "message", "error", "close"  |
 | callback | <code>Object</code> |  | Коллбэк на событие | |
 
-**Пример**  
-
+**Пример** 
+ 
 ```js
 var sc = require('scorocode');
 
@@ -60,9 +60,7 @@ sc.Init({
     WebSocketKey: "webSocketKey_приложения"
 });
 
-
 var WS = new sc.WebSocket('Helloworld');
-
 
 WS.on("open", onOpen () {});
 WS.on("close", onClose () {});
@@ -71,10 +69,10 @@ WS.on("message", onMessage(data) {
     console.log(data)
     });
 
-
 var data = "Wello Horld";
 WS.send(data);
 ```
+
 ----------------------------------------------------------------------------------------------
 
 <a name="sc.WebSocket+send"></a>

@@ -75,7 +75,6 @@ bot.getBotsList(new CallbackGetBotList() {
 | callback | `CallbackGetBotList` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
 
 **Пример**
-
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
 
@@ -96,8 +95,8 @@ bot.createBot(botInfo, new CallbackCreateBot() {
         //error during bot creation        
     }
 });
-
 ```
+
 ------------------------------------------------------------------------
 <a name="Bot+updateBot"></a>
 
@@ -113,7 +112,6 @@ bot.createBot(botInfo, new CallbackCreateBot() {
 | callback | `CallbackGetBotList` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
 
 **Пример**
-
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
 
@@ -134,6 +132,7 @@ bot.updateBot(botId, newBotInfo, new CallbackUpdateBot() {
     }
 });
 ```
+
 ------------------------------------------------------------------------
 
 <a name="Bot+deleteBot"></a>

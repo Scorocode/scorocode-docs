@@ -51,6 +51,7 @@
 ```Java
 Query query = new Query("name");
 ```
+
 ---------------------------------------------------------------------------------------------
 
 <a name="Query+findDocuments"></a>
@@ -86,6 +87,7 @@ query.findDocuments(new CallbackFindDocument() {
             }
         });
 ```
+
 ---------------------------------------------------------------------------------------------
 
 <a name="Query+countDocuments"></a>
@@ -229,13 +231,13 @@ query.setSkip(12);
 | page | `Integer` |  Обязательный | Номер страницы | 2  |
 
 **Пример** 
-
 ```Java
 Query query = new Query(“mycollection”);
 //query.setLimit(15);
 query.setPage(1);
 //query.findDocuments(…);
 ```
+
 ---------------------------------------------------------------------------------------------
 
 <a name="Query+equalTo"></a>
@@ -252,7 +254,7 @@ query.setPage(1);
 ```Java
 Query query = new Query(“mycollection”);
 query.equalTo(“orderNumber”, 22);
-//query.findDocuments(…);
+// query.findDocuments(…);
 ```
 
 !!! note "Примечание"
