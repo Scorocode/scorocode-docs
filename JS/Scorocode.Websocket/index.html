@@ -525,13 +525,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#var-sc-requirescorocode-scinit-applicationid-applicationid_-javascriptkey-javascriptkey_-websocketkey-websocketkey_-var-ws-new-scwebsockethelloworld-wsonopen-onopen-wsonclose-onclose-wsonerror-onerror-wsonmessage-onmessagedata-consolelogdata-var-data-wello-horld-wssenddata" title="var sc = require(&#39;scorocode&#39;);" class="md-nav__link">
-    var sc = require(&#39;scorocode&#39;);
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#sendmessage" title=".send(message)" class="md-nav__link">
     .send(message)
   </a>
@@ -932,13 +925,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#var-sc-requirescorocode-scinit-applicationid-applicationid_-javascriptkey-javascriptkey_-websocketkey-websocketkey_-var-ws-new-scwebsockethelloworld-wsonopen-onopen-wsonclose-onclose-wsonerror-onerror-wsonmessage-onmessagedata-consolelogdata-var-data-wello-horld-wssenddata" title="var sc = require(&#39;scorocode&#39;);" class="md-nav__link">
-    var sc = require(&#39;scorocode&#39;);
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#sendmessage" title=".send(message)" class="md-nav__link">
     .send(message)
   </a>
@@ -1039,8 +1025,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
-<h2 id="var-sc-requirescorocode-scinit-applicationid-applicationid_-javascriptkey-javascriptkey_-websocketkey-websocketkey_-var-ws-new-scwebsockethelloworld-wsonopen-onopen-wsonclose-onclose-wsonerror-onerror-wsonmessage-onmessagedata-consolelogdata-var-data-wello-horld-wssenddata"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<p><strong>Пример</strong> </p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
@@ -1048,9 +1034,7 @@
     <span class="nx">WebSocketKey</span><span class="o">:</span> <span class="s2">&quot;webSocketKey_приложения&quot;</span>
 <span class="p">});</span>
 
-
 <span class="kd">var</span> <span class="nx">WS</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;Helloworld&#39;</span><span class="p">);</span>
-
 
 <span class="nx">WS</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;open&quot;</span><span class="p">,</span> <span class="nx">onOpen</span> <span class="p">()</span> <span class="p">{});</span>
 <span class="nx">WS</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;close&quot;</span><span class="p">,</span> <span class="nx">onClose</span> <span class="p">()</span> <span class="p">{});</span>
@@ -1059,11 +1043,12 @@
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
     <span class="p">});</span>
 
-
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s2">&quot;Wello Horld&quot;</span><span class="p">;</span>
 <span class="nx">WS</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </pre></div>
-</h2>
+
+
+<hr />
 <p><a name="sc.WebSocket+send"></a></p>
 <h2 id="sendmessage">.send(message)</h2>
 <p>Метод для отправки сообщения в канал</p>
