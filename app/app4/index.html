@@ -1265,6 +1265,7 @@
                 <p>На закладке «Триггеры» вы можете создать описания для стандартных триггеров.</p>
 <p><img alt="Триггеры" src="../../img/datatriggers.png" /></p>
 <p>Триггеры - скрипты на JavaScript, выполняемые при определенных операциях над данными. Все триггеры выполняются в замыканиях, имеют локальный контекст. Выберите триггер из предлагаемого списка и введите его описание в отведенном для этого окне. Для сохранения введенного описания нажмите на ссылку «Сохранить». Для активации созданного триггера установите опцию «Активировать». Без установки данной опции триггер не будет работать.</p>
+<p>При выполнении триггера в его контексте создаются объекты <code>DataManager</code> и <code>pool</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Ограничение времени работы</p>
 <p>Максимальное время выполнения каждого триггера - 500 миллисекунд.</p>
@@ -1277,79 +1278,88 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Прерывание/выполнение операций в результате работы триггера</p>
-<p>При выполнении триггеров <strong>перед</strong> операциями "insert", "update" и "delete", необходимо в результате выполнять return true для продолжения выполнения операциий документа, и return false для прерывания выполнения операций. Если триггер не возвращает значения, то по умолчание результат его работы - false</p>
+<p>При выполнении триггеров <strong>перед</strong> операциями "insert", "update" и "delete", необходимо в результате выполнять <code>return true</code> для продолжения выполнения операциий документа, и <code>return false</code> для прерывания выполнения операций. Если триггер не возвращает значения, то по умолчание результат его работы - <code>false</code></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Возврат данных при прерывании выполнения операции триггера</p>
-<p>В случае, если вам необходимо при прерывании операции триггера вернуть данные - вы можете указать возвращаемые данне в параметре pool.result
+<p>В случае, если при прерывании операции триггера вам необходимо вернуть данные - вы можете указать возвращаемые данные в параметре <code>pool.result</code>.
+К примеру, в триггере перед добавлением документа реализуем проверку обязательности наличия поля.
 <div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// проверим наличие поля &quot;name&quot; в создаваемом документе</span>
-    <span class="nx">pool</span><span class="p">.</span><span class="nx">result</span> <span class="o">=</span> <span class="s2">&quot;Необходимо указать имя&quot;</span>
+    <span class="nx">pool</span><span class="p">.</span><span class="nx">result</span> <span class="o">=</span> <span class="s2">&quot;Необходимо указать имя&quot;</span><span class="p">;</span>
     <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                     <span class="c1">// прервем создание документа в случае отсутствия поля</span>
-<span class="p">}</span> 
-<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                      <span class="c1">// В случае, если значение поля присутствует - продолжим операцию</span>
+<span class="p">};</span> 
+<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>    <span class="c1">// В случае, если значение поля присутствует - продолжим операцию</span>
+</pre></div>
+
+Теперь при попытке добавить документ с отсутствующим полем name, операция добавления документа прервется и будут возвращены следующие данные:
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;errCode&quot;</span><span class="o">:</span> <span class="mi">412</span><span class="p">,</span>
+    <span class="s2">&quot;errMsg&quot;</span><span class="o">:</span> <span class="s2">&quot;beforeInsert Trigger result: false&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;result&quot;</span><span class="o">:</span> <span class="s2">&quot;Необходимо указать имя&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </p>
 </div>
-<p>При выполнении триггера в его контексте создаются объекты <code>DataManager</code> и <code>pool</code>.</p>
 <h2 id="pool">Объект pool</h2>
 <p>Объект <code>pool</code> содержит следующие данные:</p>
 <h3 id="insert">Перед операцией <code>insert</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">doc</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля:значение</span>
-<span class="err">}</span>
+    <span class="nx">doc</span> <span class="o">:</span> <span class="p">{}</span>    <span class="c1">// документ с парами имя_поля:значение</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h3 id="insert_1">После операции <code>insert</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">newDoc</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">вновь</span> <span class="err">созданный</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля:значение</span>
-<span class="err">}</span>
+    <span class="nx">newDoc</span> <span class="o">:</span> <span class="p">{}</span> <span class="c1">// вновь созданный документ с парами имя_поля:значение</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h3 id="remove">Перед операцией <code>remove</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">query</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">поисковый</span> <span class="err">запрос,</span> <span class="err">в</span> <span class="err">соответствии</span> <span class="err">с</span> <span class="err">которым</span> <span class="err">необходимо</span> <span class="err">удалить</span> <span class="err">документы</span>
-<span class="err">}</span>
+    <span class="nx">query</span> <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// поисковый запрос, в соответствии с которым необходимо удалить документы</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h3 id="remove_1">После операции <code>remove</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">count</span> <span class="err">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">удаленных</span> <span class="err">документов</span>
-    <span class="err">docs</span>  <span class="err">:</span> <span class="err">[]</span>  <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">удаленных</span> <span class="err">документов</span>
+    <span class="nx">count</span> <span class="o">:</span> <span class="kr">int</span> <span class="c1">// количество удаленных документов</span>
+    <span class="nx">docs</span>  <span class="o">:</span> <span class="p">[]</span>  <span class="c1">// массив ID удаленных документов</span>
 <span class="p">}</span>
 </pre></div>
 
 
 <h3 id="update">Перед операцией <code>update</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">doc</span>   <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">правилами</span> <span class="err">обновления</span> <span class="err">значений</span>
-    <span class="err">query</span> <span class="err">:</span> <span class="p">{}</span><span class="err">,</span> <span class="err">//</span> <span class="err">поисковый</span> <span class="err">запрос,</span> <span class="err">в</span> <span class="err">соответствии</span> <span class="err">с</span> <span class="err">которым</span> <span class="err">необходимо</span> <span class="err">обновить</span> <span class="err">документы</span>
-<span class="err">}</span>
+    <span class="nx">doc</span>   <span class="o">:</span> <span class="p">{},</span> <span class="c1">// документ с правилами обновления значений</span>
+    <span class="nx">query</span> <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// поисковый запрос, в соответствии с которым необходимо обновить документы</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h3 id="update_1">После операции <code>update</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">count</span> <span class="err">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">обновленный</span> <span class="err">документов</span>
-    <span class="err">docs</span>  <span class="err">:</span> <span class="err">[]</span>  <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">обновленных</span> <span class="err">документов</span>
+    <span class="nx">count</span> <span class="o">:</span> <span class="kr">int</span><span class="p">,</span> <span class="c1">// количество обновленный документов</span>
+    <span class="nx">docs</span>  <span class="o">:</span> <span class="p">[]</span>   <span class="c1">// массив ID обновленных документов</span>
 <span class="p">}</span>
 </pre></div>
 
 
 <h3 id="updatebyid">Перед операцией <code>updatebyid</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">doc</span>         <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">правилами</span> <span class="err">обновления</span> <span class="err">значений</span>
-    <span class="err">query</span>       <span class="err">:</span> <span class="p">{}</span><span class="err">,</span> <span class="err">//</span> <span class="err">поисковый</span> <span class="err">запрос</span> <span class="p">{</span><span class="nt">&quot;_id&quot;</span> <span class="p">:</span> <span class="p">}</span>
-<span class="err">}</span>
+    <span class="nx">doc</span>         <span class="o">:</span> <span class="p">{},</span> <span class="c1">// документ с правилами обновления значений</span>
+    <span class="nx">query</span>       <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// поисковый запрос {&quot;_id&quot; : }</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h3 id="updatebyid_1">После операции <code>updatebyid</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">newDoc</span>      <span class="err">:</span> <span class="err">{</span> <span class="p">}</span> <span class="err">//</span> <span class="err">обновленный</span> <span class="err">документ</span>
-<span class="err">}</span>
+    <span class="nx">newDoc</span>      <span class="o">:</span> <span class="p">{}</span> <span class="c1">// обновленный документ</span>
+<span class="p">}</span>
 </pre></div>
 
 
@@ -1359,26 +1369,26 @@
 <p>Метод для вставки документа в коллекцию. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">coll</span> <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
-    <span class="err">doc</span>  <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля:значение,</span> <span class="err">необязательный</span>
-<span class="err">}</span>
+    <span class="nx">coll</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции, обязательный</span>
+    <span class="nx">doc</span>  <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// документ с парами имя_поля:значение, необязательный</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">error</span>  <span class="err">:</span> <span class="err">false</span>
-    <span class="err">result</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span> <span class="err">//</span> <span class="err">созданный</span> <span class="err">документ</span>
-<span class="err">}</span>
+    <span class="nx">error</span>  <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">result</span> <span class="o">:</span> <span class="p">{}</span> <span class="c1">// созданный документ</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">error</span>   <span class="err">:</span> <span class="err">true,</span>
-    <span class="err">errCode</span> <span class="err">:</span> <span class="err">4XX/5XX,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="err">errMsg</span>  <span class="err">:</span> <span class="nt">&quot;Текст ошибки&quot;</span>
+    <span class="nx">error</span>   <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">errCode</span> <span class="o">:</span> <span class="mi">4</span><span class="nx">XX</span><span class="o">/</span><span class="mi">5</span><span class="nx">XX</span><span class="p">,</span> <span class="c1">// Код ошибки</span>
+    <span class="nx">errMsg</span>  <span class="o">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1387,31 +1397,31 @@
 <p>Метод для удаления документов из коллекции. Параметры:</p>
 <p><code>Data Object</code> - объект, содержащий следующие атрибуты:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">coll</span>  <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
-    <span class="err">query</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный</span>
-    <span class="err">limit</span> <span class="err">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">лимит</span> <span class="err">количества</span> <span class="err">удаляемых</span> <span class="err">документов,</span> <span class="err">необязательный,</span>
-                <span class="err">//</span> <span class="err">если</span> <span class="err">не</span> <span class="err">указан,</span> <span class="err">то</span> <span class="err">удалятся</span> <span class="err">первые</span> <span class="mi">1000</span> <span class="err">документов</span>
-<span class="err">}</span>
+    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции, обязательный</span>
+    <span class="nx">query</span> <span class="o">:</span> <span class="p">{},</span> <span class="c1">// запрос с парами имя_поля/оператор:значение, необязательный</span>
+    <span class="nx">limit</span> <span class="o">:</span> <span class="kr">int</span> <span class="c1">// лимит количества удаляемых документов, необязательный,</span>
+                <span class="c1">// если не указан, то удалятся первые 1000 документов</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">error</span>  <span class="err">:</span> <span class="err">false</span>
-    <span class="err">result</span> <span class="err">:</span> <span class="err">{</span>
-        <span class="err">count</span> <span class="err">:</span> <span class="err">int,</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">удаленных</span> <span class="err">документов</span>
-        <span class="err">docs</span>  <span class="err">:</span> <span class="err">[]</span> <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">удаленных</span> <span class="err">документов</span>
+    <span class="nx">error</span>  <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">result</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">count</span> <span class="o">:</span> <span class="kr">int</span><span class="p">,</span> <span class="c1">// количество удаленных документов</span>
+        <span class="nx">docs</span>  <span class="o">:</span> <span class="p">[]</span> <span class="c1">// массив ID удаленных документов</span>
     <span class="p">}</span>
-<span class="err">}</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">error</span>   <span class="err">:</span> <span class="err">true,</span>
-    <span class="err">errCode</span> <span class="err">:</span> <span class="err">4XX/5XX,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="err">errMsg</span>  <span class="err">:</span> <span class="nt">&quot;Текст ошибки&quot;</span>
+    <span class="nx">error</span>   <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">errCode</span> <span class="o">:</span> <span class="mi">4</span><span class="nx">XX</span><span class="o">/</span><span class="mi">5</span><span class="nx">XX</span><span class="p">,</span> <span class="c1">// Код ошибки</span>
+    <span class="nx">errMsg</span>  <span class="o">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1420,32 +1430,32 @@
 <p>Метод для обновления документов в коллекции. Параметры:</p>
 <p><code>Data Object</code> - объект, содержащий следующие атрибуты:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">coll</span>  <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
-    <span class="err">query</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный</span>
-    <span class="err">doc</span>   <span class="err">:</span> <span class="p">{}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">оператор:значение,</span> <span class="err">обязательный</span>
-    <span class="err">limit</span> <span class="err">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">лимит</span> <span class="err">количества</span> <span class="err">обновляемых</span> <span class="err">документов,</span> <span class="err">необязательный,</span>
-                <span class="err">//</span> <span class="err">если</span> <span class="err">не</span> <span class="err">указан,</span> <span class="err">то</span> <span class="err">обновятся</span> <span class="err">первые</span> <span class="mi">1000</span> <span class="err">документов</span>
-<span class="err">}</span>
+    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции, обязательный</span>
+    <span class="nx">query</span> <span class="o">:</span> <span class="p">{},</span> <span class="c1">// запрос с парами имя_поля/оператор:значение, необязательный</span>
+    <span class="nx">doc</span>   <span class="o">:</span> <span class="p">{},</span> <span class="c1">// документ с парами оператор:значение, обязательный</span>
+    <span class="nx">limit</span> <span class="o">:</span> <span class="kr">int</span> <span class="c1">// лимит количества обновляемых документов, необязательный,</span>
+                <span class="c1">// если не указан, то обновятся первые 1000 документов</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">error</span>  <span class="err">:</span> <span class="err">false</span>
-    <span class="err">result</span> <span class="err">:</span> <span class="err">{</span>
-        <span class="err">count</span> <span class="err">:</span> <span class="err">int,</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">удаленных</span> <span class="err">документов</span>
-        <span class="err">docs</span>  <span class="err">:</span> <span class="err">[]</span> <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">измененных</span> <span class="err">документов</span>
+    <span class="nx">error</span>  <span class="o">:</span> <span class="kc">false</span>
+    <span class="nx">result</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">count</span> <span class="o">:</span> <span class="kr">int</span><span class="p">,</span> <span class="c1">// количество удаленных документов</span>
+        <span class="nx">docs</span>  <span class="o">:</span> <span class="p">[]</span> <span class="c1">// массив ID измененных документов</span>
     <span class="p">}</span>
-<span class="err">}</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">error</span>   <span class="err">:</span> <span class="err">true,</span>
-    <span class="err">errCode</span> <span class="err">:</span> <span class="err">4XX/5XX,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="err">errMsg</span>  <span class="err">:</span> <span class="nt">&quot;Текст ошибки&quot;</span>
+    <span class="nx">error</span>   <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">errCode</span> <span class="o">:</span> <span class="mi">4</span><span class="nx">XX</span><span class="o">/</span><span class="mi">5</span><span class="nx">XX</span><span class="p">,</span> <span class="c1">// Код ошибки</span>
+    <span class="nx">errMsg</span>  <span class="o">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1454,27 +1464,27 @@
 <p>Метод для обновления одного документа в коллекции, идентифицируемого по ID. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">coll</span>  <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
-    <span class="err">query</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">в</span> <span class="err">формате</span> <span class="s2">&quot;_id&quot;</span> <span class="err">:</span> <span class="s2">&quot;&lt;идентификатор документа&gt;&quot;</span><span class="err">,</span> <span class="err">обязательный</span>
-    <span class="err">doc</span>   <span class="err">:</span> <span class="p">{}</span><span class="err">,</span> <span class="err">//</span> <span class="err">документ</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">оператор:значение,</span> <span class="err">обязательный</span>
-<span class="err">}</span>
+    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции, обязательный</span>
+    <span class="nx">query</span> <span class="o">:</span> <span class="p">{},</span> <span class="c1">// запрос в формате &quot;_id&quot; : &quot;&lt;идентификатор документа&gt;&quot;, обязательный</span>
+    <span class="nx">doc</span>   <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// документ с парами оператор:значение, обязательный</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">error</span>  <span class="err">:</span> <span class="err">false</span>
-    <span class="err">result</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span> <span class="err">//</span> <span class="err">обновленный</span> <span class="err">документ</span>
-<span class="err">}</span>
+    <span class="nx">error</span>  <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">result</span> <span class="o">:</span> <span class="p">{}</span> <span class="c1">// обновленный документ</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">error</span>   <span class="err">:</span> <span class="err">true,</span>
-    <span class="err">errCode</span> <span class="err">:</span> <span class="err">4XX/5XX,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="err">errMsg</span>  <span class="err">:</span> <span class="nt">&quot;Текст ошибки&quot;</span>
+    <span class="nx">error</span>   <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">errCode</span> <span class="o">:</span> <span class="mi">4</span><span class="nx">XX</span><span class="o">/</span><span class="mi">5</span><span class="nx">XX</span><span class="p">,</span> <span class="c1">// Код ошибки</span>
+    <span class="nx">errMsg</span>  <span class="o">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1483,31 +1493,31 @@
 <p>Метод для запроса документов из коллекции. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">coll</span>   <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
-    <span class="err">query</span>  <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный,</span> <span class="err">если</span> <span class="err">пустой,</span>
-                 <span class="err">//</span> <span class="err">то</span> <span class="err">будут</span> <span class="err">возвращены</span> <span class="err">первые</span> <span class="mi">100</span> <span class="err">документов</span>
-    <span class="err">sort</span>   <span class="err">:</span> <span class="p">{}</span><span class="err">,</span> <span class="err">//</span> <span class="err">сортировка</span> <span class="err">по</span> <span class="err">полям</span> <span class="err">в</span> <span class="err">формате</span> <span class="err">имя_поля:</span><span class="mi">1</span><span class="err">/</span><span class="mi">-1</span><span class="err">,</span> <span class="err">необязательный</span>
-    <span class="err">fields</span> <span class="err">:</span> <span class="p">[]</span><span class="err">,</span> <span class="err">//</span> <span class="err">список</span> <span class="err">имен</span> <span class="err">полей,</span> <span class="err">которые</span> <span class="err">будут</span> <span class="err">возвращены</span> <span class="err">в</span> <span class="err">каждом</span> <span class="err">документе,</span> <span class="err">необязательный</span>
-    <span class="err">limit</span>  <span class="err">:</span> <span class="err">int,//</span> <span class="err">лимит</span> <span class="err">размера</span> <span class="err">выборки,</span> <span class="err">необязательный,</span> <span class="err">по</span> <span class="err">умолчанию</span> <span class="mi">50</span>
-    <span class="err">skip</span>   <span class="err">:</span> <span class="err">int,//</span> <span class="err">количество</span> <span class="err">документов,</span> <span class="err">которое</span> <span class="err">нужно</span> <span class="err">пропустить</span> <span class="err">в</span> <span class="err">выборке</span>
-<span class="err">}</span>
+    <span class="nx">coll</span>   <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>  <span class="c1">// имя коллекции, обязательный</span>
+    <span class="nx">query</span>  <span class="o">:</span> <span class="p">{},</span>  <span class="c1">// запрос с парами имя_поля/оператор:значение, необязательный, если пустой,</span>
+                  <span class="c1">// то будут возвращены первые 100 документов</span>
+    <span class="nx">sort</span>   <span class="o">:</span> <span class="p">{},</span>  <span class="c1">// сортировка по полям в формате имя_поля:1/-1, необязательный</span>
+    <span class="nx">fields</span> <span class="o">:</span> <span class="p">[],</span>  <span class="c1">// список имен полей, которые будут возвращены в каждом документе, необязательный</span>
+    <span class="nx">limit</span>  <span class="o">:</span> <span class="kr">int</span><span class="p">,</span> <span class="c1">// лимит размера выборки, необязательный, по умолчанию 50</span>
+    <span class="nx">skip</span>   <span class="o">:</span> <span class="kr">int</span>  <span class="c1">// количество документов, которое нужно пропустить в выборке</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">error</span>  <span class="err">:</span> <span class="err">false</span>
-    <span class="err">result</span> <span class="err">:</span> <span class="err">[]</span> <span class="err">//</span> <span class="err">массив</span> <span class="err">выбранных</span> <span class="err">документов</span> <span class="err">с</span> <span class="err">учетом</span> <span class="err">лимита</span>
+    <span class="nx">error</span>  <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">result</span> <span class="o">:</span> <span class="p">[]</span> <span class="c1">// массив выбранных документов с учетом лимита</span>
 <span class="p">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">error</span>   <span class="err">:</span> <span class="err">true,</span>
-    <span class="err">errCode</span> <span class="err">:</span> <span class="err">4XX/5XX,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="err">errMsg</span>  <span class="err">:</span> <span class="nt">&quot;Текст ошибки&quot;</span>
+    <span class="nx">error</span>   <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">errCode</span> <span class="o">:</span> <span class="mi">4</span><span class="nx">XX</span><span class="o">/</span><span class="mi">5</span><span class="nx">XX</span><span class="p">,</span> <span class="c1">// Код ошибки</span>
+    <span class="nx">errMsg</span>  <span class="o">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1516,26 +1526,26 @@
 <p>Метод для запроса количества документов по условию в коллекции. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">coll</span>  <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
-    <span class="err">query</span> <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный</span>
-<span class="err">}</span>
+    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции, обязательный</span>
+    <span class="nx">query</span> <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// запрос с парами имя_поля/оператор:значение, необязательный</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">error</span>  <span class="err">:</span> <span class="err">false</span>
-    <span class="err">result</span> <span class="err">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">документов</span>
+    <span class="nx">error</span>  <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">result</span> <span class="o">:</span> <span class="kr">int</span> <span class="c1">// количество документов</span>
 <span class="p">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">error</span>   <span class="err">:</span> <span class="err">true,</span>
-    <span class="err">errCode</span> <span class="err">:</span> <span class="err">4XX/5XX,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="err">errMsg</span>  <span class="err">:</span> <span class="nt">&quot;Текст ошибки&quot;</span>
+    <span class="nx">error</span>   <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">errCode</span> <span class="o">:</span> <span class="mi">4</span><span class="nx">XX</span><span class="o">/</span><span class="mi">5</span><span class="nx">XX</span><span class="p">,</span> <span class="c1">// Код ошибки</span>
+    <span class="nx">errMsg</span>  <span class="o">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1544,25 +1554,25 @@
 <p>Метод для запуска серверного скрипта. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">script</span>   <span class="err">:</span> <span class="nt">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ID</span> <span class="err">скрипта,</span> <span class="err">обязательный</span>
-    <span class="err">pool</span>     <span class="err">:</span> <span class="err">{</span><span class="p">}</span><span class="err">,</span> <span class="err">//</span> <span class="err">пул</span> <span class="err">данных</span> <span class="err">для</span> <span class="err">установки</span> <span class="err">передачи</span> <span class="err">в</span> <span class="err">контекст</span> <span class="err">скрипта,</span> <span class="err">необязательный</span>
-<span class="err">}</span>
+    <span class="nx">script</span>   <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// ID скрипта, обязательный</span>
+    <span class="nx">pool</span>     <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// пул данных для установки передачи в контекст скрипта, необязательный</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>ыполнено</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">error</span>  <span class="err">:</span> <span class="err">false</span>
+    <span class="nx">error</span>  <span class="o">:</span> <span class="kc">false</span>
 <span class="p">}</span>
 </pre></div>
 
 
 <p><em>Ошибка</em></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">error</span>   <span class="err">:</span> <span class="err">true,</span>
-    <span class="err">errCode</span> <span class="err">:</span> <span class="err">4XX/5XX,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="err">errMsg</span>  <span class="err">:</span> <span class="nt">&quot;Текст ошибки&quot;</span>
+    <span class="nx">error</span>   <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">errCode</span> <span class="o">:</span> <span class="mi">4</span><span class="nx">XX</span><span class="o">/</span><span class="mi">5</span><span class="nx">XX</span><span class="p">,</span> <span class="c1">// Код ошибки</span>
+    <span class="nx">errMsg</span>  <span class="o">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1570,10 +1580,10 @@
 <h2 id="_1">Примеры триггеров</h2>
 <h3 id="_2">Установка обязательности наличия значения поля.</h3>
 <p>Перед добавлением документа проверим наличие значения поля "name" и, в случае его отсутствия, прервем операцию добавления документа.</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span>   <span class="c1">// проверим наличие поля &quot;name&quot; в создаваемом документе</span>
-        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                     <span class="c1">// прервем создание документа в случае отсутствия поля</span>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// проверим наличие поля &quot;name&quot; в создаваемом документе</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                   <span class="c1">// прервем создание документа в случае отсутствия поля</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                      <span class="c1">// В случае, если значение поля присутствует - продолжим операцию</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                    <span class="c1">// В случае, если значение поля присутствует - продолжим операцию</span>
     <span class="p">};</span>
 </pre></div>
 
@@ -1590,10 +1600,10 @@
 
 <h3 id="_3">Добавление связанного документа другой коллекции.</h3>
 <p>После добавления документа, создадим документ в другой коллекции со ссылкой на добавленный.</p>
-<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Insert</span><span class="p">({</span>                           <span class="c1">// выполним операцию добавления документа в коллекцию &quot;stuff&quot;</span>
+<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Insert</span><span class="p">({</span>                         <span class="c1">// выполним операцию добавления документа в коллекцию &quot;stuff&quot;</span>
         <span class="nx">coll</span> <span class="o">:</span> <span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
         <span class="nx">doc</span>  <span class="o">:</span> <span class="p">{</span>
-                   <span class="s2">&quot;thing&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span><span class="p">.</span><span class="nx">_id</span>    <span class="c1">// передадим _id созданного документа в поле типа &quot;pointer&quot;</span>
+                   <span class="s2">&quot;thing&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span><span class="p">.</span><span class="nx">_id</span>  <span class="c1">// передадим _id созданного документа в поле типа &quot;pointer&quot;</span>
         <span class="p">}</span>
     <span class="p">})</span>
 </pre></div>
@@ -1601,10 +1611,10 @@
 
 <h3 id="_4">Удаление связанных документов другой коллекции.</h3>
 <p>Перед удалением документа, удалим все документы другой коллекции со ссылкой на удаляемый.</p>
-<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Remove</span><span class="p">({</span>                           <span class="c1">// выполним удаление связанных документов в коллекции &quot;stuff&quot;</span>
+<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Remove</span><span class="p">({</span>            <span class="c1">// выполним удаление связанных документов в коллекции &quot;stuff&quot;</span>
     <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
     <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;thing&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">_id</span>                <span class="c1">// передадим _id удаляемого документа</span>
+        <span class="s2">&quot;thing&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">_id</span> <span class="c1">// передадим _id удаляемого документа</span>
     <span class="p">}</span>
 <span class="p">})</span>
 <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
@@ -1616,7 +1626,7 @@
 <div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">RunScript</span><span class="p">({</span>                   <span class="c1">// выполним запуск скрипта с ID 580b386d42d52f1ba275fc24</span>
     <span class="nx">script</span>  <span class="o">:</span> <span class="s2">&quot;580b386d42d52f1ba275fc24&quot;</span><span class="p">,</span>
     <span class="nx">pool</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;doc&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span>                <span class="c1">// передадим новый документ</span>
+        <span class="s2">&quot;doc&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span>                <span class="c1">// передадим в скрипт новый документ</span>
     <span class="p">}</span>
 <span class="p">})</span>
 </pre></div>
