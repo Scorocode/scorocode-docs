@@ -18,10 +18,9 @@
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |пше ыефегы
-| botId | <code>String</code> | Telegram id бота, полученный от '@BotFather' |
+| botId | <code>String</code> | Telegram id бота, полученный от `@BotFather` |
 
 **Пример**
-
 ```js
 var sc = require('scorocode');
 
@@ -38,7 +37,6 @@ var data = {
     "method_params": {
         // параметры метода Telegram Bot API
     }};
-
 bot.send(data)
 ```
 --------------------------------------------------------------------------
