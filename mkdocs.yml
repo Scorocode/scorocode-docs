@@ -60,6 +60,8 @@ pages:
         - 'Класс ScorocodeScript':  'Java/ScorocodeScript.md'
     - 'Примеры приложений':
         - 'Склад (Android)': 'Java/Storehouse.md'
+repo_name: 'GitHub'
+repo_url: 'https://github.com/scorocode'
 theme_dir: 'material'
 extra:
   logo: 'logo.png'
@@ -72,6 +74,13 @@ extra:
   palette:
     primary: 'blue'
     accent: 'light blue'
+  social:
+    - type: 'github'
+      link: 'https://github.com/scorocode'
+    - type: 'facebook'
+      link: 'https://www.facebook.com/scorocode'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/company/prof-it-group'
 markdown_extensions:
   - pymdownx.superfences
   - markdown.extensions.admonition
