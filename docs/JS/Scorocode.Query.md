@@ -158,6 +158,7 @@ data.find()
 | options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
 **Пример**  
+
 ```js
 // Подключим SDK и инициализируем его. 
 var sc = require('scorocode');
@@ -201,6 +202,7 @@ countItems.exists("price")
 
 
 **Пример**
+
 ```js
 // Подключим SDK и инициализируем его. 
 var sc = require('scorocode');
@@ -233,18 +235,17 @@ Items.notEqualTo("price", 42)
         .catch((error) => {
             console.log("Что-то пошло не так: \n", error)
         });
-
 ```
 
-**Возвращает**: <code>promise.{error: Boolean, result: {count: Number, docs: Array}}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
+**Возвращает**: `promise.{error: Boolean, result: {count: Number, docs: Array}}` - Возвращает promise, который возвращает объект с результатом выполнения запроса.
 
-- "error" - <code>Boolean</code> - Флаг ошибки
-- "result" - <code>Object</code>  - Результат выполнения запроса
-    - "count" - <code>Number</code>  - Количество измененных объектов
-    - "docs" - <code>Array</code>  - Массив _id измененных объектов.
+- "error" - `Boolean` - Флаг ошибки
+- "result" - `Object`  - Результат выполнения запроса
+    - "count" - `Number` - Количество измененных объектов
+    - "docs" - `Array`  - Массив _id измененных объектов
 
-```js
-{ 
+```
+{
     error: false,
     result:
         { 
@@ -262,6 +263,7 @@ Items.notEqualTo("price", 42)
     } 
 }
 ```
+
 ----------------------------------------------------------------------------------------------
 
 <a name="sc.Query+remove"></a>
@@ -311,7 +313,7 @@ Items.exists("arrayField")
 - "count" - <code>Number</code>  - Количество измененных объектов
 - "docs" - <code>Array</code>  - Массив _id измененных объектов.
 
-```
+```js
 { 
     count: 4, 
     docs:[ 
@@ -358,6 +360,7 @@ getItems.equalTo("price", 42)
             console.log("Что-то пошло не так: \n", error)
         });
 ```
+
 ----------------------------------------------------------------------------------------------
 
 <a name="sc.Query+equalTo"></a>
