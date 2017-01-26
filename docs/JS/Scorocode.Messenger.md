@@ -11,13 +11,18 @@
 
 <a name="new_sc.Messenger_new"></a>
 
-## new Messenger()
+## new Messenger(logger)
 
 Класс для отправки сообщений
 
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| logger | <code>Object</code> | Необязательный | Объект sc.Logger для режима отладки | См. пример ниже |
+
+
 **Пример**
 ```js
-var Broadcast = new sc.Messenger();
+var Broadcast = new sc.Messenger({logger: new sc.Logger()});
 ```
 
 ----------------------------------------------------------------------------------------------
@@ -32,7 +37,9 @@ var Broadcast = new sc.Messenger();
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | options | <code>Object</code> | Объект, состоящий из параметров where и data |
+| debug | `Boolean` | Необязательный | Флаг включения режима отладки | true |
 | callbacks | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
+
 
 **Описание объекта options**
 
@@ -60,11 +67,12 @@ var sc = require('scorocode');
 sc.Init({
     ApplicationID: "applicationId_приложения",
     JavaScriptKey: "javascriptKey_приложения",
-    MessageKey: "messageKey_приложения"
+    MessageKey: "messageKey_приложения",
+    WebSocketKey: "websocket key приложения"
 });
 
 var Devices = new sc.Query("devices");
-var Broadcast = new sc.Messenger();
+var Broadcast = new sc.Messenger({logger: new sc.Logger()});
 Broadcast.sendPush({
         where: Devices,
         data: {
@@ -94,7 +102,7 @@ Broadcast.sendPush({
                 }
             }
         }
-    })
+    }, true)
     .then((success)=>{
         console.log(success);
     })
