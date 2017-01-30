@@ -1229,8 +1229,7 @@
                 <h2 id="_1">Получение полной информации о приложении</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовок: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -1239,6 +1238,17 @@
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Ответы:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Выполнено</p>
@@ -1689,32 +1699,33 @@
 
 
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Пример cURL</p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
-<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
-<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app&quot;</span>
-</pre></div>
-
-
-</div>
 <hr />
 <h2 id="_2">Получение списка коллекций приложения и их настроек</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
-<p><div class="codehilite"><pre><span></span><span class="p">{</span>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;acc&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>      <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа</span><span class="p">,</span> <span class="err">обязательный,</span> <span class="err">только</span> <span class="err">masterKey</span>
 <span class="p">}</span>
 </pre></div>
 
-<strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
+
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections&quot;</span>
+</pre></div>
+
+
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;collections&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;devices&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -2090,7 +2101,9 @@
 </pre></div>
 
 
-<p><em>Ошибка</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
@@ -2099,15 +2112,7 @@
 </pre></div>
 
 
-<p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
-<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
-<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections&quot;</span>
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="_3">Просмотр структуры и настроек конкретной коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/get</strong></p>
@@ -2123,8 +2128,21 @@
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">        &quot;coll&quot;: &quot;devices&quot;</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/get&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;collection&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741515&quot;</span><span class="p">,</span>
@@ -2248,7 +2266,9 @@
 </pre></div>
 
 
-<p><em>Ошибка</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
@@ -2257,23 +2277,13 @@
 </pre></div>
 
 
-<p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
-<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
-<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
-<span class="s1">        &quot;coll&quot;: &quot;devices&quot;</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/get&quot;</span>
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="_4">Создание новой коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/create</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
-<p><div class="codehilite"><pre><span></span><span class="p">{</span>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;acc&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа,</span> <span class="err">обязательный,</span> <span class="err">только</span> <span class="err">masterKey</span>
@@ -2285,8 +2295,40 @@
 <span class="p">}</span>
 </pre></div>
 
-<strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
+
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">        &quot;collection&quot;: {</span>
+<span class="s1">            &quot;name&quot;: &quot;apicoll&quot;,</span>
+<span class="s1">            &quot;useDocsACL&quot;: false,</span>
+<span class="s1">            &quot;ACL&quot;: {</span>
+<span class="s1">                &quot;create&quot;: [</span>
+<span class="s1">                    &quot;R5VGMes94p&quot;</span>
+<span class="s1">                ],</span>
+<span class="s1">                &quot;read&quot;: [</span>
+<span class="s1">                    &quot;*&quot;,</span>
+<span class="s1">                    &quot;R5VGMes94p&quot;</span>
+<span class="s1">                ],</span>
+<span class="s1">                &quot;remove&quot;: [</span>
+<span class="s1">                    &quot;R5VGMes94p&quot;</span>
+<span class="s1">                ],</span>
+<span class="s1">                &quot;update&quot;: [</span>
+<span class="s1">                    &quot;R5VGMes94p&quot;</span>
+<span class="s1">                ]</span>
+<span class="s1">            }</span>
+<span class="s1">        }</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/create&quot;</span>
+</pre></div>
+
+
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;collection&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e849e7e0b4e222480a282&quot;</span><span class="p">,</span>
@@ -2383,7 +2425,9 @@
 </pre></div>
 
 
-<p><em>Ошибка</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
@@ -2392,41 +2436,13 @@
 </pre></div>
 
 
-<p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
-<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
-<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
-<span class="s1">        &quot;collection&quot;: {</span>
-<span class="s1">            &quot;name&quot;: &quot;apicoll&quot;,</span>
-<span class="s1">            &quot;useDocsACL&quot;: false,</span>
-<span class="s1">            &quot;ACL&quot;: {</span>
-<span class="s1">                &quot;create&quot;: [</span>
-<span class="s1">                    &quot;R5VGMes94p&quot;</span>
-<span class="s1">                ],</span>
-<span class="s1">                &quot;read&quot;: [</span>
-<span class="s1">                    &quot;*&quot;,</span>
-<span class="s1">                    &quot;R5VGMes94p&quot;</span>
-<span class="s1">                ],</span>
-<span class="s1">                &quot;remove&quot;: [</span>
-<span class="s1">                    &quot;R5VGMes94p&quot;</span>
-<span class="s1">                ],</span>
-<span class="s1">                &quot;update&quot;: [</span>
-<span class="s1">                    &quot;R5VGMes94p&quot;</span>
-<span class="s1">                ]</span>
-<span class="s1">            }</span>
-<span class="s1">        }</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/create&quot;</span>
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="_5">Изменение настроек коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/update</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
-<p><div class="codehilite"><pre><span></span><span class="p">{</span>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;acc&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа,</span> <span class="err">обязательный,</span> <span class="err">только</span> <span class="err">masterKey</span>
@@ -2439,8 +2455,24 @@
 <span class="p">}</span>
 </pre></div>
 
-<strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
+
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">        &quot;collection&quot;: {</span>
+<span class="s1">            &quot;id&quot;: &quot;584e849e7e0b4e222480a282&quot;,</span>
+<span class="s1">            &quot;useDocsACL&quot;: true</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/create&quot;</span>
+</pre></div>
+
+
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;collection&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e849e7e0b4e222480a282&quot;</span><span class="p">,</span>
@@ -2537,7 +2569,9 @@
 </pre></div>
 
 
-<p><em>Ошибка</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
@@ -2546,24 +2580,12 @@
 </pre></div>
 
 
-<p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
-<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
-<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
-<span class="s1">        &quot;collection&quot;: {</span>
-<span class="s1">            &quot;id&quot;: &quot;584e849e7e0b4e222480a282&quot;,</span>
-<span class="s1">            &quot;useDocsACL&quot;: true</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/create&quot;</span>
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="_6">Удаление коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/delete</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -2575,24 +2597,8 @@
 </pre></div>
 
 
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
 <span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
@@ -2603,12 +2609,33 @@
 </pre></div>
 
 
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
 <hr />
 <h2 id="_7">Создание дубликата коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/clone</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -2621,8 +2648,24 @@
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">        &quot;collection&quot;: {</span>
+<span class="s1">            &quot;id&quot;: &quot;584e91b77e0b4e222480a316&quot;,</span>
+<span class="s1">            &quot;name&quot;: &quot;clonedcoll&quot;           </span>
+<span class="s1">        }</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/clone&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;collection&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e91e70c62722cf9fe2191&quot;</span><span class="p">,</span>
@@ -2705,7 +2748,9 @@
 </pre></div>
 
 
-<p><em>Ошибка</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
@@ -2714,25 +2759,12 @@
 </pre></div>
 
 
-<p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
-<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
-<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
-<span class="s1">        &quot;collection&quot;: {</span>
-<span class="s1">            &quot;id&quot;: &quot;584e91b77e0b4e222480a316&quot;,</span>
-<span class="s1">            &quot;name&quot;: &quot;clonedcoll&quot;           </span>
-<span class="s1">        }</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/clone&quot;</span>
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="_8">Создание индекса коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/index/create</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>                         <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>                         <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -2751,24 +2783,8 @@
 </pre></div>
 
 
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
 <span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
@@ -2787,12 +2803,33 @@
 </pre></div>
 
 
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
 <hr />
 <h2 id="_9">Удаление индекса коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/index/delete</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>                        <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>                        <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -2805,24 +2842,8 @@
 </pre></div>
 
 
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
 <span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
@@ -2835,12 +2856,33 @@
 </pre></div>
 
 
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
 <hr />
 <h2 id="_10">Создание поля коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/fields/create</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>         <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>         <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -2855,32 +2897,8 @@
 </pre></div>
 
 
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;pointer&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Pointer&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;devices&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
 <span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
@@ -2895,12 +2913,41 @@
 </pre></div>
 
 
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;pointer&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Pointer&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;devices&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
 <hr />
 <h2 id="_11">Удаление поля коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/fields/delete</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>       <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>       <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -2913,8 +2960,24 @@
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">    &quot;coll&quot;: &quot;users&quot;,                       </span>
+<span class="s1">    &quot;collField&quot;: {</span>
+<span class="s1">        &quot;name&quot;: &quot;pointer&quot;</span>
+<span class="s1">    }</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/fields/delete&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;collection&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741514&quot;</span><span class="p">,</span>
@@ -3070,7 +3133,9 @@
 </pre></div>
 
 
-<p><em>Ошибка</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
@@ -3079,25 +3144,12 @@
 </pre></div>
 
 
-<p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
-<span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
-<span class="s1">    &quot;coll&quot;: &quot;users&quot;,                       </span>
-<span class="s1">    &quot;collField&quot;: {</span>
-<span class="s1">        &quot;name&quot;: &quot;pointer&quot;</span>
-<span class="s1">    }</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/fields/delete&quot;</span>
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="_12">Изменение триггеров коллекции</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/triggers</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>                <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>                <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -3133,8 +3185,28 @@
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">    &quot;coll&quot;: &quot;users&quot;,                       </span>
+<span class="s1">    &quot;triggers&quot;: {</span>
+<span class="s1">         &quot;afterInsert&quot;: {</span>
+<span class="s1">            &quot;code&quot;: &quot;DataManager.Insert({\n  coll:&#39;</span>logs<span class="s1">&#39;, \n  doc: {\n    &#39;</span>docId<span class="s1">&#39;: pool.newDoc._id,\n    &#39;</span>collection<span class="s1">&#39;: &#39;</span>users<span class="s1">&#39;,\n    &#39;</span>operation<span class="s1">&#39;: &#39;</span>register<span class="s1">&#39;,\n    &#39;</span>data<span class="s1">&#39;: pool.newDoc\n    }\n  });&quot;,       </span>
+<span class="s1">            &quot;isActive&quot;: true</span>
+<span class="s1">        }</span>
+<span class="s1">    }</span>
+<span class="s1">}</span>
+<span class="s1">&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/triggers&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="nt">&quot;triggers&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -3171,7 +3243,9 @@
 </pre></div>
 
 
-<p><em>Ошибка</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
@@ -3180,29 +3254,12 @@
 </pre></div>
 
 
-<p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
-<span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
-<span class="s1">    &quot;coll&quot;: &quot;users&quot;,                       </span>
-<span class="s1">    &quot;triggers&quot;: {</span>
-<span class="s1">         &quot;afterInsert&quot;: {</span>
-<span class="s1">            &quot;code&quot;: &quot;DataManager.Insert({\n  coll:&#39;</span>logs<span class="s1">&#39;, \n  doc: {\n    &#39;</span>docId<span class="s1">&#39;: pool.newDoc._id,\n    &#39;</span>collection<span class="s1">&#39;: &#39;</span>users<span class="s1">&#39;,\n    &#39;</span>operation<span class="s1">&#39;: &#39;</span>register<span class="s1">&#39;,\n    &#39;</span>data<span class="s1">&#39;: pool.newDoc\n    }\n  });&quot;,       </span>
-<span class="s1">            &quot;isActive&quot;: true</span>
-<span class="s1">        }</span>
-<span class="s1">    }</span>
-<span class="s1">}</span>
-<span class="s1">&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/triggers&quot;</span>
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="_13">Получение списка папок и скриптов директории</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/scripts/folders</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -3212,8 +3269,21 @@
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">    &quot;path&quot;: &quot;/&quot;</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/scripts/folders&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -3240,7 +3310,9 @@
 </pre></div>
 
 
-<p><em>Ошибка</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
@@ -3249,22 +3321,12 @@
 </pre></div>
 
 
-<p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
-<span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
-<span class="s1">    &quot;path&quot;: &quot;/&quot;</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/scripts/folders&quot;</span>
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="_14">Создание новой папки</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/scripts/folders/create</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -3274,24 +3336,8 @@
 </pre></div>
 
 
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
 <span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
@@ -3301,12 +3347,33 @@
 </pre></div>
 
 
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
 <hr />
 <h2 id="_15">Удаление папки со всем содержимым</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/scripts/folders/delete</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -3316,24 +3383,8 @@
 </pre></div>
 
 
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
 <span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
@@ -3343,12 +3394,33 @@
 </pre></div>
 
 
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
 <hr />
 <h2 id="_16">Получение скрипта</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/scripts/get</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -3358,8 +3430,21 @@
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">    &quot;script&quot;: &quot;584eb54142d52f1ba275fdb3&quot;</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/scripts/get&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -3400,7 +3485,9 @@
 </pre></div>
 
 
-<p><em>Ошибка</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
@@ -3409,22 +3496,12 @@
 </pre></div>
 
 
-<p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
-<span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
-<span class="s1">    &quot;script&quot;: &quot;584eb54142d52f1ba275fdb3&quot;</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/scripts/get&quot;</span>
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="_17">Создание нового скрипта</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/scripts/create</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>                    <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>                    <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -3461,8 +3538,36 @@
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">    &quot;cloudCode&quot;: {</span>
+<span class="s1">        &quot;path&quot;: &quot;/AYBABTU.js&quot;,</span>
+<span class="s1">        &quot;description&quot;: &quot;All your base&quot;,      </span>
+<span class="s1">        &quot;code&quot;: &quot;console.log(\&quot;QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\&quot;);&quot;,             </span>
+<span class="s1">        &quot;jobStartAt&quot;: &quot;2016-12-13T17:33:00+03:00&quot;, </span>
+<span class="s1">        &quot;isActiveJob&quot;: false,    </span>
+<span class="s1">        &quot;jobType&quot;: &quot;custom&quot;,           </span>
+<span class="s1">        &quot;repeat&quot;: {             </span>
+<span class="s1">            &quot;custom&quot;: {</span>
+<span class="s1">                &quot;days&quot;: 0,</span>
+<span class="s1">                &quot;hours&quot;: 0,</span>
+<span class="s1">                &quot;minutes&quot;: 5</span>
+<span class="s1">            }</span>
+<span class="s1">        },</span>
+<span class="s1">        &quot;ACL&quot;: [&quot;*&quot;]</span>
+<span class="s1">    }</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/scripts/create&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -3493,7 +3598,9 @@
 </pre></div>
 
 
-<p><em>Ошибка</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
@@ -3502,37 +3609,12 @@
 </pre></div>
 
 
-<p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
-<span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
-<span class="s1">    &quot;cloudCode&quot;: {</span>
-<span class="s1">        &quot;path&quot;: &quot;/AYBABTU.js&quot;,</span>
-<span class="s1">        &quot;description&quot;: &quot;All your base&quot;,      </span>
-<span class="s1">        &quot;code&quot;: &quot;console.log(\&quot;QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\&quot;);&quot;,             </span>
-<span class="s1">        &quot;jobStartAt&quot;: &quot;2016-12-13T17:33:00+03:00&quot;, </span>
-<span class="s1">        &quot;isActiveJob&quot;: false,    </span>
-<span class="s1">        &quot;jobType&quot;: &quot;custom&quot;,           </span>
-<span class="s1">        &quot;repeat&quot;: {             </span>
-<span class="s1">            &quot;custom&quot;: {</span>
-<span class="s1">                &quot;days&quot;: 0,</span>
-<span class="s1">                &quot;hours&quot;: 0,</span>
-<span class="s1">                &quot;minutes&quot;: 5</span>
-<span class="s1">            }</span>
-<span class="s1">        },</span>
-<span class="s1">        &quot;ACL&quot;: [&quot;*&quot;]</span>
-<span class="s1">    }</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/scripts/create&quot;</span>
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="_18">Изменение скрипта</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/scripts/update</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
 
     <span class="err">{</span>
@@ -3572,8 +3654,24 @@
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">    &quot;script&quot;: &quot;584fad1422a5482feb5b31ab&quot;,</span>
+<span class="s1">    &quot;cloudCode&quot;: {</span>
+<span class="s1">        &quot;isActiveJob&quot;: true    </span>
+<span class="s1">    }</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/scripts/update&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="nt">&quot;script&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -3604,7 +3702,9 @@
 </pre></div>
 
 
-<p><em>Ошибка</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
@@ -3613,25 +3713,12 @@
 </pre></div>
 
 
-<p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
-<span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
-<span class="s1">    &quot;script&quot;: &quot;584fad1422a5482feb5b31ab&quot;,</span>
-<span class="s1">    &quot;cloudCode&quot;: {</span>
-<span class="s1">        &quot;isActiveJob&quot;: true    </span>
-<span class="s1">    }</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/scripts/update&quot;</span>
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="_19">Удаление скрипта</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/scripts/delete</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -3641,24 +3728,8 @@
 </pre></div>
 
 
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
 <span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
@@ -3668,12 +3739,33 @@
 </pre></div>
 
 
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
 <hr />
 <h2 id="_20">Получение списка ботов приложения</h2>
 <p><strong>https://api.scorocode.ru/api/v1/bots</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -3682,8 +3774,20 @@
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/bots&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -3700,7 +3804,9 @@
 </pre></div>
 
 
-<p><em>Ошибка</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
@@ -3709,21 +3815,12 @@
 </pre></div>
 
 
-<p><strong>Пример cURL</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
-<span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/bots&quot;</span>
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="_21">Создание бота</h2>
 <p><strong>https://api.scorocode.ru/api/v1/bots/create</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -3738,32 +3835,8 @@
 </pre></div>
 
 
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;bot&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="s2">&quot;584fb8710c62722cf9fe2617&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;botobot&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;botId&quot;</span><span class="p">:</span> <span class="s2">&quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;appId&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741516&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;scriptId&quot;</span><span class="p">:</span> <span class="s2">&quot;584fb52f0c62722cf9fe2604&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
 <span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
@@ -3778,12 +3851,41 @@
 </pre></div>
 
 
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;bot&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="s2">&quot;584fb8710c62722cf9fe2617&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;botobot&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;botId&quot;</span><span class="p">:</span> <span class="s2">&quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;appId&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741516&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;scriptId&quot;</span><span class="p">:</span> <span class="s2">&quot;584fb52f0c62722cf9fe2604&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
 <hr />
 <h2 id="_22">Изменение бота</h2>
 <p><strong>https://api.scorocode.ru/api/v1/bots/update</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -3799,32 +3901,8 @@
 </pre></div>
 
 
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;bot&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="s2">&quot;584fbd067e0b4e222480a7e4&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;botobot&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;botId&quot;</span><span class="p">:</span> <span class="s2">&quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;appId&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741516&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;scriptId&quot;</span><span class="p">:</span> <span class="s2">&quot;584fb52f0c62722cf9fe2604&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
 <span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
@@ -3841,12 +3919,41 @@
 </pre></div>
 
 
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;bot&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="s2">&quot;584fbd067e0b4e222480a7e4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;botobot&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;botId&quot;</span><span class="p">:</span> <span class="s2">&quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;appId&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741516&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;scriptId&quot;</span><span class="p">:</span> <span class="s2">&quot;584fb52f0c62722cf9fe2604&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
 <hr />
 <h2 id="_23">Удаление бота</h2>
 <p><strong>https://api.scorocode.ru/api/v1/bots/delete</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -3858,24 +3965,8 @@
 </pre></div>
 
 
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
 <span class="s1">    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
@@ -3885,6 +3976,30 @@
 <span class="s1">    }</span>
 <span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/bots/delete&quot;</span>
 </pre></div>
+
+
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
               
             </article>
           </div>
