@@ -1240,7 +1240,8 @@
 
 
 <p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741516&quot;</span><span class="p">,</span>
@@ -1676,7 +1677,9 @@
 </pre></div>
 
 
-<p><em>Ошибка</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
@@ -1685,7 +1688,9 @@
 </pre></div>
 
 
-<p><strong>Пример cURL</strong></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
 <span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
@@ -1694,6 +1699,7 @@
 </pre></div>
 
 
+</div>
 <hr />
 <h2 id="_2">Получение списка коллекций приложения и их настроек</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections</strong></p>
