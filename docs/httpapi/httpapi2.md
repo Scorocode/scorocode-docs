@@ -19,42 +19,39 @@
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "doc": {
+            "exampleField": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!",
+            "anotherExampleField": "Не знаю, что и сказать. Когда-то я хотел быть астрофизиком. К сожалению, это правда."
+        }
+    }' "https://api.scorocode.ru/api/v1/data/insert"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-    "error"       : false,
-    "result"      : {} // созданный документ
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "doc": {
-        "exampleField": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!",
-        "anotherExampleField": "Не знаю, что и сказать. Когда-то я хотел быть астрофизиком. К сожалению, это правда."
+!!! success "Выполнено"
+    ```JSON
+    {
+        "error"       : false,
+        "result"      : {} // созданный документ
     }
-}' "https://api.scorocode.ru/api/v1/data/insert"
-```
+    ```
+
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 ## Удаление документа из коллекции.
 
@@ -81,46 +78,42 @@ curl -X POST -H "Content-Type: application/json" -d '{
 !!! warning "Ограничения" 
     Удаляет не более 1000 документов
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "query": {
+            "exampleField": { 
+                "$eq": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!"
+            }
+        }
+    }' "https://api.scorocode.ru/api/v1/data/remove"
+    ```
 
 **Ответы:**
-*Выполнено*
-
-```JSON
-{
-    "error"       : false,
-    "result"      : {
-        "count"       : int, // количество удаленных документов
-        "docs"        : [] // массив ID удаленных документов
-    }
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "query": {
-        "exampleField": { 
-            "$eq": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!"
+!!! success "Выполнено"
+    ```JSON
+    {
+        "error"       : false,
+        "result"      : {
+            "count"       : int, // количество удаленных документов
+            "docs"        : [] // массив ID удаленных документов
         }
     }
-}' "https://api.scorocode.ru/api/v1/data/remove"
-```
+    ```
+
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 ## Изменение документов в коллекции.
 
@@ -128,9 +121,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -148,53 +139,49 @@ curl -X POST -H "Content-Type: application/json" -d '{
 !!! warning "Ограничения" 
     Изменяет не более 1000 документов
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "query": {
+            "exampleField": { 
+                "$eq": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!"
+            }
+        },
+         "doc": {
+            "$set": {
+                "exampleField": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 21. С днём рождения, Мюриэл!"
+            }
+        },
+        "limit": 1
+    }' "https://api.scorocode.ru/api/v1/data/update"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-    "error"       : false,
-    "result"      : {
-        "count"       : int, // количество измененных документов
-        "docs"        : [] // массив ID измененных документов
+!!! success "Выполнено"
+    ```JSON
+    {
+        "error"       : false,
+        "result"      : {
+            "count"       : int, // количество измененных документов
+            "docs"        : [] // массив ID измененных документов
+        }
     }
-}
+    ```
 
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "query": {
-        "exampleField": { 
-            "$eq": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!"
-        }
-    },
-     "doc": {
-        "$set": {
-            "exampleField": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 21. С днём рождения, Мюриэл!"
-        }
-    },
-    "limit": 1
-}' "https://api.scorocode.ru/api/v1/data/update"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 ##  Изменение одного документа в коллекции по идентификатору.
 
@@ -202,9 +189,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -218,47 +203,43 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "query": {
+            "_id" : "jQ4ZwEbBUj"
+        },
+         "doc": {
+            "$set": {
+                "exampleField": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 21. С днём рождения, Мюриэл!"
+            }
+        }
+    }' "https://api.scorocode.ru/api/v1/data/updatebyid"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-    "error"       : false,
-    "result"      : {} // обновленный документ
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "query": {
-        "_id" : "jQ4ZwEbBUj"
-    },
-     "doc": {
-        "$set": {
-            "exampleField": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 21. С днём рождения, Мюриэл!"
-        }
+!!! success "Выполнено"
+    ```JSON
+    {
+        "error"       : false,
+        "result"      : {} // обновленный документ
     }
-}' "https://api.scorocode.ru/api/v1/data/updatebyid"
+    ```
 
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 ## Запрос документов из коллекции.
 
@@ -266,9 +247,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -290,58 +269,54 @@ curl -X POST -H "Content-Type: application/json" -d '{
 !!! warning "BSON" 
     Для повышения производительности сервиса результат выборки метода **find** возвращается в формате [bson](https://ru.wikipedia.org/wiki/BSON). Все SDK самостоятельно реализуют декодирование bson в json.
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "query": {
+            "exampleField": { 
+                "$eq": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!"
+            }
+        },
+        "sort": {
+            "updatedAt": 1
+        }, 
+        "fields": ["updatedAt", "exampleField", "anotherExampleField"],
+        "limit": 10,
+        "skip": 20
+    }' "https://api.scorocode.ru/api/v1/data/find"
+    ```
+
 **Ответы:**
 
-*Выполнено*
+!!! success "Выполнено"
+    ```JSON
+    {
+        "error"       : false,
+        "result"      : string // bson результат запроса, закодированный в base64
+    }
+    ```
 
-```JSON
-{
-    "error"       : false,
-    "result"      : string // bson результат запроса, закодированный в base64
-}
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "query": {
-        "exampleField": { 
-            "$eq": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!"
-        }
-    },
-    "sort": {
-        "updatedAt": 1
-    }, 
-    "fields": ["updatedAt", "exampleField", "anotherExampleField"],
-    "limit": 10,
-    "skip": 20
-}' "https://api.scorocode.ru/api/v1/data/find"
-```
 ## Запрос количества документов из коллекции.
 
 **https://api.scorocode.ru/api/v1/data/count**
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -354,40 +329,37 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "query": {
+            "exampleField": { 
+                "$eq": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!"
+            }
+        }
+    }' "https://api.scorocode.ru/api/v1/data/count"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-    "error"       : false,
-    "result"      : int // количество документов
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "query": {
-        "exampleField": { 
-            "$eq": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!"
-        }
+!!! success "Выполнено"
+    ```JSON
+    {
+        "error"       : false,
+        "result"      : int // количество документов
     }
-}' "https://api.scorocode.ru/api/v1/data/count"
-```
+    ```
+
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```

@@ -4,9 +4,7 @@
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -47,72 +45,69 @@
 }
 ```
 
-**Ответы:**
-
-*Выполнено*
-
-```JSON
-{
-    "count"       : int,       //Количество отправленных сообщений 
-    "error"       : false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "e9c6a65b9d6acd5043aeeasasd1e6dc3",
-    "app": "5c46ec2f6f94aa92sd6ef831228ef14c",
-    "cli": "86df1ce52d8sdftr61d632f1d6e15936",
-    "sess": "",
-    "debug": true,
-    "coll": "devices",
-    "query": {
-        "deviceType": {
-            "$eq": "android"
-        }
-    },
-    "msg": {
-        "text": "push",
-        "data": {
-            "gcm": {
-                "protocol": "http",
-                "notification": {
-                    "body" : "great match!",
-                    "title" : "Portugal vs. Denmark",
-                    "icon" : "myicon"
-                },
-                "data": {
-                    "key": "value"
-                }
-            },
-            "apns": {
-                "aps" : {
-                    "alert" : {
-                        "title" : "Portugal vs. Denmark",
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "e9c6a65b9d6acd5043aeeasasd1e6dc3",
+        "app": "5c46ec2f6f94aa92sd6ef831228ef14c",
+        "cli": "86df1ce52d8sdftr61d632f1d6e15936",
+        "sess": "",
+        "debug": true,
+        "coll": "devices",
+        "query": {
+            "deviceType": {
+                "$eq": "android"
+            }
+        },
+        "msg": {
+            "text": "push",
+            "data": {
+                "gcm": {
+                    "protocol": "http",
+                    "notification": {
                         "body" : "great match!",
-                        "action-loc-key" : "Watch"
+                        "title" : "Portugal vs. Denmark",
+                        "icon" : "myicon"
                     },
-                    "badge" : 5
+                    "data": {
+                        "key": "value"
+                    }
                 },
-                "acme1" : "bar",
-                "acme2" : [ "bang",  "whiz" ]
+                "apns": {
+                    "aps" : {
+                        "alert" : {
+                            "title" : "Portugal vs. Denmark",
+                            "body" : "great match!",
+                            "action-loc-key" : "Watch"
+                        },
+                        "badge" : 5
+                    },
+                    "acme1" : "bar",
+                    "acme2" : [ "bang",  "whiz" ]
+                }
             }
         }
+    }' "https://api.scorocode.ru/api/v1/sendpush"
+    ```
+
+**Ответы:**
+
+!!! success "Выполнено"
+    ```JSON
+    {
+        "count"       : int,       //Количество отправленных сообщений 
+        "error"       : false
     }
-}' "https://api.scorocode.ru/api/v1/sendpush"
-```
+    ```
+
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 ## Отправка sms на номера пользователей.
 
@@ -120,9 +115,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -138,43 +131,40 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "fb33e473e08515ff6b57ef6f59392e5d",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "users",
+        "query": {
+            "phone": {
+                "$exists": true
+            }
+        },
+        "msg": {
+            "text": "Текст SMS"
+        }
+    }' "https://api.scorocode.ru/api/v1/sendsms"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-    "count"       : int,       //Количество отправленных сообщений 
-    "error"       : false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "fb33e473e08515ff6b57ef6f59392e5d",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "users",
-    "query": {
-        "phone": {
-            "$exists": true
-        }
-    },
-    "msg": {
-        "text": "Текст SMS"
+!!! success "Выполнено"
+    ```JSON
+    {
+        "count"       : int,       //Количество отправленных сообщений 
+        "error"       : false
     }
-}' "https://api.scorocode.ru/api/v1/sendsms"
-```
+    ```
+
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```

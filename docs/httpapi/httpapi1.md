@@ -4,9 +4,7 @@
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -20,42 +18,39 @@
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "username": "username",
+        "email": "useremail@domain.zone",
+        "password": "CorrectHorseStapleButton",
+        "doc": {
+            "exampleField": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!",
+            "anotherExampleField": "Не знаю, что и сказать. Когда-то я хотел быть астрофизиком. К сожалению, это правда."
+        }
+    }
+    ' "https://api.scorocode.ru/api/v1/register"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-    "error"       : false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "username": "username",
-    "email": "useremail@domain.zone",
-    "password": "CorrectHorseStapleButton",
-    "doc": {
-        "exampleField": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!",
-        "anotherExampleField": "Не знаю, что и сказать. Когда-то я хотел быть астрофизиком. К сожалению, это правда."
+!!! success "Выполнено"
+    ```JSON
+    {
+        "error"       : false
     }
-}
-' "https://api.scorocode.ru/api/v1/register"
-```
+    ```
+
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 ## Аутентификация пользователя.
 
@@ -76,40 +71,37 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "email": "useremail@domain.zone",
+        "password": "CorrectHorseStapleButton"
+    }' "https://api.scorocode.ru/api/v1/login"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-    "error"       : false,
-    "result"      : {
-        "sessionId"     : "", // ID сессии
-        "user"          : {}  // Документ, содержащий пользователя
+!!! success "Выполнено"
+    ```JSON
+    {
+        "error"       : false,
+        "result"      : {
+            "sessionId"     : "", // ID сессии
+            "user"          : {}  // Документ, содержащий пользователя
+        }
     }
-}
-```
+    ```
 
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "email": "useremail@domain.zone",
-    "password": "CorrectHorseStapleButton"
-}' "https://api.scorocode.ru/api/v1/login"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 ## Деаутентификация пользователя.
 
@@ -117,9 +109,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -129,32 +119,30 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "sess": "6rnbKKGvLLdU9Sl9"
+    }' "https://api.scorocode.ru/api/v1/logout"
+    ```
+
 **Ответы:**
 
-*Выполнено*
+!!! success "Выполнено"
+    ```JSON
+    {
+        "error"       : false
+    }
+    ```
 
-```JSON
-{
-    "error"       : false
-}
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "sess": "6rnbKKGvLLdU9Sl9"
-}' "https://api.scorocode.ru/api/v1/logout"
-```

@@ -5,9 +5,7 @@
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -22,44 +20,40 @@
     "content"     : ""  // контент файла в кодировке base64
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "8c23d74f447f63ce495cc8fd9ee4d543",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "docId": "Y3bET236FX",
+        "field": "attachment",
+        "file": "file.txt",
+        "content": "VEhJUyBJUyBGSUxFLUUtRS1FLUUtRS1FIQ=="
+    }' "https://api.scorocode.ru/api/v1/upload"
+    ```
+
 **Ответы:**
 
-*Выполнено*
+!!! success "Выполнено"
+    ```JSON
+    {
+        "error"       : false
+    }
+    ```
 
-```JSON
-{
-    "error"       : false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "8c23d74f447f63ce495cc8fd9ee4d543",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "docId": "Y3bET236FX",
-    "field": "attachment",
-    "file": "file.txt",
-    "content": "VEhJUyBJUyBGSUxFLUUtRS1FLUUtRS1FIQ=="
-}' "https://api.scorocode.ru/api/v1/upload"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 ## Получение файла редиректом.
-
 
 **https://api.scorocode.ru/api/v1/getfile/{app}/{coll}/{field}/{docId}/{file}**
 
@@ -81,29 +75,26 @@ https://api.scorocode.ru/api/v1/getfile/{app}/{coll}/{field}/{docId}/{file}
     {file}    - имя файла, обязательный
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X GET -H "Content-Type: application/json" "https://api.scorocode.ru/api/v1/getfile/db8a1b41b8543397a798a181d9891b4c/items/attachment/Y3bET236FX/file.txt"
+    ```
+
 **Ответы:**
 
-*Выполнено*
+!!! success "Выполнено"
+    ```
+        Status: Status: 302 (Redirect на файл)
+    ```
 
-```
-    Status: Status: 302 (Redirect на файл)
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X GET -H "Content-Type: application/json" "https://api.scorocode.ru/api/v1/getfile/db8a1b41b8543397a798a181d9891b4c/items/attachment/Y3bET236FX/file.txt"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 ## Удаление файла.
 
@@ -111,9 +102,7 @@ curl -X GET -H "Content-Type: application/json" "https://api.scorocode.ru/api/v1
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -128,37 +117,34 @@ curl -X GET -H "Content-Type: application/json" "https://api.scorocode.ru/api/v1
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "8c23d74f447f63ce495cc8fd9ee4d543",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "docId": "Y3bET236FX",
+        "field": "attachment",
+        "file": "file.txt"
+    }' "https://api.scorocode.ru/api/v1/deletefile"
+    ```
+
 **Ответы:**
 
-*Выполнено*
+!!! success "Выполнено"
+    ```JSON
+    {
+        "error"       : false
+    }
+    ```
 
-```JSON
-{
-    "error"       : false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "8c23d74f447f63ce495cc8fd9ee4d543",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "docId": "Y3bET236FX",
-    "field": "attachment",
-    "file": "file.txt"
-}' "https://api.scorocode.ru/api/v1/deletefile"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
