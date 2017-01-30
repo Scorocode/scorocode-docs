@@ -4,9 +4,7 @@
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовок: `Content-Type: application/json`
 
 ```JSON
 {
@@ -15,6 +13,15 @@
     "acc": ""      // ключ доступа, обязательный, только masterKey
 }
 ```
+
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb"
+    }' "https://api.scorocode.ru/api/v1/app"
+    ```
 
 **Ответы:**
 
@@ -463,15 +470,6 @@
     }
     ```
 
-!!! tip "Пример cURL"
-    ```bash
-    curl -X POST -H "Content-Type: application/json" -d '{
-            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-            "app": "48f172923acd719b42c73ac3a492cfc8",
-            "cli": "d6859f41223c9997ff78c6b4vb3a96bb"
-    }' "https://api.scorocode.ru/api/v1/app"
-    ```
-
 -------------------------------------------------------------------------------------
 
 ## Получение списка коллекций приложения и их настроек
@@ -480,9 +478,7 @@
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -491,404 +487,402 @@
     "acc": ""      // ключ доступа, обязательный, только masterKey
 }
 ```
+
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb"
+    }' "https://api.scorocode.ru/api/v1/app/collections"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-  "collections": {
-    "devices": {
-      "id": "584e64f8982fd55332741515",
-      "name": "devices",
-      "useDocsACL": false,
-      "ACL": {
-        "create": [
-          "*"
-        ],
-        "read": [
-          "*"
-        ],
-        "remove": [
-          "*"
-        ],
-        "update": [
-          "*"
-        ]
-      },
-      "triggers": {
-        "afterFind": {
-          "code": "",
-          "isActive": false
-        },
-        "afterInsert": {
-          "code": "",
-          "isActive": false
-        },
-        "afterRemove": {
-          "code": "",
-          "isActive": false
-        },
-        "afterUpdate": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeInsert": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeRemove": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeUpdate": {
-          "code": "",
-          "isActive": false
-        }
-      },
-      "fields": [
-        {
-          "name": "readACL",
-          "type": "ACL",
-          "target": "",
+!!! success "Выполнено"
+    ```JSON
+    {
+      "collections": {
+        "devices": {
+          "id": "584e64f8982fd55332741515",
+          "name": "devices",
+          "useDocsACL": false,
+          "ACL": {
+            "create": [
+              "*"
+            ],
+            "read": [
+              "*"
+            ],
+            "remove": [
+              "*"
+            ],
+            "update": [
+              "*"
+            ]
+          },
+          "triggers": {
+            "afterFind": {
+              "code": "",
+              "isActive": false
+            },
+            "afterInsert": {
+              "code": "",
+              "isActive": false
+            },
+            "afterRemove": {
+              "code": "",
+              "isActive": false
+            },
+            "afterUpdate": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeInsert": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeRemove": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeUpdate": {
+              "code": "",
+              "isActive": false
+            }
+          },
+          "fields": [
+            {
+              "name": "readACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "updateACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "removeACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "createdAt",
+              "type": "Date",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            },
+            {
+              "name": "updatedAt",
+              "type": "Date",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            },
+            {
+              "name": "userId",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "deviceId",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": true
+            },
+            {
+              "name": "deviceType",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": true
+            }
+          ],
           "system": true,
-          "readonly": false,
-          "required": false
+          "indexes": []
         },
-        {
-          "name": "updateACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "removeACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "createdAt",
-          "type": "Date",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        },
-        {
-          "name": "updatedAt",
-          "type": "Date",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        },
-        {
-          "name": "userId",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "deviceId",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": true
-        },
-        {
-          "name": "deviceType",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": true
-        }
-      ],
-      "system": true,
-      "indexes": []
-    },
-    "roles": {
-      "id": "584e64f8982fd55332741513",
-      "name": "roles",
-      "useDocsACL": false,
-      "ACL": {
-        "create": [
-          "*"
-        ],
-        "read": [
-          "*"
-        ],
-        "remove": [
-          "*"
-        ],
-        "update": [
-          "*"
-        ]
-      },
-      "triggers": {
-        "afterFind": {
-          "code": "",
-          "isActive": false
-        },
-        "afterInsert": {
-          "code": "",
-          "isActive": false
-        },
-        "afterRemove": {
-          "code": "",
-          "isActive": false
-        },
-        "afterUpdate": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeInsert": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeRemove": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeUpdate": {
-          "code": "",
-          "isActive": false
-        }
-      },
-      "fields": [
-        {
-          "name": "name",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": true
-        },
-        {
-          "name": "readACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "updateACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "removeACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "createdAt",
-          "type": "Date",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        },
-        {
-          "name": "updatedAt",
-          "type": "Date",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        }
-      ],
-      "system": true,
-      "indexes": []
-    },
-    "users": {
-      "id": "584e64f8982fd55332741514",
-      "name": "users",
-      "useDocsACL": false,
-      "ACL": {
-        "create": [
-          "*"
-        ],
-        "read": [
-          "*"
-        ],
-        "remove": [
-          "*"
-        ],
-        "update": [
-          "*"
-        ]
-      },
-      "triggers": {
-        "afterFind": {
-          "code": "",
-          "isActive": false
-        },
-        "afterInsert": {
-          "code": "",
-          "isActive": false
-        },
-        "afterRemove": {
-          "code": "",
-          "isActive": false
-        },
-        "afterUpdate": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeInsert": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeRemove": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeUpdate": {
-          "code": "",
-          "isActive": false
-        }
-      },
-      "fields": [
-        {
-          "name": "email",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": true
-        },
-        {
-          "name": "phone",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "readACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "updateACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "removeACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "createdAt",
-          "type": "Date",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        },
-        {
-          "name": "updatedAt",
-          "type": "Date",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        },
-        {
-          "name": "username",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": true
-        },
-        {
-          "name": "password",
-          "type": "Password",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": true
-        },
-        {
-          "name": "emailVerified",
-          "type": "Boolean",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        },
-        {
+        "roles": {
+          "id": "584e64f8982fd55332741513",
           "name": "roles",
-          "type": "Array",
-          "target": "",
+          "useDocsACL": false,
+          "ACL": {
+            "create": [
+              "*"
+            ],
+            "read": [
+              "*"
+            ],
+            "remove": [
+              "*"
+            ],
+            "update": [
+              "*"
+            ]
+          },
+          "triggers": {
+            "afterFind": {
+              "code": "",
+              "isActive": false
+            },
+            "afterInsert": {
+              "code": "",
+              "isActive": false
+            },
+            "afterRemove": {
+              "code": "",
+              "isActive": false
+            },
+            "afterUpdate": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeInsert": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeRemove": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeUpdate": {
+              "code": "",
+              "isActive": false
+            }
+          },
+          "fields": [
+            {
+              "name": "name",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": true
+            },
+            {
+              "name": "readACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "updateACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "removeACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "createdAt",
+              "type": "Date",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            },
+            {
+              "name": "updatedAt",
+              "type": "Date",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            }
+          ],
           "system": true,
-          "readonly": false,
-          "required": false
+          "indexes": []
         },
-        {
-          "name": "token",
-          "type": "String",
-          "target": "",
+        "users": {
+          "id": "584e64f8982fd55332741514",
+          "name": "users",
+          "useDocsACL": false,
+          "ACL": {
+            "create": [
+              "*"
+            ],
+            "read": [
+              "*"
+            ],
+            "remove": [
+              "*"
+            ],
+            "update": [
+              "*"
+            ]
+          },
+          "triggers": {
+            "afterFind": {
+              "code": "",
+              "isActive": false
+            },
+            "afterInsert": {
+              "code": "",
+              "isActive": false
+            },
+            "afterRemove": {
+              "code": "",
+              "isActive": false
+            },
+            "afterUpdate": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeInsert": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeRemove": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeUpdate": {
+              "code": "",
+              "isActive": false
+            }
+          },
+          "fields": [
+            {
+              "name": "email",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": true
+            },
+            {
+              "name": "phone",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "readACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "updateACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "removeACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "createdAt",
+              "type": "Date",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            },
+            {
+              "name": "updatedAt",
+              "type": "Date",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            },
+            {
+              "name": "username",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": true
+            },
+            {
+              "name": "password",
+              "type": "Password",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": true
+            },
+            {
+              "name": "emailVerified",
+              "type": "Boolean",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            },
+            {
+              "name": "roles",
+              "type": "Array",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            }
+          ],
           "system": true,
-          "readonly": true,
-          "required": false
+          "indexes": []
         }
-      ],
-      "system": true,
-      "indexes": []
+      },
+      "error": false
     }
-  },
-  "error": false
-}
-```
+    ```
 
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb"
-}' "https://api.scorocode.ru/api/v1/app/collections"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -911,153 +905,150 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "coll": "devices"
+    }' "https://api.scorocode.ru/api/v1/app/collections/get"
+    ```
+
 **Ответы:**
 
-*Выполнено*
+!!! success "Выполнено"
+    ```JSON
+    {
+      "collection": {
+        "id": "584e64f8982fd55332741515",
+        "name": "devices",
+        "useDocsACL": false,
+        "ACL": {
+          "create": [
+            "*"
+          ],
+          "read": [
+            "*"
+          ],
+          "remove": [
+            "*"
+          ],
+          "update": [
+            "*"
+          ]
+        },
+        "triggers": {
+          "afterFind": {
+            "code": "",
+            "isActive": false
+          },
+          "afterInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "afterRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "afterUpdate": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeUpdate": {
+            "code": "",
+            "isActive": false
+          }
+        },
+        "fields": [
+          {
+            "name": "readACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "updateACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "removeACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "createdAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          },
+          {
+            "name": "updatedAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          },
+          {
+            "name": "userId",
+            "type": "String",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "deviceId",
+            "type": "String",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": true
+          },
+          {
+            "name": "deviceType",
+            "type": "String",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": true
+          }
+        ],
+        "system": true,
+        "indexes": []
+      },
+      "error": false
+    }
+    ```
 
-```JSON
-{
-  "collection": {
-    "id": "584e64f8982fd55332741515",
-    "name": "devices",
-    "useDocsACL": false,
-    "ACL": {
-      "create": [
-        "*"
-      ],
-      "read": [
-        "*"
-      ],
-      "remove": [
-        "*"
-      ],
-      "update": [
-        "*"
-      ]
-    },
-    "triggers": {
-      "afterFind": {
-        "code": "",
-        "isActive": false
-      },
-      "afterInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "afterRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "afterUpdate": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeUpdate": {
-        "code": "",
-        "isActive": false
-      }
-    },
-    "fields": [
-      {
-        "name": "readACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "updateACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "removeACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "createdAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "updatedAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "userId",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "deviceId",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": true
-      },
-      {
-        "name": "deviceType",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": true
-      }
-    ],
-    "system": true,
-    "indexes": []
-  },
-  "error": false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "coll": "devices"
-}' "https://api.scorocode.ru/api/v1/app/collections/get"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -1067,9 +1058,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -1083,144 +1072,142 @@ curl -X POST -H "Content-Type: application/json" -d '{
     }
 }
 ```
+
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "collection": {
+                "name": "apicoll",
+                "useDocsACL": false,
+                "ACL": {
+                    "create": [
+                        "R5VGMes94p"
+                    ],
+                    "read": [
+                        "*",
+                        "R5VGMes94p"
+                    ],
+                    "remove": [
+                        "R5VGMes94p"
+                    ],
+                    "update": [
+                        "R5VGMes94p"
+                    ]
+                }
+            }
+    }' "https://api.scorocode.ru/api/v1/app/collections/create"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-  "collection": {
-    "id": "584e849e7e0b4e222480a282",
-    "name": "apicoll",
-    "useDocsACL": false,
-    "ACL": {
-        "create": [
-            "R5VGMes94p"
+!!! success "Выполнено"
+    ```JSON
+    {
+      "collection": {
+        "id": "584e849e7e0b4e222480a282",
+        "name": "apicoll",
+        "useDocsACL": false,
+        "ACL": {
+            "create": [
+                "R5VGMes94p"
+            ],
+            "read": [
+                "*",
+                "R5VGMes94p"
+            ],
+            "remove": [
+                "R5VGMes94p"
+            ],
+            "update": [
+                "R5VGMes94p"
+            ]
+        },
+        "triggers": {
+          "afterInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "afterRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "afterUpdate": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeUpdate": {
+            "code": "",
+            "isActive": false
+          }
+        },
+        "fields": [
+          {
+            "name": "readACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "updateACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "removeACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "createdAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          },
+          {
+            "name": "updatedAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          }
         ],
-        "read": [
-            "*",
-            "R5VGMes94p"
-        ],
-        "remove": [
-            "R5VGMes94p"
-        ],
-        "update": [
-            "R5VGMes94p"
-        ]
-    },
-    "triggers": {
-      "afterInsert": {
-        "code": "",
-        "isActive": false
+        "system": false,
+        "indexes": []
       },
-      "afterRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "afterUpdate": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeUpdate": {
-        "code": "",
-        "isActive": false
-      }
-    },
-    "fields": [
-      {
-        "name": "readACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "updateACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "removeACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "createdAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "updatedAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      }
-    ],
-    "system": false,
-    "indexes": []
-  },
-  "error": false
-}
-```
+      "error": false
+    }
+    ```
 
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "collection": {
-            "name": "apicoll",
-            "useDocsACL": false,
-            "ACL": {
-                "create": [
-                    "R5VGMes94p"
-                ],
-                "read": [
-                    "*",
-                    "R5VGMes94p"
-                ],
-                "remove": [
-                    "R5VGMes94p"
-                ],
-                "update": [
-                    "R5VGMes94p"
-                ]
-            }
-        }
-}' "https://api.scorocode.ru/api/v1/app/collections/create"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -1230,9 +1217,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -1247,128 +1232,126 @@ curl -X POST -H "Content-Type: application/json" -d '{
     }
 }
 ```
+
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "collection": {
+                "id": "584e849e7e0b4e222480a282",
+                "useDocsACL": true
+    }' "https://api.scorocode.ru/api/v1/app/collections/create"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-  "collection": {
-    "id": "584e849e7e0b4e222480a282",
-    "name": "apicoll",
-    "useDocsACL": true,
-    "ACL": {
-        "create": [
-            "R5VGMes94p"
+!!! success "Выполнено"
+    ```JSON
+    {
+      "collection": {
+        "id": "584e849e7e0b4e222480a282",
+        "name": "apicoll",
+        "useDocsACL": true,
+        "ACL": {
+            "create": [
+                "R5VGMes94p"
+            ],
+            "read": [
+                "*",
+                "R5VGMes94p"
+            ],
+            "remove": [
+                "R5VGMes94p"
+            ],
+            "update": [
+                "R5VGMes94p"
+            ]
+        },
+        "triggers": {
+          "afterInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "afterRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "afterUpdate": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeUpdate": {
+            "code": "",
+            "isActive": false
+          }
+        },
+        "fields": [
+          {
+            "name": "readACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "updateACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "removeACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "createdAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          },
+          {
+            "name": "updatedAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          }
         ],
-        "read": [
-            "*",
-            "R5VGMes94p"
-        ],
-        "remove": [
-            "R5VGMes94p"
-        ],
-        "update": [
-            "R5VGMes94p"
-        ]
-    },
-    "triggers": {
-      "afterInsert": {
-        "code": "",
-        "isActive": false
+        "system": false,
+        "indexes": []
       },
-      "afterRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "afterUpdate": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeUpdate": {
-        "code": "",
-        "isActive": false
-      }
-    },
-    "fields": [
-      {
-        "name": "readACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "updateACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "removeACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "createdAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "updatedAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      }
-    ],
-    "system": false,
-    "indexes": []
-  },
-  "error": false
-}
-```
+      "error": false
+    }
+    ```
 
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "collection": {
-            "id": "584e849e7e0b4e222480a282",
-            "useDocsACL": true
-}' "https://api.scorocode.ru/api/v1/app/collections/create"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -1378,9 +1361,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -1393,37 +1374,36 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "collection": {
+                "id": "584e849e7e0b4e222480a282",
+    }' "https://api.scorocode.ru/api/v1/app/collections/delete"
+    ```
+
 **Ответы:**
 
-*Выполнено*
+!!! success "Выполнено"
+    ```JSON
+    {
+      "error": false
+    }
+    ```
 
-```JSON
-{
-  "error": false
-}
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
-*Ошибка*
 
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "collection": {
-            "id": "584e849e7e0b4e222480a282",
-}' "https://api.scorocode.ru/api/v1/app/collections/delete"
-```
 
 -------------------------------------------------------------------------------------
 
@@ -1433,9 +1413,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -1449,115 +1427,114 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "collection": {
+                "id": "584e91b77e0b4e222480a316",
+                "name": "clonedcoll"           
+            }
+    }' "https://api.scorocode.ru/api/v1/app/collections/clone"
+    ```
+
+
 **Ответы:**
 
-*Выполнено*
+!!! success "Выполнено"
+    ```JSON
+    {
+      "collection": {
+        "id": "584e91e70c62722cf9fe2191",
+        "name": "clonedcoll",
+        "useDocsACL": false,
+        "ACL": {},
+        "triggers": {
+          "afterInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "afterRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "afterUpdate": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeUpdate": {
+            "code": "",
+            "isActive": false
+          }
+        },
+        "fields": [
+          {
+            "name": "readACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "updateACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "removeACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "createdAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          },
+          {
+            "name": "updatedAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          }
+        ],
+        "system": false,
+        "indexes": []
+      },
+      "error": false
+    }
+    ```
 
-```JSON
-{
-  "collection": {
-    "id": "584e91e70c62722cf9fe2191",
-    "name": "clonedcoll",
-    "useDocsACL": false,
-    "ACL": {},
-    "triggers": {
-      "afterInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "afterRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "afterUpdate": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeUpdate": {
-        "code": "",
-        "isActive": false
-      }
-    },
-    "fields": [
-      {
-        "name": "readACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "updateACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "removeACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "createdAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "updatedAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      }
-    ],
-    "system": false,
-    "indexes": []
-  },
-  "error": false
-}
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "collection": {
-            "id": "584e91b77e0b4e222480a316",
-            "name": "clonedcoll"           
-        }
-}' "https://api.scorocode.ru/api/v1/app/collections/clone"
-```
 
 -------------------------------------------------------------------------------------
 
@@ -1567,9 +1544,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -1589,45 +1564,42 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "coll": "users",
+            "index": {
+                "name": "emailIndex",                    
+                "fields": [
+                    {
+                        "name": "email",            
+                        "order": 1       
+                    }
+                ]
+            }
+    }' "https://api.scorocode.ru/api/v1/app/collections/index/create"
+    ```
+
 **Ответы:**
 
-*Выполнено*
+!!! success "Выполнено"
+    ```JSON
+    {
+      "error": false
+    }
+    ```
 
-```JSON
-{
-  "error": false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "coll": "users",
-        "index": {
-            "name": "emailIndex",                    
-            "fields": [
-                {
-                    "name": "email",            
-                    "order": 1       
-                }
-            ]
-        }
-}' "https://api.scorocode.ru/api/v1/app/collections/index/create"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -1637,9 +1609,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -1653,39 +1623,36 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "coll": "users",
+            "index": {
+                "name": "emailIndex"                    
+            }
+    }' "https://api.scorocode.ru/api/v1/app/collections/index/delete"
+    ```
+
 **Ответы:**
 
-*Выполнено*
+!!! success "Выполнено"
+    ```JSON
+    {
+      "error": false
+    }
+    ```
 
-```JSON
-{
-  "error": false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "coll": "users",
-        "index": {
-            "name": "emailIndex"                    
-        }
-}' "https://api.scorocode.ru/api/v1/app/collections/index/delete"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -1695,9 +1662,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -1713,49 +1678,46 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "coll": "users",                       
+        "collField": {
+            "name": "pointer",         
+            "type": "Pointer",         
+            "target": "devices"          
+        }
+    }' "https://api.scorocode.ru/api/v1/app/collections/fields/create"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-  "error": false,
-  "field": {
-    "name": "pointer",
-    "type": "Pointer",
-    "target": "devices",
-    "system": false,
-    "readonly": false,
-    "required": false
-  }
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "coll": "users",                       
-    "collField": {
-        "name": "pointer",         
-        "type": "Pointer",         
-        "target": "devices"          
+!!! success "Выполнено"
+    ```JSON
+    {
+      "error": false,
+      "field": {
+        "name": "pointer",
+        "type": "Pointer",
+        "target": "devices",
+        "system": false,
+        "readonly": false,
+        "required": false
+      }
     }
-}' "https://api.scorocode.ru/api/v1/app/collections/fields/create"
-```
+    ```
+
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -1765,9 +1727,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -1781,188 +1741,186 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "coll": "users",                       
+        "collField": {
+            "name": "pointer"
+        }
+    }' "https://api.scorocode.ru/api/v1/app/collections/fields/delete"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-  "collection": {
-    "id": "584e64f8982fd55332741514",
-    "name": "users",
-    "useDocsACL": false,
-    "ACL": {
-      "create": [
-        "*"
-      ],
-      "read": [
-        "*"
-      ],
-      "remove": [
-        "*"
-      ],
-      "update": [
-        "*"
-      ]
-    },
-    "triggers": {
-      "afterFind": {
-        "code": "",
-        "isActive": false
-      },
-      "afterInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "afterRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "afterUpdate": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeUpdate": {
-        "code": "",
-        "isActive": false
-      }
-    },
-    "fields": [
-      {
-        "name": "email",
-        "type": "String",
-        "target": "",
+!!! success "Выполнено"
+    ```JSON
+    {
+      "collection": {
+        "id": "584e64f8982fd55332741514",
+        "name": "users",
+        "useDocsACL": false,
+        "ACL": {
+          "create": [
+            "*"
+          ],
+          "read": [
+            "*"
+          ],
+          "remove": [
+            "*"
+          ],
+          "update": [
+            "*"
+          ]
+        },
+        "triggers": {
+          "afterFind": {
+            "code": "",
+            "isActive": false
+          },
+          "afterInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "afterRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "afterUpdate": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeUpdate": {
+            "code": "",
+            "isActive": false
+          }
+        },
+        "fields": [
+          {
+            "name": "email",
+            "type": "String",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": true
+          },
+          {
+            "name": "phone",
+            "type": "String",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "readACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "updateACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "removeACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "createdAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          },
+          {
+            "name": "updatedAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          },
+          {
+            "name": "username",
+            "type": "String",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": true
+          },
+          {
+            "name": "password",
+            "type": "Password",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": true
+          },
+          {
+            "name": "emailVerified",
+            "type": "Boolean",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          },
+          {
+            "name": "roles",
+            "type": "Array",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "token",
+            "type": "String",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          }
+        ],
         "system": true,
-        "readonly": true,
-        "required": true
+        "indexes": []
       },
-      {
-        "name": "phone",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "readACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "updateACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "removeACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "createdAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "updatedAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "username",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": true
-      },
-      {
-        "name": "password",
-        "type": "Password",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": true
-      },
-      {
-        "name": "emailVerified",
-        "type": "Boolean",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "roles",
-        "type": "Array",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "token",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      }
-    ],
-    "system": true,
-    "indexes": []
-  },
-  "error": false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "coll": "users",                       
-    "collField": {
-        "name": "pointer"
+      "error": false
     }
-}' "https://api.scorocode.ru/api/v1/app/collections/fields/delete"
-```
+    ```
+
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
+
 
 -------------------------------------------------------------------------------------
 
@@ -1972,9 +1930,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -2011,73 +1967,71 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
-**Ответы:**
-
-*Выполнено*
-
-```JSON
-{
-  "error": false,
-  "triggers": {
-    "afterFind": {
-      "code": "",
-      "isActive": false
-    },
-    "afterInsert": {
-      "code": "DataManager.Insert({\n  coll:'logs', \n  doc: {\n    'docId': pool.newDoc._id,\n    'collection': 'users',\n    'operation': 'register',\n    'data': pool.newDoc\n    }\n  });",
-      "isActive": true
-    },
-    "afterRemove": {
-      "code": "",
-      "isActive": false
-    },
-    "afterUpdate": {
-      "code": "",
-      "isActive": false
-    },
-    "beforeInsert": {
-      "code": "",
-      "isActive": false
-    },
-    "beforeRemove": {
-      "code": "",
-      "isActive": false
-    },
-    "beforeUpdate": {
-      "code": "",
-      "isActive": false
-    }
-  }
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "coll": "users",                       
-    "triggers": {
-         "afterInsert": {
-            "code": "DataManager.Insert({\n  coll:'logs', \n  doc: {\n    'docId': pool.newDoc._id,\n    'collection': 'users',\n    'operation': 'register',\n    'data': pool.newDoc\n    }\n  });",       
-            "isActive": true
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "coll": "users",                       
+        "triggers": {
+             "afterInsert": {
+                "code": "DataManager.Insert({\n  coll:'logs', \n  doc: {\n    'docId': pool.newDoc._id,\n    'collection': 'users',\n    'operation': 'register',\n    'data': pool.newDoc\n    }\n  });",       
+                "isActive": true
+            }
         }
     }
-}
-' "https://api.scorocode.ru/api/v1/app/collections/triggers"
-```
+    ' "https://api.scorocode.ru/api/v1/app/collections/triggers"
+    ```
+
+**Ответы:**
+
+!!! success "Выполнено"
+    ```JSON
+    {
+      "error": false,
+      "triggers": {
+        "afterFind": {
+          "code": "",
+          "isActive": false
+        },
+        "afterInsert": {
+          "code": "DataManager.Insert({\n  coll:'logs', \n  doc: {\n    'docId': pool.newDoc._id,\n    'collection': 'users',\n    'operation': 'register',\n    'data': pool.newDoc\n    }\n  });",
+          "isActive": true
+        },
+        "afterRemove": {
+          "code": "",
+          "isActive": false
+        },
+        "afterUpdate": {
+          "code": "",
+          "isActive": false
+        },
+        "beforeInsert": {
+          "code": "",
+          "isActive": false
+        },
+        "beforeRemove": {
+          "code": "",
+          "isActive": false
+        },
+        "beforeUpdate": {
+          "code": "",
+          "isActive": false
+        }
+      }
+    }
+    ```
+
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
+
 
 -------------------------------------------------------------------------------------
 
@@ -2087,9 +2041,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -2100,56 +2052,53 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "path": "/"
+    }' "https://api.scorocode.ru/api/v1/app/scripts/folders"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-  "error": false,
-  "items": [
+!!! success "Выполнено"
+    ```JSON
     {
-      "_id": "",
-      "name": "folder1",
-      "path": "/folder1",
-      "isScript": false
-    },
-    {
-      "_id": "",
-      "name": "folder2",
-      "path": "/folder2",
-      "isScript": false
-    },
-    {
-      "_id": "584eb26a42d52f1ba275fdb2",
-      "name": "somescript.js",
-      "path": "/somescript.js",
-      "isScript": true
+      "error": false,
+      "items": [
+        {
+          "_id": "",
+          "name": "folder1",
+          "path": "/folder1",
+          "isScript": false
+        },
+        {
+          "_id": "",
+          "name": "folder2",
+          "path": "/folder2",
+          "isScript": false
+        },
+        {
+          "_id": "584eb26a42d52f1ba275fdb2",
+          "name": "somescript.js",
+          "path": "/somescript.js",
+          "isScript": true
+        }
+      ]
     }
-  ]
-}
-```
+    ```
 
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "path": "/"
-}' "https://api.scorocode.ru/api/v1/app/scripts/folders"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -2159,9 +2108,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -2172,36 +2119,33 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "path": "/folder1/newfolder"
+    }' "https://api.scorocode.ru/api/v1/app/scripts/folders/create"
+    ```
+
 **Ответы:**
 
-*Выполнено*
+!!! success "Выполнено"
+    ```JSON
+    {
+      "error": false
+    }
+    ```
 
-```JSON
-{
-  "error": false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "path": "/folder1/newfolder"
-}' "https://api.scorocode.ru/api/v1/app/scripts/folders/create"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -2211,9 +2155,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -2224,36 +2166,33 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "path": "/folder1/newfolder"
+    }' "https://api.scorocode.ru/api/v1/app/scripts/folders/delete"
+    ```
+
 **Ответы:**
 
-*Выполнено*
+!!! success "Выполнено"
+    ```JSON
+    {
+      "error": false
+    }
+    ```
 
-```JSON
-{
-  "error": false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "path": "/folder1/newfolder"
-}' "https://api.scorocode.ru/api/v1/app/scripts/folders/delete"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -2263,9 +2202,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -2276,70 +2213,67 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "script": "584eb54142d52f1ba275fdb3"
+    }' "https://api.scorocode.ru/api/v1/app/scripts/get"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-  "error": false,
-  "script": {
-    "_id": "584eb54142d52f1ba275fdb3",
-    "appId": "584e64f8982fd55332741516",
-    "name": "AYBABTU.js",
-    "path": "/AYBABTU.js",
-    "description": "",
-    "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
-    "jobStartAt": "2016-12-12T17:33:00+03:00",
-    "isActiveJob": false,
-    "jobType": "once",
-    "repeat": {
-      "custom": {
-        "days": 0,
-        "hours": 0,
-        "minutes": 0
-      },
-      "daily": {
-        "on": [],
-        "hours": 0,
-        "minutes": 0
-      },
-      "monthly": {
-        "on": [],
-        "days": [],
-        "lastDate": false,
-        "hours": 0,
-        "minutes": 0
+!!! success "Выполнено"
+    ```JSON
+    {
+      "error": false,
+      "script": {
+        "_id": "584eb54142d52f1ba275fdb3",
+        "appId": "584e64f8982fd55332741516",
+        "name": "AYBABTU.js",
+        "path": "/AYBABTU.js",
+        "description": "",
+        "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
+        "jobStartAt": "2016-12-12T17:33:00+03:00",
+        "isActiveJob": false,
+        "jobType": "once",
+        "repeat": {
+          "custom": {
+            "days": 0,
+            "hours": 0,
+            "minutes": 0
+          },
+          "daily": {
+            "on": [],
+            "hours": 0,
+            "minutes": 0
+          },
+          "monthly": {
+            "on": [],
+            "days": [],
+            "lastDate": false,
+            "hours": 0,
+            "minutes": 0
+          }
+        },
+        "nextRun": "2016-12-12T17:33:00+03:00",
+        "ACL": [
+          "*"
+        ]
       }
-    },
-    "nextRun": "2016-12-12T17:33:00+03:00",
-    "ACL": [
-      "*"
-    ]
-  }
-}
-```
+    }
+    ```
 
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "script": "584eb54142d52f1ba275fdb3"
-}' "https://api.scorocode.ru/api/v1/app/scripts/get"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -2349,9 +2283,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -2389,75 +2321,73 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "cloudCode": {
+            "path": "/AYBABTU.js",
+            "description": "All your base",      
+            "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",             
+            "jobStartAt": "2016-12-13T17:33:00+03:00", 
+            "isActiveJob": false,    
+            "jobType": "custom",           
+            "repeat": {             
+                "custom": {
+                    "days": 0,
+                    "hours": 0,
+                    "minutes": 5
+                }
+            },
+            "ACL": ["*"]
+        }
+    }' "https://api.scorocode.ru/api/v1/app/scripts/create"
+    ```
+
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-  "error": false,
-  "script": {
-    "_id": "584fad1422a5482feb5b31ab",
-    "appId": "584e64f8982fd55332741516",
-    "name": "AYBABTU.js",
-    "path": "/AYBABTU.js",
-    "description": "All your base",
-    "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
-    "jobStartAt": "2016-12-13T17:33:00+03:00",
-    "isActiveJob": false,
-    "jobType": "custom",
-    "repeat": {
-      "custom": {
-        "days": 0,
-        "hours": 0,
-        "minutes": 5
-      },
-      "daily": null,
-      "monthly": null
-    },
-    "nextRun": "0001-01-01T00:00:00Z",
-    "ACL": [
-      "*"
-    ]
-  }
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "cloudCode": {
+!!! success "Выполнено"
+    ```JSON
+    {
+      "error": false,
+      "script": {
+        "_id": "584fad1422a5482feb5b31ab",
+        "appId": "584e64f8982fd55332741516",
+        "name": "AYBABTU.js",
         "path": "/AYBABTU.js",
-        "description": "All your base",      
-        "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",             
-        "jobStartAt": "2016-12-13T17:33:00+03:00", 
-        "isActiveJob": false,    
-        "jobType": "custom",           
-        "repeat": {             
-            "custom": {
-                "days": 0,
-                "hours": 0,
-                "minutes": 5
-            }
+        "description": "All your base",
+        "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
+        "jobStartAt": "2016-12-13T17:33:00+03:00",
+        "isActiveJob": false,
+        "jobType": "custom",
+        "repeat": {
+          "custom": {
+            "days": 0,
+            "hours": 0,
+            "minutes": 5
+          },
+          "daily": null,
+          "monthly": null
         },
-        "ACL": ["*"]
+        "nextRun": "0001-01-01T00:00:00Z",
+        "ACL": [
+          "*"
+        ]
+      }
     }
-}' "https://api.scorocode.ru/api/v1/app/scripts/create"
-```
+    ```
+
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -2467,9 +2397,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -2510,63 +2438,60 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "script": "584fad1422a5482feb5b31ab",
+        "cloudCode": {
+            "isActiveJob": true    
+        }
+    }' "https://api.scorocode.ru/api/v1/app/scripts/update"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-  "error": false,
-  "script": {
-    "_id": "584fad1422a5482feb5b31ab",
-    "appId": "584e64f8982fd55332741516",
-    "name": "AYBABTU.js",
-    "path": "/AYBABTU.js",
-    "description": "All your base",
-    "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
-    "jobStartAt": "2016-12-13T17:33:00+03:00",
-    "isActiveJob": true,
-    "jobType": "custom",
-    "repeat": {
-      "custom": {
-        "days": 0,
-        "hours": 0,
-        "minutes": 5
-      },
-      "daily": null,
-      "monthly": null
-    },
-    "nextRun": "0001-01-01T00:00:00Z",
-    "ACL": [
-      "*"
-    ]
-  }
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "script": "584fad1422a5482feb5b31ab",
-    "cloudCode": {
-        "isActiveJob": true    
+!!! success "Выполнено"
+    ```JSON
+    {
+      "error": false,
+      "script": {
+        "_id": "584fad1422a5482feb5b31ab",
+        "appId": "584e64f8982fd55332741516",
+        "name": "AYBABTU.js",
+        "path": "/AYBABTU.js",
+        "description": "All your base",
+        "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
+        "jobStartAt": "2016-12-13T17:33:00+03:00",
+        "isActiveJob": true,
+        "jobType": "custom",
+        "repeat": {
+          "custom": {
+            "days": 0,
+            "hours": 0,
+            "minutes": 5
+          },
+          "daily": null,
+          "monthly": null
+        },
+        "nextRun": "0001-01-01T00:00:00Z",
+        "ACL": [
+          "*"
+        ]
+      }
     }
-}' "https://api.scorocode.ru/api/v1/app/scripts/update"
-```
+    ```
+
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -2576,9 +2501,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -2589,36 +2512,33 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "script": "584fad1422a5482feb5b31ab"
+    }' "https://api.scorocode.ru/api/v1/app/scripts/delete"
+    ```
+
 **Ответы:**
 
-*Выполнено*
+!!! success "Выполнено"
+    ```JSON
+    {
+      "error": false
+    }
+    ```
 
-```JSON
-{
-  "error": false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "script": "584fad1422a5482feb5b31ab"
-}' "https://api.scorocode.ru/api/v1/app/scripts/delete"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -2628,9 +2548,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -2640,45 +2558,42 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb"
+    }' "https://api.scorocode.ru/api/v1/bots"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-  "error": false,
-  "items": [
+!!! success "Выполнено"
+    ```JSON
     {
-      "_id": "584fb8710c62722cf9fe2617",
-      "name": "botobot",
-      "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
-      "appId": "584e64f8982fd55332741516",
-      "scriptId": "584fb52f0c62722cf9fe2604",
-      "isActive": false
+      "error": false,
+      "items": [
+        {
+          "_id": "584fb8710c62722cf9fe2617",
+          "name": "botobot",
+          "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
+          "appId": "584e64f8982fd55332741516",
+          "scriptId": "584fb52f0c62722cf9fe2604",
+          "isActive": false
+        }
+      ]
     }
-  ]
-}
-```
+    ```
 
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb"
-}' "https://api.scorocode.ru/api/v1/bots"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -2688,9 +2603,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -2706,49 +2619,46 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "bot":{
+            "name":"botobot",
+            "isActive":false,
+            "botId":"123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
+            "scriptId":"584fb52f0c62722cf9fe2604"
+        }
+    }' "https://api.scorocode.ru/api/v1/bots/create"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-  "bot": {
-    "_id": "584fb8710c62722cf9fe2617",
-    "name": "botobot",
-    "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
-    "appId": "584e64f8982fd55332741516",
-    "scriptId": "584fb52f0c62722cf9fe2604",
-    "isActive": false
-  },
-  "error": false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "bot":{
-        "name":"botobot",
-        "isActive":false,
-        "botId":"123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
-        "scriptId":"584fb52f0c62722cf9fe2604"
+!!! success "Выполнено"
+    ```JSON
+    {
+      "bot": {
+        "_id": "584fb8710c62722cf9fe2617",
+        "name": "botobot",
+        "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
+        "appId": "584e64f8982fd55332741516",
+        "scriptId": "584fb52f0c62722cf9fe2604",
+        "isActive": false
+      },
+      "error": false
     }
-}' "https://api.scorocode.ru/api/v1/bots/create"
-```
+    ```
+
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -2758,9 +2668,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -2777,51 +2685,50 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "bot": {
+            "_id": "584fbd067e0b4e222480a7e4",
+            "name": "botobot",
+            "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12",
+            "appId": "584e64f8982fd55332741516",
+            "scriptId": "584fb52f0c62722cf9fe2604",
+            "isActive": false
+        }
+    }' "https://api.scorocode.ru/api/v1/bots/update"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-  "bot": {
-    "_id": "584fbd067e0b4e222480a7e4",
-    "name": "botobot",
-    "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12",
-    "appId": "584e64f8982fd55332741516",
-    "scriptId": "584fb52f0c62722cf9fe2604",
-    "isActive": false
-  },
-  "error": false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "bot": {
+!!! success "Выполнено"
+    ```JSON
+    {
+      "bot": {
         "_id": "584fbd067e0b4e222480a7e4",
         "name": "botobot",
         "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12",
         "appId": "584e64f8982fd55332741516",
         "scriptId": "584fb52f0c62722cf9fe2604",
         "isActive": false
+      },
+      "error": false
     }
-}' "https://api.scorocode.ru/api/v1/bots/update"
-```
+    ```
+
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
+
+
 
 -------------------------------------------------------------------------------------
 
@@ -2831,9 +2738,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Метод: `POST`
 
-Заголовки:
-
-`Content-Type: application/json`
+Заголовки: `Content-Type: application/json`
 
 ```JSON
 {
@@ -2846,35 +2751,34 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "bot": {
+            "_id": "584fbd067e0b4e222480a7e4"
+        }
+    }' "https://api.scorocode.ru/api/v1/bots/delete"
+    ```
+
 **Ответы:**
 
-*Выполнено*
-
-```JSON
-{
-  "error": false
-}
-```
-
-*Ошибка*
-
-```JSON
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Код ошибки
-    "errMsg"      : "Текст ошибки"
-}
-```
-
-**Пример cURL**
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "bot": {
-        "_id": "584fbd067e0b4e222480a7e4"
+!!! success "Выполнено"
+    ```JSON
+    {
+      "error": false
     }
-}' "https://api.scorocode.ru/api/v1/bots/delete"
-```
+    ```
+
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Код ошибки
+        "errMsg"      : "Текст ошибки"
+    }
+    ```
+
+
