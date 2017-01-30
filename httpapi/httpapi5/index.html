@@ -921,8 +921,7 @@
                 <h2 id="_1">Отправка задания на выполнение серверного скрипта.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/scripts</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -934,24 +933,8 @@
 </pre></div>
 
 
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
 <span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
@@ -965,6 +948,30 @@
 <span class="s1">    }</span>
 <span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/scripts&quot;</span>
 </pre></div>
+
+
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
               
             </article>
           </div>

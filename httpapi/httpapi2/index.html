@@ -1004,25 +1004,8 @@
 </pre></div>
 
 
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{}</span> <span class="err">//</span> <span class="err">созданный</span> <span class="err">документ</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
 <span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
@@ -1037,6 +1020,29 @@
 </pre></div>
 
 
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{}</span> <span class="err">//</span> <span class="err">созданный</span> <span class="err">документ</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
 <h2 id="_2">Удаление документа из коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/remove</strong></p>
 <p>Метод: <code>POST</code></p>
@@ -1058,28 +1064,8 @@
 <p class="admonition-title">Ограничения</p>
 <p>Удаляет не более 1000 документов</p>
 </div>
-<p><strong>Ответы:</strong>
-<em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span><span class="p">,</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">удаленных</span> <span class="err">документов</span>
-        <span class="nt">&quot;docs&quot;</span>        <span class="p">:</span> <span class="p">[]</span> <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">удаленных</span> <span class="err">документов</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
 <span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
@@ -1095,11 +1081,35 @@
 </pre></div>
 
 
+</div>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span><span class="p">,</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">удаленных</span> <span class="err">документов</span>
+        <span class="nt">&quot;docs&quot;</span>        <span class="p">:</span> <span class="p">[]</span> <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">удаленных</span> <span class="err">документов</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
 <h2 id="_3">Изменение документов в коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/update</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -1117,28 +1127,8 @@
 <p class="admonition-title">Ограничения</p>
 <p>Изменяет не более 1000 документов</p>
 </div>
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span><span class="p">,</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">измененных</span> <span class="err">документов</span>
-        <span class="nt">&quot;docs&quot;</span>        <span class="p">:</span> <span class="p">[]</span> <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">измененных</span> <span class="err">документов</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
 <span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
@@ -1160,11 +1150,36 @@
 </pre></div>
 
 
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span><span class="p">,</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">измененных</span> <span class="err">документов</span>
+        <span class="nt">&quot;docs&quot;</span>        <span class="p">:</span> <span class="p">[]</span> <span class="err">//</span> <span class="err">массив</span> <span class="err">ID</span> <span class="err">измененных</span> <span class="err">документов</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
 <h2 id="_4">Изменение одного документа в коллекции по идентификатору.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/updatebyid</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -1177,25 +1192,8 @@
 </pre></div>
 
 
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{}</span> <span class="err">//</span> <span class="err">обновленный</span> <span class="err">документ</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
 <span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
@@ -1214,29 +1212,20 @@
 </pre></div>
 
 
-<h2 id="_5">Запрос документов из коллекции.</h2>
-<p><strong>https://api.scorocode.ru/api/v1/data/find</strong></p>
-<p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="admonition warning">
-<p class="admonition-title">Ограничения</p>
-<p>Возвращает не более 100 документов</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">BSON</p>
-<p>Для повышения производительности сервиса результат выборки метода <strong>find</strong> возвращается в формате <a href="https://ru.wikipedia.org/wiki/BSON">bson</a>. Все SDK самостоятельно реализуют декодирование bson в json.</p>
 </div>
 <p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="err">string</span> <span class="err">//</span> <span class="err">bson</span> <span class="err">результат</span> <span class="err">запроса</span><span class="p">,</span> <span class="err">закодированный</span> <span class="err">в</span> <span class="err">base64</span>
+    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{}</span> <span class="err">//</span> <span class="err">обновленный</span> <span class="err">документ</span>
 <span class="p">}</span>
 </pre></div>
 
 
-<p><em>Ошибка</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
@@ -1245,7 +1234,21 @@
 </pre></div>
 
 
-<p><strong>Пример cURL</strong></p>
+</div>
+<h2 id="_5">Запрос документов из коллекции.</h2>
+<p><strong>https://api.scorocode.ru/api/v1/data/find</strong></p>
+<p>Метод: <code>POST</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
+<div class="admonition warning">
+<p class="admonition-title">Ограничения</p>
+<p>Возвращает не более 100 документов</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">BSON</p>
+<p>Для повышения производительности сервиса результат выборки метода <strong>find</strong> возвращается в формате <a href="https://ru.wikipedia.org/wiki/BSON">bson</a>. Все SDK самостоятельно реализуют декодирование bson в json.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
 <span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
@@ -1267,11 +1270,33 @@
 </pre></div>
 
 
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="err">string</span> <span class="err">//</span> <span class="err">bson</span> <span class="err">результат</span> <span class="err">запроса</span><span class="p">,</span> <span class="err">закодированный</span> <span class="err">в</span> <span class="err">base64</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
 <h2 id="_6">Запрос количества документов из коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/count</strong></p>
 <p>Метод: <code>POST</code></p>
-<p>Заголовки:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Заголовки: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
     <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
@@ -1283,25 +1308,8 @@
 </pre></div>
 
 
-<p><strong>Ответы:</strong></p>
-<p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">документов</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p><strong>Пример cURL</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
 <span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
@@ -1315,6 +1323,31 @@
 <span class="s1">    }</span>
 <span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/data/count&quot;</span>
 </pre></div>
+
+
+</div>
+<p><strong>Ответы:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">количество</span> <span class="err">документов</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
               
             </article>
           </div>
