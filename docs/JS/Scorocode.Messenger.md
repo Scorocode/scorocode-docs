@@ -88,7 +88,12 @@ Broadcast.sendPush({
                         "key": "value"
                     }
                 },
-                "apns": {
+                "apns": {       // Данные для передачи iOs-устройствам, необязательно
+                    "id": "123e4567-e89b-12d3-a456-42665544000",
+                    "topic": "com.sideshow.Apns2",
+                    "collapseId": "my_collapse", 
+                    "expiration": "2006-01-02T15:04:05Z07:00",
+                    "priority":5, // apns-priority
                     "aps" : {
                         "alert" : {
                             "title" : "Portugal vs. Denmark",

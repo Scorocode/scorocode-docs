@@ -29,6 +29,11 @@
                 }
             },
             "apns": {       // Данные для передачи iOs-устройствам, необязательно
+                "id": "123e4567-e89b-12d3-a456-42665544000", // apns-id, необязательно
+                "topic": "com.sideshow.Apns2",               // apns-topic, необязательно
+                "collapseId": "my_collapse",                 // apns-collapse-id, необязательно
+                "expiration": "2006-01-02T15:04:05Z07:00",   // apns-expiration, необязательно
+                "priority":5,                                // apns-priority, необязательно
                 "aps" : {
                     "alert" : {
                         "title" : "Portugal vs. Denmark",
