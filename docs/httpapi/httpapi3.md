@@ -53,7 +53,7 @@
     }
     ```
 
-## Получение файла редиректом.
+## Получение файла.
 
 **https://api.scorocode.ru/api/v1/getfile/{app}/{coll}/{field}/{docId}/{file}**
 
@@ -84,7 +84,7 @@ https://api.scorocode.ru/api/v1/getfile/{app}/{coll}/{field}/{docId}/{file}
 
 !!! success "Выполнено"
     ```
-        Status: Status: 302 (Redirect на файл)
+        Контент файла
     ```
 
 !!! failure "Ошибка"
