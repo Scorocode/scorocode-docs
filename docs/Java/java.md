@@ -10,7 +10,7 @@ SDK предоставляет доступ к платформе Scorocode дл
 
 ```
 dependencies {
-   compile 'ru.prof-itgroup:scorocode_sdk:1.0.15-beta'
+   compile 'ru.prof-itgroup:scorocode_sdk:1.1.0'
 }
 ```
 
