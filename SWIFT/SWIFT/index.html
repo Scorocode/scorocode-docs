@@ -945,52 +945,12 @@
                   <h1>SWIFT SDK</h1>
                 
                 <h2 id="sdk">Подключение SDK</h2>
-<p>Дистрибутив Scorocode SWIFT SDK можно скачать <a href="https://github.com/Scorocode/scorocode-SDK-JS">тут</a>.</p>
-<p>SDK предоставляет доступ к платформе Scorocode для построения приложений, основанных на swift. Подробности на нашем сайте: https://scorocode.ru
-Дистрибутив Scorocode SWIFT SDK находится в репозитории (https://github.com/Scorocode/scorocode-sdk-swift)</p>
+<p>Дистрибутив Scorocode SWIFT SDK можно скачать <a href="https://github.com/Scorocode/scorocode-sdk-swift">тут</a>.</p>
+<p>SDK предоставляет доступ к платформе Scorocode для построения приложений, основанных на swift. Подробности на нашем сайте: https://scorocode.ru</p>
 <h3 id="_1">Установка</h3>
 <p>Подключение библиотеки к проекту</p>
-<p>Установить <a href="https://github.com/Carthage/Carthage">Carthage</a></p>
-<p>Создать приложение</p>
-<p>Создать в корне проекта файл с именем "Cartfile", записать в него строки:
-<div class="codehilite"><pre><span></span>github &quot;Alamofire/Alamofire&quot; ~&gt; 3.3
-github &quot;SwiftyJSON/SwiftyJSON&quot;
-github &quot;daltoniam/Starscream&quot;
+<div class="codehilite"><pre><span></span>pod &#39;Scorocode&#39;
 </pre></div>
-
-Закрыть проект в xcode, запустить в консоли:
-<div class="codehilite"><pre><span></span>carthage update --platform iOS,Mac
-</pre></div>
-
-Открыть заново проект в Xcode. В Target -&gt; General -&gt; Linked Frameworks and Libraries из &lt;Каталог проекта&gt; -&gt; Carthage -&gt; Build -&gt; iOS перетащить 3 файла:
-<div class="codehilite"><pre><span></span>Alamofire.framework
-SwiftyJSON.framework
-Starscream.framework
-</pre></div>
-</p>
-<p>В Target -&gt; Build Phases добавить New Run Script Phase:</p>
-<p>Скрипт:
-<div class="codehilite"><pre><span></span>/usr/local/bin/carthage copy-frameworks
-</pre></div>
-
-Три Input File:</p>
-<p><div class="codehilite"><pre><span></span>$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework
-</pre></div>
-
-<div class="codehilite"><pre><span></span>$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework
-</pre></div>
-
-и
-<div class="codehilite"><pre><span></span>$(SRCROOT)/Carthage/Build/iOS/Starscream.framework
-</pre></div>
-</p>
-<p>В случае отсутствия bridging header создать его с таким содержимым:</p>
-<div class="codehilite"><pre><span></span>#import &quot;BSONSerialization.h&quot;
-</pre></div>
-
-
-<p>Создать в проекте новую группу (например, SCLib)</p>
-<p>Добавить в нее 3 папки (BSON, API, Model) из папки SCLib проекта, полученной из репозитория</p>
               
             </article>
           </div>

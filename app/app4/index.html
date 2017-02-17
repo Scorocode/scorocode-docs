@@ -1305,6 +1305,7 @@
 <p>Объект <code>pool</code> содержит следующие данные:</p>
 <h3 id="insert">Перед операцией <code>insert</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nx">coll</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>   <span class="c1">// имя коллекции</span>
     <span class="nx">doc</span> <span class="o">:</span> <span class="p">{}</span>    <span class="c1">// документ с парами имя_поля:значение</span>
 <span class="p">}</span>
 </pre></div>
@@ -1312,6 +1313,7 @@
 
 <h3 id="insert_1">После операции <code>insert</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции</span>
     <span class="nx">newDoc</span> <span class="o">:</span> <span class="p">{}</span> <span class="c1">// вновь созданный документ с парами имя_поля:значение</span>
 <span class="p">}</span>
 </pre></div>
@@ -1319,6 +1321,7 @@
 
 <h3 id="remove">Перед операцией <code>remove</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции</span>
     <span class="nx">query</span> <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// поисковый запрос, в соответствии с которым необходимо удалить документы</span>
 <span class="p">}</span>
 </pre></div>
@@ -1326,7 +1329,8 @@
 
 <h3 id="remove_1">После операции <code>remove</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">count</span> <span class="o">:</span> <span class="kr">int</span> <span class="c1">// количество удаленных документов</span>
+    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции</span>
+    <span class="nx">count</span> <span class="o">:</span> <span class="kr">int</span><span class="p">,</span> <span class="c1">// количество удаленных документов</span>
     <span class="nx">docs</span>  <span class="o">:</span> <span class="p">[]</span>  <span class="c1">// массив ID удаленных документов</span>
 <span class="p">}</span>
 </pre></div>
@@ -1334,6 +1338,7 @@
 
 <h3 id="update">Перед операцией <code>update</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции</span>
     <span class="nx">doc</span>   <span class="o">:</span> <span class="p">{},</span> <span class="c1">// документ с правилами обновления значений</span>
     <span class="nx">query</span> <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// поисковый запрос, в соответствии с которым необходимо обновить документы</span>
 <span class="p">}</span>
@@ -1342,6 +1347,7 @@
 
 <h3 id="update_1">После операции <code>update</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>  <span class="c1">// имя коллекции</span>
     <span class="nx">count</span> <span class="o">:</span> <span class="kr">int</span><span class="p">,</span> <span class="c1">// количество обновленный документов</span>
     <span class="nx">docs</span>  <span class="o">:</span> <span class="p">[]</span>   <span class="c1">// массив ID обновленных документов</span>
 <span class="p">}</span>
@@ -1350,15 +1356,17 @@
 
 <h3 id="updatebyid">Перед операцией <code>updatebyid</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">doc</span>         <span class="o">:</span> <span class="p">{},</span> <span class="c1">// документ с правилами обновления значений</span>
-    <span class="nx">query</span>       <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// поисковый запрос {&quot;_id&quot; : }</span>
+    <span class="nx">coll</span>    <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции</span>
+    <span class="nx">doc</span>     <span class="o">:</span> <span class="p">{},</span> <span class="c1">// документ с правилами обновления значений</span>
+    <span class="nx">query</span>   <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// поисковый запрос {&quot;_id&quot; : }</span>
 <span class="p">}</span>
 </pre></div>
 
 
 <h3 id="updatebyid_1">После операции <code>updatebyid</code>:</h3>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">newDoc</span>      <span class="o">:</span> <span class="p">{}</span> <span class="c1">// обновленный документ</span>
+    <span class="nx">coll</span>    <span class="o">:</span> <span class="s2">&quot;&quot;</span> <span class="c1">// имя коллекции</span>
+    <span class="nx">newDoc</span>  <span class="o">:</span> <span class="p">{}</span> <span class="c1">// обновленный документ</span>
 <span class="p">}</span>
 </pre></div>
 
