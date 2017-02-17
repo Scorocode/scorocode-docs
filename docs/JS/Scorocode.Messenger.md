@@ -37,7 +37,7 @@ var Broadcast = new sc.Messenger({logger: new sc.Logger()});
 | Параметр | Тип | Описание |
 | --- | --- | --- |
 | options | <code>Object</code> | Объект, состоящий из параметров where и data |
-| debug | `Boolean` | Необязательный | Флаг включения режима отладки | true |
+| debug | `Boolean` | Флаг включения режима отладки | Флаг включения режима отладки | true |
 | callbacks | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
 
