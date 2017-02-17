@@ -769,15 +769,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sendemailmessageemail-query-callback" title=".sendEmail(messageEmail, query, callback)" class="md-nav__link">
-    .sendEmail(messageEmail, query, callback)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sendemailmessageemail-callback" title=".sendEmail(messageEmail, callback)" class="md-nav__link">
-    .sendEmail(messageEmail, callback)
+  <a href="#new-messageisdebugmode" title="new Message(isDebugMode)" class="md-nav__link">
+    new Message(isDebugMode)
   </a>
   
 </li>
@@ -946,15 +939,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sendemailmessageemail-query-callback" title=".sendEmail(messageEmail, query, callback)" class="md-nav__link">
-    .sendEmail(messageEmail, query, callback)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sendemailmessageemail-callback" title=".sendEmail(messageEmail, callback)" class="md-nav__link">
-    .sendEmail(messageEmail, callback)
+  <a href="#new-messageisdebugmode" title="new Message(isDebugMode)" class="md-nav__link">
+    new Message(isDebugMode)
   </a>
   
 </li>
@@ -1004,11 +990,10 @@
                 
                 <p><a name="Message"></a></p>
 <h3 id="message">Message</h3>
-<p>Message</p>
 <p><strong>Содержание</strong></p>
 <ul>
 <li><a href="#Message">Message</a><ul>
-<li><a href="#Message_new">new Message(from, subject, text)</a></li>
+<li><a href="#Message_new">new Message(isDebugMode)</a></li>
 <li><a href="#Message+sendPush1">.sendPush(messagePush, query, callback)</a></li>
 <li><a href="#Message+sendPush2">.sendPush(messagePush, callback)</a></li>
 <li><a href="#Message+sendSms1">.sendSms(messageSms, query, callback)</a></li>
@@ -1018,6 +1003,7 @@
 </ul>
 <hr />
 <p><a name="Message_new"></a></p>
+<h3 id="new-messageisdebugmode">new Message(isDebugMode)</h3>
 <p>Конструктор Message</p>
 <table>
 <thead>
@@ -1031,135 +1017,15 @@
 </thead>
 <tbody>
 <tr>
-<td>from</td>
-<td><code>String</code></td>
+<td>isDebugMode</td>
+<td>Boolean</td>
 <td>Необязательный</td>
-<td>Отправитель сообщения</td>
-<td>"Any name"</td>
-</tr>
-<tr>
-<td>subject</td>
-<td><code>String</code></td>
-<td>Необязательный</td>
-<td>Тема письма</td>
-<td>"С днем рождения"</td>
-</tr>
-<tr>
-<td>text</td>
-<td><code>String</code></td>
-<td>Необязательный</td>
-<td>Текст письма</td>
-<td>"Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!"</td>
+<td>Флаг включения режима отладки</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="n">MessageEmail</span> <span class="n">messageEmail</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MessageEmail</span><span class="o">(</span><span class="s">&quot;Any name&quot;</span><span class="o">,</span> <span class="s">&quot;Any subject&quot;</span><span class="o">,</span> <span class="s">&quot;Any text&quot;</span><span class="o">);</span>
-</pre></div>
-
-
-<hr />
-<p><a name="Message+sendEmail1"></a></p>
-<h3 id="sendemailmessageemail-query-callback">.sendEmail(messageEmail, query, callback)</h3>
-<p>Метод для отправки email сообщения пользователю или группе пользователей</p>
-<table>
-<thead>
-<tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>messageEmail</td>
-<td><code>MessageEmail</code></td>
-<td>Обязательный</td>
-<td>Объект, содержащий сообщение</td>
-<td>см.пример ниже</td>
-</tr>
-<tr>
-<td>query</td>
-<td><code>Query</code></td>
-<td>Необязательный</td>
-<td>Объект, содержащий условия по которым будет выбран пользователь или группа пользователей для отправки.</td>
-<td>см.пример ниже</td>
-</tr>
-<tr>
-<td>callback</td>
-<td><code>CallbackSendEmail</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см.пример ниже</td>
-</tr>
-</tbody>
-</table>
-<div class="codehilite"><pre><span></span><span class="n">MessageEmail</span> <span class="n">messageEmail</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MessageEmail</span><span class="o">(</span><span class="s">&quot;Any name&quot;</span><span class="o">,</span> <span class="s">&quot;Any subject&quot;</span><span class="o">,</span> <span class="s">&quot;Any text&quot;</span><span class="o">);</span>
-
-<span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="s">&quot;USERS&quot;</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="s">&quot;_id&quot;</span><span class="o">,</span> <span class="s">&quot;XukL1FrVoL&quot;</span><span class="o">);</span>
-
-<span class="n">Message</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Message</span><span class="o">();</span>
-<span class="n">message</span><span class="o">.</span><span class="na">sendEmail</span><span class="o">(</span><span class="n">messageEmail</span><span class="o">,</span> <span class="n">query</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackSendEmail</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEmailSend</span><span class="o">()</span> <span class="o">{</span>
-                <span class="c1">//email send</span>
-            <span class="o">}</span>
-
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEmailSendFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//error during sending</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-
-
-<hr />
-<p><a name="Message+sendEmail2"></a></p>
-<h3 id="sendemailmessageemail-callback">.sendEmail(messageEmail, callback)</h3>
-<p>Метод для отправки email сообщения пользователю или группе пользователей</p>
-<table>
-<thead>
-<tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>messageEmail</td>
-<td><code>MessageEmail</code></td>
-<td>Обязательный</td>
-<td>Объект, содержащий сообщение</td>
-<td>см.пример ниже</td>
-</tr>
-<tr>
-<td>callback</td>
-<td><code>CallbackSendEmail</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см.пример ниже</td>
-</tr>
-</tbody>
-</table>
-<div class="codehilite"><pre><span></span><span class="n">MessageEmail</span> <span class="n">messageEmail</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MessageEmail</span><span class="o">(</span><span class="s">&quot;Any name&quot;</span><span class="o">,</span> <span class="s">&quot;Any subject&quot;</span><span class="o">,</span> <span class="s">&quot;Any text&quot;</span><span class="o">);</span>
-
-<span class="n">Message</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Message</span><span class="o">();</span>
-<span class="n">message</span><span class="o">.</span><span class="na">sendEmail</span><span class="o">(</span><span class="n">messageEmail</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackSendEmail</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEmailSend</span><span class="o">()</span> <span class="o">{</span>
-                <span class="c1">//email send</span>
-            <span class="o">}</span>
-
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEmailSendFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//error during sending</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
+<div class="codehilite"><pre><span></span><span class="n">Message</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Message</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
 </pre></div>
 
 
