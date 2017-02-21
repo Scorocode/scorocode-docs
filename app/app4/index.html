@@ -422,6 +422,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#id" title="Обновление документа по его id" class="md-nav__link">
+    Обновление документа по его id
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1242,6 +1249,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#id" title="Обновление документа по его id" class="md-nav__link">
+    Обновление документа по его id
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1637,6 +1651,20 @@
         <span class="s2">&quot;doc&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span>                <span class="c1">// передадим в скрипт новый документ</span>
     <span class="p">}</span>
 <span class="p">})</span>
+</pre></div>
+
+
+<h3 id="id">Обновление документа по его id</h3>
+<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">UpdateById</span><span class="p">({</span>
+    <span class="nx">coll</span><span class="o">:</span> <span class="s2">&quot;items&quot;</span><span class="p">,</span>
+    <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;_id&quot;</span><span class="o">:</span><span class="s2">&quot;ICr2iqfLoa&quot;</span>
+    <span class="p">},</span>
+    <span class="nx">doc</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;$set&quot;</span><span class="o">:</span><span class="p">{</span>
+            <span class="s2">&quot;anotherExampleField&quot;</span><span class="o">:</span> <span class="s2">&quot;trigger&quot;</span>
+        <span class="p">}}</span>
+<span class="p">});</span>
 </pre></div>
               
             </article>
