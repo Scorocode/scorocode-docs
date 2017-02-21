@@ -58,4 +58,4 @@ sc.Init({
     }
 ```
     
-Использовать подключенный SDK Scorocode можно, подключив его в серверный код с помощью `var scorocode = require('scorocode')`
+Использовать подключенный SDK Scorocode можно, подключив его в серверный код с помощью `var sc = require('scorocode')`

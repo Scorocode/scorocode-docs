@@ -438,3 +438,18 @@ DataManager.RunScript({                   // выполним запуск ск�
     }
 })
 ```
+
+### Обновление документа по его id
+
+```js
+DataManager.UpdateById({
+    coll: "items",
+    query: {
+        "_id":"ICr2iqfLoa"
+    },
+    doc: {
+        "$set":{
+            "anotherExampleField": "trigger"
+        }}
+});
+```
