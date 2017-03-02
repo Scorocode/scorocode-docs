@@ -1240,9 +1240,11 @@
             "app": "48f172923acd719b42c73ac3a492cfc8",
             "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
             "collection": {
-                "id": "584e849e7e0b4e222480a282",
-                "useDocsACL": true
-    }' "https://api.scorocode.ru/api/v1/app/collections/create"
+              "id": "584e852276e5e715e6ec2e8c",
+              "useDocsACL": true,
+              "ACL": {}
+            }
+    }' "https://api.scorocode.ru/api/v1/app/collections/update"
     ```
 
 **Ответы:**
