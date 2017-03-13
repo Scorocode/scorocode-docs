@@ -429,6 +429,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" title="Поиск документов другой коллекции" class="md-nav__link">
+    Поиск документов другой коллекции
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1256,6 +1263,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" title="Поиск документов другой коллекции" class="md-nav__link">
+    Поиск документов другой коллекции
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1666,6 +1680,39 @@
             <span class="s2">&quot;anotherExampleField&quot;</span><span class="o">:</span> <span class="s2">&quot;trigger&quot;</span>
         <span class="p">}}</span>
 <span class="p">});</span>
+</pre></div>
+
+
+<h3 id="_6">Поиск документов другой коллекции</h3>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">memberFinded</span> <span class="o">=</span> <span class="nx">DataManager</span><span class="p">.</span><span class="nx">Find</span><span class="p">({</span>                        
+    <span class="nx">coll</span><span class="o">:</span> <span class="s2">&quot;members&quot;</span><span class="p">,</span>
+    <span class="nx">query</span><span class="o">:</span><span class="p">{</span>
+        <span class="s2">&quot;memberName&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;$eq&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">strangerName</span><span class="p">}</span>
+    <span class="p">},</span> 
+    <span class="nx">sort</span><span class="o">:</span><span class="p">{</span>
+        <span class="s2">&quot;updatedAt&quot;</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nx">fields</span> <span class="o">:</span> <span class="p">[</span><span class="s2">&quot;_id&quot;</span><span class="p">,</span> <span class="s2">&quot;peerReviews&quot;</span> <span class="s2">&quot;status&quot;</span><span class="p">,</span> <span class="s2">&quot;importantInfo&quot;</span><span class="p">,</span> <span class="s2">&quot;otherStuff&quot;</span><span class="p">],</span> 
+    <span class="nx">limit</span>  <span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">memberFinded</span><span class="p">.</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">memberFinded</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nx">DataManager</span><span class="p">.</span><span class="nx">RunScript</span><span class="p">({</span>                  
+        <span class="nx">script</span>  <span class="o">:</span> <span class="s2">&quot;580b386d42d52f1ba275fc24&quot;</span><span class="p">,</span>
+        <span class="nx">pool</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;strangerInfo&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">,</span>
+            <span class="s2">&quot;results&quot;</span><span class="o">:</span> <span class="nx">memberFinded</span><span class="p">.</span><span class="nx">result</span>               
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+
+    <span class="nx">pool</span><span class="p">.</span><span class="nx">result</span> <span class="o">=</span> <span class="s2">&quot;Произошла какая-то ошибка&quot;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
               
             </article>

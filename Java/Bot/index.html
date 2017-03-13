@@ -1067,14 +1067,14 @@
 </tr>
 <tr>
 <td>callback</td>
-<td><code>CallbackGetBotList</code></td>
+<td><code>CallbackCreateBot</code></td>
 <td>Обязательный</td>
 <td>Callback, который будет вызван после выполнения запроса.</td>
 <td>см. пример ниже</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>
+<p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">String</span> <span class="n">botName</span> <span class="o">=</span> <span class="s">&quot;scorocodeSdkTestBotName&quot;</span><span class="o">;</span>
@@ -1095,7 +1095,8 @@
     <span class="o">}</span>
 <span class="o">});</span>
 </pre></div>
-</p>
+
+
 <hr />
 <p><a name="Bot+updateBot"></a></p>
 <h2 id="updatebotbotid-newbotinfo-callback">.updateBot(botId, newBotInfo, callback)</h2>
@@ -1127,14 +1128,14 @@
 </tr>
 <tr>
 <td>callback</td>
-<td><code>CallbackGetBotList</code></td>
+<td><code>CallbackUpdateBot</code></td>
 <td>Обязательный</td>
 <td>Callback, который будет вызван после выполнения запроса.</td>
 <td>см. пример ниже</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>
+<p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">String</span> <span class="n">botId</span> <span class="o">=</span> <span class="err">“</span><span class="mi">584</span><span class="n">fba2c42d52f1ba275fdb5</span><span class="err">”</span><span class="o">;</span>
@@ -1154,7 +1155,8 @@
     <span class="o">}</span>
 <span class="o">});</span>
 </pre></div>
-</p>
+
+
 <hr />
 <p><a name="Bot+deleteBot"></a></p>
 <h2 id="deletebotbotid-callback">.deleteBot(botId, callback)</h2>
@@ -1179,7 +1181,7 @@
 </tr>
 <tr>
 <td>callback</td>
-<td><code>CallbackGetBotList</code></td>
+<td><code>CallbackDeleteBot</code></td>
 <td>Обязательный</td>
 <td>Callback, который будет вызван после выполнения запроса.</td>
 <td>см. пример ниже</td>
