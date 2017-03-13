@@ -19,9 +19,6 @@
 | --- | --- | --- |
 | ApplicationID | <code>String</code> | Идентификатор приложения |
 | JavaScriptKey | <code>String</code> | Клиентский ключ для платформы JavaScript |
-| AndroidKey | <code>String</code> | Клиентский ключ для платформы Android |
-| iOsKey | <code>String</code> | Клиентский ключ для платформы iOs |
-| WinPhoneKey | <code>String</code> | Клиентский ключ для платформы WindowsPhone |
 | FileKey | <code>String</code> | Ключ авторизации для доступа к файлам |
 | ScriptKey | <code>String</code> | Ключ авторизации для запуска серверных скриптов |
 | MessageKey | <code>String</code> | Ключ авторизации для отправки сообщений |

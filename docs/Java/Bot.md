@@ -72,9 +72,10 @@ bot.getBotsList(new CallbackGetBotList() {
 | Параметр | Тип |  Свойства    | Описание |    Пример значения |
 | --- | --- | --- | --- | --- |
 | botInfo | `ScorocodeBot` | Обязательный | Класс, содержащий информацию о создаваемом боте | см. пример ниже |
-| callback | `CallbackGetBotList` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| callback | `CallbackCreateBot` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
 
 **Пример**
+
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
 
@@ -109,9 +110,10 @@ bot.createBot(botInfo, new CallbackCreateBot() {
 | --- | --- | --- | --- | --- |
 | botId | `String` | Обязательный | Уникальный Id обновляемого бота  | см. пример ниже |
 | newBotInfo | `ScorocodeBot` | Обязательный | Класс, содержащий информацию о создаваемом боте | см. пример ниже |
-| callback | `CallbackGetBotList` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| callback | `CallbackUpdateBot` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
 
 **Пример**
+
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
 
@@ -144,7 +146,7 @@ bot.updateBot(botId, newBotInfo, new CallbackUpdateBot() {
 | Параметр | Тип |  Свойства    | Описание |    Пример значения |
 | --- | --- | --- | --- | --- |
 | botId | `String` | Обязательный | Уникальный Id обновляемого бота  | см. пример ниже |
-| callback | `CallbackGetBotList` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| callback | `CallbackDeleteBot` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
 
 **Пример**
 

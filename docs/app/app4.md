@@ -454,3 +454,37 @@ DataManager.UpdateById({
         }}
 });
 ```
+### Поиск документов другой коллекции
+
+```js
+var memberFinded = DataManager.Find({                        
+    coll: "members",
+    query:{
+        "memberName": {"$eq": pool.doc.strangerName}
+    }, 
+    sort:{
+        "updatedAt": 1
+    },
+    fields : ["_id", "peerReviews" "status", "importantInfo", "otherStuff"], 
+    limit  : 1,
+});
+
+if (!memberFinded.error && memberFinded.length > 0) {
+
+    DataManager.RunScript({                  
+        script  : "580b386d42d52f1ba275fc24",
+        pool: {
+            "strangerInfo": pool.doc,
+            "results": memberFinded.result               
+        }
+    });
+    
+    return true;
+
+} else {
+    
+    pool.result = "Произошла какая-то ошибка";
+    return false;
+}
+```
+
