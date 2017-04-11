@@ -86,6 +86,7 @@ data.find()
 | options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
 **Пример**
+
 ```js
 // Подключим SDK и инициализируем его. 
 var sc = require('scorocode');
@@ -118,32 +119,33 @@ data.find()
 - "result" - <code>Array</code>  - массив полученных данных
 
 ```js
-{ 
-    error: false,
-    limit: 100,
-    skip: 0,
-    result:
-    [ 
-       { _id: 'CrT49joIxn',
-           createdAt: Wed May 25 2016 17:24:17 GMT+0300 (RTZ 2 (зима)),
-           updatedAt: Wed May 25 2016 22:15:03 GMT+0300 (RTZ 2 (зима)),
-           readACL: [],
-           updateACL: [],
-           removeACL: [],
-           arrayField: [ false,"",42.42,[1,2,3],["Массив",{"123": 4}],{ "Объект": true }],
-           price: 41.999 
-       },
-       // ...
-       { _id: 'NseSaqqd5v',
-           createdAt: Wed May 25 2016 17:24:17 GMT+0300 (RTZ 2 (зима)),
-           updatedAt: Wed May 25 2016 22:15:03 GMT+0300 (RTZ 2 (зима)),
-           readACL: [],
-           updateACL: [],
-           removeACL: []
-       } 
-    ]
-}
+    { 
+        error: false,
+        limit: 100,
+        skip: 0,
+        result:
+        [ 
+           { _id: 'CrT49joIxn',
+               createdAt: Wed May 25 2016 17:24:17 GMT+0300 (RTZ 2 (зима)),
+               updatedAt: Wed May 25 2016 22:15:03 GMT+0300 (RTZ 2 (зима)),
+               readACL: [],
+               updateACL: [],
+               removeACL: [],
+               arrayField: [ false,"",42.42,[1,2,3],["Массив",{"123": 4}],{ "Объект": true }],
+               price: 41.999 
+           },
+           // ...
+           { _id: 'NseSaqqd5v',
+               createdAt: Wed May 25 2016 17:24:17 GMT+0300 (RTZ 2 (зима)),
+               updatedAt: Wed May 25 2016 22:15:03 GMT+0300 (RTZ 2 (зима)),
+               readACL: [],
+               updateACL: [],
+               removeACL: []
+           } 
+        ]
+    }
 ```
+
 ----------------------------------------------------------------------------------------------
 
 <a name="sc.Query+findAll"></a>
