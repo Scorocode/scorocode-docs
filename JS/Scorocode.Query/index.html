@@ -459,6 +459,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#error-false-limit-100-skip-0-result-_id-crt49joixn-createdat-wed-may-25-2016-172417-gmt0300-rtz-2-updatedat-wed-may-25-2016-221503-gmt0300-rtz-2-readacl-updateacl-removeacl-arrayfield-false4242123123-4-true-price-41999-_id-nsesaqqd5v-createdat-wed-may-25-2016-172417-gmt0300-rtz-2-updatedat-wed-may-25-2016-221503-gmt0300-rtz-2-readacl-updateacl-removeacl" title="{ " class="md-nav__link">
+    { 
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#findalloptions" title=".findAll(options)" class="md-nav__link">
+    .findAll(options)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#countoptions" title=".count(options)" class="md-nav__link">
     .count(options)
   </a>
@@ -1107,6 +1121,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#error-false-limit-100-skip-0-result-_id-crt49joixn-createdat-wed-may-25-2016-172417-gmt0300-rtz-2-updatedat-wed-may-25-2016-221503-gmt0300-rtz-2-readacl-updateacl-removeacl-arrayfield-false4242123123-4-true-price-41999-_id-nsesaqqd5v-createdat-wed-may-25-2016-172417-gmt0300-rtz-2-updatedat-wed-may-25-2016-221503-gmt0300-rtz-2-readacl-updateacl-removeacl" title="{ " class="md-nav__link">
+    { 
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#findalloptions" title=".findAll(options)" class="md-nav__link">
+    .findAll(options)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#countoptions" title=".count(options)" class="md-nav__link">
     .count(options)
   </a>
@@ -1315,6 +1343,7 @@
 <li><a href="#sc.Query">.Query</a><ul>
 <li><a href="#new_sc.Query_new">new Query(collName)</a> ⇒ <code>sc.Object</code></li>
 <li><a href="#sc.Query+find">.find(options)</a> ⇒ <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{sc.Object}]}</code></li>
+<li><a href="#sc.Query+findAll">.findAll(options)</a> ⇒ <code>promise.{[{sc.Object}]}</code></li>
 <li><a href="#sc.Query+count">.count(options)</a> ⇒ <code>promise.{error: Boolean, result: Number}</code></li>
 <li><a href="#sc.Query+update">.update(Object, options)</a> ⇒ <code>promise.{error: Boolean, result: {count: Number, docs: Array}}</code></li>
 <li><a href="#sc.Query+remove">.remove(options)</a> ⇒ <code>promise.{count: Number, docs: Array}</code> </li>
@@ -1396,7 +1425,7 @@
 <hr />
 <p><a name="sc.Query+find"></a></p>
 <h2 id="findoptions">.find(options)</h2>
-<p>Метод для запроса документов из коллекции. Возвращает данные объектов, которые соответствуют условиям выборки. Если условия не заданы, по-умолчанию возвращает первые 100 объектов коллекции.</p>
+<p>Метод для запроса документов из коллекции. Возвращает данные объектов, которые соответствуют условиям выборки. Если условия не заданы, по-умолчанию возвращает первые 50 объектов коллекции.</p>
 <table>
 <thead>
 <tr>
@@ -1444,7 +1473,7 @@
 <li>"skip" - <code>Number</code>  - количество документов, которое было пропущено при выборке</li>
 <li>"result" - <code>Array</code>  - массив полученных данных</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="p">{</span> 
+<h2 id="error-false-limit-100-skip-0-result-_id-crt49joixn-createdat-wed-may-25-2016-172417-gmt0300-rtz-2-updatedat-wed-may-25-2016-221503-gmt0300-rtz-2-readacl-updateacl-removeacl-arrayfield-false4242123123-4-true-price-41999-_id-nsesaqqd5v-createdat-wed-may-25-2016-172417-gmt0300-rtz-2-updatedat-wed-may-25-2016-221503-gmt0300-rtz-2-readacl-updateacl-removeacl"><div class="codehilite"><pre><span></span><span class="p">{</span> 
     <span class="nx">error</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
     <span class="nx">limit</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
     <span class="nx">skip</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -1469,6 +1498,71 @@
        <span class="p">}</span> 
     <span class="p">]</span>
 <span class="p">}</span>
+</pre></div>
+</h2>
+<p><a name="sc.Query+findAll"></a></p>
+<h2 id="findalloptions">.findAll(options)</h2>
+<p>Метод для запроса всех документов коллекции, которые соответствуют условиям выборки.</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td><code>Object</code></td>
+<td>Коллбэки success и error для выполняемого запроса.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong>
+<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
+<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
+    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
+    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
+<span class="p">});</span>
+
+<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+<span class="c1">// Запросим все объекты коллекции</span>
+<span class="nx">data</span><span class="p">.</span><span class="nx">findAll</span><span class="p">()</span>
+    <span class="c1">// Обработка успешного выполнения запроса</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">finded</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">util</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;util&#39;</span><span class="p">);</span>
+        <span class="c1">//Выведем полученные данные в консоль</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">util</span><span class="p">.</span><span class="nx">inspect</span><span class="p">(</span><span class="nx">finded</span><span class="p">,</span> <span class="p">{</span><span class="nx">showHidden</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">depth</span><span class="o">:</span> <span class="kc">null</span><span class="p">}))</span>
+    <span class="p">})</span>
+    <span class="c1">// Обработка ошибки </span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span class="p">});</span>    
+</pre></div>
+</p>
+<p><strong>Возвращает</strong>: <code>promise.{[{sc.Object}]}</code> - Возвращает promise, который возвращает массив объектов с данными документов. </p>
+<div class="codehilite"><pre><span></span>    <span class="p">[</span> 
+       <span class="p">{</span> <span class="nx">_id</span><span class="o">:</span> <span class="s1">&#39;CrT49joIxn&#39;</span><span class="p">,</span>
+           <span class="nx">createdAt</span><span class="o">:</span> <span class="nx">Wed</span> <span class="nx">May</span> <span class="mi">25</span> <span class="mi">2016</span> <span class="mi">17</span><span class="o">:</span><span class="mi">24</span><span class="o">:</span><span class="mi">17</span> <span class="nx">GMT</span><span class="o">+</span><span class="mi">0300</span> <span class="p">(</span><span class="nx">RTZ</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">зима</span><span class="p">)),</span>
+           <span class="nx">updatedAt</span><span class="o">:</span> <span class="nx">Wed</span> <span class="nx">May</span> <span class="mi">25</span> <span class="mi">2016</span> <span class="mi">22</span><span class="o">:</span><span class="mi">15</span><span class="o">:</span><span class="mi">03</span> <span class="nx">GMT</span><span class="o">+</span><span class="mi">0300</span> <span class="p">(</span><span class="nx">RTZ</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">зима</span><span class="p">)),</span>
+           <span class="nx">readACL</span><span class="o">:</span> <span class="p">[],</span>
+           <span class="nx">updateACL</span><span class="o">:</span> <span class="p">[],</span>
+           <span class="nx">removeACL</span><span class="o">:</span> <span class="p">[],</span>
+           <span class="nx">arrayField</span><span class="o">:</span> <span class="p">[</span> <span class="kc">false</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="mf">42.42</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="s2">&quot;Массив&quot;</span><span class="p">,{</span><span class="s2">&quot;123&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">}],{</span> <span class="s2">&quot;Объект&quot;</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}],</span>
+           <span class="nx">price</span><span class="o">:</span> <span class="mf">41.999</span> 
+       <span class="p">},</span>
+       <span class="c1">// ...</span>
+       <span class="p">{</span> <span class="nx">_id</span><span class="o">:</span> <span class="s1">&#39;NseSaqqd5v&#39;</span><span class="p">,</span>
+           <span class="nx">createdAt</span><span class="o">:</span> <span class="nx">Wed</span> <span class="nx">May</span> <span class="mi">25</span> <span class="mi">2016</span> <span class="mi">17</span><span class="o">:</span><span class="mi">24</span><span class="o">:</span><span class="mi">17</span> <span class="nx">GMT</span><span class="o">+</span><span class="mi">0300</span> <span class="p">(</span><span class="nx">RTZ</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">зима</span><span class="p">)),</span>
+           <span class="nx">updatedAt</span><span class="o">:</span> <span class="nx">Wed</span> <span class="nx">May</span> <span class="mi">25</span> <span class="mi">2016</span> <span class="mi">22</span><span class="o">:</span><span class="mi">15</span><span class="o">:</span><span class="mi">03</span> <span class="nx">GMT</span><span class="o">+</span><span class="mi">0300</span> <span class="p">(</span><span class="nx">RTZ</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">зима</span><span class="p">)),</span>
+           <span class="nx">readACL</span><span class="o">:</span> <span class="p">[],</span>
+           <span class="nx">updateACL</span><span class="o">:</span> <span class="p">[],</span>
+           <span class="nx">removeACL</span><span class="o">:</span> <span class="p">[]</span>
+       <span class="p">}</span> 
+    <span class="p">]</span>
 </pre></div>
 
 
