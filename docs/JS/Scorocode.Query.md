@@ -3,6 +3,7 @@
 * [.Query](#sc.Query)
     * [new Query(collName)](#new_sc.Query_new) ⇒ <code>sc.Object</code>
     * [.find(options)](#sc.Query+find) ⇒ <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{sc.Object}]}</code>
+    * [.findAll(options)](#sc.Query+findAll) ⇒ <code>promise.{[{sc.Object}]}</code>
     * [.count(options)](#sc.Query+count) ⇒ <code>promise.{error: Boolean, result: Number}</code>
     * [.update(Object, options)](#sc.Query+update) ⇒ <code>promise.{error: Boolean, result: {count: Number, docs: Array}}</code>
     * [.remove(options)](#sc.Query+remove) ⇒ <code>promise.{count: Number, docs: Array}</code> 
@@ -77,7 +78,7 @@ data.find()
 
 ## .find(options)
 
-Метод для запроса документов из коллекции. Возвращает данные объектов, которые соответствуют условиям выборки. Если условия не заданы, по-умолчанию возвращает первые 100 объектов коллекции.
+Метод для запроса документов из коллекции. Возвращает данные объектов, которые соответствуют условиям выборки. Если условия не заданы, по-умолчанию возвращает первые 50 объектов коллекции.
 
 
 | Параметр | Тип | Описание |
@@ -142,6 +143,67 @@ data.find()
        } 
     ]
 }
+```
+----------------------------------------------------------------------------------------------
+
+<a name="sc.Query+findAll"></a>
+
+## .findAll(options)
+
+Метод для запроса всех документов коллекции, которые соответствуют условиям выборки.
+
+| Параметр | Тип | Описание |
+| --- | --- | --- |
+| options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
+
+**Пример**
+```js
+// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: "applicationId_приложения",
+    JavaScriptKey: "javascriptKey_приложения"
+});
+
+// Создадим новый экземпляр запроса к коллекции items.
+var data = new sc.Query("items");
+// Запросим все объекты коллекции
+data.findAll()
+    // Обработка успешного выполнения запроса
+    .then((finded) =>{
+        var util = require('util');
+        //Выведем полученные данные в консоль
+        console.log(util.inspect(finded, {showHidden: false, depth: null}))
+    })
+    // Обработка ошибки 
+    .catch((err)=>{
+        console.log(err)
+    });    
+```
+
+**Возвращает**: <code>promise.{[{sc.Object}]}</code> - Возвращает promise, который возвращает массив объектов с данными документов. 
+
+
+```js
+    [ 
+       { _id: 'CrT49joIxn',
+           createdAt: Wed May 25 2016 17:24:17 GMT+0300 (RTZ 2 (зима)),
+           updatedAt: Wed May 25 2016 22:15:03 GMT+0300 (RTZ 2 (зима)),
+           readACL: [],
+           updateACL: [],
+           removeACL: [],
+           arrayField: [ false,"",42.42,[1,2,3],["Массив",{"123": 4}],{ "Объект": true }],
+           price: 41.999 
+       },
+       // ...
+       { _id: 'NseSaqqd5v',
+           createdAt: Wed May 25 2016 17:24:17 GMT+0300 (RTZ 2 (зима)),
+           updatedAt: Wed May 25 2016 22:15:03 GMT+0300 (RTZ 2 (зима)),
+           readACL: [],
+           updateACL: [],
+           removeACL: []
+       } 
+    ]
 ```
 
 ----------------------------------------------------------------------------------------------
