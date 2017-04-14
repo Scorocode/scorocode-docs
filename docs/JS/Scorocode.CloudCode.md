@@ -37,7 +37,7 @@
 
 !!! tip "Пример - инициализация серверного скрипта по его пути"
     ```js
-    var newUserRegistration = new sc.CloudCode("/backend.js", {logger: new sc.Logger()});
+    var newUserRegistration = new sc.CloudCode("/backend.js", {isRunByPath: true});
     ```
 
 !!! tip "Пример - инициализация серверного скрипта по его id для отладки"
