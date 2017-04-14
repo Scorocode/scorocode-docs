@@ -1024,7 +1024,7 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Пример - инициализация серверного скрипта по его пути</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">newUserRegistration</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;/backend.js&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">newUserRegistration</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;/backend.js&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">isRunByPath</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
 </pre></div>
 
 
