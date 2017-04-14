@@ -1022,16 +1022,16 @@
 <ul>
 <li>Параметр where - принимает в качестве значения sc.Query("devices") с условиями выборки устройств, которым будет отпрален PUSH.</li>
 <li>Параметр data - объект, содержащий данные для передачи в PUSH-сообщении и имеющий следующую структуру:
-<div class="codehilite"><pre><span></span>data: {
-    &quot;data&quot;: {
-        &quot;gcm&quot;: {
-            //данные для отправки Android-устройствам
-        },
-        &quot;apns&quot;: {
-            //данные для отправки iOs-устройствам
-        }
-    }    
-}
+<div class="codehilite"><pre><span></span><span class="err">data:</span> <span class="p">{</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;gcm&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="err">//данные</span> <span class="err">для</span> <span class="err">отправки</span> <span class="err">Android-устройствам</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;apns&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="err">//данные</span> <span class="err">для</span> <span class="err">отправки</span> <span class="err">iOs-устройствам</span>
+        <span class="p">}</span>
+    <span class="p">}</span>    
+<span class="p">}</span>
 </pre></div>
 </li>
 </ul>
