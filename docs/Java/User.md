@@ -41,7 +41,8 @@ User appUser = new User();
 | callback  | `CallbackRegisterUser` | Обязательныйй | Callback, который будет вызван после выполнения запроса. | см.пример ниже  |
 
 
-**Пример** 
+**Пример**
+ 
 ```Java
 Document doc = new Document("users");
 doc.setField("city", "Moscow");
