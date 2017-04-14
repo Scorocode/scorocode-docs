@@ -980,10 +980,13 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">({</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
 </pre></div>
-</p>
+
+
+</div>
 <hr />
 <p><a name="sc.Messenger+sendPush"></a></p>
 <h2 id="sendpushoptions-callbacks">.sendPush(options, callbacks)</h2>
@@ -1032,7 +1035,8 @@
 </pre></div>
 
 
-<p><strong>Пример</strong>  </p>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1088,6 +1092,7 @@
 </pre></div>
 
 
+</div>
 <p><strong>Возвращает</strong>: <code>promise.{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.</p>
 <ul>
 <li>"error" - <code>Boolean</code> - Флаг ошибки</li>
@@ -1124,18 +1129,20 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Описание объекта options</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Описание объекта options</p>
 <ul>
 <li>Параметр where - принимает в качестве значения sc.Query("user") с условиями выборки пользователей, которым будет отпралено sms.</li>
-<li>Параметр data - объект, содержащий данные для передачи в СМС-сообщении и имеющий следующую структуру:</li>
-</ul>
+<li>Параметр data - объект, содержащий данные для передачи в СМС-сообщении и имеющий следующую структуру:
 <div class="codehilite"><pre><span></span><span class="err">data:</span> <span class="p">{</span>
             <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Текст смс-сообщения&quot;</span>     
       <span class="p">}</span>
 </pre></div>
-
-
-<p><strong>Пример</strong><br />
+</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
 <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -1159,7 +1166,9 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-</p>
+
+
+</div>
 <p><strong>Возвращает</strong>: <code>{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.</p>
 <ul>
 <li>"error" - <code>Boolean</code> - Флаг ошибки</li>
