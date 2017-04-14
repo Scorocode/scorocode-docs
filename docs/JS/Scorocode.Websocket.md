@@ -51,6 +51,7 @@
 | callback | <code>Object</code> |  | Коллбэк на событие | |
 
 !!! tip "Пример"
+    ```js
     var sc = require('scorocode');
 
     sc.Init({

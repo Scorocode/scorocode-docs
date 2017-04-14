@@ -20,10 +20,10 @@
 | logger | <code>Object</code> | Необязательный | Объект sc.Logger для режима отладки | См. пример ниже |
 
 
-**Пример**
-```js
-var Broadcast = new sc.Messenger({logger: new sc.Logger()});
-```
+!!! tip "Пример"
+    ```js
+    var Broadcast = new sc.Messenger({logger: new sc.Logger()});
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -59,62 +59,61 @@ data: {
 }
 ```
 
-**Пример**  
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения",
+        MessageKey: "messageKey_приложения",
+        WebSocketKey: "websocket key приложения"
+    });
 
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения",
-    MessageKey: "messageKey_приложения",
-    WebSocketKey: "websocket key приложения"
-});
-
-var Devices = new sc.Query("devices");
-var Broadcast = new sc.Messenger({logger: new sc.Logger()});
-Broadcast.sendPush({
-        where: Devices,
-        data: {
-            "data": {
-                "gcm": {
-                    "protocol": "http",
-                    "notification": {
-                        "body" : "great match!",
-                        "title" : "Portugal vs. Denmark",
-                        "icon" : "myicon"
-                    },
-                    "data": {
-                        "key": "value"
-                    }
-                },
-                "apns": {       // Данные для передачи iOs-устройствам, необязательно
-                    "id": "123e4567-e89b-12d3-a456-42665544000", // apns-id, необязательно
-                    "topic": "com.sideshow.Apns2",               // apns-topic, необязательно
-                    "collapseId": "my_collapse",                 // apns-collapse-id, необязательно
-                    "expiration": "2006-01-02T15:04:05Z07:00",   // apns-expiration, необязательно
-                    "priority":5,                                // apns-priority, необязательно
-                    "aps" : {
-                        "alert" : {
-                            "title" : "Portugal vs. Denmark",
+    var Devices = new sc.Query("devices");
+    var Broadcast = new sc.Messenger({logger: new sc.Logger()});
+    Broadcast.sendPush({
+            where: Devices,
+            data: {
+                "data": {
+                    "gcm": {
+                        "protocol": "http",
+                        "notification": {
                             "body" : "great match!",
-                            "action-loc-key" : "Watch"
+                            "title" : "Portugal vs. Denmark",
+                            "icon" : "myicon"
                         },
-                        "badge" : 5
+                        "data": {
+                            "key": "value"
+                        }
                     },
-                    "acme1" : "bar",
-                    "acme2" : [ "bang",  "whiz" ]
+                    "apns": {       // Данные для передачи iOs-устройствам, необязательно
+                        "id": "123e4567-e89b-12d3-a456-42665544000", // apns-id, необязательно
+                        "topic": "com.sideshow.Apns2",               // apns-topic, необязательно
+                        "collapseId": "my_collapse",                 // apns-collapse-id, необязательно
+                        "expiration": "2006-01-02T15:04:05Z07:00",   // apns-expiration, необязательно
+                        "priority":5,                                // apns-priority, необязательно
+                        "aps" : {
+                            "alert" : {
+                                "title" : "Portugal vs. Denmark",
+                                "body" : "great match!",
+                                "action-loc-key" : "Watch"
+                            },
+                            "badge" : 5
+                        },
+                        "acme1" : "bar",
+                        "acme2" : [ "bang",  "whiz" ]
+                    }
                 }
             }
-        }
-    }, true)
-    .then((success)=>{
-        console.log(success);
-    })
-    .catch((error)=>{
-        console.log(error)
-    });
-```
+        }, true)
+        .then((success)=>{
+            console.log(success);
+        })
+        .catch((error)=>{
+            console.log(error)
+        });
+    ```
 
 **Возвращает**: <code>promise.{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
 
@@ -143,42 +142,40 @@ Broadcast.sendPush({
 | options | <code>Object</code> | Параметры сообщения |
 | callbacks | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
-**Описание объекта options**
+!!! note "Описание объекта options"
+    * Параметр where - принимает в качестве значения sc.Query("user") с условиями выборки пользователей, которым будет отпралено sms.
+    * Параметр data - объект, содержащий данные для передачи в СМС-сообщении и имеющий следующую структуру:
+    ```json
+    data: {
+                "text": "Текст смс-сообщения"     
+          }
+    ```
 
-* Параметр where - принимает в качестве значения sc.Query("user") с условиями выборки пользователей, которым будет отпралено sms.
-* Параметр data - объект, содержащий данные для передачи в СМС-сообщении и имеющий следующую структуру:
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения",
+        MessageKey: "messageKey_приложения"
+    });
 
-```json
-data: {
-            "text": "Текст смс-сообщения"     
-      }
-```
-
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения",
-    MessageKey: "messageKey_приложения"
-});
-
-var findUsers = new sc.Query("users");
-var Broadcast = new sc.Messenger();
-Broadcast.sendSms({
-        where: findUsers,
-        data: {
-            "text": "Текст смс-сообщения"     
-            }
-        })
-        .then((success)=>{
-            console.log(success);
-        })
-        .catch((error)=>{
-            console.log(error)
-        });
-```
+    var findUsers = new sc.Query("users");
+    var Broadcast = new sc.Messenger();
+    Broadcast.sendSms({
+            where: findUsers,
+            data: {
+                "text": "Текст смс-сообщения"     
+                }
+            })
+            .then((success)=>{
+                console.log(success);
+            })
+            .catch((error)=>{
+                console.log(error)
+            });
+    ```
 
 **Возвращает**: <code>{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.
 
