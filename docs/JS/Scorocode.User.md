@@ -15,33 +15,32 @@
 ## new User()
 Класс для работы с пользователями приложения.
 
-**Пример**  
-
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
-
-// Создадим новый экземпляр sc.User
-var appUser = new sc.User();
-// Передадим данные, необходимые для регистрации пользователя приложения
-appUser.set("email", "user@mailserver.domain").set("password", "52c7ab3dab2c").set("username", "ChosenOne");
-// Зарегистрируем пользователя приложения
-appUser.signup()
-    // Обработчик успешного выполнения запроса
-    .then((success)=>{
-        // Выведем результат в консоль
-        console.log(success);
-    })
-    // Обработчик ошибки
-    .catch((error)=>{
-        // Выведем результат в консоль    
-        console.log(error)
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
     });
-```
+
+    // Создадим новый экземпляр sc.User
+    var appUser = new sc.User();
+    // Передадим данные, необходимые для регистрации пользователя приложения
+    appUser.set("email", "user@mailserver.domain").set("password", "52c7ab3dab2c").set("username", "ChosenOne");
+    // Зарегистрируем пользователя приложения
+    appUser.signup()
+        // Обработчик успешного выполнения запроса
+        .then((success)=>{
+            // Выведем результат в консоль
+            console.log(success);
+        })
+        // Обработчик ошибки
+        .catch((error)=>{
+            // Выведем результат в консоль    
+            console.log(error)
+        });
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -57,32 +56,32 @@ appUser.signup()
 | callback | <code>Object</code>| | Коллбэки success и error для выполняемого запроса. |  |
 
 
-**Пример**
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
-
-// Создадим новый экземпляр sc.User
-var appUser = new sc.User();
-// Передадим данные, необходимые для регистрации пользователя приложения
-appUser.set("email", "user@domain.zone").set("password", "CorrectHorseBatteryStaple").set("username", "ChosenOne");
-// Зарегистрируем пользователя приложения
-appUser.signup()
-    // Обработчик успешного выполнения запроса
-    .then((success)=>{
-        // Выведем результат в консоль
-        console.log(success);
-    })
-    // Обработчик ошибки
-    .catch((error)=>{
-        // Выведем результат в консоль    
-        console.log(error)
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
     });
-```
+
+    // Создадим новый экземпляр sc.User
+    var appUser = new sc.User();
+    // Передадим данные, необходимые для регистрации пользователя приложения
+    appUser.set("email", "user@domain.zone").set("password", "CorrectHorseBatteryStaple").set("username", "ChosenOne");
+    // Зарегистрируем пользователя приложения
+    appUser.signup()
+        // Обработчик успешного выполнения запроса
+        .then((success)=>{
+            // Выведем результат в консоль
+            console.log(success);
+        })
+        // Обработчик ошибки
+        .catch((error)=>{
+            // Выведем результат в консоль    
+            console.log(error)
+        });
+    ```
 
 **Возвращает** <code>promise.{sc.User}</code> - возвращает promise, который возвращает данные sc.User
 
@@ -103,41 +102,41 @@ appUser.signup()
 | password | <code>String</code>| Обязательный | Пароль пользователя                                | "CorrectHorseBatteryStaple" |
 | callback | <code>Object</code>|              | Коллбэки success и error для выполняемого запроса. |                             |
 
-**Пример**
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
-
-// Создадим новый экземпляр sc.User
-var appUser = new sc.User();
-// Аутентифицируем пользователя приложения, используя его email и password
-appUser.login("user@domain.zone", "CorrectHorseBatteryStaple")
-    // Обработчик успешного выполнения запроса
-    .then((loggedIn)=>{
-        console.log("Пользователь приложения аутентифицирован: \n", loggedIn);
-        // Установим время сессии - 10000 мс.
-        setTimeout( function () {
-        	// Деаутентифицируем пользователя приложения
-            appUser.logout()
-                // Обработчик успешного выполнения запроса
-                .then((loggedOut)=>{
-                    console.log("Пользователь приложения деаутентифицирован \n");
-                })
-                // Обработчик ошибки
-                .catch((errLogout)=>{
-                    console.log(errLogout)
-                });
-            },10000);
-    })
-	// Обработчик ошибки
-    .catch((errLogin)=>{
-        console.log(errLogin)
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
     });
-```
+
+    // Создадим новый экземпляр sc.User
+    var appUser = new sc.User();
+    // Аутентифицируем пользователя приложения, используя его email и password
+    appUser.login("user@domain.zone", "CorrectHorseBatteryStaple")
+        // Обработчик успешного выполнения запроса
+        .then((loggedIn)=>{
+            console.log("Пользователь приложения аутентифицирован: \n", loggedIn);
+            // Установим время сессии - 10000 мс.
+            setTimeout( function () {
+            	// Деаутентифицируем пользователя приложения
+                appUser.logout()
+                    // Обработчик успешного выполнения запроса
+                    .then((loggedOut)=>{
+                        console.log("Пользователь приложения деаутентифицирован \n");
+                    })
+                    // Обработчик ошибки
+                    .catch((errLogout)=>{
+                        console.log(errLogout)
+                    });
+                },10000);
+        })
+    	// Обработчик ошибки
+        .catch((errLogin)=>{
+            console.log(errLogin)
+        });
+    ```
 
 **Возвращает** <code>promise.{sc.User}</code> - возвращает promise, который возвращает данные sc.User
 
@@ -155,41 +154,41 @@ appUser.login("user@domain.zone", "CorrectHorseBatteryStaple")
 | --- | --- | --- | --- | --- |
 | callback | <code>Object</code>| | Коллбэки success и error для выполняемого запроса. |  |
 
-**Пример**
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения",
-});
-
-// Создадим новый экземпляр sc.User
-var appUser = new sc.User();
-// Аутентифицируем пользователя приложения, используя его email и password
-appUser.login("user@domain.zone", "CorrectHorseBatteryStaple")
-    // Обработчик успешного выполнения запроса
-    .then((loggedIn)=>{
-        console.log("Пользователь приложения аутентифицирован: \n", loggedIn);
-        // Установим время сессии - 10000 мс.
-        setTimeout( function () {
-            // Деаутентифицируем пользователя приложения
-            appUser.logout()
-                // Обработчик успешного выполнения запроса
-                .then((loggedOut)=>{
-                    console.log("Пользователь приложения деаутентифицирован \n");
-                })
-                // Обработчик ошибки
-                .catch((errLogout)=>{
-                    console.log(errLogout)
-                });
-            },10000);
-    })
-    // Обработчик ошибки
-    .catch((errLogin)=>{
-        console.log(errLogin)
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения",
     });
-```
+
+    // Создадим новый экземпляр sc.User
+    var appUser = new sc.User();
+    // Аутентифицируем пользователя приложения, используя его email и password
+    appUser.login("user@domain.zone", "CorrectHorseBatteryStaple")
+        // Обработчик успешного выполнения запроса
+        .then((loggedIn)=>{
+            console.log("Пользователь приложения аутентифицирован: \n", loggedIn);
+            // Установим время сессии - 10000 мс.
+            setTimeout( function () {
+                // Деаутентифицируем пользователя приложения
+                appUser.logout()
+                    // Обработчик успешного выполнения запроса
+                    .then((loggedOut)=>{
+                        console.log("Пользователь приложения деаутентифицирован \n");
+                    })
+                    // Обработчик ошибки
+                    .catch((errLogout)=>{
+                        console.log(errLogout)
+                    });
+                },10000);
+        })
+        // Обработчик ошибки
+        .catch((errLogin)=>{
+            console.log(errLogin)
+        });
+    ```
 
 
 

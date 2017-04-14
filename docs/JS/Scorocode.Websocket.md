@@ -26,9 +26,10 @@
 
 **Пример**
 
-```js
-var WS = new sc.WebSocket('chatroom');
-```
+!!! tip "Пример"
+    ```
+    var WS = new sc.WebSocket('chatroom');
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -49,29 +50,27 @@ var WS = new sc.WebSocket('chatroom');
 | event | <code>String</code> | Обязательный, значение из списка | Событие, на которое устанавливается коллбэк | "open", "message", "error", "close"  |
 | callback | <code>Object</code> |  | Коллбэк на событие | |
 
-**Пример** 
- 
-```js
-var sc = require('scorocode');
+!!! tip "Пример"
+    var sc = require('scorocode');
 
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения",
-    WebSocketKey: "webSocketKey_приложения"
-});
-
-var WS = new sc.WebSocket('Helloworld');
-
-WS.on("open", onOpen () {});
-WS.on("close", onClose () {});
-WS.on("error", onError () {});
-WS.on("message", onMessage(data) {
-    console.log(data)
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения",
+        WebSocketKey: "webSocketKey_приложения"
     });
 
-var data = "Wello Horld";
-WS.send(data);
-```
+    var WS = new sc.WebSocket('Helloworld');
+
+    WS.on("open", onOpen () {});
+    WS.on("close", onClose () {});
+    WS.on("error", onError () {});
+    WS.on("message", onMessage(data) {
+        console.log(data)
+        });
+
+    var data = "Wello Horld";
+    WS.send(data);
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -86,20 +85,19 @@ WS.send(data);
 | --- | --- | --- | --- | --- |
 | message | <code>String</code> | Обязательный | Сообщение, которое нужно отправить в канал | "Wello Horld" |
 
-**Пример**  
+!!! tip "Пример"
+    ```js
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения",
+        WebSocketKey: "webSocketKey_приложения"
+    });
 
-```js
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения",
-    WebSocketKey: "webSocketKey_приложения"
-});
+    var WS = new sc.WebSocket('Helloworld');
+    var data = "Wello Horld";
 
-var WS = new sc.WebSocket('Helloworld');
-var data = "Wello Horld";
-
-WS.on('open', function(){
-    WS.send(data);
-});
-```
+    WS.on('open', function(){
+        WS.send(data);
+    });
+    ```

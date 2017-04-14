@@ -25,15 +25,14 @@
 | WebSocketKey |<code>String</code> | Ключ авторизации для открытия WebSocket-соединения |
 | MasterKey | <code>String</code> | Мастер-ключ приложения|
 
-**Пример**  
+!!! tip "Пример"
+	```Javascript
+	var sc = require('scorocode');
 
-```Javascript
-var sc = require('scorocode');
-
-sc.Init({
-    ApplicationID: "a3d04e75e157b2f7ae20c2fce02f63d6",
-    JavaScriptKey: "ad6a8fe72ef7dfb9c46958aacb15196a",
-    FileKey: "2aceceec7d2e96b1487ec399f5afa101",
-    MessageKey: "e215ed465646775b42d65cca2d2f5db9"
-});
-```
+	sc.Init({
+	    ApplicationID: "a3d04e75e157b2f7ae20c2fce02f63d6",
+	    JavaScriptKey: "ad6a8fe72ef7dfb9c46958aacb15196a",
+	    FileKey: "2aceceec7d2e96b1487ec399f5afa101",
+	    MessageKey: "e215ed465646775b42d65cca2d2f5db9"
+	});
+	```

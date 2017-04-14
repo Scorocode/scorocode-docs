@@ -44,29 +44,30 @@
 | --- | --- | --- |
 | collName | <code>String</code> | Название коллекции |
 
-**Пример**
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var data = new sc.Query("items");
-// Запросим все объекты коллекции
-data.find()
-    // Обработка успешного выполнения запроса
-    .then((finded) =>{
-        //Выведем полученные данные в консоль
-        console.log(finded);
-    })
-    // Обработка ошибки 
-    .catch((err)=>{
-        console.log(err)
-    });    
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var data = new sc.Query("items");
+    // Запросим все объекты коллекции
+    data.find()
+        // Обработка успешного выполнения запроса
+        .then((finded) =>{
+            //Выведем полученные данные в консоль
+            console.log(finded);
+        })
+        // Обработка ошибки 
+        .catch((err)=>{
+            console.log(err)
+        });    
+    ```
+
 **Возвращает**: <code>[sc.Query](#sc.Query)</code> - Возвращает экземпляр sc.Query  
 **Исключение**:
 
@@ -85,31 +86,30 @@ data.find()
 | --- | --- | --- |
 | options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
-**Пример**
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
-
-// Создадим новый экземпляр запроса к коллекции items.
-var data = new sc.Query("items");
-// Запросим все объекты коллекции
-data.find()
-    // Обработка успешного выполнения запроса
-    .then((finded) =>{
-        var util = require('util');
-        //Выведем полученные данные в консоль
-        console.log(util.inspect(finded, {showHidden: false, depth: null}))
-    })
-    // Обработка ошибки 
-    .catch((err)=>{
-        console.log(err)
-    });    
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var data = new sc.Query("items");
+    // Запросим все объекты коллекции
+    data.find()
+        // Обработка успешного выполнения запроса
+        .then((finded) =>{
+            var util = require('util');
+            //Выведем полученные данные в консоль
+            console.log(util.inspect(finded, {showHidden: false, depth: null}))
+        })
+        // Обработка ошибки 
+        .catch((err)=>{
+            console.log(err)
+        });    
+    ```
 
 **Возвращает**: <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{sc.Object}]}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса. 
 
@@ -158,30 +158,30 @@ data.find()
 | --- | --- | --- |
 | options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
-**Пример**
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var data = new sc.Query("items");
-// Запросим все объекты коллекции
-data.findAll()
-    // Обработка успешного выполнения запроса
-    .then((finded) =>{
-        var util = require('util');
-        //Выведем полученные данные в консоль
-        console.log(util.inspect(finded, {showHidden: false, depth: null}))
-    })
-    // Обработка ошибки 
-    .catch((err)=>{
-        console.log(err)
-    });    
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var data = new sc.Query("items");
+    // Запросим все объекты коллекции
+    data.findAll()
+        // Обработка успешного выполнения запроса
+        .then((finded) =>{
+            var util = require('util');
+            //Выведем полученные данные в консоль
+            console.log(util.inspect(finded, {showHidden: false, depth: null}))
+        })
+        // Обработка ошибки 
+        .catch((err)=>{
+            console.log(err)
+        });    
+    ```
 
 **Возвращает**: <code>promise.{[{sc.Object}]}</code> - Возвращает promise, который возвращает массив объектов с данными документов. 
 
@@ -221,30 +221,30 @@ data.findAll()
 | --- | --- | --- |
 | options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
-**Пример**  
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+    // Создадим новый экземпляр запроса к коллекции items.
+    var countItems = new sc.Query("items");
+    // Подсчитаем количество объектов с существующим значением поля "price".
+    countItems.exists("price")
+        .count()
+            // Обработчик успешного выполнения запроса
+            .then((counted) => {
+                // Выведем результат в консоль.
+                console.log(counted) // { error: false, result: 5 }
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
-// Создадим новый экземпляр запроса к коллекции items.
-var countItems = new sc.Query("items");
-// Подсчитаем количество объектов с существующим значением поля "price".
-countItems.exists("price")
-    .count()
-        // Обработчик успешного выполнения запроса
-        .then((counted) => {
-            // Выведем результат в консоль.
-            console.log(counted) // { error: false, result: 5 }
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
 **Возвращает**: <code>promise.{error: Boolean, result: Number}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
 
 - "error" - <code>Boolean</code> - Флаг ошибки
@@ -265,41 +265,40 @@ countItems.exists("price")
 | options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
 
-**Пример**
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+    // Создадим новый экземпляр запроса к коллекции items и объект обновления.
+    var Items = new sc.Query("items");
+    var updateItems = new sc.UpdateOps("items");
 
-// Создадим новый экземпляр запроса к коллекции items и объект обновления.
-var Items = new sc.Query("items");
-var updateItems = new sc.UpdateOps("items");
-
-// Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.
-Items.notEqualTo("price", 42)
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Установим новое значение поля "price"
-            updateItems.set("price", 42);
-            // Обновим запрошенные объекты
-            return Items.update(updateItems)
-        })
-        // Обработчик успешного выполнения запроса
-        .then((updated) => {
-            // Выведем результат  в консоль.
-            console.log(updated);
-        }) 
-        // Обработчик ошибки
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.
+    Items.notEqualTo("price", 42)
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Установим новое значение поля "price"
+                updateItems.set("price", 42);
+                // Обновим запрошенные объекты
+                return Items.update(updateItems)
+            })
+            // Обработчик успешного выполнения запроса
+            .then((updated) => {
+                // Выведем результат  в консоль.
+                console.log(updated);
+            }) 
+            // Обработчик ошибки
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 **Возвращает**: `promise.{error: Boolean, result: {count: Number, docs: Array}}` - Возвращает promise, который возвращает объект с результатом выполнения запроса.
 
@@ -341,36 +340,36 @@ Items.notEqualTo("price", 42)
 | --- | --- | --- |
 | options | <code>Object</code> | Коллбэки success и error для выполняемого запроса. |
 
-**Пример**
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-Items.exists("arrayField")
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((finded) => {
-            // Удалим запрошенные объекты
-            Items.remove(finded)
-                // Обработчик успешного выполнения запроса
-                .then((result) => {
-                    // Выведем результат в консоль.
-                    console.log(result);
-                })  
-                // Обработчик ошибки
-                .catch((error) => {
+    Items.exists("arrayField")
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((finded) => {
+                // Удалим запрошенные объекты
+                Items.remove(finded)
+                    // Обработчик успешного выполнения запроса
+                    .then((result) => {
+                        // Выведем результат в консоль.
+                        console.log(result);
+                    })  
+                    // Обработчик ошибки
+                    .catch((error) => {
+                        console.log("Что-то пошло не так: \n", error)
+                    });
+            })
+            .catch((error) => {
                     console.log("Что-то пошло не так: \n", error)
-                });
-        })
-        .catch((error) => {
-                console.log("Что-то пошло не так: \n", error)
-        });
-```
+            });
+    ```
 
 **Возвращает**: <code>promise.{ecount: Number, docs: Array}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.
 
@@ -398,32 +397,32 @@ Items.exists("arrayField")
 Метод для сброса условий выборки
 
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты со значением 42 в полe "price"
-getItems.equalTo("price", 42)
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            console.log(result)
-        })
-        // Обработчик ошибки
-        .catch((error) => {
-            // Сбросим условия выборки
-            getItems.reset()
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты со значением 42 в полe "price"
+    getItems.equalTo("price", 42)
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                console.log(result)
+            })
+            // Обработчик ошибки
+            .catch((error) => {
+                // Сбросим условия выборки
+                getItems.reset()
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -439,30 +438,30 @@ getItems.equalTo("price", 42)
 | field | <code>String</code> | Имя поля, которому задается условие |
 | value | <code>String / Number / Boolean / Date / Array / Object</code> | Значение поля |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты со значением 42 в полe "price"
-getItems.equalTo("price", 42)
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            console.log(result) 
-            getItems.reset()
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты со значением 42 в полe "price"
+    getItems.equalTo("price", 42)
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                console.log(result) 
+                getItems.reset()
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -477,30 +476,30 @@ getItems.equalTo("price", 42)
 | field | <code>String</code> | Имя поля, которому задается условие |
 | value | <code>String / Number / Boolean / Date / Array / Object </code> | Значение поля |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.
-getItems.notEqualTo("price", 42)
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) // { error: false, result: 5 }
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.
+    getItems.notEqualTo("price", 42)
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) // { error: false, result: 5 }
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -515,30 +514,30 @@ getItems.notEqualTo("price", 42)
 | field | <code>String</code> | Имя поля, которому задается условие |
 | value | <code>Array</code> | Массив значений |
 
-**Пример**
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты со значением -42, 41.999 или 42 в полe "price"
-getItems.containedIn("price",[-42, 41.999, 42])
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты со значением -42, 41.999 или 42 в полe "price"
+    getItems.containedIn("price",[-42, 41.999, 42])
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 **Исключения**
 
@@ -557,29 +556,31 @@ getItems.containedIn("price",[-42, 41.999, 42])
 | field | <code>String</code> | Имя поля, которому задается условие |
 | value | <code>Array</code> | Массив значений |
 
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты, содержащие числа 4, 8, 15, 16, 23, 42 в полe "arrayField"
-getItems.containsAll("arrayField",[4, 8, 15, 16, 23, 42])
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
+
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты, содержащие числа 4, 8, 15, 16, 23, 42 в полe "arrayField"
+    getItems.containsAll("arrayField",[4, 8, 15, 16, 23, 42])
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 **Исключение**:
 
@@ -599,30 +600,30 @@ getItems.containsAll("arrayField",[4, 8, 15, 16, 23, 42])
 | field | <code>String</code> | Имя поля, которому задается условие |
 | value | <code>Array</code> | Массив значений |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты, значения поля которых не указано в массиве [41.999 или 42]
-getItems.notContainedIn("price",[41.999, 42])
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты, значения поля которых не указано в массиве [41.999 или 42]
+    getItems.notContainedIn("price",[41.999, 42])
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 **Исключения**:
 
@@ -642,30 +643,30 @@ getItems.notContainedIn("price",[41.999, 42])
 | field | <code>String</code> | Имя поля, которому задается условие |
 | value | <code>Number / Date</code> | Значение условия |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты, созданные позже 2016-05-19T15:35:16.000Z
-getItems.greaterThan("createdAt", "2016-05-19T15:35:16.000Z")
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты, созданные позже 2016-05-19T15:35:16.000Z
+    getItems.greaterThan("createdAt", "2016-05-19T15:35:16.000Z")
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -680,30 +681,30 @@ getItems.greaterThan("createdAt", "2016-05-19T15:35:16.000Z")
 | field | <code>String</code> | Имя поля, которому задается условие |
 | value | <code>Number / Date</code> | Значение условия |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты со значением больше, либо равным 41.999 
-getItems.greaterThanOrEqualTo("price", 41.999)
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты со значением больше, либо равным 41.999 
+    getItems.greaterThanOrEqualTo("price", 41.999)
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -718,30 +719,30 @@ getItems.greaterThanOrEqualTo("price", 41.999)
 | field | <code>String</code> | Имя поля, которому задается условие |
 | value | <code>Number / Date</code> | Значение условия |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты со значением поля price меньшe 41
-getItems.lessThan("price", 41)
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты со значением поля price меньшe 41
+    getItems.lessThan("price", 41)
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -756,30 +757,30 @@ getItems.lessThan("price", 41)
 | field | <code>String</code> | Имя поля, которому задается условие |
 | value | <code>Number / Date</code> | Значение условия |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты, обновленные не позже 2016-05-19T15:35:16.000Z
-getItems.lessThanOrEqualTo("updatedAt", "2016-05-19T15:35:16.000Z")
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты, обновленные не позже 2016-05-19T15:35:16.000Z
+    getItems.lessThanOrEqualTo("updatedAt", "2016-05-19T15:35:16.000Z")
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -793,28 +794,28 @@ getItems.lessThanOrEqualTo("updatedAt", "2016-05-19T15:35:16.000Z")
 | --- | --- | --- |
 | field | <code>String</code> | Имя поля, которому задается условие |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var Items = new sc.Query("items");
-// Подсчитаем количество объектов с существующим значением поля "price".
-Items.exists("price")
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result)
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var Items = new sc.Query("items");
+    // Подсчитаем количество объектов с существующим значением поля "price".
+    Items.exists("price")
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result)
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -827,28 +828,28 @@ Items.exists("price")
 | --- | --- | --- |
 | field | <code>String</code> | Имя поля, которому задается условие |
 
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
-
-// Создадим новый экземпляр запроса к коллекции items.
-var Items = new sc.Query("items");
-// Подсчитаем количество объектов с отсутствующим значением поля "price".
-Items.doesNotExist("price")
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result)
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```  
+    // Создадим новый экземпляр запроса к коллекции items.
+    var Items = new sc.Query("items");
+    // Подсчитаем количество объектов с отсутствующим значением поля "price".
+    Items.doesNotExist("price")
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result)
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```  
 
 ----------------------------------------------------------------------------------------------
 
@@ -864,30 +865,30 @@ Items.doesNotExist("price")
 | field | <code>String</code> | Имя поля, которому задается условие |
 | value | <code>String</code> | Регулярное выражение |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры.
-getItems.contains("someString","[0-9]")
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры.
+    getItems.contains("someString","[0-9]")
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 **Исключение**:
 
@@ -906,30 +907,30 @@ getItems.contains("someString","[0-9]")
 | field | <code>String</code> | Имя поля, которому задается условие |
 | value | <code>String</code> | Значение условия |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты, значение поля "name" которых начинается с "Предм"
-getItems.startsWith("name", "Предм");
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты, значение поля "name" которых начинается с "Предм"
+    getItems.startsWith("name", "Предм");
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 **Исключение**:
 
@@ -948,29 +949,30 @@ getItems.startsWith("name", "Предм");
 | field | <code>String</code> | Идентификатор поля |
 | value | <code>String</code> | Значение условия |
 
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты, значение поля "name" которых заканчивается на "чип"
-getItems.endsWith("name", "чип");
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты, значение поля "name" которых заканчивается на "чип"
+    getItems.endsWith("name", "чип");
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 **Исключение**:
 
@@ -988,31 +990,31 @@ getItems.endsWith("name", "чип");
 | --- | --- | --- |
 | limit | <code>Number</code> | Лимит выборки |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим лимит выборки - не более 1000 объектов.
-// Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
-getItems.limit(1000).contains("someString","[a-zA-Z-0-9]")
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим лимит выборки - не более 1000 объектов.
+    // Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
+    getItems.limit(1000).contains("someString","[a-zA-Z-0-9]")
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 **Исключение**:
 
@@ -1031,32 +1033,32 @@ getItems.limit(1000).contains("someString","[a-zA-Z-0-9]")
 | --- | --- | --- |
 | skip | <code>Number</code> | Количество пропускаемых объектов |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим лимит выборки - не более 1000 объектов.
-// Пропустим первые 1000 объектов и получим вторую тысячу.
-// Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
-getItems.limit(1000).skip(1000).contains("someString","[a-zA-Z-0-9]")
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим лимит выборки - не более 1000 объектов.
+    // Пропустим первые 1000 объектов и получим вторую тысячу.
+    // Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
+    getItems.limit(1000).skip(1000).contains("someString","[a-zA-Z-0-9]")
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 **Исключение**
 
@@ -1074,32 +1076,32 @@ getItems.limit(1000).skip(1000).contains("someString","[a-zA-Z-0-9]")
 | --- | --- | --- |
 | page | <code>Number</code> | Номер страницы |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим лимит выборки - не более 30 объектов.
-// Запросим вторую страницу выборки
-// Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
-getItems.limit(30).page(2).contains("someString","[a-zA-Z-0-9]")
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим лимит выборки - не более 30 объектов.
+    // Запросим вторую страницу выборки
+    // Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
+    getItems.limit(30).page(2).contains("someString","[a-zA-Z-0-9]")
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 **Исключение**:
 
@@ -1118,33 +1120,33 @@ getItems.limit(30).page(2).contains("someString","[a-zA-Z-0-9]")
 | --- | --- | --- |
 | field | <code>String</code> | Идентификатор поля |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим лимит выборки - не более 30 объектов.
-// Отсортируем объекты в порядке возрастания даты изменения
-// Запросим первую страницу выборки
-// Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
-getItems.limit(30).ascending("updatedAt").page(1).contains("someString","[a-zA-Z-0-9]")
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим лимит выборки - не более 30 объектов.
+    // Отсортируем объекты в порядке возрастания даты изменения
+    // Запросим первую страницу выборки
+    // Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
+    getItems.limit(30).ascending("updatedAt").page(1).contains("someString","[a-zA-Z-0-9]")
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -1159,33 +1161,33 @@ getItems.limit(30).ascending("updatedAt").page(1).contains("someString","[a-zA-Z
 | --- | --- | --- |
 | field | <code>String</code> | Идентификатор поля |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-// Установим лимит выборки - не более 30 объектов.
-// Отсортируем объекты в порядке убывания значения поля "price"
-// Запросим первую страницу выборки
-// Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
-getItems.limit(30).descending("price").page(1).contains("someString","[a-zA-Z-0-9]")
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    // Установим лимит выборки - не более 30 объектов.
+    // Отсортируем объекты в порядке убывания значения поля "price"
+    // Запросим первую страницу выборки
+    // Установим условие выборки - запросить все объекты, значение поля "someString" которых содержит цифры и символы латиницы.
+    getItems.limit(30).descending("price").page(1).contains("someString","[a-zA-Z-0-9]")
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -1201,38 +1203,38 @@ getItems.limit(30).descending("price").page(1).contains("someString","[a-zA-Z-0-
 | --- | --- | --- |
 | query | <code>sc.Query</code> | Запрос, который включается в дизъюнкцию |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-var range1 = new sc.Query("items");
-var range2 = new sc.Query("items");
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    var range1 = new sc.Query("items");
+    var range2 = new sc.Query("items");
 
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты, созданные не позже 2016-05-18T10:00:00.000Z
-range1.lessThanOrEqualTo("createdAt", "2016-05-19T10:00:00.000Z");
-// Установим условие выборки - запросить все объекты, созданные не раньше 2016-05-20T10:00:00.000Z
-range2.greaterThanOrEqualTo("createdAt", "2016-05-21T15:00:00.000Z");
-// Логически сложим запросы 
-getItems.or(range1).or(range2)
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты, созданные не позже 2016-05-18T10:00:00.000Z
+    range1.lessThanOrEqualTo("createdAt", "2016-05-19T10:00:00.000Z");
+    // Установим условие выборки - запросить все объекты, созданные не раньше 2016-05-20T10:00:00.000Z
+    range2.greaterThanOrEqualTo("createdAt", "2016-05-21T15:00:00.000Z");
+    // Логически сложим запросы 
+    getItems.or(range1).or(range2)
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 **Исключение**:
 
@@ -1250,38 +1252,38 @@ getItems.or(range1).or(range2)
 | --- | --- | --- |
 | query | <code>sc.Query</code> | Запрос, который включается в конъюнкцию |
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var getItems = new sc.Query("items");
-var range = new sc.Query("items");
-var price = new sc.Query("items");
+    // Создадим новый экземпляр запроса к коллекции items.
+    var getItems = new sc.Query("items");
+    var range = new sc.Query("items");
+    var price = new sc.Query("items");
 
-var getItems = new sc.Query("items");
-// Установим условие выборки - запросить все объекты, созданные не раньше 2016-05-18T10:00:00.000Z
-range.greaterThanOrEqualTo("createdAt", "2016-05-19T10:00:00.000Z");
-// Установим условие выборки - запросить все объекты, значение поля "price" которых отсутствует
-price.doesNotExists("price");
-// Логически умножим запросы 
-getItems.and(range).and(price)
-    // Выполним запрос к данным коллекции
-    .find()
-        // Обработчик успешного выполнения запроса
-        .then((result) => {
-            // Выведем результат в консоль.
-            console.log(result) 
-        })
-        .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
-        });
-```
+    var getItems = new sc.Query("items");
+    // Установим условие выборки - запросить все объекты, созданные не раньше 2016-05-18T10:00:00.000Z
+    range.greaterThanOrEqualTo("createdAt", "2016-05-19T10:00:00.000Z");
+    // Установим условие выборки - запросить все объекты, значение поля "price" которых отсутствует
+    price.doesNotExists("price");
+    // Логически умножим запросы 
+    getItems.and(range).and(price)
+        // Выполним запрос к данным коллекции
+        .find()
+            // Обработчик успешного выполнения запроса
+            .then((result) => {
+                // Выведем результат в консоль.
+                console.log(result) 
+            })
+            .catch((error) => {
+                console.log("Что-то пошло не так: \n", error)
+            });
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -1291,30 +1293,29 @@ getItems.and(range).and(price)
 Метод для указания списка возвращаемых полей. 
 
 
-**Пример**  
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-// Создадим новый экземпляр запроса к коллекции items.
-var data = new sc.Query("items");
-// Запросим все объекты коллекции и получим значение их поля "price" и "reward".
-data.select("price", "reward").find()
-    // Обработка успешного выполнения запроса
-    .then((finded) =>{
-        //Выведем полученные данные в консоль. 
-        console.log(finded);
-    })
-    // Обработка ошибки 
-    .catch((err)=>{
-        console.log(err)
-    });    
-
-```
+    // Создадим новый экземпляр запроса к коллекции items.
+    var data = new sc.Query("items");
+    // Запросим все объекты коллекции и получим значение их поля "price" и "reward".
+    data.select("price", "reward").find()
+        // Обработка успешного выполнения запроса
+        .then((finded) =>{
+            //Выведем полученные данные в консоль. 
+            console.log(finded);
+        })
+        // Обработка ошибки 
+        .catch((err)=>{
+            console.log(err)
+        });    
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -1328,25 +1329,25 @@ data.select("price", "reward").find()
 | --- | --- | --- |
 | filter | <code>Object</code> | Применяемый фильтр в формате языка запросов MongoDB |
 
+!!! tip "Пример"
+    ```js
+    // Подключим SDK и инициализируем его. 
+    var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "applicationId_приложения",
+        JavaScriptKey: "javascriptKey_приложения"
+    });
 
-```js
-// Подключим SDK и инициализируем его. 
-var sc = require('scorocode');
-sc.Init({
-    ApplicationID: "applicationId_приложения",
-    JavaScriptKey: "javascriptKey_приложения"
-});
 
-
-var query = sc.Query("items");
-query.raw("{ \"fieldString\" : \"Строка\" }");
-query.find()
-    .then((finded) =>{
-        //Выведем полученные данные в консоль. 
-        console.log(finded);
-    })
-    // Обработка ошибки 
-    .catch((err)=>{
-        console.log(err)
-    });    
-```
+    var query = sc.Query("items");
+    query.raw("{ \"fieldString\" : \"Строка\" }");
+    query.find()
+        .then((finded) =>{
+            //Выведем полученные данные в консоль. 
+            console.log(finded);
+        })
+        // Обработка ошибки 
+        .catch((err)=>{
+            console.log(err)
+        });    
+    ```

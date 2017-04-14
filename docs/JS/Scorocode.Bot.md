@@ -20,26 +20,25 @@
 | --- | --- | --- |
 | botId | <code>String</code> | Telegram id бота, полученный от `@BotFather` |
 
-**Пример**
+!!! tip "Пример"
+    ```js
+    var sc = require('scorocode');
 
-```js
-var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
+        JavaScriptKey: "xxx", // <- заменить xxx на ключ javascript приложения
+        MasterKey: "xxx" // <- заменить xxx на ключ masterKey приложения
+    });
 
-sc.Init({
-    ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
-    JavaScriptKey: "xxx", // <- заменить xxx на ключ javascript приложения
-    MasterKey: "xxx" // <- заменить xxx на ключ masterKey приложения
-});
+    var bot = new sc.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
 
-var bot = new sc.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
-
-var data = {
-    "method": "methodname", //название метода Telegram bot API 
-    "method_params": {
-        // параметры метода Telegram Bot API
-    }};
-bot.send(data)
-```
+    var data = {
+        "method": "methodname", //название метода Telegram bot API 
+        "method_params": {
+            // параметры метода Telegram Bot API
+        }};
+    bot.send(data)
+    ```
 
 --------------------------------------------------------------------------
 
@@ -60,24 +59,23 @@ bot.send(data)
 | method | <code>String</code> | Название метода Telegram bot API  |
 | method_params | <code>Object</code> | Объект с параметрами для указанного метода |
 
-**Пример**
+!!! tip "Пример"
+    ```js
+    var sc = require('scorocode');
 
-```js
-var sc = require('scorocode');
+    sc.Init({
+        ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
+        JavaScriptKey: "xxx", // <- заменить xxx на ключ javascript приложения
+        MasterKey: "xxx" // <- заменить xxx на ключ masterKey приложения
+    });
 
-sc.Init({
-    ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
-    JavaScriptKey: "xxx", // <- заменить xxx на ключ javascript приложения
-    MasterKey: "xxx" // <- заменить xxx на ключ masterKey приложения
-});
+    var bot = new sc.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
 
-var bot = new sc.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
+    var data = {
+        "method": "methodname", //название метода Telegram bot API 
+        "method_params": {
+            // параметры метода Telegram Bot API
+        }};
 
-var data = {
-    "method": "methodname", //название метода Telegram bot API 
-    "method_params": {
-        // параметры метода Telegram Bot API
-    }};
-
-bot.send(data);
-```
+    bot.send(data);
+    ```
