@@ -679,25 +679,19 @@
     SCFolder
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#createfolderpath-callback" title="createFolder(path, callback)" class="md-nav__link">
     createFolder(path, callback)
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#deletefolderpath-callback" title="deleteFolder(path, callback)" class="md-nav__link">
     deleteFolder(path, callback)
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -954,25 +948,19 @@
     SCFolder
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#createfolderpath-callback" title="createFolder(path, callback)" class="md-nav__link">
     createFolder(path, callback)
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#deletefolderpath-callback" title="deleteFolder(path, callback)" class="md-nav__link">
     deleteFolder(path, callback)
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1003,7 +991,7 @@
 </ul>
 <hr />
 <p><a name="SCFolder+createFolder"></a></p>
-<h3 id="createfolderpath-callback">createFolder(path, callback)</h3>
+<h2 id="createfolderpath-callback">createFolder(path, callback)</h2>
 <p>Создание новой директории</p>
 <table>
 <thead>
@@ -1032,16 +1020,19 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">folders</span> <span class="p">=</span> <span class="n">SCFolder</span><span class="p">()</span>
 <span class="n">folders</span><span class="p">.</span><span class="n">createFolder</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="s">&quot;/newFolder&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
     <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
-</p>
+
+
+</div>
 <hr />
 <p><a name="SCFolder+deleteFolder"></a></p>
-<h3 id="deletefolderpath-callback">deleteFolder(path, callback)</h3>
+<h2 id="deletefolderpath-callback">deleteFolder(path, callback)</h2>
 <p>Удаление папки со всем содержимым</p>
 <table>
 <thead>
@@ -1070,13 +1061,16 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">folders</span> <span class="p">=</span> <span class="n">SCFolder</span><span class="p">()</span>
 <span class="n">folders</span><span class="p">.</span><span class="n">deleteFolder</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="s">&quot;/newFolder&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
     <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
-</p>
+
+
+</div>
               
             </article>
           </div>

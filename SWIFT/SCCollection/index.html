@@ -1167,10 +1167,13 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;Books&quot;</span><span class="p">)</span>
 </pre></div>
-</p>
+
+
+</div>
 <hr />
 <p><a name="SCCollection+create"></a></p>
 <h3 id="createcallback">.create(callback)</h3>
@@ -1195,7 +1198,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> <br />
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Инициализуем коллекцию</span>
 <span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;Books&quot;</span><span class="p">)</span>
 <span class="c1">// Дадим права на удаление записей коллекции двум пользователям с id = axCBar6eJI и 2lk8PTaVjH</span>
@@ -1207,7 +1211,9 @@
     <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
-</p>
+
+
+</div>
 <hr />
 <p><a name="SCCollection+save"></a></p>
 <h3 id="savecallback">.save(callback)</h3>
@@ -1232,7 +1238,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> <br />
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
 <span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;books&quot;</span><span class="p">)</span>
 <span class="c1">// Загрузим параметры существующей коллекции</span>
@@ -1249,7 +1256,9 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-</p>
+
+
+</div>
 <hr />
 <p><a name="SCCollection+delete"></a></p>
 <h3 id="deletecallback">.delete(callback)</h3>
@@ -1274,7 +1283,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> <br />
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
 <span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;books&quot;</span><span class="p">)</span>
 <span class="c1">// Удалим коллекцию</span>
@@ -1282,7 +1292,9 @@
     <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="p">})</span>
 </pre></div>
-</p>
+
+
+</div>
 <hr />
 <p><a name="SCCollection+clone"></a></p>
 <h3 id="clonename-callback">.clone(name, callback)</h3>
@@ -1314,7 +1326,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> <br />
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
 <span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;books&quot;</span><span class="p">)</span>
 <span class="c1">// Зададим настройки коллекции</span>
@@ -1330,7 +1343,9 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-</p>
+
+
+</div>
 <hr />
 <p><a name="SCCollection+load"></a></p>
 <h3 id="loadcallback">.load(callback)</h3>
@@ -1355,7 +1370,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> <br />
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
 <span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;books&quot;</span><span class="p">)</span>
 <span class="c1">// Загрузим настройки и триггеры коллекции</span>
@@ -1366,7 +1382,9 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-</p>
+
+
+</div>
 <hr />
 <p><a name="SCCollection+createIndex"></a></p>
 <h3 id="createindexindexnamefieldnameordercallback">.createIndex(indexName,fieldName,order,callback)</h3>
@@ -1412,7 +1430,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> <br />
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
 <span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
 <span class="c1">// Создадим индекс с именем &quot;UserNameIndex&quot; для поля &quot;name&quot; с сортировкой по убыванию</span>
@@ -1421,7 +1440,9 @@
     <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
-</p>
+
+
+</div>
 <hr />
 <p><a name="SCCollection+deleteIndex"></a></p>
 <h3 id="deleteindexindexnamecallback">.deleteIndex(indexName,callback)</h3>
@@ -1453,7 +1474,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> <br />
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
 <span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
 <span class="c1">// Удалим индекс &quot;UserNameIndex&quot;</span>
@@ -1462,7 +1484,9 @@
     <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
-</p>
+
+
+</div>
 <hr />
 <p><a name="SCCollection+createField"></a></p>
 <h3 id="createfieldfieldnamefieldtypetargetcollectionnamecallback">.createField(fieldName,fieldType,targetCollectionName,callback)</h3>
@@ -1508,7 +1532,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> <br />
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
 <span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
 <span class="c1">// добавим пользователям поле &quot;town&quot; и свяжем это поле с коллекцией &quot;towns&quot;</span>
@@ -1516,7 +1541,9 @@
     <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
-</p>
+
+
+</div>
 <hr />
 <p><a name="SCCollection+deleteField"></a></p>
 <h3 id="deletefieldfieldnamecallback">.deleteField(fieldName,callback)</h3>
@@ -1548,7 +1575,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> <br />
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
 <span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
 <span class="c1">// Удалим поле &quot;town&quot;</span>
@@ -1556,7 +1584,9 @@
     <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
-</p>
+
+
+</div>
 <hr />
 <p><a name="SCCollection+saveTriggers"></a></p>
 <h3 id="savetriggerscallback">.saveTriggers(callback)</h3>
@@ -1581,7 +1611,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> <br />
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
 <span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
 <span class="c1">// Загрузим триггеры коллекции</span>
@@ -1600,7 +1631,9 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-</p>
+
+
+</div>
               
             </article>
           </div>

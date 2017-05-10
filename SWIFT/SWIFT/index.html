@@ -958,14 +958,15 @@
                 <h1 id="scorocode-sdk-swift">scorocode-SDK-swift</h1>
 <p>SDK предоставляет доступ к платформе Scorocode для построения приложений, основанных на swift.
 Подробности на нашем сайте: https://scorocode.ru</p>
-<h3 id="_1">Установка</h3>
+<h2 id="_1">Установка</h2>
 <p>Подключение библиотеки к проекту:</p>
-<p>1) Установить <a href="https://cocoapods.org">CocoaPods</a>
+<p>1) Установить <a href="https://cocoapods.org">CocoaPods</a></p>
 <div class="codehilite"><pre><span></span>sudo gem install cocoapods
 </pre></div>
 
-2) Создать новый проект в xcode, например "MyProject" (Имя проекта не должно совпадать со строкой "Scorocode")</p>
-<p>3) Создать в корне проекта файл с именем "Podfile" с текстом:
+
+<p>2) Создать новый проект в xcode, например "MyProject" (Имя проекта не должно совпадать со строкой "Scorocode")</p>
+<p>3) Создать в корне проекта файл с именем "Podfile" с текстом:</p>
 <div class="codehilite"><pre><span></span>source &#39;https://github.com/CocoaPods/Specs.git&#39;
 platform :ios, &#39;8.0&#39;
 use_frameworks!
@@ -975,12 +976,14 @@ target &#39;MyProject&#39; do
 end
 </pre></div>
 
-4) Закрыть проект в xcode, запустить в консоли:
+
+<p>4) Закрыть проект в xcode, запустить в консоли:</p>
 <div class="codehilite"><pre><span></span>pod install
 </pre></div>
 
-5) В папке с проектом появится файл MyProject.xcworkspace, открыть его в xcode.</p>
-<p>6) В AppDelegate.swift в методе didFinishLaunchingWithOptions указать значения параметров инициализации API из личного кабинета. Пример:
+
+<p>5) В папке с проектом появится файл MyProject.xcworkspace, открыть его в xcode.</p>
+<p>6) В AppDelegate.swift в методе didFinishLaunchingWithOptions указать значения параметров инициализации API из личного кабинета. Пример:</p>
 <div class="codehilite"><pre><span></span><span class="c1">//scorocode init</span>
 <span class="kd">let</span> <span class="nv">applicationId</span> <span class="p">=</span> <span class="s">&quot;98bc4bacb5edeb727cfb8fae25f71b59&quot;</span>
 <span class="kd">let</span> <span class="nv">clientId</span> <span class="p">=</span> <span class="s">&quot;39169707deb69fc06145c995aa4cdefe&quot;</span>
@@ -990,7 +993,6 @@ end
 
 <span class="n">SC</span><span class="p">.</span><span class="n">initWith</span><span class="p">(</span><span class="n">applicationId</span><span class="p">:</span> <span class="n">applicationId</span><span class="p">,</span> <span class="n">clientId</span><span class="p">:</span> <span class="n">clientId</span><span class="p">,</span> <span class="n">accessKey</span><span class="p">:</span> <span class="n">accessKey</span><span class="p">,</span> <span class="n">fileKey</span><span class="p">:</span> <span class="n">fileKey</span><span class="p">,</span> <span class="n">messageKey</span><span class="p">:</span> <span class="n">messageKey</span><span class="p">)</span>
 </pre></div>
-</p>
               
             </article>
           </div>
