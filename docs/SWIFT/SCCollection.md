@@ -8,7 +8,7 @@
     * [init(id, name)](#SCCollection+init)
     * [.create(callback)](#SCCollection+create)
     * [.save(callback)](#SCCollection+save)
-    * [.delete(callback)](#SCCollection+delete)]
+    * [.delete(callback)](#SCCollection+delete)
     * [.clone(name,callback)](#SCCollection+clone)
     * [.load(callback)](#SCCollection+load)
     * [.createIndex(indexName,fieldName,order,callback)](#SCCollection+createIndex)

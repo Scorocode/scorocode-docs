@@ -36,7 +36,7 @@
     var update = SCUpdate()
     let currentDate = SCUpdateOperator.currentDate("fieldName", typeSpec: "timestamp")
     update.addOperator(currentDate)
-    ``````
+    ```
 
 ----------------------------------------------------------------------------------------------
 
