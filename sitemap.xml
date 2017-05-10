@@ -244,6 +244,24 @@
     </url>
         
     <url>
+     <loc>/SWIFT/SCBot/</loc>
+     <lastmod>2017-05-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/SWIFT/SCCollection/</loc>
+     <lastmod>2017-05-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/SWIFT/SCFolder/</loc>
+     <lastmod>2017-05-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/SWIFT/WebSocket/</loc>
      <lastmod>2017-05-10</lastmod>
      <changefreq>daily</changefreq>
