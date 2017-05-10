@@ -32,9 +32,9 @@ end
 pod install
 ```
 
-5) В папке с проектом появится файл MyProject.xcworkspace, открыть его в xcode.
+5) В папке с проектом появится файл `MyProject.xcworkspace`, открыть его в xcode.
 
-6) В AppDelegate.swift в методе didFinishLaunchingWithOptions указать значения параметров инициализации API из личного кабинета. Пример:
+6) В `AppDelegate.swift` в методе `didFinishLaunchingWithOptions` указать значения параметров инициализации API из личного кабинета. Пример:
 
 ```SWIFT
 //scorocode init

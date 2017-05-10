@@ -60,7 +60,7 @@
 
 <a name="SCUpdate+push"></a>
 
-### .push(name: String, _ value: SCValue))
+### .push(name: String, _ value: SCValue)
 Метод для добавления элемента в массив.
 
 
@@ -81,7 +81,7 @@
 
 <a name="SCUpdate+pushEach"></a>
 
-### .pushEach(name: String, _ value: SCValue))
+### .pushEach(name: String, _ value: SCValue)
 Метод для добавления нескольких элементов в массив.
 
 
