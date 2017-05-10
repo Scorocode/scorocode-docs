@@ -16,11 +16,11 @@
 | wsKey | <code>String</code> | Обязательное | Ключ websocketKey вашего приложения | 563452bbc611d8106d5da767365897de |
 | chanName | <code>String</code> | Обязательное | Произвольное имя канала | chatroom |
 
-Пример:
-```
-    var socket = WebSocket(url: NSURL(string: "wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom")!)
-    socket.connect()
-```
+!!! tip "Пример"
+    ```
+        var socket = WebSocket(url: NSURL(string: "wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom")!)
+        socket.connect()
+    ```
 
 ### Подключение библиотеки Starscream
 
@@ -36,11 +36,13 @@ github "daltoniam/Starscream"
 ```
 
 Закрыть проект в xcode, запустить в консоли:
+
 ```
 carthage update --platform iOS,Mac
 ```
 
 Открыть заново проект в Xcode. В Target -> General -> Linked Frameworks and Libraries из <Каталог проекта> -> Carthage -> Build -> iOS перетащить 1 файл:
+
 ```
 Starscream.framework
 ```
@@ -48,11 +50,13 @@ Starscream.framework
 В Target -> Build Phases добавить New Run Script Phase:
 
 Скрипт:
+
 ```
 /usr/local/bin/carthage copy-frameworks
 ```
 
 и Input File:
+
 ```
 $(SRCROOT)/Carthage/Build/iOS/Starscream.framework
 ```
@@ -61,52 +65,53 @@ $(SRCROOT)/Carthage/Build/iOS/Starscream.framework
 
 **Подробную информацию о способах испольования библиотеки Starscream вы сможете найти в Readme.md репозитория [daltoniam/Starscream](https://github.com/daltoniam/Starscream).**
 
-```
-import UIKit
-import Starscream
+!!! tip "Пример"
+    ```
+    import UIKit
+    import Starscream
 
-class ViewController: UIViewController {
-    
-    var socket: WebSocket!
-
-    @IBOutlet private weak var textField: UITextField!
-    @IBOutlet private weak var textView: UITextView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    @IBAction private func connectTapped() {
+    class ViewController: UIViewController {
         
-        socket = WebSocket(url: NSURL(string: "wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom")!)
-        socket.connect()
+        var socket: WebSocket!
+
+        @IBOutlet private weak var textField: UITextField!
+        @IBOutlet private weak var textView: UITextView!
         
-        socket.onConnect = {
-            print("connected")
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            // Do any additional setup after loading the view, typically from a nib.
+        }
+
+        @IBAction private func connectTapped() {
+            
+            socket = WebSocket(url: NSURL(string: "wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom")!)
+            socket.connect()
+            
+            socket.onConnect = {
+                print("connected")
+            }
+            
+            socket.onText = {
+                text in
+                print(text)
+                self.textView.text = self.textView.text + "\n\(text)"
+            }
+            
+            socket.onData = {
+                data in
+                print(data)
+            }
+            
         }
         
-        socket.onText = {
-            text in
-            print(text)
-            self.textView.text = self.textView.text + "\n\(text)"
+        @IBAction private func disconnectTapped() {
+            
         }
         
-        socket.onData = {
-            data in
-            print(data)
+        @IBAction private func sendTapped() {
+            socket.writeString(textField.text!)
         }
         
-    }
-    
-    @IBAction private func disconnectTapped() {
-        
-    }
-    
-    @IBAction private func sendTapped() {
-        socket.writeString(textField.text!)
-    }
-    
 
-}
-```
+    }
+    ```
