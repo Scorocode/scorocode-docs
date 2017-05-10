@@ -604,18 +604,12 @@
     .getBotsList(callback)
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#getfoldersandscriptslistpath-callback" title="getFoldersAndScriptsList(path, callback)" class="md-nav__link">
-    getFoldersAndScriptsList(path, callback)
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#getfoldersandscriptslistpath-callback" title=".getFoldersAndScriptsList(path, callback)" class="md-nav__link">
+    .getFoldersAndScriptsList(path, callback)
+  </a>
   
 </li>
       
@@ -1017,18 +1011,12 @@
     .getBotsList(callback)
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#getfoldersandscriptslistpath-callback" title="getFoldersAndScriptsList(path, callback)" class="md-nav__link">
-    getFoldersAndScriptsList(path, callback)
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#getfoldersandscriptslistpath-callback" title=".getFoldersAndScriptsList(path, callback)" class="md-nav__link">
+    .getFoldersAndScriptsList(path, callback)
+  </a>
   
 </li>
       
@@ -1061,6 +1049,7 @@
 </ul>
 </li>
 </ul>
+<hr />
 <p><a name="Scorocode+initWith"></a></p>
 <h2 id="initwithapplicationid-clientid-accesskey-filekey-messagekey">.initWith(applicationId, clientId, accessKey, fileKey, messageKey)</h2>
 <p>Инициализация SDK. Значения параметров определяются в AppDelegate.swift</p>
@@ -1113,7 +1102,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <p>В AppDelegate.swift, в метод didFinishLaunchingWithOptions, указать значения параметров инициализации:</p>
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">applicationId</span> <span class="p">=</span> <span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span>
 <span class="kd">let</span> <span class="nv">clientId</span> <span class="p">=</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span>
@@ -1128,6 +1118,8 @@
 </pre></div>
 
 
+</div>
+<hr />
 <p><a name="Scorocode+getStat"></a></p>
 <h2 id="getstatcallback">.getStat(callback)</h2>
 <p>Получение статистики по приложению.</p>
@@ -1152,7 +1144,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">getStat</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
     <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -1160,7 +1153,9 @@
 </pre></div>
 
 
+</div>
 <p><a name="Scorocode+getInfo"></a></p>
+<hr />
 <h2 id="getinfocallback">.getInfo(callback)</h2>
 <p>Получение полной информации о приложении</p>
 <p>Параметры</p>
@@ -1184,7 +1179,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">getInfo</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">succes</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
     <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -1192,6 +1188,8 @@
 </pre></div>
 
 
+</div>
+<hr />
 <p><a name="Scorocode+getCollections"></a></p>
 <h2 id="getcollectionscallback">.getCollections(callback)</h2>
 <p>Получение списка коллекций приложения и их настроек</p>
@@ -1216,7 +1214,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>  </p>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">getCollections</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">collectionsArray</span> <span class="k">in</span>
     <span class="k">for</span> <span class="n">collection</span> <span class="k">in</span> <span class="n">collectionsArray</span> <span class="p">{</span>
@@ -1226,6 +1225,7 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="Scorocode+getBotsList"></a></p>
 <h2 id="getbotslistcallback">.getBotsList(callback)</h2>
@@ -1250,7 +1250,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong> <br />
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">getBotsList</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">botsList</span><span class="p">)</span> <span class="k">in</span>
     <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span> <span class="p">{</span>
         <span class="k">for</span> <span class="n">bot</span> <span class="k">in</span> <span class="n">botsList</span> <span class="p">{</span>
@@ -1259,10 +1260,12 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-</p>
+
+
+</div>
 <hr />
 <p><a name="Scorocode+getFoldersAndScriptsList"></a></p>
-<h3 id="getfoldersandscriptslistpath-callback">getFoldersAndScriptsList(path, callback)</h3>
+<h2 id="getfoldersandscriptslistpath-callback">.getFoldersAndScriptsList(path, callback)</h2>
 <p>Получение списка папок и скриптов директории</p>
 <table>
 <thead>
@@ -1291,13 +1294,16 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">folders</span> <span class="p">=</span> <span class="n">SCFolder</span><span class="p">()</span>
 <span class="n">folders</span><span class="p">.</span><span class="n">getFoldersAndScriptsList</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="s">&quot;/&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
     <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
-</p>
+
+
+</div>
               
             </article>
           </div>
