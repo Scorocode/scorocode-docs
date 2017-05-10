@@ -45,7 +45,7 @@
     * [.logout(callback)](#SCScript+logout)
     * [.signup(username, email, password, callback)](#SCScript+signup)
     * [.signup(callback)](#SCScript+signup2)
-* [.Query](#SCQuery)
+* [SCQuery](#SCQuery)
     * [init(collection)](#SCQuery+init)
     * [.find(callback -> Void)](#SCQuery+find) 
     * [.count(callback -> Void)](#SCQuery+count)
