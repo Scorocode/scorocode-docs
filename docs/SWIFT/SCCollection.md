@@ -28,10 +28,10 @@
 | id    | <code>String</code> | Необязательный | id коллекции          | "98bc4bacb5edea727cfb8fae25f71b59"          | 
 | name | <code>String</code>  | Обязательный  | Имя коллекции        | "Books" |
 
-**Пример**
-```SWIFT
-let collection = SCCollection(name: "Books")
-```
+!!! tip "Пример"
+    ```SWIFT
+    let collection = SCCollection(name: "Books")
+    ```
 
 ----------------------------------------------------------------------------------------------
 <a name="SCCollection+create"></a>
@@ -42,19 +42,19 @@ let collection = SCCollection(name: "Books")
 | --- | --- | --- | --- | --- |
 | callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |         | Коллбэк для выполняемого запроса.|                             |
 
-**Пример**   
-```SWIFT
-// Инициализуем коллекцию
-let collection = SCCollection(name: "Books")
-// Дадим права на удаление записей коллекции двум пользователям с id = axCBar6eJI и 2lk8PTaVjH
-collection.useDocsACL = true
-collection.acl.remove = SCArray(stringArray: ["axCBar6eJI", "2lk8PTaVjH"])
+!!! tip "Пример"
+    ```SWIFT
+    // Инициализуем коллекцию
+    let collection = SCCollection(name: "Books")
+    // Дадим права на удаление записей коллекции двум пользователям с id = axCBar6eJI и 2lk8PTaVjH
+    collection.useDocsACL = true
+    collection.acl.remove = SCArray(stringArray: ["axCBar6eJI", "2lk8PTaVjH"])
 
-collection.create() {
-    (success, error, result) in
-    print(result)
-}
-```
+    collection.create() {
+        (success, error, result) in
+        print(result)
+    }
+    ```
 
 ----------------------------------------------------------------------------------------------
 <a name="SCCollection+save"></a>
@@ -65,24 +65,25 @@ collection.create() {
 | --- | --- | --- | --- | --- |
 | callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |         | Коллбэк для выполняемого запроса.|                             |
 
-**Пример**   
-```SWIFT
-// Инициализируем коллекцию
-let collection = SCCollection(name: "books")
-// Загрузим параметры существующей коллекции
-collection.load {
-    (success, error, result) in
-    if error == nil {
-        // дополним список пользователей, которым разрешено удалять записи коллекции, пользователем с id = snvrEKS1hs
-        collection.acl.remove.append("snvrEKS1hs")
-        // сохраним параметры коллекции
-        collection.save {
-            (success, error, result) in
-            print(result)
+!!! tip "Пример"
+    ```SWIFT
+    // Инициализируем коллекцию
+    let collection = SCCollection(name: "books")
+    // Загрузим параметры существующей коллекции
+    collection.load {
+        (success, error, result) in
+        if error == nil {
+            // дополним список пользователей, которым разрешено удалять записи коллекции, пользователем с id = snvrEKS1hs
+            collection.acl.remove.append("snvrEKS1hs")
+            // сохраним параметры коллекции
+            collection.save {
+                (success, error, result) in
+                print(result)
+            }
         }
     }
-}
-```
+    ```
+
 ----------------------------------------------------------------------------------------------
 <a name="SCCollection+delete"></a>
 ### .delete(callback)
@@ -92,15 +93,15 @@ collection.load {
 | --- | --- | --- | --- | --- |
 | callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |         | Коллбэк для выполняемого запроса.|                             |
 
-**Пример**   
-```SWIFT
-// Инициализируем коллекцию
-let collection = SCCollection(name: "books")
-// Удалим коллекцию
-collection.delete(callback: { (success, error, result) in
-    print(result)
-})
-```
+!!! tip "Пример"
+    ```SWIFT
+    // Инициализируем коллекцию
+    let collection = SCCollection(name: "books")
+    // Удалим коллекцию
+    collection.delete(callback: { (success, error, result) in
+        print(result)
+    })
+    ```
 
 ----------------------------------------------------------------------------------------------
 <a name="SCCollection+clone"></a>
@@ -112,23 +113,23 @@ collection.delete(callback: { (success, error, result) in
 | name | <code>String</code> | Обязательный | Имя новой коллекции | "BooksCopy"                            |
 | callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |         | Коллбэк для выполняемого запроса.|                             |
 
-**Пример**   
-```SWIFT
-// Инициализируем коллекцию
-let collection = SCCollection(name: "books")
-// Зададим настройки коллекции
-collection.acl.remove = ["3TB1tL5v7m", "HCP8lrIAsV"]
-collection.useDocsACL = true
-// Создадим коллекцию
-collection.create {(success, error, result) in
-    if error == nil {
-        // Если коллекция создалась успешно, то создадим копию коллекции с новым именем "books_copy"
-        collection.clone(name: "books_copy", callback: { (success, error, result) in
-            print(result)
-        })
+!!! tip "Пример"
+    ```SWIFT
+    // Инициализируем коллекцию
+    let collection = SCCollection(name: "books")
+    // Зададим настройки коллекции
+    collection.acl.remove = ["3TB1tL5v7m", "HCP8lrIAsV"]
+    collection.useDocsACL = true
+    // Создадим коллекцию
+    collection.create {(success, error, result) in
+        if error == nil {
+            // Если коллекция создалась успешно, то создадим копию коллекции с новым именем "books_copy"
+            collection.clone(name: "books_copy", callback: { (success, error, result) in
+                print(result)
+            })
+        }
     }
-}
-```
+    ```
 
 ----------------------------------------------------------------------------------------------
 <a name="SCCollection+load"></a>
@@ -139,18 +140,18 @@ collection.create {(success, error, result) in
 | --- | --- | --- | --- | --- |
 | callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |         | Коллбэк для выполняемого запроса.|                             |
 
-**Пример**   
-```SWIFT
-// Инициализируем коллекцию
-let collection = SCCollection(name: "books")
-// Загрузим настройки и триггеры коллекции
-collection.load { (success, error, result) in
-    if error == nil {
-        print(collection.acl.remove)
-        print(collection.triggers.afterUpdate.code)
+!!! tip "Пример"
+    ```SWIFT
+    // Инициализируем коллекцию
+    let collection = SCCollection(name: "books")
+    // Загрузим настройки и триггеры коллекции
+    collection.load { (success, error, result) in
+        if error == nil {
+            print(collection.acl.remove)
+            print(collection.triggers.afterUpdate.code)
+        }
     }
-}
-```
+    ```
 
 ----------------------------------------------------------------------------------------------
 <a name="SCCollection+createIndex"></a>
@@ -164,16 +165,16 @@ collection.load { (success, error, result) in
 | order | <code>IndexSortOrder</code> | Обязательный | Сортировка | .descending |
 | callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |         | Коллбэк для выполняемого запроса.|                             |
 
-**Пример**   
-```SWIFT
-// Инициализируем коллекцию
-let collection = SCCollection(name: "users")
-// Создадим индекс с именем "UserNameIndex" для поля "name" с сортировкой по убыванию
-collection.createIndex(indexName: "UserNameIndex", fieldName: "name", order: .descending) {
-    (success, error, result) in
-    print(result)
-}
-```
+!!! tip "Пример"
+    ```SWIFT
+    // Инициализируем коллекцию
+    let collection = SCCollection(name: "users")
+    // Создадим индекс с именем "UserNameIndex" для поля "name" с сортировкой по убыванию
+    collection.createIndex(indexName: "UserNameIndex", fieldName: "name", order: .descending) {
+        (success, error, result) in
+        print(result)
+    }
+    ```
 
 ----------------------------------------------------------------------------------------------
 <a name="SCCollection+deleteIndex"></a>
@@ -185,16 +186,16 @@ collection.createIndex(indexName: "UserNameIndex", fieldName: "name", order: .de
 | indexName | <code>String</code> | Обязательный | Название индекса | "UserNameIndex" |
 | callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |         | Коллбэк для выполняемого запроса.|                             |
 
-**Пример**   
-```SWIFT
-// Инициализируем коллекцию
-let collection = SCCollection(name: "users")
-// Удалим индекс "UserNameIndex"
-collection.deleteIndex(indexName: "UserNameIndex") {
-    (succes, error, result) in
-    print(result)
-}
-```
+!!! tip "Пример"
+    ```SWIFT
+    // Инициализируем коллекцию
+    let collection = SCCollection(name: "users")
+    // Удалим индекс "UserNameIndex"
+    collection.deleteIndex(indexName: "UserNameIndex") {
+        (succes, error, result) in
+        print(result)
+    }
+    ```
 
 ----------------------------------------------------------------------------------------------
 <a name="SCCollection+createField"></a>
@@ -208,15 +209,15 @@ collection.deleteIndex(indexName: "UserNameIndex") {
 | targetCollectionName | <code>String</code> | Обязательный для полей с типом .Pointer или .Relation | Имя целевой коллекции | "towns" |
 | callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |         | Коллбэк для выполняемого запроса.|                             |
 
-**Пример**   
-```SWIFT
-// Инициализируем коллекцию
-let collection = SCCollection(name: "users")
-// добавим пользователям поле "town" и свяжем это поле с коллекцией "towns"
-collection.createField(fieldName: "town", fieldType: .Pointer, targetCollectionName: "towns") { (success, error, result) in
-    print(result)
-}
-```
+!!! tip "Пример"
+    ```SWIFT
+    // Инициализируем коллекцию
+    let collection = SCCollection(name: "users")
+    // добавим пользователям поле "town" и свяжем это поле с коллекцией "towns"
+    collection.createField(fieldName: "town", fieldType: .Pointer, targetCollectionName: "towns") { (success, error, result) in
+        print(result)
+    }
+    ```
 
 ----------------------------------------------------------------------------------------------
 <a name="SCCollection+deleteField"></a>
@@ -228,15 +229,15 @@ collection.createField(fieldName: "town", fieldType: .Pointer, targetCollectionN
 | fieldName | <code>String</code> | Обязательный | Имя поля | "town" |
 | callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |         | Коллбэк для выполняемого запроса.|                             |
 
-**Пример**   
-```SWIFT
-// Инициализируем коллекцию
-let collection = SCCollection(name: "users")
-// Удалим поле "town"
-collection.deleteField(fieldName: "town") { (success, error, result) in
-    print(result)
-}
-```
+!!! tip "Пример"
+    ```SWIFT
+    // Инициализируем коллекцию
+    let collection = SCCollection(name: "users")
+    // Удалим поле "town"
+    collection.deleteField(fieldName: "town") { (success, error, result) in
+        print(result)
+    }
+    ```
 
 ----------------------------------------------------------------------------------------------
 <a name="SCCollection+saveTriggers"></a>
@@ -247,24 +248,23 @@ collection.deleteField(fieldName: "town") { (success, error, result) in
 | --- | --- | --- | --- | --- |
 | callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |         | Коллбэк для выполняемого запроса.|                             |
 
-**Пример**   
-```SWIFT
-// Инициализируем коллекцию
-let collection = SCCollection(name: "users")
-// Загрузим триггеры коллекции
-collection.load { (success, error, result) in
-    if error == nil {
-        // если все ок, то изменим некоторые триггеры
-        collection.triggers.afterUpdate.isActive = true
-        collection.triggers.afterUpdate.code = "console.log(\"after update trigger\")"
-        
-        let isActive = collection.triggers.beforeRemove.isActive
-        collection.triggers.beforeRemove.isActive = !isActive
-        // запишем изменения
-        collection.saveTriggers(callback: { (success, error, result) in
-            print(result)
-        })
+!!! tip "Пример"
+    ```SWIFT
+    // Инициализируем коллекцию
+    let collection = SCCollection(name: "users")
+    // Загрузим триггеры коллекции
+    collection.load { (success, error, result) in
+        if error == nil {
+            // если все ок, то изменим некоторые триггеры
+            collection.triggers.afterUpdate.isActive = true
+            collection.triggers.afterUpdate.code = "console.log(\"after update trigger\")"
+            
+            let isActive = collection.triggers.beforeRemove.isActive
+            collection.triggers.beforeRemove.isActive = !isActive
+            // запишем изменения
+            collection.saveTriggers(callback: { (success, error, result) in
+                print(result)
+            })
+        }
     }
-}
-
-```
+    ```
