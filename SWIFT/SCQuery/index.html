@@ -1425,8 +1425,6 @@
 <p><a name="SCQuery+init"></a></p>
 <h3 id="initcollection">init(collection)</h3>
 <p>Инициализация запроса к данным коллекции. </p>
-<p><strong>Тип</strong>: метод <code><a href="#SCObject">SCObject</a></code></p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -1447,15 +1445,17 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+find"></a> </p>
 <h3 id="findcallback">.find(callback)</h3>
 <p>Метод для поиска объектов, на основе сформированного условия выборки.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -1476,6 +1476,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
@@ -1490,11 +1492,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+count"></a> </p>
 <h3 id="countcallback">.count(callback)</h3>
 <p>Метод для подсчета количества объектов, которые удовлетворяют условиям запроса.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -1515,6 +1517,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">count</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
@@ -1529,11 +1533,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+update"></a> </p>
 <h3 id="updateupdate-callback">.update(update, callback)</h3>
 <p>Метод для обновления объектов, соответствующих условиям выборки.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -1561,6 +1565,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">userArrivalTime</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
 <span class="kd">let</span> <span class="nv">currentDate</span> <span class="p">=</span> <span class="n">SCUpdateOperator</span><span class="p">.</span><span class="n">currentDate</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">typeSpec</span><span class="p">:</span> <span class="s">&quot;timestamp&quot;</span><span class="p">)</span>
 <span class="n">logArrivalTime</span><span class="p">.</span><span class="n">addOperator</span><span class="p">(</span><span class="n">currentDate</span><span class="p">)</span>
@@ -1580,11 +1586,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+remove"></a></p>
 <h3 id="removecallback">.remove(callback)</h3>
 <p>Метод для удаления объектов, соответствующих условиям выборки.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -1605,6 +1611,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">oldStuff</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;Stuff&quot;</span><span class="p">)</span>
 <span class="n">oldStuff</span><span class="p">.</span><span class="n">lessThan</span><span class="p">(</span><span class="s">&quot;createdAt&quot;</span><span class="p">,</span> <span class="n">SCDate</span><span class="p">(</span><span class="s">&quot;2016-06-54T17:24:23.091+03:00&quot;</span><span class="p">))</span>
 <span class="n">oldStuff</span><span class="p">.</span><span class="n">remove</span><span class="p">()</span> <span class="p">{</span>
@@ -1620,11 +1628,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+limit"></a> </p>
 <h3 id="limitlimit">.limit(limit)</h3>
 <p>Метод для установки лимита выборки.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -1645,6 +1653,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -1660,11 +1670,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+skip"></a></p>
 <h3 id="skipskip">.skip(skip)</h3>
 <p>Метод для установки количества пропускаемых перед совершением выборки документов</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -1685,6 +1695,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">skip</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -1700,11 +1712,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+page"></a></p>
 <h3 id="pagepage">.page(page)</h3>
 <p>Метод для "постраничного" вывода результатов выборки, в соответствии с указанным лимитом выборки.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -1725,6 +1737,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">page</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -1741,11 +1755,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+raw"></a> </p>
 <h3 id="rawjson">.raw(json)</h3>
 <p>Метод для установки условий выборки в виде JSON-структуры для формирования запроса к БД на языке MongoDB.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -1766,6 +1780,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">raw</span><span class="p">(</span><span class="s">&quot;{ </span><span class="se">\&quot;</span><span class="s">fieldString</span><span class="se">\&quot;</span><span class="s"> : </span><span class="se">\&quot;</span><span class="s">Строка</span><span class="se">\&quot;</span><span class="s"> }&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -1781,10 +1797,13 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+reset"></a> </p>
 <h3 id="reset">.reset()</h3>
 <p>Метод для очистки условий выборки</p>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 
 <span class="n">query</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;John Doe&quot;</span><span class="p">))</span>
@@ -1800,11 +1819,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+ascending"></a> </p>
 <h3 id="ascendingname">.ascending(name)</h3>
 <p>Метод для сортировки данных в порядке возрастания значений указанного поля перед совершением выборки.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -1825,6 +1844,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">sortByPrice</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">sortByPrice</span><span class="p">.</span><span class="n">ascending</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">)</span>
 <span class="n">sortByPrice</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -1840,11 +1861,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+descending"></a></p>
 <h3 id="descendingname">.descending(name)</h3>
 <p>Метод для сортировки данных в порядке убывания значений указанного поля перед совершением выборки.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -1865,6 +1886,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">sortByReward</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">sortByReward</span><span class="p">.</span><span class="n">descending</span><span class="p">(</span><span class="s">&quot;reward&quot;</span><span class="p">)</span>
 <span class="n">sortByReward</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -1880,11 +1903,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+fields"></a></p>
 <h3 id="fieldsnames">.fields(names)</h3>
 <p>Метод для указания списка возвращаемых полей. </p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -1905,6 +1928,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">getPriceAndReward</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">getPriceAndReward</span><span class="p">.</span><span class="n">fields</span><span class="p">([</span><span class="s">&quot;price&quot;</span><span class="p">,</span> <span class="s">&quot;reward&quot;</span><span class="p">])</span>
 <span class="n">getPriceAndReward</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -1920,11 +1945,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+addOperator"></a> </p>
 <h3 id="addoperatorname-oper">.addOperator(name, oper)</h3>
 <p>Метод для передачи SCQuery условия выборки </p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -1952,16 +1977,18 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">lessNorEqual</span> <span class="p">=</span> <span class="n">SCOperator</span><span class="p">.</span><span class="n">LessThanOrEqualTo</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
 <span class="n">SCQuery</span><span class="p">.</span><span class="n">addOperator</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">oper</span><span class="p">:</span> <span class="n">lessNorEqual</span><span class="p">)</span>
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+equalTo"></a> </p>
 <h3 id="equaltoname-_-value">.equalTo(name, _ value)</h3>
 <p>Метод для получения всех документов c указанным в условии значением поля.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -1989,6 +2016,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="s">&quot;equality&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;yep&quot;</span><span class="p">))</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2004,11 +2033,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+notEqualTo"></a></p>
 <h3 id="notequaltoname-_-value">.notEqualTo(name, _ value)</h3>
 <p>Метод для получения всех документов, за исключением объектов с указанным в условии значением поля.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2036,6 +2065,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">notEqualTo</span><span class="p">(</span><span class="s">&quot;unequality&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;nope&quot;</span><span class="p">))</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2051,11 +2082,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+containedIn"></a> </p>
 <h3 id="containedinname-_-value">.containedIn(name, _ value)</h3>
 <p>Метод для получения всех объектов, значение поля которых содержит указанные в запросе элементы массива.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2083,6 +2114,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">containedIn</span><span class="p">(</span><span class="s">&quot;someField&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">),</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)]))</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2098,11 +2131,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+containsAll"></a> </p>
 <h3 id="containsallname-_-value">.containsAll(name, _ value)</h3>
 <p>Метод для получения всех объектов, значение поля которых содержит все указанные в запросе элементы массива.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2130,6 +2163,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">containsAll</span><span class="p">(</span><span class="s">&quot;someField&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">),</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)]))</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2145,11 +2180,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+notContainedIn"></a></p>
 <h3 id="notcontainedinname-_-value">.notContainedIn(name, _ value)</h3>
 <p>Метод для получения всех объектов, значение поля которых не содержит указанные в запросе элементы массива.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2177,6 +2212,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">notContainedIn</span><span class="p">(</span><span class="s">&quot;someField&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">),</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)]))</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2192,11 +2229,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+greaterThan"></a></p>
 <h3 id="greaterthanname-_-value">.greaterThan(name, _ value)</h3>
 <p>Метод для получения всех объектов, значение поля которых больше, чем указанное в запросе число.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2224,6 +2261,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">greaterThan</span><span class="p">(</span><span class="s">&quot;reward&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2239,11 +2278,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+greaterThanOrEqualTo"></a></p>
 <h3 id="greaterthanorequaltoname-_-value">.greaterThanOrEqualTo(name, _ value)</h3>
 <p>Метод для получения всех объектов, значение поля которых не меньше, чем указанное в запросе число.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2271,6 +2310,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">greaterThanOrEqualTo</span><span class="p">(</span><span class="s">&quot;createdAt&quot;</span><span class="p">,</span> <span class="n">SCDate</span><span class="p">(</span><span class="s">&quot;2016-06-04T17:24:23.091+03:00&quot;</span><span class="p">))</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2286,11 +2327,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+lessThan"></a></p>
 <h3 id="lessthanname-_-value">.lessThan(name, _ value)</h3>
 <p>Метод для получения всех объектов, значение поля которых меньше, чем указанное в запросе число.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2318,6 +2359,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">lessThan</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2333,11 +2376,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+lessThanOrEqualTo"></a></p>
 <h3 id="lessthanorequaltoname-_-value">.lessThanOrEqualTo(name, _ value)</h3>
 <p>Метод для получения всех объектов, значение поля которых не больше, чем указанное в запросе число.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2365,6 +2408,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">lessThanOrEqualTo</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2380,11 +2425,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+exists"></a></p>
 <h3 id="existsname">.exists(name)</h3>
 <p>Метод для получения всех объектов с существующим значением заданного поля</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2405,6 +2450,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&quot;reward&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2420,11 +2467,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+doesNotExist"></a></p>
 <h3 id="doesnotexistname">.doesNotExist(name)</h3>
 <p>Метод для получения всех объектов с отсутствующим значением в заданном поле</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2445,6 +2492,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">doesNotExist</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2460,11 +2509,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+contains"></a></p>
 <h3 id="containsname-_-pattern">.contains(name, _ pattern)</h3>
 <p>Метод для получения всех объектов со значением заданного поля, соответствующим заданному регулярному выражению.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2492,6 +2541,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">contains</span><span class="p">(</span><span class="s">&quot;description&quot;</span><span class="p">,</span> <span class="s">&quot;[a-zA-Z0-9]&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2507,11 +2558,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+startsWith"></a></p>
 <h3 id="startswithname-_-pattern">.startsWith(name, _ pattern)</h3>
 <p>Метод для получения всех объектов со значением заданного поля, начинающимся с указанной строки.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2539,6 +2590,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">startsWith</span><span class="p">(</span><span class="s">&quot;fieldString&quot;</span><span class="p">,</span> <span class="s">&quot;[A-Z]&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2554,11 +2607,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+endsWith"></a></p>
 <h3 id="endswithname-_-pattern">.endsWith(name, _ pattern)</h3>
 <p>Метод для получения всех объектов со значением заданного поля, заканчивающимся на указанную строку.</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2586,6 +2639,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">endsWith</span><span class="p">(</span><span class="s">&quot;fieldString&quot;</span><span class="p">,</span> <span class="s">&quot;ing&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2601,11 +2656,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+and"></a></p>
 <h3 id="andoperators">.and(operators)</h3>
 <p>Метод для логического умножения условий нескольких выборок</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2626,6 +2681,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">notEqualTo</span><span class="p">(</span><span class="s">&quot;unequality&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;nope&quot;</span><span class="p">))</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2641,11 +2698,11 @@
 </pre></div>
 
 
+</div>
 <hr />
 <p><a name="SCQuery+or"></a></p>
 <h3 id="oroperators">.or(operators)</h3>
 <p>Метод для логического сложения условий нескольких выборок</p>
-<p><strong>Параметры</strong></p>
 <table>
 <thead>
 <tr>
@@ -2666,6 +2723,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
 <span class="n">query</span><span class="p">.</span><span class="n">notEqualTo</span><span class="p">(</span><span class="s">&quot;unequality&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;nope&quot;</span><span class="p">))</span>
 <span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
@@ -2679,6 +2738,9 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+
+
+</div>
               
             </article>
           </div>
