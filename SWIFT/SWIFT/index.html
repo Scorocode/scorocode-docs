@@ -536,6 +536,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         SWIFT SDK
@@ -549,27 +551,16 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sdk" title="Подключение SDK" class="md-nav__link">
-    Подключение SDK
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" title="Установка" class="md-nav__link">
     Установка
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -905,27 +896,16 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sdk" title="Подключение SDK" class="md-nav__link">
-    Подключение SDK
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" title="Установка" class="md-nav__link">
     Установка
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -942,15 +922,42 @@
                
               
                 
-                  <h1>SWIFT SDK</h1>
-                
-                <h2 id="sdk">Подключение SDK</h2>
-<p>Дистрибутив Scorocode SWIFT SDK можно скачать <a href="https://github.com/Scorocode/scorocode-sdk-swift">тут</a>.</p>
-<p>SDK предоставляет доступ к платформе Scorocode для построения приложений, основанных на swift. Подробности на нашем сайте: https://scorocode.ru</p>
+                <h1 id="scorocode-sdk-swift">scorocode-SDK-swift</h1>
+<p>SDK предоставляет доступ к платформе Scorocode для построения приложений, основанных на swift.
+Подробности на нашем сайте: https://scorocode.ru</p>
 <h3 id="_1">Установка</h3>
-<p>Подключение библиотеки к проекту</p>
-<div class="codehilite"><pre><span></span>pod &#39;Scorocode&#39;
+<p>Подключение библиотеки к проекту:
+1) Установить <a href="https://cocoapods.org">CocoaPods</a>
+<div class="codehilite"><pre><span></span>sudo gem install cocoapods
 </pre></div>
+
+2) Создать новый проект в xcode, например "MyProject" (Имя проекта не должно совпадать со строкой "Scorocode")</p>
+<p>3) Создать в корне проекта файл с именем "Podfile" с текстом:
+<div class="codehilite"><pre><span></span>source &#39;https://github.com/CocoaPods/Specs.git&#39;
+platform :ios, &#39;8.0&#39;
+use_frameworks!
+
+target &#39;MyProject&#39; do
+  pod &#39;Scorocode&#39;
+end
+</pre></div>
+
+4) Закрыть проект в xcode, запустить в консоли:
+<div class="codehilite"><pre><span></span>pod install
+</pre></div>
+
+5) В папке с проектом появится файл MyProject.xcworkspace, открыть его в xcode.
+В AppDelegate.swift в методе didFinishLaunchingWithOptions указать значения параметров инициализации API из личного кабинета. Пример:
+<div class="codehilite"><pre><span></span>//scorocode init
+let applicationId = &quot;98bc4bacb5edeb727cfb8fae25f71b59&quot;
+let clientId = &quot;39169707deb69fc06145c995aa4cdefe&quot;
+let accessKey = &quot;61ad813bd71bd4f45aea53a3c996d53a&quot;
+let fileKey = &quot;351cb3d71efef69e3d6ac5657dd16c1c&quot;
+let messageKey = &quot;35d5a173e0391a283d60a6a756a44051&quot; 
+
+SC.initWith(applicationId: applicationId, clientId: clientId, accessKey: accessKey, fileKey: fileKey, messageKey: messageKey)
+</pre></div>
+</p>
               
             </article>
           </div>

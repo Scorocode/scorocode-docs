@@ -649,8 +649,43 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#initid-path" title=".init(id, path)" class="md-nav__link">
+    .init(id, path)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#runscriptid-pool-callback" title=".run(scriptID, pool, callback)" class="md-nav__link">
     .run(scriptID, pool, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createcallback" title=".create(callback)" class="md-nav__link">
+    .create(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loadcallback" title=".load(callback)" class="md-nav__link">
+    .load(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#savecallback" title=".save(callback)" class="md-nav__link">
+    .save(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletecallback" title=".delete(callback)" class="md-nav__link">
+    .delete(callback)
   </a>
   
 </li>
@@ -911,8 +946,43 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#initid-path" title=".init(id, path)" class="md-nav__link">
+    .init(id, path)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#runscriptid-pool-callback" title=".run(scriptID, pool, callback)" class="md-nav__link">
     .run(scriptID, pool, callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createcallback" title=".create(callback)" class="md-nav__link">
+    .create(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loadcallback" title=".load(callback)" class="md-nav__link">
+    .load(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#savecallback" title=".save(callback)" class="md-nav__link">
+    .save(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletecallback" title=".delete(callback)" class="md-nav__link">
+    .delete(callback)
   </a>
   
 </li>
@@ -938,10 +1008,51 @@
 <p>Класс для работы с серверными скриптами приложения</p>
 <ul>
 <li><a href="#SCScript">SCScript</a><ul>
-<li><a href="#SCScript+run">.run(scriptId, pool, callback)</a></li>
+<li><a href="#SCSript+init">.init(id,path)</a></li>
+<li><a href="#SCScript+run">.run(scriptId,pool,callback)</a></li>
+<li><a href="#SCScript+create">.create(callback)</a></li>
+<li><a href="#SCScript+load">.load(callback)</a></li>
+<li><a href="#SCScript+save">.save(callback)</a></li>
+<li><a href="#SCScript+delete">.delete(callback)</a></li>
 </ul>
 </li>
 </ul>
+<hr />
+<p><a name="SCScript+init"></a></p>
+<h2 id="initid-path">.init(id, path)</h2>
+<p>Инициализация скрипта</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>String</code></td>
+<td>Обязательный, если не задан path</td>
+<td>Идентификатор серверного скрипта</td>
+<td>"57484fb91c5666544db25675"</td>
+</tr>
+<tr>
+<td>path</td>
+<td><code>String</code></td>
+<td>Обязательный, если не задан id</td>
+<td>Полный путь до скрипта вместе с именем</td>
+<td>"/newScript.js"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong> <br />
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">script</span> <span class="p">=</span> <span class="n">SCScript</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="s">&quot;/newScript.js&quot;</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nv">script2</span> <span class="p">=</span> <span class="n">SCScript</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="s">&quot;57484fb91c5666544db25675&quot;</span><span class="p">)</span>
+</pre></div>
+</p>
 <hr />
 <p><a name="SCScript+run"></a></p>
 <h2 id="runscriptid-pool-callback">.run(scriptID, pool, callback)</h2>
@@ -983,6 +1094,167 @@
 <p><strong>Пример</strong> <br />
 <div class="codehilite"><pre><span></span><span class="n">SCScript</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">&quot;57484fb91c5666544db25675&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;collname&quot;</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">,</span> <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;relToQuests&quot;</span><span class="p">,</span> <span class="s">&quot;val&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;CF4Gk9WP6L&quot;</span><span class="p">,</span> <span class="s">&quot;MwORD9llTM&quot;</span><span class="p">,</span> <span class="s">&quot;Jw4INX328A&quot;</span><span class="p">]])</span> <span class="p">{</span>
     <span class="n">success</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+<span class="p">}</span>
+</pre></div>
+</p>
+<hr />
+<p><a name="SCScript+create"></a></p>
+<h2 id="createcallback">.create(callback)</h2>
+<p>Метод для создания серверного скрипта</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>(Bool, SCError?,[String:Any]?) -&gt; Void</code></td>
+<td></td>
+<td>Коллбэк для выполняемого запроса</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong> <br />
+<div class="codehilite"><pre><span></span><span class="c1">// инициализируем скрит</span>
+<span class="kd">let</span> <span class="nv">script</span> <span class="p">=</span> <span class="n">SCScript</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="s">&quot;/newScript.js&quot;</span><span class="p">)</span>
+<span class="c1">// Дадим права на запуск пользователю с id = HCP8lrIAsV</span>
+<span class="n">script</span><span class="p">.</span><span class="n">ACL</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;HCP8lrIAsV&quot;</span><span class="p">]</span>
+<span class="c1">// Запишем код скрипта</span>
+<span class="n">script</span><span class="p">.</span><span class="n">code</span> <span class="p">=</span> <span class="s">&quot;console.log(</span><span class="se">\&quot;</span><span class="s">test</span><span class="se">\&quot;</span><span class="s">)&quot;</span>
+<span class="c1">// Добавим описание</span>
+<span class="n">script</span><span class="p">.</span><span class="n">description</span> <span class="p">=</span> <span class="s">&quot;test script&quot;</span>
+<span class="c1">// Вкл или Откл запуск по расписанию</span>
+<span class="n">script</span><span class="p">.</span><span class="n">isActiveJob</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="c1">// дата запуска</span>
+<span class="kd">let</span> <span class="nv">dateString</span> <span class="p">=</span> <span class="s">&quot;21 Oct 2017 07:45&quot;</span>
+<span class="kd">let</span> <span class="nv">dateFormatter</span> <span class="p">=</span> <span class="n">DateFormatter</span><span class="p">()</span>
+<span class="n">dateFormatter</span><span class="p">.</span><span class="n">dateFormat</span> <span class="p">=</span> <span class="s">&quot;dd MMM yyyy hh:mm&quot;</span>
+<span class="n">dateFormatter</span><span class="p">.</span><span class="n">timeZone</span> <span class="p">=</span> <span class="n">TimeZone</span><span class="p">.</span><span class="n">current</span>
+<span class="kd">let</span> <span class="nv">date</span> <span class="p">=</span> <span class="n">dateFormatter</span><span class="p">.</span><span class="n">date</span><span class="p">(</span><span class="n">from</span><span class="p">:</span> <span class="n">dateString</span><span class="p">)</span>
+<span class="n">script</span><span class="p">.</span><span class="n">jobStartAt</span> <span class="p">=</span> <span class="n">SCDate</span><span class="p">(</span><span class="n">date</span><span class="p">!)</span>
+<span class="c1">// Запускать ежедневно</span>
+<span class="n">script</span><span class="p">.</span><span class="n">jobType</span> <span class="p">=</span> <span class="p">.</span><span class="n">daily</span>
+<span class="c1">// в 10 часов 45 минут</span>
+<span class="n">script</span><span class="p">.</span><span class="n">repeatTimer</span><span class="p">.</span><span class="n">daily</span><span class="p">.</span><span class="n">hours</span> <span class="p">=</span> <span class="mi">10</span>
+<span class="n">script</span><span class="p">.</span><span class="n">repeatTimer</span><span class="p">.</span><span class="n">daily</span><span class="p">.</span><span class="n">minutes</span> <span class="p">=</span> <span class="mi">45</span>
+<span class="c1">// По понедельникам и средам</span>
+<span class="n">script</span><span class="p">.</span><span class="n">repeatTimer</span><span class="p">.</span><span class="n">daily</span><span class="p">.</span><span class="n">on</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="c1">// Создадим скрипт на сервере</span>
+<span class="n">script</span><span class="p">.</span><span class="n">create</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
+    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</p>
+<hr />
+<p><a name="SCScript+load"></a></p>
+<h2 id="loadcallback">.load(callback)</h2>
+<p>Метод для загрузки настроек серверного скрипта</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>(Bool, SCError?,[String:Any]?) -&gt; Void</code></td>
+<td></td>
+<td>Коллбэк для выполняемого запроса</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong> <br />
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">script</span> <span class="p">=</span> <span class="n">SCScript</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="s">&quot;5909ac0176e5e712788c9b66&quot;</span><span class="p">)</span>
+<span class="n">script</span><span class="p">.</span><span class="n">load</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
+    <span class="bp">print</span><span class="p">(</span><span class="n">script</span><span class="p">.</span><span class="n">code</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</p>
+<hr />
+<p><a name="SCScript+save"></a></p>
+<h2 id="savecallback">.save(callback)</h2>
+<p>Метод для сохранения настроек серверного скрипта</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>(Bool, SCError?,[String:Any]?) -&gt; Void</code></td>
+<td></td>
+<td>Коллбэк для выполняемого запроса</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong> <br />
+<div class="codehilite"><pre><span></span><span class="c1">// Инициализируем существующий скрипт</span>
+<span class="kd">let</span> <span class="nv">script</span> <span class="p">=</span> <span class="n">SCScript</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="s">&quot;5909ac0176e5e712788c9b66&quot;</span><span class="p">)</span>
+<span class="c1">// Загрузим настройки скрипта</span>
+<span class="n">script</span><span class="p">.</span><span class="n">load</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="c1">// Если все ок, добавим права на запуск пользователю с id = HCP8lrIAsV</span>
+        <span class="n">script</span><span class="p">.</span><span class="n">ACL</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;HCP8lrIAsV&quot;</span><span class="p">)</span>
+        <span class="c1">// Изменим код срипта</span>
+        <span class="n">script</span><span class="p">.</span><span class="n">code</span> <span class="p">=</span> <span class="s">&quot;console.log(</span><span class="se">\&quot;</span><span class="s">this is new code</span><span class="se">\&quot;</span><span class="s">)&quot;</span>
+        <span class="c1">// Сохраним изменения на сервер</span>
+        <span class="n">script</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="n">callback</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
+            <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</p>
+<hr />
+<p><a name="SCScript+delete"></a></p>
+<h2 id="deletecallback">.delete(callback)</h2>
+<p>Метод для удаления серверного скрипта</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>(Bool, SCError?,[String:Any]?) -&gt; Void</code></td>
+<td></td>
+<td>Коллбэк для выполняемого запроса</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong> <br />
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">script</span> <span class="p">=</span> <span class="n">SCScript</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="s">&quot;5909ac0176e5e712788c9b66&quot;</span><span class="p">)</span>
+<span class="n">script</span><span class="p">.</span><span class="n">delete</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Скрипт удален&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </p>

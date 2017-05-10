@@ -578,6 +578,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#getstatcallback" title=".getStat(callback)" class="md-nav__link">
+    .getStat(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getinfocallback" title=".getInfo(callback)" class="md-nav__link">
+    .getInfo(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getcollectionscallback" title=".getCollections(callback)" class="md-nav__link">
+    .getCollections(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getbotslistcallback" title=".getBotsList(callback)" class="md-nav__link">
+    .getBotsList(callback)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getfoldersandscriptslistpath-callback" title="getFoldersAndScriptsList(path, callback)" class="md-nav__link">
+    getFoldersAndScriptsList(path, callback)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -917,6 +958,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#getstatcallback" title=".getStat(callback)" class="md-nav__link">
+    .getStat(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getinfocallback" title=".getInfo(callback)" class="md-nav__link">
+    .getInfo(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getcollectionscallback" title=".getCollections(callback)" class="md-nav__link">
+    .getCollections(callback)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getbotslistcallback" title=".getBotsList(callback)" class="md-nav__link">
+    .getBotsList(callback)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getfoldersandscriptslistpath-callback" title="getFoldersAndScriptsList(path, callback)" class="md-nav__link">
+    getFoldersAndScriptsList(path, callback)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -938,6 +1020,11 @@
 <ul>
 <li><a href="#Scorocode">SC</a><ul>
 <li><a href="#Scorocode+initWith">.initWith(opt)</a></li>
+<li><a href="#Scorocode+getStat">.getStat(callback -&gt; Void)</a></li>
+<li><a href="#Scorocode+getInfo">.getInfo(callback -&gt; Void)</a></li>
+<li><a href="#Scorocode+getCollections">.getCollections(callback -&gt; Void)</a></li>
+<li><a href="#Scorocode+getBotsList">.getBotsList(callback)</a></li>
+<li><a href="#Scorocode+getFoldersAndScriptsList">.getFoldersAndScriptsList(path,callback)</a></li>
 </ul>
 </li>
 </ul>
@@ -1006,6 +1093,178 @@
 <p>Инициализация SDK</p>
 <div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">initWith</span><span class="p">(</span><span class="n">applicationId</span><span class="p">:</span> <span class="n">applicationId</span><span class="p">,</span> <span class="n">clientId</span><span class="p">:</span> <span class="n">clientId</span><span class="p">,</span> <span class="n">accessKey</span><span class="p">:</span> <span class="n">accessKey</span><span class="p">,</span> <span class="n">fileKey</span><span class="p">:</span> <span class="n">fileKey</span><span class="p">,</span> <span class="n">messageKey</span><span class="p">:</span> <span class="n">messageKey</span><span class="p">)</span>
 </pre></div>
+
+
+<p><a name="Scorocode+getStat"></a></p>
+<h2 id="getstatcallback">.getStat(callback)</h2>
+<p>Получение статистики по приложению.</p>
+<p>Параметры</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>(Bool, SCError?, [String: AnyObject]?) -&gt; Void</code></td>
+<td></td>
+<td>Коллбэк для выполняемого запроса.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong>  </p>
+<div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">getStat</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
+    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><a name="Scorocode+getInfo"></a></p>
+<h2 id="getinfocallback">.getInfo(callback)</h2>
+<p>Получение полной информации о приложении</p>
+<p>Параметры</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>(Bool, SCError?, [String: AnyObject]?) -&gt; Void</code></td>
+<td></td>
+<td>Коллбэк для выполняемого запроса.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong>  </p>
+<div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">getInfo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">succes</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
+    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><a name="Scorocode+getCollections"></a></p>
+<h2 id="getcollectionscallback">.getCollections(callback)</h2>
+<p>Получение списка коллекций приложения и их настроек</p>
+<p>Параметры</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>(Bool, SCError?, [String: AnyObject]?, [SCCollection]) -&gt; Void</code></td>
+<td></td>
+<td>Коллбэк для выполняемого запроса.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong>  </p>
+<div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">getCollections</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">collectionsArray</span> <span class="k">in</span>
+    <span class="k">for</span> <span class="n">collection</span> <span class="k">in</span> <span class="n">collectionsArray</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="n">collection</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<hr />
+<p><a name="Scorocode+getBotsList"></a></p>
+<h2 id="getbotslistcallback">.getBotsList(callback)</h2>
+<p>Получение списка ботов приложения</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>(Bool, SCError?, [Any]?) -&gt; Void</code></td>
+<td></td>
+<td>Коллбэк для выполняемого запроса.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong> <br />
+<div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">getBotsList</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">botsList</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">bot</span> <span class="k">in</span> <span class="n">botsList</span> <span class="p">{</span>
+            <span class="bp">print</span><span class="p">(</span><span class="n">bot</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</p>
+<hr />
+<p><a name="Scorocode+getFoldersAndScriptsList"></a></p>
+<h3 id="getfoldersandscriptslistpath-callback">getFoldersAndScriptsList(path, callback)</h3>
+<p>Получение списка папок и скриптов директории</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path</td>
+<td><code>String</code></td>
+<td>Обязательный</td>
+<td>путь до директории</td>
+<td>"/"</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>(Bool, SCError?, [Any]?) -&gt; Void</code></td>
+<td></td>
+<td>Коллбэк для выполняемого запроса.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">folders</span> <span class="p">=</span> <span class="n">SCFolder</span><span class="p">()</span>
+<span class="n">folders</span><span class="p">.</span><span class="n">getFoldersAndScriptsList</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="s">&quot;/&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
+    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</p>
               
             </article>
           </div>
