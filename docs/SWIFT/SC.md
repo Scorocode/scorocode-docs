@@ -6,6 +6,11 @@
 
 * [SC](#Scorocode)
     * [.initWith(opt)](#Scorocode+initWith)
+    * [.getStat(callback -> Void)](#Scorocode+getStat)
+    * [.getInfo(callback -> Void)](#Scorocode+getInfo)
+    * [.getCollections(callback -> Void)](#Scorocode+getCollections)
+    * [.getBotsList(callback)](#Scorocode+getBotsList)
+    * [.getFoldersAndScriptsList(path,callback)](#Scorocode+getFoldersAndScriptsList)
 
 <a name="Scorocode+initWith"></a>
 
@@ -42,3 +47,115 @@ let messageKey = "9d774f6fa704f192e6aef53933f44e4f"
 ```SWIFT
 SC.initWith(applicationId: applicationId, clientId: clientId, accessKey: accessKey, fileKey: fileKey, messageKey: messageKey)
 ```
+
+<a name="Scorocode+getStat"></a>
+
+## .getStat(callback)
+
+Получение статистики по приложению.
+
+Параметры
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |  | Коллбэк для выполняемого запроса. |  |
+
+
+**Пример**  
+
+```SWIFT
+SC.getStat() {
+    success, error, result in
+    print(result)
+}
+```
+
+<a name="Scorocode+getInfo"></a>
+
+## .getInfo(callback)
+
+Получение полной информации о приложении
+
+Параметры
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |  | Коллбэк для выполняемого запроса. |  |
+
+
+**Пример**  
+
+```SWIFT
+SC.getInfo() {
+    succes, error, result in
+    print(result)
+}
+```
+
+<a name="Scorocode+getCollections"></a>
+
+## .getCollections(callback)
+
+Получение списка коллекций приложения и их настроек
+
+Параметры
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| callback | <code>(Bool, SCError?, [String: AnyObject]?, [SCCollection]) -> Void</code> |  | Коллбэк для выполняемого запроса. |  |
+
+
+**Пример**  
+
+```SWIFT
+SC.getCollections() {
+    success, error, result, collectionsArray in
+    for collection in collectionsArray {
+        print(collection.name)
+    }
+}
+
+```
+
+----------------------------------------------------------------------------------------------
+
+<a name="Scorocode+getBotsList"></a>
+
+## .getBotsList(callback)
+Получение списка ботов приложения
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| callback | <code>(Bool, SCError?, [Any]?) -> Void</code> |  | Коллбэк для выполняемого запроса.| |
+
+**Пример**   
+```SWIFT
+SC.getBotsList { (success, error, botsList) in
+    if error == nil {
+        for bot in botsList {
+            print(bot.name)
+        }
+    }
+}
+```
+
+----------------------------------------------------------------------------------------------
+
+<a name="Scorocode+getFoldersAndScriptsList"></a>
+### getFoldersAndScriptsList(path, callback)
+Получение списка папок и скриптов директории
+
+| Параметр | Тип | Свойства | Описание | Пример значения |
+| --- | --- | --- | --- | --- |
+| path    | <code>String</code> | Обязательный | путь до директории          | "/"          | 
+| callback | <code>(Bool, SCError?, [Any]?) -> Void</code> |         | Коллбэк для выполняемого запроса.|                             |
+
+**Пример**
+```SWIFT
+let folders = SCFolder()
+folders.getFoldersAndScriptsList(path: "/") { (success, error, result) in
+    print(result)
+}
+```
+
+
