@@ -1207,11 +1207,12 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<p>```SWIFT
-var update = SCUpdate()
-let currentDate = SCUpdateOperator.currentDate("fieldName", typeSpec: "timestamp")
-update.addOperator(currentDate)
-``````</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
+<span class="kd">let</span> <span class="nv">currentDate</span> <span class="p">=</span> <span class="n">SCUpdateOperator</span><span class="p">.</span><span class="n">currentDate</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">typeSpec</span><span class="p">:</span> <span class="s">&quot;timestamp&quot;</span><span class="p">)</span>
+<span class="n">update</span><span class="p">.</span><span class="n">addOperator</span><span class="p">(</span><span class="n">currentDate</span><span class="p">)</span>
+</pre></div>
+
+
 </div>
 <hr />
 <p><a name="SCUpdate+set"></a></p>
