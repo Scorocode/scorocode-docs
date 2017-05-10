@@ -4,6 +4,7 @@ SDK предоставляет доступ к платформе Scorocode дл
 
 ### Установка
 Подключение библиотеки к проекту:
+
 1) Установить [CocoaPods](https://cocoapods.org)
 ```
 sudo gem install cocoapods
@@ -25,8 +26,9 @@ end
 pod install
 ```
 5) В папке с проектом появится файл MyProject.xcworkspace, открыть его в xcode.
-В AppDelegate.swift в методе didFinishLaunchingWithOptions указать значения параметров инициализации API из личного кабинета. Пример:
-```
+
+6) В AppDelegate.swift в методе didFinishLaunchingWithOptions указать значения параметров инициализации API из личного кабинета. Пример:
+```SWIFT
 //scorocode init
 let applicationId = "98bc4bacb5edeb727cfb8fae25f71b59"
 let clientId = "39169707deb69fc06145c995aa4cdefe"
