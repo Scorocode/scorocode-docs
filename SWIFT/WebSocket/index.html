@@ -644,8 +644,8 @@
           
   <li class="md-nav__item">
     
-      <a href="../SCCollection/" title="SCBot" class="md-nav__link">
-        SCBot
+      <a href="../SCCollection/" title="SCCollection" class="md-nav__link">
+        SCCollection
       </a>
     
   </li>
@@ -655,8 +655,8 @@
           
   <li class="md-nav__item">
     
-      <a href="../SCFolder/" title="SCBot" class="md-nav__link">
-        SCBot
+      <a href="../SCFolder/" title="SCFolder" class="md-nav__link">
+        SCFolder
       </a>
     
   </li>
@@ -1033,11 +1033,14 @@
 </tr>
 </tbody>
 </table>
-<p>Пример:
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span>    var socket = WebSocket(url: NSURL(string: &quot;wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom&quot;)!)
     socket.connect()
 </pre></div>
-</p>
+
+
+</div>
 <h3 id="starscream">Подключение библиотеки Starscream</h3>
 <p><strong>Подробную информацию о способах подключения библиотеки Starscream вы сможете найти в Readme.md репозитория <a href="https://github.com/daltoniam/Starscream">daltoniam/Starscream</a>.</strong></p>
 <p>Для подключения библиотеки к проекту, необходимо установить <a href="https://github.com/Carthage/Carthage">Carthage</a></p>
@@ -1046,25 +1049,31 @@
 </pre></div>
 
 
-<p>Закрыть проект в xcode, запустить в консоли:
+<p>Закрыть проект в xcode, запустить в консоли:</p>
 <div class="codehilite"><pre><span></span>carthage update --platform iOS,Mac
 </pre></div>
-</p>
-<p>Открыть заново проект в Xcode. В Target -&gt; General -&gt; Linked Frameworks and Libraries из &lt;Каталог проекта&gt; -&gt; Carthage -&gt; Build -&gt; iOS перетащить 1 файл:
+
+
+<p>Открыть заново проект в Xcode. В Target -&gt; General -&gt; Linked Frameworks and Libraries из &lt;Каталог проекта&gt; -&gt; Carthage -&gt; Build -&gt; iOS перетащить 1 файл:</p>
 <div class="codehilite"><pre><span></span>Starscream.framework
 </pre></div>
-</p>
+
+
 <p>В Target -&gt; Build Phases добавить New Run Script Phase:</p>
-<p>Скрипт:
+<p>Скрипт:</p>
 <div class="codehilite"><pre><span></span>/usr/local/bin/carthage copy-frameworks
 </pre></div>
-</p>
-<p>и Input File:
+
+
+<p>и Input File:</p>
 <div class="codehilite"><pre><span></span>$(SRCROOT)/Carthage/Build/iOS/Starscream.framework
 </pre></div>
-</p>
+
+
 <h3 id="starscream_1">Пример использования библиотеки Starscream</h3>
 <p><strong>Подробную информацию о способах испольования библиотеки Starscream вы сможете найти в Readme.md репозитория <a href="https://github.com/daltoniam/Starscream">daltoniam/Starscream</a>.</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span>import UIKit
 import Starscream
 
@@ -1113,6 +1122,9 @@ class ViewController: UIViewController {
 
 }
 </pre></div>
+
+
+</div>
               
             </article>
           </div>
@@ -1125,7 +1137,7 @@ class ViewController: UIViewController {
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../SCFolder/" title="SCBot" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../SCFolder/" title="SCFolder" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1134,7 +1146,7 @@ class ViewController: UIViewController {
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                SCBot
+                SCFolder
               </span>
             </div>
           </a>
