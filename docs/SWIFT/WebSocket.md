@@ -5,8 +5,8 @@
 Для использования WebSocket в вашем проекте, вы можете воспользоваться библиотекой [daltoniam/Starscream](https://github.com/daltoniam/Starscream), используя следующую схему url при инициализации WebSocket: 
 
 ```
-    var socket = WebSocket(url: NSURL(string: "wss://wss.scorocode.ru/{appID}/{wsKey}/{chanName}")!)
-    socket.connect()
+var socket = WebSocket(url: NSURL(string: "wss://wss.scorocode.ru/{appID}/{wsKey}/{chanName}")!)
+socket.connect()
 ```
 где
 
@@ -16,49 +16,32 @@
 | wsKey | <code>String</code> | Обязательное | Ключ websocketKey вашего приложения | 563452bbc611d8106d5da767365897de |
 | chanName | <code>String</code> | Обязательное | Произвольное имя канала | chatroom |
 
-!!! tip "Пример"
-    ```
-        var socket = WebSocket(url: NSURL(string: "wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom")!)
-        socket.connect()
-    ```
-
-### Подключение библиотеки Starscream
+Пример:
+```
+var socket = WebSocket(url: NSURL(string: "wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom")!)
+socket.connect()
+```
 
 **Подробную информацию о способах подключения библиотеки Starscream вы сможете найти в Readme.md репозитория [daltoniam/Starscream](https://github.com/daltoniam/Starscream).**
 
+### Подключение библиотеки Starscream с использованием cocoapods
 
-Для подключения библиотеки к проекту, необходимо установить [Carthage](https://github.com/Carthage/Carthage)
- 
-Cоздать в корне проекта Xcode файл с именем "Cartfile" или изменить уже существующий "Cartfile", записав в него строку:
-
-```
-github "daltoniam/Starscream"
-```
-
-Закрыть проект в xcode, запустить в консоли:
+1) Добавить в ваш Podfile текст "pod 'Starscream', '~> 2.0.3'":
 
 ```
-carthage update --platform iOS,Mac
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+target 'MyProject' do
+  pod 'Scorocode'
+  pod 'Starscream', '~> 2.0.3'
+end
 ```
-
-Открыть заново проект в Xcode. В Target -> General -> Linked Frameworks and Libraries из <Каталог проекта> -> Carthage -> Build -> iOS перетащить 1 файл:
-
-```
-Starscream.framework
-```
-
-В Target -> Build Phases добавить New Run Script Phase:
-
-Скрипт:
+2) Запустить в консоли в папке с проектом команду:
 
 ```
-/usr/local/bin/carthage copy-frameworks
-```
-
-и Input File:
-
-```
-$(SRCROOT)/Carthage/Build/iOS/Starscream.framework
+pod install 
 ```
 
 ### Пример использования библиотеки Starscream
