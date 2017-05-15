@@ -4,7 +4,7 @@
 
 Для использования WebSocket в вашем проекте, вы можете воспользоваться библиотекой [daltoniam/Starscream](https://github.com/daltoniam/Starscream), используя следующую схему url при инициализации WebSocket: 
 
-```
+```SWIFT
 var socket = WebSocket(url: NSURL(string: "wss://wss.scorocode.ru/{appID}/{wsKey}/{chanName}")!)
 socket.connect()
 ```
@@ -22,9 +22,11 @@ socket.connect()
     socket.connect()
     ```
 
-**Подробную информацию о способах подключения библиотеки Starscream вы сможете найти в Readme.md репозитория [daltoniam/Starscream](https://github.com/daltoniam/Starscream).**
-
 ### Подключение библиотеки Starscream с использованием cocoapods
+
+!!! note "Библиотека Starscream"
+    *Подробную информацию о способах подключения библиотеки Starscream вы сможете найти в Readme.md репозитория [daltoniam/Starscream](https://github.com/daltoniam/Starscream).*
+
 
 1) Добавить в ваш Podfile текст "pod 'Starscream', '~> 2.0.3'":
 
@@ -46,9 +48,13 @@ socket.connect()
 pod install 
 ```
 
+
+
 ### Пример использования библиотеки Starscream
 
-**Подробную информацию о способах испольования библиотеки Starscream вы сможете найти в Readme.md репозитория [daltoniam/Starscream](https://github.com/daltoniam/Starscream).**
+!!! note "Библиотека Starscream"
+    *Подробную информацию о способах подключения библиотеки Starscream вы сможете найти в Readme.md репозитория [daltoniam/Starscream](https://github.com/daltoniam/Starscream).*
+
 
 !!! tip "Пример"
     ```
