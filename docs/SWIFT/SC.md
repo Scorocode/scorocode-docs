@@ -30,15 +30,15 @@
 
 
 !!! tip "Пример"
-    В AppDelegate.swift, в метод didFinishLaunchingWithOptions, указать значения параметров инициализации:
+    В `AppDelegate.swift`, в метод `didFinishLaunchingWithOptions`, указать значения параметров инициализации:
 
 
     ```SWIFT
-    let applicationId = "db8a1b41b8543397a798a181d9891b4c"
-    let clientId = "563452bbc611d8106d5da767365897de"
-    let accessKey = "28f06b89b62165c33de55265166d8781"
-    let fileKey = "6305ee7ac8023191a333d9267f1a07e8"
-    let messageKey = "9d774f6fa704f192e6aef53933f44e4f"
+    let applicationId = "98bc4baccdedeb747cfb8fae25f71b59"
+    let clientId = "39169707deawdfc06135c995aa4cdefe"
+    let accessKey = "61afdr3bd71bd4f45sea53a3c996d53a"
+    let fileKey = "351cb3d71sfef69e3d6fc5657dd16c1c"
+    let messageKey = "35d5a173a0391a283g60a6m756a44051" 
     ```
 
     Инициализация SDK
@@ -145,8 +145,8 @@
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
-| path    | <code>String</code> | Обязательный | путь до директории          | "/"          | 
-| callback | <code>(Bool, SCError?, [Any]?) -> Void</code> |         | Коллбэк для выполняемого запроса.|                             |
+| path    | <code>String</code> | Обязательный | путь до директории  | "/"          | 
+| callback | <code>(Bool, SCError?, [Any]?) -> Void</code> |  | Коллбэк для выполняемого запроса.|    |
 
 !!! tip "Пример"
     ```SWIFT

@@ -12,11 +12,11 @@ SDK предоставляет доступ к платформе Scorocode дл
 !!! tip "Пример"
 	```SWIFT
 	//scorocode init
-	let applicationId = "98bc4bacb5edeb727cfb8fae25f71b59"
-	let clientId = "39169707deb69fc06145c995aa4cdefe"
-	let accessKey = "61ad813bd71bd4f45aea53a3c996d53a"
-	let fileKey = "351cb3d71efef69e3d6ac5657dd16c1c"
-	let messageKey = "35d5a173e0391a283d60a6a756a44051" 
+	let applicationId = "98bc4baccdedeb747cfb8fae25f71b59"
+	let clientId = "39169707deawdfc06135c995aa4cdefe"
+	let accessKey = "61afdr3bd71bd4f45sea53a3c996d53a"
+	let fileKey = "351cb3d71sfef69e3d6fc5657dd16c1c"
+	let messageKey = "35d5a173a0391a283g60a6m756a44051" 
 
 	SC.initWith(applicationId: applicationId, clientId: clientId, accessKey: accessKey, fileKey: fileKey, messageKey: messageKey)
 	```
@@ -58,11 +58,11 @@ pod install
 !!! tip "Пример"
 	```SWIFT
 	//scorocode init
-	let applicationId = "98bc4bacb5edeb727cfb8fae25f71b59"
-	let clientId = "39169707deb69fc06145c995aa4cdefe"
-	let accessKey = "61ad813bd71bd4f45aea53a3c996d53a"
-	let fileKey = "351cb3d71efef69e3d6ac5657dd16c1c"
-	let messageKey = "35d5a173e0391a283d60a6a756a44051" 
+	let applicationId = "98bc4baccdedeb747cfb8fae25f71b59"
+	let clientId = "39169707deawdfc06135c995aa4cdefe"
+	let accessKey = "61afdr3bd71bd4f45sea53a3c996d53a"
+	let fileKey = "351cb3d71sfef69e3d6fc5657dd16c1c"
+	let messageKey = "35d5a173a0391a283g60a6m756a44051" 
 
 	SC.initWith(applicationId: applicationId, clientId: clientId, accessKey: accessKey, fileKey: fileKey, messageKey: messageKey)
 	```
