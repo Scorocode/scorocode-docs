@@ -16,11 +16,11 @@ socket.connect()
 | wsKey | <code>String</code> | Обязательное | Ключ websocketKey вашего приложения | 563452bbc611d8106d5da767365897de |
 | chanName | <code>String</code> | Обязательное | Произвольное имя канала | chatroom |
 
-Пример:
-```
-var socket = WebSocket(url: NSURL(string: "wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom")!)
-socket.connect()
-```
+!!! tip "Пример"
+    ```SWIFT
+    var socket = WebSocket(url: NSURL(string: "wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom")!)
+    socket.connect()
+    ```
 
 **Подробную информацию о способах подключения библиотеки Starscream вы сможете найти в Readme.md репозитория [daltoniam/Starscream](https://github.com/daltoniam/Starscream).**
 
@@ -28,16 +28,18 @@ socket.connect()
 
 1) Добавить в ваш Podfile текст "pod 'Starscream', '~> 2.0.3'":
 
-```
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
-use_frameworks!
+!!! tip "Пример Podfile"
+    ```SWIFT
+    source 'https://github.com/CocoaPods/Specs.git'
+    platform :ios, '8.0'
+    use_frameworks!
 
-target 'MyProject' do
-  pod 'Scorocode'
-  pod 'Starscream', '~> 2.0.3'
-end
-```
+    target 'MyProject' do
+      pod 'Scorocode'
+      pod 'Starscream', '~> 2.0.3'
+    end
+    ```
+
 2) Запустить в консоли в папке с проектом команду:
 
 ```

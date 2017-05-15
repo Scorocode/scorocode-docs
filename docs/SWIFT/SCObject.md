@@ -329,12 +329,12 @@ SCObject представляет объект данных приложения
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | name           | <code>String</code>       | Обязательный |  Имя поля, значение которого нужно изменить  | "tags" |
 | _ value        | <code>SCPullable</code>      | Обязательный | Удаляемое значение            | 42     |
-**Пример**
-```SWIFT
-let editItem = SCObject(collection: "streets")
-editItem.pull("homeNumbers", SCInt(34))
 
-```
+!!! tip "Пример"
+    ```SWIFT
+    let editItem = SCObject(collection: "streets")
+    editItem.pull("homeNumbers", SCInt(34))
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -349,11 +349,13 @@ editItem.pull("homeNumbers", SCInt(34))
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | name           | <code>String</code> | Обязательный |  Имя поля, значение которого нужно изменить  | "tags" |
 | _ value        | <code>SCValue</code>| Обязательный |  Массив удаляемых значений            | [42, 44]     |
-**Пример**
-```SWIFT
-let editItem = SCObject(collection: "streets")
-editItem.pullAll("homeNumbers", SCArray(integerArray: [34,56]))
-```
+
+
+!!! tip "Пример"
+    ```SWIFT
+    let editItem = SCObject(collection: "streets")
+    editItem.pullAll("homeNumbers", SCArray(integerArray: [34,56]))
+    ```
 
 ----------------------------------------------------------------------------------------------
 
