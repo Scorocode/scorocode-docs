@@ -994,8 +994,8 @@
                 <p><a name="WebSocket"></a></p>
 <h2 id="websocket">WebSocket</h2>
 <p>Для использования WebSocket в вашем проекте, вы можете воспользоваться библиотекой <a href="https://github.com/daltoniam/Starscream">daltoniam/Starscream</a>, используя следующую схему url при инициализации WebSocket: </p>
-<p><div class="codehilite"><pre><span></span>var socket = WebSocket(url: NSURL(string: &quot;wss://wss.scorocode.ru/{appID}/{wsKey}/{chanName}&quot;)!)
-socket.connect()
+<p><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">socket</span> <span class="p">=</span> <span class="n">WebSocket</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="bp">NSURL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">&quot;wss://wss.scorocode.ru/{appID}/{wsKey}/{chanName}&quot;</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+<span class="n">socket</span><span class="p">.</span><span class="n">connect</span><span class="p">()</span>
 </pre></div>
 
 где</p>
@@ -1041,8 +1041,11 @@ socket.connect()
 
 
 </div>
-<p><strong>Подробную информацию о способах подключения библиотеки Starscream вы сможете найти в Readme.md репозитория <a href="https://github.com/daltoniam/Starscream">daltoniam/Starscream</a>.</strong></p>
 <h3 id="starscream-cocoapods">Подключение библиотеки Starscream с использованием cocoapods</h3>
+<div class="admonition note">
+<p class="admonition-title">Библиотека Starscream</p>
+<p><em>Подробную информацию о способах подключения библиотеки Starscream вы сможете найти в Readme.md репозитория <a href="https://github.com/daltoniam/Starscream">daltoniam/Starscream</a>.</em></p>
+</div>
 <p>1) Добавить в ваш Podfile текст "pod 'Starscream', '~&gt; 2.0.3'":</p>
 <div class="admonition tip">
 <p class="admonition-title">Пример Podfile</p>
@@ -1064,7 +1067,10 @@ socket.connect()
 
 
 <h3 id="starscream">Пример использования библиотеки Starscream</h3>
-<p><strong>Подробную информацию о способах испольования библиотеки Starscream вы сможете найти в Readme.md репозитория <a href="https://github.com/daltoniam/Starscream">daltoniam/Starscream</a>.</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Библиотека Starscream</p>
+<p><em>Подробную информацию о способах подключения библиотеки Starscream вы сможете найти в Readme.md репозитория <a href="https://github.com/daltoniam/Starscream">daltoniam/Starscream</a>.</em></p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span>import UIKit
