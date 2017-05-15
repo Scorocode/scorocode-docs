@@ -639,8 +639,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sendpushquery-subject-text-callback" title=".sendPush(query, subject, text, callback)" class="md-nav__link">
-    .sendPush(query, subject, text, callback)
+  <a href="#sendpushquery-title-text-debug-callback" title=".sendPush(query, title, text, debug, callback)" class="md-nav__link">
+    .sendPush(query, title, text, debug, callback)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendpushquery-title-text-debug-callback_1" title=".sendPush(query, title, text, debug, callback)" class="md-nav__link">
+    .sendPush(query, title, text, debug, callback)
   </a>
   
 </li>
@@ -958,8 +965,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sendpushquery-subject-text-callback" title=".sendPush(query, subject, text, callback)" class="md-nav__link">
-    .sendPush(query, subject, text, callback)
+  <a href="#sendpushquery-title-text-debug-callback" title=".sendPush(query, title, text, debug, callback)" class="md-nav__link">
+    .sendPush(query, title, text, debug, callback)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendpushquery-title-text-debug-callback_1" title=".sendPush(query, title, text, debug, callback)" class="md-nav__link">
+    .sendPush(query, title, text, debug, callback)
   </a>
   
 </li>
@@ -997,15 +1011,16 @@
 <p>Класс для работы с серверными скриптами приложения</p>
 <ul>
 <li><a href="#SCMessage">SCMessage</a><ul>
-<li><a href="#SCScript+sendPush">.sendPush(query: SCQuery, subject: String, text: String, callback: (Bool, SCError?, Int?) -&gt; Void)</a></li>
-<li><a href="#SCScript+sendSms">.sendSms(query: SCQuery, subject: String, text: String, callback: (Bool, SCError?, Int?) -&gt; Void)</a></li>
+<li><a href="#SCMessage+sendPush1">.sendPush(query: SCQuery, title: String, text: String, debug, callback: (Bool, SCError?, Int?) -&gt; Void)</a></li>
+<li><a href="#SCMessage+sendPush2">.sendPush(query: SCQuery, data: [String: Any], debug, callback: (Bool, SCError?, Int?) -&gt; Void)</a></li>
+<li><a href="#SCMessage+sendSms">.sendSms(query: SCQuery, subject: String, text: String, debug, callback: (Bool, SCError?, Int?) -&gt; Void)</a></li>
 </ul>
 </li>
 </ul>
 <hr />
 <p><a name="SCMessage+sendPush"></a></p>
-<h4 id="sendpushquery-subject-text-callback">.sendPush(query, subject, text, callback)</h4>
-<p>Метод для отправки Push</p>
+<h4 id="sendpushquery-title-text-debug-callback">.sendPush(query, title, text, debug, callback)</h4>
+<p>Упрощенный метод для отправки Push-сообщения</p>
 <table>
 <thead>
 <tr>
@@ -1021,15 +1036,29 @@
 <td>query</td>
 <td><code>SCQuery</code></td>
 <td></td>
-<td>Запрос в коллекцию users для выборки адресатов</td>
+<td>Запрос в коллекцию devices для выборки адресатов</td>
 <td></td>
+</tr>
+<tr>
+<td>title</td>
+<td><code>String</code></td>
+<td></td>
+<td>Текст заголовка</td>
+<td>"Внимание!"</td>
 </tr>
 <tr>
 <td>text</td>
 <td><code>String</code></td>
 <td></td>
-<td>Текст письма</td>
-<td>"Текст Push-уведомления"</td>
+<td>Текст сообщения</td>
+<td>"Ваш заказ поступил в магазин."</td>
+</tr>
+<tr>
+<td>debug</td>
+<td><code>Bool</code></td>
+<td></td>
+<td>флаг включения режима отладки</td>
+<td>false</td>
 </tr>
 <tr>
 <td>callback</td>
@@ -1042,18 +1071,89 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">queryUserDevices</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;devices&quot;</span><span class="p">)</span>
-<span class="kd">var</span> <span class="nv">broadcast</span> <span class="p">=</span> <span class="n">SCMessage</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">userId</span> <span class="p">=</span> <span class="s">&quot;qRmX5rHsc6&quot;</span>
+<span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;devices&quot;</span><span class="p">)</span>
+<span class="n">query</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="s">&quot;userId&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="n">userId</span><span class="p">))</span>
+<span class="n">SCMessage</span><span class="p">.</span><span class="n">sendPush</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="s">&quot;Внимание !&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="s">&quot;Ваш заказ поступил в магазин.&quot;</span><span class="p">,</span> <span class="n">debug</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="bp">count</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span><span class="p">,</span> <span class="kd">let</span> <span class="nv">num</span> <span class="p">=</span> <span class="bp">count</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Пуш отправлен на </span><span class="si">\(</span><span class="n">num</span><span class="si">)</span><span class="s"> устройств&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 
-<span class="n">queryUserDevices</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&quot;userRelation&quot;</span><span class="p">)</span>
-<span class="n">broadcast</span><span class="p">.</span><span class="n">sendPush</span><span class="p">(</span><span class="n">queryUserDevices</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span><span class="s">&quot;Текст Push-уведомления&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
+
+</div>
+<hr />
+<p><a name="SCMessage+sendPush2"></a></p>
+<h4 id="sendpushquery-title-text-debug-callback_1">.sendPush(query, title, text, debug, callback)</h4>
+<p>Метод для отправки Push-сообщения с тонкой настройкой</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Свойства</th>
+<th>Описание</th>
+<th>Пример значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>query</td>
+<td><code>SCQuery</code></td>
+<td></td>
+<td>Запрос в коллекцию devices для выборки адресатов</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td><code>[String:Any]]</code></td>
+<td></td>
+<td>Словарь для более тонкой настройки пуш-сообщения</td>
+<td>см. пример</td>
+</tr>
+<tr>
+<td>debug</td>
+<td><code>Bool</code></td>
+<td></td>
+<td>флаг включения режима отладки</td>
+<td>false</td>
+</tr>
+<tr>
+<td>callback</td>
+<td><code>(Bool, SCError?, Int?) -&gt; Void</code></td>
+<td></td>
+<td>Коллбэк для выполняемого запроса.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
+<p>Полное описание словаря apns можно найти по ссылке: <a href="https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html">Payload Reference</a></p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">userId</span> <span class="p">=</span> <span class="s">&quot;qRmX5rHsc6&quot;</span>
+<span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;devices&quot;</span><span class="p">)</span>
+<span class="n">query</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="s">&quot;userId&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="n">userId</span><span class="p">))</span>
+
+<span class="kd">let</span> <span class="nv">data</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;apns&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;123e4567-e89b-12d3-a456-42665544000&quot;</span><span class="p">,</span>
+                <span class="s">&quot;topic&quot;</span><span class="p">:</span> <span class="s">&quot;com.sideshow.Apns2&quot;</span><span class="p">,</span>
+                <span class="s">&quot;collapseId&quot;</span><span class="p">:</span> <span class="s">&quot;my_collapse&quot;</span><span class="p">,</span>
+                <span class="s">&quot;expiration&quot;</span><span class="p">:</span> <span class="s">&quot;2006-01-02T15:04:05Z07:00&quot;</span><span class="p">,</span>
+                <span class="s">&quot;priority&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="s">&quot;aps&quot;</span> <span class="p">:</span> <span class="p">[</span>
+                    <span class="s">&quot;alert&quot;</span> <span class="p">:</span> <span class="p">[</span>
+                        <span class="s">&quot;title&quot;</span> <span class="p">:</span> <span class="s">&quot;Portugal vs. Denmark&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;body&quot;</span> <span class="p">:</span> <span class="s">&quot;great match!&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;action-loc-key&quot;</span> <span class="p">:</span> <span class="s">&quot;Watch&quot;</span><span class="p">],</span>
+                    <span class="s">&quot;badge&quot;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">],</span>
+                <span class="s">&quot;acme1&quot;</span> <span class="p">:</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span>
+                <span class="s">&quot;acme2&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s">&quot;bang&quot;</span><span class="p">,</span>  <span class="s">&quot;whiz&quot;</span> <span class="p">]</span>
+                <span class="p">]</span>
+            <span class="p">]</span>
+<span class="n">SCMessage</span><span class="p">.</span><span class="n">sendPush</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span> <span class="n">debug</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">counter</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span><span class="p">,</span> <span class="kd">let</span> <span class="nv">num</span> <span class="p">=</span> <span class="n">counter</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Пуш отправлен на </span><span class="si">\(</span><span class="n">num</span><span class="si">)</span><span class="s"> устройств&quot;</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -1101,17 +1201,11 @@
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">queryUsersWithPhone</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
-<span class="kd">var</span> <span class="nv">broadcast</span> <span class="p">=</span> <span class="n">SCMessage</span><span class="p">()</span>
-
 <span class="n">queryUsersWithPhone</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&quot;phone&quot;</span><span class="p">)</span>
-<span class="n">broadcast</span><span class="p">.</span><span class="n">sendSms</span><span class="p">(</span><span class="n">queryUsersWithPhone</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span><span class="s">&quot;Текст СМС сообщения&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
+<span class="n">SCMessage</span><span class="p">.</span><span class="n">sendSms</span><span class="p">(</span><span class="n">queryUsersWithPhone</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span><span class="s">&quot;Текст СМС сообщения&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">counter</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span><span class="p">,</span> <span class="kd">let</span> <span class="nv">num</span> <span class="p">=</span> <span class="n">counter</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;смс посланы </span><span class="si">\(</span><span class="n">num</span><span class="si">)</span><span class="s"> пользователям&quot;</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>

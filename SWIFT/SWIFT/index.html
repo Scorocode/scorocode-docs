@@ -558,8 +558,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="Установка" class="md-nav__link">
-    Установка
+  <a href="#_1" title="Установка:" class="md-nav__link">
+    Установка:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cocoapods" title="Установка с помощью cocoapods:" class="md-nav__link">
+    Установка с помощью cocoapods:
   </a>
   
 </li>
@@ -936,8 +943,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="Установка" class="md-nav__link">
-    Установка
+  <a href="#_1" title="Установка:" class="md-nav__link">
+    Установка:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cocoapods" title="Установка с помощью cocoapods:" class="md-nav__link">
+    Установка с помощью cocoapods:
   </a>
   
 </li>
@@ -958,7 +972,25 @@
                 <h1 id="scorocode-sdk-swift">scorocode-SDK-swift</h1>
 <p>SDK предоставляет доступ к платформе Scorocode для построения приложений, основанных на swift.
 Подробности на нашем сайте: https://scorocode.ru</p>
-<h2 id="_1">Установка</h2>
+<h3 id="_1">Установка:</h3>
+<p>1) Скопировать из репозитория папку <a href="https://github.com/Scorocode/scorocode-SDK-swift/tree/swift3/Scorocode/SCLib">SCLib</a></p>
+<p>2) Добавить папку в свой проект.</p>
+<p>3) В <code>AppDelegate.swift</code> в методе <code>didFinishLaunchingWithOptions</code> указать значения параметров инициализации API из личного кабинета. </p>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
+<div class="codehilite"><pre><span></span><span class="c1">//scorocode init</span>
+<span class="kd">let</span> <span class="nv">applicationId</span> <span class="p">=</span> <span class="s">&quot;98bc4bacb5edeb727cfb8fae25f71b59&quot;</span>
+<span class="kd">let</span> <span class="nv">clientId</span> <span class="p">=</span> <span class="s">&quot;39169707deb69fc06145c995aa4cdefe&quot;</span>
+<span class="kd">let</span> <span class="nv">accessKey</span> <span class="p">=</span> <span class="s">&quot;61ad813bd71bd4f45aea53a3c996d53a&quot;</span>
+<span class="kd">let</span> <span class="nv">fileKey</span> <span class="p">=</span> <span class="s">&quot;351cb3d71efef69e3d6ac5657dd16c1c&quot;</span>
+<span class="kd">let</span> <span class="nv">messageKey</span> <span class="p">=</span> <span class="s">&quot;35d5a173e0391a283d60a6a756a44051&quot;</span> 
+
+<span class="n">SC</span><span class="p">.</span><span class="n">initWith</span><span class="p">(</span><span class="n">applicationId</span><span class="p">:</span> <span class="n">applicationId</span><span class="p">,</span> <span class="n">clientId</span><span class="p">:</span> <span class="n">clientId</span><span class="p">,</span> <span class="n">accessKey</span><span class="p">:</span> <span class="n">accessKey</span><span class="p">,</span> <span class="n">fileKey</span><span class="p">:</span> <span class="n">fileKey</span><span class="p">,</span> <span class="n">messageKey</span><span class="p">:</span> <span class="n">messageKey</span><span class="p">)</span>
+</pre></div>
+
+
+</div>
+<h3 id="cocoapods">Установка с помощью cocoapods:</h3>
 <p>Подключение библиотеки к проекту:</p>
 <p>1) Установить <a href="https://cocoapods.org">CocoaPods</a></p>
 <div class="codehilite"><pre><span></span>sudo gem install cocoapods
@@ -983,7 +1015,9 @@ end
 
 
 <p>5) В папке с проектом появится файл <code>MyProject.xcworkspace</code>, открыть его в xcode.</p>
-<p>6) В <code>AppDelegate.swift</code> в методе <code>didFinishLaunchingWithOptions</code> указать значения параметров инициализации API из личного кабинета. Пример:</p>
+<p>6) В <code>AppDelegate.swift</code> в методе <code>didFinishLaunchingWithOptions</code> указать значения параметров инициализации API из личного кабинета.</p>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
 <div class="codehilite"><pre><span></span><span class="c1">//scorocode init</span>
 <span class="kd">let</span> <span class="nv">applicationId</span> <span class="p">=</span> <span class="s">&quot;98bc4bacb5edeb727cfb8fae25f71b59&quot;</span>
 <span class="kd">let</span> <span class="nv">clientId</span> <span class="p">=</span> <span class="s">&quot;39169707deb69fc06145c995aa4cdefe&quot;</span>
@@ -993,6 +1027,9 @@ end
 
 <span class="n">SC</span><span class="p">.</span><span class="n">initWith</span><span class="p">(</span><span class="n">applicationId</span><span class="p">:</span> <span class="n">applicationId</span><span class="p">,</span> <span class="n">clientId</span><span class="p">:</span> <span class="n">clientId</span><span class="p">,</span> <span class="n">accessKey</span><span class="p">:</span> <span class="n">accessKey</span><span class="p">,</span> <span class="n">fileKey</span><span class="p">:</span> <span class="n">fileKey</span><span class="p">,</span> <span class="n">messageKey</span><span class="p">:</span> <span class="n">messageKey</span><span class="p">)</span>
 </pre></div>
+
+
+</div>
               
             </article>
           </div>
