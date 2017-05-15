@@ -42,6 +42,9 @@ pages:
         - 'SCUser': 'SWIFT/SCUser.md'
         - 'SCMessage': 'SWIFT/SCMessage.md'
         - 'SCScript': 'SWIFT/SCScript.md'
+        - 'SCBot': 'SWIFT/SCBot.md'
+        - 'SCCollection': 'SWIFT/SCCollection.md'
+        - 'SCFolder': 'SWIFT/SCFolder.md'
         - 'WebSocket': 'SWIFT/WebSocket.md'
     - 'Java SDK (Android)':
         - 'Java SDK': 'Java/Java.md'
