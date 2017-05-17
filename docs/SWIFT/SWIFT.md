@@ -35,15 +35,16 @@ sudo gem install cocoapods
 
 3) Создать в корне проекта файл с именем "Podfile" с текстом:
 
-```
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
-use_frameworks!
+!!! tip "Пример Podfile"
+	```SWIFT
+	source 'https://github.com/CocoaPods/Specs.git'
+	platform :ios, '8.0'
+	use_frameworks!
 
-target 'MyProject' do
-  pod 'Scorocode'
-end
-```
+	target 'MyProject' do
+	  pod 'Scorocode'
+	end
+	```
 
 4) Закрыть проект в xcode, запустить в консоли:
 
