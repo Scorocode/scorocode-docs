@@ -1339,8 +1339,8 @@
     });
 
 
-    var query = sc.Query("items");
-    query.raw("{ \"fieldString\" : \"Строка\" }");
+    var query = new sc.Query("items");
+    query.raw({"_id": {"$eq": "cL0meP4TFc"}});
     query.find()
         .then((finded) =>{
             //Выведем полученные данные в консоль. 
