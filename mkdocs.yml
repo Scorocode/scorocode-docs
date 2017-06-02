@@ -60,6 +60,7 @@ pages:
         - 'Класс ScorocodeScript':  'Java/ScorocodeScript.md'
     - 'Примеры приложений':
         - 'Склад (Android)': 'Java/Storehouse.md'
+        - 'Список задач (iOs)': 'SWIFT/ToDoList.md'
 theme_dir: 'material'
 extra:
   logo: 'logo.png'
