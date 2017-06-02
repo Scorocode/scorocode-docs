@@ -15,23 +15,21 @@
     * [SCArray(value)](#SCArray) 
     * [SCDictionary(value)](#SCDictionary)
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
 <a name="SCBool"></a> 
 
 ### SCBool(value)
 
 Хранение логических значений
 
-**Параметры**
-
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | value | <code>Bool</code> | Обязательное | Логическое значение | `true` или `false` | 
 
-
-```SWIFT
-let dataBool = SCBool(true)
-```
+!!! tip "Пример"
+	```SWIFT
+	let dataBool = SCBool(true)
+	```
 
 ----------------------------------------------------------------------------------------------
 
@@ -42,16 +40,15 @@ let dataBool = SCBool(true)
 Хранение строковых значений
 
 
-**Параметры**
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | value | <code>String</code> | Обязательное | Cтрока | "Это строка" | 
 
-
-```SWIFT
-let dataString = SCString("AbCdE")
-```
+!!! tip "Пример"
+	```SWIFT
+	let dataString = SCString("AbCdE")
+	```
 
 ----------------------------------------------------------------------------------------------
 
@@ -61,16 +58,15 @@ let dataString = SCString("AbCdE")
 
 Хранение целочисленных значений
 
-**Параметры**
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | value | <code>Int</code> | Обязательное | целочисленное | 42 | 
 
-
-```SWIFT
-let dataInt = SCInt(5)
-```
+!!! tip "Пример"
+	```SWIFT
+	let dataInt = SCInt(5)
+	```
 
 ----------------------------------------------------------------------------------------------
 
@@ -80,16 +76,15 @@ let dataInt = SCInt(5)
 
 Хранение дробных значений
 
-**Параметры**
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | value | <code>Double</code> | Обязательное | Дробное | 3.1415926 | 
 
-
-```SWIFT
-let dataDouble = SCDouble(3.1415926)
-```
+!!! tip "Пример"
+	```SWIFT
+	let dataDouble = SCDouble(3.1415926)
+	```
 
 ----------------------------------------------------------------------------------------------
 
@@ -99,16 +94,15 @@ let dataDouble = SCDouble(3.1415926)
 
 Хранение даты/времени
 
-**Параметры**
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | value | <code>NSDate</code> | Обязательное | Дата | 2016-05-31 | 
 
-
-```SWIFT
-let dataDate = SCDate(dateFormatter.dateFromString("2016-05-31")!)
-```
+!!! tip "Пример"
+	```SWIFT
+	let dataDate = SCDate(dateFormatter.dateFromString("2016-05-31")!)
+	```
 
 
 
@@ -120,23 +114,23 @@ let dataDate = SCDate(dateFormatter.dateFromString("2016-05-31")!)
 
 Хранение массива
 
-**Параметры**
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | value | <code>[SCValue]</code> | Обязательное | Массив | <code>[SCInt(4), SCInt(8), SCInt(15), SCInt(16), SCInt(23), SCInt(42)]</code> | 
 
 
-```SWIFT
-let dataBool = SCBool(true)
-let dataString = SCString("AbCdE")
-let dataInt = SCInt(5)
-let dataDouble = SCDouble(3.1415926)
-let dataDate = SCDate(dateFormatter.dateFromString("2016-05-31")!)
-let dataDictionary = SCDictionary(["name" : dataString, "date" : dataDate])
+!!! tip "Пример"
+	```SWIFT
+	let dataBool = SCBool(true)
+	let dataString = SCString("AbCdE")
+	let dataInt = SCInt(5)
+	let dataDouble = SCDouble(3.1415926)
+	let dataDate = SCDate(dateFormatter.dateFromString("2016-05-31")!)
+	let dataDictionary = SCDictionary(["name" : dataString, "date" : dataDate])
 
-let dataArray = SCArray([dataBool, dataString, dataInt, dataDouble, dataDate, dataDictionary])
-```
+	let dataArray = SCArray([dataBool, dataString, dataInt, dataDouble, dataDate, dataDictionary])
+	```
 
 ----------------------------------------------------------------------------------------------
 
@@ -146,12 +140,12 @@ let dataArray = SCArray([dataBool, dataString, dataInt, dataDouble, dataDate, da
 
 Хранение объекта "ключ"-"значение"
 
-**Параметры**
 
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | value | <code>[String: SCValue]</code> | Обязательное | Объект с данными типа "ключ": "значение" | ["key1" : SCString("A"), "key2" : SCString("B")] | 
 
-```SWIFT
-let dataDictionary = SCDictionary(["key1" : SCString("A"), "key2" : SCString("B")])
-```
+!!! tip "Пример"
+	```SWIFT
+	let dataDictionary = SCDictionary(["key1" : SCString("A"), "key2" : SCString("B")])
+	```

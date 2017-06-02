@@ -17,10 +17,10 @@
 ### init()
 Инициализация SCUser
 
-**Пример**
-```SWIFT
-let appUser = SCUser()
-```
+!!! tip "Пример"
+    ```SWIFT
+    let appUser = SCUser()
+    ```
 
 ----------------------------------------------------------------------------------------------
 <a name="SCUser+login"></a>
@@ -34,37 +34,37 @@ let appUser = SCUser()
 | password | <code>String</code>                                         | Обязательный  | Пароль пользователя        | "CorrectHorseBatteryStaple" |
 | callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |         | Коллбэк для выполняемого запроса.|                             |
 
-**Пример**   
-```SWIFT
-    @IBAction private func loginPressed() {
-        
-        guard let email = emailTextField.text where email != "",
-            let password = passwordTextField.text where password != "" else {
-                let alert = UIAlertController(title: "Вход невозможен", message: "Не указан email или пароль", preferredStyle: .Alert)
-                let ok = UIAlertAction(title: "OK", style: .Default) {
-                    action in
+!!! tip "Пример"
+    ```SWIFT
+        @IBAction private func loginPressed() {
+            
+            guard let email = emailTextField.text where email != "",
+                let password = passwordTextField.text where password != "" else {
+                    let alert = UIAlertController(title: "Вход невозможен", message: "Не указан email или пароль", preferredStyle: .Alert)
+                    let ok = UIAlertAction(title: "OK", style: .Default) {
+                        action in
+                        return
+                    }
+                    alert.addAction(ok)
+                    presentViewController(alert, animated: true, completion: nil)
                     return
-                }
-                alert.addAction(ok)
-                presentViewController(alert, animated: true, completion: nil)
-                return
-        }
-        
-        let user = SCUser()
-        user.login(email, password: password) {
-            success, error, result in
-            if success {
-                let alert = UIAlertController(title: "Вход выполнен", message: nil, preferredStyle: .Alert)
-                let ok = UIAlertAction(title: "OK", style: .Default) {
-                    action in
-                    self.performSegueWithIdentifier("ToObjects", sender: nil)
-                }
-                alert.addAction(ok)
-                self.presentViewController(alert, animated: true, completion: nil)
             }
-        }
+            
+            let user = SCUser()
+            user.login(email, password: password) {
+                success, error, result in
+                if success {
+                    let alert = UIAlertController(title: "Вход выполнен", message: nil, preferredStyle: .Alert)
+                    let ok = UIAlertAction(title: "OK", style: .Default) {
+                        action in
+                        self.performSegueWithIdentifier("ToObjects", sender: nil)
+                    }
+                    alert.addAction(ok)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            }
 
-```
+    ```
 
 ----------------------------------------------------------------------------------------------
 <a name="SCUser+logout"></a>
@@ -72,22 +72,22 @@ let appUser = SCUser()
 Метод для завершения активной сессии пользователя.
 
 
-
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |              | Коллбэк для выполняемого запроса. |                             |
 
-**Пример**   
-```SWIFT
-    @IBAction private func logoutPressed() {
-        SCUser.logout() {
-            success, error in
-            if success {
-                self.dismissViewControllerAnimated(true, completion: nil)
+!!! tip "Пример"
+    ```SWIFT
+        @IBAction private func logoutPressed() {
+            SCUser.logout() {
+                success, error in
+                if success {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
             }
         }
-    }
-```
+    ```
+
 ----------------------------------------------------------------------------------------------
 <a name="SCUser+signup"></a>
 ### .signup(username, email, password, callback)
@@ -101,54 +101,55 @@ let appUser = SCUser()
 | callback | <code>(Bool, SCError?, [String: AnyObject]?) -> Void</code> |              | Коллбэк для выполняемого запроса. |                             |
 
 
-**Пример**   
-```SWIFT
-@IBAction private func signupPressed() {
-    guard let email = emailTextField.text where email != "",
-        let password = passwordTextField.text where password != "",
-    let username = usernameTextField.text where username != "" else {
-            let alert = UIAlertController(title: "Регистрация невозможна", message: "Не указан email, пароль или имя пользователя", preferredStyle: .Alert)
-            let ok = UIAlertAction(title: "OK", style: .Default) {
-                action in
+!!! tip "Пример"
+    ```SWIFT
+    @IBAction private func signupPressed() {
+        guard let email = emailTextField.text where email != "",
+            let password = passwordTextField.text where password != "",
+        let username = usernameTextField.text where username != "" else {
+                let alert = UIAlertController(title: "Регистрация невозможна", message: "Не указан email, пароль или имя пользователя", preferredStyle: .Alert)
+                let ok = UIAlertAction(title: "OK", style: .Default) {
+                    action in
+                    return
+                }
+                alert.addAction(ok)
+                presentViewController(alert, animated: true, completion: nil)
                 return
+        }
+        
+        let user = SCUser()
+        user.signup(username, email: email, password: password) {
+            success, error, result in
+            if success {
+                let alert = UIAlertController(title: "Пользователь зарегистрирован", message: nil, preferredStyle: .Alert)
+                let ok = UIAlertAction(title: "OK", style: .Default) {
+                    action in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+                alert.addAction(ok)
+                self.presentViewController(alert, animated: true, completion: nil)
+            } else {
+                var message = ""
+                switch error! {
+                case .API(_, let apiMessage):
+                    message = apiMessage
+                default:
+                    break
+                }
+                let alert = UIAlertController(title: "Ошибка при регистрации", message: message, preferredStyle: .Alert)
+                let ok = UIAlertAction(title: "OK", style: .Default) {
+                    action in
+                }
+                alert.addAction(ok)
+                self.presentViewController(alert, animated: true, completion: nil)
             }
-            alert.addAction(ok)
-            presentViewController(alert, animated: true, completion: nil)
-            return
-    }
-    
-    let user = SCUser()
-    user.signup(username, email: email, password: password) {
-        success, error, result in
-        if success {
-            let alert = UIAlertController(title: "Пользователь зарегистрирован", message: nil, preferredStyle: .Alert)
-            let ok = UIAlertAction(title: "OK", style: .Default) {
-                action in
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }
-            alert.addAction(ok)
-            self.presentViewController(alert, animated: true, completion: nil)
-        } else {
-            var message = ""
-            switch error! {
-            case .API(_, let apiMessage):
-                message = apiMessage
-            default:
-                break
-            }
-            let alert = UIAlertController(title: "Ошибка при регистрации", message: message, preferredStyle: .Alert)
-            let ok = UIAlertAction(title: "OK", style: .Default) {
-                action in
-            }
-            alert.addAction(ok)
-            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
-}
-```
+    ```
 
 
 ----------------------------------------------------------------------------------------------
+
 <a name="SCUser+signup2"></a>
 ### .signup(callback)
 Метод для регистрации пользователя приложения. Поля устанавливаются методами родительского класса Object.

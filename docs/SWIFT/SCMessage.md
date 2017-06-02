@@ -12,7 +12,9 @@ SCMessage
     * [.sendSms(query: SCQuery, subject: String, text: String, debug, callback: (Bool, SCError?, Int?) -> Void)](#SCMessage+sendSms)
 
 ----------------------------------------------------------------------------------------------
+
 <a name="SCMessage+sendPush"></a>
+
 #### .sendPush(query, title, text, debug, callback)
 Упрощенный метод для отправки Push-сообщения
  
@@ -34,6 +36,7 @@ SCMessage.sendPush(query, title: "Внимание !", text: "Ваш заказ 
         print("Пуш отправлен на \(num) устройств")
     }
 }
+
 
 ```
 
@@ -82,6 +85,7 @@ SCMessage.sendPush(query, data: data, debug: false) { (success, error, counter) 
 
 ```
 ----------------------------------------------------------------------------------------------
+
 <a name="SCMessage+sendSms"></a>
 #### .sendSms(query, subject, text, callback)
 Метод для отправки Sms
@@ -105,3 +109,4 @@ SCMessage.sendSms(queryUsersWithPhone, text:"Текст СМС сообщени�
 }
 
 ```
+

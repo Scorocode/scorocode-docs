@@ -27,18 +27,16 @@
 
 Метод для передачи SCUpdate оператора для изменения данных
 
-**Параметры**
-
 | Параметр | Тип | Свойства | Описание | Пример значения |
 | --- | --- | --- | --- | --- |
 | oper | <code>SCUpdateOperator</code> | Обязательное | Условие выборки |  | 
 
-
-```SWIFT
-var update = SCUpdate()
-let currentDate = SCUpdateOperator.currentDate("fieldName", typeSpec: "timestamp")
-update.addOperator(currentDate)
-``````
+!!! tip "Пример"
+    ```SWIFT
+    var update = SCUpdate()
+    let currentDate = SCUpdateOperator.currentDate("fieldName", typeSpec: "timestamp")
+    update.addOperator(currentDate)
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -47,26 +45,24 @@ update.addOperator(currentDate)
 ### .set(dic: [String: SCValue])
 Метод для передачи данных объекту
 
-**Тип**: Метод <code>[SCUpdate](#SCUpdate)</code>  
 
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | dic        |<code>[String: SCValue]</code>  |              |Объект с данными для передачи объекту | ["fieldString": SCString("NewValue")] |
 
-**Пример**  
-```SWIFT
-var update = SCUpdate()
-update.set(["fieldName": SCString("A")])
-```
+!!! tip "Пример"
+    ```SWIFT
+    var update = SCUpdate()
+    update.set(["fieldName": SCString("A")])
+    ```
 
 ----------------------------------------------------------------------------------------------
 
 <a name="SCUpdate+push"></a>
 
-### .push(name: String, _ value: SCValue))
+### .push(name: String, _ value: SCValue)
 Метод для добавления элемента в массив.
 
-**Тип**: Метод <code>[SCUpdate](#SCUpdate)</code>  
 
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
@@ -74,22 +70,20 @@ update.set(["fieldName": SCString("A")])
 | _ value        | <code>SCValue</code>       | Обязательный |  Значение нового элемента массива            | 42     |
 
 
-**Пример**
-```SWIFT
-var update = SCUpdate()
-update.push("fieldName", SCString("A"))
-update.save()
-
-```
+!!! tip "Пример"
+    ```SWIFT
+    var update = SCUpdate()
+    update.push("fieldName", SCString("A"))
+    update.save()
+    ```
 
 ----------------------------------------------------------------------------------------------
 
 <a name="SCUpdate+pushEach"></a>
 
-### .pushEach(name: String, _ value: SCValue))
+### .pushEach(name: String, _ value: SCValue)
 Метод для добавления нескольких элементов в массив.
 
-**Тип**: Метод <code>[SCUpdate](#SCUpdate)</code>  
 
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
@@ -97,11 +91,11 @@ update.save()
 | _ value        | <code>SCValue</code>      | Обязательный |  Значения новых элементов массива            | 42, [43,43], 44     |
 
 
-**Пример**
-```SWIFT
-var update = SCUpdate()
-update.pushEach("fieldName", SCArray([SCString("A")]))
-```
+!!! tip "Пример"
+    ```SWIFT
+    var update = SCUpdate()
+    update.pushEach("fieldName", SCArray([SCString("A")]))
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -110,18 +104,17 @@ update.pushEach("fieldName", SCArray([SCString("A")]))
 ### .pull(name: String, _ value: SCPullable)
 Метод для удаления всех элементов массива, значение которых равно указанному.
 
-**Тип**: Метод <code>[Object](#SCUpdate)</code>  
   
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | name           | <code>String</code>       | Обязательный |  Имя поля, значение которого нужно изменить  | "tags" |
 | _ value        | <code>SCPullable</code>      | Обязательный | Удаляемое значение            | 42     |
 
-**Пример**
-```SWIFT
-var update = SCUpdate()
-update.pull("fieldName", SCString("A"))
-```
+!!! tip "Пример"
+    ```SWIFT
+    var update = SCUpdate()
+    update.pull("fieldName", SCString("A"))
+    ```
 
 
 
@@ -133,18 +126,17 @@ update.pull("fieldName", SCString("A"))
 
 Метод для удаления всех элементов массива, значения которых равны одному из указанных значений.
 
-**Тип**: Метод <code>[SCUpdate](#SCUpdate)</code>  
 
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | name           | <code>String</code> | Обязательный |  Имя поля, значение которого нужно изменить  | "tags" |
 | _ value        | <code>SCValue</code>| Обязательный |  Массив удаляемых значений            | [42, 44]     |
 
-**Пример**
-```SWIFT
-var update = SCUpdate()
-update.pullAll("fieldName", SCArray([SCString("A")]))
-```
+!!! tip "Пример"
+    ```SWIFT
+    var update = SCUpdate()
+    update.pullAll("fieldName", SCArray([SCString("A")]))
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -153,19 +145,17 @@ update.pullAll("fieldName", SCArray([SCString("A")]))
 ### .addToSet(name: String, _ value: SCValue)
 Метод для добавления элемента в массив только в том случае, если в массиве отсутствуют элементы с таким значением.
 
-**Тип**: Метод <code>[SCUpdate](#SCUpdate)</code>  
 
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | name           |<code>String</code>         | Обязательный |  Имя поля, значение которого нужно изменить  | "tags" |
 | _ value        | <code>SCValue</code>      | Обязательный |  Значение нового элемента массива             | 42     |
 
-**Пример**
-```SWIFT
-var update = SCUpdate()
-update.addToSet("fieldName", SCString("A"))
-
-```
+!!! tip "Пример"
+    ```SWIFT
+    var update = SCUpdate()
+    update.addToSet("fieldName", SCString("A"))
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -174,18 +164,17 @@ update.addToSet("fieldName", SCString("A"))
 ### .addToSetEach(name: String, _ value: SCValue)
 Метод для добавления элементов в массив только в том случае, если в массиве отсутствуют элементы с таким значением.
 
-**Тип**: Метод <code>[SCUpdate](#SCUpdate)</code>  
 
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | name           |<code>String</code>         | Обязательный |  Имя поля, значение которого нужно изменить  | "tags" |
 | _ value        | <code>SCValue</code>      | Обязательный |  Массив значений новых элементов массива      | [42, 43]     |
 
-**Пример**
-```SWIFT
-var update = SCUpdate()
-update.addToSetEach("fieldName", SCArray(SCString("A"))
-```
+!!! tip "Пример"
+    ```SWIFT
+    var update = SCUpdate()
+    update.addToSetEach("fieldName", SCArray(SCString("A"))
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -194,19 +183,16 @@ update.addToSetEach("fieldName", SCArray(SCString("A"))
 ### .pop(name: String, _ value: Int)
 Метод для удаления первого или последнего элемента массива
 
-**Тип**: Метод <code>[SCUpdate](#SCUpdate)</code>  
-
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | name           |<code>String</code>         | Обязательный |  Имя поля, значение которого нужно изменить  | "tags" |
 | _ value        | <code>Int</code>      | Обязательный | Позиция удаляемого элемента в массиве: -1 для первого элемента и 1 для последнего | -1     |
 
-```SWIFT
-var update = SCUpdate()
-update.pop("fieldName", 1)
-```
-
-
+!!! tip "Пример"
+    ```SWIFT
+    var update = SCUpdate()
+    update.pop("fieldName", 1)
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -215,19 +201,17 @@ update.pop("fieldName", 1)
 ### .inc(name: String, _ value: SCValue)
 Метод увеличивает значение числового поля на заданное число
 
-**Тип**: Метод <code>[SCUpdate](#SCUpdate)</code>  
-
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | name           |<code>String</code>          | Обязательный |  Имя поля, значение которого нужно изменить  | "price" |
 | _ value        | <code>SCValue</code>        | Обязательный |  Шаг изменения | 5     |
 
 
-**Пример** 
-```SWIFT 
-var update = SCUpdate()
-update.inc("fieldName", SCInt(1))
-```
+!!! tip "Пример"
+    ```SWIFT 
+    var update = SCUpdate()
+    update.inc("fieldName", SCInt(1))
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -236,18 +220,16 @@ update.inc("fieldName", SCInt(1))
 ### .currentDate(name: String, typeSpec: String)
 Устанавливает текущее время в качестве значения поля
 
-**Тип**: Метод <code>[SCUpdate](#SCUpdate)</code>  
-
 | Параметр   | Тип                 | Свойства     | Описание                                                   |Пример значения|
 |------------|---------------------|--------------|------------------------------------------------------------|---------------|
 | name       |<code>String</code>  | Обязательный |  Имя поля, значение которого нужно изменить                | "price"       |
 | typeSpec   | <code>SCValue</code>| Обязательный | Тип даты. Принимает значения: true, 'date' или 'timestamp' | "timestamp"   |
 
-**Пример**:
-```SWIFT
-var update = SCUpdate()
-update.currentDate("fieldName", typeSpec: "date")
-```
+!!! tip "Пример"
+    ```SWIFT
+    var update = SCUpdate()
+    update.currentDate("fieldName", typeSpec: "date")
+    ```
 
 
 ----------------------------------------------------------------------------------------------
@@ -257,18 +239,16 @@ update.currentDate("fieldName", typeSpec: "date")
 ### .mul(name: String, _ value: SCValue)
 Метод умножает значение числового поля на заданное число
 
-**Тип**: Метод <code>[SCUpdate](#SCUpdate)</code>  
-
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | name           |<code>String</code>         | Обязательный |  Имя поля, значение которого нужно изменить  | "price" |
 | _ value        | <code>SCValue</code>      | Обязательный | Мультипликатор | 2.5    |
 
-**Пример**  
-```SWIFT
-var update = SCUpdate()
-update.mul("fieldName", SCInt(5))
-```
+!!! tip "Пример"
+    ```SWIFT
+    var update = SCUpdate()
+    update.mul("fieldName", SCInt(5))
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -277,19 +257,17 @@ update.mul("fieldName", SCInt(5))
 ### .min(name: String, _ value: SCValue)
 Метод обновляет значение числового поля только в случае, если новое значение меньше текущего значения поля
 
-**Тип**: Метод <code>[SCUpdate](#SCUpdate)</code>  
-
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | name           |<code>String</code>         | Обязательный |  Имя поля, значение которого нужно изменить  | "price" |
 | _ value        | <code>SCValue</code>      | Обязательный | Новое значение | 42    |
 
 
-**Пример**  
-```SWIFT
-var update = SCUpdate()
-update.min("fieldName", SCInt(5))
-```
+!!! tip "Пример"
+    ```SWIFT
+    var update = SCUpdate()
+    update.min("fieldName", SCInt(5))
+    ```
 
 ----------------------------------------------------------------------------------------------
 
@@ -299,15 +277,13 @@ update.min("fieldName", SCInt(5))
 ### .max(name: String, _ value: SCValue)
 Метод обновляет значение числового поля только в случае, если новое значение больше текущего значения поля
 
-**Тип**: Метод <code>[SCUpdate](#SCUpdate)</code>  
-
 | Параметр   | Тип              | Свойства     | Описание                             | Пример значения                       |
 |------------|------------------|--------------|--------------------------------------|---------------------------------------|
 | name           |<code>String</code>         | Обязательный |  Имя поля, значение которого нужно изменить  | "price" |
 | _ value        | <code>SCValue</code>      | Обязательный | Новое значение | 42    |
 
-**Пример**  
-```SWIFT
-var update = SCUpdate()
-update.max("fieldName", SCInt(5))
-``
+!!! tip "Пример"
+    ```SWIFT
+    var update = SCUpdate()
+    update.max("fieldName", SCInt(5))
+    ```
