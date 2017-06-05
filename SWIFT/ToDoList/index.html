@@ -1932,28 +1932,29 @@
         <span class="p">}</span>
     <span class="p">}</span>
 </pre></div>
+</p>
+<p>Обработчик создает новую задачу, записывает в нее требуемые поля, и пытается сохранить или обновить соотвествующий документ задачи на сервере. Напомним, то при обновлении длокумента на сервере необходимо инициализировать класс <code>SCObject</code> с идентификатором:</p>
+<div class="codehilite"><pre><span></span><span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;tasks&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="n">task</span><span class="p">.</span><span class="n">id</span><span class="p">)</span>
+</pre></div>
 
- Обработчик создает новую задачу, записывает в нее требуемые поля, и пытается сохранить или обновить соотвествующий документ задачи на сервере. Напомним, то при обновлении длокумента на сервере необходимо инициализировать класс <code>SCObject</code> с идентификатором:
- ```SWIFT
-SCObject(collection: "tasks", id: task.id)</p>
-<div class="codehilite"><pre><span></span>При сохранении документа на сервер в случае успеха сервер посылает ответ содержащий идентификатор документа. Мы можем воспользоватся этим и сохранить нужный нам идентификатор задачи, если мы создаем нову задачу, дабы не делать еще один запрос к серверу:
-```SWIFT
-scObject.save() {
-            success, error, result in
-            self.activityIndicator.stopAnimating()
-            self.contentView.isUserInteractionEnabled = true
-            if success {
-                // get task id
-                if self.isCreateMode {
-                    if let id = result?[&quot;_id&quot;] as? String {
-                        newTask.id = id
-                    }
-                }
-                self.saveHistory(newTask)
-            } else {
-               self.showAlert(title: &quot;Ошибка!&quot;, message: &quot;Не удалось сохранить задачу. Попробуйте еще раз&quot;, completion: nil)
-            }
-        }
+
+<p>При сохранении документа на сервер в случае успеха сервер посылает ответ содержащий идентификатор документа. Мы можем воспользоватся этим и сохранить нужный нам идентификатор задачи, если мы создаем нову задачу, дабы не делать еще один запрос к серверу:</p>
+<div class="codehilite"><pre><span></span><span class="n">scObject</span><span class="p">.</span><span class="n">save</span><span class="p">()</span> <span class="p">{</span>
+            <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
+            <span class="kc">self</span><span class="p">.</span><span class="n">activityIndicator</span><span class="p">.</span><span class="n">stopAnimating</span><span class="p">()</span>
+            <span class="kc">self</span><span class="p">.</span><span class="n">contentView</span><span class="p">.</span><span class="n">isUserInteractionEnabled</span> <span class="p">=</span> <span class="kc">true</span>
+            <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
+                <span class="c1">// get task id</span>
+                <span class="k">if</span> <span class="kc">self</span><span class="p">.</span><span class="n">isCreateMode</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="kd">let</span> <span class="nv">id</span> <span class="p">=</span> <span class="n">result</span><span class="p">?[</span><span class="s">&quot;_id&quot;</span><span class="p">]</span> <span class="kc">as</span><span class="p">?</span> <span class="nb">String</span> <span class="p">{</span>
+                        <span class="n">newTask</span><span class="p">.</span><span class="n">id</span> <span class="p">=</span> <span class="n">id</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="kc">self</span><span class="p">.</span><span class="n">saveHistory</span><span class="p">(</span><span class="n">newTask</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+               <span class="kc">self</span><span class="p">.</span><span class="n">showAlert</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="s">&quot;Ошибка!&quot;</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="s">&quot;Не удалось сохранить задачу. Попробуйте еще раз&quot;</span><span class="p">,</span> <span class="n">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 </pre></div>
 
 
