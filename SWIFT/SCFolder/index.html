@@ -1033,12 +1033,10 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">folders</span> <span class="p">=</span> <span class="n">SCFolder</span><span class="p">()</span>
-<span class="n">folders</span><span class="p">.</span><span class="n">createFolder</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="s">&quot;/newFolder&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let folders = SCFolder()
+folders.createFolder(path: &quot;/newFolder&quot;) { (success, error, result) in
+    print(result)
+}</code></pre>
 
 </div>
 <hr />
@@ -1074,12 +1072,10 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">folders</span> <span class="p">=</span> <span class="n">SCFolder</span><span class="p">()</span>
-<span class="n">folders</span><span class="p">.</span><span class="n">deleteFolder</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="s">&quot;/newFolder&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let folders = SCFolder()
+folders.deleteFolder(path: &quot;/newFolder&quot;) { (success, error, result) in
+    print(result)
+}</code></pre>
 
 </div>
               

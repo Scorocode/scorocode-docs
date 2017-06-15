@@ -1029,9 +1029,7 @@
 <p><strong>Пример</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span>var WS = new sc.WebSocket(&#39;chatroom&#39;);
-</pre></div>
-
+<pre class="codehilite"><code>var WS = new sc.WebSocket('chatroom');</code></pre>
 
 </div>
 <hr />
@@ -1074,27 +1072,25 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<pre class="codehilite"><code class="language-js">var sc = require('scorocode');
 
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">WebSocketKey</span><span class="o">:</span> <span class="s2">&quot;webSocketKey_приложения&quot;</span>
-<span class="p">});</span>
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;,
+    WebSocketKey: &quot;webSocketKey_приложения&quot;
+});
 
-<span class="kd">var</span> <span class="nx">WS</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;Helloworld&#39;</span><span class="p">);</span>
+var WS = new sc.WebSocket('Helloworld');
 
-<span class="nx">WS</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;open&quot;</span><span class="p">,</span> <span class="nx">onOpen</span> <span class="p">()</span> <span class="p">{});</span>
-<span class="nx">WS</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;close&quot;</span><span class="p">,</span> <span class="nx">onClose</span> <span class="p">()</span> <span class="p">{});</span>
-<span class="nx">WS</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="nx">onError</span> <span class="p">()</span> <span class="p">{});</span>
-<span class="nx">WS</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="nx">onMessage</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-    <span class="p">});</span>
+WS.on(&quot;open&quot;, onOpen () {});
+WS.on(&quot;close&quot;, onClose () {});
+WS.on(&quot;error&quot;, onError () {});
+WS.on(&quot;message&quot;, onMessage(data) {
+    console.log(data)
+    });
 
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s2">&quot;Wello Horld&quot;</span><span class="p">;</span>
-<span class="nx">WS</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</pre></div>
-
+var data = &quot;Wello Horld&quot;;
+WS.send(data);</code></pre>
 
 </div>
 <hr />
@@ -1124,21 +1120,19 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">WebSocketKey</span><span class="o">:</span> <span class="s2">&quot;webSocketKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;,
+    WebSocketKey: &quot;webSocketKey_приложения&quot;
+});
 
-<span class="kd">var</span> <span class="nx">WS</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;Helloworld&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s2">&quot;Wello Horld&quot;</span><span class="p">;</span>
+var WS = new sc.WebSocket('Helloworld');
+var data = &quot;Wello Horld&quot;;
 
-<span class="nx">WS</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">WS</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">});</span>
-</pre></div>
-
+WS.on('open', function(){
+    WS.send(data);
+});</code></pre>
 
 </div>
               

@@ -967,17 +967,14 @@
 <p>Дистрибутив Scorocode SWIFT SDK можно скачать <a href="https://github.com/Scorocode/scorocode-SDK-JS">тут</a>.</p>
 <p>Исходный код Scorocode Java SDK опубликован в репозитории <a href="https://github.com/Scorocode/scorocode-sdk-java">https://github.com/Scorocode/scorocode-sdk-java</a></p>
 <p>Подключить библиотеку к проекту можно при помощи Gradle добавив в dependencies:</p>
-<div class="codehilite"><pre><span></span>dependencies {
-   compile &#39;ru.prof-itgroup:scorocode_sdk:1.1.0&#39;
-}
-</pre></div>
-
+<pre class="codehilite"><code>dependencies {
+   compile 'ru.prof-itgroup:scorocode_sdk:1.1.0'
+}</code></pre>
 
 <p>Убедитесь, что gradle ищет библиотеки в рекомендуемом Google репозитории jcenter (который включает в себя библиотеки maven):</p>
-<div class="codehilite"><pre><span></span><span class="n">repositories</span> <span class="o">{</span>
-   <span class="n">jcenter</span><span class="o">()</span>
-<span class="o">}</span>
-</pre></div>
+<pre class="codehilite"><code class="language-java">repositories {
+   jcenter()
+}</code></pre>
               
             </article>
           </div>

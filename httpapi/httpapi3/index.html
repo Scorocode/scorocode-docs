@@ -994,152 +994,126 @@
 <p><strong>https://api.scorocode.ru/api/v1/upload</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки: <code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа,</span> <span class="err">обязательный,</span> <span class="err">fileKey</span> <span class="err">или</span> <span class="err">для</span> <span class="err">полного</span> <span class="err">доступа</span> <span class="err">masterKey</span>
-    <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ID</span> <span class="err">сессии,</span> <span class="err">обязательный,</span> <span class="err">если</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span>
-    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;docId&quot;</span>       <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ID</span> <span class="err">документа,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;field&quot;</span>       <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">поля,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;file&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">файла,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;content&quot;</span>     <span class="p">:</span> <span class="s2">&quot;&quot;</span>  <span class="err">//</span> <span class="err">контент</span> <span class="err">файла</span> <span class="err">в</span> <span class="err">кодировке</span> <span class="err">base</span><span class="mi">64</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;app&quot;         : &quot;&quot;, // идентификатор приложения, обязательный
+    &quot;cli&quot;         : &quot;&quot;, // клиентский ключ, обязательный
+    &quot;acc&quot;         : &quot;&quot;, // ключ доступа, обязательный, fileKey или для полного доступа masterKey
+    &quot;sess&quot;        : &quot;&quot;, // ID сессии, обязательный, если acc != masterKey
+    &quot;coll&quot;        : &quot;&quot;, // имя коллекции, обязательный
+    &quot;docId&quot;       : &quot;&quot;, // ID документа, обязательный
+    &quot;field&quot;       : &quot;&quot;, // имя поля, обязательный
+    &quot;file&quot;        : &quot;&quot;, // имя файла, обязательный
+    &quot;content&quot;     : &quot;&quot;  // контент файла в кодировке base64</code></pre>
 
 <div class="admonition tip">
 <p class="admonition-title">Пример cURL</p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
-<span class="s1">    &quot;acc&quot;: &quot;8c23d74f447f63ce495cc8fd9ee4d543&quot;,</span>
-<span class="s1">    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,</span>
-<span class="s1">    &quot;coll&quot;: &quot;items&quot;,</span>
-<span class="s1">    &quot;docId&quot;: &quot;Y3bET236FX&quot;,</span>
-<span class="s1">    &quot;field&quot;: &quot;attachment&quot;,</span>
-<span class="s1">    &quot;file&quot;: &quot;file.txt&quot;,</span>
-<span class="s1">    &quot;content&quot;: &quot;VEhJUyBJUyBGSUxFLUUtRS1FLUUtRS1FIQ==&quot;</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/upload&quot;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-bash">curl -X POST -H &quot;Content-Type: application/json&quot; -d '{
+    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
+    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
+    &quot;acc&quot;: &quot;8c23d74f447f63ce495cc8fd9ee4d543&quot;,
+    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
+    &quot;coll&quot;: &quot;items&quot;,
+    &quot;docId&quot;: &quot;Y3bET236FX&quot;,
+    &quot;field&quot;: &quot;attachment&quot;,
+    &quot;file&quot;: &quot;file.txt&quot;,
+    &quot;content&quot;: &quot;VEhJUyBJUyBGSUxFLUUtRS1FLUUtRS1FIQ==&quot;
+}' &quot;https://api.scorocode.ru/api/v1/upload&quot;</code></pre>
 
 </div>
 <p><strong>Ответы:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Выполнено</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : false
+}</code></pre>
 
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Ошибка</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Код ошибки
+    &quot;errMsg&quot;      : &quot;Текст ошибки&quot;
+}</code></pre>
 
 </div>
 <h2 id="_2">Получение файла.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/getfile/{app}/{coll}/{field}/{docId}/{file}</strong></p>
 <p>Метод: <code>GET</code></p>
 <p>Запрос:</p>
-<div class="codehilite"><pre><span></span>https://api.scorocode.ru/api/v1/getfile/{app}/{coll}/{field}/{docId}/{file}
-</pre></div>
-
+<pre class="codehilite"><code>https://api.scorocode.ru/api/v1/getfile/{app}/{coll}/{field}/{docId}/{file}</code></pre>
 
 <p>, где</p>
-<div class="codehilite"><pre><span></span>    {app}     - идентификатор приложения, обязательный
+<pre class="codehilite"><code>    {app}     - идентификатор приложения, обязательный
     {coll}    - имя коллекции, обязательный
     {field}   - имя поля, обязательный
     {docId}   - идентификатор документа, обязательный
-    {file}    - имя файла, обязательный
-</pre></div>
-
+    {file}    - имя файла, обязательный</code></pre>
 
 <div class="admonition tip">
 <p class="admonition-title">Пример cURL</p>
-<div class="codehilite"><pre><span></span>curl -X GET -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/getfile/db8a1b41b8543397a798a181d9891b4c/items/attachment/Y3bET236FX/file.txt&quot;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-bash">curl -X GET -H &quot;Content-Type: application/json&quot; &quot;https://api.scorocode.ru/api/v1/getfile/db8a1b41b8543397a798a181d9891b4c/items/attachment/Y3bET236FX/file.txt&quot;</code></pre>
 
 </div>
 <p><strong>Ответы:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Выполнено</p>
-<div class="codehilite"><pre><span></span>    Контент файла
-</pre></div>
-
+<pre class="codehilite"><code>    Контент файла</code></pre>
 
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Ошибка</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Код ошибки
+    &quot;errMsg&quot;      : &quot;Текст ошибки&quot;
+}</code></pre>
 
 </div>
 <h2 id="_3">Удаление файла.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/deletefile</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки: <code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа,</span> <span class="err">обязательный,</span> <span class="err">fileKey</span> <span class="err">или</span> <span class="err">для</span> <span class="err">полного</span> <span class="err">доступа</span> <span class="err">masterKey</span>
-    <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ID</span> <span class="err">сессии,</span> <span class="err">обязательный,</span> <span class="err">если</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span>
-    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;docId&quot;</span>       <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ID</span> <span class="err">документа,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;field&quot;</span>       <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">поля,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;file&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span>  <span class="err">//</span> <span class="err">имя</span> <span class="err">файла</span><span class="p">,</span> <span class="err">обязательный</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;app&quot;         : &quot;&quot;, // идентификатор приложения, обязательный
+    &quot;cli&quot;         : &quot;&quot;, // клиентский ключ, обязательный
+    &quot;acc&quot;         : &quot;&quot;, // ключ доступа, обязательный, fileKey или для полного доступа masterKey
+    &quot;sess&quot;        : &quot;&quot;, // ID сессии, обязательный, если acc != masterKey
+    &quot;coll&quot;        : &quot;&quot;, // имя коллекции, обязательный
+    &quot;docId&quot;       : &quot;&quot;, // ID документа, обязательный
+    &quot;field&quot;       : &quot;&quot;, // имя поля, обязательный
+    &quot;file&quot;        : &quot;&quot;  // имя файла, обязательный
+}</code></pre>
 
 <div class="admonition tip">
 <p class="admonition-title">Пример cURL</p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
-<span class="s1">    &quot;acc&quot;: &quot;8c23d74f447f63ce495cc8fd9ee4d543&quot;,</span>
-<span class="s1">    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,</span>
-<span class="s1">    &quot;coll&quot;: &quot;items&quot;,</span>
-<span class="s1">    &quot;docId&quot;: &quot;Y3bET236FX&quot;,</span>
-<span class="s1">    &quot;field&quot;: &quot;attachment&quot;,</span>
-<span class="s1">    &quot;file&quot;: &quot;file.txt&quot;</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/deletefile&quot;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-bash">curl -X POST -H &quot;Content-Type: application/json&quot; -d '{
+    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
+    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
+    &quot;acc&quot;: &quot;8c23d74f447f63ce495cc8fd9ee4d543&quot;,
+    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
+    &quot;coll&quot;: &quot;items&quot;,
+    &quot;docId&quot;: &quot;Y3bET236FX&quot;,
+    &quot;field&quot;: &quot;attachment&quot;,
+    &quot;file&quot;: &quot;file.txt&quot;
+}' &quot;https://api.scorocode.ru/api/v1/deletefile&quot;</code></pre>
 
 </div>
 <p><strong>Ответы:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Выполнено</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : false
+}</code></pre>
 
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Ошибка</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Код ошибки
+    &quot;errMsg&quot;      : &quot;Текст ошибки&quot;
+}</code></pre>
 
 </div>
               

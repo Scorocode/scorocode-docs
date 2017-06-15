@@ -981,18 +981,16 @@
 <p><img alt="Серверный код" src="../../img/scriptcreate.png" /></p>
 <p><img alt="Серверный код" src="../../img/scripts.png" /></p>
 <p>При создании нового серверного скрипта, в него автоматически будет подставлен следующий код инициализации Scorocode JavaScript SDK с подставленными ключами ApplicationId, JavaScriptKey и MasterKey приложения:</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Init Scorocode</span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">)</span>
+<pre class="codehilite"><code class="language-js">// Init Scorocode
+var sc = require('scorocode')
 
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
-    <span class="nx">MasterKey</span><span class="o">:</span>     <span class="s2">&quot;xxx&quot;</span>
-<span class="p">})</span>
+sc.Init({
+    ApplicationID: &quot;xxx&quot;,
+    JavaScriptKey: &quot;xxx&quot;,
+    MasterKey:     &quot;xxx&quot;
+})
 
-<span class="c1">// Write your code here</span>
-</pre></div>
-
+// Write your code here</code></pre>
 
 <p>Для сохранения введенного кода нажмите на ссылку «Сохранить». Для допуска запуска кода анонимному пользователю (без авторизации) установите соответствующий флаг на закладке «ACL». Для настройки плана запуска серверного кода перейдите на закладку «Запланировать запуск». Задайте опцию «Включить таймер» для выполнения созданного серверного кода по расписанию. Далее настройте расписание и укажите дату начала его действия.</p>
 <p><img alt="Серверный код" src="../../img/scriptacl.png" /></p>
@@ -1013,13 +1011,11 @@
 <p><img alt="Серверный код" src="../../img/npm.png" /></p>
 <p>В секции <code>dependencies</code> опишите все модули, которые вы собираетесь использовать, где свойство - это название модуля, а значение - необходимая версия (вы можете оставить значение версии пустым, в этом случае будет установлена последняя версия модуля).</p>
 <p>Пример:</p>
-<div class="codehilite"><pre><span></span>    <span class="p">{</span>
-        <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;scorocode&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">    {
+        &quot;dependencies&quot;: {
+            &quot;scorocode&quot;: &quot;&quot;
+        }
+    }</code></pre>
 
 <p>Использовать подключенный SDK Scorocode можно, подключив его в серверный код с помощью <code>var sc = require('scorocode')</code></p>
               

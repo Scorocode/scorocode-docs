@@ -1356,408 +1356,333 @@
 <p class="admonition-title">Возврат данных при прерывании выполнения операции триггера</p>
 <p>В случае, если при прерывании операции триггера вам необходимо вернуть данные - вы можете указать возвращаемые данные в параметре <code>pool.result</code>.
 К примеру, в триггере перед добавлением документа реализуем проверку обязательности наличия поля.
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// проверим наличие поля &quot;name&quot; в создаваемом документе</span>
-    <span class="nx">pool</span><span class="p">.</span><span class="nx">result</span> <span class="o">=</span> <span class="s2">&quot;Необходимо указать имя&quot;</span><span class="p">;</span>
-    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                     <span class="c1">// прервем создание документа в случае отсутствия поля</span>
-<span class="p">};</span> 
-<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>    <span class="c1">// В случае, если значение поля присутствует - продолжим операцию</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">if (!pool.doc.hasOwnProperty('name')) { // проверим наличие поля &quot;name&quot; в создаваемом документе
+    pool.result = &quot;Необходимо указать имя&quot;;
+    return false;                     // прервем создание документа в случае отсутствия поля
+}; 
+return true;    // В случае, если значение поля присутствует - продолжим операцию</code></pre>
 Теперь при попытке добавить документ с отсутствующим полем name, операция добавления документа прервется и будут возвращены следующие данные:
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;errCode&quot;</span><span class="o">:</span> <span class="mi">412</span><span class="p">,</span>
-    <span class="s2">&quot;errMsg&quot;</span><span class="o">:</span> <span class="s2">&quot;beforeInsert Trigger result: false&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">&quot;result&quot;</span><span class="o">:</span> <span class="s2">&quot;Необходимо указать имя&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-js">{
+    &quot;errCode&quot;: 412,
+    &quot;errMsg&quot;: &quot;beforeInsert Trigger result: false&quot;,
+    &quot;error&quot;: true,
+    &quot;result&quot;: &quot;Необходимо указать имя&quot;
+}</code></pre></p>
 </div>
 <h2 id="pool">Объект pool</h2>
 <p>Объект <code>pool</code> содержит следующие данные:</p>
 <h3 id="insert">Перед операцией <code>insert</code>:</h3>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">coll</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>   <span class="c1">// имя коллекции</span>
-    <span class="nx">doc</span> <span class="o">:</span> <span class="p">{}</span>    <span class="c1">// документ с парами имя_поля:значение</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    coll : &quot;&quot;,   // имя коллекции
+    doc : {}    // документ с парами имя_поля:значение
+}</code></pre>
 
 <h3 id="insert_1">После операции <code>insert</code>:</h3>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции</span>
-    <span class="nx">newDoc</span> <span class="o">:</span> <span class="p">{}</span> <span class="c1">// вновь созданный документ с парами имя_поля:значение</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    coll  : &quot;&quot;, // имя коллекции
+    newDoc : {} // вновь созданный документ с парами имя_поля:значение
+}</code></pre>
 
 <h3 id="remove">Перед операцией <code>remove</code>:</h3>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции</span>
-    <span class="nx">query</span> <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// поисковый запрос, в соответствии с которым необходимо удалить документы</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    coll  : &quot;&quot;, // имя коллекции
+    query : {}  // поисковый запрос, в соответствии с которым необходимо удалить документы
+}</code></pre>
 
 <h3 id="remove_1">После операции <code>remove</code>:</h3>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции</span>
-    <span class="nx">count</span> <span class="o">:</span> <span class="kr">int</span><span class="p">,</span> <span class="c1">// количество удаленных документов</span>
-    <span class="nx">docs</span>  <span class="o">:</span> <span class="p">[]</span>  <span class="c1">// массив ID удаленных документов</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    coll  : &quot;&quot;, // имя коллекции
+    count : int, // количество удаленных документов
+    docs  : []  // массив ID удаленных документов
+}</code></pre>
 
 <h3 id="update">Перед операцией <code>update</code>:</h3>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции</span>
-    <span class="nx">doc</span>   <span class="o">:</span> <span class="p">{},</span> <span class="c1">// документ с правилами обновления значений</span>
-    <span class="nx">query</span> <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// поисковый запрос, в соответствии с которым необходимо обновить документы</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    coll  : &quot;&quot;, // имя коллекции
+    doc   : {}, // документ с правилами обновления значений
+    query : {}  // поисковый запрос, в соответствии с которым необходимо обновить документы
+}</code></pre>
 
 <h3 id="update_1">После операции <code>update</code>:</h3>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>  <span class="c1">// имя коллекции</span>
-    <span class="nx">count</span> <span class="o">:</span> <span class="kr">int</span><span class="p">,</span> <span class="c1">// количество обновленный документов</span>
-    <span class="nx">docs</span>  <span class="o">:</span> <span class="p">[]</span>   <span class="c1">// массив ID обновленных документов</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    coll  : &quot;&quot;,  // имя коллекции
+    count : int, // количество обновленный документов
+    docs  : []   // массив ID обновленных документов
+}</code></pre>
 
 <h3 id="updatebyid">Перед операцией <code>updatebyid</code>:</h3>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">coll</span>    <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции</span>
-    <span class="nx">doc</span>     <span class="o">:</span> <span class="p">{},</span> <span class="c1">// документ с правилами обновления значений</span>
-    <span class="nx">query</span>   <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// поисковый запрос {&quot;_id&quot; : }</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    coll    : &quot;&quot;, // имя коллекции
+    doc     : {}, // документ с правилами обновления значений
+    query   : {}  // поисковый запрос {&quot;_id&quot; : }
+}</code></pre>
 
 <h3 id="updatebyid_1">После операции <code>updatebyid</code>:</h3>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">coll</span>    <span class="o">:</span> <span class="s2">&quot;&quot;</span> <span class="c1">// имя коллекции</span>
-    <span class="nx">newDoc</span>  <span class="o">:</span> <span class="p">{}</span> <span class="c1">// обновленный документ</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    coll    : &quot;&quot; // имя коллекции
+    newDoc  : {} // обновленный документ
+}</code></pre>
 
 <h2 id="datamanager">Объект DataManager</h2>
 <p>Объект <code>DataManager</code> содержит следующие методы работы с данными:</p>
 <h3 id="datamanagerinsertdata-object">DataManager.Insert(data Object)</h3>
 <p>Метод для вставки документа в коллекцию. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">coll</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции, обязательный</span>
-    <span class="nx">doc</span>  <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// документ с парами имя_поля:значение, необязательный</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    coll : &quot;&quot;, // имя коллекции, обязательный
+    doc  : {}  // документ с парами имя_поля:значение, необязательный
+}</code></pre>
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">error</span>  <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nx">result</span> <span class="o">:</span> <span class="p">{}</span> <span class="c1">// созданный документ</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    error  : false,
+    result : {} // созданный документ
+}</code></pre>
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">error</span>   <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nx">errCode</span> <span class="o">:</span> <span class="mi">4</span><span class="nx">XX</span><span class="o">/</span><span class="mi">5</span><span class="nx">XX</span><span class="p">,</span> <span class="c1">// Код ошибки</span>
-    <span class="nx">errMsg</span>  <span class="o">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    error   : true,
+    errCode : 4XX/5XX, // Код ошибки
+    errMsg  : &quot;Текст ошибки&quot;
+}</code></pre>
 
 <h3 id="datamanagerremovedata-object">DataManager.Remove(data Object)</h3>
 <p>Метод для удаления документов из коллекции. Параметры:</p>
 <p><code>Data Object</code> - объект, содержащий следующие атрибуты:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции, обязательный</span>
-    <span class="nx">query</span> <span class="o">:</span> <span class="p">{},</span> <span class="c1">// запрос с парами имя_поля/оператор:значение, необязательный</span>
-    <span class="nx">limit</span> <span class="o">:</span> <span class="kr">int</span> <span class="c1">// лимит количества удаляемых документов, необязательный,</span>
-                <span class="c1">// если не указан, то удалятся первые 1000 документов</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    coll  : &quot;&quot;, // имя коллекции, обязательный
+    query : {}, // запрос с парами имя_поля/оператор:значение, необязательный
+    limit : int // лимит количества удаляемых документов, необязательный,
+                // если не указан, то удалятся первые 1000 документов
+}</code></pre>
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">error</span>  <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nx">result</span> <span class="o">:</span> <span class="p">{</span>
-        <span class="nx">count</span> <span class="o">:</span> <span class="kr">int</span><span class="p">,</span> <span class="c1">// количество удаленных документов</span>
-        <span class="nx">docs</span>  <span class="o">:</span> <span class="p">[]</span> <span class="c1">// массив ID удаленных документов</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    error  : false,
+    result : {
+        count : int, // количество удаленных документов
+        docs  : [] // массив ID удаленных документов
+    }
+}</code></pre>
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">error</span>   <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nx">errCode</span> <span class="o">:</span> <span class="mi">4</span><span class="nx">XX</span><span class="o">/</span><span class="mi">5</span><span class="nx">XX</span><span class="p">,</span> <span class="c1">// Код ошибки</span>
-    <span class="nx">errMsg</span>  <span class="o">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    error   : true,
+    errCode : 4XX/5XX, // Код ошибки
+    errMsg  : &quot;Текст ошибки&quot;
+}</code></pre>
 
 <h3 id="datamanagerupdatedata-object">DataManager.Update(data Object)</h3>
 <p>Метод для обновления документов в коллекции. Параметры:</p>
 <p><code>Data Object</code> - объект, содержащий следующие атрибуты:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции, обязательный</span>
-    <span class="nx">query</span> <span class="o">:</span> <span class="p">{},</span> <span class="c1">// запрос с парами имя_поля/оператор:значение, необязательный</span>
-    <span class="nx">doc</span>   <span class="o">:</span> <span class="p">{},</span> <span class="c1">// документ с парами оператор:значение, обязательный</span>
-    <span class="nx">limit</span> <span class="o">:</span> <span class="kr">int</span> <span class="c1">// лимит количества обновляемых документов, необязательный,</span>
-                <span class="c1">// если не указан, то обновятся первые 1000 документов</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    coll  : &quot;&quot;, // имя коллекции, обязательный
+    query : {}, // запрос с парами имя_поля/оператор:значение, необязательный
+    doc   : {}, // документ с парами оператор:значение, обязательный
+    limit : int // лимит количества обновляемых документов, необязательный,
+                // если не указан, то обновятся первые 1000 документов
+}</code></pre>
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">error</span>  <span class="o">:</span> <span class="kc">false</span>
-    <span class="nx">result</span> <span class="o">:</span> <span class="p">{</span>
-        <span class="nx">count</span> <span class="o">:</span> <span class="kr">int</span><span class="p">,</span> <span class="c1">// количество удаленных документов</span>
-        <span class="nx">docs</span>  <span class="o">:</span> <span class="p">[]</span> <span class="c1">// массив ID измененных документов</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    error  : false
+    result : {
+        count : int, // количество удаленных документов
+        docs  : [] // массив ID измененных документов
+    }
+}</code></pre>
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">error</span>   <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nx">errCode</span> <span class="o">:</span> <span class="mi">4</span><span class="nx">XX</span><span class="o">/</span><span class="mi">5</span><span class="nx">XX</span><span class="p">,</span> <span class="c1">// Код ошибки</span>
-    <span class="nx">errMsg</span>  <span class="o">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    error   : true,
+    errCode : 4XX/5XX, // Код ошибки
+    errMsg  : &quot;Текст ошибки&quot;
+}</code></pre>
 
 <h3 id="datamanagerupdatebyiddata-object">DataManager.UpdateById(data Object)</h3>
 <p>Метод для обновления одного документа в коллекции, идентифицируемого по ID. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции, обязательный</span>
-    <span class="nx">query</span> <span class="o">:</span> <span class="p">{},</span> <span class="c1">// запрос в формате &quot;_id&quot; : &quot;&lt;идентификатор документа&gt;&quot;, обязательный</span>
-    <span class="nx">doc</span>   <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// документ с парами оператор:значение, обязательный</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    coll  : &quot;&quot;, // имя коллекции, обязательный
+    query : {}, // запрос в формате &quot;_id&quot; : &quot;&lt;идентификатор документа&gt;&quot;, обязательный
+    doc   : {}  // документ с парами оператор:значение, обязательный
+}</code></pre>
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">error</span>  <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nx">result</span> <span class="o">:</span> <span class="p">{}</span> <span class="c1">// обновленный документ</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    error  : false,
+    result : {} // обновленный документ
+}</code></pre>
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">error</span>   <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nx">errCode</span> <span class="o">:</span> <span class="mi">4</span><span class="nx">XX</span><span class="o">/</span><span class="mi">5</span><span class="nx">XX</span><span class="p">,</span> <span class="c1">// Код ошибки</span>
-    <span class="nx">errMsg</span>  <span class="o">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    error   : true,
+    errCode : 4XX/5XX, // Код ошибки
+    errMsg  : &quot;Текст ошибки&quot;
+}</code></pre>
 
 <h3 id="datamanagerfinddata-object">DataManager.Find(data Object)</h3>
 <p>Метод для запроса документов из коллекции. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">coll</span>   <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>  <span class="c1">// имя коллекции, обязательный</span>
-    <span class="nx">query</span>  <span class="o">:</span> <span class="p">{},</span>  <span class="c1">// запрос с парами имя_поля/оператор:значение, необязательный, если пустой,</span>
-                  <span class="c1">// то будут возвращены первые 100 документов</span>
-    <span class="nx">sort</span>   <span class="o">:</span> <span class="p">{},</span>  <span class="c1">// сортировка по полям в формате имя_поля:1/-1, необязательный</span>
-    <span class="nx">fields</span> <span class="o">:</span> <span class="p">[],</span>  <span class="c1">// список имен полей, которые будут возвращены в каждом документе, необязательный</span>
-    <span class="nx">limit</span>  <span class="o">:</span> <span class="kr">int</span><span class="p">,</span> <span class="c1">// лимит размера выборки, необязательный, по умолчанию 50</span>
-    <span class="nx">skip</span>   <span class="o">:</span> <span class="kr">int</span>  <span class="c1">// количество документов, которое нужно пропустить в выборке</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    coll   : &quot;&quot;,  // имя коллекции, обязательный
+    query  : {},  // запрос с парами имя_поля/оператор:значение, необязательный, если пустой,
+                  // то будут возвращены первые 100 документов
+    sort   : {},  // сортировка по полям в формате имя_поля:1/-1, необязательный
+    fields : [],  // список имен полей, которые будут возвращены в каждом документе, необязательный
+    limit  : int, // лимит размера выборки, необязательный, по умолчанию 50
+    skip   : int  // количество документов, которое нужно пропустить в выборке
+}</code></pre>
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">error</span>  <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nx">result</span> <span class="o">:</span> <span class="p">[]</span> <span class="c1">// массив выбранных документов с учетом лимита</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    error  : false,
+    result : [] // массив выбранных документов с учетом лимита
+}</code></pre>
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">error</span>   <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nx">errCode</span> <span class="o">:</span> <span class="mi">4</span><span class="nx">XX</span><span class="o">/</span><span class="mi">5</span><span class="nx">XX</span><span class="p">,</span> <span class="c1">// Код ошибки</span>
-    <span class="nx">errMsg</span>  <span class="o">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    error   : true,
+    errCode : 4XX/5XX, // Код ошибки
+    errMsg  : &quot;Текст ошибки&quot;
+}</code></pre>
 
 <h3 id="datamanagercountdata-object">DataManager.Count(data Object)</h3>
 <p>Метод для запроса количества документов по условию в коллекции. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// имя коллекции, обязательный</span>
-    <span class="nx">query</span> <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// запрос с парами имя_поля/оператор:значение, необязательный</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    coll  : &quot;&quot;, // имя коллекции, обязательный
+    query : {}  // запрос с парами имя_поля/оператор:значение, необязательный
+}</code></pre>
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>Выполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">error</span>  <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nx">result</span> <span class="o">:</span> <span class="kr">int</span> <span class="c1">// количество документов</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    error  : false,
+    result : int // количество документов
+}</code></pre>
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">error</span>   <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nx">errCode</span> <span class="o">:</span> <span class="mi">4</span><span class="nx">XX</span><span class="o">/</span><span class="mi">5</span><span class="nx">XX</span><span class="p">,</span> <span class="c1">// Код ошибки</span>
-    <span class="nx">errMsg</span>  <span class="o">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    error   : true,
+    errCode : 4XX/5XX, // Код ошибки
+    errMsg  : &quot;Текст ошибки&quot;
+}</code></pre>
 
 <h3 id="datamanagerrunscriptdata-object">DataManager.RunScript(data Object)</h3>
 <p>Метод для запуска серверного скрипта. Параметры:</p>
 <p><code>data Object</code> - объект, содержащий следующие атрибуты:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">script</span>   <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// ID скрипта, обязательный</span>
-    <span class="nx">acc</span>      <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// scriptKey, необязательный, только если вызов скрипта совершается анонимно</span>
-    <span class="nx">pool</span>     <span class="o">:</span> <span class="p">{}</span>  <span class="c1">// пул данных для установки передачи в контекст скрипта, необязательный</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    script   : &quot;&quot;, // ID скрипта, обязательный
+    acc      : &quot;&quot;, // scriptKey, необязательный, только если вызов скрипта совершается анонимно
+    pool     : {}  // пул данных для установки передачи в контекст скрипта, необязательный
+}</code></pre>
 
 <p>Возвращаемое значение - <code>Object</code>:</p>
 <p><em>ыполнено</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">error</span>  <span class="o">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    error  : false
+}</code></pre>
 
 <p><em>Ошибка</em></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nx">error</span>   <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nx">errCode</span> <span class="o">:</span> <span class="mi">4</span><span class="nx">XX</span><span class="o">/</span><span class="mi">5</span><span class="nx">XX</span><span class="p">,</span> <span class="c1">// Код ошибки</span>
-    <span class="nx">errMsg</span>  <span class="o">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    error   : true,
+    errCode : 4XX/5XX, // Код ошибки
+    errMsg  : &quot;Текст ошибки&quot;
+}</code></pre>
 
 <h2 id="_1">Примеры триггеров</h2>
 <h3 id="_2">Установка обязательности наличия значения поля.</h3>
 <p>Перед добавлением документа проверим наличие значения поля "name" и, в случае его отсутствия, прервем операцию добавления документа.</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// проверим наличие поля &quot;name&quot; в создаваемом документе</span>
-        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                   <span class="c1">// прервем создание документа в случае отсутствия поля</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                    <span class="c1">// В случае, если значение поля присутствует - продолжим операцию</span>
-    <span class="p">};</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">if (!pool.doc.hasOwnProperty('name')) { // проверим наличие поля &quot;name&quot; в создаваемом документе
+        return false;                   // прервем создание документа в случае отсутствия поля
+    } else {
+        return true;                    // В случае, если значение поля присутствует - продолжим операцию
+    };</code></pre>
 
 <h3 id="-">Установка значения по-умолчанию.</h3>
 <p>Перед добавлением документа проверим наличие значения поля "name" и, в случае его отсутствия, установим значение по-умолчанию.</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// проверим наличие поля &quot;name&quot; в создаваемом документе</span>
-        <span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Джон Сноу&quot;</span><span class="p">;</span>    <span class="c1">// в случае отсутствия значения, установим значение по-умолчанию</span>
-    <span class="p">}</span>
+<pre class="codehilite"><code class="language-js">if (!pool.doc.hasOwnProperty('name')) { // проверим наличие поля &quot;name&quot; в создаваемом документе
+        pool.doc.name = &quot;Джон Сноу&quot;;    // в случае отсутствия значения, установим значение по-умолчанию
+    }
 
-<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                    <span class="c1">// В случае, если значение поля присутствует - продолжим операцию.</span>
-</pre></div>
-
+return true;                    // В случае, если значение поля присутствует - продолжим операцию.</code></pre>
 
 <h3 id="_3">Добавление связанного документа другой коллекции.</h3>
 <p>После добавления документа, создадим документ в другой коллекции со ссылкой на добавленный.</p>
-<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Insert</span><span class="p">({</span>                         <span class="c1">// выполним операцию добавления документа в коллекцию &quot;stuff&quot;</span>
-        <span class="nx">coll</span> <span class="o">:</span> <span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
-        <span class="nx">doc</span>  <span class="o">:</span> <span class="p">{</span>
-                   <span class="s2">&quot;thing&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span><span class="p">.</span><span class="nx">_id</span>  <span class="c1">// передадим _id созданного документа в поле типа &quot;pointer&quot;</span>
-        <span class="p">}</span>
-    <span class="p">})</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">DataManager.Insert({                         // выполним операцию добавления документа в коллекцию &quot;stuff&quot;
+        coll : &quot;stuff&quot;,
+        doc  : {
+                   &quot;thing&quot;: pool.newDoc._id  // передадим _id созданного документа в поле типа &quot;pointer&quot;
+        }
+    })</code></pre>
 
 <h3 id="_4">Удаление связанных документов другой коллекции.</h3>
 <p>Перед удалением документа, удалим все документы другой коллекции со ссылкой на удаляемый.</p>
-<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Remove</span><span class="p">({</span>            <span class="c1">// выполним удаление связанных документов в коллекции &quot;stuff&quot;</span>
-    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
-    <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;thing&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">_id</span> <span class="c1">// передадим _id удаляемого документа</span>
-    <span class="p">}</span>
-<span class="p">})</span>
-<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">DataManager.Remove({            // выполним удаление связанных документов в коллекции &quot;stuff&quot;
+    coll  : &quot;stuff&quot;,
+    query: {
+        &quot;thing&quot;: pool.query._id // передадим _id удаляемого документа
+    }
+})
+return true;</code></pre>
 
 <h3 id="_5">Вызов серверного скрипта.</h3>
 <p>После добавления документа, запустим скрипт, передав ему новый документ. Скрипт может, например, осуществлять рассылку PUSH-уведомлений.</p>
-<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">RunScript</span><span class="p">({</span>                   <span class="c1">// выполним запуск скрипта с ID 580b386d42d52f1ba275fc24</span>
-    <span class="nx">script</span>  <span class="o">:</span> <span class="s2">&quot;580b386d42d52f1ba275fc24&quot;</span><span class="p">,</span>
-    <span class="nx">pool</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;doc&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span>                <span class="c1">// передадим в скрипт новый документ</span>
-    <span class="p">}</span>
-<span class="p">})</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">DataManager.RunScript({                   // выполним запуск скрипта с ID 580b386d42d52f1ba275fc24
+    script  : &quot;580b386d42d52f1ba275fc24&quot;,
+    pool: {
+        &quot;doc&quot;: pool.newDoc                // передадим в скрипт новый документ
+    }
+})</code></pre>
 
 <h3 id="id">Обновление документа по его id</h3>
-<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">UpdateById</span><span class="p">({</span>
-    <span class="nx">coll</span><span class="o">:</span> <span class="s2">&quot;items&quot;</span><span class="p">,</span>
-    <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;_id&quot;</span><span class="o">:</span><span class="s2">&quot;ICr2iqfLoa&quot;</span>
-    <span class="p">},</span>
-    <span class="nx">doc</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;$set&quot;</span><span class="o">:</span><span class="p">{</span>
-            <span class="s2">&quot;anotherExampleField&quot;</span><span class="o">:</span> <span class="s2">&quot;trigger&quot;</span>
-        <span class="p">}}</span>
-<span class="p">});</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">DataManager.UpdateById({
+    coll: &quot;items&quot;,
+    query: {
+        &quot;_id&quot;:&quot;ICr2iqfLoa&quot;
+    },
+    doc: {
+        &quot;$set&quot;:{
+            &quot;anotherExampleField&quot;: &quot;trigger&quot;
+        }}
+});</code></pre>
 
 <h3 id="_6">Поиск документов другой коллекции</h3>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">memberFinded</span> <span class="o">=</span> <span class="nx">DataManager</span><span class="p">.</span><span class="nx">Find</span><span class="p">({</span>                        
-    <span class="nx">coll</span><span class="o">:</span> <span class="s2">&quot;members&quot;</span><span class="p">,</span>
-    <span class="nx">query</span><span class="o">:</span><span class="p">{</span>
-        <span class="s2">&quot;memberName&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;$eq&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">strangerName</span><span class="p">}</span>
-    <span class="p">},</span> 
-    <span class="nx">sort</span><span class="o">:</span><span class="p">{</span>
-        <span class="s2">&quot;updatedAt&quot;</span><span class="o">:</span> <span class="mi">1</span>
-    <span class="p">},</span>
-    <span class="nx">fields</span> <span class="o">:</span> <span class="p">[</span><span class="s2">&quot;_id&quot;</span><span class="p">,</span> <span class="s2">&quot;peerReviews&quot;</span> <span class="s2">&quot;status&quot;</span><span class="p">,</span> <span class="s2">&quot;importantInfo&quot;</span><span class="p">,</span> <span class="s2">&quot;otherStuff&quot;</span><span class="p">],</span> 
-    <span class="nx">limit</span>  <span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var memberFinded = DataManager.Find({                        
+    coll: &quot;members&quot;,
+    query:{
+        &quot;memberName&quot;: {&quot;$eq&quot;: pool.doc.strangerName}
+    }, 
+    sort:{
+        &quot;updatedAt&quot;: 1
+    },
+    fields : [&quot;_id&quot;, &quot;peerReviews&quot; &quot;status&quot;, &quot;importantInfo&quot;, &quot;otherStuff&quot;], 
+    limit  : 1,
+});
 
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">memberFinded</span><span class="p">.</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">memberFinded</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+if (!memberFinded.error &amp;&amp; memberFinded.length &gt; 0) {
 
-    <span class="nx">DataManager</span><span class="p">.</span><span class="nx">RunScript</span><span class="p">({</span>                  
-        <span class="nx">script</span>  <span class="o">:</span> <span class="s2">&quot;580b386d42d52f1ba275fc24&quot;</span><span class="p">,</span>
-        <span class="nx">pool</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;strangerInfo&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">,</span>
-            <span class="s2">&quot;results&quot;</span><span class="o">:</span> <span class="nx">memberFinded</span><span class="p">.</span><span class="nx">result</span>               
-        <span class="p">}</span>
-    <span class="p">});</span>
+    DataManager.RunScript({                  
+        script  : &quot;580b386d42d52f1ba275fc24&quot;,
+        pool: {
+            &quot;strangerInfo&quot;: pool.doc,
+            &quot;results&quot;: memberFinded.result               
+        }
+    });
 
-    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    return true;
 
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+} else {
 
-    <span class="nx">pool</span><span class="p">.</span><span class="nx">result</span> <span class="o">=</span> <span class="s2">&quot;Произошла какая-то ошибка&quot;</span><span class="p">;</span>
-    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+    pool.result = &quot;Произошла какая-то ошибка&quot;;
+    return false;
+}</code></pre>
               
             </article>
           </div>

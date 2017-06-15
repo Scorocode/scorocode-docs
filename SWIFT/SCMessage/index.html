@@ -1082,16 +1082,14 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">userId</span> <span class="p">=</span> <span class="s">&quot;qRmX5rHsc6&quot;</span>
-<span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;devices&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="s">&quot;userId&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="n">userId</span><span class="p">))</span>
-<span class="n">SCMessage</span><span class="p">.</span><span class="n">sendPush</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="s">&quot;Внимание !&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="s">&quot;Ваш заказ поступил в магазин.&quot;</span><span class="p">,</span> <span class="n">debug</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="bp">count</span><span class="p">)</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span><span class="p">,</span> <span class="kd">let</span> <span class="nv">num</span> <span class="p">=</span> <span class="bp">count</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Пуш отправлен на </span><span class="si">\(</span><span class="n">num</span><span class="si">)</span><span class="s"> устройств&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let userId = &quot;qRmX5rHsc6&quot;
+var query = SCQuery(collection: &quot;devices&quot;)
+query.equalTo(&quot;userId&quot;, SCString(userId))
+SCMessage.sendPush(query, title: &quot;Внимание !&quot;, text: &quot;Ваш заказ поступил в магазин.&quot;, debug: false) { (success, error, count) in
+    if error == nil, let num = count {
+        print(&quot;Пуш отправлен на \(num) устройств&quot;)
+    }
+}</code></pre>
 
 </div>
 <hr />
@@ -1142,33 +1140,31 @@
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
 <p>Полное описание словаря apns можно найти по ссылке: <a href="https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html">Payload Reference</a></p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">userId</span> <span class="p">=</span> <span class="s">&quot;qRmX5rHsc6&quot;</span>
-<span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;devices&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="s">&quot;userId&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="n">userId</span><span class="p">))</span>
+<pre class="codehilite"><code class="language-SWIFT">let userId = &quot;qRmX5rHsc6&quot;
+var query = SCQuery(collection: &quot;devices&quot;)
+query.equalTo(&quot;userId&quot;, SCString(userId))
 
-<span class="kd">let</span> <span class="nv">data</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;apns&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;123e4567-e89b-12d3-a456-42665544000&quot;</span><span class="p">,</span>
-                <span class="s">&quot;topic&quot;</span><span class="p">:</span> <span class="s">&quot;com.sideshow.Apns2&quot;</span><span class="p">,</span>
-                <span class="s">&quot;collapseId&quot;</span><span class="p">:</span> <span class="s">&quot;my_collapse&quot;</span><span class="p">,</span>
-                <span class="s">&quot;expiration&quot;</span><span class="p">:</span> <span class="s">&quot;2006-01-02T15:04:05Z07:00&quot;</span><span class="p">,</span>
-                <span class="s">&quot;priority&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-                <span class="s">&quot;aps&quot;</span> <span class="p">:</span> <span class="p">[</span>
-                    <span class="s">&quot;alert&quot;</span> <span class="p">:</span> <span class="p">[</span>
-                        <span class="s">&quot;title&quot;</span> <span class="p">:</span> <span class="s">&quot;Portugal vs. Denmark&quot;</span><span class="p">,</span>
-                        <span class="s">&quot;body&quot;</span> <span class="p">:</span> <span class="s">&quot;great match!&quot;</span><span class="p">,</span>
-                        <span class="s">&quot;action-loc-key&quot;</span> <span class="p">:</span> <span class="s">&quot;Watch&quot;</span><span class="p">],</span>
-                    <span class="s">&quot;badge&quot;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">],</span>
-                <span class="s">&quot;acme1&quot;</span> <span class="p">:</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span>
-                <span class="s">&quot;acme2&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s">&quot;bang&quot;</span><span class="p">,</span>  <span class="s">&quot;whiz&quot;</span> <span class="p">]</span>
-                <span class="p">]</span>
-            <span class="p">]</span>
-<span class="n">SCMessage</span><span class="p">.</span><span class="n">sendPush</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span> <span class="n">debug</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">counter</span><span class="p">)</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span><span class="p">,</span> <span class="kd">let</span> <span class="nv">num</span> <span class="p">=</span> <span class="n">counter</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Пуш отправлен на </span><span class="si">\(</span><span class="n">num</span><span class="si">)</span><span class="s"> устройств&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+let data = [&quot;apns&quot;: [
+                &quot;id&quot;: &quot;123e4567-e89b-12d3-a456-42665544000&quot;,
+                &quot;topic&quot;: &quot;com.sideshow.Apns2&quot;,
+                &quot;collapseId&quot;: &quot;my_collapse&quot;,
+                &quot;expiration&quot;: &quot;2006-01-02T15:04:05Z07:00&quot;,
+                &quot;priority&quot;: 5,
+                &quot;aps&quot; : [
+                    &quot;alert&quot; : [
+                        &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,
+                        &quot;body&quot; : &quot;great match!&quot;,
+                        &quot;action-loc-key&quot; : &quot;Watch&quot;],
+                    &quot;badge&quot; : 5],
+                &quot;acme1&quot; : &quot;bar&quot;,
+                &quot;acme2&quot; : [ &quot;bang&quot;,  &quot;whiz&quot; ]
+                ]
+            ]
+SCMessage.sendPush(query, data: data, debug: false) { (success, error, counter) in
+    if error == nil, let num = counter {
+        print(&quot;Пуш отправлен на \(num) устройств&quot;)
+    }
+}</code></pre>
 
 </div>
 <hr />
@@ -1211,16 +1207,14 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">queryUsersWithPhone</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
-<span class="n">queryUsersWithPhone</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&quot;phone&quot;</span><span class="p">)</span>
-<span class="n">SCMessage</span><span class="p">.</span><span class="n">sendSms</span><span class="p">(</span><span class="n">queryUsersWithPhone</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span><span class="s">&quot;Текст СМС сообщения&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">counter</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span><span class="p">,</span> <span class="kd">let</span> <span class="nv">num</span> <span class="p">=</span> <span class="n">counter</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;смс посланы </span><span class="si">\(</span><span class="n">num</span><span class="si">)</span><span class="s"> пользователям&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var queryUsersWithPhone = SCQuery(collection: &quot;users&quot;)
+queryUsersWithPhone.exists(&quot;phone&quot;)
+SCMessage.sendSms(queryUsersWithPhone, text:&quot;Текст СМС сообщения&quot;) {
+    success, error, counter in
+    if error == nil, let num = counter {
+        print(&quot;смс посланы \(num) пользователям&quot;)
+    }
+}</code></pre>
 
 </div>
               

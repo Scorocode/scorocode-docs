@@ -1061,30 +1061,22 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример - инициализация серверного скрипта по его id</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">newUserRegistration</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;574860d2781267d34f7a2415&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">var newUserRegistration = new sc.CloudCode(&quot;574860d2781267d34f7a2415&quot;, {logger: new sc.Logger()});</code></pre>
 
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Пример - инициализация серверного скрипта по его пути</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">newUserRegistration</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;/backend.js&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">isRunByPath</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">var newUserRegistration = new sc.CloudCode(&quot;/backend.js&quot;, {isRunByPath: true});</code></pre>
 
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Пример - инициализация серверного скрипта по его id для отладки</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">newUserRegistration</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;574860d2781267d34f7a2415&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">var newUserRegistration = new sc.CloudCode(&quot;574860d2781267d34f7a2415&quot;, {logger: new sc.Logger()});</code></pre>
 
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Пример - инициализация серверного скрипта по его пути для отладки</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">newUserRegistration</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;/backend.js&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">isRunByPath</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">var newUserRegistration = new sc.CloudCode(&quot;/backend.js&quot;, {isRunByPath: true, logger: new sc.Logger()});</code></pre>
 
 </div>
 <hr />
@@ -1127,31 +1119,29 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">ScriptKey</span><span class="o">:</span> <span class="s2">&quot;scriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;,
+    ScriptKey: &quot;scriptKey_приложения&quot;
+});
 
-<span class="kd">var</span> <span class="nx">someScript</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;574860d2781267d34f7a2415&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
-<span class="c1">// Определим данные, которые будут переданы скрипту при запуске</span>
-<span class="kd">var</span> <span class="nx">pool</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;counter&quot;</span><span class="o">:</span> <span class="mi">42</span>
-<span class="p">};</span>
+var someScript = new sc.CloudCode(&quot;574860d2781267d34f7a2415&quot;, {logger: new sc.Logger()});
+// Определим данные, которые будут переданы скрипту при запуске
+var pool = {
+    &quot;key&quot;: &quot;value&quot;,
+    &quot;counter&quot;: 42
+};
 
-<span class="c1">// Запустим выполнение серверного кода</span>
-<span class="nx">someScript</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">pool</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Запустим выполнение серверного кода
+someScript.run(pool, true)
+    .then((success)=&gt;{
+        console.log(success);
+    })
+    .catch((error)=&gt;{
+        console.log(error)
+    });</code></pre>
 
 </div>
 <p><strong>Возвращает</strong>: <code>promise.{error: Boolean}</code> - Возвращает promise, который возвращает объект {error: false}.</p>
@@ -1167,38 +1157,36 @@
 <p>Для включения режима отладки также необходимо создать объект <code>Logger</code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;masterKey_приложения&quot;</span> <span class="c1">// необходим для отладки</span>
-    <span class="nx">WebSocketKey</span><span class="o">:</span> <span class="s2">&quot;websocketKey_приложения&quot;</span> <span class="c1">// необходим для отладки</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;,
+    MasterKey: &quot;masterKey_приложения&quot; // необходим для отладки
+    WebSocketKey: &quot;websocketKey_приложения&quot; // необходим для отладки
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к серверному скрипту &quot;574860d2781267d34f7a2415&quot;.</span>
-<span class="c1">// Вторым параметром передаем вновь созданный объект Logger</span>
-<span class="kd">var</span> <span class="nx">someScript</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;574860d2781267d34f7a2415&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
+// Создадим новый экземпляр запроса к серверному скрипту &quot;574860d2781267d34f7a2415&quot;.
+// Вторым параметром передаем вновь созданный объект Logger
+var someScript = new sc.CloudCode(&quot;574860d2781267d34f7a2415&quot;, {logger: new sc.Logger()});
 
-<span class="c1">// Определим данные, которые будут переданы скрипту при запуске</span>
-<span class="kd">var</span> <span class="nx">pool</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;counter&quot;</span><span class="o">:</span> <span class="mi">42</span>
-<span class="p">};</span>
+// Определим данные, которые будут переданы скрипту при запуске
+var pool = {
+    &quot;key&quot;: &quot;value&quot;,
+    &quot;counter&quot;: 42
+};
 
-<span class="c1">// Запустим выполнение серверного кода</span>
-<span class="c1">// Вторым параметром передаем true - включаем режим отладки</span>
-<span class="c1">// Теперь если в серверном скрипте написать console.log(&quot;Hello, Scorocode!&quot;), то это выведется в вашу консоль</span>
-<span class="nx">someScript</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">pool</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
-
+// Запустим выполнение серверного кода
+// Вторым параметром передаем true - включаем режим отладки
+// Теперь если в серверном скрипте написать console.log(&quot;Hello, Scorocode!&quot;), то это выведется в вашу консоль
+someScript.run(pool, true)
+    .then((success)=&gt;{
+        console.log(success);
+    })
+    .catch((error)=&gt;{
+        console.log(error)
+    });
+});</code></pre>
 
 </div>
               

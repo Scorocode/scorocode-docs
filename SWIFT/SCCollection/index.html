@@ -1180,9 +1180,7 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;Books&quot;</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let collection = SCCollection(name: &quot;Books&quot;)</code></pre>
 
 </div>
 <hr />
@@ -1211,18 +1209,16 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Инициализуем коллекцию</span>
-<span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;Books&quot;</span><span class="p">)</span>
-<span class="c1">// Дадим права на удаление записей коллекции двум пользователям с id = axCBar6eJI и 2lk8PTaVjH</span>
-<span class="n">collection</span><span class="p">.</span><span class="n">useDocsACL</span> <span class="p">=</span> <span class="kc">true</span>
-<span class="n">collection</span><span class="p">.</span><span class="n">acl</span><span class="p">.</span><span class="n">remove</span> <span class="p">=</span> <span class="n">SCArray</span><span class="p">(</span><span class="n">stringArray</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;axCBar6eJI&quot;</span><span class="p">,</span> <span class="s">&quot;2lk8PTaVjH&quot;</span><span class="p">])</span>
+<pre class="codehilite"><code class="language-SWIFT">// Инициализуем коллекцию
+let collection = SCCollection(name: &quot;Books&quot;)
+// Дадим права на удаление записей коллекции двум пользователям с id = axCBar6eJI и 2lk8PTaVjH
+collection.useDocsACL = true
+collection.acl.remove = SCArray(stringArray: [&quot;axCBar6eJI&quot;, &quot;2lk8PTaVjH&quot;])
 
-<span class="n">collection</span><span class="p">.</span><span class="n">create</span><span class="p">()</span> <span class="p">{</span>
-    <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-
+collection.create() {
+    (success, error, result) in
+    print(result)
+}</code></pre>
 
 </div>
 <hr />
@@ -1251,23 +1247,21 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
-<span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;books&quot;</span><span class="p">)</span>
-<span class="c1">// Загрузим параметры существующей коллекции</span>
-<span class="n">collection</span><span class="p">.</span><span class="n">load</span> <span class="p">{</span>
-    <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="c1">// дополним список пользователей, которым разрешено удалять записи коллекции, пользователем с id = snvrEKS1hs</span>
-        <span class="n">collection</span><span class="p">.</span><span class="n">acl</span><span class="p">.</span><span class="n">remove</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;snvrEKS1hs&quot;</span><span class="p">)</span>
-        <span class="c1">// сохраним параметры коллекции</span>
-        <span class="n">collection</span><span class="p">.</span><span class="n">save</span> <span class="p">{</span>
-            <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-            <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">// Инициализируем коллекцию
+let collection = SCCollection(name: &quot;books&quot;)
+// Загрузим параметры существующей коллекции
+collection.load {
+    (success, error, result) in
+    if error == nil {
+        // дополним список пользователей, которым разрешено удалять записи коллекции, пользователем с id = snvrEKS1hs
+        collection.acl.remove.append(&quot;snvrEKS1hs&quot;)
+        // сохраним параметры коллекции
+        collection.save {
+            (success, error, result) in
+            print(result)
+        }
+    }
+}</code></pre>
 
 </div>
 <hr />
@@ -1296,14 +1290,12 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
-<span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;books&quot;</span><span class="p">)</span>
-<span class="c1">// Удалим коллекцию</span>
-<span class="n">collection</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">callback</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">})</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">// Инициализируем коллекцию
+let collection = SCCollection(name: &quot;books&quot;)
+// Удалим коллекцию
+collection.delete(callback: { (success, error, result) in
+    print(result)
+})</code></pre>
 
 </div>
 <hr />
@@ -1339,22 +1331,20 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
-<span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;books&quot;</span><span class="p">)</span>
-<span class="c1">// Зададим настройки коллекции</span>
-<span class="n">collection</span><span class="p">.</span><span class="n">acl</span><span class="p">.</span><span class="n">remove</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;3TB1tL5v7m&quot;</span><span class="p">,</span> <span class="s">&quot;HCP8lrIAsV&quot;</span><span class="p">]</span>
-<span class="n">collection</span><span class="p">.</span><span class="n">useDocsACL</span> <span class="p">=</span> <span class="kc">true</span>
-<span class="c1">// Создадим коллекцию</span>
-<span class="n">collection</span><span class="p">.</span><span class="n">create</span> <span class="p">{(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="c1">// Если коллекция создалась успешно, то создадим копию коллекции с новым именем &quot;books_copy&quot;</span>
-        <span class="n">collection</span><span class="p">.</span><span class="n">clone</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;books_copy&quot;</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-            <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-        <span class="p">})</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">// Инициализируем коллекцию
+let collection = SCCollection(name: &quot;books&quot;)
+// Зададим настройки коллекции
+collection.acl.remove = [&quot;3TB1tL5v7m&quot;, &quot;HCP8lrIAsV&quot;]
+collection.useDocsACL = true
+// Создадим коллекцию
+collection.create {(success, error, result) in
+    if error == nil {
+        // Если коллекция создалась успешно, то создадим копию коллекции с новым именем &quot;books_copy&quot;
+        collection.clone(name: &quot;books_copy&quot;, callback: { (success, error, result) in
+            print(result)
+        })
+    }
+}</code></pre>
 
 </div>
 <hr />
@@ -1383,17 +1373,15 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
-<span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;books&quot;</span><span class="p">)</span>
-<span class="c1">// Загрузим настройки и триггеры коллекции</span>
-<span class="n">collection</span><span class="p">.</span><span class="n">load</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="n">collection</span><span class="p">.</span><span class="n">acl</span><span class="p">.</span><span class="n">remove</span><span class="p">)</span>
-        <span class="bp">print</span><span class="p">(</span><span class="n">collection</span><span class="p">.</span><span class="n">triggers</span><span class="p">.</span><span class="n">afterUpdate</span><span class="p">.</span><span class="n">code</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">// Инициализируем коллекцию
+let collection = SCCollection(name: &quot;books&quot;)
+// Загрузим настройки и триггеры коллекции
+collection.load { (success, error, result) in
+    if error == nil {
+        print(collection.acl.remove)
+        print(collection.triggers.afterUpdate.code)
+    }
+}</code></pre>
 
 </div>
 <hr />
@@ -1443,15 +1431,13 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
-<span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
-<span class="c1">// Создадим индекс с именем &quot;UserNameIndex&quot; для поля &quot;name&quot; с сортировкой по убыванию</span>
-<span class="n">collection</span><span class="p">.</span><span class="n">createIndex</span><span class="p">(</span><span class="n">indexName</span><span class="p">:</span> <span class="s">&quot;UserNameIndex&quot;</span><span class="p">,</span> <span class="n">fieldName</span><span class="p">:</span> <span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="p">.</span><span class="n">descending</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">// Инициализируем коллекцию
+let collection = SCCollection(name: &quot;users&quot;)
+// Создадим индекс с именем &quot;UserNameIndex&quot; для поля &quot;name&quot; с сортировкой по убыванию
+collection.createIndex(indexName: &quot;UserNameIndex&quot;, fieldName: &quot;name&quot;, order: .descending) {
+    (success, error, result) in
+    print(result)
+}</code></pre>
 
 </div>
 <hr />
@@ -1487,15 +1473,13 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
-<span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
-<span class="c1">// Удалим индекс &quot;UserNameIndex&quot;</span>
-<span class="n">collection</span><span class="p">.</span><span class="n">deleteIndex</span><span class="p">(</span><span class="n">indexName</span><span class="p">:</span> <span class="s">&quot;UserNameIndex&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">(</span><span class="n">succes</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">// Инициализируем коллекцию
+let collection = SCCollection(name: &quot;users&quot;)
+// Удалим индекс &quot;UserNameIndex&quot;
+collection.deleteIndex(indexName: &quot;UserNameIndex&quot;) {
+    (succes, error, result) in
+    print(result)
+}</code></pre>
 
 </div>
 <hr />
@@ -1545,14 +1529,12 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
-<span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
-<span class="c1">// добавим пользователям поле &quot;town&quot; и свяжем это поле с коллекцией &quot;towns&quot;</span>
-<span class="n">collection</span><span class="p">.</span><span class="n">createField</span><span class="p">(</span><span class="n">fieldName</span><span class="p">:</span> <span class="s">&quot;town&quot;</span><span class="p">,</span> <span class="n">fieldType</span><span class="p">:</span> <span class="p">.</span><span class="n">Pointer</span><span class="p">,</span> <span class="n">targetCollectionName</span><span class="p">:</span> <span class="s">&quot;towns&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">// Инициализируем коллекцию
+let collection = SCCollection(name: &quot;users&quot;)
+// добавим пользователям поле &quot;town&quot; и свяжем это поле с коллекцией &quot;towns&quot;
+collection.createField(fieldName: &quot;town&quot;, fieldType: .Pointer, targetCollectionName: &quot;towns&quot;) { (success, error, result) in
+    print(result)
+}</code></pre>
 
 </div>
 <hr />
@@ -1588,14 +1570,12 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
-<span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
-<span class="c1">// Удалим поле &quot;town&quot;</span>
-<span class="n">collection</span><span class="p">.</span><span class="n">deleteField</span><span class="p">(</span><span class="n">fieldName</span><span class="p">:</span> <span class="s">&quot;town&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">// Инициализируем коллекцию
+let collection = SCCollection(name: &quot;users&quot;)
+// Удалим поле &quot;town&quot;
+collection.deleteField(fieldName: &quot;town&quot;) { (success, error, result) in
+    print(result)
+}</code></pre>
 
 </div>
 <hr />
@@ -1624,25 +1604,23 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Инициализируем коллекцию</span>
-<span class="kd">let</span> <span class="nv">collection</span> <span class="p">=</span> <span class="n">SCCollection</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
-<span class="c1">// Загрузим триггеры коллекции</span>
-<span class="n">collection</span><span class="p">.</span><span class="n">load</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="c1">// если все ок, то изменим некоторые триггеры</span>
-        <span class="n">collection</span><span class="p">.</span><span class="n">triggers</span><span class="p">.</span><span class="n">afterUpdate</span><span class="p">.</span><span class="n">isActive</span> <span class="p">=</span> <span class="kc">true</span>
-        <span class="n">collection</span><span class="p">.</span><span class="n">triggers</span><span class="p">.</span><span class="n">afterUpdate</span><span class="p">.</span><span class="n">code</span> <span class="p">=</span> <span class="s">&quot;console.log(</span><span class="se">\&quot;</span><span class="s">after update trigger</span><span class="se">\&quot;</span><span class="s">)&quot;</span>
+<pre class="codehilite"><code class="language-SWIFT">// Инициализируем коллекцию
+let collection = SCCollection(name: &quot;users&quot;)
+// Загрузим триггеры коллекции
+collection.load { (success, error, result) in
+    if error == nil {
+        // если все ок, то изменим некоторые триггеры
+        collection.triggers.afterUpdate.isActive = true
+        collection.triggers.afterUpdate.code = &quot;console.log(\&quot;after update trigger\&quot;)&quot;
 
-        <span class="kd">let</span> <span class="nv">isActive</span> <span class="p">=</span> <span class="n">collection</span><span class="p">.</span><span class="n">triggers</span><span class="p">.</span><span class="n">beforeRemove</span><span class="p">.</span><span class="n">isActive</span>
-        <span class="n">collection</span><span class="p">.</span><span class="n">triggers</span><span class="p">.</span><span class="n">beforeRemove</span><span class="p">.</span><span class="n">isActive</span> <span class="p">=</span> <span class="o">!</span><span class="n">isActive</span>
-        <span class="c1">// запишем изменения</span>
-        <span class="n">collection</span><span class="p">.</span><span class="n">saveTriggers</span><span class="p">(</span><span class="n">callback</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-            <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-        <span class="p">})</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+        let isActive = collection.triggers.beforeRemove.isActive
+        collection.triggers.beforeRemove.isActive = !isActive
+        // запишем изменения
+        collection.saveTriggers(callback: { (success, error, result) in
+            print(result)
+        })
+    }
+}</code></pre>
 
 </div>
               

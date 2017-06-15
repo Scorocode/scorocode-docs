@@ -1426,28 +1426,26 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Запросим все объекты коллекции</span>
-<span class="nx">data</span><span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-    <span class="c1">// Обработка успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">finded</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">//Выведем полученные данные в консоль</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">finded</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработка ошибки </span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-    <span class="p">});</span>    
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var data = new sc.Query(&quot;items&quot;);
+// Запросим все объекты коллекции
+data.find()
+    // Обработка успешного выполнения запроса
+    .then((finded) =&gt;{
+        //Выведем полученные данные в консоль
+        console.log(finded);
+    })
+    // Обработка ошибки 
+    .catch((err)=&gt;{
+        console.log(err)
+    });    </code></pre>
 
 </div>
 <p><strong>Возвращает</strong>: <code><a href="#sc.Query">sc.Query</a></code> - Возвращает экземпляр sc.Query<br />
@@ -1477,29 +1475,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Запросим все объекты коллекции</span>
-<span class="nx">data</span><span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-    <span class="c1">// Обработка успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">finded</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">util</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;util&#39;</span><span class="p">);</span>
-        <span class="c1">//Выведем полученные данные в консоль</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">util</span><span class="p">.</span><span class="nx">inspect</span><span class="p">(</span><span class="nx">finded</span><span class="p">,</span> <span class="p">{</span><span class="nx">showHidden</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">depth</span><span class="o">:</span> <span class="kc">null</span><span class="p">}))</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработка ошибки </span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-    <span class="p">});</span>    
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var data = new sc.Query(&quot;items&quot;);
+// Запросим все объекты коллекции
+data.find()
+    // Обработка успешного выполнения запроса
+    .then((finded) =&gt;{
+        var util = require('util');
+        //Выведем полученные данные в консоль
+        console.log(util.inspect(finded, {showHidden: false, depth: null}))
+    })
+    // Обработка ошибки 
+    .catch((err)=&gt;{
+        console.log(err)
+    });    </code></pre>
 
 </div>
 <p><strong>Возвращает</strong>: <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{sc.Object}]}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса. </p>
@@ -1509,33 +1505,31 @@
 <li>"skip" - <code>Number</code>  - количество документов, которое было пропущено при выборке</li>
 <li>"result" - <code>Array</code>  - массив полученных данных</li>
 </ul>
-<div class="codehilite"><pre><span></span>    <span class="p">{</span> 
-        <span class="nx">error</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">limit</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
-        <span class="nx">skip</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nx">result</span><span class="o">:</span>
-        <span class="p">[</span> 
-           <span class="p">{</span> <span class="nx">_id</span><span class="o">:</span> <span class="s1">&#39;CrT49joIxn&#39;</span><span class="p">,</span>
-               <span class="nx">createdAt</span><span class="o">:</span> <span class="nx">Wed</span> <span class="nx">May</span> <span class="mi">25</span> <span class="mi">2016</span> <span class="mi">17</span><span class="o">:</span><span class="mi">24</span><span class="o">:</span><span class="mi">17</span> <span class="nx">GMT</span><span class="o">+</span><span class="mi">0300</span> <span class="p">(</span><span class="nx">RTZ</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">зима</span><span class="p">)),</span>
-               <span class="nx">updatedAt</span><span class="o">:</span> <span class="nx">Wed</span> <span class="nx">May</span> <span class="mi">25</span> <span class="mi">2016</span> <span class="mi">22</span><span class="o">:</span><span class="mi">15</span><span class="o">:</span><span class="mi">03</span> <span class="nx">GMT</span><span class="o">+</span><span class="mi">0300</span> <span class="p">(</span><span class="nx">RTZ</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">зима</span><span class="p">)),</span>
-               <span class="nx">readACL</span><span class="o">:</span> <span class="p">[],</span>
-               <span class="nx">updateACL</span><span class="o">:</span> <span class="p">[],</span>
-               <span class="nx">removeACL</span><span class="o">:</span> <span class="p">[],</span>
-               <span class="nx">arrayField</span><span class="o">:</span> <span class="p">[</span> <span class="kc">false</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="mf">42.42</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="s2">&quot;Массив&quot;</span><span class="p">,{</span><span class="s2">&quot;123&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">}],{</span> <span class="s2">&quot;Объект&quot;</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}],</span>
-               <span class="nx">price</span><span class="o">:</span> <span class="mf">41.999</span> 
-           <span class="p">},</span>
-           <span class="c1">// ...</span>
-           <span class="p">{</span> <span class="nx">_id</span><span class="o">:</span> <span class="s1">&#39;NseSaqqd5v&#39;</span><span class="p">,</span>
-               <span class="nx">createdAt</span><span class="o">:</span> <span class="nx">Wed</span> <span class="nx">May</span> <span class="mi">25</span> <span class="mi">2016</span> <span class="mi">17</span><span class="o">:</span><span class="mi">24</span><span class="o">:</span><span class="mi">17</span> <span class="nx">GMT</span><span class="o">+</span><span class="mi">0300</span> <span class="p">(</span><span class="nx">RTZ</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">зима</span><span class="p">)),</span>
-               <span class="nx">updatedAt</span><span class="o">:</span> <span class="nx">Wed</span> <span class="nx">May</span> <span class="mi">25</span> <span class="mi">2016</span> <span class="mi">22</span><span class="o">:</span><span class="mi">15</span><span class="o">:</span><span class="mi">03</span> <span class="nx">GMT</span><span class="o">+</span><span class="mi">0300</span> <span class="p">(</span><span class="nx">RTZ</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">зима</span><span class="p">)),</span>
-               <span class="nx">readACL</span><span class="o">:</span> <span class="p">[],</span>
-               <span class="nx">updateACL</span><span class="o">:</span> <span class="p">[],</span>
-               <span class="nx">removeACL</span><span class="o">:</span> <span class="p">[]</span>
-           <span class="p">}</span> 
-        <span class="p">]</span>
-    <span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">    { 
+        error: false,
+        limit: 100,
+        skip: 0,
+        result:
+        [ 
+           { _id: 'CrT49joIxn',
+               createdAt: Wed May 25 2016 17:24:17 GMT+0300 (RTZ 2 (зима)),
+               updatedAt: Wed May 25 2016 22:15:03 GMT+0300 (RTZ 2 (зима)),
+               readACL: [],
+               updateACL: [],
+               removeACL: [],
+               arrayField: [ false,&quot;&quot;,42.42,[1,2,3],[&quot;Массив&quot;,{&quot;123&quot;: 4}],{ &quot;Объект&quot;: true }],
+               price: 41.999 
+           },
+           // ...
+           { _id: 'NseSaqqd5v',
+               createdAt: Wed May 25 2016 17:24:17 GMT+0300 (RTZ 2 (зима)),
+               updatedAt: Wed May 25 2016 22:15:03 GMT+0300 (RTZ 2 (зима)),
+               readACL: [],
+               updateACL: [],
+               removeACL: []
+           } 
+        ]
+    }</code></pre>
 
 <hr />
 <p><a name="sc.Query+findAll"></a></p>
@@ -1559,53 +1553,49 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Запросим все объекты коллекции</span>
-<span class="nx">data</span><span class="p">.</span><span class="nx">findAll</span><span class="p">()</span>
-    <span class="c1">// Обработка успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">finded</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">util</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;util&#39;</span><span class="p">);</span>
-        <span class="c1">//Выведем полученные данные в консоль</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">util</span><span class="p">.</span><span class="nx">inspect</span><span class="p">(</span><span class="nx">finded</span><span class="p">,</span> <span class="p">{</span><span class="nx">showHidden</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">depth</span><span class="o">:</span> <span class="kc">null</span><span class="p">}))</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработка ошибки </span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-    <span class="p">});</span>    
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var data = new sc.Query(&quot;items&quot;);
+// Запросим все объекты коллекции
+data.findAll()
+    // Обработка успешного выполнения запроса
+    .then((finded) =&gt;{
+        var util = require('util');
+        //Выведем полученные данные в консоль
+        console.log(util.inspect(finded, {showHidden: false, depth: null}))
+    })
+    // Обработка ошибки 
+    .catch((err)=&gt;{
+        console.log(err)
+    });    </code></pre>
 
 </div>
 <p><strong>Возвращает</strong>: <code>promise.{[{sc.Object}]}</code> - Возвращает promise, который возвращает массив объектов с данными документов. </p>
-<div class="codehilite"><pre><span></span>    <span class="p">[</span> 
-       <span class="p">{</span> <span class="nx">_id</span><span class="o">:</span> <span class="s1">&#39;CrT49joIxn&#39;</span><span class="p">,</span>
-           <span class="nx">createdAt</span><span class="o">:</span> <span class="nx">Wed</span> <span class="nx">May</span> <span class="mi">25</span> <span class="mi">2016</span> <span class="mi">17</span><span class="o">:</span><span class="mi">24</span><span class="o">:</span><span class="mi">17</span> <span class="nx">GMT</span><span class="o">+</span><span class="mi">0300</span> <span class="p">(</span><span class="nx">RTZ</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">зима</span><span class="p">)),</span>
-           <span class="nx">updatedAt</span><span class="o">:</span> <span class="nx">Wed</span> <span class="nx">May</span> <span class="mi">25</span> <span class="mi">2016</span> <span class="mi">22</span><span class="o">:</span><span class="mi">15</span><span class="o">:</span><span class="mi">03</span> <span class="nx">GMT</span><span class="o">+</span><span class="mi">0300</span> <span class="p">(</span><span class="nx">RTZ</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">зима</span><span class="p">)),</span>
-           <span class="nx">readACL</span><span class="o">:</span> <span class="p">[],</span>
-           <span class="nx">updateACL</span><span class="o">:</span> <span class="p">[],</span>
-           <span class="nx">removeACL</span><span class="o">:</span> <span class="p">[],</span>
-           <span class="nx">arrayField</span><span class="o">:</span> <span class="p">[</span> <span class="kc">false</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="mf">42.42</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="s2">&quot;Массив&quot;</span><span class="p">,{</span><span class="s2">&quot;123&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">}],{</span> <span class="s2">&quot;Объект&quot;</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}],</span>
-           <span class="nx">price</span><span class="o">:</span> <span class="mf">41.999</span> 
-       <span class="p">},</span>
-       <span class="c1">// ...</span>
-       <span class="p">{</span> <span class="nx">_id</span><span class="o">:</span> <span class="s1">&#39;NseSaqqd5v&#39;</span><span class="p">,</span>
-           <span class="nx">createdAt</span><span class="o">:</span> <span class="nx">Wed</span> <span class="nx">May</span> <span class="mi">25</span> <span class="mi">2016</span> <span class="mi">17</span><span class="o">:</span><span class="mi">24</span><span class="o">:</span><span class="mi">17</span> <span class="nx">GMT</span><span class="o">+</span><span class="mi">0300</span> <span class="p">(</span><span class="nx">RTZ</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">зима</span><span class="p">)),</span>
-           <span class="nx">updatedAt</span><span class="o">:</span> <span class="nx">Wed</span> <span class="nx">May</span> <span class="mi">25</span> <span class="mi">2016</span> <span class="mi">22</span><span class="o">:</span><span class="mi">15</span><span class="o">:</span><span class="mi">03</span> <span class="nx">GMT</span><span class="o">+</span><span class="mi">0300</span> <span class="p">(</span><span class="nx">RTZ</span> <span class="mi">2</span> <span class="p">(</span><span class="nx">зима</span><span class="p">)),</span>
-           <span class="nx">readACL</span><span class="o">:</span> <span class="p">[],</span>
-           <span class="nx">updateACL</span><span class="o">:</span> <span class="p">[],</span>
-           <span class="nx">removeACL</span><span class="o">:</span> <span class="p">[]</span>
-       <span class="p">}</span> 
-    <span class="p">]</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">    [ 
+       { _id: 'CrT49joIxn',
+           createdAt: Wed May 25 2016 17:24:17 GMT+0300 (RTZ 2 (зима)),
+           updatedAt: Wed May 25 2016 22:15:03 GMT+0300 (RTZ 2 (зима)),
+           readACL: [],
+           updateACL: [],
+           removeACL: [],
+           arrayField: [ false,&quot;&quot;,42.42,[1,2,3],[&quot;Массив&quot;,{&quot;123&quot;: 4}],{ &quot;Объект&quot;: true }],
+           price: 41.999 
+       },
+       // ...
+       { _id: 'NseSaqqd5v',
+           createdAt: Wed May 25 2016 17:24:17 GMT+0300 (RTZ 2 (зима)),
+           updatedAt: Wed May 25 2016 22:15:03 GMT+0300 (RTZ 2 (зима)),
+           readACL: [],
+           updateACL: [],
+           removeACL: []
+       } 
+    ]</code></pre>
 
 <hr />
 <p><a name="sc.Query+count"></a></p>
@@ -1629,28 +1619,26 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">countItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Подсчитаем количество объектов с существующим значением поля &quot;price&quot;.</span>
-<span class="nx">countItems</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">count</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">counted</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counted</span><span class="p">)</span> <span class="c1">// { error: false, result: 5 }</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var countItems = new sc.Query(&quot;items&quot;);
+// Подсчитаем количество объектов с существующим значением поля &quot;price&quot;.
+countItems.exists(&quot;price&quot;)
+    .count()
+        // Обработчик успешного выполнения запроса
+        .then((counted) =&gt; {
+            // Выведем результат в консоль.
+            console.log(counted) // { error: false, result: 5 }
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <p><strong>Возвращает</strong>: <code>promise.{error: Boolean, result: Number}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.</p>
@@ -1685,39 +1673,37 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items и объект обновления.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+// Создадим новый экземпляр запроса к коллекции items и объект обновления.
+var Items = new sc.Query(&quot;items&quot;);
+var updateItems = new sc.UpdateOps(&quot;items&quot;);
 
-<span class="c1">// Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.</span>
-<span class="nx">Items</span><span class="p">.</span><span class="nx">notEqualTo</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Установим новое значение поля &quot;price&quot;</span>
-            <span class="nx">updateItems</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
-            <span class="c1">// Обновим запрошенные объекты</span>
-            <span class="k">return</span> <span class="nx">Items</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">updateItems</span><span class="p">)</span>
-        <span class="p">})</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">updated</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат  в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">updated</span><span class="p">);</span>
-        <span class="p">})</span> 
-        <span class="c1">// Обработчик ошибки</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.
+Items.notEqualTo(&quot;price&quot;, 42)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Установим новое значение поля &quot;price&quot;
+            updateItems.set(&quot;price&quot;, 42);
+            // Обновим запрошенные объекты
+            return Items.update(updateItems)
+        })
+        // Обработчик успешного выполнения запроса
+        .then((updated) =&gt; {
+            // Выведем результат  в консоль.
+            console.log(updated);
+        }) 
+        // Обработчик ошибки
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <p><strong>Возвращает</strong>: <code>promise.{error: Boolean, result: {count: Number, docs: Array}}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.</p>
@@ -1729,25 +1715,23 @@
 </ul>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error: false,
     result:
         { 
             count: 8,
             docs:[ 
-                &#39;CrT49joIxn&#39;,
-                &#39;8Qcfll2GwE&#39;,
-                &#39;dMSYsK8jld&#39;,
-                &#39;6TFVG5UqV6&#39;,
-                &#39;gNxzwAfvDj&#39;,
-                &#39;eoVWeg9oeY&#39;,
-                &#39;vRf58kEDpo&#39;,
-                &#39;abOkjQAnYE&#39; 
+                'CrT49joIxn',
+                '8Qcfll2GwE',
+                'dMSYsK8jld',
+                '6TFVG5UqV6',
+                'gNxzwAfvDj',
+                'eoVWeg9oeY',
+                'vRf58kEDpo',
+                'abOkjQAnYE' 
             ] 
     } 
-}
-</pre></div>
-
+}</code></pre>
 
 <hr />
 <p><a name="sc.Query+remove"></a></p>
@@ -1771,35 +1755,33 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">finded</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Удалим запрошенные объекты</span>
-            <span class="nx">Items</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">finded</span><span class="p">)</span>
-                <span class="c1">// Обработчик успешного выполнения запроса</span>
-                <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                    <span class="c1">// Выведем результат в консоль.</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-                <span class="p">})</span>  
-                <span class="c1">// Обработчик ошибки</span>
-                <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-                <span class="p">});</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+Items.exists(&quot;arrayField&quot;)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((finded) =&gt; {
+            // Удалим запрошенные объекты
+            Items.remove(finded)
+                // Обработчик успешного выполнения запроса
+                .then((result) =&gt; {
+                    // Выведем результат в консоль.
+                    console.log(result);
+                })  
+                // Обработчик ошибки
+                .catch((error) =&gt; {
+                    console.log(&quot;Что-то пошло не так: \n&quot;, error)
+                });
+        })
+        .catch((error) =&gt; {
+                console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <p><strong>Возвращает</strong>: <code>promise.{ecount: Number, docs: Array}</code> - Возвращает promise, который возвращает объект с результатом выполнения запроса.</p>
@@ -1807,17 +1789,15 @@
 <li>"count" - <code>Number</code>  - Количество измененных объектов</li>
 <li>"docs" - <code>Array</code>  - Массив _id измененных объектов.</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="p">{</span> 
-    <span class="nx">count</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> 
-    <span class="nx">docs</span><span class="o">:</span><span class="p">[</span> 
-        <span class="s1">&#39;CrT49joIxn&#39;</span><span class="p">,</span> 
-        <span class="s1">&#39;eoVWeg9oeY&#39;</span><span class="p">,</span> 
-        <span class="s1">&#39;vRf58kEDpo&#39;</span><span class="p">,</span> 
-        <span class="s1">&#39;abOkjQAnYE&#39;</span>
-        <span class="p">]</span> 
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{ 
+    count: 4, 
+    docs:[ 
+        'CrT49joIxn', 
+        'eoVWeg9oeY', 
+        'vRf58kEDpo', 
+        'abOkjQAnYE'
+        ] 
+}</code></pre>
 
 <hr />
 <p><a name="sc.Query+reset"></a></p>
@@ -1825,31 +1805,29 @@
 <p>Метод для сброса условий выборки</p>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты со значением 42 в полe &quot;price&quot;</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">equalTo</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
-        <span class="p">})</span>
-        <span class="c1">// Обработчик ошибки</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Сбросим условия выборки</span>
-            <span class="nx">getItems</span><span class="p">.</span><span class="nx">reset</span><span class="p">()</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты со значением 42 в полe &quot;price&quot;
+getItems.equalTo(&quot;price&quot;, 42)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            console.log(result)
+        })
+        // Обработчик ошибки
+        .catch((error) =&gt; {
+            // Сбросим условия выборки
+            getItems.reset()
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <hr />
@@ -1879,29 +1857,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты со значением 42 в полe &quot;price&quot;</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">equalTo</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-            <span class="nx">getItems</span><span class="p">.</span><span class="nx">reset</span><span class="p">()</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты со значением 42 в полe &quot;price&quot;
+getItems.equalTo(&quot;price&quot;, 42)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            console.log(result) 
+            getItems.reset()
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <hr />
@@ -1931,29 +1907,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">notEqualTo</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="c1">// { error: false, result: 5 }</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты, значение поля price которых не равно 42.
+getItems.notEqualTo(&quot;price&quot;, 42)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) // { error: false, result: 5 }
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <hr />
@@ -1983,29 +1957,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты со значением -42, 41.999 или 42 в полe &quot;price&quot;</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">containedIn</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,[</span><span class="o">-</span><span class="mi">42</span><span class="p">,</span> <span class="mf">41.999</span><span class="p">,</span> <span class="mi">42</span><span class="p">])</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты со значением -42, 41.999 или 42 в полe &quot;price&quot;
+getItems.containedIn(&quot;price&quot;,[-42, 41.999, 42])
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <p><strong>Исключения</strong></p>
@@ -2039,29 +2011,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, содержащие числа 4, 8, 15, 16, 23, 42 в полe &quot;arrayField&quot;</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">containsAll</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">,[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">42</span><span class="p">])</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты, содержащие числа 4, 8, 15, 16, 23, 42 в полe &quot;arrayField&quot;
+getItems.containsAll(&quot;arrayField&quot;,[4, 8, 15, 16, 23, 42])
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <p><strong>Исключение</strong>:</p>
@@ -2095,29 +2065,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, значения поля которых не указано в массиве [41.999 или 42]</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">notContainedIn</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,[</span><span class="mf">41.999</span><span class="p">,</span> <span class="mi">42</span><span class="p">])</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты, значения поля которых не указано в массиве [41.999 или 42]
+getItems.notContainedIn(&quot;price&quot;,[41.999, 42])
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <p><strong>Исключения</strong>:</p>
@@ -2152,29 +2120,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, созданные позже 2016-05-19T15:35:16.000Z</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">greaterThan</span><span class="p">(</span><span class="s2">&quot;createdAt&quot;</span><span class="p">,</span> <span class="s2">&quot;2016-05-19T15:35:16.000Z&quot;</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты, созданные позже 2016-05-19T15:35:16.000Z
+getItems.greaterThan(&quot;createdAt&quot;, &quot;2016-05-19T15:35:16.000Z&quot;)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <hr />
@@ -2204,29 +2170,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты со значением больше, либо равным 41.999 </span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">greaterThanOrEqualTo</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mf">41.999</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты со значением больше, либо равным 41.999 
+getItems.greaterThanOrEqualTo(&quot;price&quot;, 41.999)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <hr />
@@ -2256,29 +2220,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты со значением поля price меньшe 41</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">lessThan</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">41</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты со значением поля price меньшe 41
+getItems.lessThan(&quot;price&quot;, 41)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <hr />
@@ -2308,29 +2270,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, обновленные не позже 2016-05-19T15:35:16.000Z</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">lessThanOrEqualTo</span><span class="p">(</span><span class="s2">&quot;updatedAt&quot;</span><span class="p">,</span> <span class="s2">&quot;2016-05-19T15:35:16.000Z&quot;</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты, обновленные не позже 2016-05-19T15:35:16.000Z
+getItems.lessThanOrEqualTo(&quot;updatedAt&quot;, &quot;2016-05-19T15:35:16.000Z&quot;)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <hr />
@@ -2355,27 +2315,25 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Подсчитаем количество объектов с существующим значением поля &quot;price&quot;.</span>
-<span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var Items = new sc.Query(&quot;items&quot;);
+// Подсчитаем количество объектов с существующим значением поля &quot;price&quot;.
+Items.exists(&quot;price&quot;)
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result)
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <hr />
@@ -2400,27 +2358,25 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Подсчитаем количество объектов с отсутствующим значением поля &quot;price&quot;.</span>
-<span class="nx">Items</span><span class="p">.</span><span class="nx">doesNotExist</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var Items = new sc.Query(&quot;items&quot;);
+// Подсчитаем количество объектов с отсутствующим значением поля &quot;price&quot;.
+Items.doesNotExist(&quot;price&quot;)
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result)
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <hr />
@@ -2450,29 +2406,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, значение поля &quot;someString&quot; которых содержит цифры.</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;someString&quot;</span><span class="p">,</span><span class="s2">&quot;[0-9]&quot;</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты, значение поля &quot;someString&quot; которых содержит цифры.
+getItems.contains(&quot;someString&quot;,&quot;[0-9]&quot;)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <p><strong>Исключение</strong>:</p>
@@ -2506,29 +2460,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, значение поля &quot;name&quot; которых начинается с &quot;Предм&quot;</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;Предм&quot;</span><span class="p">);</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты, значение поля &quot;name&quot; которых начинается с &quot;Предм&quot;
+getItems.startsWith(&quot;name&quot;, &quot;Предм&quot;);
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <p><strong>Исключение</strong>:</p>
@@ -2562,29 +2514,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, значение поля &quot;name&quot; которых заканчивается на &quot;чип&quot;</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;чип&quot;</span><span class="p">);</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты, значение поля &quot;name&quot; которых заканчивается на &quot;чип&quot;
+getItems.endsWith(&quot;name&quot;, &quot;чип&quot;);
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <p><strong>Исключение</strong>:</p>
@@ -2613,30 +2563,28 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим лимит выборки - не более 1000 объектов.</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, значение поля &quot;someString&quot; которых содержит цифры и символы латиницы.</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">1000</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;someString&quot;</span><span class="p">,</span><span class="s2">&quot;[a-zA-Z-0-9]&quot;</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим лимит выборки - не более 1000 объектов.
+// Установим условие выборки - запросить все объекты, значение поля &quot;someString&quot; которых содержит цифры и символы латиницы.
+getItems.limit(1000).contains(&quot;someString&quot;,&quot;[a-zA-Z-0-9]&quot;)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <p><strong>Исключение</strong>:</p>
@@ -2665,31 +2613,29 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим лимит выборки - не более 1000 объектов.</span>
-<span class="c1">// Пропустим первые 1000 объектов и получим вторую тысячу.</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, значение поля &quot;someString&quot; которых содержит цифры и символы латиницы.</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">1000</span><span class="p">).</span><span class="nx">skip</span><span class="p">(</span><span class="mi">1000</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;someString&quot;</span><span class="p">,</span><span class="s2">&quot;[a-zA-Z-0-9]&quot;</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим лимит выборки - не более 1000 объектов.
+// Пропустим первые 1000 объектов и получим вторую тысячу.
+// Установим условие выборки - запросить все объекты, значение поля &quot;someString&quot; которых содержит цифры и символы латиницы.
+getItems.limit(1000).skip(1000).contains(&quot;someString&quot;,&quot;[a-zA-Z-0-9]&quot;)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <p><strong>Исключение</strong></p>
@@ -2718,31 +2664,29 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим лимит выборки - не более 30 объектов.</span>
-<span class="c1">// Запросим вторую страницу выборки</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, значение поля &quot;someString&quot; которых содержит цифры и символы латиницы.</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">30</span><span class="p">).</span><span class="nx">page</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;someString&quot;</span><span class="p">,</span><span class="s2">&quot;[a-zA-Z-0-9]&quot;</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим лимит выборки - не более 30 объектов.
+// Запросим вторую страницу выборки
+// Установим условие выборки - запросить все объекты, значение поля &quot;someString&quot; которых содержит цифры и символы латиницы.
+getItems.limit(30).page(2).contains(&quot;someString&quot;,&quot;[a-zA-Z-0-9]&quot;)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <p><strong>Исключение</strong>:</p>
@@ -2771,32 +2715,30 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим лимит выборки - не более 30 объектов.</span>
-<span class="c1">// Отсортируем объекты в порядке возрастания даты изменения</span>
-<span class="c1">// Запросим первую страницу выборки</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, значение поля &quot;someString&quot; которых содержит цифры и символы латиницы.</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">30</span><span class="p">).</span><span class="nx">ascending</span><span class="p">(</span><span class="s2">&quot;updatedAt&quot;</span><span class="p">).</span><span class="nx">page</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;someString&quot;</span><span class="p">,</span><span class="s2">&quot;[a-zA-Z-0-9]&quot;</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим лимит выборки - не более 30 объектов.
+// Отсортируем объекты в порядке возрастания даты изменения
+// Запросим первую страницу выборки
+// Установим условие выборки - запросить все объекты, значение поля &quot;someString&quot; которых содержит цифры и символы латиницы.
+getItems.limit(30).ascending(&quot;updatedAt&quot;).page(1).contains(&quot;someString&quot;,&quot;[a-zA-Z-0-9]&quot;)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <hr />
@@ -2822,32 +2764,30 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим лимит выборки - не более 30 объектов.</span>
-<span class="c1">// Отсортируем объекты в порядке убывания значения поля &quot;price&quot;</span>
-<span class="c1">// Запросим первую страницу выборки</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, значение поля &quot;someString&quot; которых содержит цифры и символы латиницы.</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">30</span><span class="p">).</span><span class="nx">descending</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">).</span><span class="nx">page</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;someString&quot;</span><span class="p">,</span><span class="s2">&quot;[a-zA-Z-0-9]&quot;</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим лимит выборки - не более 30 объектов.
+// Отсортируем объекты в порядке убывания значения поля &quot;price&quot;
+// Запросим первую страницу выборки
+// Установим условие выборки - запросить все объекты, значение поля &quot;someString&quot; которых содержит цифры и символы латиницы.
+getItems.limit(30).descending(&quot;price&quot;).page(1).contains(&quot;someString&quot;,&quot;[a-zA-Z-0-9]&quot;)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <hr />
@@ -2872,37 +2812,35 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">range1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">range2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+var range1 = new sc.Query(&quot;items&quot;);
+var range2 = new sc.Query(&quot;items&quot;);
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, созданные не позже 2016-05-18T10:00:00.000Z</span>
-<span class="nx">range1</span><span class="p">.</span><span class="nx">lessThanOrEqualTo</span><span class="p">(</span><span class="s2">&quot;createdAt&quot;</span><span class="p">,</span> <span class="s2">&quot;2016-05-19T10:00:00.000Z&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, созданные не раньше 2016-05-20T10:00:00.000Z</span>
-<span class="nx">range2</span><span class="p">.</span><span class="nx">greaterThanOrEqualTo</span><span class="p">(</span><span class="s2">&quot;createdAt&quot;</span><span class="p">,</span> <span class="s2">&quot;2016-05-21T15:00:00.000Z&quot;</span><span class="p">);</span>
-<span class="c1">// Логически сложим запросы </span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">or</span><span class="p">(</span><span class="nx">range1</span><span class="p">).</span><span class="nx">or</span><span class="p">(</span><span class="nx">range2</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты, созданные не позже 2016-05-18T10:00:00.000Z
+range1.lessThanOrEqualTo(&quot;createdAt&quot;, &quot;2016-05-19T10:00:00.000Z&quot;);
+// Установим условие выборки - запросить все объекты, созданные не раньше 2016-05-20T10:00:00.000Z
+range2.greaterThanOrEqualTo(&quot;createdAt&quot;, &quot;2016-05-21T15:00:00.000Z&quot;);
+// Логически сложим запросы 
+getItems.or(range1).or(range2)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <p><strong>Исключение</strong>:</p>
@@ -2931,37 +2869,35 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">range</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">price</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+// Создадим новый экземпляр запроса к коллекции items.
+var getItems = new sc.Query(&quot;items&quot;);
+var range = new sc.Query(&quot;items&quot;);
+var price = new sc.Query(&quot;items&quot;);
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, созданные не раньше 2016-05-18T10:00:00.000Z</span>
-<span class="nx">range</span><span class="p">.</span><span class="nx">greaterThanOrEqualTo</span><span class="p">(</span><span class="s2">&quot;createdAt&quot;</span><span class="p">,</span> <span class="s2">&quot;2016-05-19T10:00:00.000Z&quot;</span><span class="p">);</span>
-<span class="c1">// Установим условие выборки - запросить все объекты, значение поля &quot;price&quot; которых отсутствует</span>
-<span class="nx">price</span><span class="p">.</span><span class="nx">doesNotExists</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">);</span>
-<span class="c1">// Логически умножим запросы </span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">range</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span><span class="nx">price</span><span class="p">)</span>
-    <span class="c1">// Выполним запрос к данным коллекции</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль.</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new sc.Query(&quot;items&quot;);
+// Установим условие выборки - запросить все объекты, созданные не раньше 2016-05-18T10:00:00.000Z
+range.greaterThanOrEqualTo(&quot;createdAt&quot;, &quot;2016-05-19T10:00:00.000Z&quot;);
+// Установим условие выборки - запросить все объекты, значение поля &quot;price&quot; которых отсутствует
+price.doesNotExists(&quot;price&quot;);
+// Логически умножим запросы 
+getItems.and(range).and(price)
+    // Выполним запрос к данным коллекции
+    .find()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль.
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });</code></pre>
 
 </div>
 <hr />
@@ -2970,28 +2906,26 @@
 <p>Метод для указания списка возвращаемых полей. </p>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр запроса к коллекции items.</span>
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Запросим все объекты коллекции и получим значение их поля &quot;price&quot; и &quot;reward&quot;.</span>
-<span class="nx">data</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="s2">&quot;reward&quot;</span><span class="p">).</span><span class="nx">find</span><span class="p">()</span>
-    <span class="c1">// Обработка успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">finded</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">//Выведем полученные данные в консоль. </span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">finded</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработка ошибки </span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-    <span class="p">});</span>    
-</pre></div>
-
+// Создадим новый экземпляр запроса к коллекции items.
+var data = new sc.Query(&quot;items&quot;);
+// Запросим все объекты коллекции и получим значение их поля &quot;price&quot; и &quot;reward&quot;.
+data.select(&quot;price&quot;, &quot;reward&quot;).find()
+    // Обработка успешного выполнения запроса
+    .then((finded) =&gt;{
+        //Выведем полученные данные в консоль. 
+        console.log(finded);
+    })
+    // Обработка ошибки 
+    .catch((err)=&gt;{
+        console.log(err)
+    });    </code></pre>
 
 </div>
 <hr />
@@ -3016,27 +2950,25 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
 
-<span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">query</span><span class="p">.</span><span class="nx">raw</span><span class="p">({</span><span class="s2">&quot;_id&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;$eq&quot;</span><span class="o">:</span> <span class="s2">&quot;cL0meP4TFc&quot;</span><span class="p">}});</span>
-<span class="nx">query</span><span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">finded</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">//Выведем полученные данные в консоль. </span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">finded</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработка ошибки </span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-    <span class="p">});</span>    
-</pre></div>
-
+var query = new sc.Query(&quot;items&quot;);
+query.raw({&quot;_id&quot;: {&quot;$eq&quot;: &quot;cL0meP4TFc&quot;}});
+query.find()
+    .then((finded) =&gt;{
+        //Выведем полученные данные в консоль. 
+        console.log(finded);
+    })
+    // Обработка ошибки 
+    .catch((err)=&gt;{
+        console.log(err)
+    });    </code></pre>
 
 </div>
               

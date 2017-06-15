@@ -980,178 +980,162 @@
 <p><strong>https://api.scorocode.ru/api/v1/sendpush</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки: <code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа,</span> <span class="err">обязательный,</span> <span class="err">messageKey</span> <span class="err">или</span> <span class="err">для</span> <span class="err">полного</span> <span class="err">доступа</span> <span class="err">masterKey</span>
-    <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ID</span> <span class="err">сессии,</span> <span class="err">обязательный,</span> <span class="err">если</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span>
-    <span class="nt">&quot;debug&quot;</span>       <span class="p">:</span> <span class="err">bool</span><span class="p">,</span> <span class="err">//</span> <span class="err">флаг</span> <span class="err">включения</span> <span class="err">режима</span> <span class="err">отладки,</span> <span class="err">необязательный</span>
-    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный;</span> <span class="err">users,</span> <span class="err">roles</span> <span class="err">или</span> <span class="err">devices</span>
-    <span class="nt">&quot;query&quot;</span>       <span class="p">:</span> <span class="p">{},</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">в</span> <span class="err">коллекцию</span> <span class="err">devices</span> <span class="err">для</span> <span class="err">выборки</span> <span class="err">адресатов</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный</span>
-    <span class="nt">&quot;msg&quot;</span>         <span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;data&quot;</span>    <span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;gcm&quot;</span><span class="p">:</span> <span class="p">{</span>        <span class="err">//</span> <span class="err">Данные</span> <span class="err">для</span> <span class="err">передачи</span> <span class="err">Android-устройствам,</span> <span class="err">необязательно</span>
-                <span class="nt">&quot;protocol&quot;</span><span class="p">:</span> <span class="s2">&quot;http&quot;</span><span class="p">,</span>   <span class="err">//</span> <span class="err">Протокол</span> <span class="err">передачи</span> <span class="err">&#39;http&#39;</span> <span class="err">||</span> <span class="err">&#39;xmpp&#39;,</span> <span class="err">необязательно</span>
-                <span class="nt">&quot;notification&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;body&quot;</span> <span class="p">:</span> <span class="s2">&quot;great match!&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Portugal vs. Denmark&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;icon&quot;</span> <span class="p">:</span> <span class="s2">&quot;myicon&quot;</span>
-                <span class="p">},</span>
-                <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span>
-                <span class="p">}</span>
-            <span class="p">},</span>
-            <span class="nt">&quot;apns&quot;</span><span class="p">:</span> <span class="p">{</span>       <span class="err">//</span> <span class="err">Данные</span> <span class="err">для</span> <span class="err">передачи</span> <span class="err">iOs-устройствам,</span> <span class="err">необязательно</span>
-                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;123e4567-e89b-12d3-a456-42665544000&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">apns-id,</span> <span class="err">необязательно</span>
-                <span class="nt">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;com.sideshow.Apns2&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">apns-topic,</span> <span class="err">необязательно</span>
-                <span class="nt">&quot;collapseId&quot;</span><span class="p">:</span> <span class="s2">&quot;my_collapse&quot;</span><span class="p">,</span>                 <span class="err">//</span> <span class="err">apns-collapse-id,</span> <span class="err">необязательно</span>
-                <span class="nt">&quot;expiration&quot;</span><span class="p">:</span> <span class="s2">&quot;2006-01-02T15:04:05Z07:00&quot;</span><span class="p">,</span>   <span class="err">//</span> <span class="err">apns-expiration,</span> <span class="err">необязательно</span>
-                <span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>                                <span class="err">//</span> <span class="err">apns-priority,</span> <span class="err">необязательно</span>
-                <span class="nt">&quot;aps&quot;</span> <span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;alert&quot;</span> <span class="p">:</span> <span class="p">{</span>
-                        <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Portugal vs. Denmark&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;body&quot;</span> <span class="p">:</span> <span class="s2">&quot;great match!&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;action-loc-key&quot;</span> <span class="p">:</span> <span class="s2">&quot;Watch&quot;</span>
-                    <span class="p">},</span>
-                    <span class="nt">&quot;badge&quot;</span> <span class="p">:</span> <span class="mi">5</span>
-                <span class="p">},</span>
-                <span class="nt">&quot;acme1&quot;</span> <span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;acme2&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;bang&quot;</span><span class="p">,</span>  <span class="s2">&quot;whiz&quot;</span> <span class="p">]</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;app&quot;         : &quot;&quot;, // идентификатор приложения, обязательный
+    &quot;cli&quot;         : &quot;&quot;, // клиентский ключ, обязательный
+    &quot;acc&quot;         : &quot;&quot;, // ключ доступа, обязательный, messageKey или для полного доступа masterKey
+    &quot;sess&quot;        : &quot;&quot;, // ID сессии, обязательный, если acc != masterKey
+    &quot;debug&quot;       : bool, // флаг включения режима отладки, необязательный
+    &quot;coll&quot;        : &quot;&quot;, // имя коллекции, обязательный; users, roles или devices
+    &quot;query&quot;       : {}, // запрос в коллекцию devices для выборки адресатов с парами имя_поля/оператор:значение, необязательный
+    &quot;msg&quot;         : {
+        &quot;data&quot;    : {
+            &quot;gcm&quot;: {        // Данные для передачи Android-устройствам, необязательно
+                &quot;protocol&quot;: &quot;http&quot;,   // Протокол передачи 'http' || 'xmpp', необязательно
+                &quot;notification&quot;: {
+                    &quot;body&quot; : &quot;great match!&quot;,
+                    &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,
+                    &quot;icon&quot; : &quot;myicon&quot;
+                },
+                &quot;data&quot;: {
+                    &quot;key&quot;: &quot;value&quot;
+                }
+            },
+            &quot;apns&quot;: {       // Данные для передачи iOs-устройствам, необязательно
+                &quot;id&quot;: &quot;123e4567-e89b-12d3-a456-42665544000&quot;, // apns-id, необязательно
+                &quot;topic&quot;: &quot;com.sideshow.Apns2&quot;,               // apns-topic, необязательно
+                &quot;collapseId&quot;: &quot;my_collapse&quot;,                 // apns-collapse-id, необязательно
+                &quot;expiration&quot;: &quot;2006-01-02T15:04:05Z07:00&quot;,   // apns-expiration, необязательно
+                &quot;priority&quot;:5,                                // apns-priority, необязательно
+                &quot;aps&quot; : {
+                    &quot;alert&quot; : {
+                        &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,
+                        &quot;body&quot; : &quot;great match!&quot;,
+                        &quot;action-loc-key&quot; : &quot;Watch&quot;
+                    },
+                    &quot;badge&quot; : 5
+                },
+                &quot;acme1&quot; : &quot;bar&quot;,
+                &quot;acme2&quot; : [ &quot;bang&quot;,  &quot;whiz&quot; ]
+            }
+        }
+    }
+}</code></pre>
 
 <div class="admonition tip">
 <p class="admonition-title">Пример cURL</p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;acc&quot;: &quot;e9c6a65b9d6acd5043aeeasasd1e6dc3&quot;,</span>
-<span class="s1">    &quot;app&quot;: &quot;5c46ec2f6f94aa92sd6ef831228ef14c&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;86df1ce52d8sdftr61d632f1d6e15936&quot;,</span>
-<span class="s1">    &quot;sess&quot;: &quot;&quot;,</span>
-<span class="s1">    &quot;debug&quot;: true,</span>
-<span class="s1">    &quot;coll&quot;: &quot;devices&quot;,</span>
-<span class="s1">    &quot;query&quot;: {</span>
-<span class="s1">        &quot;deviceType&quot;: {</span>
-<span class="s1">            &quot;$eq&quot;: &quot;android&quot;</span>
-<span class="s1">        }</span>
-<span class="s1">    },</span>
-<span class="s1">    &quot;msg&quot;: {</span>
-<span class="s1">        &quot;text&quot;: &quot;push&quot;,</span>
-<span class="s1">        &quot;data&quot;: {</span>
-<span class="s1">            &quot;gcm&quot;: {</span>
-<span class="s1">                &quot;protocol&quot;: &quot;http&quot;,</span>
-<span class="s1">                &quot;notification&quot;: {</span>
-<span class="s1">                    &quot;body&quot; : &quot;great match!&quot;,</span>
-<span class="s1">                    &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,</span>
-<span class="s1">                    &quot;icon&quot; : &quot;myicon&quot;</span>
-<span class="s1">                },</span>
-<span class="s1">                &quot;data&quot;: {</span>
-<span class="s1">                    &quot;key&quot;: &quot;value&quot;</span>
-<span class="s1">                }</span>
-<span class="s1">            },</span>
-<span class="s1">            &quot;apns&quot;: {</span>
-<span class="s1">                &quot;aps&quot; : {</span>
-<span class="s1">                    &quot;alert&quot; : {</span>
-<span class="s1">                        &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,</span>
-<span class="s1">                        &quot;body&quot; : &quot;great match!&quot;,</span>
-<span class="s1">                        &quot;action-loc-key&quot; : &quot;Watch&quot;</span>
-<span class="s1">                    },</span>
-<span class="s1">                    &quot;badge&quot; : 5</span>
-<span class="s1">                },</span>
-<span class="s1">                &quot;acme1&quot; : &quot;bar&quot;,</span>
-<span class="s1">                &quot;acme2&quot; : [ &quot;bang&quot;,  &quot;whiz&quot; ]</span>
-<span class="s1">            }</span>
-<span class="s1">        }</span>
-<span class="s1">    }</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/sendpush&quot;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-bash">curl -X POST -H &quot;Content-Type: application/json&quot; -d '{
+    &quot;acc&quot;: &quot;e9c6a65b9d6acd5043aeeasasd1e6dc3&quot;,
+    &quot;app&quot;: &quot;5c46ec2f6f94aa92sd6ef831228ef14c&quot;,
+    &quot;cli&quot;: &quot;86df1ce52d8sdftr61d632f1d6e15936&quot;,
+    &quot;sess&quot;: &quot;&quot;,
+    &quot;debug&quot;: true,
+    &quot;coll&quot;: &quot;devices&quot;,
+    &quot;query&quot;: {
+        &quot;deviceType&quot;: {
+            &quot;$eq&quot;: &quot;android&quot;
+        }
+    },
+    &quot;msg&quot;: {
+        &quot;text&quot;: &quot;push&quot;,
+        &quot;data&quot;: {
+            &quot;gcm&quot;: {
+                &quot;protocol&quot;: &quot;http&quot;,
+                &quot;notification&quot;: {
+                    &quot;body&quot; : &quot;great match!&quot;,
+                    &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,
+                    &quot;icon&quot; : &quot;myicon&quot;
+                },
+                &quot;data&quot;: {
+                    &quot;key&quot;: &quot;value&quot;
+                }
+            },
+            &quot;apns&quot;: {
+                &quot;aps&quot; : {
+                    &quot;alert&quot; : {
+                        &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,
+                        &quot;body&quot; : &quot;great match!&quot;,
+                        &quot;action-loc-key&quot; : &quot;Watch&quot;
+                    },
+                    &quot;badge&quot; : 5
+                },
+                &quot;acme1&quot; : &quot;bar&quot;,
+                &quot;acme2&quot; : [ &quot;bang&quot;,  &quot;whiz&quot; ]
+            }
+        }
+    }
+}' &quot;https://api.scorocode.ru/api/v1/sendpush&quot;</code></pre>
 
 </div>
 <p><strong>Ответы:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Выполнено</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span><span class="p">,</span>       <span class="err">//Количество</span> <span class="err">отправленных</span> <span class="err">сообщений</span> 
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;count&quot;       : int,       //Количество отправленных сообщений 
+    &quot;error&quot;       : false
+}</code></pre>
 
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Ошибка</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Код ошибки
+    &quot;errMsg&quot;      : &quot;Текст ошибки&quot;
+}</code></pre>
 
 </div>
 <h2 id="sms">Отправка sms на номера пользователей.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/sendsms</strong></p>
 <p>Метод: <code>POST</code></p>
 <p>Заголовки: <code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">идентификатор</span> <span class="err">приложения,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">клиентский</span> <span class="err">ключ,</span> <span class="err">обязательный</span>
-    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ключ</span> <span class="err">доступа,</span> <span class="err">обязательный,</span> <span class="err">messageKey</span> <span class="err">или</span> <span class="err">для</span> <span class="err">полного</span> <span class="err">доступа</span> <span class="err">masterKey</span>
-    <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">ID</span> <span class="err">сессии,</span> <span class="err">обязательный,</span> <span class="err">если</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span>
-    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">имя</span> <span class="err">коллекции,</span> <span class="err">обязательный,</span> <span class="err">users</span> <span class="err">или</span> <span class="err">roles</span>
-    <span class="nt">&quot;query&quot;</span>       <span class="p">:</span> <span class="p">{},</span> <span class="err">//</span> <span class="err">запрос</span> <span class="err">в</span> <span class="err">коллекцию</span> <span class="err">users</span> <span class="err">для</span> <span class="err">выборки</span> <span class="err">адресатов</span> <span class="err">с</span> <span class="err">парами</span> <span class="err">имя_поля/оператор:значение,</span> <span class="err">необязательный</span>
-    <span class="nt">&quot;msg&quot;</span>         <span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;text&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span> <span class="err">//</span> <span class="err">Текст</span> <span class="err">sms</span><span class="p">,</span> <span class="err">обязательный</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;app&quot;         : &quot;&quot;, // идентификатор приложения, обязательный
+    &quot;cli&quot;         : &quot;&quot;, // клиентский ключ, обязательный
+    &quot;acc&quot;         : &quot;&quot;, // ключ доступа, обязательный, messageKey или для полного доступа masterKey
+    &quot;sess&quot;        : &quot;&quot;, // ID сессии, обязательный, если acc != masterKey
+    &quot;coll&quot;        : &quot;&quot;, // имя коллекции, обязательный, users или roles
+    &quot;query&quot;       : {}, // запрос в коллекцию users для выборки адресатов с парами имя_поля/оператор:значение, необязательный
+    &quot;msg&quot;         : {
+        &quot;text&quot;        : &quot;&quot; // Текст sms, обязательный
+    }
+}</code></pre>
 
 <div class="admonition tip">
 <p class="admonition-title">Пример cURL</p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
-<span class="s1">    &quot;acc&quot;: &quot;fb33e473e08515ff6b57ef6f59392e5d&quot;,</span>
-<span class="s1">    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,</span>
-<span class="s1">    &quot;coll&quot;: &quot;users&quot;,</span>
-<span class="s1">    &quot;query&quot;: {</span>
-<span class="s1">        &quot;phone&quot;: {</span>
-<span class="s1">            &quot;$exists&quot;: true</span>
-<span class="s1">        }</span>
-<span class="s1">    },</span>
-<span class="s1">    &quot;msg&quot;: {</span>
-<span class="s1">        &quot;text&quot;: &quot;Текст SMS&quot;</span>
-<span class="s1">    }</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/sendsms&quot;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-bash">curl -X POST -H &quot;Content-Type: application/json&quot; -d '{
+    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
+    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
+    &quot;acc&quot;: &quot;fb33e473e08515ff6b57ef6f59392e5d&quot;,
+    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
+    &quot;coll&quot;: &quot;users&quot;,
+    &quot;query&quot;: {
+        &quot;phone&quot;: {
+            &quot;$exists&quot;: true
+        }
+    },
+    &quot;msg&quot;: {
+        &quot;text&quot;: &quot;Текст SMS&quot;
+    }
+}' &quot;https://api.scorocode.ru/api/v1/sendsms&quot;</code></pre>
 
 </div>
 <p><strong>Ответы:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Выполнено</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span><span class="p">,</span>       <span class="err">//Количество</span> <span class="err">отправленных</span> <span class="err">сообщений</span> 
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;count&quot;       : int,       //Количество отправленных сообщений 
+    &quot;error&quot;       : false
+}</code></pre>
 
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Ошибка</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Код</span> <span class="err">ошибки</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Текст ошибки&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Код ошибки
+    &quot;errMsg&quot;      : &quot;Текст ошибки&quot;
+}</code></pre>
 
 </div>
               

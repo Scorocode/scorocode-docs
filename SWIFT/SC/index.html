@@ -1115,18 +1115,14 @@
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
 <p>В <code>AppDelegate.swift</code>, в метод <code>didFinishLaunchingWithOptions</code>, указать значения параметров инициализации:</p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">applicationId</span> <span class="p">=</span> <span class="s">&quot;98bc4baccdedeb747cfb8fae25f71b59&quot;</span>
-<span class="kd">let</span> <span class="nv">clientId</span> <span class="p">=</span> <span class="s">&quot;39169707deawdfc06135c995aa4cdefe&quot;</span>
-<span class="kd">let</span> <span class="nv">accessKey</span> <span class="p">=</span> <span class="s">&quot;61afdr3bd71bd4f45sea53a3c996d53a&quot;</span>
-<span class="kd">let</span> <span class="nv">fileKey</span> <span class="p">=</span> <span class="s">&quot;351cb3d71sfef69e3d6fc5657dd16c1c&quot;</span>
-<span class="kd">let</span> <span class="nv">messageKey</span> <span class="p">=</span> <span class="s">&quot;35d5a173a0391a283g60a6m756a44051&quot;</span> 
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let applicationId = &quot;98bc4baccdedeb747cfb8fae25f71b59&quot;
+let clientId = &quot;39169707deawdfc06135c995aa4cdefe&quot;
+let accessKey = &quot;61afdr3bd71bd4f45sea53a3c996d53a&quot;
+let fileKey = &quot;351cb3d71sfef69e3d6fc5657dd16c1c&quot;
+let messageKey = &quot;35d5a173a0391a283g60a6m756a44051&quot; </code></pre>
 
 <p>Инициализация SDK</p>
-<div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">initWith</span><span class="p">(</span><span class="n">applicationId</span><span class="p">:</span> <span class="n">applicationId</span><span class="p">,</span> <span class="n">clientId</span><span class="p">:</span> <span class="n">clientId</span><span class="p">,</span> <span class="n">accessKey</span><span class="p">:</span> <span class="n">accessKey</span><span class="p">,</span> <span class="n">fileKey</span><span class="p">:</span> <span class="n">fileKey</span><span class="p">,</span> <span class="n">messageKey</span><span class="p">:</span> <span class="n">messageKey</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">SC.initWith(applicationId: applicationId, clientId: clientId, accessKey: accessKey, fileKey: fileKey, messageKey: messageKey)</code></pre>
 
 </div>
 <hr />
@@ -1155,12 +1151,10 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">getStat</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">SC.getStat() {
+    success, error, result in
+    print(result)
+}</code></pre>
 
 </div>
 <p><a name="Scorocode+getInfo"></a></p>
@@ -1189,12 +1183,10 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">getInfo</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">succes</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">SC.getInfo() {
+    succes, error, result in
+    print(result)
+}</code></pre>
 
 </div>
 <hr />
@@ -1223,14 +1215,12 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">getCollections</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">collectionsArray</span> <span class="k">in</span>
-    <span class="k">for</span> <span class="n">collection</span> <span class="k">in</span> <span class="n">collectionsArray</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="n">collection</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">SC.getCollections() {
+    success, error, result, collectionsArray in
+    for collection in collectionsArray {
+        print(collection.name)
+    }
+}</code></pre>
 
 </div>
 <hr />
@@ -1259,15 +1249,13 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">getBotsList</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">botsList</span><span class="p">)</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">error</span> <span class="p">==</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="n">bot</span> <span class="k">in</span> <span class="n">botsList</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="n">bot</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">SC.getBotsList { (success, error, botsList) in
+    if error == nil {
+        for bot in botsList {
+            print(bot.name)
+        }
+    }
+}</code></pre>
 
 </div>
 <hr />
@@ -1303,12 +1291,10 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">folders</span> <span class="p">=</span> <span class="n">SCFolder</span><span class="p">()</span>
-<span class="n">folders</span><span class="p">.</span><span class="n">getFoldersAndScriptsList</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="s">&quot;/&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let folders = SCFolder()
+folders.getFoldersAndScriptsList(path: &quot;/&quot;) { (success, error, result) in
+    print(result)
+}</code></pre>
 
 </div>
               

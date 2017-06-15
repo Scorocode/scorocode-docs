@@ -1008,24 +1008,22 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<pre class="codehilite"><code class="language-js">var sc = require('scorocode');
 
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ appId приложения</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ javascript приложения</span>
-    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span> <span class="c1">// &lt;- заменить xxx на ключ masterKey приложения</span>
-<span class="p">});</span>
+sc.Init({
+    ApplicationID: &quot;xxx&quot;, // &lt;- заменить xxx на ключ appId приложения
+    JavaScriptKey: &quot;xxx&quot;, // &lt;- заменить xxx на ключ javascript приложения
+    MasterKey: &quot;xxx&quot; // &lt;- заменить xxx на ключ masterKey приложения
+});
 
-<span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
+var bot = new sc.Bot(&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;);
 
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;methodname&quot;</span><span class="p">,</span> <span class="c1">//название метода Telegram bot API </span>
-    <span class="s2">&quot;method_params&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="c1">// параметры метода Telegram Bot API</span>
-    <span class="p">}};</span>
-<span class="nx">bot</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-</pre></div>
-
+var data = {
+    &quot;method&quot;: &quot;methodname&quot;, //название метода Telegram bot API 
+    &quot;method_params&quot;: {
+        // параметры метода Telegram Bot API
+    }};
+bot.send(data)</code></pre>
 
 </div>
 <hr />
@@ -1072,25 +1070,23 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<pre class="codehilite"><code class="language-js">var sc = require('scorocode');
 
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ appId приложения</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ javascript приложения</span>
-    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span> <span class="c1">// &lt;- заменить xxx на ключ masterKey приложения</span>
-<span class="p">});</span>
+sc.Init({
+    ApplicationID: &quot;xxx&quot;, // &lt;- заменить xxx на ключ appId приложения
+    JavaScriptKey: &quot;xxx&quot;, // &lt;- заменить xxx на ключ javascript приложения
+    MasterKey: &quot;xxx&quot; // &lt;- заменить xxx на ключ masterKey приложения
+});
 
-<span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
+var bot = new sc.Bot(&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;);
 
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;methodname&quot;</span><span class="p">,</span> <span class="c1">//название метода Telegram bot API </span>
-    <span class="s2">&quot;method_params&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="c1">// параметры метода Telegram Bot API</span>
-    <span class="p">}};</span>
+var data = {
+    &quot;method&quot;: &quot;methodname&quot;, //название метода Telegram bot API 
+    &quot;method_params&quot;: {
+        // параметры метода Telegram Bot API
+    }};
 
-<span class="nx">bot</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</pre></div>
-
+bot.send(data);</code></pre>
 
 </div>
               

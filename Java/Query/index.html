@@ -1457,9 +1457,7 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">);</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-Java">Query query = new Query(&quot;name&quot;);</code></pre>
 
 <hr />
 <p><a name="Query+findDocuments"></a></p>
@@ -1494,23 +1492,21 @@
 <p>Данный метод по-умолчанию возвращает не более 50 документов коллекции.</p>
 </div>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="s">&quot;number3&quot;</span><span class="o">,</span> <span class="mi">10</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">exists</span><span class="o">(</span><span class="s">&quot;number2&quot;</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”)
+                .equalTo(&quot;number3&quot;, 10)
+                .exists(&quot;number2&quot;);
 
-<span class="n">query</span><span class="o">.</span><span class="na">findDocuments</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentFound</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">DocumentInfo</span><span class="o">&gt;</span> <span class="n">documentInfos</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//found. See document list what match query</span>
-            <span class="o">}</span>
+query.findDocuments(new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(List&lt;DocumentInfo&gt; documentInfos) {
+                //found. See document list what match query
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentNotFound</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//no documents what match query</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //no documents what match query
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Query+countDocuments"></a></p>
 <h3 id="countdocumentscallback">.countDocuments(callback)</h3>
@@ -1536,22 +1532,20 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">);</span>
-        <span class="n">query</span><span class="o">.</span><span class="na">greaterThan</span><span class="o">(</span><span class="s">&quot;rating&quot;</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”);
+        query.greaterThan(&quot;rating&quot;, 10);
 
-        <span class="n">query</span><span class="o">.</span><span class="na">countDocuments</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackCountDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentsCounted</span><span class="o">(</span><span class="n">ResponseCount</span> <span class="n">responseCount</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//see responseCount.getResult() to find how many documents was found.</span>
-            <span class="o">}</span>
+        query.countDocuments(new CallbackCountDocument() {
+            @Override
+            public void onDocumentsCounted(ResponseCount responseCount) {
+                //see responseCount.getResult() to find how many documents was found.
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCountFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//error during count</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+            @Override
+            public void onCountFailed(String errorCode, String errorMessage) {
+                //error during count
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Query+updateDocument"></a></p>
 <h3 id="updatedocumentupdate-callback">.updateDocument(update, callback)</h3>
@@ -1588,27 +1582,25 @@
 <p>Данный метод обновляет не более 1000 документов</p>
 </div>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span> <span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">);</span>
-        <span class="n">query</span><span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="s">&quot;number3&quot;</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java"> Query query = new Query(“mycollection”);
+        query.equalTo(&quot;number3&quot;, 10);
 
-        <span class="n">Update</span> <span class="n">update</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Update</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="s">&quot;number2&quot;</span><span class="o">,</span> <span class="mi">199</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="s">&quot;numberField&quot;</span><span class="o">,</span> <span class="mi">111</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">addToSet</span><span class="o">(</span><span class="s">&quot;array1&quot;</span><span class="o">,</span> <span class="mi">900</span><span class="o">);</span>
+        Update update = new Update()
+                .set(&quot;number2&quot;, 199)
+                .set(&quot;numberField&quot;, 111)
+                .addToSet(&quot;array1&quot;, 900);
 
-        <span class="n">query</span><span class="o">.</span><span class="na">updateDocument</span><span class="o">(</span><span class="n">update</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackUpdateDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUpdateSucceed</span><span class="o">(</span><span class="n">ResponseUpdate</span> <span class="n">responseUpdate</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//documents updated successful</span>
-            <span class="o">}</span>
+        query.updateDocument(update, new CallbackUpdateDocument() {
+            @Override
+            public void onUpdateSucceed(ResponseUpdate responseUpdate) {
+                //documents updated successful
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUpdateFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//error during update</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+            @Override
+            public void onUpdateFailed(String errorCode, String errorMessage) {
+                //error during update
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Query+removeDocument"></a></p>
 <h3 id="removedocumentcallback">.removeDocument(callback)</h3>
@@ -1638,23 +1630,22 @@
 <p>Данный метод удаляет не более 1000 документов</p>
 </div>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">);</span>
-        <span class="n">query</span><span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="s">&quot;_id&quot;</span><span class="o">,</span> <span class="s">&quot;aJfkipJags&quot;</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”);
+        query.equalTo(&quot;_id&quot;, &quot;aJfkipJags&quot;);
 
-        <span class="n">query</span><span class="o">.</span><span class="na">removeDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackRemoveDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRemoveSucceed</span><span class="o">(</span><span class="n">ResponseRemove</span> <span class="n">responseRemove</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//succeed. See responseRemove to findout how many documents was removed</span>
-            <span class="c1">//and get list of removed documents</span>
-            <span class="o">}</span>
+        query.removeDocument(new CallbackRemoveDocument() {
+            @Override
+            public void onRemoveSucceed(ResponseRemove responseRemove) {
+                //succeed. See responseRemove to findout how many documents was removed
+            //and get list of removed documents
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRemoveFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//error during remove operation</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+            @Override
+            public void onRemoveFailed(String errorCode, String errorMessage) {
+                //error during remove operation
+            }
+        });
+</code></pre></p>
 <hr />
 <p><a name="Query+setLimit"></a></p>
 <h3 id="setlimitlimit">.setLimit(limit)</h3>
@@ -1684,11 +1675,10 @@
 <p>Данный метод принимает 100 в качестве максимального значения limit</p>
 </div>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">setLimit</span><span class="o">(</span><span class="mi">15</span><span class="o">);</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”);
+query.setLimit(15);
+//query.findDocuments(…);
+</code></pre></p>
 <hr />
 <p><a name="Query+setSkip"></a></p>
 <h3 id="setskipskip">.setSkip(skip)</h3>
@@ -1714,11 +1704,9 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">setSkip</span><span class="o">(</span><span class="mi">12</span><span class="o">);</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”);
+query.setSkip(12);
+//query.findDocuments(…);</code></pre></p>
 <hr />
 <p><a name="Query+setPage"></a></p>
 <h3 id="setpagepage">.setPage(page)</h3>
@@ -1744,12 +1732,10 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">);</span>
-<span class="c1">//query.setLimit(15);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">setPage</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”);
+//query.setLimit(15);
+query.setPage(1);
+//query.findDocuments(…);</code></pre></p>
 <hr />
 <p><a name="Query+equalTo"></a></p>
 <h3 id="equaltofield-value">.equalTo(field, value)</h3>
@@ -1782,20 +1768,16 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="err">“</span><span class="n">orderNumber</span><span class="err">”</span><span class="o">,</span> <span class="mi">22</span><span class="o">);</span>
-<span class="c1">// query.findDocuments(…);</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”);
+query.equalTo(“orderNumber”, 22);
+// query.findDocuments(…);</code></pre></p>
 <div class="admonition note">
 <p class="admonition-title">Примечание</p>
 <p>Если вы пытаетесь задать данное условие для поля id документа, помните, что, поскольку id – первичный ключ для документа, вам нужно добавить “_” перед именем поля.</p>
 </div>
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="err">“</span><span class="n">_id</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">dasds12dskm</span><span class="err">”</span><span class="o">);</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”);
+query.equalTo(“_id”, “dasds12dskm”);
+//query.findDocuments(…);</code></pre>
 
 <hr />
 <p><a name="Query+notEqualTo"></a></p>
@@ -1829,20 +1811,16 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">notEqualTo</span><span class="o">(</span><span class="err">“</span><span class="n">orderNumber</span><span class="err">”</span><span class="o">,</span> <span class="mi">22</span><span class="o">);</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”);
+query.notEqualTo(“orderNumber”, 22);
+//query.findDocuments(…);</code></pre></p>
 <div class="admonition note">
 <p class="admonition-title">Примечание</p>
 <p>Если вы пытаетесь задать данное условие для поля id документа, помните, что, поскольку id – первичный ключ для документа, вам нужно добавить “_” перед именем поля.</p>
 </div>
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="err">“</span><span class="n">_id</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">dasds12dskm</span><span class="err">”</span><span class="o">);</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”);
+query.equalTo(“_id”, “dasds12dskm”);
+//query.findDocuments(…);</code></pre>
 
 <hr />
 <p><a name="Query+containedIn"></a></p>
@@ -1876,16 +1854,14 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-        <span class="n">numbers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
-        <span class="n">numbers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
-        <span class="n">numbers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
-        <span class="n">numbers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">15</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">List&lt;Object&gt; numbers = new ArrayList&lt;&gt;();
+        numbers.add(1);
+        numbers.add(5);
+        numbers.add(10);
+        numbers.add(15);
 
-<span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span><span class="na">containedIn</span><span class="o">(</span><span class="s">&quot;number3&quot;</span><span class="o">,</span> <span class="n">numbers</span><span class="o">);</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+Query query = new Query(“mycollection”).containedIn(&quot;number3&quot;, numbers);
+//query.findDocuments(…);</code></pre></p>
 <hr />
 <p><a name="Query+containsAll"></a></p>
 <h3 id="containsallfield-values">.containsAll(field, values)</h3>
@@ -1918,15 +1894,13 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">containsAllNumbers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-        <span class="n">containsAllNumbers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
-        <span class="n">containsAllNumbers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
-        <span class="n">containsAllNumbers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
-        <span class="n">containsAllNumbers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">900</span><span class="o">);</span>
-<span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span><span class="na">containsAll</span><span class="o">(</span><span class="s">&quot;array1&quot;</span><span class="o">,</span> <span class="n">containsAllNumbers</span><span class="o">);</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">List&lt;Object&gt; containsAllNumbers = new ArrayList&lt;&gt;();
+        containsAllNumbers.add(1);
+        containsAllNumbers.add(2);
+        containsAllNumbers.add(3);
+        containsAllNumbers.add(900);
+Query query = new Query(“mycollection”).containsAll(&quot;array1&quot;, containsAllNumbers);
+//query.findDocuments(…);</code></pre></p>
 <hr />
 <p><a name="Query+notContainedIn"></a></p>
 <h3 id="notcontainedinfield-values">.notContainedIn(field, values)</h3>
@@ -1963,15 +1937,14 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">notContainsInList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-        <span class="n">notContainsInList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
-        <span class="n">notContainsInList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">111</span><span class="o">);</span>
-        <span class="n">notContainsInList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">11</span><span class="o">);</span>
-        <span class="n">notContainsInList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">50</span><span class="o">);</span>
-<span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span><span class="na">notContainedIn</span><span class="o">(</span><span class="s">&quot;orderNumbers&quot;</span><span class="o">,</span> <span class="n">notContainsInList</span><span class="o">)</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">List&lt;Object&gt; notContainsInList = new ArrayList&lt;&gt;();
+        notContainsInList.add(1);
+        notContainsInList.add(111);
+        notContainsInList.add(11);
+        notContainsInList.add(50);
+Query query = new Query(“mycollection”).notContainedIn(&quot;orderNumbers&quot;, notContainsInList)
+//query.findDocuments(…);
+</code></pre></p>
 <hr />
 <p><a name="Query+greaterThan"></a></p>
 <h3 id="greaterthanfield-value">.greaterThan(field, value)</h3>
@@ -2004,10 +1977,8 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span><span class="na">greaterThan</span><span class="o">(</span><span class="s">&quot;number&quot;</span><span class="o">,</span> <span class="mi">22</span><span class="o">)</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”).greaterThan(&quot;number&quot;, 22)
+//query.findDocuments(…);</code></pre></p>
 <hr />
 <p><a name="Query+greaterThenOrEqualTo"></a></p>
 <h3 id="greaterthenorequaltofield-value">.greaterThenOrEqualTo(field, value)</h3>
@@ -2040,10 +2011,8 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span><span class="na">greaterThenOrEqualTo</span> <span class="o">(</span><span class="s">&quot;number&quot;</span><span class="o">,</span> <span class="mi">22</span><span class="o">)</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”).greaterThenOrEqualTo (&quot;number&quot;, 22)
+//query.findDocuments(…);</code></pre></p>
 <hr />
 <p><a name="Query+lessThan"></a></p>
 <h3 id="lessthanfield-value">.lessThan(field, value)</h3>
@@ -2076,10 +2045,9 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span> <span class="n">lessThan</span><span class="o">(</span><span class="s">&quot;number&quot;</span><span class="o">,</span> <span class="mi">22</span><span class="o">)</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”). lessThan(&quot;number&quot;, 22)
+//query.findDocuments(…);
+</code></pre></p>
 <hr />
 <p><a name="Query+lessThanOrEqualTo"></a></p>
 <h3 id="lessthanorequaltofield-value">.lessThanOrEqualTo(field, value)</h3>
@@ -2112,10 +2080,8 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span><span class="na">lessThanOrEqualTo</span> <span class="o">(</span><span class="s">&quot;number&quot;</span><span class="o">,</span> <span class="mi">22</span><span class="o">)</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”).lessThanOrEqualTo (&quot;number&quot;, 22)
+//query.findDocuments(…);</code></pre></p>
 <hr />
 <p><a name="Query+exists"></a></p>
 <h3 id="existsfield">.exists(field)</h3>
@@ -2141,10 +2107,8 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span><span class="na">exists</span><span class="o">(</span><span class="s">&quot;phoneNumber&quot;</span><span class="o">)</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”).exists(&quot;phoneNumber&quot;)
+//query.findDocuments(…);</code></pre></p>
 <hr />
 <p><a name="Query+doesNotExist"></a></p>
 <h3 id="doesnotexistfield">.doesNotExist(field)</h3>
@@ -2170,10 +2134,8 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span><span class="na">doesNotExist</span><span class="o">(</span><span class="s">&quot;phoneNumber&quot;</span><span class="o">)</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”).doesNotExist(&quot;phoneNumber&quot;)
+//query.findDocuments(…);</code></pre></p>
 <hr />
 <p><a name="Query+contains"></a></p>
 <h3 id="containsfield-regex-options">.contains(field, regEx, options)</h3>
@@ -2213,13 +2175,11 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span> <span class="n">RegexOptions</span> <span class="n">regexOptions</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RegexOptions</span><span class="o">();</span>
- <span class="n">regexOptions</span><span class="o">.</span><span class="na">setRegexCaseInsenssitive</span><span class="o">();</span>
+<pre class="codehilite"><code class="language-Java"> RegexOptions regexOptions = new RegexOptions();
+ regexOptions.setRegexCaseInsenssitive();
 
- <span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span><span class="na">contains</span><span class="o">(</span><span class="s">&quot;exampleField&quot;</span><span class="o">,</span> <span class="s">&quot;BC&quot;</span><span class="o">,</span> <span class="n">regexOptions</span><span class="o">)</span>
- <span class="c1">//query.findDocuments(…);         </span>
-</pre></div>
-</p>
+ Query query = new Query(“mycollection”).contains(&quot;exampleField&quot;, &quot;BC&quot;, regexOptions)
+ //query.findDocuments(…);         </code></pre></p>
 <hr />
 <p><a name="Query+startsWith"></a></p>
 <h3 id="startswithfield-regex-options">.startsWith(field, regEx, options)</h3>
@@ -2263,13 +2223,12 @@
 <p>Параметр options позволяет, к примеру, искать все документы начинающиеся с “aB” не зависимо от регистра, т.е искать документы, начинающиеся на ab, aB, Ab, AB.</p>
 </div>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span> <span class="n">RegexOptions</span> <span class="n">regexOptions</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RegexOptions</span><span class="o">();</span>
- <span class="n">regexOptions</span><span class="o">.</span><span class="na">setRegexCaseInsenssitive</span><span class="o">();</span>
+<pre class="codehilite"><code class="language-Java"> RegexOptions regexOptions = new RegexOptions();
+ regexOptions.setRegexCaseInsenssitive();
 
- <span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span><span class="na">startsWith</span> <span class="o">(</span><span class="s">&quot;exampleField&quot;</span><span class="o">,</span> <span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="n">regexOptions</span><span class="o">)</span>
- <span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+ Query query = new Query(“mycollection”).startsWith (&quot;exampleField&quot;, &quot;a&quot;, regexOptions)
+ //query.findDocuments(…);
+</code></pre></p>
 <hr />
 <p><a name="Query+endsWith"></a></p>
 <h3 id="endswithfield-regex-options">.endsWith(field, regEx, options)</h3>
@@ -2313,13 +2272,11 @@
 <p>Параметр options позволяет, к примеру, искать все документы начинающиеся с “aB” не зависимо от регистра, т.е искать документы, начинающиеся на ab, aB, Ab, AB.</p>
 </div>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span> <span class="n">RegexOptions</span> <span class="n">regexOptions</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RegexOptions</span><span class="o">();</span>
- <span class="n">regexOptions</span><span class="o">.</span><span class="na">setRegexCaseInsenssitive</span><span class="o">();</span>
+<pre class="codehilite"><code class="language-Java"> RegexOptions regexOptions = new RegexOptions();
+ regexOptions.setRegexCaseInsenssitive();
 
- <span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span><span class="na">startsWith</span> <span class="o">(</span><span class="s">&quot;exampleField&quot;</span><span class="o">,</span> <span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="n">regexOptions</span><span class="o">)</span>
- <span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+ Query query = new Query(“mycollection”).startsWith (&quot;exampleField&quot;, &quot;a&quot;, regexOptions)
+ //query.findDocuments(…);</code></pre></p>
 <hr />
 <p><a name="Query+and"></a></p>
 <h3 id="andfield-query">.and(field, query)</h3>
@@ -2352,13 +2309,11 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="n">COLLECTION_NAME</span><span class="o">).</span><span class="na">greaterThan</span><span class="o">(</span><span class="s">&quot;raiting&quot;</span><span class="o">,</span> <span class="mi">50</span><span class="o">);</span>
-<span class="n">Query</span> <span class="n">query2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="n">COLLECTION_NAME</span><span class="o">).</span><span class="na">lessThan</span><span class="o">(</span><span class="s">&quot;raiting&quot;</span><span class="o">,</span> <span class="mi">100</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">Query query1 = new Query(COLLECTION_NAME).greaterThan(&quot;raiting&quot;, 50);
+Query query2 = new Query(COLLECTION_NAME).lessThan(&quot;raiting&quot;, 100);
 
-<span class="n">query1</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="s">&quot;number3&quot;</span><span class="o">,</span> <span class="n">query2</span><span class="o">);</span>
-<span class="c1">//query1.findDocuments(…);</span>
-</pre></div>
-</p>
+query1.and(&quot;number3&quot;, query2);
+//query1.findDocuments(…);</code></pre></p>
 <hr />
 <p><a name="Query+or"></a></p>
 <h3 id="orfield-query">.or(field, query)</h3>
@@ -2391,13 +2346,11 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span><span class="na">greaterThan</span><span class="o">(</span><span class="s">&quot;raiting&quot;</span><span class="o">,</span> <span class="mi">50</span><span class="o">);</span>
-<span class="n">Query</span> <span class="n">query2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span><span class="na">equalTo</span><span class="o">(</span><span class="s">&quot;status&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">Query query1 = new Query(“mycollection”).greaterThan(&quot;raiting&quot;, 50);
+Query query2 = new Query(“mycollection”).equalTo(&quot;status&quot;, 0);
 
-<span class="n">query1</span><span class="o">.</span><span class="na">or</span><span class="o">(</span><span class="s">&quot;number3&quot;</span><span class="o">,</span> <span class="n">query2</span><span class="o">);</span>
-<span class="c1">//query1.findDocuments(…);</span>
-</pre></div>
-</p>
+query1.or(&quot;number3&quot;, query2);
+//query1.findDocuments(…);</code></pre></p>
 <hr />
 <p><a name="Query+raw"></a></p>
 <h3 id="rawjson">.raw(json)</h3>
@@ -2423,23 +2376,19 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span>  <span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">);</span>
-  <span class="n">query</span><span class="o">.</span><span class="na">raw</span><span class="o">(</span><span class="s">&quot;{\&quot;_id\&quot;: {\&quot;$eq\&quot;: \&quot;W9vrMS9SuW\&quot;}}&quot;</span><span class="o">);</span>
-  <span class="c1">//query.findDocuments(…)</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">  Query query = new Query(“mycollection”);
+  query.raw(&quot;{\&quot;_id\&quot;: {\&quot;$eq\&quot;: \&quot;W9vrMS9SuW\&quot;}}&quot;);
+  //query.findDocuments(…)</code></pre></p>
 <hr />
 <p><a name="Query+reset"></a></p>
 <h3 id="reset">.reset()</h3>
 <p>Метод для очистки условия выборки.</p>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="err">“</span><span class="n">_id</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">dsads123sd</span><span class="err">”</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">reset</span><span class="o">();</span>
-<span class="n">query</span><span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="err">“</span><span class="n">_id</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">ds54522sd</span><span class="err">”</span><span class="o">);</span>
-<span class="c1">//query.findDocuments(…)</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”);
+query.equalTo(“_id”, “dsads123sd”);
+query.reset();
+query.equalTo(“_id”, “ds54522sd”);
+//query.findDocuments(…)</code></pre></p>
 <hr />
 <p><a name="Query+ascending"></a></p>
 <h3 id="ascendingfield">.ascending(field)</h3>
@@ -2465,11 +2414,9 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="s">&quot;ordersCollection&quot;</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">ascending</span><span class="o">(</span><span class="s">&quot;itemId&quot;</span><span class="o">);</span>
-<span class="c1">//query.findDocuments(...)</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(&quot;ordersCollection&quot;);
+query.ascending(&quot;itemId&quot;);
+//query.findDocuments(...)</code></pre></p>
 <hr />
 <p><a name="Query+descending"></a></p>
 <h3 id="descendingfield">.descending(field)</h3>
@@ -2495,11 +2442,9 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="s">&quot;ordersCollection&quot;</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">descending</span><span class="o">(</span><span class="s">&quot;itemId&quot;</span><span class="o">);</span>
-<span class="c1">//query.findDocuments(...)</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(&quot;ordersCollection&quot;);
+query.descending(&quot;itemId&quot;);
+//query.findDocuments(...)</code></pre></p>
 <hr />
 <p><a name="Query+setFieldsForSearch"></a></p>
 <h3 id="setfieldsforsearchfields">.setFieldsForSearch(fields)</h3>
@@ -2525,26 +2470,22 @@
 </tbody>
 </table>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Strings</span><span class="o">&gt;</span> <span class="n">fieldNames</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-<span class="n">fieldNames</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="err">“</span><span class="n">orderId</span><span class="err">”</span><span class="o">);</span>
-<span class="n">fieldNames</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="err">“</span><span class="n">buyerName</span><span class="err">”</span><span class="o">);</span>
-<span class="n">fieldNames</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="err">“</span><span class="n">phoneNumber</span><span class="err">”</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">List&lt;Strings&gt; fieldNames = new ArrayList&lt;&gt;();
+fieldNames.add(“orderId”);
+fieldNames.add(“buyerName”);
+fieldNames.add(“phoneNumber”);
 
-<span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">).</span><span class="na">setFieldsForSearch</span><span class="o">(</span><span class="n">fieldNames</span><span class="o">);</span>
-<span class="c1">//query.findDocuments(…);</span>
-</pre></div>
-</p>
+Query query = new Query(“mycollection”).setFieldsForSearch(fieldNames);
+//query.findDocuments(…);</code></pre></p>
 <hr />
 <p><a name="Query+getQueryInfo"></a></p>
 <h3 id="getqueryinfo">.getQueryInfo()</h3>
 <p>Метод для получения информации о условиях выборки</p>
 <p><strong>Пример</strong> 
-<div class="codehilite"><pre><span></span><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="err">“</span><span class="n">mycollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="err">“</span><span class="n">_id</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">dsads123sd</span><span class="err">”</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">Query query = new Query(“mycollection”);
+query.equalTo(“_id”, “dsads123sd”);
 
-<span class="n">QueryInfo</span> <span class="n">queryInfo</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getQueryInfo</span><span class="o">();</span>
-</pre></div>
-</p>
+QueryInfo queryInfo = query.getQueryInfo();</code></pre></p>
               
             </article>
           </div>

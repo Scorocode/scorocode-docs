@@ -1021,31 +1021,29 @@
 <p>Класс для работы с пользователями приложения.</p>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр sc.User</span>
-<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
-<span class="c1">// Передадим данные, необходимые для регистрации пользователя приложения</span>
-<span class="nx">appUser</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;user@mailserver.domain&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="s2">&quot;52c7ab3dab2c&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;ChosenOne&quot;</span><span class="p">);</span>
-<span class="c1">// Зарегистрируем пользователя приложения</span>
-<span class="nx">appUser</span><span class="p">.</span><span class="nx">signup</span><span class="p">()</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">// Выведем результат в консоль</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">// Выведем результат в консоль    </span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр sc.User
+var appUser = new sc.User();
+// Передадим данные, необходимые для регистрации пользователя приложения
+appUser.set(&quot;email&quot;, &quot;user@mailserver.domain&quot;).set(&quot;password&quot;, &quot;52c7ab3dab2c&quot;).set(&quot;username&quot;, &quot;ChosenOne&quot;);
+// Зарегистрируем пользователя приложения
+appUser.signup()
+    // Обработчик успешного выполнения запроса
+    .then((success)=&gt;{
+        // Выведем результат в консоль
+        console.log(success);
+    })
+    // Обработчик ошибки
+    .catch((error)=&gt;{
+        // Выведем результат в консоль    
+        console.log(error)
+    });</code></pre>
 
 </div>
 <hr />
@@ -1075,31 +1073,29 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр sc.User</span>
-<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
-<span class="c1">// Передадим данные, необходимые для регистрации пользователя приложения</span>
-<span class="nx">appUser</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;user@domain.zone&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="s2">&quot;CorrectHorseBatteryStaple&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;ChosenOne&quot;</span><span class="p">);</span>
-<span class="c1">// Зарегистрируем пользователя приложения</span>
-<span class="nx">appUser</span><span class="p">.</span><span class="nx">signup</span><span class="p">()</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">// Выведем результат в консоль</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">// Выведем результат в консоль    </span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр sc.User
+var appUser = new sc.User();
+// Передадим данные, необходимые для регистрации пользователя приложения
+appUser.set(&quot;email&quot;, &quot;user@domain.zone&quot;).set(&quot;password&quot;, &quot;CorrectHorseBatteryStaple&quot;).set(&quot;username&quot;, &quot;ChosenOne&quot;);
+// Зарегистрируем пользователя приложения
+appUser.signup()
+    // Обработчик успешного выполнения запроса
+    .then((success)=&gt;{
+        // Выведем результат в консоль
+        console.log(success);
+    })
+    // Обработчик ошибки
+    .catch((error)=&gt;{
+        // Выведем результат в консоль    
+        console.log(error)
+    });</code></pre>
 
 </div>
 <p><strong>Возвращает</strong> <code>promise.{sc.User}</code> - возвращает promise, который возвращает данные sc.User</p>
@@ -1144,40 +1140,38 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр sc.User</span>
-<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
-<span class="c1">// Аутентифицируем пользователя приложения, используя его email и password</span>
-<span class="nx">appUser</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="s2">&quot;user@domain.zone&quot;</span><span class="p">,</span> <span class="s2">&quot;CorrectHorseBatteryStaple&quot;</span><span class="p">)</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">loggedIn</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Пользователь приложения аутентифицирован: \n&quot;</span><span class="p">,</span> <span class="nx">loggedIn</span><span class="p">);</span>
-        <span class="c1">// Установим время сессии - 10000 мс.</span>
-        <span class="nx">setTimeout</span><span class="p">(</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="c1">// Деаутентифицируем пользователя приложения</span>
-            <span class="nx">appUser</span><span class="p">.</span><span class="nx">logout</span><span class="p">()</span>
-                <span class="c1">// Обработчик успешного выполнения запроса</span>
-                <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">loggedOut</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Пользователь приложения деаутентифицирован \n&quot;</span><span class="p">);</span>
-                <span class="p">})</span>
-                <span class="c1">// Обработчик ошибки</span>
-                <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">errLogout</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">errLogout</span><span class="p">)</span>
-                <span class="p">});</span>
-            <span class="p">},</span><span class="mi">10000</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">errLogin</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">errLogin</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр sc.User
+var appUser = new sc.User();
+// Аутентифицируем пользователя приложения, используя его email и password
+appUser.login(&quot;user@domain.zone&quot;, &quot;CorrectHorseBatteryStaple&quot;)
+    // Обработчик успешного выполнения запроса
+    .then((loggedIn)=&gt;{
+        console.log(&quot;Пользователь приложения аутентифицирован: \n&quot;, loggedIn);
+        // Установим время сессии - 10000 мс.
+        setTimeout( function () {
+            // Деаутентифицируем пользователя приложения
+            appUser.logout()
+                // Обработчик успешного выполнения запроса
+                .then((loggedOut)=&gt;{
+                    console.log(&quot;Пользователь приложения деаутентифицирован \n&quot;);
+                })
+                // Обработчик ошибки
+                .catch((errLogout)=&gt;{
+                    console.log(errLogout)
+                });
+            },10000);
+    })
+    // Обработчик ошибки
+    .catch((errLogin)=&gt;{
+        console.log(errLogin)
+    });</code></pre>
 
 </div>
 <p><strong>Возвращает</strong> <code>promise.{sc.User}</code> - возвращает promise, который возвращает данные sc.User</p>
@@ -1208,40 +1202,38 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;,
+});
 
-<span class="c1">// Создадим новый экземпляр sc.User</span>
-<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
-<span class="c1">// Аутентифицируем пользователя приложения, используя его email и password</span>
-<span class="nx">appUser</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="s2">&quot;user@domain.zone&quot;</span><span class="p">,</span> <span class="s2">&quot;CorrectHorseBatteryStaple&quot;</span><span class="p">)</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">loggedIn</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Пользователь приложения аутентифицирован: \n&quot;</span><span class="p">,</span> <span class="nx">loggedIn</span><span class="p">);</span>
-        <span class="c1">// Установим время сессии - 10000 мс.</span>
-        <span class="nx">setTimeout</span><span class="p">(</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="c1">// Деаутентифицируем пользователя приложения</span>
-            <span class="nx">appUser</span><span class="p">.</span><span class="nx">logout</span><span class="p">()</span>
-                <span class="c1">// Обработчик успешного выполнения запроса</span>
-                <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">loggedOut</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Пользователь приложения деаутентифицирован \n&quot;</span><span class="p">);</span>
-                <span class="p">})</span>
-                <span class="c1">// Обработчик ошибки</span>
-                <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">errLogout</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">errLogout</span><span class="p">)</span>
-                <span class="p">});</span>
-            <span class="p">},</span><span class="mi">10000</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">errLogin</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">errLogin</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр sc.User
+var appUser = new sc.User();
+// Аутентифицируем пользователя приложения, используя его email и password
+appUser.login(&quot;user@domain.zone&quot;, &quot;CorrectHorseBatteryStaple&quot;)
+    // Обработчик успешного выполнения запроса
+    .then((loggedIn)=&gt;{
+        console.log(&quot;Пользователь приложения аутентифицирован: \n&quot;, loggedIn);
+        // Установим время сессии - 10000 мс.
+        setTimeout( function () {
+            // Деаутентифицируем пользователя приложения
+            appUser.logout()
+                // Обработчик успешного выполнения запроса
+                .then((loggedOut)=&gt;{
+                    console.log(&quot;Пользователь приложения деаутентифицирован \n&quot;);
+                })
+                // Обработчик ошибки
+                .catch((errLogout)=&gt;{
+                    console.log(errLogout)
+                });
+            },10000);
+    })
+    // Обработчик ошибки
+    .catch((errLogin)=&gt;{
+        console.log(errLogin)
+    });</code></pre>
 
 </div>
               

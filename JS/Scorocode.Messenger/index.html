@@ -1026,9 +1026,7 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">({</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">var Broadcast = new sc.Messenger({logger: new sc.Logger()});</code></pre>
 
 </div>
 <hr />
@@ -1066,76 +1064,72 @@
 <ul>
 <li>Параметр where - принимает в качестве значения sc.Query("devices") с условиями выборки устройств, которым будет отпрален PUSH.</li>
 <li>Параметр data - объект, содержащий данные для передачи в PUSH-сообщении и имеющий следующую структуру:
-<div class="codehilite"><pre><span></span><span class="err">data:</span> <span class="p">{</span>
-    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;gcm&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="err">//данные</span> <span class="err">для</span> <span class="err">отправки</span> <span class="err">Android-устройствам</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;apns&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="err">//данные</span> <span class="err">для</span> <span class="err">отправки</span> <span class="err">iOs-устройствам</span>
-        <span class="p">}</span>
-    <span class="p">}</span>    
-<span class="p">}</span>
-</pre></div>
-</li>
+<pre class="codehilite"><code class="language-json">data: {
+    &quot;data&quot;: {
+        &quot;gcm&quot;: {
+            //данные для отправки Android-устройствам
+        },
+        &quot;apns&quot;: {
+            //данные для отправки iOs-устройствам
+        }
+    }    
+}</code></pre></li>
 </ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">MessageKey</span><span class="o">:</span> <span class="s2">&quot;messageKey_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">WebSocketKey</span><span class="o">:</span> <span class="s2">&quot;websocket key приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;,
+    MessageKey: &quot;messageKey_приложения&quot;,
+    WebSocketKey: &quot;websocket key приложения&quot;
+});
 
-<span class="kd">var</span> <span class="nx">Devices</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;devices&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">({</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
-<span class="nx">Broadcast</span><span class="p">.</span><span class="nx">sendPush</span><span class="p">({</span>
-        <span class="nx">where</span><span class="o">:</span> <span class="nx">Devices</span><span class="p">,</span>
-        <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
-                <span class="s2">&quot;gcm&quot;</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="s2">&quot;protocol&quot;</span><span class="o">:</span> <span class="s2">&quot;http&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;notification&quot;</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="s2">&quot;body&quot;</span> <span class="o">:</span> <span class="s2">&quot;great match!&quot;</span><span class="p">,</span>
-                        <span class="s2">&quot;title&quot;</span> <span class="o">:</span> <span class="s2">&quot;Portugal vs. Denmark&quot;</span><span class="p">,</span>
-                        <span class="s2">&quot;icon&quot;</span> <span class="o">:</span> <span class="s2">&quot;myicon&quot;</span>
-                    <span class="p">},</span>
-                    <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="s2">&quot;key&quot;</span><span class="o">:</span> <span class="s2">&quot;value&quot;</span>
-                    <span class="p">}</span>
-                <span class="p">},</span>
-                <span class="s2">&quot;apns&quot;</span><span class="o">:</span> <span class="p">{</span>       <span class="c1">// Данные для передачи iOs-устройствам, необязательно</span>
-                    <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;123e4567-e89b-12d3-a456-42665544000&quot;</span><span class="p">,</span> <span class="c1">// apns-id, необязательно</span>
-                    <span class="s2">&quot;topic&quot;</span><span class="o">:</span> <span class="s2">&quot;com.sideshow.Apns2&quot;</span><span class="p">,</span>               <span class="c1">// apns-topic, необязательно</span>
-                    <span class="s2">&quot;collapseId&quot;</span><span class="o">:</span> <span class="s2">&quot;my_collapse&quot;</span><span class="p">,</span>                 <span class="c1">// apns-collapse-id, необязательно</span>
-                    <span class="s2">&quot;expiration&quot;</span><span class="o">:</span> <span class="s2">&quot;2006-01-02T15:04:05Z07:00&quot;</span><span class="p">,</span>   <span class="c1">// apns-expiration, необязательно</span>
-                    <span class="s2">&quot;priority&quot;</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span>                                <span class="c1">// apns-priority, необязательно</span>
-                    <span class="s2">&quot;aps&quot;</span> <span class="o">:</span> <span class="p">{</span>
-                        <span class="s2">&quot;alert&quot;</span> <span class="o">:</span> <span class="p">{</span>
-                            <span class="s2">&quot;title&quot;</span> <span class="o">:</span> <span class="s2">&quot;Portugal vs. Denmark&quot;</span><span class="p">,</span>
-                            <span class="s2">&quot;body&quot;</span> <span class="o">:</span> <span class="s2">&quot;great match!&quot;</span><span class="p">,</span>
-                            <span class="s2">&quot;action-loc-key&quot;</span> <span class="o">:</span> <span class="s2">&quot;Watch&quot;</span>
-                        <span class="p">},</span>
-                        <span class="s2">&quot;badge&quot;</span> <span class="o">:</span> <span class="mi">5</span>
-                    <span class="p">},</span>
-                    <span class="s2">&quot;acme1&quot;</span> <span class="o">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;acme2&quot;</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;bang&quot;</span><span class="p">,</span>  <span class="s2">&quot;whiz&quot;</span> <span class="p">]</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">},</span> <span class="kc">true</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+var Devices = new sc.Query(&quot;devices&quot;);
+var Broadcast = new sc.Messenger({logger: new sc.Logger()});
+Broadcast.sendPush({
+        where: Devices,
+        data: {
+            &quot;data&quot;: {
+                &quot;gcm&quot;: {
+                    &quot;protocol&quot;: &quot;http&quot;,
+                    &quot;notification&quot;: {
+                        &quot;body&quot; : &quot;great match!&quot;,
+                        &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,
+                        &quot;icon&quot; : &quot;myicon&quot;
+                    },
+                    &quot;data&quot;: {
+                        &quot;key&quot;: &quot;value&quot;
+                    }
+                },
+                &quot;apns&quot;: {       // Данные для передачи iOs-устройствам, необязательно
+                    &quot;id&quot;: &quot;123e4567-e89b-12d3-a456-42665544000&quot;, // apns-id, необязательно
+                    &quot;topic&quot;: &quot;com.sideshow.Apns2&quot;,               // apns-topic, необязательно
+                    &quot;collapseId&quot;: &quot;my_collapse&quot;,                 // apns-collapse-id, необязательно
+                    &quot;expiration&quot;: &quot;2006-01-02T15:04:05Z07:00&quot;,   // apns-expiration, необязательно
+                    &quot;priority&quot;:5,                                // apns-priority, необязательно
+                    &quot;aps&quot; : {
+                        &quot;alert&quot; : {
+                            &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,
+                            &quot;body&quot; : &quot;great match!&quot;,
+                            &quot;action-loc-key&quot; : &quot;Watch&quot;
+                        },
+                        &quot;badge&quot; : 5
+                    },
+                    &quot;acme1&quot; : &quot;bar&quot;,
+                    &quot;acme2&quot; : [ &quot;bang&quot;,  &quot;whiz&quot; ]
+                }
+            }
+        }
+    }, true)
+    .then((success)=&gt;{
+        console.log(success);
+    })
+    .catch((error)=&gt;{
+        console.log(error)
+    });</code></pre>
 
 </div>
 <p><strong>Возвращает</strong>: <code>promise.{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.</p>
@@ -1179,39 +1173,35 @@
 <ul>
 <li>Параметр where - принимает в качестве значения sc.Query("user") с условиями выборки пользователей, которым будет отпралено sms.</li>
 <li>Параметр data - объект, содержащий данные для передачи в СМС-сообщении и имеющий следующую структуру:
-<div class="codehilite"><pre><span></span><span class="err">data:</span> <span class="p">{</span>
-            <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Текст смс-сообщения&quot;</span>     
-      <span class="p">}</span>
-</pre></div>
-</li>
+<pre class="codehilite"><code class="language-json">data: {
+            &quot;text&quot;: &quot;Текст смс-сообщения&quot;     
+      }</code></pre></li>
 </ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">MessageKey</span><span class="o">:</span> <span class="s2">&quot;messageKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;,
+    MessageKey: &quot;messageKey_приложения&quot;
+});
 
-<span class="kd">var</span> <span class="nx">findUsers</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;users&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
-<span class="nx">Broadcast</span><span class="p">.</span><span class="nx">sendSms</span><span class="p">({</span>
-        <span class="nx">where</span><span class="o">:</span> <span class="nx">findUsers</span><span class="p">,</span>
-        <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;text&quot;</span><span class="o">:</span> <span class="s2">&quot;Текст смс-сообщения&quot;</span>     
-            <span class="p">}</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var findUsers = new sc.Query(&quot;users&quot;);
+var Broadcast = new sc.Messenger();
+Broadcast.sendSms({
+        where: findUsers,
+        data: {
+            &quot;text&quot;: &quot;Текст смс-сообщения&quot;     
+            }
+        })
+        .then((success)=&gt;{
+            console.log(success);
+        })
+        .catch((error)=&gt;{
+            console.log(error)
+        });</code></pre>
 
 </div>
 <p><strong>Возвращает</strong>: <code>{error: Boolean, count: Number}</code> - Возвращает promise который возвращает объект с результатом выполнения запроса.</p>

@@ -1064,9 +1064,7 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">bot</span> <span class="p">=</span> <span class="n">SCBot</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;botobot&quot;</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let bot = SCBot(name: &quot;botobot&quot;)</code></pre>
 
 </div>
 <hr />
@@ -1095,20 +1093,18 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Инициализируем бота</span>
-<span class="kd">let</span> <span class="nv">bot</span> <span class="p">=</span> <span class="n">SCBot</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;botobot&quot;</span><span class="p">)</span>
-<span class="c1">// Бот активен</span>
-<span class="n">bot</span><span class="p">.</span><span class="n">isActive</span> <span class="p">=</span> <span class="kc">true</span>
-<span class="c1">// ИД серверного скрипта</span>
-<span class="n">bot</span><span class="p">.</span><span class="n">scriptId</span> <span class="p">=</span> <span class="s">&quot;58b5295f22a5480e865bd30b&quot;</span>
-<span class="c1">// токен </span>
-<span class="n">bot</span><span class="p">.</span><span class="n">telegramBotId</span> <span class="p">=</span> <span class="s">&quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12&quot;</span>
-<span class="c1">// Создадим бота на сервере</span>
-<span class="n">bot</span><span class="p">.</span><span class="n">create</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">// Инициализируем бота
+let bot = SCBot(name: &quot;botobot&quot;)
+// Бот активен
+bot.isActive = true
+// ИД серверного скрипта
+bot.scriptId = &quot;58b5295f22a5480e865bd30b&quot;
+// токен 
+bot.telegramBotId = &quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12&quot;
+// Создадим бота на сервере
+bot.create { (success, error, result) in
+    print(result)
+}</code></pre>
 
 </div>
 <hr />
@@ -1137,20 +1133,18 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Инициализируем бота</span>
-<span class="kd">let</span> <span class="nv">bot</span> <span class="p">=</span> <span class="n">SCBot</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;botobot&quot;</span><span class="p">)</span>
-<span class="c1">// Бот активен</span>
-<span class="n">bot</span><span class="p">.</span><span class="n">isActive</span> <span class="p">=</span> <span class="kc">true</span>
-<span class="c1">// ИД серверного скрипта</span>
-<span class="n">bot</span><span class="p">.</span><span class="n">scriptId</span> <span class="p">=</span> <span class="s">&quot;58b5295f22a5480e865bd30b&quot;</span>
-<span class="c1">// токен </span>
-<span class="n">bot</span><span class="p">.</span><span class="n">telegramBotId</span> <span class="p">=</span> <span class="s">&quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12&quot;</span>
-<span class="c1">// Создадим бота на сервере</span>
-<span class="n">bot</span><span class="p">.</span><span class="n">create</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-    <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">// Инициализируем бота
+let bot = SCBot(name: &quot;botobot&quot;)
+// Бот активен
+bot.isActive = true
+// ИД серверного скрипта
+bot.scriptId = &quot;58b5295f22a5480e865bd30b&quot;
+// токен 
+bot.telegramBotId = &quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12&quot;
+// Создадим бота на сервере
+bot.create { (success, error, result) in
+    print(result)
+}</code></pre>
 
 </div>
 <hr />
@@ -1179,23 +1173,21 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Имя бота для удаления</span>
-<span class="kd">let</span> <span class="nv">botNameForDetele</span> <span class="p">=</span> <span class="s">&quot;botobot&quot;</span>
-<span class="c1">// Получим список ботов с сервера</span>
-<span class="n">SC</span><span class="p">.</span><span class="n">getBotsList</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">bots</span><span class="p">)</span> <span class="k">in</span>
-    <span class="c1">// Найдем id бота</span>
-    <span class="k">for</span> <span class="n">bot</span> <span class="k">in</span> <span class="n">bots</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="n">bot</span><span class="p">.</span><span class="n">name</span> <span class="p">==</span> <span class="n">botNameForDetele</span> <span class="p">{</span>
-            <span class="c1">// Удалим бота</span>
-            <span class="n">bot</span><span class="p">.</span><span class="n">delete</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
-                <span class="bp">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-            <span class="p">}</span>
-            <span class="k">break</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">// Имя бота для удаления
+let botNameForDetele = &quot;botobot&quot;
+// Получим список ботов с сервера
+SC.getBotsList { (success, error, bots) in
+    // Найдем id бота
+    for bot in bots {
+        if bot.name == botNameForDetele {
+            // Удалим бота
+            bot.delete { (success, error, result) in
+                print(result)
+            }
+            break
+        }
+    }
+}</code></pre>
 
 </div>
               

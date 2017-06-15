@@ -1262,29 +1262,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">questItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
-<span class="c1">// Используем метод set() для передачи объекту данных в поля &quot;name&quot; и &quot;relatedquests&quot;.</span>
-<span class="nx">questItem</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;Водяной чип&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;relatedquests&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;huNr3L7QDh&quot;</span><span class="p">]);</span> 
-<span class="c1">// Используем метод save() для записи данных объекта в базу данных приложения</span>
-<span class="nx">questItem</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">saved</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Запрос успешно выполнен: \n&quot;</span><span class="p">,</span> <span class="nx">saved</span><span class="p">);</span>
-     <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items.
+var questItem = new sc.Object(&quot;items&quot;); 
+// Используем метод set() для передачи объекту данных в поля &quot;name&quot; и &quot;relatedquests&quot;.
+questItem.set(&quot;name&quot;, &quot;Водяной чип&quot;).set(&quot;relatedquests&quot;, [&quot;huNr3L7QDh&quot;]); 
+// Используем метод save() для записи данных объекта в базу данных приложения
+questItem.save()
+    // Обработчик успешного выполнения запроса
+    .then((saved) =&gt; {
+         console.log(&quot;Запрос успешно выполнен: \n&quot;, saved);
+     })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+         console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <p>См.</p>
@@ -1296,14 +1294,12 @@
 <ul>
 <li><code>Error</code> "Invalid collection name" - некорректно указано имя коллекции
 <a name="sc.Object+getById"></a>
-<div class="codehilite"><pre><span></span>Что-то пошло не так:
+<pre class="codehilite"><code>Что-то пошло не так:
 { 
     errCode: 404,
-    errMsg: &#39;Invalid collection: \&#39;items\&#39;&#39;,
+    errMsg: 'Invalid collection: \'items\'',
     error: true 
-}
-</pre></div>
-</li>
+}</code></pre></li>
 </ul>
 <hr />
 <p><a name="sc.Object+getById"></a></p>
@@ -1333,27 +1329,25 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим и инициализируем SDK</span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим и инициализируем SDK
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Запросим интересующий нас объект по его _id</span>
-<span class="nx">getItem</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;NseSaqqd5v&quot;</span><span class="p">)</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Запрос успешно выполнен: \n&quot;</span><span class="p">,</span> <span class="nx">success</span><span class="p">);</span>
-     <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items.
+var getItem = new sc.Object(&quot;items&quot;);
+// Запросим интересующий нас объект по его _id
+getItem.getById(&quot;NseSaqqd5v&quot;)
+    // Обработчик успешного выполнения запроса
+    .then((success) =&gt; {
+         console.log(&quot;Запрос успешно выполнен: \n&quot;, success);
+     })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+         console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <p>См.</p>
@@ -1362,18 +1356,16 @@
 <li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
 </ul>
 <p><strong>Возвращает</strong>: <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code> - Возвращает promise, который возвращает запрошенный объект.</p>
-<p><div class="codehilite"><pre><span></span>{
-    _id: &#39;NseSaqqd5v&#39;,
-    name: &#39;Водяной чип&#39;,
-    relatedquests: [ &#39;huNr3L7QDh&#39; ],
+<p><pre class="codehilite"><code>{
+    _id: 'NseSaqqd5v',
+    name: 'Водяной чип',
+    relatedquests: [ 'huNr3L7QDh' ],
     createdAt: Mon May 23 2016 19:37:04 GMT+0300 (RTZ 2 (зима)),
     updatedAt: Mon May 23 2016 19:37:04 GMT+0300 (RTZ 2 (зима)),
     readACL: [],
     updateACL: [],
     removeACL: [] 
-}
-</pre></div>
-
+}</code></pre>
 См.</p>
 <ul>
 <li><a href="#new_sc.Object_new">new Object(collName)</a></li>
@@ -1381,9 +1373,7 @@
 <p><strong>Исключения</strong>:</p>
 <ul>
 <li><code>Error</code> "Document not found" - Объект не найден
-<div class="codehilite"><pre><span></span> [Error: Document not found]
-</pre></div>
-</li>
+<pre class="codehilite"><code> [Error: Document not found]</code></pre></li>
 </ul>
 <hr />
 <p><a name="sc.Object+get"></a></p>
@@ -1407,28 +1397,26 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Запросим интересующий нас объект по его _id</span>
-<span class="nx">getItem</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;NseSaqqd5v&quot;</span><span class="p">)</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="c1">//Выведем в консоль только значение поля &quot;name&quot;.</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Вот значение интересующего вас поля: \n&quot;</span><span class="p">,</span> <span class="nx">getItem</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">));</span>
-     <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items.
+var getItem = new sc.Object(&quot;items&quot;);
+// Запросим интересующий нас объект по его _id
+getItem.getById(&quot;NseSaqqd5v&quot;)
+    // Обработчик успешного выполнения запроса
+    .then((success) =&gt; {
+        //Выведем в консоль только значение поля &quot;name&quot;.
+        console.log(&quot;Вот значение интересующего вас поля: \n&quot;, getItem.get(&quot;name&quot;));
+     })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+         console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <p>См.</p>
@@ -1437,10 +1425,8 @@
 <li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
 </ul>
 <p><strong>Возвращает</strong>: <code>value</code> - Возвращает значение поля<br />
-<div class="codehilite"><pre><span></span>Вот значение интересующего вас поля:
- Водяной чип
-</pre></div>
-</p>
+<pre class="codehilite"><code>Вот значение интересующего вас поля:
+ Водяной чип</code></pre></p>
 <hr />
 <p><a name="sc.Object+uploadFile"></a></p>
 <h2 id="uploadfilefield-filename-file-options">.uploadFile(field, filename, file, options)</h2>
@@ -1478,37 +1464,35 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">FileKey</span><span class="o">:</span> <span class="s2">&quot;fileKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;,
+    FileKey: &quot;fileKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">attachToItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Запросим интересующий нас объект по его _id</span>
-<span class="nx">attachToItem</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;xL0uOFtiJx&quot;</span><span class="p">)</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">//Загрузим файл в поле &quot;attachment&quot;</span>
-        <span class="nx">attachToItem</span><span class="p">.</span><span class="nx">uploadFile</span><span class="p">(</span><span class="s2">&quot;attachment&quot;</span><span class="p">,</span> <span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;VEhJUyBJUyBGSUxFLUUtRS1FLUUtRS1FIQ==&quot;</span><span class="p">)</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">uploaded</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Этот файл был успешно загружен:&quot;</span><span class="p">,</span> <span class="nx">uploaded</span><span class="p">);</span>
-        <span class="p">})</span>
-        <span class="c1">// Обработчик ошибки</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items.
+var attachToItem = new sc.Object(&quot;items&quot;);
+// Запросим интересующий нас объект по его _id
+attachToItem.getById(&quot;xL0uOFtiJx&quot;)
+    // Обработчик успешного выполнения запроса
+    .then((success)=&gt;{
+        //Загрузим файл в поле &quot;attachment&quot;
+        attachToItem.uploadFile(&quot;attachment&quot;, &quot;file.txt&quot;, &quot;VEhJUyBJUyBGSUxFLUUtRS1FLUUtRS1FIQ==&quot;)
+        // Обработчик успешного выполнения запроса
+        .then((uploaded)=&gt;{
+            console.log(&quot;Этот файл был успешно загружен:&quot;, uploaded);
+        })
+        // Обработчик ошибки
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });
+    })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+        console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <ul>
@@ -1516,9 +1500,7 @@
 <li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
 </ul>
 <p><strong>Возвращает</strong>: <code>promise.&lt;String&gt;</code> - Возвращает название загруженного файла
-<div class="codehilite"><pre><span></span>Этот файл был успешно загружен: waterchip.txt
-</pre></div>
-</p>
+<pre class="codehilite"><code>Этот файл был успешно загружен: waterchip.txt</code></pre></p>
 <p><strong>Исключения</strong>:</p>
 <ul>
 <li><code>String</code> 'You must first create a document' </li>
@@ -1545,29 +1527,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">FileKey</span><span class="o">:</span> <span class="s2">&quot;fileKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;,
+    FileKey: &quot;fileKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">attachToItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Запросим интересующий нас объект по его _id</span>
-<span class="nx">attachToItem</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;xL0uOFtiJx&quot;</span><span class="p">)</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">// Получим ссылку на файл, хранящийся в поле &quot;attachment&quot; объекта</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Вот ссылка на файл:&quot;</span><span class="p">,</span> <span class="nx">attachToItem</span><span class="p">.</span><span class="nx">getFileLink</span><span class="p">(</span><span class="s2">&quot;attachment&quot;</span><span class="p">));</span>
-    <span class="p">})</span>
-        <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items.
+var attachToItem = new sc.Object(&quot;items&quot;);
+// Запросим интересующий нас объект по его _id
+attachToItem.getById(&quot;xL0uOFtiJx&quot;)
+    // Обработчик успешного выполнения запроса
+    .then((success)=&gt;{
+        // Получим ссылку на файл, хранящийся в поле &quot;attachment&quot; объекта
+        console.log(&quot;Вот ссылка на файл:&quot;, attachToItem.getFileLink(&quot;attachment&quot;));
+    })
+        // Обработчик ошибки
+    .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <p>см.</p>
@@ -1576,9 +1556,7 @@
 <li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
 </ul>
 <p><strong>Возвращает</strong>: <code>String</code> - Возвращает ссылку на запрошенный файл
-<div class="codehilite"><pre><span></span>Вот ссылка на файл: https://api.sc.ru/api/v1/getfile/e1afa40259773b4f9af4306b545d4165/items/attachment/NseSaqqd5v/waterchip.txt
-</pre></div>
-
+<pre class="codehilite"><code>Вот ссылка на файл: https://api.sc.ru/api/v1/getfile/e1afa40259773b4f9af4306b545d4165/items/attachment/NseSaqqd5v/waterchip.txt</code></pre>
 <strong>Исключения</strong>:</p>
 <ul>
 <li><code>Error</code> 'You must first create a document and upload file' - Объект коллекции, к которому обращается метод, должен быть создан и сохранен.</li>
@@ -1607,29 +1585,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">questItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
-<span class="c1">// Используем метод set() для передачи объекту данных в поля &quot;name&quot; и &quot;relatedquests&quot;.</span>
-<span class="nx">questItem</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;Водяной чип&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;relatedquests&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;huNr3L7QDh&quot;</span><span class="p">]);</span> 
-<span class="c1">// Используем метод save() для записи данных объекта в базу данных приложения</span>
-<span class="nx">questItem</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">saved</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Вот что мы сохранили: \n&quot;</span><span class="p">,</span> <span class="nx">saved</span><span class="p">);</span>
-     <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items.
+var questItem = new sc.Object(&quot;items&quot;); 
+// Используем метод set() для передачи объекту данных в поля &quot;name&quot; и &quot;relatedquests&quot;.
+questItem.set(&quot;name&quot;, &quot;Водяной чип&quot;).set(&quot;relatedquests&quot;, [&quot;huNr3L7QDh&quot;]); 
+// Используем метод save() для записи данных объекта в базу данных приложения
+questItem.save()
+    // Обработчик успешного выполнения запроса
+    .then((saved) =&gt; {
+         console.log(&quot;Вот что мы сохранили: \n&quot;, saved);
+     })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+         console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <p>см.</p>
@@ -1638,17 +1614,15 @@
 <li><a href="#sc.Object+set">.set(data)</a></li>
 </ul>
 <p><strong>Возвращает</strong>: <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code> - Возвращает promise, который возвращает сохраненный объект 
-<div class="codehilite"><pre><span></span>Вот ваш объект:
- { _id: &#39;NseSaqqd5v&#39;,
-  name: &#39;Водяной чип&#39;,
-  relatedquests: [ &#39;huNr3L7QDh&#39; ],
+<pre class="codehilite"><code>Вот ваш объект:
+ { _id: 'NseSaqqd5v',
+  name: 'Водяной чип',
+  relatedquests: [ 'huNr3L7QDh' ],
   createdAt: Mon May 23 2016 19:37:04 GMT+0300 (RTZ 2 (зима)),
   updatedAt: Mon May 23 2016 19:37:04 GMT+0300 (RTZ 2 (зима)),
   readACL: [],
   updateACL: [],
-  removeACL: [] }
-</pre></div>
-</p>
+  removeACL: [] }</code></pre></p>
 <hr />
 <p><a name="sc.Object+remove"></a></p>
 <h2 id="removeoptions">.remove(options)</h2>
@@ -1671,37 +1645,35 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Запросим интересующий нас объект по его _id</span>
-<span class="nx">getItem</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;hejJU4BEGP&quot;</span><span class="p">)</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">// Удалим полученный файл</span>
-        <span class="nx">getItem</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">success</span><span class="p">)</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">removed</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="c1">// Выведем в консоль результат запроса</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">removed</span><span class="p">);</span>
-        <span class="p">})</span>
-        <span class="c1">// Обработчик ошибки</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items.
+var getItem = new sc.Object(&quot;items&quot;);
+// Запросим интересующий нас объект по его _id
+getItem.getById(&quot;hejJU4BEGP&quot;)
+    // Обработчик успешного выполнения запроса
+    .then((success)=&gt;{
+        // Удалим полученный файл
+        getItem.remove(success)
+        // Обработчик успешного выполнения запроса
+        .then((removed)=&gt;{
+            // Выведем в консоль результат запроса
+            console.log(removed);
+        })
+        // Обработчик ошибки
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });
+    })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <p>см.</p>
@@ -1713,12 +1685,10 @@
 <ul>
 <li>"count" - <code>Number</code>  - количество удаленных объектов</li>
 <li>"doc" - <code>Array</code>  - массив ID удаленных объектов
-<div class="codehilite"><pre><span></span>{ 
+<pre class="codehilite"><code>{ 
     count: 1, 
-    docs: [ &#39;hejJU4BEGP&#39; ] 
-}
-</pre></div>
-</li>
+    docs: [ 'hejJU4BEGP' ] 
+}</code></pre></li>
 </ul>
 <hr />
 <p><a name="sc.Object+extend"></a></p>
@@ -1747,36 +1717,34 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр  коллекции items.</span>
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Запросим все объекты коллекции</span>
-<span class="nx">data</span><span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">finded</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">// Преобразуем полученный массив сырых данных в массив sc.Object и передадим их экземпляры переменной objects.</span>
-        <span class="kd">var</span> <span class="nx">objects</span> <span class="o">=</span> <span class="nx">finded</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="k">return</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
-        <span class="p">});</span>
-        <span class="k">return</span> <span class="nx">objects</span><span class="p">;</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="c1">//Выведем результат в консоль</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-    <span class="p">});</span>    
-</pre></div>
-
+// Создадим новый экземпляр  коллекции items.
+var data = new sc.Query(&quot;items&quot;);
+// Запросим все объекты коллекции
+data.find()
+    // Обработчик успешного выполнения запроса
+    .then((finded) =&gt;{
+        // Преобразуем полученный массив сырых данных в массив sc.Object и передадим их экземпляры переменной objects.
+        var objects = finded.result.map((data)=&gt;{
+            return sc.Object.extend(&quot;items&quot;, data)
+        });
+        return objects;
+    })
+    // Обработчик успешного выполнения запроса
+    .then((result) =&gt; {
+        //Выведем результат в консоль
+        console.log(result);
+    })
+    // Обработчик ошибки
+    .catch((err)=&gt;{
+        console.log(err)
+    });    </code></pre>
 
 </div>
 <p>см.</p>
@@ -1807,29 +1775,27 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">questItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
-<span class="c1">// Используем метод set() для передачи объекту обновленных данных поля &quot;name&quot;.</span>
-<span class="nx">questItem</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;_id&quot;</span><span class="p">,</span> <span class="s2">&quot;NseSaqqd5v&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;Water chip&quot;</span><span class="p">);</span> 
-<span class="c1">// Используем метод save() для записи данных объекта в базу данных приложения</span>
-<span class="nx">questItem</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-     <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items.
+var questItem = new sc.Object(&quot;items&quot;); 
+// Используем метод set() для передачи объекту обновленных данных поля &quot;name&quot;.
+questItem.set(&quot;_id&quot;, &quot;NseSaqqd5v&quot;).set(&quot;name&quot;, &quot;Water chip&quot;); 
+// Используем метод save() для записи данных объекта в базу данных приложения
+questItem.save()
+    // Обработчик успешного выполнения запроса
+    .then((success) =&gt; {
+         console.log(success);
+     })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+         console.log(error)
+    });</code></pre>
 
 </div>
 <p>см.</p>
@@ -1864,39 +1830,37 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
-<span class="c1">// Запросим интересующий нас объект по его _id</span>
-<span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;NseSaqqd5v&quot;</span><span class="p">)</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-        <span class="c1">// Добавим новый элемент в массив поля &quot;arrayField&quot;</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">,</span> <span class="s2">&quot;Новый элемент массива&quot;</span><span class="p">);</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">saved</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="c1">// Выведем в консоль результат запроса</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">saved</span><span class="p">);</span>
-        <span class="p">})</span>
-        <span class="c1">// Обработчик ошибки</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-        <span class="p">})</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items.
+var Item = new sc.Object(&quot;items&quot;); 
+// Запросим интересующий нас объект по его _id
+Item.getById(&quot;NseSaqqd5v&quot;)
+    // Обработчик успешного выполнения запроса
+    .then((success)=&gt;{
+        console.log(success);
+        // Добавим новый элемент в массив поля &quot;arrayField&quot;
+        Item.push(&quot;arrayField&quot;, &quot;Новый элемент массива&quot;);
+        Item.save()
+        // Обработчик успешного выполнения запроса
+        .then((saved)=&gt;{
+            // Выведем в консоль результат запроса
+            console.log(saved);
+        })
+        // Обработчик ошибки
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error);
+        })
+    })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <hr />
@@ -1926,39 +1890,37 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый объект коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
-<span class="c1">// Запросим интересующий нас объект по его _id</span>
-<span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;MgYs9BEQUM&quot;</span><span class="p">)</span>
-<span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">getted</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="c1">// Из хранящегося в поле &quot;arrayField&quot; массива удалим все элементы со значением, равным {&quot;Удалить&quot;: true}.</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">pull</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;Удалить&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
-        <span class="c1">// Сохраним внесенные изменения</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
-            <span class="c1">// Обработчик успешного выполнения запроса</span>
-            <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                <span class="c1">// Выведем результат в консоль</span>
-                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-            <span class="p">})</span>
-            <span class="c1">// Обработчик ошибки</span>
-            <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-            <span class="p">});</span>
-    <span class="p">})</span>   
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый объект коллекции items.
+var Item = new sc.Object(&quot;items&quot;); 
+// Запросим интересующий нас объект по его _id
+Item.getById(&quot;MgYs9BEQUM&quot;)
+// Обработчик успешного выполнения запроса
+    .then((getted) =&gt; {
+        // Из хранящегося в поле &quot;arrayField&quot; массива удалим все элементы со значением, равным {&quot;Удалить&quot;: true}.
+        Item.pull(&quot;arrayField&quot;, {&quot;Удалить&quot;: true});
+        // Сохраним внесенные изменения
+        Item.save()
+            // Обработчик успешного выполнения запроса
+            .then((result) =&gt; {
+                // Выведем результат в консоль
+                console.log(result);
+            })
+            // Обработчик ошибки
+            .catch((error) =&gt; {
+                console.log(&quot;Что-то пошло не так: \n&quot;, error)
+            });
+    })   
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+         console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <p><strong>Исключения</strong>:</p>
@@ -1993,39 +1955,37 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый объект коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
-<span class="c1">// Запросим интересующий нас объект по его _id</span>
-<span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;CrT49joIxn&quot;</span><span class="p">)</span>
-<span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">getted</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="c1">// Из хранящегося в поле &quot;arrayField&quot; массива удалим все элементы со значениями, равными &quot;Удалить&quot;, 42 или {&quot;Не удалять&quot;: false}.</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">pullAll</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Удалить&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;Не удалять&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">}]);</span>
-        <span class="c1">// Сохраним внесенные изменения</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-        <span class="p">})</span>
-        <span class="c1">// Обработчик ошибки</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-    <span class="p">})</span>   
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый объект коллекции items.
+var Item = new sc.Object(&quot;items&quot;); 
+// Запросим интересующий нас объект по его _id
+Item.getById(&quot;CrT49joIxn&quot;)
+// Обработчик успешного выполнения запроса
+    .then((getted) =&gt; {
+        // Из хранящегося в поле &quot;arrayField&quot; массива удалим все элементы со значениями, равными &quot;Удалить&quot;, 42 или {&quot;Не удалять&quot;: false}.
+        Item.pullAll(&quot;arrayField&quot;, [&quot;Удалить&quot;, 42, {&quot;Не удалять&quot;: false}]);
+        // Сохраним внесенные изменения
+        Item.save()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль
+            console.log(result);
+        })
+        // Обработчик ошибки
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });
+    })   
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+         console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <p><strong>Исключения</strong>:</p>
@@ -2061,39 +2021,37 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый объект коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
-<span class="c1">// Запросим интересующий нас объект по его _id</span>
-<span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;CrT49joIxn&quot;</span><span class="p">)</span>
-<span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">getted</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="c1">// Добавим в массив, хранящийся в поле &quot;arrayField&quot;, новый элемент [&quot;Первый элемент нового элемента&quot;, {&quot;Второй?&quot;: true}], если такого элемента ещё нет в значении &quot;arrayField&quot;.</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">addToSet</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Первый элемент нового элемента&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;Второй?&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">}]);</span>
-        <span class="c1">// Сохраним внесенные изменения</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="c1">// Выведем результат в консоль</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-        <span class="p">})</span>
-        <span class="c1">// Обработчик ошибки</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-    <span class="p">})</span>   
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый объект коллекции items.
+var Item = new sc.Object(&quot;items&quot;); 
+// Запросим интересующий нас объект по его _id
+Item.getById(&quot;CrT49joIxn&quot;)
+// Обработчик успешного выполнения запроса
+    .then((getted) =&gt; {
+        // Добавим в массив, хранящийся в поле &quot;arrayField&quot;, новый элемент [&quot;Первый элемент нового элемента&quot;, {&quot;Второй?&quot;: true}], если такого элемента ещё нет в значении &quot;arrayField&quot;.
+        Item.addToSet(&quot;arrayField&quot;, [&quot;Первый элемент нового элемента&quot;, {&quot;Второй?&quot;: true}]);
+        // Сохраним внесенные изменения
+        Item.save()
+        // Обработчик успешного выполнения запроса
+        .then((result) =&gt; {
+            // Выведем результат в консоль
+            console.log(result);
+        })
+        // Обработчик ошибки
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+        });
+    })   
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+         console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <p><strong>Исключения</strong>:</p>
@@ -2128,40 +2086,38 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">getItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
-<span class="c1">// Запросим интересующий нас объект по его _id</span>
-<span class="nx">getItem</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;NseSaqqd5v&quot;</span><span class="p">)</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-        <span class="c1">// Удалим последний элемент из массива в поле &quot;arrayField&quot;</span>
-        <span class="nx">getItem</span><span class="p">.</span><span class="nx">pop</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-        <span class="c1">// Используем метод save() для записи данных объекта в базу данных приложения</span>
-        <span class="nx">getItem</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">saved</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="c1">// Выведем в консоль результат запроса</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">saved</span><span class="p">);</span>
-        <span class="p">})</span>
-        <span class="c1">// Обработчик ошибки</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-        <span class="p">})</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items.
+var getItem = new sc.Object(&quot;items&quot;); 
+// Запросим интересующий нас объект по его _id
+getItem.getById(&quot;NseSaqqd5v&quot;)
+    // Обработчик успешного выполнения запроса
+    .then((success)=&gt;{
+        console.log(success);
+        // Удалим последний элемент из массива в поле &quot;arrayField&quot;
+        getItem.pop(&quot;arrayField&quot;, 1);
+        // Используем метод save() для записи данных объекта в базу данных приложения
+        getItem.save()
+        // Обработчик успешного выполнения запроса
+        .then((saved)=&gt;{
+            // Выведем в консоль результат запроса
+            console.log(saved);
+        })
+        // Обработчик ошибки
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error);
+        })
+    })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <p><strong>Исключения</strong>:</p>
@@ -2196,41 +2152,39 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
-<span class="c1">// Запросим интересующий нас объект по его _id</span>
-<span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;gNxzwAfvDj&quot;</span><span class="p">)</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">// Выведем в консоль значение поля price</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Item</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">));</span> <span class="c1">//44.42</span>
-        <span class="c1">// Уменьшим значение поля &quot;price&quot; на 2.42</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">inc</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.42</span><span class="p">);</span>
-        <span class="c1">// Используем метод save() для записи данных объекта в базу данных приложения</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">incremented</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="c1">// Выведем в консоль новое значение поля price</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Item</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">));</span> <span class="c1">// 42</span>
-        <span class="p">})</span>
-        <span class="c1">// Обработчик ошибки</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-        <span class="p">})</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items.
+var Item = new sc.Object(&quot;items&quot;); 
+// Запросим интересующий нас объект по его _id
+Item.getById(&quot;gNxzwAfvDj&quot;)
+    // Обработчик успешного выполнения запроса
+    .then((success)=&gt;{
+        // Выведем в консоль значение поля price
+        console.log(Item.get(&quot;price&quot;)); //44.42
+        // Уменьшим значение поля &quot;price&quot; на 2.42
+        Item.inc(&quot;price&quot;, -2.42);
+        // Используем метод save() для записи данных объекта в базу данных приложения
+        Item.save()
+        // Обработчик успешного выполнения запроса
+        .then((incremented)=&gt;{
+            // Выведем в консоль новое значение поля price
+            console.log(Item.get(&quot;price&quot;)); // 42
+        })
+        // Обработчик ошибки
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error);
+        })
+    })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <p><strong>Исключения</strong>:</p>
@@ -2265,30 +2219,28 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="c1">// Запишем текущую дату в поле &quot;someDate&quot; в созданный ранее объект &quot;gNxzwAfvDj&quot;</span>
-<span class="nx">Item</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;_id&quot;</span><span class="p">,</span> <span class="s2">&quot;gNxzwAfvDj&quot;</span><span class="p">).</span><span class="nx">currentDate</span><span class="p">(</span><span class="s2">&quot;someDate&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-<span class="c1">// Используем метод save() для записи данных объекта в базу данных приложения</span>
-<span class="nx">Item</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">// Выведем в консоль значение поля somedate</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Item</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;someDate&quot;</span><span class="p">));</span> <span class="c1">// 2016-05-27T14:10:00.013+03:00</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items
+var Item = new sc.Object(&quot;items&quot;);
+// Запишем текущую дату в поле &quot;someDate&quot; в созданный ранее объект &quot;gNxzwAfvDj&quot;
+Item.set(&quot;_id&quot;, &quot;gNxzwAfvDj&quot;).currentDate(&quot;someDate&quot;, true);
+// Используем метод save() для записи данных объекта в базу данных приложения
+Item.save()
+    // Обработчик успешного выполнения запроса
+    .then((success)=&gt;{
+        // Выведем в консоль значение поля somedate
+        console.log(Item.get(&quot;someDate&quot;)); // 2016-05-27T14:10:00.013+03:00
+    })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+        console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <p><strong>Исключения</strong>:</p>
@@ -2323,41 +2275,39 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
-<span class="c1">// Запросим интересующий нас объект по его _id</span>
-<span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;8Qcfll2GwE&quot;</span><span class="p">)</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">// Выведем в консоль значение поля price</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Item</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">));</span> <span class="c1">// 42</span>
-        <span class="c1">// Умножим значение на -1</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">mul</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-        <span class="c1">// Используем метод save() для записи данных объекта в базу данных приложения</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">incremented</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="c1">// Выведем в консоль новое значение поля price</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Item</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">));</span> <span class="c1">// -42</span>
-        <span class="p">})</span>
-        <span class="c1">// Обработчик ошибки</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-        <span class="p">})</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items.
+var Item = new sc.Object(&quot;items&quot;); 
+// Запросим интересующий нас объект по его _id
+Item.getById(&quot;8Qcfll2GwE&quot;)
+    // Обработчик успешного выполнения запроса
+    .then((success)=&gt;{
+        // Выведем в консоль значение поля price
+        console.log(Item.get(&quot;price&quot;)); // 42
+        // Умножим значение на -1
+        Item.mul(&quot;price&quot;, -1);
+        // Используем метод save() для записи данных объекта в базу данных приложения
+        Item.save()
+        // Обработчик успешного выполнения запроса
+        .then((incremented)=&gt;{
+            // Выведем в консоль новое значение поля price
+            console.log(Item.get(&quot;price&quot;)); // -42
+        })
+        // Обработчик ошибки
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error);
+        })
+    })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <p><strong>Исключения</strong>:</p>
@@ -2393,40 +2343,38 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
-<span class="c1">// Запросим интересующий нас объект по его _id</span>
-<span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;CrT49joIxn&quot;</span><span class="p">)</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">// Выведем в консоль значение поля price</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Item</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">));</span> <span class="c1">// 42</span>
-        <span class="c1">// Изменим значение поля &quot;price&quot; на новое значение 41.999</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mf">41.999</span><span class="p">);</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">changed</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="c1">// Выведем в консоль новое значение поля price</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Item</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">));</span> <span class="c1">// 41.999</span>
-        <span class="p">})</span>
-        <span class="c1">// Обработчик ошибки</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-        <span class="p">})</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items.
+var Item = new sc.Object(&quot;items&quot;); 
+// Запросим интересующий нас объект по его _id
+Item.getById(&quot;CrT49joIxn&quot;)
+    // Обработчик успешного выполнения запроса
+    .then((success)=&gt;{
+        // Выведем в консоль значение поля price
+        console.log(Item.get(&quot;price&quot;)); // 42
+        // Изменим значение поля &quot;price&quot; на новое значение 41.999
+        Item.min(&quot;price&quot;, 41.999);
+        Item.save()
+        // Обработчик успешного выполнения запроса
+        .then((changed)=&gt;{
+            // Выведем в консоль новое значение поля price
+            console.log(Item.get(&quot;price&quot;)); // 41.999
+        })
+        // Обработчик ошибки
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error);
+        })
+    })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <hr />
@@ -2456,40 +2404,38 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Подключим SDK и инициализируем его. </span>
-<span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId_приложения&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey_приложения&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;
+});
 
-<span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">var</span> <span class="nx">Item</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nb">Object</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span> 
-<span class="c1">// Запросим интересующий нас объект по его _id</span>
-<span class="nx">Item</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="s2">&quot;CrT49joIxn&quot;</span><span class="p">)</span>
-    <span class="c1">// Обработчик успешного выполнения запроса</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="c1">// Выведем в консоль значение поля price</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Item</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">));</span> <span class="c1">// 41.999</span>
-        <span class="c1">// Попытаемся изменить значение поля &quot;price&quot; на новое значение 40</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
-        <span class="nx">Item</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
-        <span class="c1">// Обработчик успешного выполнения запроса</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">changed</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="c1">// Выведем в консоль значение поля price</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Item</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">));</span> <span class="c1">// 41.999</span>
-        <span class="p">})</span>
-        <span class="c1">// Обработчик ошибки</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-        <span class="p">})</span>
-    <span class="p">})</span>
-    <span class="c1">// Обработчик ошибки</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+// Создадим новый экземпляр объекта коллекции items.
+var Item = new sc.Object(&quot;items&quot;); 
+// Запросим интересующий нас объект по его _id
+Item.getById(&quot;CrT49joIxn&quot;)
+    // Обработчик успешного выполнения запроса
+    .then((success)=&gt;{
+        // Выведем в консоль значение поля price
+        console.log(Item.get(&quot;price&quot;)); // 41.999
+        // Попытаемся изменить значение поля &quot;price&quot; на новое значение 40
+        Item.max(&quot;price&quot;, 40);
+        Item.save()
+        // Обработчик успешного выполнения запроса
+        .then((changed)=&gt;{
+            // Выведем в консоль значение поля price
+            console.log(Item.get(&quot;price&quot;)); // 41.999
+        })
+        // Обработчик ошибки
+        .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error);
+        })
+    })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
 
 </div>
 <p><strong>Исключения</strong>:</p>
