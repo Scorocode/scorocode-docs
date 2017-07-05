@@ -469,6 +469,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#removefilefield" title=".removeFile(field)" class="md-nav__link">
+    .removeFile(field)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#saveoptions" title=".save(options)" class="md-nav__link">
     .save(options)
   </a>
@@ -1102,6 +1109,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#removefilefield" title=".removeFile(field)" class="md-nav__link">
+    .removeFile(field)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#saveoptions" title=".save(options)" class="md-nav__link">
     .save(options)
   </a>
@@ -1222,16 +1236,17 @@
 <li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code>promise.<a href="#sc.Object">sc.Object</a></code></li>
 <li><a href="#sc.Object+get">.get(key)</a></li>
 <li><a href="#sc.Object+getFileLink">.getFileLink(field)</a> ⇒ <code>String</code></li>
+<li><a href="#sc.Object+removeFile">.removeFile(field)</a> ⇒ <code>String</code></li>
 <li><a href="#sc.Object+uploadFile">.uploadFile(field, filename, file, options)</a> ⇒ <code>promise.&lt;String&gt;</code></li>
 <li><a href="#sc.Object+save">.save(options)</a> ⇒ <code>promise.<a href="#sc.Object">sc.Object</a></code></li>
 <li><a href="#sc.Object+remove">.remove(options)</a> ⇒ <code>promise.{count: Number, docs: Array}</code></li>
 <li><a href="#sc.Object+extend">.extend(collName, childObject)</a> ⇒ <code><a href="#sc.Object">[sc.Object]</a></code></li>
 <li><a href="#sc.Object+set">.set(data)</a></li>
-<li><a href="#sc.Object+push">.push(key, value)</a> </li>
-<li><a href="#sc.Object+pull">.pull(key, value)</a> </li>
-<li><a href="#sc.Object+pullAll">.pullAll(key, value)</a> </li>
-<li><a href="#sc.Object+addToSet">.addToSet(key, value)</a> </li>
-<li><a href="#sc.Object+pop">.pop(key, pos)</a> </li>
+<li><a href="#sc.Object+push">.push(key, value)</a></li>
+<li><a href="#sc.Object+pull">.pull(key, value)</a></li>
+<li><a href="#sc.Object+pullAll">.pullAll(key, value)</a></li>
+<li><a href="#sc.Object+addToSet">.addToSet(key, value)</a></li>
+<li><a href="#sc.Object+pop">.pop(key, pos)</a></li>
 <li><a href="#sc.Object+inc">.inc(key, amount)</a></li>
 <li><a href="#sc.Object+currentDate">.currentDate()</a></li>
 <li><a href="#sc.Object+mul">.mul(key, number)</a></li>
@@ -1262,7 +1277,7 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -1270,9 +1285,9 @@ sc.Init({
 });
 
 // Создадим новый экземпляр объекта коллекции items.
-var questItem = new sc.Object(&quot;items&quot;); 
+var questItem = new sc.Object(&quot;items&quot;);
 // Используем метод set() для передачи объекту данных в поля &quot;name&quot; и &quot;relatedquests&quot;.
-questItem.set(&quot;name&quot;, &quot;Водяной чип&quot;).set(&quot;relatedquests&quot;, [&quot;huNr3L7QDh&quot;]); 
+questItem.set(&quot;name&quot;, &quot;Водяной чип&quot;).set(&quot;relatedquests&quot;, [&quot;huNr3L7QDh&quot;]);
 // Используем метод save() для записи данных объекта в базу данных приложения
 questItem.save()
     // Обработчик успешного выполнения запроса
@@ -1295,16 +1310,16 @@ questItem.save()
 <li><code>Error</code> "Invalid collection name" - некорректно указано имя коллекции
 <a name="sc.Object+getById"></a>
 <pre class="codehilite"><code>Что-то пошло не так:
-{ 
+{
     errCode: 404,
     errMsg: 'Invalid collection: \'items\'',
-    error: true 
+    error: true
 }</code></pre></li>
 </ul>
 <hr />
 <p><a name="sc.Object+getById"></a></p>
 <h2 id="getbyid_id-options">.getById(_id, options)</h2>
-<p>Метод для для получения объекта коллекции из БД по его _id. </p>
+<p>Метод для для получения объекта коллекции из БД по его _id.</p>
 <p><strong>Параметры</strong></p>
 <table>
 <thead>
@@ -1364,7 +1379,7 @@ getItem.getById(&quot;NseSaqqd5v&quot;)
     updatedAt: Mon May 23 2016 19:37:04 GMT+0300 (RTZ 2 (зима)),
     readACL: [],
     updateACL: [],
-    removeACL: [] 
+    removeACL: []
 }</code></pre>
 См.</p>
 <ul>
@@ -1397,7 +1412,7 @@ getItem.getById(&quot;NseSaqqd5v&quot;)
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -1421,10 +1436,10 @@ getItem.getById(&quot;NseSaqqd5v&quot;)
 </div>
 <p>См.</p>
 <ul>
-<li><a href="#new_sc.Object_new">new Object(collName)</a>    </li>
+<li><a href="#new_sc.Object_new">new Object(collName)</a></li>
 <li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
 </ul>
-<p><strong>Возвращает</strong>: <code>value</code> - Возвращает значение поля<br />
+<p><strong>Возвращает</strong>: <code>value</code> - Возвращает значение поля
 <pre class="codehilite"><code>Вот значение интересующего вас поля:
  Водяной чип</code></pre></p>
 <hr />
@@ -1464,7 +1479,7 @@ getItem.getById(&quot;NseSaqqd5v&quot;)
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -1503,7 +1518,7 @@ attachToItem.getById(&quot;xL0uOFtiJx&quot;)
 <pre class="codehilite"><code>Этот файл был успешно загружен: waterchip.txt</code></pre></p>
 <p><strong>Исключения</strong>:</p>
 <ul>
-<li><code>String</code> 'You must first create a document' </li>
+<li><code>String</code> 'You must first create a document'</li>
 </ul>
 <hr />
 <p><a name="sc.Object+getFileLink"></a></p>
@@ -1527,7 +1542,7 @@ attachToItem.getById(&quot;xL0uOFtiJx&quot;)
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -1544,7 +1559,7 @@ attachToItem.getById(&quot;xL0uOFtiJx&quot;)
         // Получим ссылку на файл, хранящийся в поле &quot;attachment&quot; объекта
         console.log(&quot;Вот ссылка на файл:&quot;, attachToItem.getFileLink(&quot;attachment&quot;));
     })
-        // Обработчик ошибки
+    // Обработчик ошибки
     .catch((error) =&gt; {
             console.log(&quot;Что-то пошло не так: \n&quot;, error)
     });</code></pre>
@@ -1563,6 +1578,63 @@ attachToItem.getById(&quot;xL0uOFtiJx&quot;)
 <li><code>Error</code> 'Unknown field' - Поле не существует</li>
 <li><code>Error</code> 'Field is empty' - Поле пустое</li>
 </ul>
+<hr />
+<p><a name="sc.Object+removeFile"></a></p>
+<h2 id="removefilefield">.removeFile(field)</h2>
+<p>Метод удаления файла.</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td><code>String</code></td>
+<td>Название поля коллекции</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Пример</p>
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
+var sc = require('scorocode');
+sc.Init({
+    ApplicationID: &quot;applicationId_приложения&quot;,
+    JavaScriptKey: &quot;javascriptKey_приложения&quot;,
+    FileKey: &quot;fileKey_приложения&quot;
+});
+
+// Создадим новый экземпляр объекта коллекции items.
+var attachToItem = new sc.Object(&quot;items&quot;);
+// Запросим интересующий нас объект по его _id
+attachToItem.getById(&quot;xL0uOFtiJx&quot;)
+    // Обработчик успешного выполнения запроса
+    .then((success)=&gt;{
+        // Удаление файла, хранящийся в поле &quot;attachment&quot; объекта
+        return attachToItem.removeFile(&quot;attachment&quot;);
+    })
+    // Обработчик ошибки
+    .catch((error) =&gt; {
+            console.log(&quot;Что-то пошло не так: \n&quot;, error)
+    });</code></pre>
+
+</div>
+<p>см.</p>
+<ul>
+<li><a href="#new_sc.Object_new">new Object(collName)</a></li>
+<li><a href="#sc.Object+getById">.getById(_id, options)</a> ⇒ <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code></li>
+</ul>
+<p><strong>Возвращает</strong>: <code>Promise.{error: false}</code> - Возвращает promise, который возвращает объект:
+<strong>Исключения</strong>:
+<pre class="codehilite"><code>{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Код ошибки
+    &quot;errMsg&quot;      : &quot;Текст ошибки&quot;
+}</code></pre></p>
 <hr />
 <p><a name="sc.Object+save"></a></p>
 <h2 id="saveoptions">.save(options)</h2>
@@ -1585,7 +1657,7 @@ attachToItem.getById(&quot;xL0uOFtiJx&quot;)
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -1593,9 +1665,9 @@ sc.Init({
 });
 
 // Создадим новый экземпляр объекта коллекции items.
-var questItem = new sc.Object(&quot;items&quot;); 
+var questItem = new sc.Object(&quot;items&quot;);
 // Используем метод set() для передачи объекту данных в поля &quot;name&quot; и &quot;relatedquests&quot;.
-questItem.set(&quot;name&quot;, &quot;Водяной чип&quot;).set(&quot;relatedquests&quot;, [&quot;huNr3L7QDh&quot;]); 
+questItem.set(&quot;name&quot;, &quot;Водяной чип&quot;).set(&quot;relatedquests&quot;, [&quot;huNr3L7QDh&quot;]);
 // Используем метод save() для записи данных объекта в базу данных приложения
 questItem.save()
     // Обработчик успешного выполнения запроса
@@ -1613,7 +1685,7 @@ questItem.save()
 <li><a href="#new_sc.Object_new">new Object(collName)</a></li>
 <li><a href="#sc.Object+set">.set(data)</a></li>
 </ul>
-<p><strong>Возвращает</strong>: <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code> - Возвращает promise, который возвращает сохраненный объект 
+<p><strong>Возвращает</strong>: <code><a href="#sc.Object">Promise.&lt;sc.Object&gt;</a></code> - Возвращает promise, который возвращает сохраненный объект
 <pre class="codehilite"><code>Вот ваш объект:
  { _id: 'NseSaqqd5v',
   name: 'Водяной чип',
@@ -1645,7 +1717,7 @@ questItem.save()
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -1685,9 +1757,9 @@ getItem.getById(&quot;hejJU4BEGP&quot;)
 <ul>
 <li>"count" - <code>Number</code>  - количество удаленных объектов</li>
 <li>"doc" - <code>Array</code>  - массив ID удаленных объектов
-<pre class="codehilite"><code>{ 
-    count: 1, 
-    docs: [ 'hejJU4BEGP' ] 
+<pre class="codehilite"><code>{
+    count: 1,
+    docs: [ 'hejJU4BEGP' ]
 }</code></pre></li>
 </ul>
 <hr />
@@ -1717,7 +1789,7 @@ getItem.getById(&quot;hejJU4BEGP&quot;)
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -1744,7 +1816,7 @@ data.find()
     // Обработчик ошибки
     .catch((err)=&gt;{
         console.log(err)
-    });    </code></pre>
+    });</code></pre>
 
 </div>
 <p>см.</p>
@@ -1775,7 +1847,7 @@ data.find()
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -1783,9 +1855,9 @@ sc.Init({
 });
 
 // Создадим новый экземпляр объекта коллекции items.
-var questItem = new sc.Object(&quot;items&quot;); 
+var questItem = new sc.Object(&quot;items&quot;);
 // Используем метод set() для передачи объекту обновленных данных поля &quot;name&quot;.
-questItem.set(&quot;_id&quot;, &quot;NseSaqqd5v&quot;).set(&quot;name&quot;, &quot;Water chip&quot;); 
+questItem.set(&quot;_id&quot;, &quot;NseSaqqd5v&quot;).set(&quot;name&quot;, &quot;Water chip&quot;);
 // Используем метод save() для записи данных объекта в базу данных приложения
 questItem.save()
     // Обработчик успешного выполнения запроса
@@ -1830,7 +1902,7 @@ questItem.save()
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -1838,7 +1910,7 @@ sc.Init({
 });
 
 // Создадим новый экземпляр объекта коллекции items.
-var Item = new sc.Object(&quot;items&quot;); 
+var Item = new sc.Object(&quot;items&quot;);
 // Запросим интересующий нас объект по его _id
 Item.getById(&quot;NseSaqqd5v&quot;)
     // Обработчик успешного выполнения запроса
@@ -1890,7 +1962,7 @@ Item.getById(&quot;NseSaqqd5v&quot;)
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -1898,7 +1970,7 @@ sc.Init({
 });
 
 // Создадим новый объект коллекции items.
-var Item = new sc.Object(&quot;items&quot;); 
+var Item = new sc.Object(&quot;items&quot;);
 // Запросим интересующий нас объект по его _id
 Item.getById(&quot;MgYs9BEQUM&quot;)
 // Обработчик успешного выполнения запроса
@@ -1916,7 +1988,7 @@ Item.getById(&quot;MgYs9BEQUM&quot;)
             .catch((error) =&gt; {
                 console.log(&quot;Что-то пошло не так: \n&quot;, error)
             });
-    })   
+    })
     // Обработчик ошибки
     .catch((error) =&gt; {
          console.log(&quot;Что-то пошло не так: \n&quot;, error)
@@ -1955,7 +2027,7 @@ Item.getById(&quot;MgYs9BEQUM&quot;)
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -1963,7 +2035,7 @@ sc.Init({
 });
 
 // Создадим новый объект коллекции items.
-var Item = new sc.Object(&quot;items&quot;); 
+var Item = new sc.Object(&quot;items&quot;);
 // Запросим интересующий нас объект по его _id
 Item.getById(&quot;CrT49joIxn&quot;)
 // Обработчик успешного выполнения запроса
@@ -1981,7 +2053,7 @@ Item.getById(&quot;CrT49joIxn&quot;)
         .catch((error) =&gt; {
             console.log(&quot;Что-то пошло не так: \n&quot;, error)
         });
-    })   
+    })
     // Обработчик ошибки
     .catch((error) =&gt; {
          console.log(&quot;Что-то пошло не так: \n&quot;, error)
@@ -2021,7 +2093,7 @@ Item.getById(&quot;CrT49joIxn&quot;)
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -2029,7 +2101,7 @@ sc.Init({
 });
 
 // Создадим новый объект коллекции items.
-var Item = new sc.Object(&quot;items&quot;); 
+var Item = new sc.Object(&quot;items&quot;);
 // Запросим интересующий нас объект по его _id
 Item.getById(&quot;CrT49joIxn&quot;)
 // Обработчик успешного выполнения запроса
@@ -2047,7 +2119,7 @@ Item.getById(&quot;CrT49joIxn&quot;)
         .catch((error) =&gt; {
             console.log(&quot;Что-то пошло не так: \n&quot;, error)
         });
-    })   
+    })
     // Обработчик ошибки
     .catch((error) =&gt; {
          console.log(&quot;Что-то пошло не так: \n&quot;, error)
@@ -2086,7 +2158,7 @@ Item.getById(&quot;CrT49joIxn&quot;)
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -2094,7 +2166,7 @@ sc.Init({
 });
 
 // Создадим новый экземпляр объекта коллекции items.
-var getItem = new sc.Object(&quot;items&quot;); 
+var getItem = new sc.Object(&quot;items&quot;);
 // Запросим интересующий нас объект по его _id
 getItem.getById(&quot;NseSaqqd5v&quot;)
     // Обработчик успешного выполнения запроса
@@ -2152,7 +2224,7 @@ getItem.getById(&quot;NseSaqqd5v&quot;)
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -2160,7 +2232,7 @@ sc.Init({
 });
 
 // Создадим новый экземпляр объекта коллекции items.
-var Item = new sc.Object(&quot;items&quot;); 
+var Item = new sc.Object(&quot;items&quot;);
 // Запросим интересующий нас объект по его _id
 Item.getById(&quot;gNxzwAfvDj&quot;)
     // Обработчик успешного выполнения запроса
@@ -2219,7 +2291,7 @@ Item.getById(&quot;gNxzwAfvDj&quot;)
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -2275,7 +2347,7 @@ Item.save()
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -2283,7 +2355,7 @@ sc.Init({
 });
 
 // Создадим новый экземпляр объекта коллекции items.
-var Item = new sc.Object(&quot;items&quot;); 
+var Item = new sc.Object(&quot;items&quot;);
 // Запросим интересующий нас объект по его _id
 Item.getById(&quot;8Qcfll2GwE&quot;)
     // Обработчик успешного выполнения запроса
@@ -2343,7 +2415,7 @@ Item.getById(&quot;8Qcfll2GwE&quot;)
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -2351,7 +2423,7 @@ sc.Init({
 });
 
 // Создадим новый экземпляр объекта коллекции items.
-var Item = new sc.Object(&quot;items&quot;); 
+var Item = new sc.Object(&quot;items&quot;);
 // Запросим интересующий нас объект по его _id
 Item.getById(&quot;CrT49joIxn&quot;)
     // Обработчик успешного выполнения запроса
@@ -2404,7 +2476,7 @@ Item.getById(&quot;CrT49joIxn&quot;)
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Пример</p>
-<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его. 
+<pre class="codehilite"><code class="language-js">// Подключим SDK и инициализируем его.
 var sc = require('scorocode');
 sc.Init({
     ApplicationID: &quot;applicationId_приложения&quot;,
@@ -2412,7 +2484,7 @@ sc.Init({
 });
 
 // Создадим новый экземпляр объекта коллекции items.
-var Item = new sc.Object(&quot;items&quot;); 
+var Item = new sc.Object(&quot;items&quot;);
 // Запросим интересующий нас объект по его _id
 Item.getById(&quot;CrT49joIxn&quot;)
     // Обработчик успешного выполнения запроса
