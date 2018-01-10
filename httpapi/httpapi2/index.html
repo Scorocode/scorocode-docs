@@ -1107,7 +1107,7 @@
     &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
     &quot;coll&quot;: &quot;items&quot;,
     &quot;query&quot;: {
-        &quot;exampleField&quot;: { 
+        &quot;exampleField&quot;: {
             &quot;$eq&quot;: &quot;Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!&quot;
         }
     }
@@ -1162,7 +1162,7 @@
     &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
     &quot;coll&quot;: &quot;items&quot;,
     &quot;query&quot;: {
-        &quot;exampleField&quot;: { 
+        &quot;exampleField&quot;: {
             &quot;$eq&quot;: &quot;Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!&quot;
         }
     },
@@ -1262,6 +1262,7 @@
     &quot;fields&quot;      : [], // список имен полей, которые будут возвращены в каждом документе, необязательный
     &quot;limit&quot;       : int,// лимит размера выборки, необязательный, по умолчанию 50
     &quot;skip&quot;        : int,// количество документов, которое нужно пропустить в выборке
+    &quot;pool&quot;        : {}, // дополнительные параметры выборки, которые будут доступны в триггере 'before find' в объекте pool.extPool
 }</code></pre>
 
 <div class="admonition warning">
@@ -1281,16 +1282,17 @@
     &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
     &quot;coll&quot;: &quot;items&quot;,
     &quot;query&quot;: {
-        &quot;exampleField&quot;: { 
+        &quot;exampleField&quot;: {
             &quot;$eq&quot;: &quot;Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!&quot;
         }
     },
     &quot;sort&quot;: {
         &quot;updatedAt&quot;: 1
-    }, 
+    },
     &quot;fields&quot;: [&quot;updatedAt&quot;, &quot;exampleField&quot;, &quot;anotherExampleField&quot;],
     &quot;limit&quot;: 10,
-    &quot;skip&quot;: 20
+    &quot;skip&quot;: 20,
+    &quot;pool&quot;: {&quot;name&quot;:&quot;test&quot;}
 }' &quot;https://api.scorocode.ru/api/v1/data/find&quot;</code></pre>
 
 </div>
@@ -1334,7 +1336,7 @@
     &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
     &quot;coll&quot;: &quot;items&quot;,
     &quot;query&quot;: {
-        &quot;exampleField&quot;: { 
+        &quot;exampleField&quot;: {
             &quot;$eq&quot;: &quot;Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!&quot;
         }
     }

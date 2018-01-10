@@ -1356,6 +1356,10 @@
           &quot;beforeUpdate&quot;: {
             &quot;code&quot;: &quot;&quot;,
             &quot;isActive&quot;: false
+          },
+          &quot;beforeFind&quot;: {
+            &quot;code&quot;: &quot;&quot;,
+            &quot;isActive&quot;: false
           }
         },
         &quot;fields&quot;: [
@@ -1473,6 +1477,10 @@
           &quot;beforeUpdate&quot;: {
             &quot;code&quot;: &quot;&quot;,
             &quot;isActive&quot;: false
+          },
+          &quot;beforeFind&quot;: {
+            &quot;code&quot;: &quot;&quot;,
+            &quot;isActive&quot;: false
           }
         },
         &quot;fields&quot;: [
@@ -1572,6 +1580,10 @@
             &quot;isActive&quot;: false
           },
           &quot;beforeUpdate&quot;: {
+            &quot;code&quot;: &quot;&quot;,
+            &quot;isActive&quot;: false
+          },
+          &quot;beforeFind&quot;: {
             &quot;code&quot;: &quot;&quot;,
             &quot;isActive&quot;: false
           }
@@ -1806,6 +1818,10 @@
         &quot;beforeUpdate&quot;: {
           &quot;code&quot;: &quot;&quot;,
           &quot;isActive&quot;: false
+        },
+        &quot;beforeFind&quot;: {
+          &quot;code&quot;: &quot;&quot;,
+          &quot;isActive&quot;: false
         }
       },
       &quot;fields&quot;: [
@@ -1924,6 +1940,10 @@
         &quot;beforeUpdate&quot;: {
           &quot;code&quot;: &quot;&quot;,
           &quot;isActive&quot;: false
+        },
+        &quot;beforeFind&quot;: {
+          &quot;code&quot;: &quot;&quot;,
+          &quot;isActive&quot;: false
         }
       },
       &quot;fields&quot;: [
@@ -2023,6 +2043,10 @@
           &quot;isActive&quot;: false
         },
         &quot;beforeUpdate&quot;: {
+          &quot;code&quot;: &quot;&quot;,
+          &quot;isActive&quot;: false
+        },
+        &quot;beforeFind&quot;: {
           &quot;code&quot;: &quot;&quot;,
           &quot;isActive&quot;: false
         }
@@ -2215,6 +2239,10 @@
       &quot;beforeUpdate&quot;: {
         &quot;code&quot;: &quot;&quot;,
         &quot;isActive&quot;: false
+      },
+      &quot;beforeFind&quot;: {
+        &quot;code&quot;: &quot;&quot;,
+        &quot;isActive&quot;: false
       }
     },
     &quot;fields&quot;: [
@@ -2308,8 +2336,8 @@
     &quot;app&quot;: &quot;&quot;,               // идентификатор приложения, обязательный
     &quot;cli&quot;: &quot;&quot;,               // клиентский ключ, обязательный
     &quot;acc&quot;: &quot;&quot;,               // ключ доступа, обязательный, только masterKey
-    &quot;collection&quot;: {          
-        &quot;name&quot;: &quot;&quot;,          // имя коллекции, обязательный  
+    &quot;collection&quot;: {
+        &quot;name&quot;: &quot;&quot;,          // имя коллекции, обязательный
         &quot;useDocsACL&quot;: bool,  // флаг &quot;использовать ACL документов&quot;, необязательный
         &quot;notify&quot;: bool,      // флаг включения подписки на уведомления по изменению даных в коллекци, необязательно
         &quot;ACL&quot;: {}            // настройки ACL коллекции, необязательный
@@ -2391,6 +2419,10 @@
       &quot;beforeUpdate&quot;: {
         &quot;code&quot;: &quot;&quot;,
         &quot;isActive&quot;: false
+      },
+      &quot;beforeFind&quot;: {
+        &quot;code&quot;: &quot;&quot;,
+        &quot;isActive&quot;: false
       }
     },
     &quot;fields&quot;: [
@@ -2461,10 +2493,10 @@
     &quot;cli&quot;: &quot;&quot;,               // клиентский ключ, обязательный
     &quot;acc&quot;: &quot;&quot;,               // ключ доступа, обязательный, только masterKey
     &quot;collection&quot;: {
-        &quot;id&quot;: &quot;&quot;,            // id коллекции, обязательный           
-        &quot;name&quot;: &quot;&quot;,          // имя коллекции, необязательный  
+        &quot;id&quot;: &quot;&quot;,            // id коллекции, обязательный
+        &quot;name&quot;: &quot;&quot;,          // имя коллекции, необязательный
         &quot;useDocsACL&quot;: bool,  // флаг &quot;использовать ACL документов&quot;, необязательный
-        &quot;notify&quot;: bool,      // флаг включения подписки на уведомления по изменению даных в коллекци, необязательно     
+        &quot;notify&quot;: bool,      // флаг включения подписки на уведомления по изменению даных в коллекци, необязательно
         &quot;ACL&quot;: {}            // настройки ACL коллекции, необязательный
     }
 }</code></pre>
@@ -2528,6 +2560,10 @@
         &quot;isActive&quot;: false
       },
       &quot;beforeUpdate&quot;: {
+        &quot;code&quot;: &quot;&quot;,
+        &quot;isActive&quot;: false
+      },
+      &quot;beforeFind&quot;: {
         &quot;code&quot;: &quot;&quot;,
         &quot;isActive&quot;: false
       }
@@ -2600,7 +2636,7 @@
     &quot;cli&quot;: &quot;&quot;,               // клиентский ключ, обязательный
     &quot;acc&quot;: &quot;&quot;,               // ключ доступа, обязательный, только masterKey
     &quot;collection&quot;: {
-        &quot;id&quot;: &quot;&quot;             // id коллекции, обязательный           
+        &quot;id&quot;: &quot;&quot;             // id коллекции, обязательный
     }
 }</code></pre>
 
@@ -2642,7 +2678,7 @@
     &quot;cli&quot;: &quot;&quot;,               // клиентский ключ, обязательный
     &quot;acc&quot;: &quot;&quot;,               // ключ доступа, обязательный, только masterKey
     &quot;collection&quot;: {
-        &quot;id&quot;: &quot;&quot;,            // id дублируемой коллекции, обязательный           
+        &quot;id&quot;: &quot;&quot;,            // id дублируемой коллекции, обязательный
         &quot;name&quot;: &quot;&quot;           // имя новой коллекции, обязательный
     }
 }</code></pre>
@@ -2655,7 +2691,7 @@
         &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
         &quot;collection&quot;: {
             &quot;id&quot;: &quot;584e91b77e0b4e222480a316&quot;,
-            &quot;name&quot;: &quot;clonedcoll&quot;           
+            &quot;name&quot;: &quot;clonedcoll&quot;
         }
 }' &quot;https://api.scorocode.ru/api/v1/app/collections/clone&quot;</code></pre>
 
@@ -2691,6 +2727,10 @@
         &quot;isActive&quot;: false
       },
       &quot;beforeUpdate&quot;: {
+        &quot;code&quot;: &quot;&quot;,
+        &quot;isActive&quot;: false
+      },
+      &quot;beforeFind&quot;: {
         &quot;code&quot;: &quot;&quot;,
         &quot;isActive&quot;: false
       }
@@ -2782,11 +2822,11 @@
         &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
         &quot;coll&quot;: &quot;users&quot;,
         &quot;index&quot;: {
-            &quot;name&quot;: &quot;emailIndex&quot;,                    
+            &quot;name&quot;: &quot;emailIndex&quot;,
             &quot;fields&quot;: [
                 {
-                    &quot;name&quot;: &quot;email&quot;,            
-                    &quot;order&quot;: 1       
+                    &quot;name&quot;: &quot;email&quot;,
+                    &quot;order&quot;: 1
                 }
             ]
         }
@@ -2833,7 +2873,7 @@
         &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
         &quot;coll&quot;: &quot;users&quot;,
         &quot;index&quot;: {
-            &quot;name&quot;: &quot;emailIndex&quot;                    
+            &quot;name&quot;: &quot;emailIndex&quot;
         }
 }' &quot;https://api.scorocode.ru/api/v1/app/collections/index/delete&quot;</code></pre>
 
@@ -2865,7 +2905,7 @@
     &quot;cli&quot;: &quot;&quot;,         // клиентский ключ, обязательный
     &quot;acc&quot;: &quot;&quot;,         // ключ доступа, обязательный, только masterKey
     &quot;coll&quot;: &quot;&quot;,        // имя коллекции, обязательный
-    &quot;collField&quot;: {     
+    &quot;collField&quot;: {
         &quot;name&quot;: &quot;&quot;,    // имя поля, обязательный
         &quot;type&quot;: &quot;&quot;,    // тип данных поля, обязательный
         &quot;target&quot;: &quot;&quot;   // имя целевой коллекции, обязательный для полей типа Pointer || Relation
@@ -2878,11 +2918,11 @@
     &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
     &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
     &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;coll&quot;: &quot;users&quot;,                       
+    &quot;coll&quot;: &quot;users&quot;,
     &quot;collField&quot;: {
-        &quot;name&quot;: &quot;pointer&quot;,         
-        &quot;type&quot;: &quot;Pointer&quot;,         
-        &quot;target&quot;: &quot;devices&quot;          
+        &quot;name&quot;: &quot;pointer&quot;,
+        &quot;type&quot;: &quot;Pointer&quot;,
+        &quot;target&quot;: &quot;devices&quot;
     }
 }' &quot;https://api.scorocode.ru/api/v1/app/collections/fields/create&quot;</code></pre>
 
@@ -2922,7 +2962,7 @@
     &quot;cli&quot;: &quot;&quot;,       // клиентский ключ, обязательный
     &quot;acc&quot;: &quot;&quot;,       // ключ доступа, обязательный, только masterKey
     &quot;coll&quot;: &quot;&quot;,      // имя коллекции, обязательный
-    &quot;collField&quot;: {   
+    &quot;collField&quot;: {
         &quot;name&quot;: &quot;&quot;   // имя поля, обязательный
     }
 }</code></pre>
@@ -2933,7 +2973,7 @@
     &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
     &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
     &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;coll&quot;: &quot;users&quot;,                       
+    &quot;coll&quot;: &quot;users&quot;,
     &quot;collField&quot;: {
         &quot;name&quot;: &quot;pointer&quot;
     }
@@ -2988,6 +3028,10 @@
         &quot;isActive&quot;: false
       },
       &quot;beforeUpdate&quot;: {
+        &quot;code&quot;: &quot;&quot;,
+        &quot;isActive&quot;: false
+      },
+      &quot;beforeFind&quot;: {
         &quot;code&quot;: &quot;&quot;,
         &quot;isActive&quot;: false
       }
@@ -3117,29 +3161,33 @@
     &quot;acc&quot;: &quot;&quot;,                // ключ доступа, обязательный, только masterKey
     &quot;coll&quot;: &quot;&quot;,               // имя коллекции, обязательный
     &quot;triggers&quot;: {
-        &quot;beforeInsert&quot;: {      
+        &quot;beforeInsert&quot;: {
             &quot;code&quot;: &quot;&quot;,       // код триггера
             &quot;isActive&quot;: bool  // флаг активности триггера
         },
         &quot;afterInsert&quot;: {
             &quot;code&quot;: &quot;&quot;,       // код триггера
-            &quot;isActive&quot;: bool  // флаг активности триггера        
+            &quot;isActive&quot;: bool  // флаг активности триггера
         },
         &quot;beforeUpdate&quot;: {
             &quot;code&quot;: &quot;&quot;,       // код триггера
-            &quot;isActive&quot;: bool  // флаг активности триггера        
+            &quot;isActive&quot;: bool  // флаг активности триггера
         },
         &quot;afterUpdate&quot;: {
             &quot;code&quot;: &quot;&quot;,       // код триггера
-            &quot;isActive&quot;: bool  // флаг активности триггера       
+            &quot;isActive&quot;: bool  // флаг активности триггера
         },
         &quot;beforeRemove&quot;: {
             &quot;code&quot;: &quot;&quot;,       // код триггера
-            &quot;isActive&quot;: bool  // флаг активности триггера        
+            &quot;isActive&quot;: bool  // флаг активности триггера
         },
         &quot;afterRemove&quot;: {
             &quot;code&quot;: &quot;&quot;,       // код триггера
-            &quot;isActive&quot;: bool  // флаг активности триггера       
+            &quot;isActive&quot;: bool  // флаг активности триггера
+        },
+        &quot;beforeFind&quot;: {
+          &quot;code&quot;: &quot;&quot;,         // код триггера
+          &quot;isActive&quot;: false   // флаг активности триггера
         }
     }
 }</code></pre>
@@ -3150,10 +3198,10 @@
     &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
     &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
     &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;coll&quot;: &quot;users&quot;,                       
+    &quot;coll&quot;: &quot;users&quot;,
     &quot;triggers&quot;: {
          &quot;afterInsert&quot;: {
-            &quot;code&quot;: &quot;DataManager.Insert({\n  coll:'logs', \n  doc: {\n    'docId': pool.newDoc._id,\n    'collection': 'users',\n    'operation': 'register',\n    'data': pool.newDoc\n    }\n  });&quot;,       
+            &quot;code&quot;: &quot;DataManager.Insert({\n  coll:'logs', \n  doc: {\n    'docId': pool.newDoc._id,\n    'collection': 'users',\n    'operation': 'register',\n    'data': pool.newDoc\n    }\n  });&quot;,
             &quot;isActive&quot;: true
         }
     }
@@ -3192,6 +3240,10 @@
       &quot;isActive&quot;: false
     },
     &quot;beforeUpdate&quot;: {
+      &quot;code&quot;: &quot;&quot;,
+      &quot;isActive&quot;: false
+    },
+    &quot;beforeFind&quot;: {
       &quot;code&quot;: &quot;&quot;,
       &quot;isActive&quot;: false
     }
@@ -3465,12 +3517,12 @@
     &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
     &quot;cloudCode&quot;: {
         &quot;path&quot;: &quot;/AYBABTU.js&quot;,
-        &quot;description&quot;: &quot;All your base&quot;,      
-        &quot;code&quot;: &quot;console.log(\&quot;QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\&quot;);&quot;,             
-        &quot;jobStartAt&quot;: &quot;2016-12-13T17:33:00+03:00&quot;, 
-        &quot;isActiveJob&quot;: false,    
-        &quot;jobType&quot;: &quot;custom&quot;,           
-        &quot;repeat&quot;: {             
+        &quot;description&quot;: &quot;All your base&quot;,
+        &quot;code&quot;: &quot;console.log(\&quot;QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\&quot;);&quot;,
+        &quot;jobStartAt&quot;: &quot;2016-12-13T17:33:00+03:00&quot;,
+        &quot;isActiveJob&quot;: false,
+        &quot;jobType&quot;: &quot;custom&quot;,
+        &quot;repeat&quot;: {
             &quot;custom&quot;: {
                 &quot;days&quot;: 0,
                 &quot;hours&quot;: 0,
@@ -3573,7 +3625,7 @@
     &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
     &quot;script&quot;: &quot;584fad1422a5482feb5b31ab&quot;,
     &quot;cloudCode&quot;: {
-        &quot;isActiveJob&quot;: true    
+        &quot;isActiveJob&quot;: true
     }
 }' &quot;https://api.scorocode.ru/api/v1/app/scripts/update&quot;</code></pre>
 
@@ -3716,7 +3768,7 @@
     &quot;acc&quot;: &quot;&quot;,               // ключ доступа, обязательный, только masterKey
     &quot;bot&quot;: {
         &quot;name&quot;: &quot;&quot;,          // имя бота, обязательный
-        &quot;botId&quot;: &quot;&quot;,         // телеграм-токен бота, полученный от Botfather, обязательный 
+        &quot;botId&quot;: &quot;&quot;,         // телеграм-токен бота, полученный от Botfather, обязательный
         &quot;scriptId&quot;: &quot;&quot;,      // идентификатор серверного скрипта, обязательный
         &quot;isActive&quot;: bool     // флаг активности бота, необязательный
     }
@@ -3774,7 +3826,7 @@
     &quot;bot&quot;: {
         &quot;_id&quot;: &quot;&quot;,           // идентификатор бота, обязательный
         &quot;name&quot;: &quot;&quot;,          // имя бота, необязательный
-        &quot;botId&quot;: &quot;&quot;,         // телеграм-токен бота, полученный от Botfather, необязательный 
+        &quot;botId&quot;: &quot;&quot;,         // телеграм-токен бота, полученный от Botfather, необязательный
         &quot;scriptId&quot;: &quot;&quot;,      // идентификатор серверного скрипта, необязательный
         &quot;isActive&quot;: bool     // флаг активности бота, необязательный
     }
