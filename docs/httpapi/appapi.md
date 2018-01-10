@@ -91,6 +91,10 @@
               "beforeUpdate": {
                 "code": "",
                 "isActive": false
+              },
+              "beforeFind": {
+                "code": "",
+                "isActive": false
               }
             },
             "fields": [
@@ -208,6 +212,10 @@
               "beforeUpdate": {
                 "code": "",
                 "isActive": false
+              },
+              "beforeFind": {
+                "code": "",
+                "isActive": false
               }
             },
             "fields": [
@@ -307,6 +315,10 @@
                 "isActive": false
               },
               "beforeUpdate": {
+                "code": "",
+                "isActive": false
+              },
+              "beforeFind": {
                 "code": "",
                 "isActive": false
               }
@@ -549,6 +561,10 @@
             "beforeUpdate": {
               "code": "",
               "isActive": false
+            },
+            "beforeFind": {
+              "code": "",
+              "isActive": false
             }
           },
           "fields": [
@@ -667,6 +683,10 @@
             "beforeUpdate": {
               "code": "",
               "isActive": false
+            },
+            "beforeFind": {
+              "code": "",
+              "isActive": false
             }
           },
           "fields": [
@@ -766,6 +786,10 @@
               "isActive": false
             },
             "beforeUpdate": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeFind": {
               "code": "",
               "isActive": false
             }
@@ -967,6 +991,10 @@
           "beforeUpdate": {
             "code": "",
             "isActive": false
+          },
+          "beforeFind": {
+            "code": "",
+            "isActive": false
           }
         },
         "fields": [
@@ -1066,8 +1094,8 @@
     "app": "",               // идентификатор приложения, обязательный
     "cli": "",               // клиентский ключ, обязательный
     "acc": "",               // ключ доступа, обязательный, только masterKey
-    "collection": {          
-        "name": "",          // имя коллекции, обязательный  
+    "collection": {
+        "name": "",          // имя коллекции, обязательный
         "useDocsACL": bool,  // флаг "использовать ACL документов", необязательный
         "notify": bool,      // флаг включения подписки на уведомления по изменению даных в коллекци, необязательно
         "ACL": {}            // настройки ACL коллекции, необязательный
@@ -1151,6 +1179,10 @@
           "beforeUpdate": {
             "code": "",
             "isActive": false
+          },
+          "beforeFind": {
+            "code": "",
+            "isActive": false
           }
         },
         "fields": [
@@ -1227,10 +1259,10 @@
     "cli": "",               // клиентский ключ, обязательный
     "acc": "",               // ключ доступа, обязательный, только masterKey
     "collection": {
-        "id": "",            // id коллекции, обязательный           
-        "name": "",          // имя коллекции, необязательный  
+        "id": "",            // id коллекции, обязательный
+        "name": "",          // имя коллекции, необязательный
         "useDocsACL": bool,  // флаг "использовать ACL документов", необязательный
-        "notify": bool,      // флаг включения подписки на уведомления по изменению даных в коллекци, необязательно     
+        "notify": bool,      // флаг включения подписки на уведомления по изменению даных в коллекци, необязательно
         "ACL": {}            // настройки ACL коллекции, необязательный
     }
 }
@@ -1296,6 +1328,10 @@
             "isActive": false
           },
           "beforeUpdate": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeFind": {
             "code": "",
             "isActive": false
           }
@@ -1374,7 +1410,7 @@
     "cli": "",               // клиентский ключ, обязательный
     "acc": "",               // ключ доступа, обязательный, только masterKey
     "collection": {
-        "id": ""             // id коллекции, обязательный           
+        "id": ""             // id коллекции, обязательный
     }
 }
 ```
@@ -1426,7 +1462,7 @@
     "cli": "",               // клиентский ключ, обязательный
     "acc": "",               // ключ доступа, обязательный, только masterKey
     "collection": {
-        "id": "",            // id дублируемой коллекции, обязательный           
+        "id": "",            // id дублируемой коллекции, обязательный
         "name": ""           // имя новой коллекции, обязательный
     }
 }
@@ -1440,7 +1476,7 @@
             "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
             "collection": {
                 "id": "584e91b77e0b4e222480a316",
-                "name": "clonedcoll"           
+                "name": "clonedcoll"
             }
     }' "https://api.scorocode.ru/api/v1/app/collections/clone"
     ```
@@ -1478,6 +1514,10 @@
             "isActive": false
           },
           "beforeUpdate": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeFind": {
             "code": "",
             "isActive": false
           }
@@ -1577,11 +1617,11 @@
             "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
             "coll": "users",
             "index": {
-                "name": "emailIndex",                    
+                "name": "emailIndex",
                 "fields": [
                     {
-                        "name": "email",            
-                        "order": 1       
+                        "name": "email",
+                        "order": 1
                     }
                 ]
             }
@@ -1636,7 +1676,7 @@
             "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
             "coll": "users",
             "index": {
-                "name": "emailIndex"                    
+                "name": "emailIndex"
             }
     }' "https://api.scorocode.ru/api/v1/app/collections/index/delete"
     ```
@@ -1675,7 +1715,7 @@
     "cli": "",         // клиентский ключ, обязательный
     "acc": "",         // ключ доступа, обязательный, только masterKey
     "coll": "",        // имя коллекции, обязательный
-    "collField": {     
+    "collField": {
         "name": "",    // имя поля, обязательный
         "type": "",    // тип данных поля, обязательный
         "target": ""   // имя целевой коллекции, обязательный для полей типа Pointer || Relation
@@ -1689,11 +1729,11 @@
         "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
         "app": "48f172923acd719b42c73ac3a492cfc8",
         "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "coll": "users",                       
+        "coll": "users",
         "collField": {
-            "name": "pointer",         
-            "type": "Pointer",         
-            "target": "devices"          
+            "name": "pointer",
+            "type": "Pointer",
+            "target": "devices"
         }
     }' "https://api.scorocode.ru/api/v1/app/collections/fields/create"
     ```
@@ -1740,7 +1780,7 @@
     "cli": "",       // клиентский ключ, обязательный
     "acc": "",       // ключ доступа, обязательный, только masterKey
     "coll": "",      // имя коллекции, обязательный
-    "collField": {   
+    "collField": {
         "name": ""   // имя поля, обязательный
     }
 }
@@ -1752,7 +1792,7 @@
         "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
         "app": "48f172923acd719b42c73ac3a492cfc8",
         "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "coll": "users",                       
+        "coll": "users",
         "collField": {
             "name": "pointer"
         }
@@ -1808,6 +1848,10 @@
             "isActive": false
           },
           "beforeUpdate": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeFind": {
             "code": "",
             "isActive": false
           }
@@ -1944,29 +1988,33 @@
     "acc": "",                // ключ доступа, обязательный, только masterKey
     "coll": "",               // имя коллекции, обязательный
     "triggers": {
-        "beforeInsert": {      
+        "beforeInsert": {
             "code": "",       // код триггера
             "isActive": bool  // флаг активности триггера
         },
         "afterInsert": {
             "code": "",       // код триггера
-            "isActive": bool  // флаг активности триггера        
+            "isActive": bool  // флаг активности триггера
         },
         "beforeUpdate": {
             "code": "",       // код триггера
-            "isActive": bool  // флаг активности триггера        
+            "isActive": bool  // флаг активности триггера
         },
         "afterUpdate": {
             "code": "",       // код триггера
-            "isActive": bool  // флаг активности триггера       
+            "isActive": bool  // флаг активности триггера
         },
         "beforeRemove": {
             "code": "",       // код триггера
-            "isActive": bool  // флаг активности триггера        
+            "isActive": bool  // флаг активности триггера
         },
         "afterRemove": {
             "code": "",       // код триггера
-            "isActive": bool  // флаг активности триггера       
+            "isActive": bool  // флаг активности триггера
+        },
+        "beforeFind": {
+          "code": "",         // код триггера
+          "isActive": false   // флаг активности триггера
         }
     }
 }
@@ -1978,10 +2026,10 @@
         "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
         "app": "48f172923acd719b42c73ac3a492cfc8",
         "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "coll": "users",                       
+        "coll": "users",
         "triggers": {
              "afterInsert": {
-                "code": "DataManager.Insert({\n  coll:'logs', \n  doc: {\n    'docId': pool.newDoc._id,\n    'collection': 'users',\n    'operation': 'register',\n    'data': pool.newDoc\n    }\n  });",       
+                "code": "DataManager.Insert({\n  coll:'logs', \n  doc: {\n    'docId': pool.newDoc._id,\n    'collection': 'users',\n    'operation': 'register',\n    'data': pool.newDoc\n    }\n  });",
                 "isActive": true
             }
         }
@@ -2021,6 +2069,10 @@
           "isActive": false
         },
         "beforeUpdate": {
+          "code": "",
+          "isActive": false
+        },
+        "beforeFind": {
           "code": "",
           "isActive": false
         }
@@ -2334,12 +2386,12 @@
         "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
         "cloudCode": {
             "path": "/AYBABTU.js",
-            "description": "All your base",      
-            "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",             
-            "jobStartAt": "2016-12-13T17:33:00+03:00", 
-            "isActiveJob": false,    
-            "jobType": "custom",           
-            "repeat": {             
+            "description": "All your base",
+            "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
+            "jobStartAt": "2016-12-13T17:33:00+03:00",
+            "isActiveJob": false,
+            "jobType": "custom",
+            "repeat": {
                 "custom": {
                     "days": 0,
                     "hours": 0,
@@ -2451,7 +2503,7 @@
         "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
         "script": "584fad1422a5482feb5b31ab",
         "cloudCode": {
-            "isActiveJob": true    
+            "isActiveJob": true
         }
     }' "https://api.scorocode.ru/api/v1/app/scripts/update"
     ```
@@ -2617,7 +2669,7 @@
     "acc": "",               // ключ доступа, обязательный, только masterKey
     "bot": {
         "name": "",          // имя бота, обязательный
-        "botId": "",         // телеграм-токен бота, полученный от Botfather, обязательный 
+        "botId": "",         // телеграм-токен бота, полученный от Botfather, обязательный
         "scriptId": "",      // идентификатор серверного скрипта, обязательный
         "isActive": bool     // флаг активности бота, необязательный
     }
@@ -2683,7 +2735,7 @@
     "bot": {
         "_id": "",           // идентификатор бота, обязательный
         "name": "",          // имя бота, необязательный
-        "botId": "",         // телеграм-токен бота, полученный от Botfather, необязательный 
+        "botId": "",         // телеграм-токен бота, полученный от Botfather, необязательный
         "scriptId": "",      // идентификатор серверного скрипта, необязательный
         "isActive": bool     // флаг активности бота, необязательный
     }
